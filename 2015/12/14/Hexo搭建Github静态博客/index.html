@@ -51,7 +51,9 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 
 超快速度 Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。
 支持 Markdown Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octo">
-<meta property="og:updated_time" content="2015-12-14T07:00:13.424Z">
+<meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png">
+<meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png">
+<meta property="og:updated_time" content="2015-12-14T07:33:13.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建Github静态博客">
 <meta name="twitter:description" content="前言第一篇文章献给Hexo。
@@ -241,9 +243,48 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 <li>一键部署 只需一条指令即可部署到 GitHub Pages, Heroku 或其他网站。</li>
 <li>丰富的插件 Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</li>
 </ul>
-<h1 id="1-环境配置">1.环境配置</h1><h2 id="1-1安装node-js">1.1安装node.js</h2><p>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a><br>Node.js安装图解教程_百度经验<br> <a href="http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html" target="_blank" rel="external">http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html</a></p>
-<h2 id="1-2安装Git">1.2安装Git</h2><p>Git <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a><br><strong>推荐下载2.5.0版本、最新版本（2.6.4）总是出现问题。</strong><br>Git for windows 2.5.0 具体下载地址：<br><a href="https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1" target="_blank" rel="external">https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1 </a><br>如何在windows下安装GIT_百度经验<br><a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a>  </p>
-<hr>
+<h1 id="1-环境配置">1.环境配置</h1><h2 id="1-1安装node-js">1.1安装node.js</h2><p>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a>  </p>
+<p>Node.js安装图解教程_百度经验<br> <a href="http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html" target="_blank" rel="external">http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html</a></p>
+<h2 id="1-2安装Git">1.2安装Git</h2><p>Git <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a>   </p>
+<p><strong>推荐下载2.5.0版本、最新版本（2.6.4）总是出现问题。</strong><br>Git for windows 2.5.0 具体下载地址：<br><a href="https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1" target="_blank" rel="external">https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1 </a></p>
+<p>如何在windows下安装GIT_百度经验<br><a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a>  </p>
+<h2 id="1-3配置Git">1.3配置Git</h2><p>具体使用GitHub Pages建立博客的过程不再赘述：<br>应用github pages创建自己的个人博客_百度经验 <a href="http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html" target="_blank" rel="external">http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html</a></p>
+<p>在Windows下，打开Git Bash。 </p>
+<p><strong>1、检查SSH keys的设置</strong>  </p>
+<p>首先我们需要检查你电脑上现有的ssh key： </p>
+<pre><code>$ cd ~/<span class="class">.ssh</span>  
+</code></pre><p>如果显示“No such file or directory”，跳到第三步，否则继续。<br><strong>2、备份和移除原来的ssh key设置：</strong>  </p>
+<p>因为已经存在key文件，所以需要备份旧的数据并删除：  </p>
+<pre><code><span class="variable">$ </span>ls
+config  id_rsa  id_rsa.pub  known_hosts
+<span class="variable">$ </span>mkdir key_backup
+<span class="variable">$ </span>cp id_rsa* key_backup
+<span class="variable">$ </span>rm id_rsa*
+</code></pre><p><strong>3、生成新的SSH Key：</strong></p>
+<p>输入下面的代码，就可以生成新的key文件，我们只需要默认设置就好，所以当需要输入文件名的时候，回车就好。</p>
+<pre><code>$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span>
+Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa key pair.
+Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/Users/</span>your_user_directory<span class="regexp">/.ssh/</span>id_rsa):&lt;回车就好&gt;
+然后系统会要你输入加密串（Passphrase）：
+Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;
+Enter same passphrase <span class="string">again:</span>&lt;再次输入加密串&gt;
+</code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png" alt=""> </p>
+<p><strong>4、添加SSH Key到GitHub：</strong></p>
+<p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
+<p>用文本编辑工具打开id_rsa.pub文件，如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
+<p>在GitHub的主页上点击头像再点击设置按钮：settings：  </p>
+<p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png" alt=""> </p>
+<p>选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：  </p>
+<p><strong>5、测试一下</strong></p>
+<p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<pre><code><span class="variable">$ </span>ssh -<span class="constant">T </span>git<span class="variable">@github</span>.com
+</code></pre><p>如果是下面的反应：</p>
+<pre><code>The authenticity <span class="keyword">of</span> host <span class="comment">'github.com (207.97.227.239)' can't be established.</span>
+RSA <span class="keyword">key</span> fingerprint <span class="keyword">is</span> <span class="number">16</span>:<span class="number">27</span>:ac:a5:<span class="number">76</span>:<span class="number">28</span>:<span class="number">2</span>d:<span class="number">36</span>:<span class="number">63</span>:<span class="number">1</span>b:<span class="number">56</span>:<span class="number">4</span>d:eb:df:a6:<span class="number">48.</span>
+Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?`
+</code></pre><p>不要紧张，输入<code>yes</code>就好，然后会看到：</p>
+<pre><code>Hi &lt;em&gt;username&lt;/em&gt;! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.  
+</code></pre><hr>
 </span>
       
     </div>
@@ -251,18 +292,6 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
     <footer class="post-footer">
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/11/25/ArcGIS-API-for-JavaScript-3-9-离线安装部署/" rel="next">ArcGIS API for JavaScript 3.9 离线安装部署</a>
-            
-          </div>
-        </div>
       
 
       
@@ -329,7 +358,7 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -385,7 +414,7 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-环境配置"><span class="nav-number">3.</span> <span class="nav-text">1.环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1安装node-js"><span class="nav-number">3.1.</span> <span class="nav-text">1.1安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2安装Git"><span class="nav-number">3.2.</span> <span class="nav-text">1.2安装Git</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-环境配置"><span class="nav-number">3.</span> <span class="nav-text">1.环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1安装node-js"><span class="nav-number">3.1.</span> <span class="nav-text">1.1安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2安装Git"><span class="nav-number">3.2.</span> <span class="nav-text">1.2安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3配置Git"><span class="nav-number">3.3.</span> <span class="nav-text">1.3配置Git</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
