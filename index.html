@@ -296,7 +296,25 @@ logging <span class="keyword">with</span> Hexo!
 <pre><code>$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>
 [info] <span class="keyword">File</span> created at d:\Hexo\<span class="keyword">source</span>\_posts\My-<span class="keyword">New</span>-Post.md
 </code></pre><p>刷新<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，可以发现已生成了一篇新文章 “My New Post”。</p>
-<blockquote>
+<h2 id="Generate_static_files">Generate static files</h2><p>执行下面的命令，将markdown文件生成静态网页。</p>
+<pre><code><span class="variable">$ </span>hexo generate
+</code></pre><p>该命令执行完后，会在 D:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
+<h2 id="编辑文章">编辑文章</h2><pre><code>$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>  
+</code></pre><p>会在D:\Hexo\source_posts目录下生成一个markdown文件：My-New-Post.md</p>
+<p>可以使用一个支持markdown语法的编辑器（比如 Sublime Text 2）来编辑该文件。</p>
+<h2 id="部署到Github">部署到Github</h2><p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
+<pre><code><span class="preprocessor"># Deployment</span>
+<span class="preprocessor">##Docs: http://hexo.io/docs/deployment.html</span>
+<span class="title">deploy</span>:
+  <span class="typedef"><span class="keyword">type</span>:</span>
+</code></pre><p>然后将它们修改为</p>
+<pre><code><span class="preprocessor"># Deployment</span>
+<span class="preprocessor">## Docs: http://hexo.io/docs/deployment.html</span>
+<span class="title">deploy</span>:
+  <span class="typedef"><span class="keyword">type</span>: git</span>
+  repository: git@github.com:wshunli/wshunli.github.io.git
+  branch: master
+</code></pre><blockquote>
 <p>参考资料  </p>
 </blockquote>
 <p>Hexo搭建Github静态博客 - 金石开 - 博客园 <a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>使用Github Pages建独立博客 | BeiYuu.com <a href="http://beiyuu.com/github-pages" target="_blank" rel="external">http://beiyuu.com/github-pages</a><br>Hexo | Setsuna’s Blog <a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">http://www.isetsuna.com/categories/Hexo/</a>   </p>
