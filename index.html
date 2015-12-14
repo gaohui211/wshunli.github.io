@@ -300,7 +300,7 @@ logging <span class="keyword">with</span> Hexo!
 <pre><code><span class="variable">$ </span>hexo generate
 </code></pre><p>该命令执行完后，会在 D:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
 <h2 id="编辑文章">编辑文章</h2><pre><code>$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>  
-</code></pre><p>会在D:\Hexo\source_posts目录下生成一个markdown文件：My-New-Post.md</p>
+</code></pre><p>会在<code>D:\Hexo\source\_posts</code>目录下生成一个markdown文件：My-New-Post.md</p>
 <p>可以使用一个支持markdown语法的编辑器（比如 Sublime Text 2）来编辑该文件。</p>
 <h2 id="部署到Github">部署到Github</h2><p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
 <pre><code><span class="preprocessor"># Deployment</span>
@@ -314,11 +314,95 @@ logging <span class="keyword">with</span> Hexo!
   <span class="typedef"><span class="keyword">type</span>: git</span>
   repository: git@github.com:wshunli/wshunli.github.io.git
   branch: master
+</code></pre><h2 id="测试">测试</h2><p>当部署完成后，在浏览器中打开<a href="http://wshunli.github.io">http://wshunli.github.io</a> ，正常显示网页，表明部署成功。</p>
+<h2 id="总结：部署步骤">总结：部署步骤</h2><p>每次部署的步骤，可按以下三步来进行。</p>
+<pre><code><span class="title">hexo</span> clean
+hexo generate
+hexo deploy
+</code></pre><h2 id="总结：本地调试">总结：本地调试</h2><p> 在执行下面的命令后，</p>
+<pre><code><span class="variable">$ </span>hexo g <span class="comment">#生成</span>
+<span class="variable">$ </span>hexo s <span class="comment">#启动本地服务，进行文章预览调试</span>
+</code></pre><p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，查看搭建效果。<br>此后的每次变更_config.yml 文件或者新建文件都可以先用此命令调试，尤其是当你想调试新添加的主题时。</p>
+<h1 id="配置Hexo">配置Hexo</h1><p>Hexo的配置文件是位于blog文件夹下的_config.yml文件。<br>修改配置文件请使用Notepad++或者Sublime Text 2之类的程序，不要使用Windows自带的记事本。<br>以下为Hexo 3.0.0初始配置。常规需要修改的地方已加中文注释，未加注释的参数不建议新手修改。</p>
+<pre><code><span class="preprocessor"># Hexo Configuration</span>
+<span class="preprocessor">## Docs: http://hexo.io/docs/configuration.html</span>
+<span class="preprocessor">## Source: https://github.com/hexojs/hexo/</span>
+
+<span class="preprocessor"># Site</span>
+<span class="label">title:</span> Hexo <span class="preprocessor">##站点标题</span>
+<span class="label">subtitle:</span> <span class="preprocessor">##站点副标题</span>
+<span class="label">description:</span> <span class="preprocessor">##站点描述</span>
+<span class="label">author:</span> John Doe <span class="preprocessor">##作者</span>
+<span class="label">language:</span> <span class="preprocessor">##语言包，需要主题自带才可设置。如Jcaman自带简繁英，设置简体中文填入 zh-CN</span>
+<span class="label">timezone:</span>
+
+<span class="preprocessor"># URL</span>
+<span class="preprocessor">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
+<span class="label">url:</span> http://yoursite.com <span class="preprocessor">##站点域名</span>
+<span class="label">root:</span> /
+<span class="label">permalink:</span> :year/:month/:day/:title/ <span class="preprocessor">##文章永久链接格式，可添加.html后缀，如 :title.html</span>
+<span class="label">permalink_defaults:</span>
+
+<span class="preprocessor"># Directory</span>
+<span class="label">source_dir:</span> source
+<span class="label">public_dir:</span> public
+<span class="label">tag_dir:</span> tags
+<span class="label">archive_dir:</span> archives
+<span class="label">category_dir:</span> categories
+<span class="label">code_dir:</span> downloads/code
+<span class="label">i18n_dir:</span> :lang
+<span class="label">skip_render:</span>
+
+<span class="preprocessor"># Writing</span>
+<span class="label">new_post_name:</span> :title.md <span class="preprocessor"># File name of new posts</span>
+<span class="label">default_layout:</span> post
+<span class="label">titlecase:</span> false <span class="preprocessor"># Transform title into titlecase</span>
+<span class="label">external_link:</span> true <span class="preprocessor"># Open external links in new tab</span>
+<span class="label">filename_case:</span> <span class="number">0</span>
+<span class="label">render_drafts:</span> false
+<span class="label">post_asset_folder:</span> false
+<span class="label">relative_link:</span> false
+<span class="label">future:</span> true
+<span class="label">highlight:</span>
+  enable: true
+  line_number: true
+  tab_replace:
+
+<span class="preprocessor"># Category &amp; Tag</span>
+<span class="label">default_category:</span> uncategorized
+<span class="label">category_map:</span>
+<span class="label">tag_map:</span>
+
+<span class="preprocessor"># Date / Time format</span>
+<span class="preprocessor">## Hexo uses Moment.js to parse and display date</span>
+<span class="preprocessor">## You can customize the date format as defined in</span>
+<span class="preprocessor">## http://momentjs.com/docs/#/displaying/format/</span>
+<span class="label">date_format:</span> YYYY-MM-DD
+<span class="label">time_format:</span> HH:mm:ss
+
+<span class="preprocessor"># Pagination</span>
+<span class="preprocessor">## Set per_page to 0 to disable pagination</span>
+<span class="label">per_page:</span> <span class="number">10</span>
+<span class="label">pagination_dir:</span> page
+
+<span class="preprocessor"># Extensions</span>
+<span class="preprocessor">## Plugins: http://hexo.io/plugins/</span>
+<span class="preprocessor">## Themes: http://hexo.io/themes/</span>
+<span class="label">theme:</span> landscape <span class="preprocessor">##当前主题名称</span>
+
+<span class="preprocessor"># Deployment</span>
+<span class="preprocessor">## Docs: http://hexo.io/docs/deployment.html</span>
+<span class="label">deploy:</span>
+  type:
 </code></pre><blockquote>
 <p>参考资料  </p>
 </blockquote>
 <p>Hexo搭建Github静态博客 - 金石开 - 博客园 <a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>使用Github Pages建独立博客 | BeiYuu.com <a href="http://beiyuu.com/github-pages" target="_blank" rel="external">http://beiyuu.com/github-pages</a><br>Hexo | Setsuna’s Blog <a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">http://www.isetsuna.com/categories/Hexo/</a>   </p>
-<p><strong>在此一并致谢！</strong></p>
+<p><strong>在此一并致谢！</strong>  </p>
+<blockquote>
+<p>关于我</p>
+</blockquote>
+<p>这里有我的个人简介：<a href="http://wshunli.github.io/about/">关于我</a></p>
 <hr>
 </span>
         
