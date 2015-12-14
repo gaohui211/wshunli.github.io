@@ -54,7 +54,7 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
-<meta property="og:updated_time" content="2015-12-14T07:48:16.163Z">
+<meta property="og:updated_time" content="2015-12-14T08:03:48.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建Github静态博客">
 <meta name="twitter:description" content="前言第一篇文章献给Hexo。
@@ -244,25 +244,22 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 <li>一键部署 只需一条指令即可部署到 GitHub Pages, Heroku 或其他网站。</li>
 <li>丰富的插件 Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</li>
 </ul>
-<h1 id="1-环境配置">1.环境配置</h1><h2 id="1-1安装node-js">1.1安装node.js</h2><p>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a>  </p>
+<h1 id="环境配置">环境配置</h1><h2 id="-1安装node-js">.1安装node.js</h2><p>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a>  </p>
 <p>Node.js安装图解教程_百度经验<br> <a href="http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html" target="_blank" rel="external">http://jingyan.baidu.com/article/fd8044faf2e8af5030137a64.html</a></p>
-<h2 id="1-2安装Git">1.2安装Git</h2><p>Git <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a>   </p>
+<h2 id="-2安装Git">.2安装Git</h2><p>Git <a href="http://git-scm.com" target="_blank" rel="external">http://git-scm.com</a>   </p>
 <p><strong>推荐下载2.5.0版本、最新版本（2.6.4）总是出现问题。</strong><br>Git for windows 2.5.0 具体下载地址：<br><a href="https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1" target="_blank" rel="external">https://github.com/git-for-windows/git/releases/tag/v2.5.0.windows.1 </a></p>
 <p>如何在windows下安装GIT_百度经验<br><a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a>  </p>
-<h2 id="1-3配置Git">1.3配置Git</h2><p>具体使用GitHub Pages建立博客的过程不再赘述：<br>应用github pages创建自己的个人博客_百度经验 <a href="http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html" target="_blank" rel="external">http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html</a></p>
-<p>在Windows下，打开Git Bash。 </p>
-<p><strong>1、检查SSH keys的设置</strong>  </p>
-<p>首先我们需要检查你电脑上现有的ssh key： </p>
+<h1 id="配置Github">配置Github</h1><p>在Windows下，打开Git Bash。 </p>
+<h2 id="-1检查SSH_keys的设置">.1检查SSH keys的设置</h2><p>首先我们需要检查你电脑上现有的ssh key： </p>
 <pre><code>$ cd ~/<span class="class">.ssh</span>  
-</code></pre><p>如果显示“No such file or directory”，跳到第三步，否则继续。<br><strong>2、备份和移除原来的ssh key设置：</strong>  </p>
-<p>因为已经存在key文件，所以需要备份旧的数据并删除：  </p>
+</code></pre><p>如果显示“No such file or directory”，跳到第三步，否则继续。  </p>
+<h2 id="-2备份和移除原来的ssh_key设置：">.2备份和移除原来的ssh key设置：</h2><p>因为已经存在key文件，所以需要备份旧的数据并删除：  </p>
 <pre><code><span class="variable">$ </span>ls
 config  id_rsa  id_rsa.pub  known_hosts
 <span class="variable">$ </span>mkdir key_backup
 <span class="variable">$ </span>cp id_rsa* key_backup
 <span class="variable">$ </span>rm id_rsa*
-</code></pre><p><strong>3、生成新的SSH Key：</strong></p>
-<p>输入下面的代码，就可以生成新的key文件，我们只需要默认设置就好，所以当需要输入文件名的时候，回车就好。</p>
+</code></pre><h2 id="-3生成新的SSH_Key：">.3生成新的SSH Key：</h2><p>输入下面的代码，就可以生成新的key文件，我们只需要默认设置就好，所以当需要输入文件名的时候，回车就好。</p>
 <pre><code>$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span>
 Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa key pair.
 Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/Users/</span>your_user_directory<span class="regexp">/.ssh/</span>id_rsa):&lt;回车就好&gt;
@@ -270,15 +267,13 @@ Enter file <span class="keyword">in</span> which to save the key (<span class="r
 Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;
 Enter same passphrase <span class="string">again:</span>&lt;再次输入加密串&gt;
 </code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""></p>
-<p><strong>4、添加SSH Key到GitHub：</strong></p>
-<p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
+<h2 id="-4添加SSH_Key到GitHub：">.4添加SSH Key到GitHub：</h2><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
 <p>用文本编辑工具打开id_rsa.pub文件，如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
 <p>在GitHub的主页上点击头像再点击设置按钮：settings：  </p>
 <p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""></p>
 <p>选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：  </p>
 <p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""> </p>
-<p><strong>5、测试一下</strong></p>
-<p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<h2 id="-5测试一下">.5测试一下</h2><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
 <pre><code><span class="variable">$ </span>ssh -<span class="constant">T </span>git<span class="variable">@github</span>.com
 </code></pre><p>如果是下面的反应：</p>
 <pre><code>The authenticity <span class="keyword">of</span> host <span class="comment">'github.com (207.97.227.239)' can't be established.</span>
@@ -286,12 +281,18 @@ RSA <span class="keyword">key</span> fingerprint <span class="keyword">is</span>
 Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?`
 </code></pre><p>不要紧张，输入<code>yes</code>就好，然后会看到：</p>
 <pre><code>Hi &lt;em&gt;username&lt;/em&gt;! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.  
-</code></pre><p><strong>6、设置你的账号信息</strong></p>
-<p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
+</code></pre><h2 id="-6设置你的账号信息">.6设置你的账号信息</h2><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
 <p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
 <pre><code>$ git config --global user<span class="class">.name</span> <span class="string">"你的名字"</span>
 $ git config --global user<span class="class">.email</span> <span class="string">"your_email@youremail.com"</span>
-</code></pre><hr>
+</code></pre><p><strong>好了，你已经可以成功连接GitHub了。</strong></p>
+<h2 id="-7具体使用GitHub_Pages建立博客">.7具体使用GitHub Pages建立博客</h2><p>应用github pages创建自己的个人博客_百度经验<br><a href="http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html" target="_blank" rel="external">http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html</a>  </p>
+<blockquote>
+<p>参考资料  </p>
+</blockquote>
+<p>Hexo搭建Github静态博客 - 金石开 - 博客园 <a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>使用Github Pages建独立博客 | BeiYuu.com <a href="http://beiyuu.com/github-pages" target="_blank" rel="external">http://beiyuu.com/github-pages</a><br>Hexo | Setsuna’s Blog <a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">http://www.isetsuna.com/categories/Hexo/</a>   </p>
+<p><strong>在此一并致谢！</strong></p>
+<hr>
 </span>
       
     </div>
@@ -421,7 +422,7 @@ $ git config --global user<span class="class">.email</span> <span class="string"
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-环境配置"><span class="nav-number">3.</span> <span class="nav-text">1.环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1安装node-js"><span class="nav-number">3.1.</span> <span class="nav-text">1.1安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2安装Git"><span class="nav-number">3.2.</span> <span class="nav-text">1.2安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3配置Git"><span class="nav-number">3.3.</span> <span class="nav-text">1.3配置Git</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#-1安装node-js"><span class="nav-number">3.1.</span> <span class="nav-text">.1安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2安装Git"><span class="nav-number">3.2.</span> <span class="nav-text">.2安装Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Github"><span class="nav-number">4.</span> <span class="nav-text">配置Github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#-1检查SSH_keys的设置"><span class="nav-number">4.1.</span> <span class="nav-text">.1检查SSH keys的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2备份和移除原来的ssh_key设置："><span class="nav-number">4.2.</span> <span class="nav-text">.2备份和移除原来的ssh key设置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-3生成新的SSH_Key："><span class="nav-number">4.3.</span> <span class="nav-text">.3生成新的SSH Key：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-4添加SSH_Key到GitHub："><span class="nav-number">4.4.</span> <span class="nav-text">.4添加SSH Key到GitHub：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-5测试一下"><span class="nav-number">4.5.</span> <span class="nav-text">.5测试一下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-6设置你的账号信息"><span class="nav-number">4.6.</span> <span class="nav-text">.6设置你的账号信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-7具体使用GitHub_Pages建立博客"><span class="nav-number">4.7.</span> <span class="nav-text">.7具体使用GitHub Pages建立博客</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
