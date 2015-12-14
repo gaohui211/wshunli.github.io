@@ -258,13 +258,14 @@ Enter file <span class="keyword">in</span> which to save the key (<span class="r
 然后系统会要你输入加密串（Passphrase）：
 Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;
 Enter same passphrase <span class="string">again:</span>&lt;再次输入加密串&gt;
-</code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png" alt=""> </p>
+</code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""></p>
 <p><strong>4、添加SSH Key到GitHub：</strong></p>
 <p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
 <p>用文本编辑工具打开id_rsa.pub文件，如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
 <p>在GitHub的主页上点击头像再点击设置按钮：settings：  </p>
-<p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png" alt=""> </p>
+<p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""></p>
 <p>选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：  </p>
+<p><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""> </p>
 <p><strong>5、测试一下</strong></p>
 <p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
 <pre><code><span class="variable">$ </span>ssh -<span class="constant">T </span>git<span class="variable">@github</span>.com
@@ -274,6 +275,11 @@ RSA <span class="keyword">key</span> fingerprint <span class="keyword">is</span>
 Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?`
 </code></pre><p>不要紧张，输入<code>yes</code>就好，然后会看到：</p>
 <pre><code>Hi &lt;em&gt;username&lt;/em&gt;! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.  
+</code></pre><p><strong>6、设置你的账号信息</strong></p>
+<p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
+<p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<pre><code>$ git config --global user<span class="class">.name</span> <span class="string">"你的名字"</span>
+$ git config --global user<span class="class">.email</span> <span class="string">"your_email@youremail.com"</span>
 </code></pre><hr>
 </span>
         
