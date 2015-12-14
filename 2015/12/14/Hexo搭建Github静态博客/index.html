@@ -56,7 +56,7 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客4.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客5.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
-<meta property="og:updated_time" content="2015-12-14T09:10:03.871Z">
+<meta property="og:updated_time" content="2015-12-14T09:38:17.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建Github静态博客">
 <meta name="twitter:description" content="前言第一篇文章献给Hexo。
@@ -409,16 +409,13 @@ hexo deploy
   type:
 </code></pre><h2 id="安装主题">安装主题</h2><p>Hexo提供了很多主题，具体可参见<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes</a>。这里我选择使用<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a>主题。</p>
 <p><strong>安装</strong></p>
-<ol>
-<li><p>将Git Shell 切到<code>D:/Hexo</code>目录下，然后执行下面的命令，将NexT下载到 <code>/themes/pacman</code> 目录下。</p>
-<p> $ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</p>
-</li>
-<li><p>修改你的博客根目录/D/Hexo下的config.yml配置文件中的theme属性，将其设置为NexT。</p>
-</li>
-<li><p>更新NexT主题</p>
-<p> cd themes/pacman<br> git pull<br>NOTE：先备份_config.yml 文件后再升级</p>
-</li>
-</ol>
+<p>1.将Git Shell 切到<code>D:/Hexo</code>目录下，然后执行下面的命令，将NexT下载到 <code>/themes/pacman</code> 目录下。</p>
+<pre><code>$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span>
+</code></pre><p>2.修改你的博客根目录/D/Hexo下的config.yml配置文件中的theme属性，将其设置为NexT。</p>
+<p>3.更新NexT主题</p>
+<pre><code><span class="built_in">cd</span> themes/pacman  
+git pull  
+</code></pre><p>NOTE：先备份_config.yml 文件后再升级</p>
 <p><strong>配置</strong></p>
 <p>如果pacman的默认设置不能满足需要的话，你可以修改 <code>/themes/pacman/</code>下的配置文件_config.yml来定制。</p>
 <p>NexT - an elegant theme for Hexo.<br><a href="http://theme-next.iissnan.com" target="_blank" rel="external">http://theme-next.iissnan.com</a>  </p>
@@ -429,7 +426,11 @@ hexo deploy
 </code></pre><h2 id="百度统计">百度统计</h2><p>1.登录 <a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>，定位到站点的代码获取页面<br>2.复制 hm.js? 后面那串统计脚本 id，如：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客5.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""><br>3.编辑 站点配置文件，新增字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。</p>
 <h2 id="Swiftype_搜索">Swiftype 搜索</h2><p>使用 Swiftype 之前需要前往 Swiftype 配置一个搜索引擎。<br>然后，编辑 站点配置文件，新增 <code>swiftype_key</code> 字段，值为你的 swiftype 搜索引擎的 key。</p>
 <h1 id="优化Hexo">优化Hexo</h1><h2 id="404页面">404页面</h2><p>在<code>\themes\next\source</code>添加404.html即可</p>
-<h2 id="使用七牛做图床">使用七牛做图床</h2><blockquote>
+<h2 id="使用七牛做图床">使用七牛做图床</h2><p>推荐使用QRSBox  </p>
+<p>QRSBox 同步工具 | 七牛云存储 <a href="http://developer.qiniu.com/docs/v6/tools/qrsbox.html" target="_blank" rel="external">http://developer.qiniu.com/docs/v6/tools/qrsbox.html</a></p>
+<p>官网有详细介绍、我就不再赘述。</p>
+<hr>
+<blockquote>
 <p>参考资料  </p>
 </blockquote>
 <p>Hexo搭建Github静态博客 - 金石开 - 博客园 <a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a><br>使用Github Pages建独立博客 | BeiYuu.com <a href="http://beiyuu.com/github-pages" target="_blank" rel="external">http://beiyuu.com/github-pages</a><br>Hexo | Setsuna’s Blog <a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">http://www.isetsuna.com/categories/Hexo/</a>   </p>
@@ -438,7 +439,6 @@ hexo deploy
 <p>关于我</p>
 </blockquote>
 <p>这里有我的个人简介：<a href="http://wshunli.github.io/about/">关于我</a></p>
-<hr>
 </span>
       
     </div>
