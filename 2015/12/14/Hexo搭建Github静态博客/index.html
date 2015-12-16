@@ -56,7 +56,7 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客4.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
 <meta property="og:image" content="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客5.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10">
-<meta property="og:updated_time" content="2015-12-15T05:36:21.474Z">
+<meta property="og:updated_time" content="2015-12-16T05:01:12.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建Github静态博客">
 <meta name="twitter:description" content="前言第一篇文章献给Hexo。
@@ -298,21 +298,21 @@ $ git config --global user<span class="class">.email</span> <span class="string"
 [info] Copying data
 [info] You are almost done! Don't forget <span class="keyword">to</span> <span class="command">run</span> `npm install` <span class="keyword">before</span> you start b
 logging <span class="keyword">with</span> Hexo!
-</code></pre><p>Hexo随后会自动在目标文件夹建立网站所需要的文件。然后按照提示，运行 npm install（在 /D/Hexo下）</p>
+</code></pre><p>Hexo随后会自动在目标文件夹建立网站所需要的文件。然后按照提示，运行 <code>npm install</code>（在 <code>D:\Hexo</code>下）</p>
 <pre><code>npm <span class="keyword">install</span>
 </code></pre><p>会在<code>D:\Hexo</code>目录中安装 node_modules。</p>
 <h2 id="Start_the_server">Start the server</h2><p>运行下面的命令（在<code>D:\Hexo</code>下）</p>
 <pre><code>$ hexo server
 [info] Hexo <span class="keyword">is</span> running at http:<span class="comment">//localhost:4000/. Press Ctrl+C to stop.</span>
-</code></pre><p>表明Hexo Server已经启动了，在浏览器中打开 <a href="http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。" target="_blank" rel="external">http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。</a></p>
+</code></pre><p>表明Hexo Server已经启动了，在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，这时可以看到Hexo已为你生成了一篇blog。</p>
 <p>你可以按<code>Ctrl+C</code> 停止Server。</p>
-<h2 id="Create_a_new_post">Create a new post</h2><p>新打开一个git bash命令行窗口，cd到/D/Hexo下，执行下面的命令</p>
+<h2 id="Create_a_new_post">Create a new post</h2><p>新打开一个git bash命令行窗口，cd到<code>D:\Hexo</code>下，执行下面的命令</p>
 <pre><code>$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>
 [info] <span class="keyword">File</span> created at d:\Hexo\<span class="keyword">source</span>\_posts\My-<span class="keyword">New</span>-Post.md
 </code></pre><p>刷新<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>，可以发现已生成了一篇新文章 “My New Post”。</p>
 <h2 id="Generate_static_files">Generate static files</h2><p>执行下面的命令，将markdown文件生成静态网页。</p>
 <pre><code><span class="variable">$ </span>hexo generate
-</code></pre><p>该命令执行完后，会在 D:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
+</code></pre><p>该命令执行完后，会在 <code>D:\Hexo\public\</code> 目录下生成一系列html，css等文件。</p>
 <h2 id="编辑文章">编辑文章</h2><pre><code>$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>  
 </code></pre><p>会在<code>D:\Hexo\source\_posts</code>目录下生成一个markdown文件：My-New-Post.md</p>
 <p>可以使用一个支持markdown语法的编辑器（比如 Sublime Text 2）来编辑该文件。</p>
@@ -412,13 +412,13 @@ hexo deploy
 <p><strong>安装</strong></p>
 <p>1.将Git Shell 切到<code>D:/Hexo</code>目录下，然后执行下面的命令，将NexT下载到 <code>/themes/pacman</code> 目录下。</p>
 <pre><code>$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span>
-</code></pre><p>2.修改你的博客根目录/D/Hexo下的config.yml配置文件中的theme属性，将其设置为NexT。</p>
+</code></pre><p>2.修改你的博客根目录<code>D:/Hexo</code>下的config.yml配置文件中的theme属性，将其设置为NexT。</p>
 <p>3.更新NexT主题</p>
-<pre><code><span class="built_in">cd</span> themes/pacman  
+<pre><code><span class="keyword">cd</span> themes/<span class="keyword">next</span>  
 git pull  
 </code></pre><p>NOTE：先备份_config.yml 文件后再升级</p>
 <p><strong>配置</strong></p>
-<p>如果pacman的默认设置不能满足需要的话，你可以修改 <code>/themes/pacman/</code>下的配置文件_config.yml来定制。</p>
+<p>如果next的默认设置不能满足需要的话，你可以修改 <code>/themes/next/</code>下的配置文件_config.yml来定制。</p>
 <p>NexT - an elegant theme for Hexo.<br><a href="http://theme-next.iissnan.com" target="_blank" rel="external">http://theme-next.iissnan.com</a>  </p>
 <h1 id="安装插件">安装插件</h1><p>Plugins | Hexo <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></p>
 <h2 id="多说评论系统">多说评论系统</h2><p>多说 - 社会化评论系统<a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a><br>1.登录后在首页选择 “我要安装”。<br>2.创建站点，填写站点相关信息。多说域名 这一栏填写的即是你的 duoshuo_shortname，如图：<br><img src="http://7xi6f1.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客4.png?imageView2/1/w/800/q/100|watermark/2/text/d3NodW5saS5naXRodWIuaW8=/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/South/dy/10" alt=""><br>3.创建站点完成后在站点配置文件 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值。 </p>
