@@ -37,101 +37,75 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="练习十、网络分析一、实验目的网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：
-
-最佳路径分析，如：找出两地通达的最佳路径。
-
-最近服务设施分析，如：引导最近的救护车到事故地点。
-
-服务区域分析，如：确定公共设施（医院）的服务区域。
-
-
-通过对本实习的学习，应达到以下几个目的：
-(1)">
+<meta name="description" content="练习十、网络分析
+(1) 加深对网络分析基本原理、方法的认识；(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法；(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIS基础软件及操作(十)">
 <meta property="og:url" content="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十/index.html">
 <meta property="og:site_name" content="CirGIS">
-<meta property="og:description" content="练习十、网络分析一、实验目的网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：
-
-最佳路径分析，如：找出两地通达的最佳路径。
-
-最近服务设施分析，如：引导最近的救护车到事故地点。
-
-服务区域分析，如：确定公共设施（医院）的服务区域。
-
-
-通过对本实习的学习，应达到以下几个目的：
-(1)">
-<meta property="og:image" content="http://wshunli.github.io/media/image1.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image2.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image3.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image4.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image5.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image6.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image7.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image8.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image9.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image10.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image11.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image12.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image13.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image5.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image11.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image14.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image15.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image1.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image16.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image17.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image18.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image19.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image20.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image21.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image11.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image22.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image23.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image1.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image24.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image25.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image26.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image27.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image28.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image29.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image30.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image31.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image32.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image33.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image34.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image35.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image31.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image36.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image37.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image38.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image39.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image40.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image41.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image42.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image43.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image44.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image45.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image46.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image11.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image47.png">
-<meta property="og:image" content="http://wshunli.github.io/media/image48.png">
-<meta property="og:updated_time" content="2016-01-14T08:33:07.541Z">
+<meta property="og:description" content="练习十、网络分析
+(1) 加深对网络分析基本原理、方法的认识；(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法；(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_001.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_002.png-wshunli">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_003.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_004.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/1.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_005.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/2.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_006.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_007.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_008.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_009.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_010.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/1.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_011.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_012.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_013.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_014.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_015.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_016.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_017.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_018.png-wshunli">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_019.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_020.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_021.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_022.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_023.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_024.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_025.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_026.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_027.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_028.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_029.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_030.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_031.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_032.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_033.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_034.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_035.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_036.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_037.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_038.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_039.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_040.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_041.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_042.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_043.png-wshunli">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_044.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_045.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_046.png-hexo">
+<meta property="og:updated_time" content="2016-01-14T16:10:21.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIS基础软件及操作(十)">
-<meta name="twitter:description" content="练习十、网络分析一、实验目的网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：
-
-最佳路径分析，如：找出两地通达的最佳路径。
-
-最近服务设施分析，如：引导最近的救护车到事故地点。
-
-服务区域分析，如：确定公共设施（医院）的服务区域。
-
-
-通过对本实习的学习，应达到以下几个目的：
-(1)">
+<meta name="twitter:description" content="练习十、网络分析
+(1) 加深对网络分析基本原理、方法的认识；(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法；(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -347,7 +321,10 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="练习十、网络分析"><span id="_Toc135759308" class="anchor"><span id="_Toc136017525" class="anchor"></span></span>练习十、网络分析</h1><h2 id="一、实验目的"><span id="_Toc135759309" class="anchor"><span id="_Toc136017526" class="anchor"></span></span><strong>一、实验目的</strong></h2><p>网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：</p>
+        <span itemprop="articleBody"><h1 id="练习十、网络分析">练习十、网络分析</h1><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo" alt=""></p>
+<p>(1) 加深对网络分析基本原理、方法的认识；<br>(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法；<br>(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。</p>
+<a id="more"></a>
+<h2 id="实验目的"><strong>实验目的</strong></h2><p>网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：</p>
 <ul>
 <li><p>最佳路径分析，如：找出两地通达的最佳路径。</p>
 </li>
@@ -360,7 +337,7 @@
 <p>(1) 加深对网络分析基本原理、方法的认识；</p>
 <p>(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法。</p>
 <p>(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。</p>
-<h2 id="二、实验准备"><span id="_Toc135759310" class="anchor"><span id="_Toc136017527" class="anchor"></span></span><strong>二、实验准备</strong></h2><p>软件准备：ArcMap, 要求有网络分析扩展模块的许可授权</p>
+<h2 id="实验准备"><strong>实验准备</strong></h2><p>软件准备：ArcMap, 要求有网络分析扩展模块的许可授权</p>
 <p>数据准备：</p>
 <p>Shape文件创建网络数据集（高速公路：Highways, 主要街道：Major Streets,<br>公园：Parks，湖泊：Lakes，街道：Streets）</p>
 <p>Geodatabase网络数据集：NetworkAnalysis.mdb：包含：街道图层：Streets<br>仓库图层：Warehouses 商店图层：Stores</p>
@@ -371,34 +348,35 @@
 <p>2. 添加网络位置</p>
 <p>3. 设置分析选项</p>
 <p>4. 执行分析过程显示分析结果</p>
-<h2 id="三、实验内容及步骤"><span id="_Toc135759311" class="anchor"><span id="_Toc136017528" class="anchor"></span></span><strong>三、实验内容及步骤</strong></h2><h3 id="(一)_最佳路径分析"><span id="_Toc121493285" class="anchor"><span id="_Toc135759312" class="anchor"><span id="_Toc136017529" class="anchor"></span></span></span>(一) 最佳路径分析</h3><p>根据给定的停靠点，查找最佳路径（最省时的线路）</p>
+<h2 id="实验内容及步骤"><strong>实验内容及步骤</strong></h2><p>(一) 最佳路径分析</p>
+<p>根据给定的停靠点，查找最佳路径（最省时的线路）</p>
 <p>1.1 数据准备</p>
-<p>（1）.双击ArcMap工程，或从ArcMap中打开工程EX10_1.mxd.</p>
-<p>（2）.如果网络分析扩展模块（Network Analyst<br>Extension）已经启用（参考实验准备中的步骤）</p>
-<p>（3）<br>如果网络分析工具栏没有出现，则在工具栏显区点右键打开或执行菜单命令[自定义]&gt;&gt;[工具条],并点击［Network<br>Analyst］以显示网络分析工具栏。</p>
-<p><img src="media/image1.png" alt="">{width=”2.354330708661417in”<br>height=”0.2283464566929134in”}</p>
+<p>（1）双击ArcMap工程，或从ArcMap中打开工程EX10_1.mxd.</p>
+<p>（2）如果网络分析扩展模块（Network Analyst<br>Extension）已经启用（参考实验准备中的步骤）</p>
+<p>（3）如果网络分析工具栏没有出现，则在工具栏显区点右键打开或执行菜单命令[自定义]&gt;&gt;[工具条],并点击［Network<br>Analyst］以显示网络分析工具栏。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_001.png-hexo" alt=""></p>
 <p>（4）如果网络分析窗口没有推开，则在网络分析工具栏中点击网络分析窗口按钮（上图红色区域），以打开网络分析窗口：</p>
-<hr>
-<p>  <img src="media/image2.png" alt="">{width=”1.0860214348206474in” height=”0.9354833770778652in”}   注意：这是一个悬停窗口，它可以嵌入并固定在ArcMap的窗体中，或是作为一个单独的窗口悬浮在操作区上。在练习中，为了方便可以将其固定在TOC面板之下。</p>
-<hr>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_002.png-wshunli" alt=""><br>注意：这是一个悬停窗口，它可以嵌入并固定在ArcMap的窗体中，或是作为一个单独的窗口悬浮在操作区上。在练习中，为了方便可以将其固定在TOC面板之下。</p>
 <p>1.2 创建路径分析图层</p>
-<p>在网络分析工具栏[ Network Analyst]上点击下拉菜单[Network<br>Analyst],然后点击［New Route］菜单项.</p>
-<p><img src="media/image3.png" alt="">{width=”2.6141732283464565in”<br>height=”1.1811023622047243in”}</p>
-<p><img src="media/image4.png" alt="">{width=”2.6992672790901135in”<br>height=”5.0107524059492565in”}</p>
+<p>在网络分析工具栏[ Network Analyst]上点击下拉菜单[Network Analyst],然后点击［New Route］菜单项.</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_003.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_004.png-hexo" alt=""></p>
 <p>此时在网络分析窗口[ Network Analyst<br>]中包含一个空的列表，显示停靠点(Stops),路径（Routes），路障（Barriers）的相关信息。同时，在TOC(内容列表)面板上添加了新建的一个路径分析图层［Route］组合。</p>
 <p>1.3 添加停靠点</p>
 <p>通过以下步骤添加停靠点，最佳路径分析将找到最佳的经停顺序以计算并得到最佳路径</p>
 <p>(1) 在网络分析窗口[Network Analyst ]中点选Stops(0).</p>
-<p>(2). 在网络分析工具栏[Network Analyst]上点击“创建网络位置”[Create<br>Network<br>Location]工具。<img src="media/image5.png" alt="">{width=”0.2152777777777778in”<br>height=”0.2152777777777778in”}</p>
+<p>(2). 在网络分析工具栏[Network Analyst]上点击“创建网络位置”[Create Network Location]工具。<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/1.png-hexo" alt=""></p>
 <p>(3) 在地图的街道网络图层的任意位置上点击以定义一个新的停靠点。</p>
 <p>程序将在街道网络上自动的计算并得到一个距离给定位置最近的停靠点，已定义的停靠点会以特别的符号进行显示。停靠点会保持被选中的状态，除非它被明确地反选（Unselected）或者又新增了一个另外的停靠点。停靠点的所在的位置会同时显示一个数字“1”，数字表示经停的顺序。</p>
 <p>（4） 再添加4 个停靠点。<br>新增加的停靠点的编号为2,3,4,5。经停的顺序可以在网络分析窗口[Network<br>Analyst<br>]中更改。第一个停靠点被认定为出发点，最后一个停靠点被认定为是目的地。</p>
-<p>如果一个停靠点无法定位于道路网络上，则会显示一个“未定位”的符号。<img src="media/image6.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
-<p>“未定位”的停靠点可以通过移动操作将其定位到道路网络上，在网络分析［Network<br>Analyst］工具栏上点选［选择/移动网络位置］ [Select/Move Network<br>Location]按钮<img src="media/image7.png" alt="">{width=”0.20416666666666666in”<br>height=”0.2152777777777778in”}，使用此工具将“未定位”的停靠点拖放到附近的道路网络上。</p>
+<p>如果一个停靠点无法定位于道路网络上，则会显示一个“未定位”的符号。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_005.png-hexo" alt=""></p>
+<p>“未定位”的停靠点可以通过移动操作将其定位到道路网络上，在网络分析［Network<br>Analyst］工具栏上点选［选择/移动网络位置］ [Select/Move Network<br>Location]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/2.png-hexo" alt="">，使用此工具将“未定位”的停靠点拖放到附近的道路网络上。</p>
 <p>1.4 设置分析选项</p>
 <p>以下操作基于规则（单向行驶规划必须遵守，任意路口可以调头）计算最省时间的线路</p>
 <p>(1). 如图所示，在网络分析窗口[Network Analyst<br>]中点击分析图层属性按钮[Analysis Layer Properties]<br>打开图层Route的属性设置对话框：</p>
-<p><img src="media/image8.png" alt="">{width=”2.9133858267716537in”<br>height=”2.748031496062992in”}<img src="media/image9.png" alt="">{width=”1.3440857392825898in”<br>height=”2.634621609798775in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_006.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_007.png-hexo" alt=""></p>
 <p>(2) 在分析图层－Route属性对话框中，点击分析设置[Analysis<br>Settings]选项页，并确认－阻抗[impedance]设置为分钟Minutes (Minutes).</p>
 <p>(3).不使用时间限制 (保持Use Time Windows<br>前的检查框为非选中状态)。当必须在规定时间在某个停靠点停留时才使用这个选项，选择这个选项后可以通过设置停靠点属性来设置某个停靠点到达的时间，离开的时间（在ArcMap联机帮助中查询关键词network<br>analysis, routing with time windows 可以了解详细内容）</p>
 <p>(4).不使用“经停点重排序功能”（保持[Reorder stops to Find Optimal<br>Route]检查框为未选中状态）。这保证了经停顺序为你事先指定的顺序。</p>
@@ -407,94 +385,99 @@
 <p>(7).选中“忽略无效位置”［Ignore Invalid<br>Locations］检查框。这样分析时将会忽略那些不在道路网络上的停靠点。</p>
 <p>(8).在“限制”[Restrictions]列表框中选择单行线[Oneway]。</p>
 <p>(9) 点击方向[Directions]选项页，确定距离单位[Distance<br>Units]设置为米[Meters], 显示时间[Display<br>Time]检查框被选中，时间属性[Time<br>Attribute]被设置为分钟[Minutes]。点击［确定］按钮退出“图层属性”对话框。</p>
-<p><img src="media/image10.png" alt="">{width=”2.9133858267716537in”<br>height=”2.751968503937008in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_008.png-hexo" alt=""></p>
 <p>1.5 运行最佳路径分析得到分析结果</p>
-<p>(1) 在网络分析工具栏［Network<br>    Analyst］上点击“求解”[Solve]按钮<img src="media/image11.png" alt="">{width=”0.2152777777777778in”<br>    height=”0.20416666666666666in”}。分析结果－最佳路径线状要素图层将在地图中显示，在“网络分析窗口”[Network<br>    Analyst Window]中“路径”[Route]目录下也会同时显示：</p>
-<p><img src="media/image12.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
-<p>(2).在网络分析窗口[Network Analyst<br>]中点击Route树状结点左边的加号(+)显示最佳路径</p>
-<p>(3).右键击最佳路径“图形选择1-图形选择5”或在网络分析工具栏中点击方向[Direction]按钮打开“方向（路径）”窗口。</p>
-<p>(4).在方向（路径）[Directions]窗口中点击“地图”[Map]可以显示转向提示地图<img src="media/image13.png" alt="">{width=”3.795698818897638in”<br>height=”3.3366316710411197in”}</p>
-<p>(5). 关闭“方向”[Directions]窗口</p>
+<p>(1) 在网络分析工具栏［Network Analyst］上点击“求解”[Solve]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt="">。分析结果－最佳路径线状要素图层将在地图中显示，在“网络分析窗口”[Network Analyst Window]中“路径”[Route]目录下也会同时显示：</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_009.png-hexo" alt=""></p>
+<p>(2) 在网络分析窗口[Network Analyst<br>]中点击Route树状结点左边的加号(+)显示最佳路径</p>
+<p>(3) 右键击最佳路径“图形选择1-图形选择5”或在网络分析工具栏中点击方向[Direction]按钮打开“方向（路径）”窗口。</p>
+<p>(4) 在方向（路径）[Directions]窗口中点击“地图”[Map]可以显示转向提示地图</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_010.png-hexo" alt=""></p>
+<p>(5) 关闭“方向”[Directions]窗口</p>
 <p>1.6 设置路障(barrier)</p>
 <p>通过在行驶路径步增加障碍，表示真实情况下，道路上无法通行的路障。在进行最佳路径分析将会绕开这些路径查找替代路线</p>
-<p>(1).在ArcMap的中执行菜单命令[Window]&gt;&gt;[Magniﬁer]显示放大镜窗口[Magniﬁer]</p>
-<p>(2).通过按住放大镜窗口[Magniﬁer]的标题栏在地图上移动，在地图中找到已经计算得到的最佳路径，松开鼠标。这时最佳路径的一部分应该显示在放大镜窗口[Magniﬁer]的中心位置，我们将这这个区域的某个路段上放置一个路障。.</p>
-<p>(3).在网络分析窗口[Network Analyst ]中单击“路障”[Barrier (0)].</p>
-<p>(4).在网络分析工具栏[Network Analyst]上点击“创建网络位置”[Create<br>Network<br>Location]工具按钮<img src="media/image5.png" alt="">{width=”0.2152777777777778in”<br>height=”0.2152777777777778in”}。</p>
-<p>(5).在放大镜窗口[Magniﬁer]中最佳路径上的某个位置放置一个路障。</p>
-<p>(6).在网络分析工具栏[Network Analyst]上点击“求解”[Solve]<br><img src="media/image11.png" alt="">{width=”0.2152777777777778in”<br>height=”0.20416666666666666in”}按钮，得到新的最佳路径，从而避开路障</p>
-<p><img src="media/image14.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
-<p>(8).关闭“放大镜”[Magniﬁer] 窗口</p>
+<p>(1) 在ArcMap的中执行菜单命令[Window]&gt;&gt;[Magniﬁer]显示放大镜窗口[Magniﬁer]</p>
+<p>(2) 通过按住放大镜窗口[Magniﬁer]的标题栏在地图上移动，在地图中找到已经计算得到的最佳路径，松开鼠标。这时最佳路径的一部分应该显示在放大镜窗口[Magniﬁer]的中心位置，我们将这这个区域的某个路段上放置一个路障。.</p>
+<p>(3) 在网络分析窗口[Network Analyst ]中单击“路障”[Barrier (0)].</p>
+<p>(4) 在网络分析工具栏[Network Analyst]上点击“创建网络位置”[Create<br>Network<br>Location]工具按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/1.png-hexo" alt="">。</p>
+<p>(5) 在放大镜窗口[Magniﬁer]中最佳路径上的某个位置放置一个路障。</p>
+<p>(6) 在网络分析工具栏[Network Analyst]上点击“求解”[Solve]<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt="">按钮，得到新的最佳路径，从而避开路障</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_011.png-hexo" alt=""></p>
+<p>(8) 关闭“放大镜”[Magniﬁer] 窗口</p>
 <p>1.7 保存分析结果――最佳路径</p>
-<p>(1). 在网络分析窗口[Network Analyst ]中右键点击“路径”[Routes (1)<br>],在出现的右键菜单中点击“导出数据”［Export Data］菜单命令。</p>
-<p>(2).在“导出数据”[Export<br>Data]对话框中指定导出的文件命，比如“E:/输出/Export_routet_2.shp”</p>
-<p><img src="media/image15.png" alt="">{width=”2.2086614173228347in”<br>height=”1.795275590551181in”}</p>
-<p>(3).点击[确定]按钮，最佳路径就会保存为指定的Shape文件。.</p>
-<p>(4).当ArcMap询问“是否要将导出数据作为一个图层添加到地图中”时，点击否[NO]</p>
+<p>(1) 在网络分析窗口[Network Analyst ]中右键点击“路径”[Routes (1)<br>],在出现的右键菜单中点击“导出数据”［Export Data］菜单命令。</p>
+<p>(2) 在“导出数据”[Export<br>Data]对话框中指定导出的文件命，比如“E:/输出/Export_routet_2.shp”</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_012.png-hexo" alt=""></p>
+<p>(3) 点击[确定]按钮，最佳路径就会保存为指定的Shape文件。.</p>
+<p>(4) 当ArcMap询问“是否要将导出数据作为一个图层添加到地图中”时，点击否[NO]</p>
 <p>(5) 关闭ArcMap</p>
-<h3 id="(二)_最近服务设施分析（查找最近的消防队）">(二) 最近服务设施分析（查找最近的消防队）</h3><p>在这个实验中，当某个位置发生火灾时将找到距事故最近的四个消防队，并且可以进一步找到能够最快到达事故地点的路线.</p>
+<h3 id="最近服务设施分析">最近服务设施分析</h3><p>（查找最近的消防队）</p>
+<p>在这个实验中，当某个位置发生火灾时将找到距事故最近的四个消防队，并且可以进一步找到能够最快到达事故地点的路线.</p>
 <p>2.1 数据准备</p>
 <p>（1）.双击ArcMap工程<strong>EX10_2.mxd</strong>，或从ArcMap中打开工程<strong>EX10_2.mxd</strong>.</p>
 <p>（2）.如果网络分析扩展模块（Network Analyst<br>Extension）已经启用（参考实验准备中的步骤）</p>
 <p>（3）<br>如果网络分析工具栏没有出现，则在工具栏显区点右键打开或执行菜单命令[自定义]&gt;&gt;[工具条],并点击［Network<br>Analyst］以显示网络分析工具栏。</p>
-<p><img src="media/image1.png" alt="">{width=”2.354330708661417in”<br>height=”0.2283464566929134in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_013.png-hexo" alt=""></p>
 <p>（4）如果网络分析窗口没有推开，则在网络分析工具栏中点击网络分析窗口按钮（上图红色区域），以打开网络分析窗口。</p>
 <p>2.2 创建“最近服务设施分析图层”</p>
-<p><img src="media/image16.png" alt="">{width=”1.4604166666666667in”<br>height=”2.7423611111111112in”} 在网络分析工具栏[ Network<br>Analyst]上点击下拉菜单[Network Analyst],然后点击“新建最近设施点”[New<br>Closest Facility]菜单命令</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_014.png-hexo" alt=""></p>
+<p>在网络分析工具栏[ Network Analyst]上点击下拉菜单[Network Analyst],然后点击“新建最近设施点”[New<br>Closest Facility]菜单命令</p>
 <p>此时在网络分析窗口[ Network Analyst<br>]中包含一个空的列表，显示“设施”[Facilities], 事故[Incidents],<br>路径[Routes],<br>路障[Barriers]树状目录。同时，在TOC(图层列表)面板上添加了新建的一个“最近设施点图层［Route］组合”</p>
 <p>2.3 添加“服务设施”图层</p>
 <p>通过添加已存在的一个点状图层作为服务设施图层，以定义服务设施的位置。.</p>
 <p>(1).在“网络分析窗口”中右键点击树状结点：Facilities (0)<br>，在出现的右键菜单中点击命令“加载位置”[Load Locations].</p>
 <p>(2) 在“加载位置”[Load Locations]对话框中从“由图层加载”[Load<br>From]下拉列表中选择［File_Staion］ 。点击确定。</p>
-<p><img src="media/image17.png" alt="">{width=”3.0196850393700787in”<br>height=”2.984251968503937in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_015.png-hexo" alt=""></p>
 <p>在网络分析窗口[Network Analysis window]中显示有40<br>个消防队。加载的服务设施――消防队在地图上显示为服务设施符号［绿色实心圆］。</p>
-<p><img src="media/image18.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_016.png-hexo" alt=""></p>
 <p>2.4 设定火灾事故发生地点</p>
 <p>通过以下步骤在道路网络上定位一个火灾事故发生地址。以进一步做救援调度分析。</p>
 <p>(1) 在网络分析窗口[Network Analyst ]中点选树状结点[Incidents(0)]<br>，将在此图层上添加一个一个网络位置（事故地点）</p>
 <p>(2)<br>将地图适当放大并平移到如下的区域，在如下图所示的位置添加一个火灾事故点：</p>
-<p><img src="media/image19.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_017.png-hexo" alt=""></p>
 <p>2.5 设置分析选项</p>
 <p>(1) 如图所示，在网络分析窗口[Network Analyst<br>]中点击［最近呢设施点Closest<br>Facility］下拉列表右边的“分析图层属性”按钮[Analysis Layer Properties]<br>打开图层［Closest Facility］的属性设置对话框：</p>
-<p><img src="media/image20.png" alt="">{width=”1.0in” height=”1.6496062992125984in”}</p>
-<p>(1) 在图层属性对话框中点击“分析设置”[Analysis<br>    Settings]选项页，在“阻抗”［Impedance］下拉列表中选择“分钟”［Minutes<br>    (Minutes)］。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_018.png-wshunli" alt=""></p>
+<p>(1) 在图层属性对话框中点击“分析设置”[Analysis Settings]选项页，在“阻抗”［Impedance］下拉列表中选择“分钟”［Minutes(Minutes)］。</p>
 <p>(2) 使用时间前打对勾，默认中断值为3，可以设置要查找的设施点。</p>
 <p>(4) 将“行驶自”[Travel From]设定为“从设施点到事故点”[Facility to<br>Incident] (由消防队到火灾事故点)。</p>
 <p>(5) 在“允交汇点的U形转弯”［Allow U-turns］下拉列表中选择<br>任何路口[EveryWhere]</p>
 <p>(6) 在“输出图形类型”[Output Shape Type]下拉列表中选择 实际形状[True<br>Shape]</p>
 <p>(7) 选中“忽略无效位置”［Ignore Invalid<br>Locations］检查框。这样分析时将会忽略那些不在道路网络上的停靠点(事故点)。</p>
-<p>(8)<br>在“约束规则”[Restrictions]列表框中选择单行线[Oneway]。<img src="media/image21.png" alt="">{width=”2.9133858267716537in”<br>height=”2.9803149606299213in”}</p>
+<p>(8)<br>在“约束规则”[Restrictions]列表框中选择单行线[Oneway]。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_019.png-hexo" alt=""></p>
 <p>(9) 点击“确定”［OK］按钮。</p>
 <p>2.6 运行分析过程查找最近的服务设施</p>
-<p>（1） 在网络分析工具栏［Network<br>Analyst］上点击“求解”[Solve]按钮<img src="media/image11.png" alt="">{width=”0.2152777777777778in”<br>height=”0.20416666666666666in”}。分析结果－救援路径线状要素图层将在地图中显示，在“网络分析窗口”[Network<br>Analyst ]中“路径”[Route]目录下也会同时显示：</p>
-<p><img src="media/image22.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p>（1） 在网络分析工具栏［Network<br>Analyst］上点击“求解”[Solve]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt="">。分析结果－救援路径线状要素图层将在地图中显示，在“网络分析窗口”[Network<br>Analyst ]中“路径”[Route]目录下也会同时显示：</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_020.png-hexo" alt=""></p>
 <p>注意：只找到距事故地点最近四个消防队。</p>
 <p>(2) 选中四条路线，在网络分析工具栏[Network<br>Analyst]上点击“方向”［Directions］工具按钮可以显示每条救援线路的导航信息。</p>
-<p><img src="media/image23.png" alt="">{width=”4.224409448818897in”<br>height=”3.173228346456693in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_021.png-hexo" alt=""></p>
 <p>(3) 退出 ArcMap。</p>
-<h3 id="(三)_服务区分析_（计算服务区并生成起始－目的地OD成本矩阵）">(三) 服务区分析 （计算服务区并生成起始－目的地OD成本矩阵）</h3><p>通过以下操作，创建一系列的多边形，表示在指定时间内可以从某个设施到达的距离。这些多边形被称为服务区多边形。在正面的练习中，基于6个仓库创建其3分钟、5分钟、10分钟服务区。同时也可以发现某个服务区中有多少个商店。然后确定应该如何重新布局一个仓库以更好地为商店提供服务。此外，将生成一个起始－目的地(OD)成本矩阵，表示在10分钟内从仓库到其它商店的商品配送的成本。这个成本矩阵可用于后勤、物流配送、路线选择分析。</p>
+<h3 id="服务区分析">服务区分析</h3><p>（计算服务区并生成起始－目的地OD成本矩阵）</p>
+<p>通过以下操作，创建一系列的多边形，表示在指定时间内可以从某个设施到达的距离。这些多边形被称为服务区多边形。在正面的练习中，基于6个仓库创建其3分钟、5分钟、10分钟服务区。同时也可以发现某个服务区中有多少个商店。然后确定应该如何重新布局一个仓库以更好地为商店提供服务。此外，将生成一个起始－目的地(OD)成本矩阵，表示在10分钟内从仓库到其它商店的商品配送的成本。这个成本矩阵可用于后勤、物流配送、路线选择分析。</p>
 <p>3.1 数据准备</p>
 <p>（1）.双击ArcMap工程EX10_3.mxd，或从ArcMap中打开工程EX10_3.mxd.</p>
 <p>（2）.如果网络分析扩展模块（Network Analyst<br>Extension）已经启用（参考实验准备中的步骤）</p>
 <p>（3）<br>如果网络分析工具栏没有出现，则在工具栏显区点右键打开或执行菜单命令[自定义]&gt;&gt;[工具条],并点击［Network<br>Analyst］以显示网络分析工具栏。</p>
-<p><img src="media/image1.png" alt="">{width=”2.354330708661417in”<br>height=”0.2283464566929134in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_022.png-hexo" alt=""></p>
 <p>（4）如果网络分析窗口没有推开，则在网络分析工具栏中点击网络分析窗口按钮（上图红色区域），以打开网络分析窗口。</p>
 <p><strong>3.2 创建“服务区分析图层”</strong></p>
 <p>(1). 在网络分析工具栏[ Network Analyst]上点击下拉菜单[Network<br>Analyst],然后点击“新建服务区”[New Sercice Area]菜单命令</p>
-<p><img src="media/image24.png" alt="">{width=”2.5866141732283463in”<br>height=”1.1574803149606299in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_023.png-hexo" alt=""></p>
 <p>网络分析窗口[Network Analyst<br>Window]包含一个空列表，其中有四个类别：设施点[Facilities],面、线、点障碍、线障碍、面障碍</p>
-<p><img src="media/image25.png" alt="">{width=”2.1666666666666665in”<br>height=”4.03834208223972in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_024.png-hexo" alt=""></p>
 <p>此外，在图层列表[TOC]面板中新层了一个新的服务区分析图层组</p>
 <p><strong>3.3 加载服务设施图层</strong></p>
 <p>通过以下操作，将图层“仓库”[warehouses]设置服务设施，用于分析它们的服务区。</p>
 <p>在网络分析窗口[Network Analyst ]中右键点选Facilities(0)<br>树状结点，然后在右键菜单中点击“加载位置”[Load<br>Locations]命令。在出现的Load Location<br>对话框中，.将下拉菜单“加载自”设置为“Warehouse”，然后点击确定[OK]</p>
-<p><img src="media/image26.png" alt="">{width=”3.0196850393700787in”<br>height=”2.984251968503937in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_025.png-hexo" alt=""></p>
 <p>在网络分析窗口[Network Analyst<br>Window]中点击树状结点Facilities(6)左边的加号<br>(+)，可以显示设施列表，这些服务设施同时在地图上显示。</p>
-<p><img src="media/image27.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_026.png-hexo" alt=""></p>
 <p><strong>3.4 设置分析选项</strong></p>
 <p>通过以下操作指定基于驾车时间进行服务区分析的选项。计算每个服务设施的3个服务区多边形，一个是3分钟服务区，一个是5分钟服务区，一个是10分钟服务区。</p>
 <p>(1). 在网络分析窗口[Network Analyst<br>]中点击分析图层服务区属性按钮，打开分析图层属性对话框：</p>
-<p><img src="media/image28.png" alt="">{width=”0.9645669291338582in”<br>height=”1.8425196850393701in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_027.png-hexo" alt=""></p>
 <p>(2) 点击分析设置选项页［Analysis Settings］</p>
 <p>(3) 点击阻抗[Impedance]下拉列表，并选择 “驾车需时”[Drivetime<br>(Minutes)]</p>
 <p>(4) 在“默认分隔”[Default breaks]输入框中输入“3 5 10”(输入 3 5 10<br>,三个数字以窗格分隔，引号不需要输入)</p>
@@ -502,79 +485,78 @@
 <p>(6) 在“交叉点的U型转弯”下拉列表中选择“不允许”[Nowhere]</p>
 <p>(7) 在“限制”[Restrictions]列表框中选择单行线[Oneway]。</p>
 <p>(8) 选中“忽略无效位置”［Ignore Invalid Locations］检查框。</p>
-<p><img src="media/image29.png" alt="">{width=”2.9133858267716537in”<br>height=”2.87007874015748in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_028.png-hexo" alt=""></p>
 <p>(9). 点击“面生成”[Polygon Generation]选项页</p>
 <p>(10) 确认“生成面”[Generate Polygons]选项被选中 .</p>
 <p>(11) 多边形类型[Polygon<br>Type]选择为：“概化”[Generalized].(“概化”面生成的比较快，“详细的”面[Detailed]更精确但需要多一些时间)</p>
 <p>(12). 将“多个设施点选项”[Multiple Facilities<br>Options]单选项设置为“重叠”，这个选项生成的服务区可能会有相互重叠的部分。.</p>
 <p>(13) 将“叠置类型”[Overlap<br>Type]单选项设置为“环”[Rings],这样5分钟服务区中将会去除3分钟服务区的部分，10分钟服务区将只表示5-10分钟的服务区</p>
 <p>(14). 点击“应用”[Apply]按钮保存所做设置</p>
-<p><img src="media/image30.png" alt="">{width=”2.9488188976377954in”<br>height=”2.874015748031496in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_029.png-hexo" alt=""></p>
 <p>(15) 点击确定[OK]按钮，保存所做设置.</p>
 <p><strong>3.5 运行分析过程创建服务区</strong></p>
-<p>在“网络分析”工具栏[ Network Analyst]<br>中点击“求解”[Solve]工具按钮<img src="media/image31.png" alt="">{width=”0.31180555555555556in”<br>height=”0.2902777777777778in”}生成的服务区多边形。在地图及网络分析窗口[Network<br>Analyst<br>]中同时显示,结果是几个透明多边形图层，可以同时显示其下的道路网络，很明显地显示了每个服务设施基于现有道路网络状况的3分钟、5分钟、10分钟服务区。</p>
-<p><img src="media/image32.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p>在“网络分析”工具栏[ Network Analyst]<br>中点击“求解”[Solve]工具按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt="">生成的服务区多边形。在地图及网络分析窗口[Network<br>Analyst<br>]中同时显示,结果是几个透明多边形图层，可以同时显示其下的道路网络，很明显地显示了每个服务设施基于现有道路网络状况的3分钟、5分钟、10分钟服务区。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_030.png-hexo" alt=""></p>
 <p><strong>3.6 确定没有处在服务区内的商店</strong></p>
 <p>(1). 在TOC图层列表面板中将图层“Stores”移到最前面，以更好地显示此图层。</p>
 <p>(2) 执行菜单命令[选择-Selection]&gt;&gt;[根据位置选择- Select by<br>Location]</p>
 <p>(3) 如下图所示，在“根据位置选择”对话框中，</p>
-<p><img src="media/image33.png" alt="">{width=”2.0236220472440944in”<br>height=”2.783464566929134in”}</p>
-<p>(4)<br>点击“应用”[Apply]按钮，将会选择所有位于服务区内的商店。点击“关闭”[Close]按钮。</p>
-<p>(5)<br>在TOC图层列表面板中右键点击图层“Stores”，点击“选择”，再点击“切换选择”</p>
-<p>(6)<br>现在，选择集中显示了没有被任何服务区包含的所有商店的分布情况，可以基于此选择集重新布局现有仓库。.</p>
-<p><img src="media/image34.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
-<p>(7)<br>在TOC图层列表面板中右键点击图层“Stores”，在右键菜单中执行命令［选择集-Selctions］&gt;&gt;[清除已选择的要素－Clear<br>Selected Features]</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_031.png-hexo" alt=""></p>
+<p>(4)点击“应用”[Apply]按钮，将会选择所有位于服务区内的商店。点击“关闭”[Close]按钮。</p>
+<p>(5)在TOC图层列表面板中右键点击图层“Stores”，点击“选择”，再点击“切换选择”</p>
+<p>(6)现在，选择集中显示了没有被任何服务区包含的所有商店的分布情况，可以基于此选择集重新布局现有仓库。.</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_032.png-hexo" alt=""></p>
+<p>(7)在TOC图层列表面板中右键点击图层“Stores”，在右键菜单中执行命令［选择集-Selctions］&gt;&gt;[清除已选择的要素－Clear<br>Selected Features]</p>
 <p>3.7 将分布不合理的设施（仓库）重新布局</p>
 <p>(1).查看2号仓库－Warehouse<br>#2的服务区多边形，可以发现它的3分钟、5分钟、10分钟服务区内都没有商店，因此可以重新选择新的位置，以使2号仓库能够更好地为其它商店提供服务</p>
 <p>(2) 在网络分析窗口[Network Analyst ]中树状结点Facilities<br>(6)下选择2号仓库[Warehouse #2]</p>
 <p>(3) 使用网络分析工具栏上的“选择/移动网络位置”工具移动2号仓库Warehouse#2<br>到地图中心位置。如下图所示：</p>
-<p><img src="media/image35.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_033.png-hexo" alt=""></p>
 <p><strong>3.8 运行分析过程重新计算服务区</strong></p>
-<p>在“网络分析”工具栏[ Network Analyst]<br>中点击“求解”[Solve]工具按钮<img src="media/image31.png" alt="">{width=”0.31180555555555556in”<br>height=”0.2902777777777778in”}</p>
+<p>在“网络分析”工具栏[ Network Analyst]<br>中点击“求解”[Solve]工具按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt=""></p>
 <p>生成的服务区多边形：</p>
-<p><img src="media/image36.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_034.png-hexo" alt=""></p>
 <p>3.9 确认所有每商店归属于哪个服务区多边形</p>
-<p>(1).<br>在TOC图层列表面板中右键点击图层“Stores”，在右键菜单中执行命令：[连接和关联]&gt;&gt;[连接]</p>
+<p>(1) 在TOC图层列表面板中右键点击图层“Stores”，在右键菜单中执行命令：[连接和关联]&gt;&gt;[连接]</p>
 <p>(2) 按如下图所示进行设置：.</p>
-<p><img src="media/image37.png" alt="">{width=”2.0551181102362204in”<br>height=”2.9921259842519685in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_035.png-hexo" alt=""></p>
 <p>(3) 点击确定[OK]执行“连接”[join]操作</p>
 <p>(4) 在TOC面板中右键点击新生成的图层StoreswithPoly<br>，在右键菜单中执行命令“打开属性表”[Open Attribute Table].</p>
-<p><img src="media/image38.png" alt="">{width=”5.169291338582677in”<br>height=”2.779527559055118in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_036.png-hexo" alt=""></p>
 <p>每一行显示了商店的名称，以及这个商店位于哪个服务区内。可以基于这个数据表生成其它的信息，比如：仓库的3分钟服务区内商店的数目。</p>
 <p>(5) 关闭属性表</p>
 <p>可以将现有的服务设施（包含已经移动的2号仓库）数据导出为新的要素类（图层），方法如下：</p>
 <p>(6) 在网络分析窗口[Network Analyst ]中右键点击树状结点Facilities<br>(6)，在右键菜单中执行命令“导出数据”［Export<br>Data］，然后选择“所有要素”［All features］，并指定输出的文件名和位置。</p>
-<p><img src="media/image39.png" alt="">{width=”2.2086614173228347in”<br>height=”1.795275590551181in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_037.png-hexo" alt=""></p>
 <p>当ArcMap提示“是否要将新建的要素类加载到地图中”时，选择“否”.</p>
 <p>创建起始－目的地成本矩阵(Origin-Destination cost matrix)</p>
 <p><strong>3.10 创建OD 成本矩阵分析图层</strong></p>
 <p>(1) 在TOC面板中关闭图层.“Service Area”和“StoresWithinPoly”以更好的显示</p>
 <p>(2) 在网络分析工具栏.［Network Analyst］上执行菜单命令[创建OD<br>成本矩阵]</p>
 <p>在网络分析窗口[ Network Analyst<br>]中包含一个列表，显示“起始位置”[Origins],<br>“目的地点”[Destinations],“线”[ Lines]<br>和“点、线。面障碍障”［Barriers］分类列表。同时TOC面板中也加入了新生成的OD成本矩阵分析图层。</p>
-<p><img src="media/image40.png" alt="">{width=”2.2023807961504813in”<br>height=”4.114691601049869in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_038.png-hexo" alt=""></p>
 <p>3.11添加起始位置(O)rigin</p>
 <p>(1). 在网络分析窗口［Network Analyst ］中右键点击树状结点起始点Origins<br>(0)，然后在出现的右键菜单中点击“加载位置”［Load Locations］命令.</p>
 <p>(2) 在“加载自”[Load From]下拉列表中选择［ServiceArea\Facilities］<br>(如果没有完成服务区分析可以使用图层“Warehouses”.这样的话结果就会有差异)</p>
 <p>(3). 设置“只针对已选择的要素”[Selected Features<br>Only]检查框为未选中状态.</p>
 <p>(4) 在“位置定位”[Location Position]设置项，选择“使用网络位置字段”［Use<br>Network Location Fields］单选 按钮 ,<br>这样将允许ArcGIS使用服务区设施中已定位的位置作为起始位置，这样会快一点<br>(如果你加载的是图层Warehouses, 则需要使用[use Geometry]<br>选项,并设置容差值为50米.)</p>
-<p><img src="media/image41.png" alt="">{width=”2.9803149606299213in”<br>height=”2.952755905511811in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_039.png-hexo" alt=""></p>
 <p>(5) 点击“确定”[OK]按钮.</p>
 <p>在网络分析窗口[Network Analyst ]及地图中将显示6个起始位置<br>，把2号移动到2号仓库所在的服务区</p>
-<p><img src="media/image42.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_040.png-hexo" alt=""></p>
 <p>3.12 添加目的地(D)estinations</p>
 <p>将商店作为目的地</p>
 <p>(1) 在网络分析窗口［Network Analyst<br>］中右键点击树状结点Destinations(0)，然后在右键菜单中执行命令“加载位置”［Load<br>Locations］</p>
 <p>(2) 从“加载自”［Load From］下拉列表中选择图层Stores.</p>
 <p>(3) 在“位置分析属性”［Location Analysis Properties］列表中,<br>点击属性[property]Name 对应的列,［Feld］，从下拉列表中选择字段－<br>“NOM”。</p>
-<p><img src="media/image43.png" alt="">{width=”3.015748031496063in”<br>height=”2.97244094488189in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_041.png-hexo" alt=""></p>
 <p>(4) 点击“确定”[OK]按钮.</p>
 <p>现在，在网络分析窗口[Network Analyst<br>]中已经有21个目的地的名称列表，同时在地图中也显示了这21个目的地</p>
-<p><img src="media/image44.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_042.png-hexo" alt=""></p>
 <p><strong>3.13 设置分析选项</strong></p>
 <p>以下操作将指定基于时间（驱车需时）计算OD成本矩阵的参数。</p>
 <p>(1). 点击网络分析窗口[Network Analyst ]中［OD<br>成本矩阵］图层名称右边的图层属性按钮</p>
-<p>.</p>
-<p><img src="media/image45.png" alt="">{width=”1.047619203849519in”<br>height=”1.8809514435695538in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_043.png-wshunli" alt=""></p>
 <p>(2) 在图层属性对话框中点击“分析设置”[Analysis Settings]选项页</p>
 <p>(3) 点击“阻抗”［Impedance］下拉列表，选择 Drivetime(Minutes).</p>
 <p>(4) 在“默认中断值”［Default Cutoff<br>Value］输入框中输入10。这样将生成从每个仓库到其10分钟内可以到达的商店“起始－目的地”成本矩阵。</p>
@@ -584,25 +566,26 @@
 <p>(8) 在“限制”［Restrictions］列表中选择“单行线”[Oneway]规则.</p>
 <p>(9) 选中“忽略无效的位置”[Ignore Invalid Locations]</p>
 <p>(10) 点击“确定”[OK]按钮保存这些参数</p>
-<p><img src="media/image46.png" alt="">{width=”2.9448818897637796in”<br>height=”2.767716535433071in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_044.png-hexo" alt=""></p>
 <p><strong>3.14运行分析过程生成OD 成本矩阵</strong></p>
-<p>在网络分析［Network<br>Analyst］工具栏中点击“求解”［Solve］工具按钮<img src="media/image11.png" alt="">{width=”0.2152777777777778in”<br>height=”0.20416666666666666in”}.</p>
+<p>在网络分析［Network<br>Analyst］工具栏中点击“求解”［Solve］工具按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/3.png-hexo" alt="">.</p>
 <p>起始－目的地（OD）路线显示在地图中。这里显示的数据为27条线路。（由于你在3.7中移动2号仓库Werehouse<br>#2的位置可能与我的有偏移，这个数字不一定是27，但都属于正常的）</p>
-<p><img src="media/image47.png" alt="">{width=”6.336805555555555in”<br>height=”3.564583333333333in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_045.png-hexo" alt=""></p>
 <p>3.15 为商店合理分配仓库</p>
 <p>基于 OD 成本矩阵，可以判断哪些商店由哪个仓库提供服务会更理想。</p>
 <p>(1) 在网络分析窗口［Network Analyst ］中右键点击树状结点Lines(27)<br>，然后在出现的对话框执行命令“打开属性表”［Open Attribute Table］，打开OD<br>成本矩阵.</p>
 <p>(2)<br>属性表表示能在10分钟内从每个仓库到达的商店的“起始－目的地”成本矩阵。字段[OriginID]表示每个仓库的标识。字段［DestinationID］表示每个商店的标识。字段［DestinationRank］表示<br>级别，即每个仓库能够为各个商店基于时间开销进行划分的服务等级。比如，在下表中：对2号仓库Warehouse#2,<br>DestinationID 为32的商店的等级为1 ，而DestinationID为 31的商店的等级为2<br>，这是因为从2号仓库Warehouse#2,到商店DestinationID 32所需要的时间要少<br>(你的结果不一定与此完全相同.)</p>
-<p><img src="media/image48.png" alt="">{width=”6.031496062992126in”<br>height=”3.125984251968504in”}</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec10/exec10_046.png-hexo" alt=""></p>
 <p>OD<br>成本矩阵显示每个仓库所服务的那些商店在每条线路上的时间开销。某些商店在10分钟服务限定条件下可以由多个仓库提供配送服务。OD<br>成本矩阵可以用于后勤路线分析模型，以便进行优化选择。使用OD矩阵可改进商店配送及提供更好更快的物流服务。.</p>
-<h3 id="(四)_选做内容――创建用于进行道路网络分析的网络数据集"><span id="_Toc135759315" class="anchor"><span id="_Toc136017532" class="anchor"></span></span>(四) 选做内容――创建用于进行道路网络分析的网络数据集</h3><p>请参考 ESRI PDF 文档《Network_Analyst_Tutorial.pdf》的练习1～3</p>
+<h3 id="选做内容">选做内容</h3><p>――创建用于进行道路网络分析的网络数据集</p>
+<p>请参考 ESRI PDF 文档《Network_Analyst_Tutorial.pdf》的练习1～3</p>
 <p>(1) Exercise 1: Creating a Shapeﬁle based Network Dataset</p>
 <p>基于 Shape文件创建网络数据集</p>
 <p>(1) Exercise 2: Creating a geodatabase network dataset</p>
 <p>基于地理数据库――Geodatabase创建网络数据集</p>
 <p>(1) Exercise 3: Creating a multimodal network dataset</p>
 <p>实验数据：安装ArcGIS Tutorial 光盘内容后可在 ArcTutor\Network_Analyst<br>目录下找到。</p>
-<h2 id="四、实验报告要求"><strong>四、实验报告要求</strong></h2><p>实验报告包括以下内容：</p>
+<h2 id="实验报告要求"><strong>实验报告要求</strong></h2><p>实验报告包括以下内容：</p>
 <ol>
 <li><p>网络分析中对道路网络数据有何要求，如何得到符合网络分析要求的街道网络数据？</p>
 </li>
@@ -765,7 +748,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十、网络分析"><span class="nav-number">1.</span> <span class="nav-text">练习十、网络分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、实验目的"><span class="nav-number">1.1.</span> <span class="nav-text">一、实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、实验准备"><span class="nav-number">1.2.</span> <span class="nav-text">二、实验准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、实验内容及步骤"><span class="nav-number">1.3.</span> <span class="nav-text">三、实验内容及步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#(一)_最佳路径分析"><span class="nav-number">1.3.1.</span> <span class="nav-text">(一) 最佳路径分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#(二)_最近服务设施分析（查找最近的消防队）"><span class="nav-number">1.3.2.</span> <span class="nav-text">(二) 最近服务设施分析（查找最近的消防队）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#(三)_服务区分析_（计算服务区并生成起始－目的地OD成本矩阵）"><span class="nav-number">1.3.3.</span> <span class="nav-text">(三) 服务区分析 （计算服务区并生成起始－目的地OD成本矩阵）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#(四)_选做内容――创建用于进行道路网络分析的网络数据集"><span class="nav-number">1.3.4.</span> <span class="nav-text">(四) 选做内容――创建用于进行道路网络分析的网络数据集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、实验报告要求"><span class="nav-number">1.4.</span> <span class="nav-text">四、实验报告要求</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十、网络分析"><span class="nav-number">1.</span> <span class="nav-text">练习十、网络分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验目的"><span class="nav-number">1.1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验准备"><span class="nav-number">1.2.</span> <span class="nav-text">实验准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容及步骤"><span class="nav-number">1.3.</span> <span class="nav-text">实验内容及步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最近服务设施分析"><span class="nav-number">1.3.1.</span> <span class="nav-text">最近服务设施分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务区分析"><span class="nav-number">1.3.2.</span> <span class="nav-text">服务区分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选做内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">选做内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验报告要求"><span class="nav-number">1.4.</span> <span class="nav-text">实验报告要求</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
