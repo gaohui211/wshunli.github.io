@@ -37,14 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="练习三、地图配准操作1.对无坐标信息的地形图（图片格式）进行地图配准操作
+<meta name="description" content="练习三、地图配准操作
+1.对无坐标信息的地形图（图片格式）进行地图配准操作
 2.编辑器的使用（点要素、线要素、多边形要素的数字化）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIS基础软件及操作(三)">
 <meta property="og:url" content="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-三/index.html">
 <meta property="og:site_name" content="CirGIS">
-<meta property="og:description" content="练习三、地图配准操作1.对无坐标信息的地形图（图片格式）进行地图配准操作
+<meta property="og:description" content="练习三、地图配准操作
+1.对无坐标信息的地形图（图片格式）进行地图配准操作
 2.编辑器的使用（点要素、线要素、多边形要素的数字化）">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_001.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_000.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/1.png-hexo">
@@ -53,7 +56,7 @@
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_004.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_005.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_007.png-wshunli">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_006.png-no">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_006.png-cirgis">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_008.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_009.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_010.png-hexo">
@@ -64,10 +67,11 @@
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_016.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_017.png-hexo">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_018.png-hexo">
-<meta property="og:updated_time" content="2016-01-14T09:09:55.728Z">
+<meta property="og:updated_time" content="2016-01-14T12:14:07.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIS基础软件及操作(三)">
-<meta name="twitter:description" content="练习三、地图配准操作1.对无坐标信息的地形图（图片格式）进行地图配准操作
+<meta name="twitter:description" content="练习三、地图配准操作
+1.对无坐标信息的地形图（图片格式）进行地图配准操作
 2.编辑器的使用（点要素、线要素、多边形要素的数字化）">
 
 
@@ -284,7 +288,8 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="练习三、地图配准操作">练习三、地图配准操作</h1><p>1.对无坐标信息的地形图（图片格式）进行地图配准操作</p>
+        <span itemprop="articleBody"><h1 id="练习三、地图配准操作">练习三、地图配准操作</h1><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo" alt=""></p>
+<p>1.对无坐标信息的地形图（图片格式）进行地图配准操作</p>
 <p>2.编辑器的使用（点要素、线要素、多边形要素的数字化）</p>
 <a id="more"></a>
 <p>本例主要介绍如何给无坐标信息的地形图（图片格式）添加坐标信息。带有坐标信息的图片文件格式有tiff<br>和grid 格式(此种情况可跳过1、2、3步，从第4步开始)，其余如jpg、bmp、png<br>等都不带有坐标信息。</p>
@@ -300,7 +305,7 @@
 <h2 id="第4步_设置配准连接">第4步 设置配准连接</h2><p>打开<br>ArcMap，加载地形图图片数据。右击菜单栏空白处，添加地理配准工具条。首先，将地理配准工具条下的【自动校正】的勾取消；</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_007.png-wshunli" alt=""></p>
 <p>使用【添加控制点】工具，对四角点进行配准；</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_006.png-no" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_006.png-cirgis" alt=""></p>
 <p>点击某一角点后，右击任意位置，选择【输入经纬度】， 将步骤<br>1中的经纬度坐标输入，依次设置好四角点的连接关系。注：若内图廓四边不水平或垂直，必须先将该图片整平后方能进行配准。本例已整平处理。</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_008.png-hexo" alt=""></p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec3/exec3_009.png-hexo" alt=""></p>
