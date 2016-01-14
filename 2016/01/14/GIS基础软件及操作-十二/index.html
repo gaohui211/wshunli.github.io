@@ -1,0 +1,939 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="ArcGIS," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="练习十二、 ArcMap制图－地图版面设计
+设置地图符号－各种渲染方式的使用
+
+使用ArcMap Layout（布局）界面制作专题地图
+
+将各种地图元素添加到地图版面中
+
+
+提示：在以下练习过程中，请时常注意保存地图文档
+渲染图层要素－唯一值符号在ArcMap中新建地图文档，加载 [空间分析] 扩展模块及[空间分析工具栏]
+加载图层：[省会城市、地级市驻地、主要公路、国界线、省级行政区、Hills">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIS基础软件及操作(十二)">
+<meta property="og:url" content="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十二/index.html">
+<meta property="og:site_name" content="CirGIS">
+<meta property="og:description" content="练习十二、 ArcMap制图－地图版面设计
+设置地图符号－各种渲染方式的使用
+
+使用ArcMap Layout（布局）界面制作专题地图
+
+将各种地图元素添加到地图版面中
+
+
+提示：在以下练习过程中，请时常注意保存地图文档
+渲染图层要素－唯一值符号在ArcMap中新建地图文档，加载 [空间分析] 扩展模块及[空间分析工具栏]
+加载图层：[省会城市、地级市驻地、主要公路、国界线、省级行政区、Hills">
+<meta property="og:image" content="http://wshunli.github.io/media/image1.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image2.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image3.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image4.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image5.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image6.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image7.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image8.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image9.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image10.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image11.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image12.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image13.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image14.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image15.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image16.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image17.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image18.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image19.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image20.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image21.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image22.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image23.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image24.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image25.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image26.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image27.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image28.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image29.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image30.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image31.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image32.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image33.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image34.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image35.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image36.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image37.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image3.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image38.png">
+<meta property="og:image" content="http://wshunli.github.io/media/image39.png">
+<meta property="og:updated_time" content="2016-01-14T08:34:12.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GIS基础软件及操作(十二)">
+<meta name="twitter:description" content="练习十二、 ArcMap制图－地图版面设计
+设置地图符号－各种渲染方式的使用
+
+使用ArcMap Layout（布局）界面制作专题地图
+
+将各种地图元素添加到地图版面中
+
+
+提示：在以下练习过程中，请时常注意保存地图文档
+渲染图层要素－唯一值符号在ArcMap中新建地图文档，加载 [空间分析] 扩展模块及[空间分析工具栏]
+加载图层：[省会城市、地级市驻地、主要公路、国界线、省级行政区、Hills">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> GIS基础软件及操作(十二) | CirGIS </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?3696b359e9603514a5baa48227bc6464";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">CirGIS</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-arcgis">
+          <a href="/arcgis" rel="section">
+            <i class="menu-item-icon icon-next-arcgis"></i> <br />
+            ArcGIS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ttiy7zBWfUFbxYXcsTrY','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              GIS基础软件及操作(十二)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-14T14:56:44+08:00" content="2016-01-14">
+            2016-01-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/细细品味ArcGIS/" itemprop="url" rel="index">
+                  <span itemprop="name">细细品味ArcGIS</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/14/GIS基础软件及操作-十二/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/GIS基础软件及操作-十二/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+	
+      </div>
+
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="练习十二、_ArcMap制图－地图版面设计">练习十二、 ArcMap制图－地图版面设计</h1><ol>
+<li><p>设置地图符号－各种渲染方式的使用</p>
+</li>
+<li><p>使用ArcMap Layout（布局）界面制作专题地图</p>
+</li>
+<li><p>将各种地图元素添加到地图版面中</p>
+</li>
+</ol>
+<p>提示：在以下练习过程中，请时常注意保存地图文档</p>
+<h2 id="渲染图层要素－唯一值符号">渲染图层要素－唯一值符号</h2><p>在ArcMap中新建地图文档，加载 [空间分析] 扩展模块及[空间分析工具栏]</p>
+<p>加载图层：[<strong>省会城市、地级市驻地、主要公路、国界线、省级行政区、Hillshade_10k</strong>]，将地图文档保存到<br>Ex12下，名称为：ChinaMap</p>
+<p>在[图层列表面板]（TOC）中右键点击图层：[省级行政区]，执行[属性]命令，在出现的[图层属性]对话框中，点击[符号系统]选项页，如下图所示，渲染参数设置为：[类别－&gt;唯一值，字段值设置为：DZM<br>] 。点击[添加全部值]按钮，将&lt;所有其它值&gt;前检查框的勾去掉。</p>
+<p><img src="media/image1.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p>点击其他所有值前面的颜色方框，右键点击选择[所有符号的属性]命令。</p>
+<p>在[符号选择器]中，将[轮廓线颜色] 设置为 [无颜色]：</p>
+<p><img src="media/image2.png" alt="">{width=”2.84251968503937in”<br>height=”2.7598425196850394in”}</p>
+<p>点击[显示-Display]选项页，将图层透明度设置为：[50%]:</p>
+<p><img src="media/image3.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p>现在图层：省级行政区根据字段[DZM]进行唯一值渲染，且有伪三维效果（关闭[省级行政区]和[Hillshade_10k]之外的其它所有图层）</p>
+<p><img src="media/image4.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>关闭并移除图层：[Hillshade_10k]</p>
+<p>显示图层：[国界线]，在[TOC]中右键点击图层：[国界线]，执行[属性]命令，在出现的[图层属性]对话框中将渲染方式设置为<br>[单一符号]，点击[符号设置]按钮（如下图1）</p>
+<p><img src="media/image5.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p>在[ 符号选择器]对话框中选择一种线状符号（如下图所示）</p>
+<p><img src="media/image6.png" alt="">{width=”2.84251968503937in”<br>height=”2.7598425196850394in”}</p>
+<p>显示图层:[地级城市驻地],并参考以上操作及下图所示,设置图层渲染方式::</p>
+<p><img src="media/image7.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p><img src="media/image8.png" alt="">{width=”2.84251968503937in”<br>height=”2.7598425196850394in”}</p>
+<h2 id="标注图层要素">标注图层要素</h2><p>在TOC中，右键点击图层：[省级行政区]，执行[属性]命令，在出现的[图层属性]对话框中，点击[标注]选项页，确认标注字段为：[Name],点击<br>[符号]按钮</p>
+<p><img src="media/image9.png" alt="">{width=”3.309523184601925in”<br>height=”2.7025984251968502in”}</p>
+<p>在[符号选择器]对话框中，将标注字体大小设置为: [12],<br>点击[编辑符号]按钮(如下图所示):</p>
+<p><img src="media/image10.png" alt="">{width=”2.84251968503937in”<br>height=”2.7598425196850394in”}</p>
+<p>在[编辑器]对话框中, 点击[掩模]选项页, 并将大小设置为: [2]:</p>
+<p><img src="media/image11.png" alt="">{width=”3.5887095363079613in” height=”2.5in”}</p>
+<p>连续三次[确定]后退出以上对话框,返回ArcMap 视图界面.</p>
+<p>显示图层: [地级城市驻地],并参考以上方法及下图效果进行标注:</p>
+<p><img src="media/image12.png" alt="">{width=”5.291338582677166in”<br>height=”2.9763779527559056in”}</p>
+<h2 id="渲染图层要素—分类渲染">渲染图层要素—分类渲染</h2><p>在TOC中,右键点击图层[省级行政区],<br>执行[属性]命令,然后在[图层属性]对话框中点击[符号系统]选项页,将渲染方式设置为:<br>[分级色彩, 字段: Area,分类:5, 自然间隔分类法]</p>
+<p><img src="media/image13.png" alt="">{width=”3.1929133858267718in”<br>height=”2.606299212598425in”}</p>
+<p>在上图中,点击[分类]按钮可选择不同的分类方法:</p>
+<p><img src="media/image14.png" alt="">{width=”3.4606299212598426in”<br>height=”2.6535433070866143in”}</p>
+<p>参照以上操作过程,对图层[省级行政区]基于字段[Area]运用不同的分类方法(等间隔、分位数、自然间隔、标准差)，比较不同的分类法进行分类的意义。</p>
+<p>自然间隔分类:</p>
+<p><img src="media/image15.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>相等间隔分类渲染：</p>
+<p><img src="media/image16.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>分位数分类渲染：</p>
+<p><img src="media/image17.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>标准差分类渲染：</p>
+<p><img src="media/image18.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<h2 id="渲染图层要素—点密度渲染">渲染图层要素—点密度渲染</h2><p>参照前面的步骤，对图层：[省级行政区]进行点密度渲染，如下图所示：<img src="media/image19.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p>根据人口字段：POPU计算点密度</p>
+<p><img src="media/image20.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<h2 id="渲染图层要素—图表渲染">渲染图层要素—图表渲染</h2><p>参照前面的步骤，对图层：[省级行政区]进行点密度渲染，如下图所示：</p>
+<p><img src="media/image21.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<p>根据1998GDP、1999GDP、2000GDP属性生成柱状图渲染方式</p>
+<p><img src="media/image22.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<h2 id="创建地图版面">创建地图版面</h2><p>在上一步的基础上进行，将图层[省级行政区]的渲染方式恢复为[唯一值渲染，基于NAME字段]，如下图所示：</p>
+<p><img src="media/image23.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>在ArcMap中，点击<img src="media/image24.png" alt="">{width=”0.7677165354330708in”<br>height=”0.2204724409448819in”}按钮切换到布局视图界面。</p>
+<p>执行菜单命令：[文件]&gt;&gt;[页面和打印设置]，在对话框中设置纸张大小和方向，这里请将纸张方向设置为横向（汉化版的ArcMap翻译有误）</p>
+<p><img src="media/image25.png" alt="">{width=”2.84251968503937in”<br>height=”3.090551181102362in”}</p>
+<p>设置完成后，可以看到在布局视图界面下，地图版面已变成为横向，且当前数据框已经添加到地图版面中。</p>
+<p><img src="media/image26.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<p>通过当前数据框中的[大小和位置]选项页可以精确设置[数据框]在地图版面中的位置或大小。（在版面视图界面下，右键点击[数据框]，然后执行<br>[属性]命令，打开如下的窗口）</p>
+<p><img src="media/image27.png" alt="">{width=”2.625984251968504in”<br>height=”3.543307086614173in”}</p>
+<p>通过[框架]选项页可以在当前数据框周围添加图框，及设置图框的式样：</p>
+<p><img src="media/image28.png" alt="">{width=”2.625984251968504in”<br>height=”3.543307086614173in”}</p>
+<p>通过标准工具栏上的[放大、缩小、平移]按钮，可以调整地图版面中数据框的显示比例、范围，如下图所示：适当调整使数据只显示西南部分。</p>
+<p><img src="media/image29.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<h2 id="1-_添加各种元素到地图版面中">1.   添加各种元素到地图版面中</h2><pre><code><span class="number">2.</span>  <span class="preprocessor">### <span class="number">7.1</span> 制图元素--图表：</span>
+</code></pre><p>在地图版面中可以插入统计图表，可以根据属性数据生成统计图表（类似Excel电子表格软件的操作）然后插入到地图版面中。视图&gt;&gt;图表&gt;&gt;创建图表</p>
+<h3 id="制图元素－文字">制图元素－文字</h3><p>执行菜单命令：[插入]&gt;&gt;[标题]，修改地图标题的属性，设置合适的字号、字体</p>
+<p><img src="media/image30.png" alt="">{width=”2.7401574803149606in”<br>height=”2.811023622047244in”}</p>
+<p><img src="media/image31.png" alt="">{width=”6.75in” height=”3.796527777777778in”}</p>
+<h3 id="制图元素–图片或照片">制图元素–图片或照片</h3><p>执行菜单命令[插入]&gt;&gt;[图像]，浏览到Ex12文件夹，将logo.gif<br>插入到当前地图版面中来，调整大小及位置</p>
+<h3 id="制图元素—比例尺">制图元素—比例尺</h3><p>执行菜单命令[插入]&gt;&gt;[比例尺]，可以选择比例尺样式，及设定比例尺参数，如下图所示：</p>
+<p><img src="media/image32.png" alt="">{width=”2.1929133858267718in”<br>height=”2.704724409448819in”}<img src="media/image33.png" alt="">{width=”3.4803149606299213in”<br>height=”3.094488188976378in”}</p>
+<p>（在地图版面中双击已添加的“比例尺”，修改其属性）</p>
+<h3 id="制图元素――图例">制图元素――图例</h3><p>通过执行菜单命令：[插入]&gt;&gt;[图例]，向地图版面中加入图例，使用[图例向导]设置图例各种参数</p>
+<p><img src="media/image34.png" alt="">{width=”3.5551181102362204in”<br>height=”2.9448818897637796in”}</p>
+<p>点击下一步。</p>
+<p><img src="media/image35.png" alt="">{width=”3.562992125984252in”<br>height=”2.9488188976377954in”}</p>
+<h3 id="制图元素――指北针">制图元素――指北针</h3><p>通过执行菜单命令：[插入]&gt;&gt;[指北针]，向地图版面中加入指北针</p>
+<p><img src="media/image36.png" alt="">{width=”2.783464566929134in”<br>height=”2.4763779527559056in”}</p>
+<h3 id="制图元素――数据表">制图元素――数据表</h3><p>数据表如果要添加到地图版面中，可以先将数据表打开，然后在数据表浏览窗口中点选项，在出现的右键菜单中执行[把表加到布局中]命令，如下图所示：</p>
+<p><img src="media/image37.png" alt="">{width=”6.75in” height=”3.497916666666667in”}</p>
+<p>点击，表选项&gt;&gt;将表添加到布局</p>
+<p> 可以通过[图层属性]或[属性表属性]对话框设置可见字段或别名：如下</p>
+<p><img src="media/image3.png" alt="">{width=”3.6496062992125986in”<br>height=”2.9803149606299213in”}</p>
+<h2 id="打印输出地图">打印输出地图 </h2><p>制作好的地图可以导出为多种文件格式：比如JPG，PDF等。</p>
+<p>执行菜单命令：[文件]&gt;&gt;[导出地图]</p>
+<p><img src="media/image38.png" alt="">{width=”3.1023622047244093in”<br>height=”4.094488188976378in”}</p>
+<p><img src="media/image39.png" alt="">{width=”4.818897637795276in”<br>height=”4.708661417322834in”}</p>
+<p>如果要进行出版印刷可以通过ArcGIS内置的ArcPress 实现分色打印</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/14/GIS基础软件及操作-十一/" rel="next">GIS基础软件及操作(十一)</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+            <!-- 多说热评文章-->
+            <p>热评文章</p>
+            <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/01/14/GIS基础软件及操作-十二/"
+                   data-title="GIS基础软件及操作(十二)" data-url="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十二/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/favicon.ico" alt="CirGIS" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">CirGIS</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wshunli" target="_blank">Github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wshunli" target="_blank">Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Others</p>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.cnblogs.com/wangshunli" target="_blank">博客园</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://wangshunli.lofter.com" target="_blank">Lofter</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十二、_ArcMap制图－地图版面设计"><span class="nav-number">1.</span> <span class="nav-text">练习十二、 ArcMap制图－地图版面设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图层要素－唯一值符号"><span class="nav-number">1.1.</span> <span class="nav-text">渲染图层要素－唯一值符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标注图层要素"><span class="nav-number">1.2.</span> <span class="nav-text">标注图层要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图层要素—分类渲染"><span class="nav-number">1.3.</span> <span class="nav-text">渲染图层要素—分类渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图层要素—点密度渲染"><span class="nav-number">1.4.</span> <span class="nav-text">渲染图层要素—点密度渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图层要素—图表渲染"><span class="nav-number">1.5.</span> <span class="nav-text">渲染图层要素—图表渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建地图版面"><span class="nav-number">1.6.</span> <span class="nav-text">创建地图版面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_添加各种元素到地图版面中"><span class="nav-number">1.7.</span> <span class="nav-text">1.   添加各种元素到地图版面中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素－文字"><span class="nav-number">1.7.1.</span> <span class="nav-text">制图元素－文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素–图片或照片"><span class="nav-number">1.7.2.</span> <span class="nav-text">制图元素–图片或照片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素—比例尺"><span class="nav-number">1.7.3.</span> <span class="nav-text">制图元素—比例尺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素――图例"><span class="nav-number">1.7.4.</span> <span class="nav-text">制图元素――图例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素――指北针"><span class="nav-number">1.7.5.</span> <span class="nav-text">制图元素――指北针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制图元素――数据表"><span class="nav-number">1.7.6.</span> <span class="nav-text">制图元素――数据表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打印输出地图"><span class="nav-number">1.8.</span> <span class="nav-text">打印输出地图 </span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> 
+
+<div class="busuanzi" align="center">
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>.
+
+<script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+
+    function addZero(num,n){               
+    	return (Array(n).join(0) + num).slice(-n);             
+	}
+
+</script>
+	<script type="text/javascript" language="javascript">
+    	function setTime() {
+        // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示9月，得写8才行，如下
+        var create_time = Math.round(new Date(Date.UTC(2015, 8, 15, 1,33,18))
+                .getTime() / 1000);
+        // 当前时间秒数,增加时区的差异
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0]*365+ currentTime[1] + '天'
+                + addZero(currentTime[2],2) + '时' + addZero(currentTime[3],2) + '分' + addZero(currentTime[4],2)
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+</script>
+   博客已萌萌哒运行：<span id="htmer_time"></span>
+
+
+
+
+</div>
+
+
+
+<div class="website-details" align="center">
+  托管于<a class="github-link" href="https://github.com/wshunli">GitHub</a> & <a class="gitcafe-link" href="https://gitcafe.com/wshunli">GitCafe</a>.
+  <a class="qiniu-link" href="https://portal.qiniu.com/signup?code=3lmfxlfwo25w2">七牛云</a>提供文件储存服务.
+  <a class="baidu-link" href="http://tongji.baidu.com/web/welcome/ico?s=3696b359e9603514a5baa48227bc6464">百度统计</a>提供网站统计服务.
+  <a class="dns-link" href="https://www.dnspod.cn/Domain">DNSPod</a>提供DNS解析服务.
+</div>
+
+<div class="hexo-by" align="center">
+
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+
+  <span class="author" itemprop="copyrightHolder">CirGIS</span>.
+
+  由 <a class="hexo-link" href="https://github.com/iissnan/hexo-theme-next">Hexo</a>  强力驱动.
+  Theme By <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a>.
+
+</div>
+
+<div class="copyright" align="center">
+  
+  Made with
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  by wshunli.
+  
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wangshunli"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+     
+  	<script src="/js/ua-parser.min.js"></script>
+  	<script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+
+
+</body>
+</html>

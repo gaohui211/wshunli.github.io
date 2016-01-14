@@ -51,12 +51,12 @@ Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Ma
 
 超快速度 Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。
 支持 Markdown Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客4.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客5.png-hexo">
-<meta property="og:updated_time" content="2016-01-14T04:31:45.234Z">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客1.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客2.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客4.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客5.png-hexo">
+<meta property="og:updated_time" content="2016-01-14T05:30:56.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建Github静态博客">
 <meta name="twitter:description" content="前言第一篇文章献给Hexo。
@@ -310,13 +310,13 @@ Enter file <span class="keyword">in</span> which to save the key (<span class="r
 然后系统会要你输入加密串（Passphrase）：
 Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;
 Enter same passphrase <span class="string">again:</span>&lt;再次输入加密串&gt;
-</code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客1.png-hexo" alt=""></p>
+</code></pre><p>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客1.png-hexo" alt=""></p>
 <h2 id="添加SSH_Key到GitHub：">添加SSH Key到GitHub：</h2><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
 <p>用文本编辑工具打开id_rsa.pub文件，如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
 <p>在GitHub的主页上点击头像再点击设置按钮：settings：  </p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客2.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客2.png-hexo" alt=""></p>
 <p>选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：  </p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客3.png-hexo" alt=""> </p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客3.png-hexo" alt=""> </p>
 <h2 id="测试一下">测试一下</h2><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
 <pre><code><span class="variable">$ </span>ssh -<span class="constant">T </span>git<span class="variable">@github</span>.com
 </code></pre><p>如果是下面的反应：</p>
@@ -462,10 +462,10 @@ git pull
 <p>如果next的默认设置不能满足需要的话，你可以修改 <code>/themes/next/</code>下的配置文件_config.yml来定制。</p>
 <p>NexT - an elegant theme for Hexo.<br><a href="http://theme-next.iissnan.com" target="_blank" rel="external">http://theme-next.iissnan.com</a>  </p>
 <h1 id="安装插件">安装插件</h1><p>Plugins | Hexo <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></p>
-<h2 id="多说评论系统">多说评论系统</h2><p>多说 - 社会化评论系统<a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a><br>1.登录后在首页选择 “我要安装”。<br>2.创建站点，填写站点相关信息。多说域名 这一栏填写的即是你的 duoshuo_shortname，如图：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客4.png-hexo" alt=""><br>3.创建站点完成后在站点配置文件 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值。 </p>
+<h2 id="多说评论系统">多说评论系统</h2><p>多说 - 社会化评论系统<a href="http://duoshuo.com/" target="_blank" rel="external">http://duoshuo.com/</a><br>1.登录后在首页选择 “我要安装”。<br>2.创建站点，填写站点相关信息。多说域名 这一栏填写的即是你的 duoshuo_shortname，如图：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客4.png-hexo" alt=""><br>3.创建站点完成后在站点配置文件 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值。 </p>
 <p>例如：  </p>
 <pre><code><span class="attribute">duoshuo_shortname</span>: <span class="string">iissnan-notes</span>
-</code></pre><h2 id="百度统计">百度统计</h2><p>1.登录 <a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>，定位到站点的代码获取页面<br>2.复制 hm.js? 后面那串统计脚本 id，如：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客5.png-hexo" alt=""><br>3.编辑 站点配置文件，新增字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。</p>
+</code></pre><h2 id="百度统计">百度统计</h2><p>1.登录 <a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>，定位到站点的代码获取页面<br>2.复制 hm.js? 后面那串统计脚本 id，如：<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/Hexo搭建Github静态博客5.png-hexo" alt=""><br>3.编辑 站点配置文件，新增字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。</p>
 <h2 id="Swiftype_搜索">Swiftype 搜索</h2><p>使用 Swiftype 之前需要前往 Swiftype 配置一个搜索引擎。<br>然后，编辑 站点配置文件，新增 <code>swiftype_key</code> 字段，值为你的 swiftype 搜索引擎的 key。</p>
 <h1 id="优化Hexo">优化Hexo</h1><h2 id="404页面">404页面</h2><p>在<code>\themes\next\source</code>添加404.html即可</p>
 <h2 id="使用七牛做图床">使用七牛做图床</h2><p>推荐使用QRSBox  </p>
@@ -572,7 +572,7 @@ git pull
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
