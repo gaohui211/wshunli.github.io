@@ -43,7 +43,7 @@
 <meta property="og:url" content="http://wshunli.github.io/2016/04/24/全站启用HTTPS/index.html">
 <meta property="og:site_name" content="CirGIS">
 <meta property="og:description" content="使用CloudFlare做DNS解析和CDN加速。全站启用HTTPS。以后有时间详细介绍、要专心考研了。">
-<meta property="og:updated_time" content="2016-04-24T11:20:25.748Z">
+<meta property="og:updated_time" content="2016-04-25T04:12:13.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全站启用HTTPS">
 <meta name="twitter:description" content="使用CloudFlare做DNS解析和CDN加速。全站启用HTTPS。以后有时间详细介绍、要专心考研了。">
@@ -242,22 +242,26 @@
 
       
         <span itemprop="articleBody"><p>使用CloudFlare做DNS解析和CDN加速。<br>全站启用HTTPS。<br>以后有时间详细介绍、要专心考研了。</p>
-<a id="more"></a></span>
+<a id="more"></a>
+<hr>
+<p>因为免费的七牛云储存不支持HTTPS访问，易出现12306证书错误，<br>而且据百度云观测出现部分地区无法访问。<br>多说评论头像有问题，可以改用Disqus解决。<br>取消CloudFlare的使用，改回原来的CloudXNS。</p>
+<p>在本机测试CloudFlare的CDN还是有一定作用的，<br>ping值由原来的200ms降到50ms左右。</p>
+</span>
 
 
 <div id="AllanboltSignature">
 			<p id="PSignature" style="
             border-top: #e0e0e0 2px dashed; border-right: #e0e0e0 2px dashed; border-bottom: #e0e0e0 2px dashed; border-left: #e0e0e0 2px dashed;
             padding-top: 5px;padding-right: 10px;padding-bottom: 20px;padding-left: 60px;
-            background: url(https://7xqqh4.com1.z0.glb.clouddn.com/ico40.png) #F5F5F5 no-repeat 1% 50%;
+            background: url(http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png) #F5F5F5 no-repeat 1% 50%;
             font-family: 微软雅黑; font-size:12px;">
 				<br> 作者：
 				<a href="http://resume.wshunli.com/" target="_blank">王顺利</a>
-				<br> 出处： CirGIS 
-					<a href="http://www.wshunli.com/" target="_blank"> http://www.wshunli.com</a>
-				<br> 链接：
+				<br> 出处：
+					<a href="http://www.wshunli.com/" target="_blank">http://www.wshunli.com</a>
+				<br> 原文：
 				<a href="" target="_blank"><span id="mycopyright" ></span></a>
-                <br> 本文版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接，否则保留追究法律责任的权利。
+                <br> 本文版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接。
 				
 			</p>
 </div>
@@ -501,8 +505,8 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
 <div class="website-details" align="center">
   托管于<a class="github-link" href="https://github.com/wshunli" target="_blank">GitHub</a> & <a class="coding-link" href="https://coding.net" target="_blank">Coding</a>.
-  <a class="qiniu-link" href="https://portal.qiniu.com/signup?code=3lmfxlfwo25w2" target="_blank">七牛云存储</a>提供文件储存服务.
-  <a class="cnd-link" href="https://www.cloudflare.com" target="_blank">CloudFlare</a>提供CDN服务.
+  <a class="qiniu-link" href="https://portal.qiniu.com/signup?code=3lmfxlfwo25w2" target="_blank">七牛云</a>提供文件储存服务.
+  <a class="cnd-link" href="https://www.cloudxns.net" target="_blank">CloudXNS</a>提供DNS解析服务.
   <a class="baidu-link" href="http://tongji.baidu.com/web/welcome/ico?s=3696b359e9603514a5baa48227bc6464" target="_blank">百度统计</a>提供网站统计服务.
 </div>
 
