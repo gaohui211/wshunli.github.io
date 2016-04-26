@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #260bff;
+  background: #ff8aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2359,6 +2359,9 @@ hr {
     float: none;
     padding: 0 10px;
   }
+}
+.container .main-inner {
+  padding-bottom: 30px;
 }
 @media (max-width: 767px) {
   .container .main-inner {
