@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,14 +23,45 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="CirGIS,wshunli" />
@@ -34,7 +70,16 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+  <link rel="alternate" href="/atom.xml" title="CirGIS" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
 
 
 <meta name="description">
@@ -48,10 +93,18 @@
 <meta name="twitter:description">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'post'
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
   };
 </script>
 
@@ -60,16 +113,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -83,22 +129,34 @@
 
 
 
-  <div class="container one-column 
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">CirGIS</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -112,12 +170,14 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
           </a>
         </li>
@@ -125,7 +185,9 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -133,7 +195,9 @@
         
         <li class="menu-item menu-item-arcgis">
           <a href="/arcgis" rel="section">
-            <i class="menu-item-icon icon-next-arcgis"></i> <br />
+            
+              <i class="menu-item-icon fa fa-map fa-fw"></i> <br />
+            
             ArcGIS
           </a>
         </li>
@@ -141,7 +205,9 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
             分类
           </a>
         </li>
@@ -149,7 +215,9 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
           </a>
         </li>
@@ -157,13 +225,14 @@
         
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-next-about"></i> <br />
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
             关于
           </a>
         </li>
       
 
-      
       
     </ul>
   
@@ -176,69 +245,95 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/24/全站启用HTTPS/" itemprop="url">
-                全站启用HTTPS
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-24T19:01:20+08:00" content="2016-04-24">
-            2016-04-24
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/HTTPS/" itemprop="url" rel="index">
-                  <span itemprop="name">HTTPS</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/24/全站启用HTTPS/" itemprop="url">
+                  全站启用HTTPS
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-24T19:01:20+08:00" content="2016-04-24">
+              2016-04-24
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/04/24/全站启用HTTPS/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/全站启用HTTPS/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTTPS/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTPS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/24/全站启用HTTPS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/全站启用HTTPS/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -253,12 +348,14 @@
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -277,64 +374,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/02/GCJ-02相关问题/" itemprop="url">
-                GCJ-02相关问题
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-02T16:11:38+08:00" content="2016-04-02">
-            2016-04-02
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/GCJ-02/" itemprop="url" rel="index">
-                  <span itemprop="name">GCJ-02</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/02/GCJ-02相关问题/" itemprop="url">
+                  GCJ-02相关问题
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T16:11:38+08:00" content="2016-04-02">
+              2016-04-02
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/04/02/GCJ-02相关问题/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/GCJ-02相关问题/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/GCJ-02/" itemprop="url" rel="index">
+                    <span itemprop="name">GCJ-02</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/GCJ-02相关问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/GCJ-02相关问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -350,12 +471,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -374,64 +497,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/19/Tomcat安装配置/" itemprop="url">
-                Tomcat安装配置
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-19T09:52:27+08:00" content="2016-03-19">
-            2016-03-19
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Tomcat/" itemprop="url" rel="index">
-                  <span itemprop="name">Tomcat</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/19/Tomcat安装配置/" itemprop="url">
+                  Tomcat安装配置
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-19T09:52:27+08:00" content="2016-03-19">
+              2016-03-19
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/19/Tomcat安装配置/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/Tomcat安装配置/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tomcat/" itemprop="url" rel="index">
+                    <span itemprop="name">Tomcat</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/Tomcat安装配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/Tomcat安装配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -446,12 +593,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -470,64 +619,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/17/Coding-Pages服务绑定域名问题/" itemprop="url">
-                Coding Pages服务绑定域名问题
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-17T18:03:11+08:00" content="2016-03-17">
-            2016-03-17
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Coding/" itemprop="url" rel="index">
-                  <span itemprop="name">Coding</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/17/Coding-Pages服务绑定域名问题/" itemprop="url">
+                  Coding Pages服务绑定域名问题
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T18:03:11+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/17/Coding-Pages服务绑定域名问题/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/Coding-Pages服务绑定域名问题/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/17/Coding-Pages服务绑定域名问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/Coding-Pages服务绑定域名问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -542,12 +715,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -566,64 +741,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/17/VMware-12安装Mac-OS-X-10-10/" itemprop="url">
-                VMware 12安装Mac OS X 10.10
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-17T00:00:18+08:00" content="2016-03-17">
-            2016-03-17
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/VMware/" itemprop="url" rel="index">
-                  <span itemprop="name">VMware</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/17/VMware-12安装Mac-OS-X-10-10/" itemprop="url">
+                  VMware 12安装Mac OS X 10.10
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T00:00:18+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/17/VMware-12安装Mac-OS-X-10-10/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/VMware-12安装Mac-OS-X-10-10/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/VMware/" itemprop="url" rel="index">
+                    <span itemprop="name">VMware</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/17/VMware-12安装Mac-OS-X-10-10/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/VMware-12安装Mac-OS-X-10-10/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -638,12 +837,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -662,64 +863,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/11/JRebel-for-Android入手使用/" itemprop="url">
-                JRebel for Android入手使用
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-11T10:15:47+08:00" content="2016-03-11">
-            2016-03-11
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JRebel-for-Android/" itemprop="url" rel="index">
-                  <span itemprop="name">JRebel for Android</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/11/JRebel-for-Android入手使用/" itemprop="url">
+                  JRebel for Android入手使用
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-11T10:15:47+08:00" content="2016-03-11">
+              2016-03-11
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/11/JRebel-for-Android入手使用/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/JRebel-for-Android入手使用/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JRebel-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">JRebel for Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/11/JRebel-for-Android入手使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/JRebel-for-Android入手使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -734,12 +959,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -758,64 +985,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/08/枫林晚/" itemprop="url">
-                枫林晚
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-08T19:35:19+08:00" content="2016-03-08">
-            2016-03-08
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/枫林晚/" itemprop="url" rel="index">
-                  <span itemprop="name">枫林晚</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/08/枫林晚/" itemprop="url">
+                  枫林晚
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-08T19:35:19+08:00" content="2016-03-08">
+              2016-03-08
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/08/枫林晚/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/08/枫林晚/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/枫林晚/" itemprop="url" rel="index">
+                    <span itemprop="name">枫林晚</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/08/枫林晚/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/08/枫林晚/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -830,12 +1081,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -854,64 +1107,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/" itemprop="url">
-                ArcGIS Runtime SDK for Android安装及配置
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-05T10:50:54+08:00" content="2016-03-05">
-            2016-03-05
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
-                  <span itemprop="name">ArcGIS Runtime SDK for Android</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/" itemprop="url">
+                  ArcGIS Runtime SDK for Android安装及配置
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-05T10:50:54+08:00" content="2016-03-05">
+              2016-03-05
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -928,12 +1205,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -952,64 +1231,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/02/GitCafe项目迁移至Coding-net/" itemprop="url">
-                GitCafe项目迁移至Coding.net
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-02T16:05:04+08:00" content="2016-03-02">
-            2016-03-02
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Hexo/" itemprop="url" rel="index">
-                  <span itemprop="name">Hexo</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/02/GitCafe项目迁移至Coding-net/" itemprop="url">
+                  GitCafe项目迁移至Coding.net
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-02T16:05:04+08:00" content="2016-03-02">
+              2016-03-02
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/03/02/GitCafe项目迁移至Coding-net/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/GitCafe项目迁移至Coding-net/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/02/GitCafe项目迁移至Coding-net/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/GitCafe项目迁移至Coding-net/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1025,12 +1328,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -1049,64 +1354,88 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/" itemprop="url">
-                Gitcafe创建多个Page服务并绑定子域名
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-02-02T18:26:44+08:00" content="2016-02-02">
-            2016-02-02
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Hexo/" itemprop="url" rel="index">
-                  <span itemprop="name">Hexo</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/" itemprop="url">
+                  Gitcafe创建多个Page服务并绑定子域名
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-02T18:26:44+08:00" content="2016-02-02">
+              2016-02-02
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/02/Gitcafe创建多个Page服务并绑定子域名/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-	
-      </div>
 
-    </header>
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/02/Gitcafe创建多个Page服务并绑定子域名/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-    <div class="post-body">
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
@@ -1122,12 +1451,14 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           </div>
         
       
+    </div>
+    
+    <div>
+      
+    </div>
 
-<script type="text/javascript" language="javascript">
-        var htmlData = "http://www.wshunli.com" + decodeURI(window.location.pathname);
-document.getElementById("mycopyright").innerHTML = htmlData;
-</script>
-
+    <div>
+      
     </div>
 
     <footer class="post-footer">
@@ -1148,17 +1479,20 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
- </div>
 
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-
-        
-      </div>
-
-      
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -1173,12 +1507,16 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/favicon.ico" alt="CirGIS" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png"
+               alt="CirGIS" />
           <p class="site-author-name" itemprop="name">CirGIS</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -1187,33 +1525,54 @@ document.getElementById("mycopyright").innerHTML = htmlData;
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/wshunli" target="_blank">Github</a>
+                <a href="https://github.com/wshunli" target="_blank" title="Github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Github
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/wshunli" target="_blank">Weibo</a>
+                <a href="http://weibo.com/wshunli" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
               </span>
             
           
@@ -1222,38 +1581,45 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">Others</p>
-            
-              <span class="links-of-author-item">
-              <a href="http://www.cnblogs.com/wangshunli" target="_blank">博客园</a>
-              </span>
-            
-              <span class="links-of-author-item">
-              <a href="http://wangshunli.lofter.com" target="_blank">Lofter</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              Others
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/wangshunli" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wangshunli.lofter.com" title="Lofter" target="_blank">Lofter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
       
 
     </div>
-
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> 
+      <div class="footer-inner">
+        
 
 <div class="busuanzi" align="center">
-	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>.
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>.
 
 <script>
     function secondToDate(second) {
@@ -1284,12 +1650,12 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     }
 
     function addZero(num,n){               
-    	return (Array(n).join(0) + num).slice(-n);             
-	}
+      return (Array(n).join(0) + num).slice(-n);             
+  }
 
 </script>
-	<script type="text/javascript" language="javascript">
-    	function setTime() {
+  <script type="text/javascript" language="javascript">
+      function setTime() {
         // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示9月，得写8才行，如下
         var create_time = Math.round(new Date(Date.UTC(2015, 8, 15, 1,33,18))
                 .getTime() / 1000);
@@ -1341,25 +1707,99 @@ document.getElementById("mycopyright").innerHTML = htmlData;
   
   Made with
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   by <a class="coding-link" href="http://resume.wshunli.com" target="_blank">wshunli</a>.
   
 </div>
 
 
- </div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+  
+</div>
+
+
+
+        
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
   
   
-    
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
 
   
     
@@ -1370,69 +1810,33 @@ document.getElementById("mycopyright").innerHTML = htmlData;
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-     
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
-  
-
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
-
-  
-
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
 
+  
 
 </body>
 </html>
