@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wshunli.github.io/"/>
-  <updated>2016-04-28T07:24:50.242Z</updated>
+  <updated>2016-04-28T07:36:57.724Z</updated>
   <id>http://wshunli.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>GCJ-02相关问题(在线服务）)</title>
-    <link href="http://wshunli.github.io/2016/04/28/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%EF%BC%89/"/>
-    <id>http://wshunli.github.io/2016/04/28/GCJ-02相关问题-在线服务）/</id>
+    <title>GCJ-02相关问题(在线服务）</title>
+    <link href="http://wshunli.github.io/2016/04/28/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://wshunli.github.io/2016/04/28/GCJ-02相关问题-在线服务/</id>
     <published>2016-04-28T06:55:21.000Z</published>
-    <updated>2016-04-28T07:24:50.242Z</updated>
+    <updated>2016-04-28T07:36:57.724Z</updated>
     
     <content type="html">&lt;p&gt;无意中发现的GCJ-02转换的接口（在线服务）：  &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.zdoz.net/apiList.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zdoz.net/apiList.html&lt;/a&gt;  &lt;/p&gt;
@@ -825,15 +825,14 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     <link href="http://wshunli.github.io/2016/03/05/ArcGIS-Runtime-SDK-for-Android%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/"/>
     <id>http://wshunli.github.io/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/</id>
     <published>2016-03-05T02:50:54.000Z</published>
-    <updated>2016-04-28T06:41:10.622Z</updated>
+    <updated>2016-04-28T07:42:11.501Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGIS%20for%20Android/ArcGIS%20Runtime%20SDK%20for%20Android%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE1.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;ArcGIS Runtime SDK for Android安装及配置&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对ArcGIS Runtime SDK for Android 10.2.7在Android Studio中的配置&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;ArcGIS Runtime SDK for Android 介绍（&lt;a href=&quot;http://www.esrichina-bj.cn/2015/0108/2848.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.esrichina-bj.cn/2015/0108/2848.html&lt;/a&gt;）  &lt;/p&gt;
-&lt;p&gt;Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。&lt;br&gt;Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。&lt;br&gt;&lt;strong&gt;主要功能&lt;/strong&gt;&lt;br&gt;• 离线数据：支持直接加载本地的shape file、kml、geopackage等矢量数据，以及GeoTIFF、IMG、JPEG、JPEG2000、PNG等栅格数据；&lt;br&gt;• 地图浏览：支持缩放、平移等基本操作和捏夹、双击等手势操作，新增双击后向下向上垂直滑动；&lt;br&gt;• 地图查询：支持对地图进行查询，包括关键字搜索、identity、find、query查询、多条件联合查询、范围查询等；&lt;br&gt;• 地图定位：使用智能设备自带的GPS定位模块，可以实现快速地图定位；&lt;br&gt;• 数据展示：使用多种渲染方式显示加载的数据，并使用popups、callout等方式显示数据的属性信息；&lt;br&gt;• 外业数据采集：使用SDK开发app，或者使用即拿即用的app实现数据的快速采集、实时同步、本地编辑，包括属性信息的录入和现场坐标数据的采集，还可以采集现场的照片、视频等；&lt;br&gt;• 数据编辑：可在移动端进行细粒度的业务数据编辑，包括修改属性信息、移动要素的位置、改变要素的形状、添加/删除要素等操作；&lt;br&gt;• 数据同步：在移动端编辑的数据，可采用在线实时更新的方式同步到远程数据库中；&lt;br&gt;• 路径规划：可实现在线的或者离线的、单点或多点的路径规划；&lt;br&gt;• 地理编码：支持在线和离线的地理编码和反地理编码功能；&lt;br&gt;• 视域分析：支持移动端离线的视域分析；&lt;br&gt;&lt;strong&gt;系统需求&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;操作系统&lt;/strong&gt;&lt;br&gt;开发环境支持Mac OS X (Intel), Linux, and Windows。&lt;br&gt;&lt;strong&gt;开发环境&lt;/strong&gt;&lt;br&gt;Android SDK要求 4.0.1 (API level 14)以上；&lt;br&gt;支持3种IDE：Android Studio、IntelliJ IDEA和Eclipse。从10.2.5版本以后Esri将主要支持Android Studio，不再为其他Android ADT开发环境专门提供工具，但开发者仍然可以直接引用.so和.jar包进行开发。&lt;br&gt;&lt;strong&gt;硬件要求&lt;/strong&gt;&lt;br&gt;显卡支持OpenGL ES 2.0图像渲染引擎。 Android SDK的模拟器在4.0.3 r2 (API level 15) 版本增加了GPU支持， 所以可以用模拟器显示和测试地图应用。&lt;br&gt;&lt;strong&gt;ArcGIS for Server 和 Portal&lt;/strong&gt;&lt;br&gt;• 连接ArcGIS for Server数据或者服务，使用ArcGIS for Server 10.0及以上版本；&lt;br&gt;• 离线使用的话，使用ArcGIS for Server 10.2.2及以上版本；&lt;br&gt;• 在Runtime apps中可以使用ArcGIS for Portal10.2及以上版本。  
+&lt;p&gt;Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。 &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主要功能&lt;/strong&gt;&lt;br&gt;• 离线数据：支持直接加载本地的shape file、kml、geopackage等矢量数据，以及GeoTIFF、IMG、JPEG、JPEG2000、PNG等栅格数据；&lt;br&gt;• 地图浏览：支持缩放、平移等基本操作和捏夹、双击等手势操作，新增双击后向下向上垂直滑动；&lt;br&gt;• 地图查询：支持对地图进行查询，包括关键字搜索、identity、find、query查询、多条件联合查询、范围查询等；&lt;br&gt;• 地图定位：使用智能设备自带的GPS定位模块，可以实现快速地图定位；&lt;br&gt;• 数据展示：使用多种渲染方式显示加载的数据，并使用popups、callout等方式显示数据的属性信息；&lt;br&gt;• 外业数据采集：使用SDK开发app，或者使用即拿即用的app实现数据的快速采集、实时同步、本地编辑，包括属性信息的录入和现场坐标数据的采集，还可以采集现场的照片、视频等；&lt;br&gt;• 数据编辑：可在移动端进行细粒度的业务数据编辑，包括修改属性信息、移动要素的位置、改变要素的形状、添加/删除要素等操作；&lt;br&gt;• 数据同步：在移动端编辑的数据，可采用在线实时更新的方式同步到远程数据库中；&lt;br&gt;• 路径规划：可实现在线的或者离线的、单点或多点的路径规划；&lt;br&gt;• 地理编码：支持在线和离线的地理编码和反地理编码功能；&lt;br&gt;• 视域分析：支持移动端离线的视域分析；&lt;br&gt;&lt;strong&gt;系统需求&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;操作系统&lt;/strong&gt;&lt;br&gt;开发环境支持Mac OS X (Intel), Linux, and Windows。&lt;br&gt;&lt;strong&gt;开发环境&lt;/strong&gt;&lt;br&gt;Android SDK要求 4.0.1 (API level 14)以上；&lt;br&gt;支持3种IDE：Android Studio、IntelliJ IDEA和Eclipse。从10.2.5版本以后Esri将主要支持Android Studio，不再为其他Android ADT开发环境专门提供工具，但开发者仍然可以直接引用.so和.jar包进行开发。&lt;br&gt;&lt;strong&gt;硬件要求&lt;/strong&gt;&lt;br&gt;显卡支持OpenGL ES 2.0图像渲染引擎。 Android SDK的模拟器在4.0.3 r2 (API level 15) 版本增加了GPU支持， 所以可以用模拟器显示和测试地图应用。&lt;br&gt;&lt;strong&gt;ArcGIS for Server 和 Portal&lt;/strong&gt;&lt;br&gt;• 连接ArcGIS for Server数据或者服务，使用ArcGIS for Server 10.0及以上版本；&lt;br&gt;• 离线使用的话，使用ArcGIS for Server 10.2.2及以上版本；&lt;br&gt;• 在Runtime apps中可以使用ArcGIS for Portal10.2及以上版本。  
 ﻿&lt;/p&gt;
 &lt;h1 id=&quot;Android开发环境配置&quot;&gt;Android开发环境配置&lt;/h1&gt;&lt;p&gt;Google官方对于Android的开发建议使用Android Studio工具，该工具有哪些优势在这里就不在进行阐述了，感兴趣的可以去百度或Google搜索一下，除了Android Studio我们当然还可以使用Intellij IDEA这个开发工具，不过Intellij IDEA是收费的工具，下面列出这两个工具的下载地址：  &lt;/p&gt;
 &lt;p&gt;Android Studio&lt;br&gt;   下载地址：&lt;a href=&quot;http://developer.android.com/sdk/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://developer.android.com/sdk/index.html&lt;/a&gt;&lt;/p&gt;
@@ -967,13 +966,12 @@ renderscriptSupportModeEnabled &lt;span class=&quot;literal&quot;&gt;true&lt;/sp
 &lt;p&gt;参考资料  &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;ArcGIS Runtime SDK for Android 10.2.5新开发平台安装配置指南&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_all/article/details/44060885&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_all/article/details/44060885&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ArcGIS Runtime SDK for Android安装及配置&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGIS%20for%20Android/ArcGIS%20Runtime%20SDK%20for%20Android%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE1.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;ArcGIS Runtime SDK for Android安装及配置&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developers.arcgis.com/android/&quot;&gt;https://developers.arcgis.com/android/&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
