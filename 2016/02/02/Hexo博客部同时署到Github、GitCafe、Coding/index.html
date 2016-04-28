@@ -88,11 +88,11 @@
 <meta property="og:url" content="http://wshunli.github.io/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/index.html">
 <meta property="og:site_name" content="CirGIS">
 <meta property="og:description">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding1.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding2.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding3.png-hexo">
-<meta property="og:updated_time" content="2016-04-25T04:02:34.468Z">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding1.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding2.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding3.png-hexo.png">
+<meta property="og:updated_time" content="2016-04-28T13:43:06.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客部同时署到Github、GitCafe、Coding">
 <meta name="twitter:description">
@@ -344,11 +344,11 @@
       
 
       
-        <p><a href="http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo" alt=""></a></p>
+        <p><a href="http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png" alt=""></a></p>
 <a id="more"></a>
 <p>由于<a href="https://github.com/wshunli" target="_blank" rel="external">Github</a>在国内的访问速度较慢，考虑将Hexo博客部署到国内的<a href="https://gitcafe.com/wshunli" target="_blank" rel="external">GitCafe</a>和<a href="https://coding.net" target="_blank" rel="external">Coding</a>，并采用DNSPod作分流。  </p>
 <p>默认采用Github（稳定），国内采用GitCafe（速度），因为在学校教育网访问GitCafe有点问题（需要改下DNS），所以将教育网分流至Coding。<br>域名记录如下：</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding1.png-hexo" alt="">]</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding1.png-hexo.png" alt="">]</p>
 <p>Hexo的配置文件<code>_config.yml</code>设置如下：  </p>
 <pre><code><span class="attribute">deploy</span>:
   <span class="attribute">type</span>: git
@@ -358,10 +358,10 @@
   <span class="attribute">coding</span>: git<span class="variable">@git</span>.coding.<span class="attribute">net</span>:wshunli/wshunli.git,coding-pages
 </code></pre><h1 id="Github配置">Github配置</h1><p>前面不再赘述详情可参考我的另一篇博客<br>从绑定域名开始<br>在<code>D:\Hexo\source</code>新建<code>CNAME</code>文件里面写上欲绑定的域名即可<br>在DNSPod中添加CNAME记录解析至<code>wshunli.github.io</code></p>
 <h1 id="GitCafe配置">GitCafe配置</h1><p>和Github配置类似。绑定域名不再用CNAME文件。<br>注意：需要gitcafe-pages分支详情可看：<br>Wiki Pages 相关帮助 · GitCafe/Help - GitCafe<br><a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki" target="_blank" rel="external">https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki</a>  </p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding2.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding2.png-hexo.png" alt=""></p>
 <p>在DNSPod中添加CNAME记录解析至<code>wshunli.gitcafe.io</code></p>
 <h1 id="coding配置">coding配置</h1><p>Coding Pages 服务设置如下：  </p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding3.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding3.png-hexo.png" alt=""></p>
 <p>在DNSPod中添加CNAME记录解析至<code>wshunli.coding.me</code></p>
 <blockquote>
 <p>参考资料  </p>
