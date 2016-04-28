@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArcGIS," />
+  <meta name="keywords" content="Android,ArcGIS,ArcGIS Runtime SDK for Android,ArcGIS for Android," />
 
 
 
@@ -82,34 +82,30 @@
 
 
 
-<meta name="description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="description" content="本文主要针对在Windwos环境下用Android Studio搭建Android开发环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIS基础软件及操作(十一)">
-<meta property="og:url" content="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/index.html">
+<meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建">
+<meta property="og:url" content="http://wshunli.github.io/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/index.html">
 <meta property="og:site_name" content="CirGIS">
-<meta property="og:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo">
-<meta property="og:updated_time" content="2016-04-25T04:01:50.752Z">
+<meta property="og:description" content="本文主要针对在Windwos环境下用Android Studio搭建Android开发环境">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建1.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建2.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建3.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建4.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建5.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建6.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建7.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建8.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建9.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建10.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建11.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建12.png-hexo">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建13.png-hexo">
+<meta property="og:updated_time" content="2016-04-28T11:26:02.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GIS基础软件及操作(十一)">
-<meta name="twitter:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建">
+<meta name="twitter:description" content="本文主要针对在Windwos环境下用Android Studio搭建Android开发环境">
 
 
 
@@ -127,7 +123,7 @@
   };
 </script>
 
-  <title> GIS基础软件及操作(十一) | CirGIS </title>
+  <title> 《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建 | CirGIS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +283,7 @@
             
             
               
-                GIS基础软件及操作(十一)
+                《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建
               
             
           </h1>
@@ -299,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-14T14:56:39+08:00" content="2016-01-14">
-              2016-01-14
+            <time itemprop="dateCreated" datetime="2016-04-05T15:55:27+08:00" content="2016-04-05">
+              2016-04-05
             </time>
           </span>
 
@@ -313,8 +309,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/GIS基础软件及操作/" itemprop="url" rel="index">
-                    <span itemprop="name">GIS基础软件及操作</span>
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
                   </a>
                 </span>
 
@@ -329,8 +325,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/14/GIS基础软件及操作-十一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/GIS基础软件及操作-十一/" itemprop="commentsCount"></span>
+                <a href="/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,43 +354,93 @@
       
 
       
-        <h1 id="练习十一、3D_可视分析">练习十一、3D 可视分析  </h1><p><a href="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo" alt=""></a></p>
-<p>1、对地理数据进行透视观察、三维浏览；<br>2、制作飞行动画</p>
-<a id="more"></a>
-<h2 id="GIS数据三维显示"><strong>GIS数据三维显示</strong></h2><p>(1) 运行程序:[开始菜单]&gt;&gt;[所有程序]&gt;&gt;[ArcGIS]&gt;&gt;[ArcScene],打开 ArcScene</p>
-<p>(2) 在ArcScene中执行命令: [自定义]&gt;&gt;[扩展模块], 选中 [3D Analyst]扩展模块, 在ArcScene中点击[添加数据]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo" alt="">(如下图红色前头所指),将图层(Roads , bldg, ortho.lan, dtm_tim)添加到当前场景中.</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo" alt=""></p>
-<p>(1) 关闭 图层 [dtm_tin] 显示</p>
-<p>(2) 在图层列表面板(TOC)中右键点击图层[ortho.lan],打开图层属性对话框,在[基本高度]选项页中,将表面获取的高程设置为:[在自定义表面上浮动],并选择当前场景中的TIN数据图层:[dtm_tin](如下图所示),在[用于将图层高程值转换为场景单位系数为[2], 高程将被夸大2倍。点[确定]退出</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo" alt=""></p>
-<p>(1) 以相同方法设置图层 [Roads]、[bldg]的属性，夸张系数统一设置为[2]</p>
-<p>(2) 对图层 [bldg],还需要进一步设置 [拉伸]选项和[符号系统]选项</p>
-<p>通过设置拉伸表达式为 [HEIGHT*2], 建筑的高度将根据属性字段<br>[HEIGHT]的数据确定</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo" alt=""></p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo" alt=""></p>
-<p>通过设置 [符号系统]选项，为每不同的建筑赋不同的颜色</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo" alt=""></p>
-<p>(1) 完成后的效果如下图所示：可以点击 [工具栏]上的查询按钮，查询每个建筑物的属性</p>
-<p>通过操作，熟悉 [工具] 中各按钮的功能</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis" alt=""></p>
-<p>其中[飞行]按钮 <img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis" alt="">有两种状态，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis" alt="">表示停止飞行，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis" alt="">表示正在飞行状态，通过点击鼠标左键可以加快飞行速度，通过占击鼠标右键可以减慢飞行速度，直至停止，通过移动鼠标可以调整飞行方位、高度。</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo" alt=""></p>
-<p>(1) ArcScene中的三维场景可以导出为二维图片或三维VRML文件[.wrl]，VRML文件可以用 GLView进行浏览或查看，普通的互联网浏览器也可以通过安装插件的方式进行浏览，因此导出为VRML的三维场景可以发布到因特网上</p>
-<h2 id="三维飞行动画制作"><strong>三维飞行动画制作</strong></h2><p>(1) 录制飞行过程生成动画：在ArcScene打开三维场景文档[Animation.sxd]，在工具栏显示区点右键，打开[3D分析]、[动画]、[标准工具]这三个工具栏</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo" alt=""></p>
+        <p><a href="http://www.wshunli.com/2016/03/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo" alt=""></a></p>
+<p><strong>本文主要针对在Windwos环境下用Android Studio搭建Android开发环境</strong><br><a id="more"></a></p>
+<h1 id="前言">前言</h1><p>Android Studio 是一个Android开发环境，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。</p>
+<p>在IDEA的基础上，Android Studio 提供：  </p>
 <ul>
-<li>点击[动画]工具栏中的 [动画控制]按钮（下图）,打开[动画控制]工具栏，</li>
-<li>点击[动画控制]中的 [录制] 按钮（下图）;</li>
-<li>在[工具]中选择 [飞行]工具</li>
+<li>基于Gradle的构建支持  </li>
+<li>Android 专属的重构和快速修复  </li>
+<li>提示工具以捕获性能、可用性、版本兼容性等问题  </li>
+<li>支持ProGuard 和应用签名  </li>
+<li>基于模板的向导来生成常用的 Android 应用设计和组件  </li>
+<li>功能强大的布局编辑器，可以让你拖拉 UI 控件并进行效果预览  </li>
 </ul>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo" alt=""></p>
+<h1 id="系统要求与软件准备">系统要求与软件准备</h1><h2 id="系统要求">系统要求</h2><p><strong>Windows</strong></p>
+<pre><code>Microsoft® Windows® <span class="number">8</span>/<span class="number">7</span>/Vista/<span class="number">2003</span>（<span class="number">32</span> 位或 <span class="number">64</span> 位）  
+最低：<span class="number">2</span>GB RAM，推荐：<span class="number">4</span>GB RAM  
+<span class="number">400</span>MB 硬盘空间  
+Android SDK、模拟器系统映像及缓存至少需要 <span class="number">1</span>GB 空间  
+最低屏幕分辨率：<span class="number">1280</span> x <span class="number">800</span>  
+Java 开发工具包 (JDK) <span class="number">7</span>  
+用于加速模拟器的选件：支持 Intel® VT-x、Intel® EM64T (Intel® <span class="number">64</span>) 和禁止执行 (XD) 位功能的 Intel® 处理器  
+</code></pre><p><strong>Mac OS X</strong></p>
+<pre><code>Mac® OS X® <span class="number">10.8</span><span class="number">.5</span> 或更高版本，直至 <span class="number">10.9</span> (Mavericks)  
+最低：<span class="number">2</span>GB RAM，推荐：<span class="number">4</span>GB RAM  
+<span class="number">400</span>MB 硬盘空间  
+Android SDK、模拟器系统映像及缓存至少需要 <span class="number">1</span>GB 空间  
+最低屏幕分辨率：<span class="number">1280</span> x <span class="number">800</span>  
+Java 运行组件环境 (JRE) <span class="number">6</span>  
+Java 开发工具包 (JDK) <span class="number">7</span>  
+用于加速模拟器的选件：支持 Intel® VT-x、Intel® EM64T (Intel® <span class="number">64</span>) 和禁止执行 (XD) 位功能的 Intel® 处理器  
+在 Mac OS 上运行附带 Java 运行组件环境 (JRE) <span class="number">6</span> 的 Android Studio 可优化字体渲染。您随后可将您的项目配置为使用 Java 开发工具包 (JDK) <span class="number">6</span> 或 JDK <span class="number">7</span>。  
+</code></pre><p><strong>Linux</strong></p>
+<pre><code>GNU 网络对象模型环境或 KDE 桌面  
+GNU C Library <span class="params">(glibc)</span> <span class="number">2.15</span> 或更高版本  
+最低：<span class="number">2</span>GB RAM，推荐：<span class="number">4</span>GB RAM  
+<span class="number">400</span>MB 硬盘空间  
+Android SDK、模拟器系统映像及缓存至少需要 <span class="number">1</span>GB 空间  
+最低屏幕分辨率：<span class="number">1280</span> x <span class="number">800</span>  
+Oracle® Java 开发工具包 <span class="params">(JDK)</span> <span class="number">7</span>  
+已在 Ubuntu® <span class="number">14.04</span> <span class="params">(Trusty Tahr)</span>（能够运行 <span class="number">32</span> 位应用的 <span class="number">64</span> 位分发）上进行了测试。 
+</code></pre><p>更新的详细信息可访问官网：<br><a href="https://developer.android.com/intl/zh-cn/sdk/index.html#Requirements" target="_blank" rel="external">https://developer.android.com/intl/zh-cn/sdk/index.html#Requirements</a></p>
+<h2 id="软件准备">软件准备</h2><p>Google官方对于Android的开发建议使用Android Studio工具，该工具有哪些优势在这里就不在进行阐述了，感兴趣的可以去百度或Google搜索一下，除了Android Studio我们当然还可以使用Intellij IDEA这个开发工具，不过Intellij IDEA是收费的工具，下面列出这两个工具的下载地址：  </p>
+<p>Android Studio<br>   下载地址：<a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">http://developer.android.com/sdk/index.html</a>  </p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建1.png-hexo" alt=""></p>
+<p>由于某些众所周知的原因以上网站可能无法访问：<br>建议在Android Studio 中文社区下载Android Studio<br><a href="http://www.android-studio.org/" target="_blank" rel="external">http://www.android-studio.org/</a></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建2.png-hexo" alt=""></p>
+<p>Android SDK镜像站可在AndroidDevTools查找<br><a href="http://www.androiddevtools.cn/" target="_blank" rel="external">http://www.androiddevtools.cn/</a></p>
+<p><strong>郑州大学开源镜像站：</strong> <a href="http://10.66.0.111/" target="_blank" rel="external">郑州大学开源镜像站</a></p>
+<pre><code>如果用校园网请填写  
+<span class="number">10.66</span><span class="number">.0</span><span class="number">.111</span>  
+如果用联通/电信等外网请填写  
+<span class="number">123.15</span><span class="number">.57</span><span class="number">.34</span>
+</code></pre><p>JDK (Java SE Development Kit)<br>   下载地址：<a href="http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html</a></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建3.png-hexo" alt=""></p>
+<p>其他：<br>Intellij IDE<br>   下载地址：<a href="http://www.jetbrains.com/idea/download/" target="_blank" rel="external">http://www.jetbrains.com/idea/download/</a>  </p>
+<h1 id="安装与配置过程">安装与配置过程</h1><h2 id="JAVA环境配置">JAVA环境配置</h2><p>JAVA环境配置比较简单下一步、下一步，我就不在此赘述了。<br>详细可看以下文章：<br>Java 开发环境配置：<a href="http://www.runoob.com/java/java-environment-setup.html" target="_blank" rel="external">http://www.runoob.com/java/java-environment-setup.html</a></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建4.png-hexo" alt=""></p>
+<p>比如JDK安装在<code>C:\Program Files\Java\jdk1.7.0</code></p>
+<p><strong>变量设置</strong></p>
+<p>新建变量<code>JAVA_HOME</code></p>
+<pre><code>C:<span class="command">\Program</span> Files<span class="command">\Java</span><span class="command">\jdk</span>1.7.0
+</code></pre><p>新建变量<code>CLASSPATH</code></p>
+<pre><code>.;<span class="preprocessor">%</span>JAVA_HOME<span class="preprocessor">%</span>\lib\dt.jar;<span class="preprocessor">%</span>JAVA_HOME<span class="preprocessor">%</span>\lib\tools.jar; <span class="comment">//记得前面有个"."</span>
+</code></pre><p>在<code>PATH</code>中加入</p>
+<pre><code><span class="variable">%JAVA_HOME</span><span class="variable">%\</span>bin;<span class="variable">%JAVA_HOME</span><span class="variable">%\</span>jre\bin;
+</code></pre><h2 id="Android_Studio安装">Android Studio安装</h2><p>对于Android Studio的安装部署分为两种情况：</p>
+<p>1、绿色版，解压后直接运行/bin/studio.exe或者/bin/studio64.exe即可，具体取决于所安装的JDK位数（32位或64位）。</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建5.png-hexo" alt=""></p>
+<p>2、安装版，安装过程依旧是一路下一步，这里不做赘述。不清楚的可以参考百度经验教程。</p>
+<p>android studio安装使用教程（详细图文教程）<br><a href="http://jingyan.baidu.com/article/ad310e80a9328a1849f49e30.html" target="_blank" rel="external">http://jingyan.baidu.com/article/ad310e80a9328a1849f49e30.html</a></p>
+<h2 id="Android_Studio配置">Android Studio配置</h2><p>1、完成安装后选择Android Studio配置文件所在路径，对于第一次安装的情况，选择第二项不导入配置信息，点击OK。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建6.png-hexo" alt=""></p>
+<p>2、在弹出的欢迎页面选下一步。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建7.png-hexo" alt=""></p>
+<p>3、在安装选项处有两项内容：Standard和Custome。Standard为标准安装，Custome为用户自定义安装，这里我们选择第二种，自定义安装。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建8.png-hexo" alt=""></p>
+<p>4、设置Android Studio IDE 主题样式信息<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建9.png-hexo" alt=""></p>
+<p>5、选择Android SDK路径信息，这里分为两种情况：</p>
 <ul>
-<li>然后在地图显示区中沿任意路线进行飞行，(时间建议不要超过30s) ，然后点击鼠标右键直至停止飞行;</li>
-<li>点击[动画控制]工具中的停止按钮 [ ]，停止录相, 点击播放按钮，播放所录的动画</li>
+<li>选择位置已经包含离线下载好Android SDK：这种情况下只会检查缺少的项目并下载，如果SDK内容完整则不联网下载任何内容。  </li>
+<li>选择位置不包含Android SDK：联网在指定位置下载Android SDK。</li>
 </ul>
-<p>补充说明：记录的动画可以转存为视频文件（比如AVI文件），并可进一步用于制作视频光盘</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo" alt=""></p>
-<p>借助于ArcScene和ArcGlobe可以实现比较复杂的3维分析及数据可视化应用，如需进行一步了解ArcGIS的三维分析可参考ESRI电子文档《Using<br>3D Analyst》</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建10.png-hexo" alt=""></p>
+<p>6、这里我们选择第二种方式，离线部署Android SDK，由于内容不完整，所以需要联网下载缺少部分内容。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建11.png-hexo" alt=""></p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建12.png-hexo" alt=""></p>
+<p>如果启动时出现 <code>fetching Android sdk compoment information</code> 时间过长<br>可以参考以下方法解决：<br>1）进入刚安装的Android Studio目录下的bin目录。找到<code>idea.properties</code>文件，用文本编辑器打开。<br>2）在<code>idea.properties</code>文件末尾添加一行： <code>disable.android.first.run=true</code> ，然后保存文件。<br>3）关闭Android Studio后重新启动，便可进入界面。   </p>
+<p>7、安装完成后，点击Finish即可。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建13.png-hexo" alt=""></p>
+<p>Google官方演示视频：</p>
+<video id="video" controls preload="none" poster="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建5.1.png-hexo"><br><source id="mp4" src="http://7xqqh4.com1.z0.glb.clouddn.com/studio-install-windows.mp4" type="video/mp4"><br><p>Your user agent does not support the HTML5 Video element.</p><br></video>
+
+<p>对本文更加深入的了解可访问如下网址：<br>android studio安装使用教程（详细图文教程）<br><a href="http://jingyan.baidu.com/article/ad310e80a9328a1849f49e30.html" target="_blank" rel="external">http://jingyan.baidu.com/article/ad310e80a9328a1849f49e30.html</a></p>
 
 
 <div id="AllanboltSignature">
@@ -455,7 +501,13 @@ document.getElementById("mycopyright").innerHTML = htmlData;
       
         <div class="post-tags">
           
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
             <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag">#ArcGIS Runtime SDK for Android</a>
+          
+            <a href="/tags/ArcGIS-for-Android/" rel="tag">#ArcGIS for Android</a>
           
         </div>
       
@@ -464,16 +516,16 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十/" rel="next" title="GIS基础软件及操作(十)">
-                <i class="fa fa-chevron-left"></i> GIS基础软件及操作(十)
+              <a href="/2016/04/03/GCJ-02相关问题-在线服务/" rel="next" title="GCJ-02相关问题（在线服务）">
+                <i class="fa fa-chevron-left"></i> GCJ-02相关问题（在线服务）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十二/" rel="prev" title="GIS基础软件及操作(十二)">
-                GIS基础软件及操作(十二) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/" rel="prev" title="《ArcGIS Runtime SDK for Android学习笔记》-2、ArcGIS for Android介绍">
+                《ArcGIS Runtime SDK for Android学习笔记》-2、ArcGIS for Android介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -489,10 +541,10 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-     data-title="GIS基础软件及操作(十一)"
+        <div class="ds-share flat" data-thread-key="2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/"
+     data-title="《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建"
      data-content=""
-     data-url="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/">
+     data-url="http://wshunli.github.io/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -522,8 +574,8 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-           data-title="GIS基础软件及操作(十一)" data-url="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/">
+      <div class="ds-thread" data-thread-key="2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/"
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建" data-url="http://wshunli.github.io/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/">
       </div>
     
   </div>
@@ -659,7 +711,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十一、3D_可视分析"><span class="nav-number">1.</span> <span class="nav-text">练习十一、3D 可视分析  </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIS数据三维显示"><span class="nav-number">1.1.</span> <span class="nav-text">GIS数据三维显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维飞行动画制作"><span class="nav-number">1.2.</span> <span class="nav-text">三维飞行动画制作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求与软件准备"><span class="nav-number">2.</span> <span class="nav-text">系统要求与软件准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-number">2.1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备"><span class="nav-number">2.2.</span> <span class="nav-text">软件准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置过程"><span class="nav-number">3.</span> <span class="nav-text">安装与配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA环境配置"><span class="nav-number">3.1.</span> <span class="nav-text">JAVA环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio安装"><span class="nav-number">3.2.</span> <span class="nav-text">Android Studio安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio配置"><span class="nav-number">3.3.</span> <span class="nav-text">Android Studio配置</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

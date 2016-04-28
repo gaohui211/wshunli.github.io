@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArcGIS," />
+  <meta name="keywords" content="Android,ArcGIS,ArcGIS Runtime SDK for Android,ArcGIS for Android," />
 
 
 
@@ -82,34 +82,17 @@
 
 
 
-<meta name="description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIS基础软件及操作(十一)">
-<meta property="og:url" content="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/index.html">
+<meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）">
+<meta property="og:url" content="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/index.html">
 <meta property="og:site_name" content="CirGIS">
-<meta property="og:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo">
-<meta property="og:updated_time" content="2016-04-25T04:01:50.752Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo">
+<meta property="og:updated_time" content="2016-04-28T12:02:03.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GIS基础软件及操作(十一)">
-<meta name="twitter:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）">
+<meta name="twitter:description">
 
 
 
@@ -127,7 +110,7 @@
   };
 </script>
 
-  <title> GIS基础软件及操作(十一) | CirGIS </title>
+  <title> 《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署） | CirGIS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +270,7 @@
             
             
               
-                GIS基础软件及操作(十一)
+                《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）
               
             
           </h1>
@@ -299,8 +282,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-14T14:56:39+08:00" content="2016-01-14">
-              2016-01-14
+            <time itemprop="dateCreated" datetime="2016-04-08T15:58:32+08:00" content="2016-04-08">
+              2016-04-08
             </time>
           </span>
 
@@ -313,8 +296,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/GIS基础软件及操作/" itemprop="url" rel="index">
-                    <span itemprop="name">GIS基础软件及操作</span>
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
                   </a>
                 </span>
 
@@ -329,8 +312,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/14/GIS基础软件及操作-十一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/GIS基础软件及操作-十一/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,43 +341,26 @@
       
 
       
-        <h1 id="练习十一、3D_可视分析">练习十一、3D 可视分析  </h1><p><a href="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo" alt=""></a></p>
-<p>1、对地理数据进行透视观察、三维浏览；<br>2、制作飞行动画</p>
+        <p><a href="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo" alt=""></a></p>
 <a id="more"></a>
-<h2 id="GIS数据三维显示"><strong>GIS数据三维显示</strong></h2><p>(1) 运行程序:[开始菜单]&gt;&gt;[所有程序]&gt;&gt;[ArcGIS]&gt;&gt;[ArcScene],打开 ArcScene</p>
-<p>(2) 在ArcScene中执行命令: [自定义]&gt;&gt;[扩展模块], 选中 [3D Analyst]扩展模块, 在ArcScene中点击[添加数据]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo" alt="">(如下图红色前头所指),将图层(Roads , bldg, ortho.lan, dtm_tim)添加到当前场景中.</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo" alt=""></p>
-<p>(1) 关闭 图层 [dtm_tin] 显示</p>
-<p>(2) 在图层列表面板(TOC)中右键点击图层[ortho.lan],打开图层属性对话框,在[基本高度]选项页中,将表面获取的高程设置为:[在自定义表面上浮动],并选择当前场景中的TIN数据图层:[dtm_tin](如下图所示),在[用于将图层高程值转换为场景单位系数为[2], 高程将被夸大2倍。点[确定]退出</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo" alt=""></p>
-<p>(1) 以相同方法设置图层 [Roads]、[bldg]的属性，夸张系数统一设置为[2]</p>
-<p>(2) 对图层 [bldg],还需要进一步设置 [拉伸]选项和[符号系统]选项</p>
-<p>通过设置拉伸表达式为 [HEIGHT*2], 建筑的高度将根据属性字段<br>[HEIGHT]的数据确定</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo" alt=""></p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo" alt=""></p>
-<p>通过设置 [符号系统]选项，为每不同的建筑赋不同的颜色</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo" alt=""></p>
-<p>(1) 完成后的效果如下图所示：可以点击 [工具栏]上的查询按钮，查询每个建筑物的属性</p>
-<p>通过操作，熟悉 [工具] 中各按钮的功能</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis" alt=""></p>
-<p>其中[飞行]按钮 <img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis" alt="">有两种状态，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis" alt="">表示停止飞行，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis" alt="">表示正在飞行状态，通过点击鼠标左键可以加快飞行速度，通过占击鼠标右键可以减慢飞行速度，直至停止，通过移动鼠标可以调整飞行方位、高度。</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo" alt=""></p>
-<p>(1) ArcScene中的三维场景可以导出为二维图片或三维VRML文件[.wrl]，VRML文件可以用 GLView进行浏览或查看，普通的互联网浏览器也可以通过安装插件的方式进行浏览，因此导出为VRML的三维场景可以发布到因特网上</p>
-<h2 id="三维飞行动画制作"><strong>三维飞行动画制作</strong></h2><p>(1) 录制飞行过程生成动画：在ArcScene打开三维场景文档[Animation.sxd]，在工具栏显示区点右键，打开[3D分析]、[动画]、[标准工具]这三个工具栏</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo" alt=""></p>
-<ul>
-<li>点击[动画]工具栏中的 [动画控制]按钮（下图）,打开[动画控制]工具栏，</li>
-<li>点击[动画控制]中的 [录制] 按钮（下图）;</li>
-<li>在[工具]中选择 [飞行]工具</li>
-</ul>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo" alt=""></p>
-<ul>
-<li>然后在地图显示区中沿任意路线进行飞行，(时间建议不要超过30s) ，然后点击鼠标右键直至停止飞行;</li>
-<li>点击[动画控制]工具中的停止按钮 [ ]，停止录相, 点击播放按钮，播放所录的动画</li>
-</ul>
-<p>补充说明：记录的动画可以转存为视频文件（比如AVI文件），并可进一步用于制作视频光盘</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo" alt=""></p>
-<p>借助于ArcScene和ArcGlobe可以实现比较复杂的3维分析及数据可视化应用，如需进行一步了解ArcGIS的三维分析可参考ESRI电子文档《Using<br>3D Analyst》</p>
+<h1 id="Add_native_libraries_for_analysis_features_(BETA)">Add native libraries for analysis features (BETA)</h1><ol>
+<li>Create a <code>/src/main/jniLibs/</code> folder in your app module.</li>
+<li>From the root of your SDK download directory, copy the <code>/libs/[platform]/</code> folder into the jniLibs folder created in the previous step.</li>
+<li>Two native libs are added to your project, <strong>librs.main.so</strong> and <strong>libruntimecore_java.so</strong> under the <code>/src/main/jniLibs/[platform]</code> folder, where [platform] represents the platform architecture your device is running, such as armeabi-v7a. So, for example, the full path could be <code>/src/main/jniLibs/armeabi-v7a/</code>.</li>
+<li><p>Add the following to the defaultConfig directive in your app module build.gradle file:</p>
+<pre><code>renderscriptTargetApi <span class="number">19</span>
+renderscriptSupportModeEnabled <span class="literal">true</span>
+</code></pre><p>For details on offline analysis, see the OfflineAnalysis sample.</p>
+</li>
+</ol>
+<h1 id="The_SDK_download">The SDK download</h1><p>You can develop apps outside of Google’s recommended Android project structure. Using this option, you manage dependencies manually, typically in IDEs such as Eclipse, NetBeans, or IntelliJ IDEA. This option is not recommended by Esri.</p>
+<p>However, the SDK download contains resources you can use with Android Studio and the Esri repository, including native libraries for analysis capabilities (in beta), localization resources, and files for advanced symbology. Instructions for how to obtain these resources and include them in your project are provided in step 4 in the above section, Android Studio and the Esri ArcGIS maven repository.</p>
+<h1 id="Download,_install,_and_set_up_the_local_SDK">Download, install, and set up the local SDK</h1><ol>
+<li>Make sure your development computer meets the system requirements, including the requirement for Google’s Android SDK. Make sure you have successfully set up your Android development environment in Android Studio. For details on setting up the Google SDK, see installing the Android SDK.</li>
+<li>Sign in to ArcGIS for Developers.</li>
+<li>Click the Downloads icon at the top right of the page and download the ArcGIS Runtime SDK for Android. Unzip the .zip file to a location on your development machine.</li>
+<li>Proceed to the IDE-specific instructions that follow. Note that these instructions will soon be retired, as setting up non-Android-Studio IDEs for development work is no longer recommended.</li>
+</ol>
 
 
 <div id="AllanboltSignature">
@@ -455,7 +421,13 @@ document.getElementById("mycopyright").innerHTML = htmlData;
       
         <div class="post-tags">
           
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
             <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag">#ArcGIS Runtime SDK for Android</a>
+          
+            <a href="/tags/ArcGIS-for-Android/" rel="tag">#ArcGIS for Android</a>
           
         </div>
       
@@ -464,16 +436,16 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十/" rel="next" title="GIS基础软件及操作(十)">
-                <i class="fa fa-chevron-left"></i> GIS基础软件及操作(十)
+              <a href="/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/" rel="next" title="《ArcGIS Runtime SDK for Android学习笔记》-3、ArcGIS for Android开发环境搭建">
+                <i class="fa fa-chevron-left"></i> 《ArcGIS Runtime SDK for Android学习笔记》-3、ArcGIS for Android开发环境搭建
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十二/" rel="prev" title="GIS基础软件及操作(十二)">
-                GIS基础软件及操作(十二) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/24/全站启用HTTPS/" rel="prev" title="全站启用HTTPS">
+                全站启用HTTPS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -489,10 +461,10 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-     data-title="GIS基础软件及操作(十一)"
+        <div class="ds-share flat" data-thread-key="2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"
+     data-title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）"
      data-content=""
-     data-url="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/">
+     data-url="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -522,8 +494,8 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-           data-title="GIS基础软件及操作(十一)" data-url="http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/">
+      <div class="ds-thread" data-thread-key="2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）" data-url="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
       </div>
     
   </div>
@@ -659,7 +631,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十一、3D_可视分析"><span class="nav-number">1.</span> <span class="nav-text">练习十一、3D 可视分析  </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIS数据三维显示"><span class="nav-number">1.1.</span> <span class="nav-text">GIS数据三维显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维飞行动画制作"><span class="nav-number">1.2.</span> <span class="nav-text">三维飞行动画制作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Add_native_libraries_for_analysis_features_(BETA)"><span class="nav-number">1.</span> <span class="nav-text">Add native libraries for analysis features (BETA)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The_SDK_download"><span class="nav-number">2.</span> <span class="nav-text">The SDK download</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Download,_install,_and_set_up_the_local_SDK"><span class="nav-number">3.</span> <span class="nav-text">Download, install, and set up the local SDK</span></a></li></ol></div>
             
           </div>
         </section>
