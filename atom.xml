@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wshunli.github.io/"/>
-  <updated>2016-04-25T04:12:13.696Z</updated>
+  <updated>2016-04-28T07:24:50.242Z</updated>
   <id>http://wshunli.github.io/</id>
   
   <author>
@@ -14,6 +14,101 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GCJ-02相关问题(在线服务）)</title>
+    <link href="http://wshunli.github.io/2016/04/28/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%EF%BC%89/"/>
+    <id>http://wshunli.github.io/2016/04/28/GCJ-02相关问题-在线服务）/</id>
+    <published>2016-04-28T06:55:21.000Z</published>
+    <updated>2016-04-28T07:24:50.242Z</updated>
+    
+    <content type="html">&lt;p&gt;无意中发现的GCJ-02转换的接口（在线服务）：  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zdoz.net/apiList.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zdoz.net/apiList.html&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;支持世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转  &lt;/p&gt;
+&lt;p&gt;支持WGS转GCJ纠偏接口、GCJ反向转WGS接口&lt;br&gt;WGS转BD2纠偏接口、BD2反向转WGS接口&lt;br&gt;GCJ转BD2接口、BD2转GCJ接口&lt;br&gt;百度地图导航等&lt;/p&gt;
+&lt;p&gt;GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。&lt;br&gt;它是一种对经纬度数据的加密算法，即加入随机的偏差。&lt;br&gt;国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  &lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;批量纠偏接口(POST)&quot;&gt;批量纠偏接口(POST)&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/transmore.ashx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;批量纠偏，一次最大可纠偏1000个坐标点&lt;br&gt;参数&lt;br&gt;lats:维度，多个维度用“;”隔开&lt;br&gt;lngs:经度，多个经度用“;”隔开（要注意经纬度个数相等）&lt;br&gt;type:转换类型 【1.WGS -&amp;gt; GCJ】 【2.GCJ -&amp;gt; WGS】 【3.GCJ -&amp;gt; BD】 【4.BD -&amp;gt; GCJ】 【5.WGS -&amp;gt; BD】 【6.BD -&amp;gt; WGS】&lt;br&gt;返回值JSON&lt;br&gt;根据次序返回一个json格式的数组&lt;br&gt;演示&lt;br&gt;参数：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lats=&lt;span class=&quot;number&quot;&gt;34.123&lt;/span&gt;;&lt;span class=&quot;number&quot;&gt;34.332&lt;/span&gt;;&lt;span class=&quot;number&quot;&gt;55.231&lt;/span&gt;&amp;amp;lngs=&lt;span class=&quot;number&quot;&gt;113.123&lt;/span&gt;;&lt;span class=&quot;number&quot;&gt;112.213&lt;/span&gt;;&lt;span class=&quot;number&quot;&gt;115.321&lt;/span&gt;&amp;amp;type=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;返回：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[{&quot;&lt;span class=&quot;attribute&quot;&gt;Lng&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;113.12942937312582&lt;/span&gt;&lt;/span&gt;,&quot;&lt;span class=&quot;attribute&quot;&gt;Lat&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;34.121761850760855&lt;/span&gt;&lt;/span&gt;},{&quot;&lt;span class=&quot;attribute&quot;&gt;Lng&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;112.21911710957568&lt;/span&gt;&lt;/span&gt;,&quot;&lt;span class=&quot;attribute&quot;&gt;Lat&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;34.3306763095054&lt;/span&gt;&lt;/span&gt;}, {&quot;&lt;span class=&quot;attribute&quot;&gt;Lng&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;115.33036232125529&lt;/span&gt;&lt;/span&gt;,&quot;&lt;span class=&quot;attribute&quot;&gt;Lat&lt;/span&gt;&quot;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;55.232930158541052&lt;/span&gt;&lt;/span&gt;}]
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;WGS转GCJ纠偏接口&quot;&gt;WGS转GCJ纠偏接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/transgps.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据GPS经纬度换算出偏移后的火星坐标&lt;/p&gt;
+&lt;p&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/transgps.aspx?lat=34.121&amp;amp;lng=115.21212&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/transgps.aspx?lat=34.121&amp;amp;lng=115.21212&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;GCJ反向转WGS接口&quot;&gt;GCJ反向转WGS接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/gcj2wgs.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据火星坐标得出纠偏前的WGS坐标&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/gcj2wgs.aspx?lat=34.121&amp;amp;lng=115.21212&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/gcj2wgs.aspx?lat=34.121&amp;amp;lng=115.21212&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;WGS转BD2纠偏接口&quot;&gt;WGS转BD2纠偏接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/transgpsbd.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据GPS经纬度换算出偏移后的百度火星坐标&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/transgpsbd.aspx?lat=34.121&amp;amp;lng=115.21212&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/transgpsbd.aspx?lat=34.121&amp;amp;lng=115.21212&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;BD2反向转WGS接口&quot;&gt;BD2反向转WGS接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/bd2wgs.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据百度坐标获取WGS坐标&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/bd2wgs.aspx?lat=34.121&amp;amp;lng=115.21212&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/bd2wgs.aspx?lat=34.121&amp;amp;lng=115.21212&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;GCJ转BD2接口&quot;&gt;GCJ转BD2接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/gcj2bd.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据Google地图坐标（GCJ-02）转为百度地图坐标（BD-09）&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/gcj2bd.aspx?lat=34.78301&amp;amp;lng=113.77581&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/gcj2bd.aspx?lat=34.78301&amp;amp;lng=113.77581&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;BD2转GCJ接口&quot;&gt;BD2转GCJ接口&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/bd2gcj.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据百度地图坐标（BD-09）转为 Google地图坐标（GCJ-02）&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/bd2gcj.aspx?lat=34.789281&amp;amp;lng=113.782224&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/bd2gcj.aspx?lat=34.789281&amp;amp;lng=113.782224&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;根据地理位置获取&quot;&gt;根据地理位置获取&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;attribute&quot;&gt;http&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/geo2loc.aspx&lt;/span&gt;
+
+&lt;span class=&quot;attribute&quot;&gt;http&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/geo2loc_2.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;根据GPS经纬度得到地理位置&lt;br&gt;参数&lt;br&gt;lat:纬度&lt;br&gt;lng:经度&lt;br&gt;演示地址&lt;br&gt;type:GPS类型 【1.BD-09】 【2.GCJ-02】 【3.WGS-84】&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/geo2loc.aspx?lat=34.121&amp;amp;lng=115.21212&amp;amp;type=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/geo2loc.aspx?lat=34.121&amp;amp;lng=115.21212&amp;amp;type=1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://api.zdoz.net/geo2loc_2.aspx?lat=34.121&amp;amp;lng=115.21212&amp;amp;type=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/geo2loc_2.aspx?lat=34.121&amp;amp;lng=115.21212&amp;amp;type=1&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Google地图导航&quot;&gt;Google地图导航&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/daohang.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;起点位置gps和终点位置gps，画出导航轨迹【在程序内嵌入浏览器控件,加载接口地址即可】&lt;br&gt;参数&lt;br&gt;TravelType:导航方式 driving、bicycling、walking、transit（详情）&lt;br&gt;startLat:起点纬度&lt;br&gt;startLng:起点经度&lt;br&gt;endLat:终点纬度&lt;br&gt;endLng:终点经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/daohang.aspx?TravelType=driving&amp;amp;startLat=23.1212&amp;amp;startLng=113.1212&amp;amp;endLat=23.1111&amp;amp;endLng=113.2323&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/daohang.aspx?TravelType=driving&amp;amp;startLat=23.1212&amp;amp;startLng=113.1212&amp;amp;endLat=23.1111&amp;amp;endLng=113.2323&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;两GPS点之间距离&quot;&gt;两GPS点之间距离&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/getdistance.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;传入两个gps点的经纬度，返回两个gps的距离，单位米&lt;br&gt;参数&lt;br&gt;lat1:第一个gps点的纬度&lt;br&gt;lng1:第一个gps点的经度&lt;br&gt;lat2:第二个gps点的纬度&lt;br&gt;lng2:第二个gps点的经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/getdistance.aspx?lat1=34.123&amp;amp;lng1=113.234&amp;amp;lat2=34.126&amp;amp;lng2=113.244&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/getdistance.aspx?lat1=34.123&amp;amp;lng1=113.234&amp;amp;lat2=34.126&amp;amp;lng2=113.244&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;GPS显示方法转换&quot;&gt;GPS显示方法转换&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/DDD2DMS.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;传入GPS的度（DDD）表示数据,返回DMS的表示的JSON数据&lt;br&gt;参数&lt;br&gt;gps：GPS的DDD表示方法数据&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/DDD2DMS.aspx?gps=108.2345&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/DDD2DMS.aspx?gps=108.2345&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;GPS显示方法转换-1&quot;&gt;GPS显示方法转换&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;string&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/DMS2DDD.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;传入GPS的度（DMS）表示数据,返回DDD表示的数据&lt;br&gt;参数&lt;br&gt;D:度&lt;br&gt;M:分&lt;br&gt;S:秒&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/DMS2DDD.aspx?D=108&amp;amp;M=54&amp;amp;S=22.2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/DMS2DDD.aspx?D=108&amp;amp;M=54&amp;amp;S=22.2&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;天气预报&quot;&gt;天气预报&lt;/h1&gt;&lt;p&gt;接口地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;attribute&quot;&gt;http&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/getweather.aspx&lt;/span&gt;
+
+&lt;span class=&quot;attribute&quot;&gt;http&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//api.zdoz.net/getweather2.aspx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口说明&lt;/p&gt;
+&lt;p&gt;上传城市名根据国家气象局的天其信息查出当天的天气情况&lt;br&gt;参数&lt;br&gt;cityName:城市名&lt;br&gt;参数&lt;br&gt;lat:GPS纬度&lt;br&gt;lng:GPS经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/getweather.aspx?cityName=天津&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/getweather.aspx?cityName=天津&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;amp;lng=113.678&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;amp;lng=113.678&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多详细使用方法可移步网站：&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/interfaces.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/interfaces.aspx&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无意中发现的GCJ-02转换的接口（在线服务）：  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zdoz.net/apiList.html&quot;&gt;http://www.zdoz.net/apiList.html&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;支持世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转  &lt;/p&gt;
+&lt;p&gt;支持WGS转GCJ纠偏接口、GCJ反向转WGS接口&lt;br&gt;WGS转BD2纠偏接口、BD2反向转WGS接口&lt;br&gt;GCJ转BD2接口、BD2转GCJ接口&lt;br&gt;百度地图导航等&lt;/p&gt;
+&lt;p&gt;GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。&lt;br&gt;它是一种对经纬度数据的加密算法，即加入随机的偏差。&lt;br&gt;国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="GCJ-02" scheme="http://wshunli.github.io/categories/GCJ-02/"/>
+    
+    
+      <category term="GCJ-02" scheme="http://wshunli.github.io/tags/GCJ-02/"/>
+    
+  </entry>
   
   <entry>
     <title>全站启用HTTPS</title>
@@ -730,7 +825,7 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     <link href="http://wshunli.github.io/2016/03/05/ArcGIS-Runtime-SDK-for-Android%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/"/>
     <id>http://wshunli.github.io/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/</id>
     <published>2016-03-05T02:50:54.000Z</published>
-    <updated>2016-04-25T04:00:13.510Z</updated>
+    <updated>2016-04-28T06:41:10.622Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/05/ArcGIS-Runtime-SDK-for-Android安装及配置/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGIS%20for%20Android/ArcGIS%20Runtime%20SDK%20for%20Android%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE1.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;ArcGIS Runtime SDK for Android安装及配置&lt;/p&gt;
@@ -738,7 +833,7 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对ArcGIS Runtime SDK for Android 10.2.7在Android Studio中的配置&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;ArcGIS Runtime SDK for Android 介绍（&lt;a href=&quot;http://www.esrichina-bj.cn/2015/0108/2848.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.esrichina-bj.cn/2015/0108/2848.html&lt;/a&gt;）  &lt;/p&gt;
-&lt;p&gt;Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。&lt;br&gt;Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。&lt;br&gt;&lt;strong&gt;主要功能&lt;/strong&gt;&lt;br&gt;• 离线数据：支持直接加载本地的shape file、kml、geopackage等矢量数据，以及GeoTIFF、IMG、JPEG、JPEG2000、PNG等栅格数据；&lt;br&gt;• 地图浏览：支持缩放、平移等基本操作和捏夹、双击等手势操作，新增双击后向下向上垂直滑动；&lt;br&gt;• 地图查询：支持对地图进行查询，包括关键字搜索、identity、find、query查询、多条件联合查询、范围查询等；&lt;br&gt;• 地图定位：使用智能设备自带的GPS定位模块，可以实现快速地图定位；&lt;br&gt;• 数据展示：使用多种渲染方式显示加载的数据，并使用popups、callout等方式显示数据的属性信息；&lt;br&gt;• 外业数据采集：使用SDK开发app，或者使用即拿即用的app实现数据的快速采集、实时同步、本地编辑，包括属性信息的录入和现场坐标数据的采集，还可以采集现场的照片、视频等；&lt;br&gt;• 数据编辑：可在移动端进行细粒度的业务数据编辑，包括修改属性信息、移动要素的位置、改变要素的形状、添加/删除要素等操作；&lt;br&gt;• 数据同步：在移动端编辑的数据，可采用在线实时更新的方式同步到远程数据库中；&lt;br&gt;• 路径规划：可实现在线的或者离线的、单点或多点的路径规划；&lt;br&gt;• 地理编码：支持在线和离线的地理编码和反地理编码功能；&lt;br&gt;• 视域分析：支持移动端离线的视域分析；&lt;br&gt;• 视线分析：支持移动端离线的视线分析；&lt;br&gt;&lt;strong&gt;系统需求&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;操作系统&lt;/strong&gt;&lt;br&gt;开发环境支持Mac OS X (Intel), Linux, and Windows。&lt;br&gt;&lt;strong&gt;开发环境&lt;/strong&gt;&lt;br&gt;Android SDK要求 4.0.1 (API level 14)以上；&lt;br&gt;支持3种IDE：Android Studio、IntelliJ IDEA和Eclipse。从10.2.5版本以后Esri将主要支持Android Studio，不再为其他Android ADT开发环境专门提供工具，但开发者仍然可以直接引用.so和.jar包进行开发。&lt;br&gt;&lt;strong&gt;硬件要求&lt;/strong&gt;&lt;br&gt;显卡支持OpenGL ES 2.0图像渲染引擎。 Android SDK的模拟器在4.0.3 r2 (API level 15) 版本增加了GPU支持， 所以可以用模拟器显示和测试地图应用。&lt;br&gt;&lt;strong&gt;ArcGIS for Server 和 Portal&lt;/strong&gt;&lt;br&gt;• 连接ArcGIS for Server数据或者服务，使用ArcGIS for Server 10.0及以上版本；&lt;br&gt;• 离线使用的话，使用ArcGIS for Server 10.2.2及以上版本；&lt;br&gt;• 在Runtime apps中可以使用ArcGIS for Portal10.2及以上版本。  
+&lt;p&gt;Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。&lt;br&gt;Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。&lt;br&gt;&lt;strong&gt;主要功能&lt;/strong&gt;&lt;br&gt;• 离线数据：支持直接加载本地的shape file、kml、geopackage等矢量数据，以及GeoTIFF、IMG、JPEG、JPEG2000、PNG等栅格数据；&lt;br&gt;• 地图浏览：支持缩放、平移等基本操作和捏夹、双击等手势操作，新增双击后向下向上垂直滑动；&lt;br&gt;• 地图查询：支持对地图进行查询，包括关键字搜索、identity、find、query查询、多条件联合查询、范围查询等；&lt;br&gt;• 地图定位：使用智能设备自带的GPS定位模块，可以实现快速地图定位；&lt;br&gt;• 数据展示：使用多种渲染方式显示加载的数据，并使用popups、callout等方式显示数据的属性信息；&lt;br&gt;• 外业数据采集：使用SDK开发app，或者使用即拿即用的app实现数据的快速采集、实时同步、本地编辑，包括属性信息的录入和现场坐标数据的采集，还可以采集现场的照片、视频等；&lt;br&gt;• 数据编辑：可在移动端进行细粒度的业务数据编辑，包括修改属性信息、移动要素的位置、改变要素的形状、添加/删除要素等操作；&lt;br&gt;• 数据同步：在移动端编辑的数据，可采用在线实时更新的方式同步到远程数据库中；&lt;br&gt;• 路径规划：可实现在线的或者离线的、单点或多点的路径规划；&lt;br&gt;• 地理编码：支持在线和离线的地理编码和反地理编码功能；&lt;br&gt;• 视域分析：支持移动端离线的视域分析；&lt;br&gt;&lt;strong&gt;系统需求&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;操作系统&lt;/strong&gt;&lt;br&gt;开发环境支持Mac OS X (Intel), Linux, and Windows。&lt;br&gt;&lt;strong&gt;开发环境&lt;/strong&gt;&lt;br&gt;Android SDK要求 4.0.1 (API level 14)以上；&lt;br&gt;支持3种IDE：Android Studio、IntelliJ IDEA和Eclipse。从10.2.5版本以后Esri将主要支持Android Studio，不再为其他Android ADT开发环境专门提供工具，但开发者仍然可以直接引用.so和.jar包进行开发。&lt;br&gt;&lt;strong&gt;硬件要求&lt;/strong&gt;&lt;br&gt;显卡支持OpenGL ES 2.0图像渲染引擎。 Android SDK的模拟器在4.0.3 r2 (API level 15) 版本增加了GPU支持， 所以可以用模拟器显示和测试地图应用。&lt;br&gt;&lt;strong&gt;ArcGIS for Server 和 Portal&lt;/strong&gt;&lt;br&gt;• 连接ArcGIS for Server数据或者服务，使用ArcGIS for Server 10.0及以上版本；&lt;br&gt;• 离线使用的话，使用ArcGIS for Server 10.2.2及以上版本；&lt;br&gt;• 在Runtime apps中可以使用ArcGIS for Portal10.2及以上版本。  
 ﻿&lt;/p&gt;
 &lt;h1 id=&quot;Android开发环境配置&quot;&gt;Android开发环境配置&lt;/h1&gt;&lt;p&gt;Google官方对于Android的开发建议使用Android Studio工具，该工具有哪些优势在这里就不在进行阐述了，感兴趣的可以去百度或Google搜索一下，除了Android Studio我们当然还可以使用Intellij IDEA这个开发工具，不过Intellij IDEA是收费的工具，下面列出这两个工具的下载地址：  &lt;/p&gt;
 &lt;p&gt;Android Studio&lt;br&gt;   下载地址：&lt;a href=&quot;http://developer.android.com/sdk/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://developer.android.com/sdk/index.html&lt;/a&gt;&lt;/p&gt;
@@ -770,7 +865,7 @@ maven {
     &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/LICENSE&#39;&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/NOTICE&#39;&lt;/span&gt;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Permissions和Features配置&quot;&gt;Permissions和Features配置&lt;/h2&gt;&lt;h1 id=&quot;Required_permissions_and_features&quot;&gt;Required permissions and features&lt;/h1&gt;&lt;p&gt;对于绝大多数的ArcGIS Androidapps的应用几乎都需要网络的支持；也有一些应用可能会需要访问设备的sdcard，需要对该卡有读写的权限；除此对于GIS来说最常用的功能就是定位了所有，应用应该具备定位权限。ArcGIS Android apps的MapView使用了OpenGL2.x，所以在配置文件中还需添加OpenGL的支持，因此应用的配置文件至少包含下面的配置信息：  &lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Permissions和Features配置&quot;&gt;Permissions和Features配置&lt;/h2&gt;&lt;p&gt;对于绝大多数的ArcGIS Androidapps的应用几乎都需要网络的支持；也有一些应用可能会需要访问设备的sdcard，需要对该卡有读写的权限；除此对于GIS来说最常用的功能就是定位了所有，应用应该具备定位权限。ArcGIS Android apps的MapView使用了OpenGL2.x，所以在配置文件中还需添加OpenGL的支持，因此应用的配置文件至少包含下面的配置信息：  &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.INTERNET&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.ACCESS_FINE_LOCATION&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
@@ -2156,143 +2251,6 @@ renderscriptSupportModeEnabled &lt;span class=&quot;literal&quot;&gt;true&lt;/sp
     
       &lt;h1 id=&quot;练习五、空间分析的基本操作&quot;&gt;练习五、空间分析的基本操作&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-五/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;空间分析的基本操作&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
-    
-    
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GIS基础软件及操作(四)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%9B%9B/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-四/</id>
-    <published>2016-01-14T06:56:01.000Z</published>
-    <updated>2016-04-25T04:01:46.731Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;练习四、空间数据处理&quot;&gt;练习四、空间数据处理&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-四/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1.空间数据处理（融合、合并、剪切、交叉、合并）&lt;br&gt;2.设置地图投影及投影变换&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;strong&gt;空间数据处理&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;数据：云南县界.shp; Clip.shp西双版纳森林覆盖.shp 西双版纳县界.shp&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;步骤：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;将所需要的数据下载后，解压到到 e:\gisdata,&lt;/p&gt;
-&lt;p&gt;设定工作区:在ArcMap中&lt;br&gt;执行菜单命令：&amp;lt;地理处理&amp;gt;－&amp;gt;&amp;lt;环境&amp;gt;，设定“临时工作空间”为&lt;br&gt;e:\gisdata&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_001.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第1步_裁剪要素&quot;&gt;第1步 裁剪要素&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在ArcMap中，添数据GISDATA\云南县界.shp，添加数据GISDATA\Clip.shp （Clip 中有四个要素）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;激活Clip图层。点击编辑器中的开始编辑，选中clip图层，选中Clip图层中的一个要素，注意确保不要选中“云南县界”中的要素！&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_002.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  点击地理处理，打开ArcToolbox，分析工具→提取分析→裁剪&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_003.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  指定输入类：云南县界，指定剪切要素：Clip（必须是多边形要素）指定输出要素类路径及名称，这里请命名为“云南县界_Clip1”&lt;/p&gt;
-&lt;p&gt;  依次选中Clip主题中其它三个要素，重复以上的操作步骤， 完成操作后将得到共四个图层（“云南县界_Clip1” , “云南县界_Clip2”，“云南县界_Clip3”，“云南县界_Clip4”）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_004.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第2步_拼接图层&quot;&gt;第2步 拼接图层&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在ArcMap中新建地图文档，加载你在剪切要素操作中得到的 四个图层&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击地理处理，打开ArcToolbox→数据管理工具→常规→追加&lt;/p&gt;
-&lt;p&gt;打开“追加”面板，&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_005.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  输入数据集素：依次添加其它三个图层目标数据集：设定为 云南县界_Clip1&lt;/p&gt;
-&lt;p&gt;  右键点击图层“云南县界_Clip1”，在出现的右键菜单中执行“数据”-&amp;gt;”导出数据”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_006.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  指定导入数据的路径和名称:YNOK.shp&lt;/p&gt;
-&lt;p&gt;  通过以上操作我们就完成了将4个图层拼接为一个图层的处理。&lt;br&gt;  新建一地图文档，加载数据YNOK.shp，查看图层及打开其属性表看看与“云南县界”中的属性表有何区别。&lt;/p&gt;
-&lt;h2 id=&quot;第3步_要素融合&quot;&gt;第3步 要素融合&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在拼接图层的基础上继续&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点击地理处理→ArcToolbo→数据管理工具→制图综合→融合&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;输入要素：指定为YNOK&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;融合字段：选择为“所属州”，将根据这个字段的值对要素进行融合，YNOK图层中“所属州”相同的要素将合并成一个要素&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_007.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_008.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  以上操作，根据指定字段的值，对现有图层中的要素进行融合，产生新的图层――YNOK_Dissovle,打开并查看其&lt;strong&gt;属性表&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  &lt;strong&gt;类似地，重复以上过程，并将融合字段指定为：CHINESE ，看看结果有何不同&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第4步_图层合并&quot;&gt;第4步 图层合并&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在ArcMap中新建一个地图文档，加载数据 GISDATA\西双版纳森林覆盖.shp 和 GISDATA\西双版纳县界.shp&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;调整图层顺序，将西双版纳县界置于下方&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开ArcToolbox，在ArcToolbox→分析工具→叠加分析→联合，执行“联合”命令&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在联合对话框中&lt;/p&gt;
-&lt;p&gt;输入要素：依次添加 “西双版纳森林覆盖”“西双版纳县界”两个图层&lt;/p&gt;
-&lt;p&gt;输出要素类：设置为 Union.shp&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_009.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  查看输出要素类：Union的的属性表，并检查属性 “Type”，其中为“Y”的表示有植被覆盖的区域，右键点击图层Union,修改属性－&amp;gt;符号系统 ，类别设置为唯一值，值字段设置为TYPE，点击添加值，把Y添加，点击确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_010.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第5步_图层相交&quot;&gt;第5步 图层相交&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在图层合并练习的基础继续&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在ArcToolbox中，分析工具→叠加分析→相交，执行“相交”命令&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在“相交对话框”中&lt;/p&gt;
-&lt;p&gt;输入要素：依次添加 “西双版纳森林覆盖”“西双版纳县界”两个图层&lt;/p&gt;
-&lt;p&gt;输出要素类：设置为 Intersect.shp&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_011.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  查看 &lt;strong&gt;输出要素类InterSect，并与“西双版纳森林覆盖”及“图层合并”操作所得结果――“Union”进行比较，并进一步思考这类操作适合求解哪一些现实问题。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_012.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span id=&quot;_Toc117876283&quot; class=&quot;anchor&quot;&gt;&lt;/span&gt;&lt;strong&gt;定义地图投影&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第6步_定义投影&quot;&gt;第6步 定义投影&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在ArcMap中新建地图文档，添加第4步成生成的图层:Union.shp&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在TOC中，右键点击图层“Union”，查看属性,在属性对话框中，点击“源”选项页，查看这图层是什么坐标系&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开ArcToolbox→数据管理工具→投影和变换→定义投影，执行命令“定义投影”命令&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_013.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在定义投影对话框中，选择要素类：Union，点击坐标系输入框右边的按钮，&lt;/p&gt;
-&lt;p&gt;在出现的“定义投影”对话框中，选择一个地理坐标系，GCS_BEJING_1954&lt;/p&gt;
-&lt;p&gt;（注意：前提是我们已知道图层Union是使用北京1954地理坐标系）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_014.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击“按钮”，进入空间参考属性，从坐标系中选择（坐标系统\地理坐标系\Asia\Beijing&lt;br&gt;1954.prj）&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在TOC中，右键点击图层“Union”，查看属性,在属性对话框中，点击“源”选项页，查看这个图层的坐标系是否已经被指定为“北京1954地理坐标系”&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;第7步_投影变换&quot;&gt;第7步 投影变换&lt;/h2&gt;&lt;p&gt;地理坐标系－&amp;gt;北京1954坐标系转换－&amp;gt;西安80坐标系&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在第6步的基础上进行&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开ArcToolbox→数据管理工具→投影和变换→要素→投影，执行命令“投影”命令&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_015.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在“投影”对话框中，输入数据集或要素类选union,把坐标系改为――“BEJING_1954_GK_ZONE_17N”（坐标系统\投影坐标系\Gauss&lt;br&gt;Kruger\Beijing 1954\Beijing 1954 GK Zone 17N.prj）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_016.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;确定后，完成由地理坐标系GCS_BEJING_1954 到 投影坐标系&lt;br&gt;BEJING_1954_GK_ZONE_17N 的变换。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec4/exec4_017.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;练习四、空间数据处理&quot;&gt;练习四、空间数据处理&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-四/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1.空间数据处理（融合、合并、剪切、交叉、合并）&lt;br&gt;2.设置地图投影及投影变换&lt;/p&gt;
     
     </summary>
     
