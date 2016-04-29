@@ -85,7 +85,7 @@
 <meta name="description" content="本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）">
-<meta property="og:url" content="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/index.html">
+<meta property="og:url" content="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/index.html">
 <meta property="og:site_name" content="CirGIS">
 <meta property="og:description" content="本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png">
@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png">
-<meta property="og:updated_time" content="2016-04-29T08:36:16.862Z">
+<meta property="og:updated_time" content="2016-04-29T10:49:01.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）">
 <meta name="twitter:description" content="本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境">
@@ -352,7 +352,7 @@
       
 
       
-        <p><a href="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/" target="_blank" rel="external"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
+        <p><a href="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
 <p><strong>本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境</strong><br><a id="more"></a></p>
 <h1 id="ArcGIS_for_Android_SDK的下载">ArcGIS for Android SDK的下载</h1><p>1、打开<a href="https://developers.arcgis.com/android/" target="_blank" rel="external">ArcGIS for Developers</a>网站、点击右上角登录</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署1.png-hexo.png" alt=""></p>
@@ -370,21 +370,20 @@
 </code></pre><p>其他说明：SDK包下载及说明也可以参考博文<br><a href="http://www.cnblogs.com/gis-luq/p/4735815.html" target="_blank" rel="external">http://www.cnblogs.com/gis-luq/p/4735815.html</a></p>
 <p>2、将SDK libs文件夹下的文件复制到项目的libs文件夹下。</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署5.png-hexo.png" alt=""></p>
-<p>其实所有文件复制过去、安装包是比较大的（30M+），<br>可以考录开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。</p>
+<p>其实所有文件复制过去、安装包是比较大的（30M+），<br>可以考虑开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。</p>
 <p>至于armeabi、armeabi-v7a和x86之间的区别可参考文章：<br><a href="http://blog.csdn.net/loveyaozu/article/details/51205820" target="_blank" rel="external">http://blog.csdn.net/loveyaozu/article/details/51205820</a></p>
 <h1 id="ArcGIS_for_Android_SDK的配置">ArcGIS for Android SDK的配置</h1><p>在此说明我的Android Studio版本是Android Studio 2.1 Beta3 其他版本可能略有不同。</p>
-<p>1、在App Module配置SDK、添加如下代码</p>
+<h2 id="App_Module配置">App Module配置</h2><p>在App Module添加如下代码配置SDK</p>
 <pre><code><span class="name">sourceSets</span> {
     <span class="keyword">main</span> {
         jniLibs.srcDir <span class="string">'libs'</span>
     }
 }
 </code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署6.png-hexo.png" alt=""></p>
-<p>2、点击同步Gradle按钮，可以看到SDK已经添加进来了。</p>
+<p>点击同步Gradle按钮，可以看到SDK已经添加进来了。</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署7.png-hexo.png" alt=""></p>
 <p><strong>以下关于SDK使用的内容和在线部署完全相同</strong></p>
-<p>3、Packaging配置</p>
-<p>在生成APK时我们可能不希望将一些文件打包到APK中，这时我们可通过下面的配置将所需文件排除APK文件中：  </p>
+<h2 id="Packaging配置">Packaging配置</h2><p>在生成APK时我们可能不希望将一些文件打包到APK中，这时我们可通过下面的配置将所需文件排除APK文件中：  </p>
 <pre><code>packagingOptions{
     <span class="keyword">exclude</span> <span class="string">'META-INF/LGPL2.1'</span>
     <span class="keyword">exclude</span> <span class="string">'META-INF/LICENSE'</span>
@@ -525,7 +524,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         <div class="ds-share flat" data-thread-key="2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"
      data-title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）"
      data-content=""
-     data-url="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
+     data-url="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -556,7 +555,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"
-           data-title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）" data-url="http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）" data-url="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/">
       </div>
     
   </div>
@@ -692,7 +691,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的下载"><span class="nav-number">1.</span> <span class="nav-text">ArcGIS for Android SDK的下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的解压与复制"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS for Android SDK的解压与复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的配置"><span class="nav-number">3.</span> <span class="nav-text">ArcGIS for Android SDK的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions和Features配置"><span class="nav-number">3.1.</span> <span class="nav-text">Permissions和Features配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加布局及代码"><span class="nav-number">4.</span> <span class="nav-text">添加布局及代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在布局中添加MapView"><span class="nav-number">4.1.</span> <span class="nav-text">在布局中添加MapView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建MapView并设置UI和代码的绑定"><span class="nav-number">4.2.</span> <span class="nav-text">新建MapView并设置UI和代码的绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建地图图层并添加到MapView中"><span class="nav-number">4.3.</span> <span class="nav-text">新建地图图层并添加到MapView中</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的下载"><span class="nav-number">1.</span> <span class="nav-text">ArcGIS for Android SDK的下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的解压与复制"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS for Android SDK的解压与复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android_SDK的配置"><span class="nav-number">3.</span> <span class="nav-text">ArcGIS for Android SDK的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#App_Module配置"><span class="nav-number">3.1.</span> <span class="nav-text">App Module配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Packaging配置"><span class="nav-number">3.2.</span> <span class="nav-text">Packaging配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions和Features配置"><span class="nav-number">3.3.</span> <span class="nav-text">Permissions和Features配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加布局及代码"><span class="nav-number">4.</span> <span class="nav-text">添加布局及代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在布局中添加MapView"><span class="nav-number">4.1.</span> <span class="nav-text">在布局中添加MapView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建MapView并设置UI和代码的绑定"><span class="nav-number">4.2.</span> <span class="nav-text">新建MapView并设置UI和代码的绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建地图图层并添加到MapView中"><span class="nav-number">4.3.</span> <span class="nav-text">新建地图图层并添加到MapView中</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

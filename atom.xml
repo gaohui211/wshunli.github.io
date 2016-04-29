@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://wshunli.github.io/"/>
+  <link href="http://www.wshunli.com/"/>
   <updated>2016-04-25T04:12:13.696Z</updated>
-  <id>http://wshunli.github.io/</id>
+  <id>http://www.wshunli.com/</id>
   
   <author>
     <name>CirGIS</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>全站启用HTTPS</title>
-    <link href="http://wshunli.github.io/2016/04/24/%E5%85%A8%E7%AB%99%E5%90%AF%E7%94%A8HTTPS/"/>
-    <id>http://wshunli.github.io/2016/04/24/全站启用HTTPS/</id>
+    <link href="http://www.wshunli.com/2016/04/24/%E5%85%A8%E7%AB%99%E5%90%AF%E7%94%A8HTTPS/"/>
+    <id>http://www.wshunli.com/2016/04/24/全站启用HTTPS/</id>
     <published>2016-04-24T11:01:20.000Z</published>
     <updated>2016-04-25T04:12:13.696Z</updated>
     
@@ -35,21 +35,21 @@
     
     </summary>
     
-      <category term="HTTPS" scheme="http://wshunli.github.io/categories/HTTPS/"/>
+      <category term="HTTPS" scheme="http://www.wshunli.com/categories/HTTPS/"/>
     
     
-      <category term="HTTPS" scheme="http://wshunli.github.io/tags/HTTPS/"/>
+      <category term="HTTPS" scheme="http://www.wshunli.com/tags/HTTPS/"/>
     
   </entry>
   
   <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）</title>
-    <link href="http://wshunli.github.io/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
-    <id>http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
+    <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
+    <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
     <published>2016-04-08T07:58:32.000Z</published>
-    <updated>2016-04-29T08:36:16.862Z</updated>
+    <updated>2016-04-29T10:49:01.716Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;ArcGIS_for_Android_SDK的下载&quot;&gt;ArcGIS for Android SDK的下载&lt;/h1&gt;&lt;p&gt;1、打开&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS for Developers&lt;/a&gt;网站、点击右上角登录&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -67,21 +67,20 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他说明：SDK包下载及说明也可以参考博文&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4735815.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4735815.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2、将SDK libs文件夹下的文件复制到项目的libs文件夹下。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其实所有文件复制过去、安装包是比较大的（30M+），&lt;br&gt;可以考录开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。&lt;/p&gt;
+&lt;p&gt;其实所有文件复制过去、安装包是比较大的（30M+），&lt;br&gt;可以考虑开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。&lt;/p&gt;
 &lt;p&gt;至于armeabi、armeabi-v7a和x86之间的区别可参考文章：&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/loveyaozu/article/details/51205820&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/loveyaozu/article/details/51205820&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;ArcGIS_for_Android_SDK的配置&quot;&gt;ArcGIS for Android SDK的配置&lt;/h1&gt;&lt;p&gt;在此说明我的Android Studio版本是Android Studio 2.1 Beta3 其他版本可能略有不同。&lt;/p&gt;
-&lt;p&gt;1、在App Module配置SDK、添加如下代码&lt;/p&gt;
+&lt;h2 id=&quot;App_Module配置&quot;&gt;App Module配置&lt;/h2&gt;&lt;p&gt;在App Module添加如下代码配置SDK&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;name&quot;&gt;sourceSets&lt;/span&gt; {
     &lt;span class=&quot;keyword&quot;&gt;main&lt;/span&gt; {
         jniLibs.srcDir &lt;span class=&quot;string&quot;&gt;&#39;libs&#39;&lt;/span&gt;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署6.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;2、点击同步Gradle按钮，可以看到SDK已经添加进来了。&lt;/p&gt;
+&lt;p&gt;点击同步Gradle按钮，可以看到SDK已经添加进来了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;以下关于SDK使用的内容和在线部署完全相同&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;3、Packaging配置&lt;/p&gt;
-&lt;p&gt;在生成APK时我们可能不希望将一些文件打包到APK中，这时我们可通过下面的配置将所需文件排除APK文件中：  &lt;/p&gt;
+&lt;h2 id=&quot;Packaging配置&quot;&gt;Packaging配置&lt;/h2&gt;&lt;p&gt;在生成APK时我们可能不希望将一些文件打包到APK中，这时我们可通过下面的配置将所需文件排除APK文件中：  &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;packagingOptions{
     &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/LGPL2.1&#39;&lt;/span&gt;
     &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/LICENSE&#39;&lt;/span&gt;
@@ -123,27 +122,27 @@
     
     </summary>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
     
     
-      <category term="Android" scheme="http://wshunli.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
     
-      <category term="ArcGIS for Android" scheme="http://wshunli.github.io/tags/ArcGIS-for-Android/"/>
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
     
   </entry>
   
   <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-3、ArcGIS for Android开发环境搭建</title>
-    <link href="http://wshunli.github.io/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-3%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/</id>
+    <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-3%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/</id>
     <published>2016-04-08T07:58:09.000Z</published>
     <updated>2016-04-28T13:39:57.558Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;新建Android项目&quot;&gt;新建Android项目&lt;/h1&gt;&lt;p&gt;1、打开Android Studio 选择 &lt;code&gt;Start a new Android Studio project&lt;/code&gt; 新建一个Android项目&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -223,27 +222,27 @@ maven {
     
     </summary>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
     
     
-      <category term="Android" scheme="http://wshunli.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
     
-      <category term="ArcGIS for Android" scheme="http://wshunli.github.io/tags/ArcGIS-for-Android/"/>
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
     
   </entry>
   
   <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-2、ArcGIS for Android介绍</title>
-    <link href="http://wshunli.github.io/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://wshunli.github.io/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
+    <link href="http://www.wshunli.com/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
     <published>2016-04-06T07:57:13.000Z</published>
     <updated>2016-04-29T07:29:16.273Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。&lt;br&gt;Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。&lt;/p&gt;
 &lt;h1 id=&quot;产品简介&quot;&gt;产品简介&lt;/h1&gt;&lt;p&gt;ArcGIS Runtime SDK for Android包括一个用于Android Studio的lib-project，用于eclipse等环境的jar函数库，提供了丰富的工具、文档和示例，使用户能够使用Java构建移动应用程序（这些应用程序将运用ArcGIS for Server提供的强大的制图、地理编码、地理处理和自定义功能）并将它们部署到Android系统的智能手机和平板上。&lt;/p&gt;
@@ -292,27 +291,27 @@ maven {
     
     </summary>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
     
     
-      <category term="Android" scheme="http://wshunli.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
     
-      <category term="ArcGIS for Android" scheme="http://wshunli.github.io/tags/ArcGIS-for-Android/"/>
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
     
   </entry>
   
   <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建</title>
-    <link href="http://wshunli.github.io/2016/04/05/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://wshunli.github.io/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/</id>
+    <link href="http://www.wshunli.com/2016/04/05/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/</id>
     <published>2016-04-05T07:55:27.000Z</published>
     <updated>2016-04-28T13:39:25.749Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;&lt;p&gt;Android Studio 是一个Android开发环境，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。&lt;/p&gt;
 &lt;p&gt;在IDEA的基础上，Android Studio 提供：  &lt;/p&gt;
@@ -408,23 +407,23 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     </summary>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
     
     
-      <category term="Android" scheme="http://wshunli.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://wshunli.github.io/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
     
-      <category term="ArcGIS for Android" scheme="http://wshunli.github.io/tags/ArcGIS-for-Android/"/>
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
     
   </entry>
   
   <entry>
     <title>GCJ-02相关问题（在线服务）</title>
-    <link href="http://wshunli.github.io/2016/04/03/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://wshunli.github.io/2016/04/03/GCJ-02相关问题-在线服务/</id>
+    <link href="http://www.wshunli.com/2016/04/03/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://www.wshunli.com/2016/04/03/GCJ-02相关问题-在线服务/</id>
     <published>2016-04-03T06:55:21.000Z</published>
     <updated>2016-04-28T08:49:19.747Z</updated>
     
@@ -497,7 +496,7 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
 &lt;p&gt;上传城市名根据国家气象局的天其信息查出当天的天气情况&lt;br&gt;参数&lt;br&gt;cityName:城市名&lt;br&gt;参数&lt;br&gt;lat:GPS纬度&lt;br&gt;lng:GPS经度&lt;br&gt;演示地址&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/getweather.aspx?cityName=天津&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/getweather.aspx?cityName=天津&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;amp;lng=113.678&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;amp;lng=113.678&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;更多详细使用方法可移步网站：&lt;br&gt;&lt;a href=&quot;http://api.zdoz.net/interfaces.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://api.zdoz.net/interfaces.aspx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;离线版本可参考：&lt;br&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/02/GCJ-02相关问题/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.wshunli.com/2016/04/02/GCJ-02相关问题/&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;离线版本可参考：&lt;br&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/02/GCJ-02相关问题/&quot;&gt;http://www.wshunli.com/2016/04/02/GCJ-02相关问题/&lt;/a&gt; &lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -508,17 +507,17 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     </summary>
     
-      <category term="GCJ-02" scheme="http://wshunli.github.io/categories/GCJ-02/"/>
+      <category term="GCJ-02" scheme="http://www.wshunli.com/categories/GCJ-02/"/>
     
     
-      <category term="GCJ-02" scheme="http://wshunli.github.io/tags/GCJ-02/"/>
+      <category term="GCJ-02" scheme="http://www.wshunli.com/tags/GCJ-02/"/>
     
   </entry>
   
   <entry>
     <title>GCJ-02相关问题</title>
-    <link href="http://wshunli.github.io/2016/04/02/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
-    <id>http://wshunli.github.io/2016/04/02/GCJ-02相关问题/</id>
+    <link href="http://www.wshunli.com/2016/04/02/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <id>http://www.wshunli.com/2016/04/02/GCJ-02相关问题/</id>
     <published>2016-04-02T08:11:38.000Z</published>
     <updated>2016-04-02T08:24:45.777Z</updated>
     
@@ -771,21 +770,21 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     </summary>
     
-      <category term="GCJ-02" scheme="http://wshunli.github.io/categories/GCJ-02/"/>
+      <category term="GCJ-02" scheme="http://www.wshunli.com/categories/GCJ-02/"/>
     
     
-      <category term="GCJ-02" scheme="http://wshunli.github.io/tags/GCJ-02/"/>
+      <category term="GCJ-02" scheme="http://www.wshunli.com/tags/GCJ-02/"/>
     
   </entry>
   
   <entry>
     <title>Tomcat安装配置</title>
-    <link href="http://wshunli.github.io/2016/03/19/Tomcat%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
-    <id>http://wshunli.github.io/2016/03/19/Tomcat安装配置/</id>
+    <link href="http://www.wshunli.com/2016/03/19/Tomcat%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.wshunli.com/2016/03/19/Tomcat安装配置/</id>
     <published>2016-03-19T01:52:27.000Z</published>
     <updated>2016-04-28T13:44:30.436Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/19/Tomcat安装配置/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Tomcat安装配置/Tomcat安装配置0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/19/Tomcat安装配置/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Tomcat安装配置/Tomcat安装配置0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。&lt;/p&gt;
 &lt;p&gt;Tomcat官网&lt;br&gt;Apache Tomcat - Welcome!&lt;br&gt;&lt;a href=&quot;http://tomcat.apache.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tomcat.apache.org&lt;/a&gt;&lt;/p&gt;
@@ -824,21 +823,21 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     </summary>
     
-      <category term="Tomcat" scheme="http://wshunli.github.io/categories/Tomcat/"/>
+      <category term="Tomcat" scheme="http://www.wshunli.com/categories/Tomcat/"/>
     
     
-      <category term="Tomcat" scheme="http://wshunli.github.io/tags/Tomcat/"/>
+      <category term="Tomcat" scheme="http://www.wshunli.com/tags/Tomcat/"/>
     
   </entry>
   
   <entry>
     <title>Coding Pages服务绑定域名问题</title>
-    <link href="http://wshunli.github.io/2016/03/17/Coding-Pages%E6%9C%8D%E5%8A%A1%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E9%97%AE%E9%A2%98/"/>
-    <id>http://wshunli.github.io/2016/03/17/Coding-Pages服务绑定域名问题/</id>
+    <link href="http://www.wshunli.com/2016/03/17/Coding-Pages%E6%9C%8D%E5%8A%A1%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E9%97%AE%E9%A2%98/"/>
+    <id>http://www.wshunli.com/2016/03/17/Coding-Pages服务绑定域名问题/</id>
     <published>2016-03-17T10:03:11.000Z</published>
     <updated>2016-04-28T13:40:17.727Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/Coding-Pages服务绑定域名问题/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/CodingPages服务绑定域名问题/Coding.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/Coding-Pages服务绑定域名问题/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/CodingPages服务绑定域名问题/Coding.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;今天发现Hexo在本地部署没有问题、部署到Coding.net就有问题，在网页上文章没有更新&lt;br&gt;我查看了一下在Coding上推送没有问题&lt;/p&gt;
 &lt;p&gt;我就尝试在DNSPod中把域名指向wshunli.github.io发现没有问题  &lt;/p&gt;
@@ -857,21 +856,21 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     </summary>
     
-      <category term="Coding" scheme="http://wshunli.github.io/categories/Coding/"/>
+      <category term="Coding" scheme="http://www.wshunli.com/categories/Coding/"/>
     
     
-      <category term="Coding" scheme="http://wshunli.github.io/tags/Coding/"/>
+      <category term="Coding" scheme="http://www.wshunli.com/tags/Coding/"/>
     
   </entry>
   
   <entry>
     <title>VMware 12安装Mac OS X 10.10</title>
-    <link href="http://wshunli.github.io/2016/03/17/VMware-12%E5%AE%89%E8%A3%85Mac-OS-X-10-10/"/>
-    <id>http://wshunli.github.io/2016/03/17/VMware-12安装Mac-OS-X-10-10/</id>
+    <link href="http://www.wshunli.com/2016/03/17/VMware-12%E5%AE%89%E8%A3%85Mac-OS-X-10-10/"/>
+    <id>http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/</id>
     <published>2016-03-16T16:00:18.000Z</published>
     <updated>2016-04-28T13:44:49.319Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac1.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac1.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;准备软件&quot;&gt;准备软件&lt;/h1&gt;&lt;p&gt;1.VMware Workstation 12下载&lt;/p&gt;
 &lt;p&gt;VMware Workstation下载__百度软件中心&lt;br&gt;&lt;a href=&quot;http://rj.baidu.com/soft/detail/13808.html?ald&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rj.baidu.com/soft/detail/13808.html?ald&lt;/a&gt;&lt;/p&gt;
@@ -1098,21 +1097,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="VMware" scheme="http://wshunli.github.io/categories/VMware/"/>
+      <category term="VMware" scheme="http://www.wshunli.com/categories/VMware/"/>
     
     
-      <category term="VMware" scheme="http://wshunli.github.io/tags/VMware/"/>
+      <category term="VMware" scheme="http://www.wshunli.com/tags/VMware/"/>
     
   </entry>
   
   <entry>
     <title>JRebel for Android入手使用</title>
-    <link href="http://wshunli.github.io/2016/03/11/JRebel-for-Android%E5%85%A5%E6%89%8B%E4%BD%BF%E7%94%A8/"/>
-    <id>http://wshunli.github.io/2016/03/11/JRebel-for-Android入手使用/</id>
+    <link href="http://www.wshunli.com/2016/03/11/JRebel-for-Android%E5%85%A5%E6%89%8B%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/</id>
     <published>2016-03-11T02:15:47.000Z</published>
     <updated>2016-04-28T13:44:19.166Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;JRebel_for_Android&quot;&gt;JRebel for Android&lt;/h1&gt;&lt;p&gt;一款Android studio插件——允许你修改正在运行中的应用程序，而且不必重新部署或重启。支持所有运行Android 4.0及以上版本的手机和平板。由ZeroTurnaround开发。这是一款收费插件，每年49美元，免费试用21天。&lt;/p&gt;
 &lt;p&gt;通常在开发过程中，我们每次修改代码后想要在模拟器或者真机上看到修改后的效果，都需要将Android应用重新编译、打包和安装到Android设备上并重启，这个过程是非常耽误时间的。JRebel for Android完美解决了这个问题。&lt;/p&gt;
@@ -1152,21 +1151,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="JRebel for Android" scheme="http://wshunli.github.io/categories/JRebel-for-Android/"/>
+      <category term="JRebel for Android" scheme="http://www.wshunli.com/categories/JRebel-for-Android/"/>
     
     
-      <category term="JRebel for Android" scheme="http://wshunli.github.io/tags/JRebel-for-Android/"/>
+      <category term="JRebel for Android" scheme="http://www.wshunli.com/tags/JRebel-for-Android/"/>
     
   </entry>
   
   <entry>
     <title>枫林晚</title>
-    <link href="http://wshunli.github.io/2016/03/08/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
-    <id>http://wshunli.github.io/2016/03/08/枫林晚/</id>
+    <link href="http://www.wshunli.com/2016/03/08/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
+    <id>http://www.wshunli.com/2016/03/08/枫林晚/</id>
     <published>2016-03-08T11:35:19.000Z</published>
     <updated>2016-04-28T13:45:03.899Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/08/枫林晚/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/枫林晚1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/08/枫林晚/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/枫林晚1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;枫林晚-停车只爱枫林晚  &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xsho2.com1.z0.glb.clouddn.com/logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1192,22 +1191,22 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="枫林晚" scheme="http://wshunli.github.io/categories/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
+      <category term="枫林晚" scheme="http://www.wshunli.com/categories/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
     
     
-      <category term="枫林晚" scheme="http://wshunli.github.io/tags/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
+      <category term="枫林晚" scheme="http://www.wshunli.com/tags/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
     
   </entry>
   
   <entry>
     <title>GitCafe项目迁移至Coding.net</title>
-    <link href="http://wshunli.github.io/2016/03/02/GitCafe%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BB%E8%87%B3Coding-net/"/>
-    <id>http://wshunli.github.io/2016/03/02/GitCafe项目迁移至Coding-net/</id>
+    <link href="http://www.wshunli.com/2016/03/02/GitCafe%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BB%E8%87%B3Coding-net/"/>
+    <id>http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/</id>
     <published>2016-03-02T08:05:04.000Z</published>
     <updated>2016-04-28T13:42:54.508Z</updated>
     
     <content type="html">&lt;p&gt;GitCafe 将于 2016年5月31日 停止所有服务，届时您在 GitCafe 的账户资料及所有项目都将被永久删除，请尽快将您的资料和项目迁移至 Coding。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;迁移问题&quot;&gt;迁移问题&lt;/h1&gt;&lt;p&gt;1、GitCafe 什么时候停止服务？&lt;/p&gt;
 &lt;p&gt;GitCafe 将于 2016年 5月 31日 后停止所有服务，届时您在 GitCafe 的账户资料及所有项目都将被永久删除。即日起，您可将您的账户绑定至 Coding 进行相关迁移工作。&lt;/p&gt;
@@ -1258,22 +1257,22 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="Hexo" scheme="http://wshunli.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://wshunli.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Gitcafe创建多个Page服务并绑定子域名</title>
-    <link href="http://wshunli.github.io/2016/02/02/Gitcafe%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAPage%E6%9C%8D%E5%8A%A1%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%AD%90%E5%9F%9F%E5%90%8D/"/>
-    <id>http://wshunli.github.io/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/</id>
+    <link href="http://www.wshunli.com/2016/02/02/Gitcafe%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAPage%E6%9C%8D%E5%8A%A1%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%AD%90%E5%9F%9F%E5%90%8D/"/>
+    <id>http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/</id>
     <published>2016-02-02T10:26:44.000Z</published>
     <updated>2016-04-28T13:42:41.039Z</updated>
     
     <content type="html">&lt;p&gt;想创建多个Page服务绑定二级域名作项目的展示页面，最终效果如下：  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;在线访问：  &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://map.wshunli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://map.wshunli.com&lt;/a&gt; &lt;/p&gt;
@@ -1318,21 +1317,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="Hexo" scheme="http://wshunli.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://wshunli.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客部同时署到Github、GitCafe、Coding</title>
-    <link href="http://wshunli.github.io/2016/02/02/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%90%8C%E6%97%B6%E7%BD%B2%E5%88%B0Github%E3%80%81GitCafe%E3%80%81Coding/"/>
-    <id>http://wshunli.github.io/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/</id>
+    <link href="http://www.wshunli.com/2016/02/02/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%90%8C%E6%97%B6%E7%BD%B2%E5%88%B0Github%E3%80%81GitCafe%E3%80%81Coding/"/>
+    <id>http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/</id>
     <published>2016-02-02T09:26:23.000Z</published>
     <updated>2016-04-28T13:43:06.518Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;由于&lt;a href=&quot;https://github.com/wshunli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;在国内的访问速度较慢，考虑将Hexo博客部署到国内的&lt;a href=&quot;https://gitcafe.com/wshunli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitCafe&lt;/a&gt;和&lt;a href=&quot;https://coding.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Coding&lt;/a&gt;，并采用DNSPod作分流。  &lt;/p&gt;
 &lt;p&gt;默认采用Github（稳定），国内采用GitCafe（速度），因为在学校教育网访问GitCafe有点问题（需要改下DNS），所以将教育网分流至Coding。&lt;br&gt;域名记录如下：&lt;/p&gt;
@@ -1364,21 +1363,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="Hexo" scheme="http://wshunli.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://wshunli.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>GIS基础软件及操作(十二)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81%E4%BA%8C/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十二/</id>
+    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81%E4%BA%8C/"/>
+    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/</id>
     <published>2016-01-14T06:56:44.000Z</published>
     <updated>2016-04-28T13:42:21.915Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;练习十二、_ArcMap制图－地图版面设计&quot;&gt;练习十二、 ArcMap制图－地图版面设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;练习十二、_ArcMap制图－地图版面设计&quot;&gt;练习十二、 ArcMap制图－地图版面设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;设置地图符号－各种渲染方式的使用&lt;/li&gt;
 &lt;li&gt;使用ArcMap Layout（布局）界面制作专题地图&lt;/li&gt;
@@ -1486,21 +1485,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
+      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   
   <entry>
     <title>GIS基础软件及操作(十一)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81%E4%B8%80/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十一/</id>
+    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81%E4%B8%80/"/>
+    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/</id>
     <published>2016-01-14T06:56:39.000Z</published>
     <updated>2016-04-28T13:42:17.288Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;练习十一、3D_可视分析&quot;&gt;练习十一、3D 可视分析  &lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;练习十一、3D_可视分析&quot;&gt;练习十一、3D 可视分析  &lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;1、对地理数据进行透视观察、三维浏览；&lt;br&gt;2、制作飞行动画&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;GIS数据三维显示&quot;&gt;&lt;strong&gt;GIS数据三维显示&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;(1) 运行程序:[开始菜单]&amp;gt;&amp;gt;[所有程序]&amp;gt;&amp;gt;[ArcGIS]&amp;gt;&amp;gt;[ArcScene],打开 ArcScene&lt;/p&gt;
@@ -1546,21 +1545,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
+      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   
   <entry>
     <title>GIS基础软件及操作(十)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-十/</id>
+    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81/"/>
+    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十/</id>
     <published>2016-01-14T06:56:35.000Z</published>
     <updated>2016-04-28T13:41:26.466Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;练习十、网络分析&quot;&gt;练习十、网络分析&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;练习十、网络分析&quot;&gt;练习十、网络分析&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;(1) 加深对网络分析基本原理、方法的认识；&lt;br&gt;(2) 熟练掌握ARCGIS下进行道路网络分析的技术方法；&lt;br&gt;(3) 结合实际、掌握利用网络分析方法解决地学空间分析问题的能力。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;实验目的&quot;&gt;&lt;strong&gt;实验目的&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;网络分析是GIS空间分析的重要功能分。有两类网络，一为道路（交通）网络，一为实体网络（比如，河流、排水管道、电力网络）。此实验主要涉及道路网络分析，主要内容包括：&lt;/p&gt;
@@ -1840,21 +1839,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
+      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   
   <entry>
     <title>GIS基础软件及操作(九)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E4%B9%9D/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-九/</id>
+    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E4%B9%9D/"/>
+    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-九/</id>
     <published>2016-01-14T06:56:29.000Z</published>
     <updated>2016-04-28T13:41:59.590Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;练习九、水文分析&quot;&gt;练习九、水文分析&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-九/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;练习九、水文分析&quot;&gt;练习九、水文分析&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-九/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;水文分析：&lt;br&gt;根据DEM提取河流网络，计算流水累积量、流向、根据指定的流域面积大小自动划分流域&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;水文分分析工具&lt;/p&gt;
@@ -1911,21 +1910,21 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
+      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   
   <entry>
     <title>GIS基础软件及操作(八)</title>
-    <link href="http://wshunli.github.io/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%85%AB/"/>
-    <id>http://wshunli.github.io/2016/01/14/GIS基础软件及操作-八/</id>
+    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%85%AB/"/>
+    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/</id>
     <published>2016-01-14T06:56:23.000Z</published>
     <updated>2016-04-28T13:40:56.912Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;练习八、地理建模&quot;&gt;练习八、地理建模&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;练习八、地理建模&quot;&gt;练习八、地理建模&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;地理建模：Model Builder 土壤侵蚀危险性建模分析&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;认识ModelBuilder操作界面&quot;&gt;认识ModelBuilder操作界面&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -2016,10 +2015,10 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
     </summary>
     
-      <category term="GIS基础软件及操作" scheme="http://wshunli.github.io/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
+      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="ArcGIS" scheme="http://wshunli.github.io/tags/ArcGIS/"/>
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   
