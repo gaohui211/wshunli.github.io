@@ -47,33 +47,79 @@
     <link href="http://wshunli.github.io/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
     <id>http://wshunli.github.io/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
     <published>2016-04-08T07:58:32.000Z</published>
-    <updated>2016-04-28T13:40:06.341Z</updated>
+    <updated>2016-04-29T08:36:16.862Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;Add_native_libraries_for_analysis_features_(BETA)&quot;&gt;Add native libraries for analysis features (BETA)&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;Create a &lt;code&gt;/src/main/jniLibs/&lt;/code&gt; folder in your app module.&lt;/li&gt;
-&lt;li&gt;From the root of your SDK download directory, copy the &lt;code&gt;/libs/[platform]/&lt;/code&gt; folder into the jniLibs folder created in the previous step.&lt;/li&gt;
-&lt;li&gt;Two native libs are added to your project, &lt;strong&gt;librs.main.so&lt;/strong&gt; and &lt;strong&gt;libruntimecore_java.so&lt;/strong&gt; under the &lt;code&gt;/src/main/jniLibs/[platform]&lt;/code&gt; folder, where [platform] represents the platform architecture your device is running, such as armeabi-v7a. So, for example, the full path could be &lt;code&gt;/src/main/jniLibs/armeabi-v7a/&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add the following to the defaultConfig directive in your app module build.gradle file:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;renderscriptTargetApi &lt;span class=&quot;number&quot;&gt;19&lt;/span&gt;
-renderscriptSupportModeEnabled &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For details on offline analysis, see the OfflineAnalysis sample.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;The_SDK_download&quot;&gt;The SDK download&lt;/h1&gt;&lt;p&gt;You can develop apps outside of Google’s recommended Android project structure. Using this option, you manage dependencies manually, typically in IDEs such as Eclipse, NetBeans, or IntelliJ IDEA. This option is not recommended by Esri.&lt;/p&gt;
-&lt;p&gt;However, the SDK download contains resources you can use with Android Studio and the Esri repository, including native libraries for analysis capabilities (in beta), localization resources, and files for advanced symbology. Instructions for how to obtain these resources and include them in your project are provided in step 4 in the above section, Android Studio and the Esri ArcGIS maven repository.&lt;/p&gt;
-&lt;h1 id=&quot;Download,_install,_and_set_up_the_local_SDK&quot;&gt;Download, install, and set up the local SDK&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;Make sure your development computer meets the system requirements, including the requirement for Google’s Android SDK. Make sure you have successfully set up your Android development environment in Android Studio. For details on setting up the Google SDK, see installing the Android SDK.&lt;/li&gt;
-&lt;li&gt;Sign in to ArcGIS for Developers.&lt;/li&gt;
-&lt;li&gt;Click the Downloads icon at the top right of the page and download the ArcGIS Runtime SDK for Android. Unzip the .zip file to a location on your development machine.&lt;/li&gt;
-&lt;li&gt;Proceed to the IDE-specific instructions that follow. Note that these instructions will soon be retired, as setting up non-Android-Studio IDEs for development work is no longer recommended.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android_SDK的下载&quot;&gt;ArcGIS for Android SDK的下载&lt;/h1&gt;&lt;p&gt;1、打开&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS for Developers&lt;/a&gt;网站、点击右上角登录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、登陆成功后进入到&lt;a href=&quot;https://developers.arcgis.com/applications/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Applications&lt;/a&gt;页面，点击右上角的下载按钮打开&lt;a href=&quot;https://developers.arcgis.com/downloads/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载页面&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、可以看到ArcGIS Runtime SDK for Android最新版10.2.7的下载地址，点击download按钮下载。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android_SDK的解压与复制&quot;&gt;ArcGIS for Android SDK的解压与复制&lt;/h1&gt;&lt;p&gt;1、解压ArcGIS for Android SDK包，目录结构如下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其中里面比较重要的有以下几项：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;、doc —— 该版本SDK对应的API文档，官网一直都是最新的，需要查看旧版API或者指定版本API说明的的一般需要到这里查找
+&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;、lib-project —— aar格式的函数库，例如：arcgis-android-v10&lt;span class=&quot;number&quot;&gt;.2&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.6&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;2.&lt;/span&gt;aar
+&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;、libs —— jar和so格式的函数库，一般在项目中拷贝到项目文件夹下，引用即可，可实现离线部署
+&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;、samples——示例代码。官方所有示例代码都在这里，新版基于Android studio 开发环境
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他说明：SDK包下载及说明也可以参考博文&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4735815.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4735815.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、将SDK libs文件夹下的文件复制到项目的libs文件夹下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其实所有文件复制过去、安装包是比较大的（30M+），&lt;br&gt;可以考录开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。&lt;/p&gt;
+&lt;p&gt;至于armeabi、armeabi-v7a和x86之间的区别可参考文章：&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/loveyaozu/article/details/51205820&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/loveyaozu/article/details/51205820&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android_SDK的配置&quot;&gt;ArcGIS for Android SDK的配置&lt;/h1&gt;&lt;p&gt;在此说明我的Android Studio版本是Android Studio 2.1 Beta3 其他版本可能略有不同。&lt;/p&gt;
+&lt;p&gt;1、在App Module配置SDK、添加如下代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;name&quot;&gt;sourceSets&lt;/span&gt; {
+    &lt;span class=&quot;keyword&quot;&gt;main&lt;/span&gt; {
+        jniLibs.srcDir &lt;span class=&quot;string&quot;&gt;&#39;libs&#39;&lt;/span&gt;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署6.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、点击同步Gradle按钮，可以看到SDK已经添加进来了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;以下关于SDK使用的内容和在线部署完全相同&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3、Packaging配置&lt;/p&gt;
+&lt;p&gt;在生成APK时我们可能不希望将一些文件打包到APK中，这时我们可通过下面的配置将所需文件排除APK文件中：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;packagingOptions{
+    &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/LGPL2.1&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/LICENSE&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;exclude&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;META-INF/NOTICE&#39;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Permissions和Features配置&quot;&gt;Permissions和Features配置&lt;/h2&gt;&lt;p&gt;对于绝大多数的ArcGIS Androidapps的应用几乎都需要网络的支持；也有一些应用可能会需要访问设备的sdcard，需要对该卡有读写的权限；除此对于GIS来说最常用的功能就是定位了所有，应用应该具备定位权限。ArcGIS Android apps的MapView使用了OpenGL2.x，所以在配置文件中还需添加OpenGL的支持，因此应用的配置文件至少包含下面的配置信息：  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.INTERNET&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;android:name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;android.permission.ACCESS_FINE_LOCATION&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;uses-feature&lt;/span&gt;
+    &lt;span class=&quot;attribute&quot;&gt;android:glEsVersion&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;0x00020000&quot;&lt;/span&gt;
+    &lt;span class=&quot;attribute&quot;&gt;android:required&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;true&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;添加布局及代码&quot;&gt;添加布局及代码&lt;/h1&gt;&lt;h2 id=&quot;在布局中添加MapView&quot;&gt;在布局中添加MapView&lt;/h2&gt;&lt;p&gt;打开res&amp;gt;&amp;gt;layout&amp;gt;&amp;gt;activity_main.xml文件，添加Mapview&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.esri&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.android&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.map&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.MapView&lt;/span&gt;
+    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;android&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;id=&lt;span class=&quot;string&quot;&gt;&quot;@+id/map&quot;&lt;/span&gt;
+    android:layout_width=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt;
+    android:layout_height=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;新建MapView并设置UI和代码的绑定&quot;&gt;新建MapView并设置UI和代码的绑定&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; MapView mapView = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;//设置UI和代码绑定&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView = (MapView)&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.findViewById(R.id.&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;新建地图图层并添加到MapView中&quot;&gt;新建地图图层并添加到MapView中&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt; strMapUrl=&lt;span class=&quot;string&quot;&gt;&quot;http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer&quot;&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.arcGISTiledMapServiceLayer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArcGISTiledMapServiceLayer(strMapUrl);
+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView.addLayer(arcGISTiledMapServiceLayer);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考资料&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1、Android开发中libs包下面的mips、armeabi、armeabi-v7a和x86&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/loveyaozu/article/details/51205820&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/loveyaozu/article/details/51205820&lt;/a&gt;&lt;br&gt;2、基于Android Studio构建ArcGIS Android开发环境（离线部署）&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4760377.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4760377.html&lt;/a&gt;&lt;br&gt;3、Arcgis Android 手动搭建开发环境&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/wangcan/p/4773530.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/wangcan/p/4773530.html&lt;/a&gt;&lt;br&gt;4、使用Android Studio进行ArcGIS for Android开发的环境部署&lt;br&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_7cdaf8b60102w0bk.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.sina.com.cn/s/blog_7cdaf8b60102w0bk.html&lt;/a&gt;  &lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;
     
     </summary>
     
@@ -195,7 +241,7 @@ maven {
     <link href="http://wshunli.github.io/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
     <id>http://wshunli.github.io/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
     <published>2016-04-06T07:57:13.000Z</published>
-    <updated>2016-04-28T13:39:41.806Z</updated>
+    <updated>2016-04-29T07:29:16.273Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -237,7 +283,7 @@ maven {
 &lt;blockquote&gt;
 &lt;p&gt;参考资料&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;本文出处&lt;/strong&gt; &lt;a href=&quot;http://www.cnblogs.com/ssai2015/p/4869967.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/ssai2015/p/4869967.html&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文出处：&lt;/strong&gt; &lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4765993.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4765993.html&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
