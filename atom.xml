@@ -43,11 +43,80 @@
   </entry>
   
   <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World</title>
+    <link href="http://www.wshunli.com/2016/04/10/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
+    <id>http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
+    <published>2016-04-10T02:10:28.000Z</published>
+    <updated>2016-04-30T03:35:50.923Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;开发环境搭建完成后，按照国际惯例先写一个Hello World。&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android项目代码编写&quot;&gt;ArcGIS for Android项目代码编写&lt;/h1&gt;&lt;h2 id=&quot;在布局中添加MapView&quot;&gt;在布局中添加MapView&lt;/h2&gt;&lt;p&gt;打开&lt;code&gt;res&amp;gt;&amp;gt;layout&amp;gt;&amp;gt;activity_main.xml&lt;/code&gt;文件，添加Mapview&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.esri&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.android&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.map&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.MapView&lt;/span&gt;
+    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;android&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;id=&lt;span class=&quot;string&quot;&gt;&quot;@+id/map&quot;&lt;/span&gt;
+    android:layout_width=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt;
+    android:layout_height=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;新建MapView并设置UI和代码的绑定&quot;&gt;新建MapView并设置UI和代码的绑定&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; MapView mapView = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;//设置UI和代码绑定&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView = (MapView)&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.findViewById(R.id.&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;新建地图图层并添加到MapView中&quot;&gt;新建地图图层并添加到MapView中&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt; strMapUrl=&lt;span class=&quot;string&quot;&gt;&quot;http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer&quot;&lt;/span&gt;;
+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.arcGISTiledMapServiceLayer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArcGISTiledMapServiceLayer(strMapUrl);
+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView.addLayer(arcGISTiledMapServiceLayer);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android项目运行&quot;&gt;ArcGIS for Android项目运行&lt;/h1&gt;&lt;p&gt;和普通Android项目类似，ArcGIS for Android项目可以在模拟器中运行，也可以在真机中运行&lt;/p&gt;
+&lt;h2 id=&quot;在真机运行项目&quot;&gt;在真机运行项目&lt;/h2&gt;&lt;p&gt;1、手机需要开启&lt;code&gt;开发者调试模式&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.jpeg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;注：在 Android 4.2 以后版本的系统中, 开发者模式是默认隐藏的。到 &lt;code&gt;设置 &amp;gt; 关于手机&lt;/code&gt; 连续点击版本号7次即可显示。&lt;/p&gt;
+&lt;p&gt;2、点击Android Studio工具栏上的&lt;code&gt;Run&lt;/code&gt;按钮，运行Android项目。&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、选择连接手机设备、点击&lt;code&gt;OK&lt;/code&gt;即可&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;4、运行效果&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.1.jpeg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;在模拟器中运行项目&quot;&gt;在模拟器中运行项目&lt;/h2&gt;&lt;p&gt;1、点击&lt;code&gt;AVD Manager&lt;/code&gt;按钮打开 AVD Manager界面&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、点击左下角的&lt;code&gt;Create Virtual Device&lt;/code&gt;，创建模拟器&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、可以根据自己的需要配置，这里我默认&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;4、根据自己的需要选择系统镜像、我选择默认&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld6.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;5、模拟器配置，注意&lt;code&gt;Graphices&lt;/code&gt;选项，选择&lt;code&gt;Hardware&lt;/code&gt;&lt;br&gt;具体可参考：&lt;a href=&quot;http://blog.csdn.net/arcgis_mobile/article/details/7758650&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;教你5步学会ArcGIS Android模拟器调试 &lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;6、稍等片刻创建完成。&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;7、选择刚刚创建的模拟器，点击&lt;code&gt;Launch emulator&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;第一次启动可能有点慢，运行效果如下&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;模拟也要开启开发者模式、方法和真机完全相同&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;和在真机运行类似&lt;/strong&gt;&lt;br&gt;8、点击Android Studio工具栏上的&lt;code&gt;Run&lt;/code&gt;按钮，运行Android项目。&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;9、选择连接模拟设备、点击&lt;code&gt;OK&lt;/code&gt;即可&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld11.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可能会报错 &lt;code&gt;INSTALL_FAILED_NO_MATCHING_ABIS&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld12.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;是由于使用了native libraries 。该native libraries 不支持当前的cpu的体系结构。&lt;br&gt;就是在&lt;code&gt;libs&lt;/code&gt;文件夹下删除过多出问题了。我们的模拟器是X86的，可以保留X86其他的删除。&lt;/p&gt;
+&lt;p&gt;10、再次运行，效果如下&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld13.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考资料&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1、Running Your App&lt;br&gt;&lt;a href=&quot;https://developer.android.com/training/basics/firstapp/running-app.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.android.com/training/basics/firstapp/running-app.html&lt;/a&gt;&lt;br&gt;2、教你5步学会ArcGIS Android模拟器调试&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_mobile/article/details/7758650&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_mobile/article/details/7758650&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）</title>
     <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
     <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
     <published>2016-04-08T07:58:32.000Z</published>
-    <updated>2016-04-29T10:49:01.716Z</updated>
+    <updated>2016-04-30T03:28:17.642Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -67,9 +136,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其他说明：SDK包下载及说明也可以参考博文&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4735815.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4735815.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2、将SDK libs文件夹下的文件复制到项目的libs文件夹下。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其实所有文件复制过去、安装包是比较大的（30M+），&lt;br&gt;可以考虑开发时把armeabi-v7a、x86先删除了，减少编译时间，生成安装包时再加上。&lt;/p&gt;
+&lt;p&gt;其实所有文件复制过去、安装包是比较大的（30M+），&lt;br&gt;可以考虑开发时把其中两个先删除了，减少编译时间，生成安装包时再加上。&lt;/p&gt;
 &lt;p&gt;至于armeabi、armeabi-v7a和x86之间的区别可参考文章：&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/loveyaozu/article/details/51205820&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/loveyaozu/article/details/51205820&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ArcGIS_for_Android_SDK的配置&quot;&gt;ArcGIS for Android SDK的配置&lt;/h1&gt;&lt;p&gt;在此说明我的Android Studio版本是Android Studio 2.1 Beta3 其他版本可能略有不同。&lt;/p&gt;
+&lt;h1 id=&quot;ArcGIS_for_Android_SDK的配置&quot;&gt;ArcGIS for Android SDK的配置&lt;/h1&gt;&lt;p&gt;在此说明我的Android Studio版本是&lt;strong&gt;Android Studio 2.1 Beta3&lt;/strong&gt; 其他版本可能略有不同。&lt;/p&gt;
 &lt;h2 id=&quot;App_Module配置&quot;&gt;App Module配置&lt;/h2&gt;&lt;p&gt;在App Module添加如下代码配置SDK&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;name&quot;&gt;sourceSets&lt;/span&gt; {
     &lt;span class=&quot;keyword&quot;&gt;main&lt;/span&gt; {
@@ -95,20 +164,7 @@
     &lt;span class=&quot;attribute&quot;&gt;android:glEsVersion&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;0x00020000&quot;&lt;/span&gt;
     &lt;span class=&quot;attribute&quot;&gt;android:required&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;true&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;添加布局及代码&quot;&gt;添加布局及代码&lt;/h1&gt;&lt;h2 id=&quot;在布局中添加MapView&quot;&gt;在布局中添加MapView&lt;/h2&gt;&lt;p&gt;打开res&amp;gt;&amp;gt;layout&amp;gt;&amp;gt;activity_main.xml文件，添加Mapview&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.esri&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.android&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.map&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.MapView&lt;/span&gt;
-    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;android&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;id=&lt;span class=&quot;string&quot;&gt;&quot;@+id/map&quot;&lt;/span&gt;
-    android:layout_width=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt;
-    android:layout_height=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;新建MapView并设置UI和代码的绑定&quot;&gt;新建MapView并设置UI和代码的绑定&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; MapView mapView = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
-&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;//设置UI和代码绑定&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView = (MapView)&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.findViewById(R.id.&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;新建地图图层并添加到MapView中&quot;&gt;新建地图图层并添加到MapView中&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt; strMapUrl=&lt;span class=&quot;string&quot;&gt;&quot;http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer&quot;&lt;/span&gt;;
-&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.arcGISTiledMapServiceLayer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArcGISTiledMapServiceLayer(strMapUrl);
-&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView.addLayer(arcGISTiledMapServiceLayer);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;至此ArcGIS for Android开发环境搭建完成&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考资料&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -140,7 +196,7 @@
     <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-3%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/</id>
     <published>2016-04-08T07:58:09.000Z</published>
-    <updated>2016-04-28T13:39:57.558Z</updated>
+    <updated>2016-04-30T02:32:40.147Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -194,25 +250,11 @@ maven {
     &lt;span class=&quot;attribute&quot;&gt;android:glEsVersion&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;0x00020000&quot;&lt;/span&gt;
     &lt;span class=&quot;attribute&quot;&gt;android:required&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;true&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;添加布局及代码&quot;&gt;添加布局及代码&lt;/h1&gt;&lt;h2 id=&quot;在布局中添加MapView&quot;&gt;在布局中添加MapView&lt;/h2&gt;&lt;p&gt;打开res&amp;gt;&amp;gt;layout&amp;gt;&amp;gt;activity_main.xml文件，添加Mapview&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.esri&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.android&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.map&lt;/span&gt;&lt;span class=&quot;class&quot;&gt;.MapView&lt;/span&gt;
-    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;android&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;id=&lt;span class=&quot;string&quot;&gt;&quot;@+id/map&quot;&lt;/span&gt;
-    android:layout_width=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt;
-    android:layout_height=&lt;span class=&quot;string&quot;&gt;&quot;fill_parent&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;新建MapView并设置UI和代码的绑定&quot;&gt;新建MapView并设置UI和代码的绑定&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; MapView mapView = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
-&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;//设置UI和代码绑定&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView = (MapView)&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.findViewById(R.id.&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;新建地图图层并添加到MapView中&quot;&gt;新建地图图层并添加到MapView中&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt; strMapUrl=&lt;span class=&quot;string&quot;&gt;&quot;http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer&quot;&lt;/span&gt;;
-&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.arcGISTiledMapServiceLayer = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArcGISTiledMapServiceLayer(strMapUrl);
-&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.mapView.addLayer(arcGISTiledMapServiceLayer);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;至此ArcGIS for Android开发环境搭建完成&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考资料&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1、Install and set up ArcGIS Runtime SDK for Android&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/guide/install-and-set-up.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/guide/install-and-set-up.htm&lt;/a&gt;  &lt;/p&gt;
-&lt;p&gt;2、ArcGIS Runtime SDK for Android 10.2.5新开发平台安装配置指南&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_all/article/details/44060885&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_all/article/details/44060885&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、Install and set up ArcGIS Runtime SDK for Android&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/guide/install-and-set-up.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/guide/install-and-set-up.htm&lt;/a&gt;&lt;br&gt;2、Creating an Android Project&lt;br&gt;&lt;a href=&quot;https://developer.android.com/training/basics/firstapp/creating-project.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.android.com/training/basics/firstapp/creating-project.html&lt;/a&gt;&lt;br&gt;3、ArcGIS Runtime SDK for Android 10.2.5新开发平台安装配置指南&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_all/article/details/44060885&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_all/article/details/44060885&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1907,111 +1949,6 @@ vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main
     
       &lt;h1 id=&quot;练习九、水文分析&quot;&gt;练习九、水文分析&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-九/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;水文分析：&lt;br&gt;根据DEM提取河流网络，计算流水累积量、流向、根据指定的流域面积大小自动划分流域&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
-    
-    
-      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GIS基础软件及操作(八)</title>
-    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%85%AB/"/>
-    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/</id>
-    <published>2016-01-14T06:56:23.000Z</published>
-    <updated>2016-04-28T13:40:56.912Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;练习八、地理建模&quot;&gt;练习八、地理建模&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;地理建模：Model Builder 土壤侵蚀危险性建模分析&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;认识ModelBuilder操作界面&quot;&gt;认识ModelBuilder操作界面&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;1: 添加硬盘上的数据或工具到模型中，数据也可以从ArcMap或ArcCatalog从直接拖到模型中，工具可以直接从Arctoolbox直接拖到模型中&lt;/p&gt;
-&lt;p&gt;2: 显示全部模型要素，并充满ModelBuilder窗口&lt;/p&gt;
-&lt;p&gt;3: 自由缩放，点击此按钮，按住鼠标不放，向上或向下移动鼠标可以缩放ModelBuilder中的流程图&lt;/p&gt;
-&lt;p&gt;4: 选择，用以选择模型中的数据图框，工具图框&lt;/p&gt;
-&lt;p&gt;5: 添加连接，将数据和工具连接起来&lt;/p&gt;
-&lt;p&gt;6: 运行选中的处理过程或整个模型&lt;/p&gt;
-&lt;h2 id=&quot;确定目标，加载数据&quot;&gt;确定目标，加载数据&lt;/h2&gt;&lt;p&gt;目标：获取 [土壤侵蚀危险性分布图]&lt;/p&gt;
-&lt;p&gt;因子确定：坡度、土壤类型、植被覆盖&lt;/p&gt;
-&lt;p&gt;数据：矢量数据：研究区界线(Study&lt;br&gt;Area)、植被(Vegetation)，栅格数据：土壤类型栅格(Soilsgrid)&lt;/p&gt;
-&lt;p&gt;(1) 在ArcMap中新建一个地图文档&lt;/p&gt;
-&lt;p&gt;(2) 添加矢量数据：StudyArea、Vegetation、栅格数据Soilsgrid（同时选中：在点击的同时按住Shift）&lt;/p&gt;
-&lt;p&gt;(3) 打开Arctoolbox，激活Spatial Analyst空间分析扩和3D分析扩展模块（执行菜单命令[工具]&amp;gt;&amp;gt;[扩展]，在出现的对话框中选中“空间分析模块”和“3D分析”）&lt;/p&gt;
-&lt;p&gt;(4) 根据Vegetaion中的属性[VegTYPE]设置植被图层的符号为[唯一值渲染]，根据SoilsGrid 图层中属性[Value]设置土壤类型栅格的符号为[唯一值渲染]，设置图层StudyArea的边界和填充，并调整各图层的顺序得到如下下效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_001.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(5) 保存地图文档为[Ex8.mxd]&lt;/p&gt;
-&lt;h2 id=&quot;创建模型&quot;&gt;创建模型&lt;/h2&gt;&lt;p&gt;在上一步操作的基础上进行&lt;/p&gt;
-&lt;p&gt;(1) 在ArcMap中，打开Arctoolbox，执行菜单命令: [工具]&amp;gt;&amp;gt;[选项],在[选项]设置对话框中，设置[空间处理]选项页中[我的工具箱位置]，将其指定为某个路径，比如[d:\arcgis],因为以下建立的模型将会被保存到后缀为[.tbx] 的文件中，而这个文件是保存在以上设定的路径下的.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_002.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(2) 在Arctoolbox中，右键点击根目标[Arctoolbox],在右键菜单中执行[新的工具箱]命令，将会在[d:\arcgis]创建一个工具箱，将新建工具箱改名，比如[geosptial]&lt;/p&gt;
-&lt;p&gt;(3) 右键点击新建的工具箱[geosptial],在右键菜单中，执行命令：[新建]&amp;gt;&amp;gt;[模型]，将打开[ModelBuilder] 应用程序窗口：&lt;/p&gt;
-&lt;p&gt;注意：对已存在的模型，右键点击模型后，选择[编辑]也可以打开[ModelBuilder]窗口，对已存在的模型进行编辑。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_003.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;编辑模型&quot;&gt;编辑模型&lt;/h2&gt;&lt;p&gt;在上一步基础上进行&lt;/p&gt;
-&lt;p&gt;(1) 在[ModelBuilder]窗口中，执行菜单命令：[模型]&amp;gt;&amp;gt;[模型属性]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_004.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[常规]选项页中，设置模型的名称及标签&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_005.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[环境变量]选项页中设置分析范围为研究区范围&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_006.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;通过在[环境设置]中，设定[常规设置]的[输出范围]为 [Same As Layer “StudyArea”]&lt;/p&gt;
-&lt;p&gt;(2) 在[ModelBuilder]窗口中，执行菜单命令 ：[模型]&amp;gt;&amp;gt;[图属性]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_007.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(3) 从ArcMap中，将图层[Vegetaion]、[Soilsgrid]拖放到&lt;br&gt;[ModelBuilder]窗口中;从[Arctoolbox]中将工具{转为栅格] 拖放到[ModelBuilder]窗口中(此工具在[转换工具&amp;gt;&amp;gt;[DEM转栅格下)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_008.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(4) 在[ModelBuilder]窗口中，双击工具图框[DEM转栅格]，在出现的工具设置对话框中指定输入USGSDEM文件为：[elevation.dem]－通过输入框右边的[浏览打开]按钮在硬盘上找到该文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_009.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_010.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(5) 从[Arctoolbox]中将工具[坡度]拖放到[ModelBuilder]窗口中(此工具在[3D Analyst 工具]&amp;gt;&amp;gt;[栅格表面]下)，在 [ModelBuilder]窗口中，点击[添加连接]按钮（如下图红色箭头所指）将派生数据图框[DEMToRa_elev1]与工具图框[坡度]连接在一起。完成后效果如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_011.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;右键点击图框[输出栅格]将其改名为: [坡度图]&lt;/p&gt;
-&lt;p&gt;(6) 从[Arctoolbox]中将工具[重分类]拖放到[ModelBuilder]窗口中(此工具在[Spatial Analyst工具]&amp;gt;&amp;gt;[ 重分类]下)，在 [ModelBuilder]窗口中，点击[添加连接]按钮将派生数据图框[坡度图]与工具图框[重分类]连接在一起。完成后效果如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_013.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(7) 在[ModelBuilder]窗口中，双击工具图框[重分类]，在[重分类]工具属性对话框中将坡度重分类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_012.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在这里我们通过INFO数据表[slopereclass]实现重分类，在上图中，点击[加载]按钮，找到数据表[slopereclass],将根据此数据表中的设定值将坡度分为10类。&lt;/p&gt;
-&lt;p&gt;[Slopereclas]中有特殊的字段[FROM]、[TO]、[OUT]、[MAPPING]，可以用于重分类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_014.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[ModelBuilder]窗口中，右键点击工具图框[重分类]后面的&lt;br&gt;[输出栅格]将其改名为: [重分类坡度图]&lt;/p&gt;
-&lt;p&gt;(8) 从[Arctoolbox]中将工具[要素转栅格] 拖放到[ModelBuilder]窗口中(此工具在[转换工具]&amp;gt;&amp;gt;[转为栅格]–下)，在 [ModelBuilder]窗口中，点击[添加连接]按钮将数据图框[vegetaion]与工具图框[要素到栅格]连接在一起。完成后效果如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_015.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;将工具图框[要素到栅格]后的[输出栅格]改名为 [植被栅格]。&lt;/p&gt;
-&lt;p&gt;双击与[Vegetaion]相连的工具图框[要素到栅格]，在出现的对话框中，设置字段为[VEGTYPE],确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_016.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[ModelBuilder]中右键选中图框[要素转栅格]，执行[运行]命令。[注：此步骤比较重要]&lt;/p&gt;
-&lt;p&gt;(9) 从[Arctoolbox]中将工具[加权叠加]拖放到[ModelBuilder]窗口中(此工具在[Spatial Analyst工具&amp;gt;&amp;gt;[叠加分析]下)，右键点击工具图框[加权叠加]后的结果数据图框改名为[土壤侵蚀栅格]，完成后效果如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_017.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(10) 在[ModelBuilder]窗口中，双击工具图框[加权叠加]，在出现的[加权叠加]工具设置对话框中点击[Add Raster Row]按钮 (下图红色箭头所指)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_018.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[添加加权叠加图层]对话框中，按下图所示指定各参数，将因子[SOILSGRID]加入加权叠加分析过程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_019.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[加权叠加]对话框再次点击[Add Raster&lt;br&gt;Row]按钮，将下图所示设置参数，将因子[植被栅格]加入到加权叠加分析过程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_020.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[加权叠加]对话框再次点击[Add Raster&lt;br&gt;Row]按钮，将下图所示设置参数，将因子[重分类坡度图]加入到加权叠加分析过程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_021.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;三个因子添加完成后，回到[加权叠加]工具设置对话框，分别将因子[Soilsgrid]、[植被栅格]、[重分类坡度图]的权重设置为:[25%]、[25%]、[50％]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_022.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(11) 设置因子[Soilsgrid]：根据不同土壤类型对土壤侵蚀危险性的影响力，不同的土壤类型给定不同的的数值，数值1表示改天土壤侵蚀危险度较低，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_023.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(12) 设置因子[植被栅格]：根据不同植被类型对土壤侵蚀危险性的影响力，不同的植被类型给定不同的的数值，数值1表示改天土壤侵蚀危险度较低，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_024.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(13) 设置因子[重分类坡度图]：根据不同坡度低的区域发生土壤侵蚀的危险系统较小，坡度较大的区域发生土壤侵蚀的危险系数较大，不同坡度对应不同数值，数值1表示改天土壤侵蚀危险度较低，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_025.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最终完成的模型图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_026.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;执行模型，查看结果&quot;&gt;执行模型，查看结果&lt;/h2&gt;&lt;p&gt;(1) 在[ModelBuilder]窗口中执行菜单命令：[模型]&amp;gt;&amp;gt;[运行整个模型]。请耐心等待计算结果：需要（3-5s）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_027.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;(2) 在[ModelBuilder]窗口中，右键点击图框[土壤侵蚀栅格]在出现的右键菜单中选中[添加到显示窗口]。于是土壤侵蚀危险性分级栅格数据[Hazrad]表示研究区内土壤侵蚀的危险级别，1表示发生土壤侵蚀的可能性较小，6表示发生土壤侵蚀的可能性极大。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec8/exec8_028.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;练习八、地理建模&quot;&gt;练习八、地理建模&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-八/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;地理建模：Model Builder 土壤侵蚀危险性建模分析&lt;/p&gt;
     
     </summary>
     

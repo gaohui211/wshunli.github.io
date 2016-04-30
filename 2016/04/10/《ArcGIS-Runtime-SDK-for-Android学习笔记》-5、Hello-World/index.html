@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArcGIS," />
+  <meta name="keywords" content="Android,ArcGIS,ArcGIS Runtime SDK for Android,ArcGIS for Android," />
 
 
 
@@ -82,34 +82,36 @@
 
 
 
-<meta name="description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIS基础软件及操作(十一)">
-<meta property="og:url" content="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/index.html">
+<meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World">
+<meta property="og:url" content="http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/index.html">
 <meta property="og:site_name" content="CirGIS">
-<meta property="og:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo.png">
-<meta property="og:updated_time" content="2016-04-28T13:42:17.288Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.jpeg-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.1.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.1.jpeg-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld3.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld4.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld5.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld6.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld7.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld8.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld9.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.1.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld11.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld12.png-hexo.png">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld13.png-hexo.png">
+<meta property="og:updated_time" content="2016-04-30T03:35:50.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GIS基础软件及操作(十一)">
-<meta name="twitter:description" content="练习十一、3D 可视分析  
-1、对地理数据进行透视观察、三维浏览；2、制作飞行动画">
+<meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World">
+<meta name="twitter:description">
 
 
 
@@ -127,7 +129,7 @@
   };
 </script>
 
-  <title> GIS基础软件及操作(十一) | CirGIS </title>
+  <title> 《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World | CirGIS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +289,7 @@
             
             
               
-                GIS基础软件及操作(十一)
+                《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World
               
             
           </h1>
@@ -299,8 +301,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-14T14:56:39+08:00" content="2016-01-14">
-              2016-01-14
+            <time itemprop="dateCreated" datetime="2016-04-10T10:10:28+08:00" content="2016-04-10">
+              2016-04-10
             </time>
           </span>
 
@@ -313,8 +315,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/GIS基础软件及操作/" itemprop="url" rel="index">
-                    <span itemprop="name">GIS基础软件及操作</span>
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
                   </a>
                 </span>
 
@@ -329,8 +331,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/14/GIS基础软件及操作-十一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/GIS基础软件及操作-十一/" itemprop="commentsCount"></span>
+                <a href="/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,43 +360,47 @@
       
 
       
-        <h1 id="练习十一、3D_可视分析">练习十一、3D 可视分析  </h1><p><a href="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png" alt=""></a></p>
-<p>1、对地理数据进行透视观察、三维浏览；<br>2、制作飞行动画</p>
+        <p><a href="http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
 <a id="more"></a>
-<h2 id="GIS数据三维显示"><strong>GIS数据三维显示</strong></h2><p>(1) 运行程序:[开始菜单]&gt;&gt;[所有程序]&gt;&gt;[ArcGIS]&gt;&gt;[ArcScene],打开 ArcScene</p>
-<p>(2) 在ArcScene中执行命令: [自定义]&gt;&gt;[扩展模块], 选中 [3D Analyst]扩展模块, 在ArcScene中点击[添加数据]按钮<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/1.jpg-hexo.png" alt="">(如下图红色前头所指),将图层(Roads , bldg, ortho.lan, dtm_tim)添加到当前场景中.</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_001.png-hexo.png" alt=""></p>
-<p>(1) 关闭 图层 [dtm_tin] 显示</p>
-<p>(2) 在图层列表面板(TOC)中右键点击图层[ortho.lan],打开图层属性对话框,在[基本高度]选项页中,将表面获取的高程设置为:[在自定义表面上浮动],并选择当前场景中的TIN数据图层:[dtm_tin](如下图所示),在[用于将图层高程值转换为场景单位系数为[2], 高程将被夸大2倍。点[确定]退出</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_002.png-hexo.png" alt=""></p>
-<p>(1) 以相同方法设置图层 [Roads]、[bldg]的属性，夸张系数统一设置为[2]</p>
-<p>(2) 对图层 [bldg],还需要进一步设置 [拉伸]选项和[符号系统]选项</p>
-<p>通过设置拉伸表达式为 [HEIGHT*2], 建筑的高度将根据属性字段<br>[HEIGHT]的数据确定</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_003.png-hexo.png" alt=""></p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_004.png-hexo.png" alt=""></p>
-<p>通过设置 [符号系统]选项，为每不同的建筑赋不同的颜色</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_005.png-hexo.png" alt=""></p>
-<p>(1) 完成后的效果如下图所示：可以点击 [工具栏]上的查询按钮，查询每个建筑物的属性</p>
-<p>通过操作，熟悉 [工具] 中各按钮的功能</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_006.png-cirgis" alt=""></p>
-<p>其中[飞行]按钮 <img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/2.png-cirgis" alt="">有两种状态，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/3.png-cirgis" alt="">表示停止飞行，<img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/4.png-cirgis" alt="">表示正在飞行状态，通过点击鼠标左键可以加快飞行速度，通过占击鼠标右键可以减慢飞行速度，直至停止，通过移动鼠标可以调整飞行方位、高度。</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_007.png-hexo.png" alt=""></p>
-<p>(1) ArcScene中的三维场景可以导出为二维图片或三维VRML文件[.wrl]，VRML文件可以用 GLView进行浏览或查看，普通的互联网浏览器也可以通过安装插件的方式进行浏览，因此导出为VRML的三维场景可以发布到因特网上</p>
-<h2 id="三维飞行动画制作"><strong>三维飞行动画制作</strong></h2><p>(1) 录制飞行过程生成动画：在ArcScene打开三维场景文档[Animation.sxd]，在工具栏显示区点右键，打开[3D分析]、[动画]、[标准工具]这三个工具栏</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_008.png-hexo.png" alt=""></p>
-<ul>
-<li>点击[动画]工具栏中的 [动画控制]按钮（下图）,打开[动画控制]工具栏，</li>
-<li>点击[动画控制]中的 [录制] 按钮（下图）;</li>
-<li>在[工具]中选择 [飞行]工具</li>
-</ul>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_009.png-hexo.png" alt=""></p>
-<ul>
-<li>然后在地图显示区中沿任意路线进行飞行，(时间建议不要超过30s) ，然后点击鼠标右键直至停止飞行;</li>
-<li>点击[动画控制]工具中的停止按钮 [ ]，停止录相, 点击播放按钮，播放所录的动画</li>
-</ul>
-<p>补充说明：记录的动画可以转存为视频文件（比如AVI文件），并可进一步用于制作视频光盘</p>
-<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec11/exec11_010.png-hexo.png" alt=""></p>
-<p>借助于ArcScene和ArcGlobe可以实现比较复杂的3维分析及数据可视化应用，如需进行一步了解ArcGIS的三维分析可参考ESRI电子文档《Using<br>3D Analyst》</p>
+<p>开发环境搭建完成后，按照国际惯例先写一个Hello World。</p>
+<h1 id="ArcGIS_for_Android项目代码编写">ArcGIS for Android项目代码编写</h1><h2 id="在布局中添加MapView">在布局中添加MapView</h2><p>打开<code>res&gt;&gt;layout&gt;&gt;activity_main.xml</code>文件，添加Mapview</p>
+<pre><code>&lt;<span class="tag">com</span><span class="class">.esri</span><span class="class">.android</span><span class="class">.map</span><span class="class">.MapView</span>
+    <span class="rule"><span class="attribute">android</span>:<span class="value">id=<span class="string">"@+id/map"</span>
+    android:layout_width=<span class="string">"fill_parent"</span>
+    android:layout_height=<span class="string">"fill_parent"</span> /&gt;</span></span>
+</code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png" alt=""></p>
+<h2 id="新建MapView并设置UI和代码的绑定">新建MapView并设置UI和代码的绑定</h2><pre><code><span class="keyword">private</span> MapView mapView = <span class="literal">null</span>;
+<span class="keyword">private</span> ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = <span class="literal">null</span>;
+</code></pre><p>//设置UI和代码绑定</p>
+<pre><code><span class="keyword">this</span>.mapView = (MapView)<span class="keyword">this</span>.findViewById(R.id.<span class="built_in">map</span>);
+</code></pre><h2 id="新建地图图层并添加到MapView中">新建地图图层并添加到MapView中</h2><pre><code><span class="built_in">String</span> strMapUrl=<span class="string">"http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"</span>;
+<span class="keyword">this</span>.arcGISTiledMapServiceLayer = <span class="keyword">new</span> ArcGISTiledMapServiceLayer(strMapUrl);
+<span class="keyword">this</span>.mapView.addLayer(arcGISTiledMapServiceLayer);
+</code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png" alt=""></p>
+<h1 id="ArcGIS_for_Android项目运行">ArcGIS for Android项目运行</h1><p>和普通Android项目类似，ArcGIS for Android项目可以在模拟器中运行，也可以在真机中运行</p>
+<h2 id="在真机运行项目">在真机运行项目</h2><p>1、手机需要开启<code>开发者调试模式</code><br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.jpeg-hexo.png" alt=""></p>
+<p>注：在 Android 4.2 以后版本的系统中, 开发者模式是默认隐藏的。到 <code>设置 &gt; 关于手机</code> 连续点击版本号7次即可显示。</p>
+<p>2、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p>
+<p>3、选择连接手机设备、点击<code>OK</code>即可<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.1.png-hexo.png" alt=""></p>
+<p>4、运行效果<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld2.1.jpeg-hexo.png" alt=""></p>
+<h2 id="在模拟器中运行项目">在模拟器中运行项目</h2><p>1、点击<code>AVD Manager</code>按钮打开 AVD Manager界面<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld3.png-hexo.png" alt=""></p>
+<p>2、点击左下角的<code>Create Virtual Device</code>，创建模拟器<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld4.png-hexo.png" alt=""></p>
+<p>3、可以根据自己的需要配置，这里我默认<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld5.png-hexo.png" alt=""></p>
+<p>4、根据自己的需要选择系统镜像、我选择默认<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld6.png-hexo.png" alt=""></p>
+<p>5、模拟器配置，注意<code>Graphices</code>选项，选择<code>Hardware</code><br>具体可参考：<a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" target="_blank" rel="external">教你5步学会ArcGIS Android模拟器调试 </a><br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld7.png-hexo.png" alt=""></p>
+<p>6、稍等片刻创建完成。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld8.png-hexo.png" alt=""></p>
+<p>7、选择刚刚创建的模拟器，点击<code>Launch emulator</code><br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld9.png-hexo.png" alt=""></p>
+<p>第一次启动可能有点慢，运行效果如下<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.png-hexo.png" alt=""></p>
+<p>模拟也要开启开发者模式、方法和真机完全相同<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld10.1.png-hexo.png" alt=""></p>
+<p><strong>和在真机运行类似</strong><br>8、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p>
+<p>9、选择连接模拟设备、点击<code>OK</code>即可<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld11.png-hexo.png" alt=""></p>
+<p>可能会报错 <code>INSTALL_FAILED_NO_MATCHING_ABIS</code><br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld12.png-hexo.png" alt=""></p>
+<p>是由于使用了native libraries 。该native libraries 不支持当前的cpu的体系结构。<br>就是在<code>libs</code>文件夹下删除过多出问题了。我们的模拟器是X86的，可以保留X86其他的删除。</p>
+<p>10、再次运行，效果如下<br><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/5/HelloWorld13.png-hexo.png" alt=""></p>
+<blockquote>
+<p>参考资料</p>
+</blockquote>
+<p>1、Running Your App<br><a href="https://developer.android.com/training/basics/firstapp/running-app.html" target="_blank" rel="external">https://developer.android.com/training/basics/firstapp/running-app.html</a><br>2、教你5步学会ArcGIS Android模拟器调试<br><a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" target="_blank" rel="external">http://blog.csdn.net/arcgis_mobile/article/details/7758650</a></p>
 
 
 <div id="AllanboltSignature">
@@ -460,7 +466,13 @@ document.getElementById("mycopyright").innerHTML = htmlData;
       
         <div class="post-tags">
           
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
             <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag">#ArcGIS Runtime SDK for Android</a>
+          
+            <a href="/tags/ArcGIS-for-Android/" rel="tag">#ArcGIS for Android</a>
           
         </div>
       
@@ -469,16 +481,16 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十/" rel="next" title="GIS基础软件及操作(十)">
-                <i class="fa fa-chevron-left"></i> GIS基础软件及操作(十)
+              <a href="/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/" rel="next" title="《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）">
+                <i class="fa fa-chevron-left"></i> 《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/14/GIS基础软件及操作-十二/" rel="prev" title="GIS基础软件及操作(十二)">
-                GIS基础软件及操作(十二) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/24/全站启用HTTPS/" rel="prev" title="全站启用HTTPS">
+                全站启用HTTPS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,10 +506,10 @@ document.getElementById("mycopyright").innerHTML = htmlData;
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-     data-title="GIS基础软件及操作(十一)"
+        <div class="ds-share flat" data-thread-key="2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/"
+     data-title="《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World"
      data-content=""
-     data-url="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/">
+     data-url="http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -527,8 +539,8 @@ document.getElementById("mycopyright").innerHTML = htmlData;
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/14/GIS基础软件及操作-十一/"
-           data-title="GIS基础软件及操作(十一)" data-url="http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十一/">
+      <div class="ds-thread" data-thread-key="2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/"
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World" data-url="http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/">
       </div>
     
   </div>
@@ -664,7 +676,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#练习十一、3D_可视分析"><span class="nav-number">1.</span> <span class="nav-text">练习十一、3D 可视分析  </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIS数据三维显示"><span class="nav-number">1.1.</span> <span class="nav-text">GIS数据三维显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维飞行动画制作"><span class="nav-number">1.2.</span> <span class="nav-text">三维飞行动画制作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android项目代码编写"><span class="nav-number">1.</span> <span class="nav-text">ArcGIS for Android项目代码编写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在布局中添加MapView"><span class="nav-number">1.1.</span> <span class="nav-text">在布局中添加MapView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建MapView并设置UI和代码的绑定"><span class="nav-number">1.2.</span> <span class="nav-text">新建MapView并设置UI和代码的绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建地图图层并添加到MapView中"><span class="nav-number">1.3.</span> <span class="nav-text">新建地图图层并添加到MapView中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS_for_Android项目运行"><span class="nav-number">2.</span> <span class="nav-text">ArcGIS for Android项目运行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在真机运行项目"><span class="nav-number">2.1.</span> <span class="nav-text">在真机运行项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在模拟器中运行项目"><span class="nav-number">2.2.</span> <span class="nav-text">在模拟器中运行项目</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

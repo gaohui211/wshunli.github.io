@@ -98,9 +98,7 @@
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建6.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建7.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png">
-<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png">
-<meta property="og:updated_time" content="2016-04-28T13:39:57.558Z">
+<meta property="og:updated_time" content="2016-04-30T02:32:40.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-3、ArcGIS for Android开发环境搭建">
 <meta name="twitter:description" content="本文主要针对在Windwos环境下用Android Studio搭建ArcGIS for Android开发环境">
@@ -404,25 +402,11 @@ maven {
     <span class="attribute">android:glEsVersion</span>=<span class="value">"0x00020000"</span>
     <span class="attribute">android:required</span>=<span class="value">"true"</span> /&gt;</span>
 </code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建8.png-hexo.png" alt=""></p>
-<h1 id="添加布局及代码">添加布局及代码</h1><h2 id="在布局中添加MapView">在布局中添加MapView</h2><p>打开res&gt;&gt;layout&gt;&gt;activity_main.xml文件，添加Mapview</p>
-<pre><code>&lt;<span class="tag">com</span><span class="class">.esri</span><span class="class">.android</span><span class="class">.map</span><span class="class">.MapView</span>
-    <span class="rule"><span class="attribute">android</span>:<span class="value">id=<span class="string">"@+id/map"</span>
-    android:layout_width=<span class="string">"fill_parent"</span>
-    android:layout_height=<span class="string">"fill_parent"</span> /&gt;</span></span>
-</code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png" alt=""></p>
-<h2 id="新建MapView并设置UI和代码的绑定">新建MapView并设置UI和代码的绑定</h2><pre><code><span class="keyword">private</span> MapView mapView = <span class="literal">null</span>;
-<span class="keyword">private</span> ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer = <span class="literal">null</span>;
-</code></pre><p>//设置UI和代码绑定</p>
-<pre><code><span class="keyword">this</span>.mapView = (MapView)<span class="keyword">this</span>.findViewById(R.id.<span class="built_in">map</span>);
-</code></pre><h2 id="新建地图图层并添加到MapView中">新建地图图层并添加到MapView中</h2><pre><code><span class="built_in">String</span> strMapUrl=<span class="string">"http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"</span>;
-<span class="keyword">this</span>.arcGISTiledMapServiceLayer = <span class="keyword">new</span> ArcGISTiledMapServiceLayer(strMapUrl);
-<span class="keyword">this</span>.mapView.addLayer(arcGISTiledMapServiceLayer);
-</code></pre><p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png" alt=""></p>
+<p>至此ArcGIS for Android开发环境搭建完成</p>
 <blockquote>
 <p>参考资料</p>
 </blockquote>
-<p>1、Install and set up ArcGIS Runtime SDK for Android<br><a href="https://developers.arcgis.com/android/guide/install-and-set-up.htm" target="_blank" rel="external">https://developers.arcgis.com/android/guide/install-and-set-up.htm</a>  </p>
-<p>2、ArcGIS Runtime SDK for Android 10.2.5新开发平台安装配置指南<br><a href="http://blog.csdn.net/arcgis_all/article/details/44060885" target="_blank" rel="external">http://blog.csdn.net/arcgis_all/article/details/44060885</a></p>
+<p>1、Install and set up ArcGIS Runtime SDK for Android<br><a href="https://developers.arcgis.com/android/guide/install-and-set-up.htm" target="_blank" rel="external">https://developers.arcgis.com/android/guide/install-and-set-up.htm</a><br>2、Creating an Android Project<br><a href="https://developer.android.com/training/basics/firstapp/creating-project.html" target="_blank" rel="external">https://developer.android.com/training/basics/firstapp/creating-project.html</a><br>3、ArcGIS Runtime SDK for Android 10.2.5新开发平台安装配置指南<br><a href="http://blog.csdn.net/arcgis_all/article/details/44060885" target="_blank" rel="external">http://blog.csdn.net/arcgis_all/article/details/44060885</a></p>
 
 
 <div id="AllanboltSignature">
@@ -607,7 +591,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -698,7 +682,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建Android项目"><span class="nav-number">1.</span> <span class="nav-text">新建Android项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置ArcGIS_for_Android支持"><span class="nav-number">2.</span> <span class="nav-text">配置ArcGIS for Android支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGIS_Repository配置"><span class="nav-number">2.1.</span> <span class="nav-text">ArcGIS Repository配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App_Module配置"><span class="nav-number">2.2.</span> <span class="nav-text">App Module配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions和Features配置"><span class="nav-number">2.3.</span> <span class="nav-text">Permissions和Features配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加布局及代码"><span class="nav-number">3.</span> <span class="nav-text">添加布局及代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在布局中添加MapView"><span class="nav-number">3.1.</span> <span class="nav-text">在布局中添加MapView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建MapView并设置UI和代码的绑定"><span class="nav-number">3.2.</span> <span class="nav-text">新建MapView并设置UI和代码的绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建地图图层并添加到MapView中"><span class="nav-number">3.3.</span> <span class="nav-text">新建地图图层并添加到MapView中</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建Android项目"><span class="nav-number">1.</span> <span class="nav-text">新建Android项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置ArcGIS_for_Android支持"><span class="nav-number">2.</span> <span class="nav-text">配置ArcGIS for Android支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGIS_Repository配置"><span class="nav-number">2.1.</span> <span class="nav-text">ArcGIS Repository配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App_Module配置"><span class="nav-number">2.2.</span> <span class="nav-text">App Module配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions和Features配置"><span class="nav-number">2.3.</span> <span class="nav-text">Permissions和Features配置</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
