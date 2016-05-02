@@ -92,7 +92,7 @@
 <meta property="og:description">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/6/地图的容器MapView1.png-hexo.png">
-<meta property="og:updated_time" content="2016-05-02T11:31:58.423Z">
+<meta property="og:updated_time" content="2016-05-02T11:34:22.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-6、地图的容器MapView">
 <meta name="twitter:description">
@@ -367,13 +367,13 @@ MapView mv = new MapView<span class="params">(this)</span>;
 mv.addLayer<span class="params">(new ArcGISTiledMapServiceLayer<span class="params">(
     <span class="string">"http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"</span>)</span>)</span>;
 setContentView<span class="params">(mv)</span>;
-</code></pre><h2 id="MapView的实例化">MapView的实例化</h2><h2 id="JAVA方式">JAVA方式</h2><p>1、采用的MapOptions类实例化一个MapView，定义底图，缩放级别，以及中心。</p>
+</code></pre><h2 id="MapView的实例化">MapView的实例化</h2><h3 id="JAVA方式">JAVA方式</h3><p>1、采用的MapOptions类实例化一个MapView，定义底图，缩放级别，以及中心。</p>
 <pre><code>MapOptions topo = <span class="keyword">new</span> MapOptions(MapType.TOPO, <span class="number">23</span>, -<span class="number">110</span>, <span class="number">9</span>);
 MapView mapView = <span class="keyword">new</span> MapView(<span class="keyword">this</span>, topo);
 </code></pre><p>2、使用 <code>new（MapOptions.MapType）</code>方法，切换底图。</p>
 <pre><code>MapOptions topo = <span class="keyword">new</span> MapOptions(MapType.TOPO, <span class="number">23</span>, -<span class="number">110</span>, <span class="number">9</span>);
 MapView mapView = <span class="keyword">new</span> MapView(<span class="keyword">this</span>, topo);
-</code></pre><h2 id="XML方式">XML方式</h2><p>以上内容使用XML实现</p>
+</code></pre><h3 id="XML方式">XML方式</h3><p>以上内容使用XML实现</p>
 <pre><code><span class="comment">&lt;!-- MapView with MapOptions settings for Topo basemap,
         zoom level, and centered in Costa Mesa, CA. --&gt;</span>
 <span class="tag">&lt;<span class="title">com.esri.android.map.MapView</span>
@@ -1383,7 +1383,7 @@ document.getElementById("mycopyright").innerHTML = htmlData;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView概述"><span class="nav-number">1.</span> <span class="nav-text">MapView概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView的使用方法"><span class="nav-number">2.</span> <span class="nav-text">MapView的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapView的创建"><span class="nav-number">2.1.</span> <span class="nav-text">MapView的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapView的实例化"><span class="nav-number">2.2.</span> <span class="nav-text">MapView的实例化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA方式"><span class="nav-number">2.3.</span> <span class="nav-text">JAVA方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML方式"><span class="nav-number">2.4.</span> <span class="nav-text">XML方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView的方法"><span class="nav-number">3.</span> <span class="nav-text">MapView的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView概述"><span class="nav-number">1.</span> <span class="nav-text">MapView概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView的使用方法"><span class="nav-number">2.</span> <span class="nav-text">MapView的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapView的创建"><span class="nav-number">2.1.</span> <span class="nav-text">MapView的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapView的实例化"><span class="nav-number">2.2.</span> <span class="nav-text">MapView的实例化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA方式"><span class="nav-number">2.2.1.</span> <span class="nav-text">JAVA方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XML方式"><span class="nav-number">2.2.2.</span> <span class="nav-text">XML方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapView的方法"><span class="nav-number">3.</span> <span class="nav-text">MapView的方法</span></a></li></ol></div>
             
           </div>
         </section>

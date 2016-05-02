@@ -47,7 +47,7 @@
     <link href="http://www.wshunli.com/2016/04/12/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-6%E3%80%81%E5%9C%B0%E5%9B%BE%E7%9A%84%E5%AE%B9%E5%99%A8MapView/"/>
     <id>http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图的容器MapView/</id>
     <published>2016-04-12T08:44:50.000Z</published>
-    <updated>2016-05-02T11:31:58.423Z</updated>
+    <updated>2016-05-02T11:34:22.369Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -73,13 +73,13 @@ MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;
 mv.addLayer&lt;span class=&quot;params&quot;&gt;(new ArcGISTiledMapServiceLayer&lt;span class=&quot;params&quot;&gt;(
     &lt;span class=&quot;string&quot;&gt;&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer&quot;&lt;/span&gt;)&lt;/span&gt;)&lt;/span&gt;;
 setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;MapView的实例化&quot;&gt;MapView的实例化&lt;/h2&gt;&lt;h2 id=&quot;JAVA方式&quot;&gt;JAVA方式&lt;/h2&gt;&lt;p&gt;1、采用的MapOptions类实例化一个MapView，定义底图，缩放级别，以及中心。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;MapView的实例化&quot;&gt;MapView的实例化&lt;/h2&gt;&lt;h3 id=&quot;JAVA方式&quot;&gt;JAVA方式&lt;/h3&gt;&lt;p&gt;1、采用的MapOptions类实例化一个MapView，定义底图，缩放级别，以及中心。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;MapOptions topo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapOptions(MapType.TOPO, &lt;span class=&quot;number&quot;&gt;23&lt;/span&gt;, -&lt;span class=&quot;number&quot;&gt;110&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;);
 MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, topo);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、使用 &lt;code&gt;new（MapOptions.MapType）&lt;/code&gt;方法，切换底图。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;MapOptions topo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapOptions(MapType.TOPO, &lt;span class=&quot;number&quot;&gt;23&lt;/span&gt;, -&lt;span class=&quot;number&quot;&gt;110&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;);
 MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, topo);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;XML方式&quot;&gt;XML方式&lt;/h2&gt;&lt;p&gt;以上内容使用XML实现&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;XML方式&quot;&gt;XML方式&lt;/h3&gt;&lt;p&gt;以上内容使用XML实现&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- MapView with MapOptions settings for Topo basemap,
         zoom level, and centered in Costa Mesa, CA. --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;com.esri.android.map.MapView&lt;/span&gt;
