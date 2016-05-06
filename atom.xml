@@ -1092,7 +1092,7 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     <link href="http://www.wshunli.com/2016/04/12/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-6%E3%80%81%E5%9C%B0%E5%9B%BE%E5%AE%B9%E5%99%A8MapView/"/>
     <id>http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/</id>
     <published>2016-04-12T08:44:50.000Z</published>
-    <updated>2016-05-03T17:11:30.863Z</updated>
+    <updated>2016-05-06T09:32:44.286Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -1913,7 +1913,7 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
 &lt;blockquote&gt;
 &lt;p&gt;参考资料  &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1、MapView | ArcGIS Android 10.2.7 API&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/MapView.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/MapView.html&lt;/a&gt;&lt;br&gt;2、ArcGIS fo&lt;br&gt;r Android地图控件的5大常见操作&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_mobile/article/details/7801467&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_mobile/article/details/7801467&lt;/a&gt;&lt;br&gt;3、《ArcGIS Runtime SDK for Android开发笔记》——（9）、空间数据的容器-地图MapView - gis-luq - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4941715.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4941715.html&lt;/a&gt;&lt;br&gt;4、arcgis for android 学习 - (4) 了解mapView的一些方法和事件 - 张云飞VIR - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/vir56k/archive/2012/06/04/2534418.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/vir56k/archive/2012/06/04/2534418.html&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;1、MapView | ArcGIS Android 10.2.7 API&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/MapView.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/MapView.html&lt;/a&gt;&lt;br&gt;2、ArcGIS for Android地图控件的5大常见操作&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/arcgis_mobile/article/details/7801467&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/arcgis_mobile/article/details/7801467&lt;/a&gt;&lt;br&gt;3、《ArcGIS Runtime SDK for Android开发笔记》——（9）、空间数据的容器-地图MapView - gis-luq - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4941715.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4941715.html&lt;/a&gt;&lt;br&gt;4、arcgis for android 学习 - (4) 了解mapView的一些方法和事件 - 张云飞VIR - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/vir56k/archive/2012/06/04/2534418.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/vir56k/archive/2012/06/04/2534418.html&lt;/a&gt;  &lt;/p&gt;
 </content>
     
     <summary type="html">
