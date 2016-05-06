@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wshunli.com/"/>
-  <updated>2016-05-06T05:53:54.512Z</updated>
+  <updated>2016-05-06T08:53:52.476Z</updated>
   <id>http://www.wshunli.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://www.wshunli.com/2016/05/06/Awesome-GIS/"/>
     <id>http://www.wshunli.com/2016/05/06/Awesome-GIS/</id>
     <published>2016-05-06T05:45:16.000Z</published>
-    <updated>2016-05-06T05:53:54.512Z</updated>
+    <updated>2016-05-06T08:53:52.476Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Awesome_GIS&quot;&gt;Awesome GIS&lt;/h1&gt;&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;Welcome to contribute. Let’s make it better.&lt;/strong&gt; Please follow the &lt;a href=&quot;https://github.com/sshuair/awesome-gis/blob/master/ContributingGuidelines.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Contributing Guidelines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Inspired by &lt;a href=&quot;https://github.com/vinta/awesome-python&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Awesome Python&lt;/a&gt;.&lt;/p&gt;
@@ -970,7 +970,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Awesome_GIS&quot;&gt;Awesome GIS&lt;/h1&gt;&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
+      &lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
     
     </summary>
     
@@ -2175,7 +2175,7 @@ maven {
     <link href="http://www.wshunli.com/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
     <published>2016-04-06T07:57:13.000Z</published>
-    <updated>2016-04-29T07:29:16.273Z</updated>
+    <updated>2016-05-06T08:49:29.761Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
