@@ -1013,10 +1013,10 @@
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
     <published>2016-04-15T03:08:13.000Z</published>
-    <updated>2016-05-07T05:06:48.237Z</updated>
+    <updated>2016-05-07T05:10:06.952Z</updated>
     
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;DynamicLayer&quot;&gt;DynamicLayer&lt;/h1&gt;&lt;p&gt;DynamicLayer 是动态图层的基类.&lt;/p&gt;
@@ -1069,9 +1069,7 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在GIS中图层是很重要的
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1093,7 +1091,7 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     <link href="http://www.wshunli.com/2016/04/12/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-6%E3%80%81%E5%9C%B0%E5%9B%BE%E5%AE%B9%E5%99%A8MapView/"/>
     <id>http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/</id>
     <published>2016-04-12T08:44:50.000Z</published>
-    <updated>2016-05-06T09:32:44.286Z</updated>
+    <updated>2016-05-07T05:11:14.692Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
