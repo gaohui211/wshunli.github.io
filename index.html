@@ -582,15 +582,78 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" rel="gallery_cinwouwl2000ol0lqi7oetgg3"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
-          <p><a href="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <a id="more"></a>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer0.png-hexo.png" alt=""></p>
+<p>在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer1.png-hexo.png" alt=""></p>
+<h1 id="DynamicLayer">DynamicLayer</h1><p>DynamicLayer 是动态图层的基类.</p>
+<p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer2.png-hexo.png" alt=""></p>
+<h2 id="ArcGISDynamicMapServiceLayer">ArcGISDynamicMapServiceLayer</h2><p>ArcGISDynamicMapServiceLayer图层对应ArcGIS for Server服务中的动态服务，动态地图服务的地图数据是按照移动设备范围读取的，用法与ArcGISTiledMapServiceLayer图层相同。<br>ArcGISDynamicMapServiceLayer图层通常包含多个图层，这些图层由server根据请求来渲染并以raster image形式返回，并且返回的raster并不包含feature的额外信息。它的功能特点是更新非常方便，并能及时呈现给用户，同时，图层的可视性和空间参考可以改变，可以给图层添加单独的layer definition，ArcGIS Server为每个image动态投影。而地图的空间参考是由第一个加载的图层决定。<br>它的性能特点：它的渲染时间取决于请求数据的数量和复杂度，因此一般都比tiled map server要慢，因此，它适合数据经常发生改变、或者需要针对不同的用户呈现不同的数据，且要素信息（如attributes，geometry，symbol等）不需要的情况。</p>
+<pre><code><span class="comment">//ArcGISDynamicMapServiceLayer class is used to define the Layer that is added to the</span>
+<span class="comment">//MapView object.</span>
+MapView mv = new MapView<span class="params">(this)</span>;
+mv.addLayer<span class="params">(new ArcGISDynamicMapServiceLayer<span class="params">(
+<span class="string">"http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer"</span>)</span>)</span>;
+setContentView<span class="params">(mv)</span>;
+</code></pre><h2 id="ArcGISImageServiceLayer">ArcGISImageServiceLayer</h2><p>ArcGISImageServiceLayer图层对应ArcGIS for Server服务中的影像服务，调用影像服务也非常简单，同调用上述服务一样，示例代码如下：</p>
+<pre><code><span class="comment">//ArcGISImageServiceLayer class is used to define the Layer that is added to the</span>
+<span class="comment">//MapView object.</span>
+MapView mv = <span class="keyword">new</span> MapView(<span class="keyword">this</span>);
+mv.addLayer(<span class="keyword">new</span> ArcGISImageServiceLayer(
+<span class="string">"http://myserver/arcgis/rest/services/MyImage/ImageServer"</span>,<span class="literal">null</span>));
+setContentView(mv);
+</code></pre><h2 id="WMSLayer">WMSLayer</h2><p>加载符合开放地理空间联盟（OGC）标准的WMS服务器数据。</p>
+<p>服务地址类似：</p>
+<pre><code><span class="link_url">http://</span>[<span class="link_label">SERVER:PORT</span>]/[INSTANCE]/services/[SERVICE]/MapServer/WMSServer
+</code></pre><p>添加示例代码如下：</p>
+<pre><code>String wmsURL = "<span class="link_url">http://</span>[<span class="link_label">SERVER:PORT</span>]/[INSTANCE]/services/[SERVICE]/MapServer/WMSServer";
+<span class="code">   WMSLayer wmsLayer = new WMSLayer(wmsURL);</span>
+<span class="code">   mMapView.addLayer(wmsLayer);</span>
+</code></pre><p>定义空间参考：</p>
+<pre><code>// <span class="operator"><span class="keyword">use</span> a spatial <span class="keyword">reference</span> defined <span class="keyword">by</span> sr
+   WMSLayer wmsLayer = <span class="keyword">new</span> WMSLayer(wmsURL, sr);</span>
+   mMapView.addLayer(wmsLayer);
+</code></pre><p>利用图层名称组成的数列设置图层可见性：</p>
+<pre><code><span class="keyword">String[] </span>visibleLayers = {<span class="string">"ushigh"</span>, <span class="string">"counties"</span>}<span class="comment">;</span>
+   wmsLayer.setVisibleLayer(visibleLayers)<span class="comment">;</span>
+</code></pre><p>获得所有图层信息：</p>
+<pre><code><span class="type">WMSLayerInfo</span><span class="literal">[]</span> wmsLayerInfo = wmsLayer.getLayers<span class="literal">()</span>;
+</code></pre><h1 id="FeatureLayer">FeatureLayer</h1><p>FeatureLayer是一种类型的层的特征组成; 在功能FeatureLayer包括几何图形和一组一致的属性。在一个特征FeatureLayer可以在地图，查询，编辑上显示，和选定（视觉突出显示）。每个要素都有一个唯一的ID。</p>
+<p>一个FeatureLayer对应一个FeatureTable，这是在向传递FeatureLayer构造。在正确显示顺序，getSpatialReference（）值必须以该地图的空间参考匹配FeatureLayer 添加。如果功能层的 FeatureTable是GeodatabaseFeatureServiceTable，通过调用设置空间参考  setSpatialReference(SpatialReference) 方法。当FeatureTable是GeodatabaseFeatureTable从获得的地理数据库，生成使用地理数据库时所设置的空间参考GeodatabaseSyncTask通过调用 setOutSpatialRef（的SpatialReference）方法。</p>
+<h1 id="GraphicsLayer">GraphicsLayer</h1><p>GraphicsLayer是ArcGIS Runtime for Android中比较重要的图层类型，也是使用最为频繁的一个。GraphicsLayer可以包含一个或多个Graphic对象，查询的返回结果和动态标绘的Graphic数据都要通过它呈现。建议在MapView中添加图层时不要第一个添加该类型的图层，因为MapView加载图层时先要初始化一些地图参数，而该图层不具备这些参数，其具体用法如下：</p>
+<pre><code><span class="comment">//GraphicsLayer class is used to define the Layer that is added to the</span>
+<span class="comment">//MapView object.</span>
+MapView mv = new MapView<span class="params">(this)</span>;
+mv.addLayer<span class="params">(new GraphicsLayer<span class="params">()</span>)</span>;
+setContentView<span class="params">(mv)</span>;
+</code></pre><p>除了可以呈现Graphic对象外，它还具备了一些其他有用的功能，如要素更新与要素获取等等，由类GraphicsLayer处理，GraphicsLayer是由应用程序来定义的图层，专门用来绘制有空间参考的要素，并不适合绘制non-geographical要素，如指北针或copyright text。可以用屏幕坐标来查询图层中的要素并且使用getGraphics（）方法返回要素，并且支持设置图层比例尺。<br>不推荐在graphics layer中存放太多的要素，但是，它有着不错的性能，并且是feature layer class的基类，如果必须要处理大量的要素，建议使用feature collection来存储在feature layer中。</p>
+<p>《未完待续》</p>
+<h1 id="GroupLayer">GroupLayer</h1><h1 id="KmlLayer">KmlLayer</h1><h1 id="RasterLayer">RasterLayer</h1><h1 id="TiledLayer">TiledLayer</h1><blockquote>
+<p>参考资料</p>
+</blockquote>
+<p>1、Layer | ArcGIS Android 10.2.7 API<br><a href="https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html" target="_blank" rel="external">https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html</a><br>2、《ArcGIS Runtime SDK for Android开发笔记》——（10）、ArcGIS Runtime SDK支持的空间数据类型 - gis-luq - 博客园<br><a href="http://www.cnblogs.com/gis-luq/p/4941737.html" target="_blank" rel="external">http://www.cnblogs.com/gis-luq/p/4941737.html</a><br>3、《ArcGIS Runtime SDK for Android开发笔记》——（11）、ArcGIS Runtime SDK常见空间数据加载 - gis-luq - 博客园<br><a href="http://www.cnblogs.com/gis-luq/p/5062715.html" target="_blank" rel="external">http://www.cnblogs.com/gis-luq/p/5062715.html</a></p>
+
+          
         
       
     </div>
