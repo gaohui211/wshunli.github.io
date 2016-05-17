@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建11.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建12.png-hexo.png">
 <meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建13.png-hexo.png">
-<meta property="og:updated_time" content="2016-04-28T13:39:25.749Z">
+<meta property="og:updated_time" content="2016-05-17T01:13:28.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-1、Android开发环境搭建">
 <meta name="twitter:description" content="本文主要针对在Windwos环境下用Android Studio搭建Android开发环境">
@@ -419,7 +419,18 @@ Oracle® Java 开发工具包 <span class="params">(JDK)</span> <span class="num
 <pre><code>.;<span class="preprocessor">%</span>JAVA_HOME<span class="preprocessor">%</span>\lib\dt.jar;<span class="preprocessor">%</span>JAVA_HOME<span class="preprocessor">%</span>\lib\tools.jar; <span class="comment">//记得前面有个"."</span>
 </code></pre><p>在<code>PATH</code>中加入</p>
 <pre><code><span class="variable">%JAVA_HOME</span><span class="variable">%\</span>bin;<span class="variable">%JAVA_HOME</span><span class="variable">%\</span>jre\bin;
-</code></pre><h2 id="Android_Studio安装">Android Studio安装</h2><p>对于Android Studio的安装部署分为两种情况：</p>
+</code></pre><p><strong>环境检查</strong></p>
+<p>cmd打开命令提示符输入<code>java -version</code>，存在输出。</p>
+<h2 id="Android环境配置">Android环境配置</h2><p>以前一直以为Android不需要配置环境。后来出现问题了才发现。</p>
+<p>比如JDK安装在<code>D:\AndroidStudio\sdk</code></p>
+<p><strong>变量设置</strong></p>
+<p>新建变量<code>ANDROID_HOME</code></p>
+<pre><code>D:<span class="command">\AndroidStudio</span><span class="command">\sdk</span>
+</code></pre><p>在<code>PATH</code>中加入</p>
+<pre><code><span class="variable">%ANDROID_HOME</span><span class="variable">%\</span>platform-tools;<span class="variable">%ANDROID_HOME</span><span class="variable">%\</span>tools;
+</code></pre><p><strong>环境检查</strong></p>
+<p>cmd打开命令提示符输入<code>adb</code>，存在输出。</p>
+<h2 id="Android_Studio安装">Android Studio安装</h2><p>对于Android Studio的安装部署分为两种情况：</p>
 <p>1、绿色版，解压后直接运行/bin/studio.exe或者/bin/studio64.exe即可，具体取决于所安装的JDK位数（32位或64位）。</p>
 <p><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/1/Android开发环境搭建5.png-hexo.png" alt=""></p>
 <p>2、安装版，安装过程依旧是一路下一步，这里不做赘述。不清楚的可以参考百度经验教程。</p>
@@ -457,8 +468,8 @@ Oracle® Java 开发工具包 <span class="params">(JDK)</span> <span class="num
               2016-04-05 15:55:27
         </time>
 		<br> 更新于：
-        <time itemprop="dateModified" datetime="2016-04-28T21:39:25+08:00" content="2016-04-28 21:39:25">
-              2016-04-28 21:39:25
+        <time itemprop="dateModified" datetime="2016-05-17T09:13:28+08:00" content="2016-05-17 09:13:28">
+              2016-05-17 09:13:28
         </time>
         <br> 原文链接：
         <a href="/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/" target="_blank"> http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/ </a>
@@ -700,7 +711,7 @@ Oracle® Java 开发工具包 <span class="params">(JDK)</span> <span class="num
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求与软件准备"><span class="nav-number">2.</span> <span class="nav-text">系统要求与软件准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-number">2.1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备"><span class="nav-number">2.2.</span> <span class="nav-text">软件准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置过程"><span class="nav-number">3.</span> <span class="nav-text">安装与配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA环境配置"><span class="nav-number">3.1.</span> <span class="nav-text">JAVA环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio安装"><span class="nav-number">3.2.</span> <span class="nav-text">Android Studio安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio配置"><span class="nav-number">3.3.</span> <span class="nav-text">Android Studio配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求与软件准备"><span class="nav-number">2.</span> <span class="nav-text">系统要求与软件准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-number">2.1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备"><span class="nav-number">2.2.</span> <span class="nav-text">软件准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与配置过程"><span class="nav-number">3.</span> <span class="nav-text">安装与配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA环境配置"><span class="nav-number">3.1.</span> <span class="nav-text">JAVA环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android环境配置"><span class="nav-number">3.2.</span> <span class="nav-text">Android环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio安装"><span class="nav-number">3.3.</span> <span class="nav-text">Android Studio安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android_Studio配置"><span class="nav-number">3.4.</span> <span class="nav-text">Android Studio配置</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
