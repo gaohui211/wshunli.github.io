@@ -2244,7 +2244,7 @@ maven {
     <link href="http://www.wshunli.com/2016/04/05/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/</id>
     <published>2016-04-05T07:55:27.000Z</published>
-    <updated>2016-05-17T01:13:28.965Z</updated>
+    <updated>2016-05-17T01:16:31.536Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2313,7 +2313,7 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;环境检查&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;cmd打开命令提示符输入&lt;code&gt;java -version&lt;/code&gt;，存在输出。&lt;/p&gt;
 &lt;h2 id=&quot;Android环境配置&quot;&gt;Android环境配置&lt;/h2&gt;&lt;p&gt;以前一直以为Android不需要配置环境。后来出现问题了才发现。&lt;/p&gt;
-&lt;p&gt;比如JDK安装在&lt;code&gt;D:\AndroidStudio\sdk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;比如SDK安装在&lt;code&gt;D:\AndroidStudio\sdk&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;变量设置&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;新建变量&lt;code&gt;ANDROID_HOME&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;D:&lt;span class=&quot;command&quot;&gt;\AndroidStudio&lt;/span&gt;&lt;span class=&quot;command&quot;&gt;\sdk&lt;/span&gt;
