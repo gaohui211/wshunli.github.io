@@ -1013,7 +1013,7 @@
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
     <published>2016-04-15T03:08:13.000Z</published>
-    <updated>2016-05-07T05:10:06.952Z</updated>
+    <updated>2016-06-10T11:30:48.646Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -1060,11 +1060,46 @@ MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;
 mv.addLayer&lt;span class=&quot;params&quot;&gt;(new GraphicsLayer&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;)&lt;/span&gt;;
 setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除了可以呈现Graphic对象外，它还具备了一些其他有用的功能，如要素更新与要素获取等等，由类GraphicsLayer处理，GraphicsLayer是由应用程序来定义的图层，专门用来绘制有空间参考的要素，并不适合绘制non-geographical要素，如指北针或copyright text。可以用屏幕坐标来查询图层中的要素并且使用getGraphics（）方法返回要素，并且支持设置图层比例尺。&lt;br&gt;不推荐在graphics layer中存放太多的要素，但是，它有着不错的性能，并且是feature layer class的基类，如果必须要处理大量的要素，建议使用feature collection来存储在feature layer中。&lt;/p&gt;
-&lt;p&gt;《未完待续》&lt;/p&gt;
-&lt;h1 id=&quot;GroupLayer&quot;&gt;GroupLayer&lt;/h1&gt;&lt;h1 id=&quot;KmlLayer&quot;&gt;KmlLayer&lt;/h1&gt;&lt;h1 id=&quot;RasterLayer&quot;&gt;RasterLayer&lt;/h1&gt;&lt;h1 id=&quot;TiledLayer&quot;&gt;TiledLayer&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考资料&lt;/p&gt;
+&lt;h1 id=&quot;KmlLayer&quot;&gt;KmlLayer&lt;/h1&gt;&lt;p&gt;KmlLayer是用来加载KML（Keyhole Markup Language）文件（.KML、.kmz）的图层。KML 是一种文件格式，用于在地球浏览器（例如 Google 地球、Google 地图和谷歌手机地图）中显示地理数据。KML 是由开放地理空间联盟（Open Geospatial Consortium, Inc.，简称 OGC）维护的国际标准。&lt;/p&gt;
+&lt;h1 id=&quot;RasterLayer&quot;&gt;RasterLayer&lt;/h1&gt;&lt;p&gt;RasterLayer是用来加载影像的图层。ArcGIS Runtime SDK for Android 从10.2.4开始支持直接读取本地影像数据，数据类型包含：ASRP/USRP、CIB1,5,10、DTED0, 1, 2、GeoPackage、GeoTIFF、HFA、HRE、IMG、JPEG、JPEG2000、NITF、PNG、RPF、SRTM1, FileRasterSource是加载本地影像数据文件类，地图视图中以RasterLayer作为图层对象展示出来。代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;String rasterPath = Environment.getExternalStorageDirectory&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;.getPath&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;/raster/test.tif&quot;&lt;/span&gt;;
+FileRasterSource rasterSource;
+try {  
+ rasterSource = new FileRasterSource&lt;span class=&quot;params&quot;&gt;(rasterPath)&lt;/span&gt;;  
+} catch &lt;span class=&quot;params&quot;&gt;(IllegalArgumentException ie)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;null or empty path&quot;&lt;/span&gt;)&lt;/span&gt;;
+} catch &lt;span class=&quot;params&quot;&gt;(FileNotFoundException fe)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file doesn&#39;t exist&quot;&lt;/span&gt;)&lt;/span&gt;;
+} catch &lt;span class=&quot;params&quot;&gt;(RuntimeException re)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file can&#39;t be opened&quot;&lt;/span&gt;)&lt;/span&gt;;
+}
+RasterLayer rasterLayer = new RasterLayer&lt;span class=&quot;params&quot;&gt;(rasterSource)&lt;/span&gt;;
+mMapView.addLayer&lt;span class=&quot;params&quot;&gt;(rasterLayer)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;TiledLayer&quot;&gt;TiledLayer&lt;/h1&gt;&lt;p&gt;TiledLayer为加载切片的图层。包含两个直接子类。&lt;br&gt;ArcGISLocalTiledLayer, TiledServiceLayer&lt;/p&gt;
+&lt;h2 id=&quot;ArcGISLocalTiledLayer&quot;&gt;ArcGISLocalTiledLayer&lt;/h2&gt;&lt;p&gt;ArcGISLocalTiledLayer是用来添加离线数据包的图层，该图层目前支持两种格式的离线数据：一个是紧凑型的缓存切片，另一个是打包的tpk格式的数据，对于这两种数据的制作方法可以参照我的文章，图层用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; MapView(this); 
+ArcGISLocalTiledLayer &lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; ArcGISLocalTiledLayer(&lt;span class=&quot;string&quot;&gt;&quot;file:///mnt/sdcard/&amp;lt;CacheName&amp;gt;/Layers&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//离线图层，将缓存的地址作为参数传入 &lt;/span&gt;
+mv&lt;span class=&quot;built_in&quot;&gt;.&lt;/span&gt;addLayer(&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;); 
+setContentView(mv);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;TiledServiceLayer&quot;&gt;TiledServiceLayer&lt;/h2&gt;&lt;p&gt;ArcGISTiledMapServiceLayer, BingMapsLayer, OpenStreetMapLayer, WMTSLayer&lt;/p&gt;
+&lt;p&gt;1、ArcGISTiledMapServiceLayer&lt;/p&gt;
+&lt;p&gt;在ArcGIS for Server中可以发布多种地图服务，移动端需要有不同的图层来对应这些服务。ArcGISTiledMapServiceLayer图层对应ArcGIS for Server服务中的切片服务，于切片都是事先做好的，ArcGISTiledMapServiceLayer不能对图层中的数据进行更改，除非更新服务缓存，在arcgis for android中，也不允许对此类型的数据查询，通常用做底图使用。同时，因为加载的是缓存切片，这个类型的图层是arcgis for android中相应请求最快的图层之一，它采用多个线程，通常是每个图片使用一个线程来处理请求和绘制图片，并且异步处理。用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;; 
+mv.addLayer&lt;span class=&quot;params&quot;&gt;(new ArcGISTiledMapServiceLayer&lt;span class=&quot;params&quot;&gt;( &lt;span class=&quot;string&quot;&gt;&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;&lt;/span&gt;)&lt;/span&gt;)&lt;/span&gt;; 
+setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、BingMapsLayer&lt;/p&gt;
+&lt;p&gt;BingMapsLayer用来加载必应地图。用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;;
+mv.addLayer&lt;span class=&quot;params&quot;&gt;(new BingMapsLayer&lt;span class=&quot;params&quot;&gt;(
+&lt;span class=&quot;string&quot;&gt;&quot;[your Bing Maps key]&quot;&lt;/span&gt;, MapStyle.Aerial)&lt;/span&gt;)&lt;/span&gt;;
+setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、OpenStreetMapLayer&lt;/p&gt;
+&lt;p&gt;OpenStreetMapLayer用来加载OpenStreetMapLayer。实际用得比较少。&lt;/p&gt;
+&lt;p&gt;4、WMTSLayer&lt;/p&gt;
+&lt;p&gt;WMTSLayer加载WMTS服务，比如加载天地图什么的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考资料&lt;br&gt;1、Layer | ArcGIS Android 10.2.7 API&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1、Layer | ArcGIS Android 10.2.7 API&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&lt;/a&gt;&lt;br&gt;2、《ArcGIS Runtime SDK for Android开发笔记》——（10）、ArcGIS Runtime SDK支持的空间数据类型 - gis-luq - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/4941737.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/4941737.html&lt;/a&gt;&lt;br&gt;3、《ArcGIS Runtime SDK for Android开发笔记》——（11）、ArcGIS Runtime SDK常见空间数据加载 - gis-luq - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/gis-luq/p/5062715.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/gis-luq/p/5062715.html&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
