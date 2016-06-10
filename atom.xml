@@ -1009,16 +1009,239 @@
   </entry>
   
   <entry>
-    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer</title>
-    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
-    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
-    <published>2016-04-15T03:08:13.000Z</published>
-    <updated>2016-06-10T11:30:48.646Z</updated>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GroupLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BGroupLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GroupLayer/</id>
+    <published>2016-04-15T11:45:42.000Z</published>
+    <updated>2016-06-10T11:51:06.265Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GroupLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GroupLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之RasterLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BRasterLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之RasterLayer/</id>
+    <published>2016-04-15T11:45:36.000Z</published>
+    <updated>2016-06-10T11:54:04.081Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之RasterLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;RasterLayer&quot;&gt;RasterLayer&lt;/h1&gt;&lt;p&gt;RasterLayer是用来加载影像的图层。ArcGIS Runtime SDK for Android 从10.2.4开始支持直接读取本地影像数据，数据类型包含：ASRP/USRP、CIB1,5,10、DTED0, 1, 2、GeoPackage、GeoTIFF、HFA、HRE、IMG、JPEG、JPEG2000、NITF、PNG、RPF、SRTM1, FileRasterSource是加载本地影像数据文件类，地图视图中以RasterLayer作为图层对象展示出来。代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;String rasterPath = Environment.getExternalStorageDirectory&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;.getPath&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;/raster/test.tif&quot;&lt;/span&gt;;
+FileRasterSource rasterSource;
+try {  
+ rasterSource = new FileRasterSource&lt;span class=&quot;params&quot;&gt;(rasterPath)&lt;/span&gt;;  
+} catch &lt;span class=&quot;params&quot;&gt;(IllegalArgumentException ie)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;null or empty path&quot;&lt;/span&gt;)&lt;/span&gt;;
+} catch &lt;span class=&quot;params&quot;&gt;(FileNotFoundException fe)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file doesn&#39;t exist&quot;&lt;/span&gt;)&lt;/span&gt;;
+} catch &lt;span class=&quot;params&quot;&gt;(RuntimeException re)&lt;/span&gt; {
+  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file can&#39;t be opened&quot;&lt;/span&gt;)&lt;/span&gt;;
+}
+RasterLayer rasterLayer = new RasterLayer&lt;span class=&quot;params&quot;&gt;(rasterSource)&lt;/span&gt;;
+mMapView.addLayer&lt;span class=&quot;params&quot;&gt;(rasterLayer)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之RasterLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之KmlLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BKmlLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之KmlLayer/</id>
+    <published>2016-04-15T11:45:26.000Z</published>
+    <updated>2016-06-10T11:53:42.528Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之KmlLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;KmlLayer&quot;&gt;KmlLayer&lt;/h1&gt;&lt;p&gt;KmlLayer是用来加载KML（Keyhole Markup Language）文件（.KML、.kmz）的图层。KML 是一种文件格式，用于在地球浏览器（例如 Google 地球、Google 地图和谷歌手机地图）中显示地理数据。KML 是由开放地理空间联盟（Open Geospatial Consortium, Inc.，简称 OGC）维护的国际标准。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之KmlLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之FeatureLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BFeatureLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之FeatureLayer/</id>
+    <published>2016-04-15T11:45:20.000Z</published>
+    <updated>2016-06-10T11:53:06.229Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之FeatureLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;FeatureLayer&quot;&gt;FeatureLayer&lt;/h1&gt;&lt;p&gt;FeatureLayer是一种类型的层的特征组成; 在功能FeatureLayer包括几何图形和一组一致的属性。在一个特征FeatureLayer可以在地图，查询，编辑上显示，和选定（视觉突出显示）。每个要素都有一个唯一的ID。&lt;/p&gt;
+&lt;p&gt;一个FeatureLayer对应一个FeatureTable，这是在向传递FeatureLayer构造。在正确显示顺序，getSpatialReference（）值必须以该地图的空间参考匹配FeatureLayer 添加。如果功能层的 FeatureTable是GeodatabaseFeatureServiceTable，通过调用设置空间参考  setSpatialReference(SpatialReference) 方法。当FeatureTable是GeodatabaseFeatureTable从获得的地理数据库，生成使用地理数据库时所设置的空间参考GeodatabaseSyncTask通过调用 setOutSpatialRef（的SpatialReference）方法。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之FeatureLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GraphicsLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BGraphicsLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/</id>
+    <published>2016-04-15T11:45:13.000Z</published>
+    <updated>2016-06-10T11:53:21.737Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;GraphicsLayer&quot;&gt;GraphicsLayer&lt;/h1&gt;&lt;p&gt;GraphicsLayer是ArcGIS Runtime for Android中比较重要的图层类型，也是使用最为频繁的一个。GraphicsLayer可以包含一个或多个Graphic对象，查询的返回结果和动态标绘的Graphic数据都要通过它呈现。建议在MapView中添加图层时不要第一个添加该类型的图层，因为MapView加载图层时先要初始化一些地图参数，而该图层不具备这些参数，其具体用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;//GraphicsLayer class is used to define the Layer that is added to the&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;//MapView object.&lt;/span&gt;
+MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;;
+mv.addLayer&lt;span class=&quot;params&quot;&gt;(new GraphicsLayer&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;)&lt;/span&gt;;
+setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除了可以呈现Graphic对象外，它还具备了一些其他有用的功能，如要素更新与要素获取等等，由类GraphicsLayer处理，GraphicsLayer是由应用程序来定义的图层，专门用来绘制有空间参考的要素，并不适合绘制non-geographical要素，如指北针或copyright text。可以用屏幕坐标来查询图层中的要素并且使用getGraphics（）方法返回要素，并且支持设置图层比例尺。&lt;br&gt;不推荐在graphics layer中存放太多的要素，但是，它有着不错的性能，并且是feature layer class的基类，如果必须要处理大量的要素，建议使用feature collection来存储在feature layer中。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BTiledLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/</id>
+    <published>2016-04-15T11:45:06.000Z</published>
+    <updated>2016-06-10T11:54:31.533Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;TiledLayer&quot;&gt;TiledLayer&lt;/h1&gt;&lt;p&gt;TiledLayer为加载切片的图层。包含两个直接子类。&lt;br&gt;ArcGISLocalTiledLayer, TiledServiceLayer&lt;/p&gt;
+&lt;h2 id=&quot;ArcGISLocalTiledLayer&quot;&gt;ArcGISLocalTiledLayer&lt;/h2&gt;&lt;p&gt;ArcGISLocalTiledLayer是用来添加离线数据包的图层，该图层目前支持两种格式的离线数据：一个是紧凑型的缓存切片，另一个是打包的tpk格式的数据，对于这两种数据的制作方法可以参照我的文章，图层用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; MapView(this); 
+ArcGISLocalTiledLayer &lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; ArcGISLocalTiledLayer(&lt;span class=&quot;string&quot;&gt;&quot;file:///mnt/sdcard/&amp;lt;CacheName&amp;gt;/Layers&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//离线图层，将缓存的地址作为参数传入 &lt;/span&gt;
+mv&lt;span class=&quot;built_in&quot;&gt;.&lt;/span&gt;addLayer(&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;); 
+setContentView(mv);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;TiledServiceLayer&quot;&gt;TiledServiceLayer&lt;/h2&gt;&lt;p&gt;ArcGISTiledMapServiceLayer, BingMapsLayer, OpenStreetMapLayer, WMTSLayer&lt;/p&gt;
+&lt;p&gt;1、ArcGISTiledMapServiceLayer&lt;/p&gt;
+&lt;p&gt;在ArcGIS for Server中可以发布多种地图服务，移动端需要有不同的图层来对应这些服务。ArcGISTiledMapServiceLayer图层对应ArcGIS for Server服务中的切片服务，于切片都是事先做好的，ArcGISTiledMapServiceLayer不能对图层中的数据进行更改，除非更新服务缓存，在arcgis for android中，也不允许对此类型的数据查询，通常用做底图使用。同时，因为加载的是缓存切片，这个类型的图层是arcgis for android中相应请求最快的图层之一，它采用多个线程，通常是每个图片使用一个线程来处理请求和绘制图片，并且异步处理。用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;; 
+mv.addLayer&lt;span class=&quot;params&quot;&gt;(new ArcGISTiledMapServiceLayer&lt;span class=&quot;params&quot;&gt;( &lt;span class=&quot;string&quot;&gt;&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;&lt;/span&gt;)&lt;/span&gt;)&lt;/span&gt;; 
+setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、BingMapsLayer&lt;/p&gt;
+&lt;p&gt;BingMapsLayer用来加载必应地图。用法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;;
+mv.addLayer&lt;span class=&quot;params&quot;&gt;(new BingMapsLayer&lt;span class=&quot;params&quot;&gt;(
+&lt;span class=&quot;string&quot;&gt;&quot;[your Bing Maps key]&quot;&lt;/span&gt;, MapStyle.Aerial)&lt;/span&gt;)&lt;/span&gt;;
+setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、OpenStreetMapLayer&lt;/p&gt;
+&lt;p&gt;OpenStreetMapLayer用来加载OpenStreetMapLayer。实际用得比较少。&lt;/p&gt;
+&lt;p&gt;4、WMTSLayer&lt;/p&gt;
+&lt;p&gt;WMTSLayer加载WMTS服务，比如加载天地图什么的。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之DynamicLayer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BDynamicLayer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/</id>
+    <published>2016-04-15T11:44:58.000Z</published>
+    <updated>2016-06-10T11:52:45.435Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;DynamicLayer&quot;&gt;DynamicLayer&lt;/h1&gt;&lt;p&gt;DynamicLayer 是动态图层的基类.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;ArcGISDynamicMapServiceLayer&quot;&gt;ArcGISDynamicMapServiceLayer&lt;/h2&gt;&lt;p&gt;ArcGISDynamicMapServiceLayer图层对应ArcGIS for Server服务中的动态服务，动态地图服务的地图数据是按照移动设备范围读取的，用法与ArcGISTiledMapServiceLayer图层相同。&lt;br&gt;ArcGISDynamicMapServiceLayer图层通常包含多个图层，这些图层由server根据请求来渲染并以raster image形式返回，并且返回的raster并不包含feature的额外信息。它的功能特点是更新非常方便，并能及时呈现给用户，同时，图层的可视性和空间参考可以改变，可以给图层添加单独的layer definition，ArcGIS Server为每个image动态投影。而地图的空间参考是由第一个加载的图层决定。&lt;br&gt;它的性能特点：它的渲染时间取决于请求数据的数量和复杂度，因此一般都比tiled map server要慢，因此，它适合数据经常发生改变、或者需要针对不同的用户呈现不同的数据，且要素信息（如attributes，geometry，symbol等）不需要的情况。&lt;/p&gt;
@@ -1051,52 +1274,39 @@ setContentView(mv);
    wmsLayer.setVisibleLayer(visibleLayers)&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;获得所有图层信息：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;type&quot;&gt;WMSLayerInfo&lt;/span&gt;&lt;span class=&quot;literal&quot;&gt;[]&lt;/span&gt; wmsLayerInfo = wmsLayer.getLayers&lt;span class=&quot;literal&quot;&gt;()&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;FeatureLayer&quot;&gt;FeatureLayer&lt;/h1&gt;&lt;p&gt;FeatureLayer是一种类型的层的特征组成; 在功能FeatureLayer包括几何图形和一组一致的属性。在一个特征FeatureLayer可以在地图，查询，编辑上显示，和选定（视觉突出显示）。每个要素都有一个唯一的ID。&lt;/p&gt;
-&lt;p&gt;一个FeatureLayer对应一个FeatureTable，这是在向传递FeatureLayer构造。在正确显示顺序，getSpatialReference（）值必须以该地图的空间参考匹配FeatureLayer 添加。如果功能层的 FeatureTable是GeodatabaseFeatureServiceTable，通过调用设置空间参考  setSpatialReference(SpatialReference) 方法。当FeatureTable是GeodatabaseFeatureTable从获得的地理数据库，生成使用地理数据库时所设置的空间参考GeodatabaseSyncTask通过调用 setOutSpatialRef（的SpatialReference）方法。&lt;/p&gt;
-&lt;h1 id=&quot;GraphicsLayer&quot;&gt;GraphicsLayer&lt;/h1&gt;&lt;p&gt;GraphicsLayer是ArcGIS Runtime for Android中比较重要的图层类型，也是使用最为频繁的一个。GraphicsLayer可以包含一个或多个Graphic对象，查询的返回结果和动态标绘的Graphic数据都要通过它呈现。建议在MapView中添加图层时不要第一个添加该类型的图层，因为MapView加载图层时先要初始化一些地图参数，而该图层不具备这些参数，其具体用法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;//GraphicsLayer class is used to define the Layer that is added to the&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;//MapView object.&lt;/span&gt;
-MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;;
-mv.addLayer&lt;span class=&quot;params&quot;&gt;(new GraphicsLayer&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;)&lt;/span&gt;;
-setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除了可以呈现Graphic对象外，它还具备了一些其他有用的功能，如要素更新与要素获取等等，由类GraphicsLayer处理，GraphicsLayer是由应用程序来定义的图层，专门用来绘制有空间参考的要素，并不适合绘制non-geographical要素，如指北针或copyright text。可以用屏幕坐标来查询图层中的要素并且使用getGraphics（）方法返回要素，并且支持设置图层比例尺。&lt;br&gt;不推荐在graphics layer中存放太多的要素，但是，它有着不错的性能，并且是feature layer class的基类，如果必须要处理大量的要素，建议使用feature collection来存储在feature layer中。&lt;/p&gt;
-&lt;h1 id=&quot;KmlLayer&quot;&gt;KmlLayer&lt;/h1&gt;&lt;p&gt;KmlLayer是用来加载KML（Keyhole Markup Language）文件（.KML、.kmz）的图层。KML 是一种文件格式，用于在地球浏览器（例如 Google 地球、Google 地图和谷歌手机地图）中显示地理数据。KML 是由开放地理空间联盟（Open Geospatial Consortium, Inc.，简称 OGC）维护的国际标准。&lt;/p&gt;
-&lt;h1 id=&quot;RasterLayer&quot;&gt;RasterLayer&lt;/h1&gt;&lt;p&gt;RasterLayer是用来加载影像的图层。ArcGIS Runtime SDK for Android 从10.2.4开始支持直接读取本地影像数据，数据类型包含：ASRP/USRP、CIB1,5,10、DTED0, 1, 2、GeoPackage、GeoTIFF、HFA、HRE、IMG、JPEG、JPEG2000、NITF、PNG、RPF、SRTM1, FileRasterSource是加载本地影像数据文件类，地图视图中以RasterLayer作为图层对象展示出来。代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;String rasterPath = Environment.getExternalStorageDirectory&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;.getPath&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;/raster/test.tif&quot;&lt;/span&gt;;
-FileRasterSource rasterSource;
-try {  
- rasterSource = new FileRasterSource&lt;span class=&quot;params&quot;&gt;(rasterPath)&lt;/span&gt;;  
-} catch &lt;span class=&quot;params&quot;&gt;(IllegalArgumentException ie)&lt;/span&gt; {
-  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;null or empty path&quot;&lt;/span&gt;)&lt;/span&gt;;
-} catch &lt;span class=&quot;params&quot;&gt;(FileNotFoundException fe)&lt;/span&gt; {
-  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file doesn&#39;t exist&quot;&lt;/span&gt;)&lt;/span&gt;;
-} catch &lt;span class=&quot;params&quot;&gt;(RuntimeException re)&lt;/span&gt; {
-  Log.d&lt;span class=&quot;params&quot;&gt;(TAG, &lt;span class=&quot;string&quot;&gt;&quot;raster file can&#39;t be opened&quot;&lt;/span&gt;)&lt;/span&gt;;
-}
-RasterLayer rasterLayer = new RasterLayer&lt;span class=&quot;params&quot;&gt;(rasterSource)&lt;/span&gt;;
-mMapView.addLayer&lt;span class=&quot;params&quot;&gt;(rasterLayer)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;TiledLayer&quot;&gt;TiledLayer&lt;/h1&gt;&lt;p&gt;TiledLayer为加载切片的图层。包含两个直接子类。&lt;br&gt;ArcGISLocalTiledLayer, TiledServiceLayer&lt;/p&gt;
-&lt;h2 id=&quot;ArcGISLocalTiledLayer&quot;&gt;ArcGISLocalTiledLayer&lt;/h2&gt;&lt;p&gt;ArcGISLocalTiledLayer是用来添加离线数据包的图层，该图层目前支持两种格式的离线数据：一个是紧凑型的缓存切片，另一个是打包的tpk格式的数据，对于这两种数据的制作方法可以参照我的文章，图层用法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;MapView mv = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; MapView(this); 
-ArcGISLocalTiledLayer &lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; ArcGISLocalTiledLayer(&lt;span class=&quot;string&quot;&gt;&quot;file:///mnt/sdcard/&amp;lt;CacheName&amp;gt;/Layers&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//离线图层，将缓存的地址作为参数传入 &lt;/span&gt;
-mv&lt;span class=&quot;built_in&quot;&gt;.&lt;/span&gt;addLayer(&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;); 
-setContentView(mv);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;TiledServiceLayer&quot;&gt;TiledServiceLayer&lt;/h2&gt;&lt;p&gt;ArcGISTiledMapServiceLayer, BingMapsLayer, OpenStreetMapLayer, WMTSLayer&lt;/p&gt;
-&lt;p&gt;1、ArcGISTiledMapServiceLayer&lt;/p&gt;
-&lt;p&gt;在ArcGIS for Server中可以发布多种地图服务，移动端需要有不同的图层来对应这些服务。ArcGISTiledMapServiceLayer图层对应ArcGIS for Server服务中的切片服务，于切片都是事先做好的，ArcGISTiledMapServiceLayer不能对图层中的数据进行更改，除非更新服务缓存，在arcgis for android中，也不允许对此类型的数据查询，通常用做底图使用。同时，因为加载的是缓存切片，这个类型的图层是arcgis for android中相应请求最快的图层之一，它采用多个线程，通常是每个图片使用一个线程来处理请求和绘制图片，并且异步处理。用法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;; 
-mv.addLayer&lt;span class=&quot;params&quot;&gt;(new ArcGISTiledMapServiceLayer&lt;span class=&quot;params&quot;&gt;( &lt;span class=&quot;string&quot;&gt;&quot;http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;&lt;/span&gt;)&lt;/span&gt;)&lt;/span&gt;; 
-setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、BingMapsLayer&lt;/p&gt;
-&lt;p&gt;BingMapsLayer用来加载必应地图。用法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;MapView mv = new MapView&lt;span class=&quot;params&quot;&gt;(this)&lt;/span&gt;;
-mv.addLayer&lt;span class=&quot;params&quot;&gt;(new BingMapsLayer&lt;span class=&quot;params&quot;&gt;(
-&lt;span class=&quot;string&quot;&gt;&quot;[your Bing Maps key]&quot;&lt;/span&gt;, MapStyle.Aerial)&lt;/span&gt;)&lt;/span&gt;;
-setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、OpenStreetMapLayer&lt;/p&gt;
-&lt;p&gt;OpenStreetMapLayer用来加载OpenStreetMapLayer。实际用得比较少。&lt;/p&gt;
-&lt;p&gt;4、WMTSLayer&lt;/p&gt;
-&lt;p&gt;WMTSLayer加载WMTS服务，比如加载天地图什么的。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer</title>
+    <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
+    <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
+    <published>2016-04-15T03:08:13.000Z</published>
+    <updated>2016-06-10T11:54:43.429Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参考资料&lt;br&gt;1、Layer | ArcGIS Android 10.2.7 API&lt;br&gt;&lt;a href=&quot;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developers.arcgis.com/android/api-reference/reference/com/esri/android/map/Layer.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2841,635 +3051,6 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     
       <category term="Coding" scheme="http://www.wshunli.com/tags/Coding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VMware 12安装Mac OS X 10.10</title>
-    <link href="http://www.wshunli.com/2016/03/17/VMware-12%E5%AE%89%E8%A3%85Mac-OS-X-10-10/"/>
-    <id>http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/</id>
-    <published>2016-03-16T16:00:18.000Z</published>
-    <updated>2016-04-28T13:44:49.319Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac1.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;准备软件&quot;&gt;准备软件&lt;/h1&gt;&lt;p&gt;1.VMware Workstation 12下载&lt;/p&gt;
-&lt;p&gt;VMware Workstation下载__百度软件中心&lt;br&gt;&lt;a href=&quot;http://rj.baidu.com/soft/detail/13808.html?ald&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rj.baidu.com/soft/detail/13808.html?ald&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2.unlocker 208（for OS X 插件补丁）&lt;/p&gt;
-&lt;p&gt;Unlocker&lt;br&gt;&lt;a href=&quot;http://www.insanelymac.com/forum/files/file/339-unlocker/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.insanelymac.com/forum/files/file/339-unlocker/&lt;/a&gt;&lt;br&gt;或者：&lt;br&gt;&lt;a href=&quot;http://pan.baidu.com/s/1gexHZB9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1gexHZB9&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;3.Mac OS X 10.10镜像&lt;/p&gt;
-&lt;p&gt;Apple - OS X Yosemite - Mac App Store&lt;br&gt;&lt;a href=&quot;http://www.apple.com/osx/apps/app-store/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.apple.com/osx/apps/app-store/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;苹果系统 Mac OS X Yosemite 正式版安装程序镜像下载 (10.10 新功能特性总结)下载 | 异次元软件&lt;br&gt;&lt;a href=&quot;http://www.iplaysoft.com/osx-yosemite.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.iplaysoft.com/osx-yosemite.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;需要.cdr后缀的镜像  &lt;/p&gt;
-&lt;p&gt;OS X 10.11.1(15B42).cdr&lt;br&gt;链接: &lt;a href=&quot;http://pan.baidu.com/s/1skk3Skd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1skk3Skd&lt;/a&gt; 密码: txwg&lt;/p&gt;
-&lt;h1 id=&quot;安装步骤&quot;&gt;安装步骤&lt;/h1&gt;&lt;h2 id=&quot;VMware_Workstation_12安装&quot;&gt;VMware Workstation 12安装&lt;/h2&gt;&lt;p&gt;下载Vmare Workstation，以管理员身份运行，安装，一直下一步即可。VM安装好后，注册码百度一大堆。&lt;br&gt;具体可查看百度经验：&lt;/p&gt;
-&lt;p&gt;怎样安装虚拟机wmware12&lt;br&gt;&lt;a href=&quot;http://jingyan.baidu.com/article/870c6fc30ad5f0b03ee4be5b.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jingyan.baidu.com/article/870c6fc30ad5f0b03ee4be5b.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Unlocker安装&quot;&gt;Unlocker安装&lt;/h2&gt;&lt;p&gt;打开任务管理器，找到服务项，选择按名称排序，将框中四项全部停止运行。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;然后打开下载的插件，解压unlock208.zip文件，找到 unlock208\win-install.cmd，右键以管理员身份运行，等待运行完即可。（完成这一步vmware才能识别OS X）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;python的安装及环境配置：  &lt;/p&gt;
-&lt;p&gt;Python开发_python的安装 - Hongten - 博客园&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/hongten/p/hongten_python_install.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/hongten/p/hongten_python_install.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装的小技巧：&lt;br&gt;如果选择红框中的选项就不用配置环境变量了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;以上内容为Windows平台下的安装方法，其他平台及详细说明可参考一下说明&lt;/p&gt;
-&lt;p&gt;Unlocker208中的readme： &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Mac OS X Unlocker for VMware V2.0
-=================================
-
-1. Introduction
-&lt;span class=&quot;comment&quot;&gt;---------------&lt;/span&gt;
-
-Unlocker 2 is designed for Workstation 11, Player 7, ESXi 6 and Fusion 7.
-
-If you are using an earlier product please continue using Unlocker 1 
-
-Version 2 has been tested against:
-
-* Workstation 11/12 on Windows and Linux
-* Player 7 &amp;amp; Workstation Player 12 on Windows and Linux
-* Fusion 7/8 on Mavericks and Yosemite
-* ESXi 6.0
-
-The patch code carries out the following modifications dependent on the product
-being patched:
-
-* Fix vmware-vmx and derivatives to allow Mac OS X to boot
-* Fix vmwarebase .dll or .so to allow Apple to be selected during VM creation
-* Fix libvmkctl.so on ESXi 6 to allow &lt;span class=&quot;operator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; vCenter
-* Download a copy &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; the latest VMware Tools &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; OS X
-
-Note that &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; all products recognise the darwin.iso via &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; tools menu item.
-You will have &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; manually &lt;span class=&quot;keyword&quot;&gt;mount&lt;/span&gt; the darwin.iso &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; example &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Workstation &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; Player &lt;span class=&quot;number&quot;&gt;7.&lt;/span&gt;
-
-The vmwarebase code does &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be patched &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; OS X &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; ESXi so you will see a
-message &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; those systems telling you that it will &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; be patched.
-
-&lt;span class=&quot;keyword&quot;&gt;In&lt;/span&gt; all cases make sure VMware &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; running, &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;any&lt;/span&gt; background guests have
-been &lt;span class=&quot;keyword&quot;&gt;shutdown&lt;/span&gt;.
-
-The code &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;now&lt;/span&gt; Python &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; it makes the Unlocker easier &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; run &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; maintain &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; ESXi.
-There &lt;span class=&quot;keyword&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;some&lt;/span&gt; challenges &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; write the code &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; ESXi has a subset &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; Python &lt;span class=&quot;number&quot;&gt;2.7&lt;/span&gt; which
-constrains &lt;span class=&quot;keyword&quot;&gt;some&lt;/span&gt; modules that can be used.
-
-&lt;span class=&quot;number&quot;&gt;2.&lt;/span&gt; Prerequisites
-&lt;span class=&quot;comment&quot;&gt;----------------&lt;/span&gt;
-
-The code requires Python &lt;span class=&quot;number&quot;&gt;2.7&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;work&lt;/span&gt;. Most Linux distros, ESXi &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; OS X ship &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; a compatible
-Python interpreter &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; should &lt;span class=&quot;keyword&quot;&gt;work&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;without&lt;/span&gt; requiring &lt;span class=&quot;keyword&quot;&gt;any&lt;/span&gt; additional software.
-
-Windows has a packaged &lt;span class=&quot;keyword&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; the Python script &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; PyInstaller, &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; so does &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt;
-require Python &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be installed.
-
-&lt;span class=&quot;number&quot;&gt;3.&lt;/span&gt; Limitations
-&lt;span class=&quot;comment&quot;&gt;--------------&lt;/span&gt;
-
-&lt;span class=&quot;keyword&quot;&gt;If&lt;/span&gt; you &lt;span class=&quot;keyword&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; VMware Player &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; Workstation &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Windows you may &lt;span class=&quot;keyword&quot;&gt;get&lt;/span&gt; a core dump.
-
-Latest Linux &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; ESXi products &lt;span class=&quot;keyword&quot;&gt;are&lt;/span&gt; OK &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;show&lt;/span&gt; this problem.
-
-+&lt;span class=&quot;comment&quot;&gt;-----------------------------------------------------------------------------+&lt;/span&gt;
-| IMPORTANT:                                                                  |
-| ==========                                                                  |
-|                                                                             |
-| &lt;span class=&quot;keyword&quot;&gt;If&lt;/span&gt; you &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; VM &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; hardware VMware may &lt;span class=&quot;keyword&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt;  |
-| &lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; a core dump. There &lt;span class=&quot;keyword&quot;&gt;are&lt;/span&gt; two options &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;work&lt;/span&gt; around this issue:        |
-|                                                                             |
-| &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;Change&lt;/span&gt; the VM &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be HW &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; - this does &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; affect &lt;span class=&quot;keyword&quot;&gt;performance&lt;/span&gt;.            |
-| &lt;span class=&quot;number&quot;&gt;2.&lt;/span&gt; Edit the VMX &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;add&lt;/span&gt;:                                               |
-|    smc.&lt;span class=&quot;keyword&quot;&gt;version&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;0&quot;&lt;/span&gt;                                                        |
-|                                                                             |
-+&lt;span class=&quot;comment&quot;&gt;-----------------------------------------------------------------------------+&lt;/span&gt;
-
-&lt;span class=&quot;number&quot;&gt;4.&lt;/span&gt; Windows
-&lt;span class=&quot;comment&quot;&gt;----------&lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;On&lt;/span&gt; Windows you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; either run cmd.exe &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; Administrator &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt;
-Explorer &lt;span class=&quot;keyword&quot;&gt;right&lt;/span&gt; click &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; the command &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; select &lt;span class=&quot;string&quot;&gt;&quot;Run as administrator&quot;&lt;/span&gt;.
-
-win-&lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;.cmd   - patches VMware
-win-&lt;span class=&quot;keyword&quot;&gt;uninstall&lt;/span&gt;.cmd - restores VMware
-win-&lt;span class=&quot;keyword&quot;&gt;update&lt;/span&gt;-tools.cmd - retrieves latest OS X guest tools
-
-&lt;span class=&quot;number&quot;&gt;5.&lt;/span&gt; Linux
-&lt;span class=&quot;comment&quot;&gt;---------&lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;On&lt;/span&gt; Linux you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be either root &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; sudo &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; run the scripts.
-
-You may need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; ensure the Linux scripts have &lt;span class=&quot;keyword&quot;&gt;execute&lt;/span&gt; permissions
-&lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; running chmod +x against the &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; files.
-
-lnx-&lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;.sh   - patches VMware
-lnx-&lt;span class=&quot;keyword&quot;&gt;uninstall&lt;/span&gt;.sh - restores VMware
-lnx-&lt;span class=&quot;keyword&quot;&gt;update&lt;/span&gt;-tools.cmd - retrieves latest OS X guest tools
-
-&lt;span class=&quot;number&quot;&gt;6.&lt;/span&gt; Mac OS X
-&lt;span class=&quot;comment&quot;&gt;-----------&lt;/span&gt;
-&lt;span class=&quot;keyword&quot;&gt;On&lt;/span&gt; Mac OS X you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be either root &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; sudo &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; run the scripts.
-This &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; really &lt;span class=&quot;keyword&quot;&gt;only&lt;/span&gt; needed &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; you want &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;versions&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; Mac OS X.
-
-You may need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; ensure the OS X scripts have &lt;span class=&quot;keyword&quot;&gt;execute&lt;/span&gt; permissions
-&lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; running chmod +x against the &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; files.
-
-osx-&lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;.sh   - patches VMware
-osx-&lt;span class=&quot;keyword&quot;&gt;uninstall&lt;/span&gt;.sh - restores VMware
-
-&lt;span class=&quot;number&quot;&gt;7.&lt;/span&gt; ESXi
-&lt;span class=&quot;comment&quot;&gt;-------&lt;/span&gt;
-You will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; transfer the zip &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; the ESXi host either &lt;span class=&quot;keyword&quot;&gt;using&lt;/span&gt; vSphere &lt;span class=&quot;keyword&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; SCP.
-
-Once uploaded you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; either &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; the ESXi support console &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; SSH &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;
-run the commands. &lt;span class=&quot;keyword&quot;&gt;Use&lt;/span&gt; the unzip command &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extract&lt;/span&gt; the files. 
-
-&amp;lt;&amp;lt;&amp;lt; &lt;span class=&quot;keyword&quot;&gt;WARNING&lt;/span&gt;: &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; a datastore volume &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; run the scripts &amp;gt;&amp;gt;&amp;gt;
-
-Please note that you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; reboot the host &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; the patches &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; become active.
-The patcher &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; embbedded &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; a shell script &lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;.sh which &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; run &lt;span class=&quot;keyword&quot;&gt;at&lt;/span&gt; boot &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; /etc/rc.&lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;d&lt;/span&gt;.
-
-You may need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; ensure the ESXi scripts have &lt;span class=&quot;keyword&quot;&gt;execute&lt;/span&gt; permissions
-&lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; running chmod +x against the &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; files.
-
-esxi-&lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;.sh   - patches VMware 
-esxi-&lt;span class=&quot;keyword&quot;&gt;uninstall&lt;/span&gt;.sh - restores VMware 
-
-Note:
-&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;Any&lt;/span&gt; changes you have made &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;.sh will be lost. &lt;span class=&quot;keyword&quot;&gt;If&lt;/span&gt; you have made changes &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; 
-   that &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt;, you will need &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;merge&lt;/span&gt; them &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; the supplied &lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;.sh &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt;.
-&lt;span class=&quot;number&quot;&gt;2.&lt;/span&gt; The unlocker runs &lt;span class=&quot;keyword&quot;&gt;at&lt;/span&gt; boot &lt;span class=&quot;keyword&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;patch&lt;/span&gt; the relevant files &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; it &lt;span class=&quot;keyword&quot;&gt;now&lt;/span&gt; survives 
-   an &lt;span class=&quot;keyword&quot;&gt;upgrade&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;patch&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; ESXi &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;.sh &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; part &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; the persisted &lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt; state.
-
-&lt;span class=&quot;number&quot;&gt;8.&lt;/span&gt; Thanks
-&lt;span class=&quot;comment&quot;&gt;---------&lt;/span&gt;
-
-Thanks &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; Zenith432 &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; originally building the &lt;span class=&quot;keyword&quot;&gt;C&lt;/span&gt;++ unlocker &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; Mac Son &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; Knife
-(MSoK) &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; all the testing &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; support.
-
-Thanks also &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; Sam B &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; finding the solution &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; ESXi &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; helping me &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt;
-debugging expertise. Sam also wrote the code &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; patching ESXi ELF files.
-
-
-History
-&lt;span class=&quot;comment&quot;&gt;-------&lt;/span&gt;
-&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt; - &lt;span class=&quot;keyword&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;release&lt;/span&gt;
-&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt; - Removed need &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; Python &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; Windows
-&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.2&lt;/span&gt; - darwin.iso was &lt;span class=&quot;keyword&quot;&gt;missing&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; zip &lt;span class=&quot;keyword&quot;&gt;file&lt;/span&gt;
-&lt;span class=&quot;number&quot;&gt;02&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;01&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.3&lt;/span&gt; - Added EFI firmware files &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; remove &lt;span class=&quot;keyword&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;check&lt;/span&gt;
-               - Refactored Python code
-&lt;span class=&quot;number&quot;&gt;07&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;01&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.4&lt;/span&gt; - Added &lt;span class=&quot;keyword&quot;&gt;View&lt;/span&gt; USB Service &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; Windows batch files
-               - &lt;span class=&quot;keyword&quot;&gt;Fixed&lt;/span&gt; broken GOS &lt;span class=&quot;keyword&quot;&gt;Table&lt;/span&gt; patching &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Linux
-&lt;span class=&quot;number&quot;&gt;18&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;06&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.5&lt;/span&gt; - ESXi &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; working
-               - Latest tools &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; Fusion &lt;span class=&quot;number&quot;&gt;7.1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.2&lt;/span&gt;
-&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;06&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.6&lt;/span&gt; - ESXi &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;patch&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; smcPresent vCenter &lt;span class=&quot;keyword&quot;&gt;compatibility&lt;/span&gt;
-&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;09&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.7&lt;/span&gt; - Workstation &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Linux fixes
-&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.8&lt;/span&gt; - Player &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Linux fixes
-               - &lt;span class=&quot;keyword&quot;&gt;Get&lt;/span&gt; latest VMware tools command
-               - Removed firmware files
-               - Moved &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; PyInstaller &lt;span class=&quot;number&quot;&gt;3.0&lt;/span&gt;
-
-(&lt;span class=&quot;keyword&quot;&gt;c&lt;/span&gt;) &lt;span class=&quot;number&quot;&gt;2011&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt; Dave Parsons&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Mac_OS_X_10-10的创建&quot;&gt;Mac OS X 10.10的创建&lt;/h2&gt;&lt;p&gt;Mac OS X 10.10的创建和其他系统的创建几乎没有区别，下一步下一步&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac6cdr.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac10.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Mac_OS_X_10-10的开启&quot;&gt;Mac OS X 10.10的开启&lt;/h2&gt;&lt;p&gt;如下图所示点击开启虚拟机&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac11.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;可能会出现如下错误： &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac12.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;VMware Workstation不可恢复错误：(vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) 
-vcpu-&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:VEREIFY vmcore/vmm/main/physMem_monitor.c&lt;span class=&quot;number&quot;&gt;.1123&lt;/span&gt; 
-日志文件位于“E:OS X\vmware.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;”中。 
-你可以请求支持。 
-要收集数据提供过给VMware技术支持，请选择“帮助”菜单中的“收集支持数据”。 
-也可以直接在VMwarestation文件夹中运行“vm-support”脚本。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;只要找到安装目录并打开目录下的 OS X 10.10.vmx(OS X 10.10为虚拟机的名字) 文件，使用记事本打开后，在 floppy0.present = “FALSE” 后添加&lt;code&gt;smc.version = &amp;quot;0&amp;quot;&lt;/code&gt;(建议您复制)后保存，问题即可解决。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac13.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;vmware11装OSX的问题呀_虚拟机吧&lt;br&gt;&lt;a href=&quot;http://tieba.baidu.com/p/3524285937&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tieba.baidu.com/p/3524285937&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;开始安装MAC_OS&quot;&gt;开始安装MAC OS&lt;/h2&gt;&lt;h3 id=&quot;创建磁盘&quot;&gt;创建磁盘&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-6.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-8.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14-9.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;稍等片刻就会安装完成自动重启&lt;/p&gt;
-&lt;h3 id=&quot;第一次启动&quot;&gt;第一次启动&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac14.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac15.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac16.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac17.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac18.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac19.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac20.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac21.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac22.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac23.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;基本完成、可见Mac主界面如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac24.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;相关配置&quot;&gt;相关配置&lt;/h1&gt;&lt;p&gt;VMwareTool的安装及共享文件夹的设置 &lt;/p&gt;
-&lt;h2 id=&quot;安装VMwareTool&quot;&gt;安装VMwareTool&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac28-1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac28.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac29.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac30.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac31.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac32.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac33.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac34.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;设置共享文件夹&quot;&gt;设置共享文件夹&lt;/h2&gt;&lt;p&gt;共享文件夹的说明：由于虚拟机无法访问本机的硬盘，所以需要设置共享文件夹来方便虚拟机读取电脑的物理内存。&lt;/p&gt;
-&lt;p&gt;点击虚拟机，选择设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac35-1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如下图选择总是启用：&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac35.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac36.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac37.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac38.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;大功告成：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac39.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;性能优化&quot;&gt;性能优化&lt;/h1&gt;&lt;p&gt;这样装完Mac还是很卡的、下面做优化&lt;/p&gt;
-&lt;p&gt;【让更多人知道！】两个插件，虚拟机用OS X一！点！都！不！卡！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://bbs.feng.com/read-htm-tid-9559384.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://bbs.feng.com/read-htm-tid-9559384.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;安装Darwin7-1-0&quot;&gt;安装Darwin7.1.0&lt;/h2&gt;&lt;p&gt;darwin 7.1.0.iso下载&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1o6xCEhG&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1o6xCEhG&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;点击Finder选择偏好设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac25.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac26.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac26-1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac27.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击右下角光盘图标，选择连接即可：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac27-1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;安装fix_yosemite&quot;&gt;安装fix_yosemite&lt;/h2&gt;&lt;p&gt;下载fix_yosemite_vm_graphic_performance.zip&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1kTRfNq3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1kTRfNq3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装fix_yosemite_vm_graphic_performance.zip里的pkg文件，重启。重启完后提示你beamoff停止运行，不要点重新启动！关掉对话框  &lt;/p&gt;
-&lt;p&gt;Done！感受极为流畅的虚拟机吧！跟Mac和黑苹果完全没差！&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;其他&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;由我原来在博客园的一篇文章整理而来&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/wangshunli/p/4296649.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/wangshunli/p/4296649.html&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/17/VMware-12安装Mac-OS-X-10-10/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/VMware安装Mac/VMware安装Mac1.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="VMware" scheme="http://www.wshunli.com/categories/VMware/"/>
-    
-    
-      <category term="VMware" scheme="http://www.wshunli.com/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JRebel for Android入手使用</title>
-    <link href="http://www.wshunli.com/2016/03/11/JRebel-for-Android%E5%85%A5%E6%89%8B%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/</id>
-    <published>2016-03-11T02:15:47.000Z</published>
-    <updated>2016-04-28T13:44:19.166Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;JRebel_for_Android&quot;&gt;JRebel for Android&lt;/h1&gt;&lt;p&gt;一款Android studio插件——允许你修改正在运行中的应用程序，而且不必重新部署或重启。支持所有运行Android 4.0及以上版本的手机和平板。由ZeroTurnaround开发。这是一款收费插件，每年49美元，免费试用21天。&lt;/p&gt;
-&lt;p&gt;通常在开发过程中，我们每次修改代码后想要在模拟器或者真机上看到修改后的效果，都需要将Android应用重新编译、打包和安装到Android设备上并重启，这个过程是非常耽误时间的。JRebel for Android完美解决了这个问题。&lt;/p&gt;
-&lt;p&gt;具体JRebel for Android为什么能够实现，这些技术细节这里不多说，详细请见官网：&lt;a href=&quot;http://zeroturnaround.com/software/jrebel-for-android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zeroturnaround.com/software/jrebel-for-android/&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;如何安装&quot;&gt;如何安装&lt;/h1&gt;&lt;p&gt;在Android Studio插件里面搜索JRebel for Android即可。&lt;/p&gt;
-&lt;p&gt;JRebel for Android是收费的可尝试如下文件&lt;/p&gt;
-&lt;p&gt;rebel android studio 1.1.0 破解版 注册 - 下载频道 - CSDN.NET&lt;br&gt;&lt;a href=&quot;http://download.csdn.net/detail/bjgfs/9456906&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://download.csdn.net/detail/bjgfs/9456906&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;解压jrebel-for-android_1.1.0_act.zip中&lt;code&gt;jrebel-android.lic&lt;/code&gt;和&lt;code&gt;jrebel-for-android_1.1.0_mark.zip&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Android Studio -&amp;gt; Plugins -&amp;gt; Install plugin from disk安装&lt;code&gt;jrebel-for-android_1.1.0_mark.zip&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Android Studio -&amp;gt; Tools &amp;gt; JRebel for Android &amp;gt; Activate -&amp;gt; I have a license -&amp;gt; Browse，选择解压的&lt;code&gt;jrebel-android.lic&lt;/code&gt;，然后点击&lt;code&gt;Activate JRebel for Android&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;激活成功，查看有效期至2116年2月11日&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;软件的快捷是&lt;code&gt;CTRL+F10&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;已经在Android Studio2.0 Beta6/intellij idea 15测试成功&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;应该是我的Android Studio版本太新了(AndroidStudioPreview2.1)，提示错误&lt;br&gt;JRebel for Android terminated: License file error: License verification failed.&lt;br&gt;Process finished with exit code 1&lt;br&gt;使用这个版本的还是先试用吧，也可以安装Android Studio1.5的稳定版本&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我为此重新安装了Android Studio &lt;/strong&gt;&lt;br&gt;jrebel-for-android_ 1.0.8_crack在&lt;code&gt;AndroidStudio1.5&lt;/code&gt;下不更新可用&lt;br&gt;下载地址： &lt;a href=&quot;http://download.csdn.net/download/hjaitzw/9385764&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://download.csdn.net/download/hjaitzw/9385764&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;使用方法&quot;&gt;使用方法&lt;/h1&gt;&lt;p&gt;导入成功后studio会提示需要重启，此时重启studio，重启之后studio顶部工具栏会出现三个新按钮&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/2.png-no&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;第一个按钮是运行项目、第二个是debug、第三个是更新&lt;/p&gt;
-&lt;p&gt;运行你的项目。&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/4.png-no&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;可能会提示：&lt;br&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/3.png-no&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;按照提示做就行了。&lt;/p&gt;
-&lt;p&gt;当你修改了代码并重新查看运行效果时，点击&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/5.png-no&quot; alt=&quot;&quot;&gt;即可，你会发现真机或者模拟器上的当前应用并没有重启并且很快展示了修改代码后的效果。&lt;/p&gt;
-&lt;p&gt;目前使用过程中发现的问题，如果只是单纯的修改代码包括xml等布局文件没有问题，但如果是新增了Activity（其他组件还测试）应用还是会重新启动一次。&lt;/p&gt;
-&lt;p&gt;其他详细使用可参考：&lt;br&gt;&lt;a href=&quot;http://zeroturnaround.com/software/jrebel-for-android/quick-start/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zeroturnaround.com/software/jrebel-for-android/quick-start/&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JRebel for Android" scheme="http://www.wshunli.com/categories/JRebel-for-Android/"/>
-    
-    
-      <category term="JRebel for Android" scheme="http://www.wshunli.com/tags/JRebel-for-Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>枫林晚</title>
-    <link href="http://www.wshunli.com/2016/03/08/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
-    <id>http://www.wshunli.com/2016/03/08/枫林晚/</id>
-    <published>2016-03-08T11:35:19.000Z</published>
-    <updated>2016-04-28T13:45:03.899Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/08/枫林晚/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/枫林晚1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;枫林晚-停车只爱枫林晚  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsho2.com1.z0.glb.clouddn.com/logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;枫林晚主页&lt;br&gt;&lt;a href=&quot;http://park.wshunli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://park.wshunli.com&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;创作初衷&quot;&gt;创作初衷&lt;/h1&gt;&lt;p&gt;APP名字取自杜牧《山行》停车坐爱枫林晚,霜叶红于二月花。&lt;br&gt;做这款App的目的主要是学习百度LBS的开发和体会Google的Material Design。&lt;br&gt;可能现在还不够实用，我会在以后不断地完善。&lt;/p&gt;
-&lt;h2 id=&quot;LBS&quot;&gt;LBS&lt;/h2&gt;&lt;p&gt;在应用中使用了百度地图、百度定位等SDK。实现了百度LBS的基本地图、图层展示、附近的POI搜索等&lt;/p&gt;
-&lt;h2 id=&quot;UI&quot;&gt;UI&lt;/h2&gt;&lt;p&gt;高度个人定制了UI。地图操作部分包括地图缩放、指南针旋转、实时路况、图层切换等实现UI和功能自定义。&lt;/p&gt;
-&lt;h2 id=&quot;MD&quot;&gt;MD&lt;/h2&gt;&lt;p&gt;学习使用了Google的Material Design。体会Material Design的设计并加以使用，APP整体外观优雅大方&lt;/p&gt;
-&lt;h1 id=&quot;枫林晚功能&quot;&gt;枫林晚功能&lt;/h1&gt;&lt;h2 id=&quot;地图操作功能&quot;&gt;地图操作功能&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/mobile2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;实现对地图的旋转、缩放、图层切换等功能&lt;/p&gt;
-&lt;h2 id=&quot;定位功能&quot;&gt;定位功能&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/mobile4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;实现利用百度定位SDK对用户当前位置定位&lt;/p&gt;
-&lt;h2 id=&quot;停车场查询&quot;&gt;停车场查询&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/mobile1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;实现对附近2000m附近停车场进行查询显示&lt;/p&gt;
-&lt;h2 id=&quot;其他功能&quot;&gt;其他功能&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/mobile3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;实现应用自动更新、统计、意见反馈等&lt;/p&gt;
-&lt;h1 id=&quot;意见反馈&quot;&gt;意见反馈&lt;/h1&gt;&lt;p&gt;欢迎发邮件至&lt;a href=&quot;mailto:admin@wshunli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;admin@wshunli.com&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/08/枫林晚/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/枫林晚/枫林晚1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="枫林晚" scheme="http://www.wshunli.com/categories/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
-    
-    
-      <category term="枫林晚" scheme="http://www.wshunli.com/tags/%E6%9E%AB%E6%9E%97%E6%99%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitCafe项目迁移至Coding.net</title>
-    <link href="http://www.wshunli.com/2016/03/02/GitCafe%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BB%E8%87%B3Coding-net/"/>
-    <id>http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/</id>
-    <published>2016-03-02T08:05:04.000Z</published>
-    <updated>2016-04-28T13:42:54.508Z</updated>
-    
-    <content type="html">&lt;p&gt;GitCafe 将于 2016年5月31日 停止所有服务，届时您在 GitCafe 的账户资料及所有项目都将被永久删除，请尽快将您的资料和项目迁移至 Coding。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;迁移问题&quot;&gt;迁移问题&lt;/h1&gt;&lt;p&gt;1、GitCafe 什么时候停止服务？&lt;/p&gt;
-&lt;p&gt;GitCafe 将于 2016年 5月 31日 后停止所有服务，届时您在 GitCafe 的账户资料及所有项目都将被永久删除。即日起，您可将您的账户绑定至 Coding 进行相关迁移工作。&lt;/p&gt;
-&lt;p&gt;目前所有迁移工作将分两个阶段进行：&lt;/p&gt;
-&lt;p&gt;即日起，GitCafe 将不能再注册新用户、创建新项目，但已有账户和已有项目均可进行正常操作。在此期间，GitCafe 的所有付费服务将停止收费，用户可以继续使用 GitCafe 或马上进行相关迁移工作。&lt;br&gt;2016年 3月 2日 起至 GitCafe 停止服务前，GitCafe 全站将处于只读状态，用户只能进行相关迁移工作。&lt;br&gt;2、用户需要手工迁移数据吗？&lt;/p&gt;
-&lt;p&gt;不需要。我们提供自动迁移到 Coding 的工具，用户绑定 Coding 账号后，按照操作提示进行迁移。&lt;/p&gt;
-&lt;p&gt;3、用户在 GitCafe 充值了极特币，迁移至 Coding 后，原来的极特币还可以用吗？&lt;/p&gt;
-&lt;p&gt;绑定 Coding 账户后，用户在 GitCafe 的所有极特币将以 1500:1 的比例兑换成 Coding 交易币“码币”。由于码币的最小金额是0.01，当剩余极特币不足 15 个时，算作 0.01 码币。&lt;/p&gt;
-&lt;p&gt;4、用户可以迁移哪些项目？&lt;/p&gt;
-&lt;p&gt;用户只能迁移自己拥有的项目，且用户可以只迁移部分项目至 Coding，没迁移过的项目下次可以继续迁移。&lt;/p&gt;
-&lt;p&gt;5、我在 GitCafe 中项目的哪些内容会被迁入 Coding？&lt;/p&gt;
-&lt;p&gt;Coding 本身有 GitCafe 的几乎所有功能，Coding 也将尽可能保存您在 GitCafe 项目中的所有资源。迁移项目后，会为您在 Coding 创建一个同名项目，项目类型保持公开或私有不变。用户在 GitCafe 项目的项目基本信息、Deploy Keys 、Git 代码、工单、Wiki、Pages等内容将会一并迁移至 Coding。其中，工单全部以讨论的形式保存在 Coding，包括工单标签、讨论评论等。&lt;br&gt;项目基本信息包括项目名、项目描述、项目图标、项目状态（公开项目还是私有项目）；由于 Coding 不存在项目中文名和项目主页，该信息不能被保存。&lt;br&gt;由于项目协作人员无法和 Coding 用户一一对应，请项目拥有者自行通知相关协作人员注册 Coding，并将其邀请至对应的 Coding 项目。&lt;/p&gt;
-&lt;p&gt;6、Coding 没有 Wiki，我在 GitCafe 中的 Wiki 会完整迁移到 Coding 吗？&lt;/p&gt;
-&lt;p&gt;会。为完整保存 GitCafe 项目的 Wiki，GitCafe 的每一个项目迁移至 Coding 后，将创建两个对应项目。比如：GitCafe 中的项目 Test 迁移至 Coding 后将创建项目 Test 和项目 Test_Wiki。&lt;/p&gt;
-&lt;p&gt;7、项目被迁移后，我在 GitCafe 还能正常进行操作吗？&lt;/p&gt;
-&lt;p&gt;不能。迁移后，该项目在 GitCafe 马上变成只读状态。只读状态是指用户可以查看该项目的所有内容，包括代码、工单、Wiki等，但该项目的所有成员包括拥有者都不能对该项目进行任何操作，包括 Push 代码、新建工单、评论工单等。&lt;/p&gt;
-&lt;p&gt;8、GitCafe 的私有项目是收费的，迁移至 Coding 后将如何收费。&lt;/p&gt;
-&lt;p&gt;Coding 私有项目的基础版是不收费的，您的项目迁移至 Coding 后不会产生任何费用。Coding 其他收费策略参见 &lt;a href=&quot;https://coding.net/upgrade&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/upgrade&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;9、Coding 和 GitCafe 在功能上有何区别？&lt;/p&gt;
-&lt;p&gt;Coding 除了有 GitCafe 的代码托管相关功能外，Coding 还有 WebIDE、演示平台、质量管理等高级功能。除此之外，Coding 的注册用户还可以通过其旗下产品“码市”进行众包交易。&lt;/p&gt;
-&lt;p&gt;10、没用过 Coding，不知道怎么用该怎么办？&lt;/p&gt;
-&lt;p&gt;请查看 Coding 帮助文档： &lt;a href=&quot;https://coding.net/help&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://coding.net/help&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;迁移过程&quot;&gt;迁移过程&lt;/h1&gt;&lt;h2 id=&quot;进入个人首页&quot;&gt;进入个人首页&lt;/h2&gt;&lt;p&gt;进入个人首页可以看到如下公告&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;进入公告&quot;&gt;进入公告&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://gitcafe.com/migration&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gitcafe.com/migration&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;注意勾选我已注意事项&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击抹马上迁移&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;稍等片刻即可迁移所有项目到Coding.net&lt;/p&gt;
-&lt;h2 id=&quot;修改_config-yml&quot;&gt;修改_config.yml&lt;/h2&gt;&lt;p&gt;删除如下字段&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;attribute&quot;&gt;gitcafe&lt;/span&gt;: git&lt;span class=&quot;variable&quot;&gt;@gitcafe&lt;/span&gt;.&lt;span class=&quot;attribute&quot;&gt;com&lt;/span&gt;:wshunli/wshunli.git,gitcafe-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Coding_Pages服务&quot;&gt;Coding Pages服务&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;将项目的默认分支修改为gitcafe-pages并填写二级域名&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net6.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;修改DNS记录&quot;&gt;修改DNS记录&lt;/h2&gt;&lt;p&gt;将国内流量指向Coding.me&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net5.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;修改其他二级域名的 CNAME 记录指向 &lt;code&gt;wshunli.coding.me&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;3/17/2016 5:59:46 PM &lt;/p&gt;
-&lt;p&gt;修改其他二级域名的 CNAME 记录指向 &lt;code&gt;pages.coding.me&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net7.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GitCafe 将于 2016年5月31日 停止所有服务，届时您在 GitCafe 的账户资料及所有项目都将被永久删除，请尽快将您的资料和项目迁移至 Coding。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/02/GitCafe项目迁移至Coding-net/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GitCafe项目迁移至Coding.net/GitCafe项目迁移至Coding.net1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gitcafe创建多个Page服务并绑定子域名</title>
-    <link href="http://www.wshunli.com/2016/02/02/Gitcafe%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AAPage%E6%9C%8D%E5%8A%A1%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%AD%90%E5%9F%9F%E5%90%8D/"/>
-    <id>http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/</id>
-    <published>2016-02-02T10:26:44.000Z</published>
-    <updated>2016-04-28T13:42:41.039Z</updated>
-    
-    <content type="html">&lt;p&gt;想创建多个Page服务绑定二级域名作项目的展示页面，最终效果如下：  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;在线访问：  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://map.wshunli.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://map.wshunli.com&lt;/a&gt; &lt;/p&gt;
-&lt;h1 id=&quot;创建一个任意名字项目&quot;&gt;创建一个任意名字项目&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名2.png-hexo.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
-&lt;h1 id=&quot;在本地创建一个Git目录&quot;&gt;在本地创建一个Git目录&lt;/h1&gt;&lt;p&gt;创建目录&lt;code&gt;D:\GitCafe\Map&lt;/code&gt;&lt;br&gt;可用命令  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;d&lt;/span&gt;:
-&lt;span class=&quot;keyword&quot;&gt;mkdir&lt;/span&gt; GitCafe
-&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; GitCafe
-&lt;span class=&quot;keyword&quot;&gt;mkdir&lt;/span&gt; Map
-&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; Map
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;添加一个试验性的html文档&quot;&gt;添加一个试验性的html文档&lt;/h1&gt;&lt;p&gt;将&lt;code&gt;index.html&lt;/code&gt;复制到目录&lt;code&gt;D:\GitCafe\Map&lt;/code&gt; &lt;/p&gt;
-&lt;h1 id=&quot;提交第一个版本&quot;&gt;提交第一个版本&lt;/h1&gt;&lt;p&gt;将我们的项目初始化为一个 Git 版本库；  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git init
-&lt;span class=&quot;constant&quot;&gt;Initialized&lt;/span&gt; empty &lt;span class=&quot;constant&quot;&gt;Git&lt;/span&gt; repository &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/GitCafe/Map/&lt;/span&gt;.git/
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在，我们拥有了一个空的 Git 仓库，用 git add 命令将之前创建的 index.html 纳入到 Git 版本库中；&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ git &lt;span class=&quot;keyword&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;index&lt;/span&gt;.html
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;接下来我们通过 git commit 命令来做一次本地的保存，并在 -m 字符后面添加这一次提交的提交说明。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git &lt;span class=&quot;operator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;commit&lt;/span&gt; -&lt;span class=&quot;keyword&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Map init&#39;&lt;/span&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;添加_GitCafe_远程仓库&quot;&gt;添加 GitCafe 远程仓库&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git remote add origin &lt;span class=&quot;string&quot;&gt;&#39;git@gitcafe.com:wshunli/Map.git&#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;创建一个_gitcafe-pages_的分支，并切换到该分支&quot;&gt;创建一个 gitcafe-pages 的分支，并切换到该分支&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;$ git checkout -&lt;span class=&quot;tag&quot;&gt;b&lt;/span&gt; gitcafe-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;提交该分支至_GitCafe&quot;&gt;提交该分支至 GitCafe&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;$ git &lt;span class=&quot;keyword&quot;&gt;push &lt;/span&gt;-u origin gitcafe-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名4.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;自定义二级域名&quot;&gt;自定义二级域名&lt;/h1&gt;&lt;p&gt;在GitCafe中添加自定义域名&lt;code&gt;map.wshunli.com&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名5.png-hexo.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;在DNSPod中添加CNAME记录解析&lt;code&gt;map.wshunli.com&lt;/code&gt;至&lt;code&gt;gitcfe.io&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名6.png-hexo.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;最终效果如下：  &lt;/p&gt;
-&lt;iframe src=&quot;http://map.wshunli.com/index.html&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;100%&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;参考资料  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Gitcafe 创建多个 Page 服务 | Zippera’s blog&lt;br&gt;&lt;a href=&quot;http://zipperary.com/2015/01/16/gitcafe-subdomain/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zipperary.com/2015/01/16/gitcafe-subdomain/&lt;/a&gt;&lt;br&gt;GitCafe 快速上手 - GitCafe Help&lt;br&gt;&lt;a href=&quot;http://https://help.gitcafe.com/manuals/help/getting-started&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://help.gitcafe.com/manuals/help/getting-started&lt;/a&gt;&lt;br&gt;Wiki Pages 相关帮助 · GitCafe/Help - GitCafe&lt;br&gt;&lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki&lt;/a&gt;  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;想创建多个Page服务绑定二级域名作项目的展示页面，最终效果如下：  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Gitcafe创建多个Page服务并绑定子域名/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Gitcafe创建多个Page服务并绑定子域名/Gitcafe创建多个Page服务并绑定子域名1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo博客部同时署到Github、GitCafe、Coding</title>
-    <link href="http://www.wshunli.com/2016/02/02/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E5%90%8C%E6%97%B6%E7%BD%B2%E5%88%B0Github%E3%80%81GitCafe%E3%80%81Coding/"/>
-    <id>http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/</id>
-    <published>2016-02-02T09:26:23.000Z</published>
-    <updated>2016-04-28T13:43:06.518Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;由于&lt;a href=&quot;https://github.com/wshunli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;在国内的访问速度较慢，考虑将Hexo博客部署到国内的&lt;a href=&quot;https://gitcafe.com/wshunli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitCafe&lt;/a&gt;和&lt;a href=&quot;https://coding.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Coding&lt;/a&gt;，并采用DNSPod作分流。  &lt;/p&gt;
-&lt;p&gt;默认采用Github（稳定），国内采用GitCafe（速度），因为在学校教育网访问GitCafe有点问题（需要改下DNS），所以将教育网分流至Coding。&lt;br&gt;域名记录如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding1.png-hexo.png&quot; alt=&quot;&quot;&gt;]&lt;/p&gt;
-&lt;p&gt;Hexo的配置文件&lt;code&gt;_config.yml&lt;/code&gt;设置如下：  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;attribute&quot;&gt;deploy&lt;/span&gt;:
-  &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;: git
-  &lt;span class=&quot;attribute&quot;&gt;repository&lt;/span&gt;: 
-  &lt;span class=&quot;attribute&quot;&gt;github&lt;/span&gt;: git&lt;span class=&quot;variable&quot;&gt;@github&lt;/span&gt;.&lt;span class=&quot;attribute&quot;&gt;com&lt;/span&gt;:wshunli/wshunli.github.io.git,master
-  &lt;span class=&quot;attribute&quot;&gt;gitcafe&lt;/span&gt;: git&lt;span class=&quot;variable&quot;&gt;@gitcafe&lt;/span&gt;.&lt;span class=&quot;attribute&quot;&gt;com&lt;/span&gt;:wshunli/wshunli.git,gitcafe-pages 
-  &lt;span class=&quot;attribute&quot;&gt;coding&lt;/span&gt;: git&lt;span class=&quot;variable&quot;&gt;@git&lt;/span&gt;.coding.&lt;span class=&quot;attribute&quot;&gt;net&lt;/span&gt;:wshunli/wshunli.git,coding-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Github配置&quot;&gt;Github配置&lt;/h1&gt;&lt;p&gt;前面不再赘述详情可参考我的另一篇博客&lt;br&gt;从绑定域名开始&lt;br&gt;在&lt;code&gt;D:\Hexo\source&lt;/code&gt;新建&lt;code&gt;CNAME&lt;/code&gt;文件里面写上欲绑定的域名即可&lt;br&gt;在DNSPod中添加CNAME记录解析至&lt;code&gt;wshunli.github.io&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;GitCafe配置&quot;&gt;GitCafe配置&lt;/h1&gt;&lt;p&gt;和Github配置类似。绑定域名不再用CNAME文件。&lt;br&gt;注意：需要gitcafe-pages分支详情可看：&lt;br&gt;Wiki Pages 相关帮助 · GitCafe/Help - GitCafe&lt;br&gt;&lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助#wiki&lt;/a&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在DNSPod中添加CNAME记录解析至&lt;code&gt;wshunli.gitcafe.io&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;coding配置&quot;&gt;coding配置&lt;/h1&gt;&lt;p&gt;Coding Pages 服务设置如下：  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo博客部同时署到Github、GitCafe、Coding/Hexo博客部同时署到Github、GitCafe、Coding3.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在DNSPod中添加CNAME记录解析至&lt;code&gt;wshunli.coding.me&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考资料  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;将Hexo部署到GitCafe | 盛夏 &lt;a href=&quot;http://www.sumrday.com/2014/09-18-Hello-Hexo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sumrday.com/2014/09-18-Hello-Hexo.html&lt;/a&gt;  &lt;/p&gt;
-&lt;p&gt;在 Coding 上搭建 Hexo 个人博客！ - 各种各样的学习笔记 - SegmentFault &lt;a href=&quot;https://segmentfault.com/a/1190000002900848?utm_source=tuicool&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://segmentfault.com/a/1190000002900848?utm_source=tuicool&lt;/a&gt;  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/02/02/Hexo博客部同时署到Github、GitCafe、Coding/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/Hexo搭建Github静态博客/hexo.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.wshunli.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GIS基础软件及操作(十二)</title>
-    <link href="http://www.wshunli.com/2016/01/14/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C-%E5%8D%81%E4%BA%8C/"/>
-    <id>http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/</id>
-    <published>2016-01-14T06:56:44.000Z</published>
-    <updated>2016-04-28T13:42:21.915Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;练习十二、_ArcMap制图－地图版面设计&quot;&gt;练习十二、 ArcMap制图－地图版面设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;设置地图符号－各种渲染方式的使用&lt;/li&gt;
-&lt;li&gt;使用ArcMap Layout（布局）界面制作专题地图&lt;/li&gt;
-&lt;li&gt;将各种地图元素添加到地图版面中&lt;/li&gt;
-&lt;/ol&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;提示：在以下练习过程中，请时常注意保存地图文档&lt;/p&gt;
-&lt;h2 id=&quot;渲染图层要素－唯一值符号&quot;&gt;渲染图层要素－唯一值符号&lt;/h2&gt;&lt;p&gt;在ArcMap中新建地图文档，加载 [空间分析] 扩展模块及[空间分析工具栏]&lt;/p&gt;
-&lt;p&gt;加载图层：[&lt;strong&gt;省会城市、地级市驻地、主要公路、国界线、省级行政区、Hillshade_10k&lt;/strong&gt;]，将地图文档保存到&lt;br&gt;Ex12下，名称为：ChinaMap&lt;/p&gt;
-&lt;p&gt;在[图层列表面板]（TOC）中右键点击图层：[省级行政区]，执行[属性]命令，在出现的[图层属性]对话框中，点击[符号系统]选项页，如下图所示，渲染参数设置为：[类别－&amp;gt;唯一值，字段值设置为：DZM&lt;br&gt;] 。点击[添加全部值]按钮，将&amp;lt;所有其它值&amp;gt;前检查框的勾去掉。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_001.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击其他所有值前面的颜色方框，右键点击选择[所有符号的属性]命令。&lt;/p&gt;
-&lt;p&gt;在[符号选择器]中，将[轮廓线颜色] 设置为 [无颜色]：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_002.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击[显示-Display]选项页，将图层透明度设置为：[50%]:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_003.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现在图层：省级行政区根据字段[DZM]进行唯一值渲染，且有伪三维效果（关闭[省级行政区]和[Hillshade_10k]之外的其它所有图层）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_004.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;关闭并移除图层：[Hillshade_10k]&lt;/p&gt;
-&lt;p&gt;显示图层：[国界线]，在[TOC]中右键点击图层：[国界线]，执行[属性]命令，在出现的[图层属性]对话框中将渲染方式设置为&lt;br&gt;[单一符号]，点击[符号设置]按钮（如下图1）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_005.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[ 符号选择器]对话框中选择一种线状符号（如下图所示）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_006.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;显示图层:[地级城市驻地],并参考以上操作及下图所示,设置图层渲染方式::&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_007.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_008.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;标注图层要素&quot;&gt;标注图层要素&lt;/h2&gt;&lt;p&gt;在TOC中，右键点击图层：[省级行政区]，执行[属性]命令，在出现的[图层属性]对话框中，点击[标注]选项页，确认标注字段为：[Name],点击&lt;br&gt;[符号]按钮&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_009.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[符号选择器]对话框中，将标注字体大小设置为: [12],&lt;br&gt;点击[编辑符号]按钮(如下图所示):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_010.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在[编辑器]对话框中, 点击[掩模]选项页, 并将大小设置为: [2]:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_011.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;连续三次[确定]后退出以上对话框,返回ArcMap 视图界面.&lt;/p&gt;
-&lt;p&gt;显示图层: [地级城市驻地],并参考以上方法及下图效果进行标注:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_012.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;渲染图层要素—分类渲染&quot;&gt;渲染图层要素—分类渲染&lt;/h2&gt;&lt;p&gt;在TOC中,右键点击图层[省级行政区],&lt;br&gt;执行[属性]命令,然后在[图层属性]对话框中点击[符号系统]选项页,将渲染方式设置为:&lt;br&gt;[分级色彩, 字段: Area,分类:5, 自然间隔分类法]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_013.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在上图中,点击[分类]按钮可选择不同的分类方法:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_014.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;参照以上操作过程,对图层[省级行政区]基于字段[Area]运用不同的分类方法(等间隔、分位数、自然间隔、标准差)，比较不同的分类法进行分类的意义。&lt;/p&gt;
-&lt;p&gt;自然间隔分类:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_015.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;相等间隔分类渲染：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_015_0.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;分位数分类渲染：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_016.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;标准差分类渲染：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_017.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;渲染图层要素—点密度渲染&quot;&gt;渲染图层要素—点密度渲染&lt;/h2&gt;&lt;p&gt;参照前面的步骤，对图层：[省级行政区]进行点密度渲染，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_018.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;根据人口字段：POPU计算点密度&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_019.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;渲染图层要素—图表渲染&quot;&gt;渲染图层要素—图表渲染&lt;/h2&gt;&lt;p&gt;参照前面的步骤，对图层：[省级行政区]进行点密度渲染，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_020.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;根据1998GDP、1999GDP、2000GDP属性生成柱状图渲染方式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_021.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;创建地图版面&quot;&gt;创建地图版面&lt;/h2&gt;&lt;p&gt;在上一步的基础上进行，将图层[省级行政区]的渲染方式恢复为[唯一值渲染，基于NAME字段]，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_022.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在ArcMap中，点击&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_023.png-cirgis&quot; alt=&quot;&quot;&gt;按钮切换到布局视图界面。&lt;/p&gt;
-&lt;p&gt;执行菜单命令：[文件]&amp;gt;&amp;gt;[页面和打印设置]，在对话框中设置纸张大小和方向，这里请将纸张方向设置为横向（汉化版的ArcMap翻译有误）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_024.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;设置完成后，可以看到在布局视图界面下，地图版面已变成为横向，且当前数据框已经添加到地图版面中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_025.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;通过当前数据框中的[大小和位置]选项页可以精确设置[数据框]在地图版面中的位置或大小。（在版面视图界面下，右键点击[数据框]，然后执行&lt;br&gt;[属性]命令，打开如下的窗口）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_026.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;通过[框架]选项页可以在当前数据框周围添加图框，及设置图框的式样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_027.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;通过标准工具栏上的[放大、缩小、平移]按钮，可以调整地图版面中数据框的显示比例、范围，如下图所示：适当调整使数据只显示西南部分。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_028.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;添加各种元素到地图版面中&quot;&gt;添加各种元素到地图版面中&lt;/h2&gt;&lt;h3 id=&quot;制图元素–图表：&quot;&gt;制图元素–图表：&lt;/h3&gt;&lt;p&gt;在地图版面中可以插入统计图表，可以根据属性数据生成统计图表（类似Excel电子表格软件的操作）然后插入到地图版面中。视图&amp;gt;&amp;gt;图表&amp;gt;&amp;gt;创建图表&lt;/p&gt;
-&lt;h3 id=&quot;制图元素－文字&quot;&gt;制图元素－文字&lt;/h3&gt;&lt;p&gt;执行菜单命令：[插入]&amp;gt;&amp;gt;[标题]，修改地图标题的属性，设置合适的字号、字体&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_029.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_030.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;制图元素–图片或照片&quot;&gt;制图元素–图片或照片&lt;/h3&gt;&lt;p&gt;执行菜单命令[插入]&amp;gt;&amp;gt;[图像]，浏览到Ex12文件夹，将logo.gif&lt;br&gt;插入到当前地图版面中来，调整大小及位置&lt;/p&gt;
-&lt;h3 id=&quot;制图元素—比例尺&quot;&gt;制图元素—比例尺&lt;/h3&gt;&lt;p&gt;执行菜单命令[插入]&amp;gt;&amp;gt;[比例尺]，可以选择比例尺样式，及设定比例尺参数，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_031.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_032.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;（在地图版面中双击已添加的“比例尺”，修改其属性）&lt;/p&gt;
-&lt;h3 id=&quot;制图元素――图例&quot;&gt;制图元素――图例&lt;/h3&gt;&lt;p&gt;通过执行菜单命令：[插入]&amp;gt;&amp;gt;[图例]，向地图版面中加入图例，使用[图例向导]设置图例各种参数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_033.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击下一步。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_034.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;制图元素――指北针&quot;&gt;制图元素――指北针&lt;/h3&gt;&lt;p&gt;通过执行菜单命令：[插入]&amp;gt;&amp;gt;[指北针]，向地图版面中加入指北针&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_035.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;制图元素――数据表&quot;&gt;制图元素――数据表&lt;/h3&gt;&lt;p&gt;数据表如果要添加到地图版面中，可以先将数据表打开，然后在数据表浏览窗口中点选项，在出现的右键菜单中执行[把表加到布局中]命令，如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_036.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点击，表选项&amp;gt;&amp;gt;将表添加到布局&lt;/p&gt;
-&lt;p&gt; 可以通过[图层属性]或[属性表属性]对话框设置可见字段或别名：如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_037.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;打印输出地图&quot;&gt;打印输出地图 &lt;/h2&gt;&lt;p&gt;制作好的地图可以导出为多种文件格式：比如JPG，PDF等。&lt;/p&gt;
-&lt;p&gt;执行菜单命令：[文件]&amp;gt;&amp;gt;[导出地图]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_038.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/exec12/exec12_039.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如果要进行出版印刷可以通过ArcGIS内置的ArcPress 实现分色打印&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;练习十二、_ArcMap制图－地图版面设计&quot;&gt;练习十二、 ArcMap制图－地图版面设计&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/01/14/GIS基础软件及操作-十二/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/GIS基础软件及操作/ArcGIS.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;设置地图符号－各种渲染方式的使用&lt;/li&gt;
-&lt;li&gt;使用ArcMap Layout（布局）界面制作专题地图&lt;/li&gt;
-&lt;li&gt;将各种地图元素添加到地图版面中&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="GIS基础软件及操作" scheme="http://www.wshunli.com/categories/GIS%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%93%8D%E4%BD%9C/"/>
-    
-    
-      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
     
   </entry>
   

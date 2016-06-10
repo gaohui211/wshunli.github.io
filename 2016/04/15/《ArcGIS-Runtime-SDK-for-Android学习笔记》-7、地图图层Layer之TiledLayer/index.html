@@ -1,0 +1,864 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,ArcGIS,ArcGIS Runtime SDK for Android,ArcGIS for Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CirGIS" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xqqh4.com1.z0.glb.clouddn.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer">
+<meta property="og:url" content="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/index.html">
+<meta property="og:site_name" content="CirGIS">
+<meta property="og:description">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png">
+<meta property="og:updated_time" content="2016-06-10T11:54:31.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer">
+<meta name="twitter:description">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer | CirGIS </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72210097-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CirGIS</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-arcgis">
+          <a href="/arcgis" rel="section">
+            
+              <i class="menu-item-icon fa fa-map fa-fw"></i> <br />
+            
+            ArcGIS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-15T19:45:06+08:00" content="2016-04-15">
+              2016-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
+<a id="more"></a>
+<h1 id="TiledLayer">TiledLayer</h1><p>TiledLayer为加载切片的图层。包含两个直接子类。<br>ArcGISLocalTiledLayer, TiledServiceLayer</p>
+<h2 id="ArcGISLocalTiledLayer">ArcGISLocalTiledLayer</h2><p>ArcGISLocalTiledLayer是用来添加离线数据包的图层，该图层目前支持两种格式的离线数据：一个是紧凑型的缓存切片，另一个是打包的tpk格式的数据，对于这两种数据的制作方法可以参照我的文章，图层用法如下：</p>
+<pre><code>MapView mv = <span class="literal">new</span> MapView(this); 
+ArcGISLocalTiledLayer <span class="built_in">local</span> = <span class="literal">new</span> ArcGISLocalTiledLayer(<span class="string">"file:///mnt/sdcard/&lt;CacheName&gt;/Layers"</span>);<span class="comment">//离线图层，将缓存的地址作为参数传入 </span>
+mv<span class="built_in">.</span>addLayer(<span class="built_in">local</span>); 
+setContentView(mv);
+</code></pre><h2 id="TiledServiceLayer">TiledServiceLayer</h2><p>ArcGISTiledMapServiceLayer, BingMapsLayer, OpenStreetMapLayer, WMTSLayer</p>
+<p>1、ArcGISTiledMapServiceLayer</p>
+<p>在ArcGIS for Server中可以发布多种地图服务，移动端需要有不同的图层来对应这些服务。ArcGISTiledMapServiceLayer图层对应ArcGIS for Server服务中的切片服务，于切片都是事先做好的，ArcGISTiledMapServiceLayer不能对图层中的数据进行更改，除非更新服务缓存，在arcgis for android中，也不允许对此类型的数据查询，通常用做底图使用。同时，因为加载的是缓存切片，这个类型的图层是arcgis for android中相应请求最快的图层之一，它采用多个线程，通常是每个图片使用一个线程来处理请求和绘制图片，并且异步处理。用法如下：</p>
+<pre><code>MapView mv = new MapView<span class="params">(this)</span>; 
+mv.addLayer<span class="params">(new ArcGISTiledMapServiceLayer<span class="params">( <span class="string">"http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"</span>)</span>)</span>; 
+setContentView<span class="params">(mv)</span>;
+</code></pre><p>2、BingMapsLayer</p>
+<p>BingMapsLayer用来加载必应地图。用法如下：</p>
+<pre><code>MapView mv = new MapView<span class="params">(this)</span>;
+mv.addLayer<span class="params">(new BingMapsLayer<span class="params">(
+<span class="string">"[your Bing Maps key]"</span>, MapStyle.Aerial)</span>)</span>;
+setContentView<span class="params">(mv)</span>;
+</code></pre><p>3、OpenStreetMapLayer</p>
+<p>OpenStreetMapLayer用来加载OpenStreetMapLayer。实际用得比较少。</p>
+<p>4、WMTSLayer</p>
+<p>WMTSLayer加载WMTS服务，比如加载天地图什么的。</p>
+
+
+<div id="AllanboltSignature">
+      <p id="PSignature" style="
+            border-top: #e0e0e0 2px dashed; border-right: #e0e0e0 2px dashed; border-bottom: #e0e0e0 2px dashed; border-left: #e0e0e0 2px dashed;
+            padding-right: 10px;padding-bottom: 20px;padding-left: 60px;
+            background: url(http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png) #F5F5F5 no-repeat 1% 50%;
+            font-size:12px;">
+        <br> 作者：
+        <a href="http://resume.wshunli.com/" target="_blank">王顺利</a>
+    	<br> 发表于：
+    	<time itemprop="dateCreated" datetime="2016-04-15T19:45:06+08:00" content="2016-04-15 19:45:06">
+              2016-04-15 19:45:06
+        </time>
+		<br> 更新于：
+        <time itemprop="dateModified" datetime="2016-06-10T19:54:31+08:00" content="2016-06-10 19:54:31">
+              2016-06-10 19:54:31
+        </time>
+        <br> 原文链接：
+        <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/" target="_blank"> http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/ </a>
+        <br> 本文版权归作者，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接，否则保留追究法律责任的权利。
+
+      </p>
+
+
+</div>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://7xqqh4.com1.z0.glb.clouddn.com/wechatpay.png" alt="CirGIS WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://7xqqh4.com1.z0.glb.clouddn.com/alipay.png" alt="CirGIS Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag">#ArcGIS Runtime SDK for Android</a>
+          
+            <a href="/tags/ArcGIS-for-Android/" rel="tag">#ArcGIS for Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/" rel="next" title="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之DynamicLayer">
+                <i class="fa fa-chevron-left"></i> 《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之DynamicLayer
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/" rel="prev" title="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GraphicsLayer">
+                《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GraphicsLayer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/"
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之TiledLayer" data-url="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png"
+               alt="CirGIS" />
+          <p class="site-author-name" itemprop="name">CirGIS</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wshunli" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wshunli" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              Others
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/wangshunli" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wangshunli.lofter.com" title="Lofter" target="_blank">Lofter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TiledLayer"><span class="nav-number">1.</span> <span class="nav-text">TiledLayer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcGISLocalTiledLayer"><span class="nav-number">1.1.</span> <span class="nav-text">ArcGISLocalTiledLayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TiledServiceLayer"><span class="nav-number">1.2.</span> <span class="nav-text">TiledServiceLayer</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count" align="center">
+
+  本站访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次.
+<script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+
+    function addZero(num,n){               
+      return (Array(n).join(0) + num).slice(-n);             
+  }
+
+    function setTime() {
+      // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示9月，得写8才行，如下
+      var create_time = Math.round(new Date(Date.UTC(2015, 8, 15, 1,33,18))
+              .getTime() / 1000);
+      // 当前时间秒数,增加时区的差异
+      var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+      currentTime = secondToDate((timestamp - create_time));
+      currentTimeHtml = currentTime[0]*365+ currentTime[1] + '天'
+              + addZero(currentTime[2],2) + '时' + addZero(currentTime[3],2) + '分' + addZero(currentTime[4],2)
+              + '秒';
+      document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+</script>
+
+  已萌萌哒运行<span id="htmer_time"></span>.
+
+
+
+
+</div>
+
+
+<div class="website-details" align="center">
+  托管于<a class="github-link" href="https://github.com/wshunli" target="_blank">GitHub</a> & <a class="coding-link" href="https://coding.net" target="_blank">Coding</a>.
+  <a class="qiniu-link" href="https://portal.qiniu.com/signup?code=3lmfxlfwo25w2" target="_blank">七牛云存储</a>提供文件储存服务.
+  <a class="cnd-link" href="https://www.cloudxns.net" target="_blank">CloudXNS</a>提供DNS解析服务.
+  <a class="baidu-link" href="https://analytics.google.com" target="_blank">Google Analytics</a>提供网站统计服务.
+</div>
+
+<div class="hexo-by" align="center">
+
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+
+  <span class="author" itemprop="copyrightHolder">CirGIS</span>.
+
+  由 <a class="hexo-link" href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动.
+  Theme By <a class="theme-link" href="http://theme-next.iissnan.com/" target="_blank">NexT.Mist</a>.
+
+</div>
+
+<div class="copyright" align="center">
+  
+  Made with
+  <span class="with-love">
+    <i class="fa fa-heart-o"></i>
+  </span>
+  by <a class="coding-link" href="http://resume.wshunli.com" target="_blank">wshunli</a>.
+  
+</div>
+
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/fastclick/1.0.0/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="http://cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="http://cdn.bootcss.com/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wangshunli"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="http://cdn.bootcss.com/UAParser.js/0.7.10/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
