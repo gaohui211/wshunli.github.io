@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CirGIS,wshunli" />
+  <meta name="keywords" content="Android,ArcGIS,ArcGIS Runtime SDK for Android,ArcGIS for Android," />
 
 
 
@@ -85,13 +85,15 @@
 
 
 <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CirGIS">
-<meta property="og:url" content="http://www.wshunli.com/archives/page/5/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之其他图层">
+<meta property="og:url" content="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/index.html">
 <meta property="og:site_name" content="CirGIS">
 <meta property="og:description">
+<meta property="og:image" content="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png">
+<meta property="og:updated_time" content="2016-06-10T12:06:28.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CirGIS">
+<meta name="twitter:title" content="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之其他图层">
 <meta name="twitter:description">
 
 
@@ -110,7 +112,7 @@
   };
 </script>
 
-  <title> 归档 | CirGIS </title>
+  <title> 《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之其他图层 | CirGIS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -140,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,76 +250,244 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 41 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之其他图层
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-15T20:01:03+08:00" content="2016-04-15">
+              2016-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ArcGIS-Runtime-SDK-for-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">ArcGIS Runtime SDK for Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p><a href="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/"><img src="http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png" alt=""></a></p>
+<a id="more"></a>
+<h1 id="FeatureLayer">FeatureLayer</h1><p>FeatureLayer是一种类型的层的特征组成; 在功能FeatureLayer包括几何图形和一组一致的属性。在一个特征FeatureLayer可以在地图，查询，编辑上显示，和选定（视觉突出显示）。每个要素都有一个唯一的ID。</p>
+<p>一个FeatureLayer对应一个FeatureTable，这是在向传递FeatureLayer构造。在正确显示顺序，getSpatialReference（）值必须以该地图的空间参考匹配FeatureLayer 添加。如果功能层的 FeatureTable是GeodatabaseFeatureServiceTable，通过调用设置空间参考  setSpatialReference(SpatialReference) 方法。当FeatureTable是GeodatabaseFeatureTable从获得的地理数据库，生成使用地理数据库时所设置的空间参考GeodatabaseSyncTask通过调用 setOutSpatialRef（的SpatialReference）方法。</p>
+<h1 id="KmlLayer">KmlLayer</h1><p>KmlLayer是用来加载KML（Keyhole Markup Language）文件（.KML、.kmz）的图层。KML 是一种文件格式，用于在地球浏览器（例如 Google 地球、Google 地图和谷歌手机地图）中显示地理数据。KML 是由开放地理空间联盟（Open Geospatial Consortium, Inc.，简称 OGC）维护的国际标准。</p>
+<h1 id="RasterLayer">RasterLayer</h1><p>RasterLayer是用来加载影像的图层。ArcGIS Runtime SDK for Android 从10.2.4开始支持直接读取本地影像数据，数据类型包含：ASRP/USRP、CIB1,5,10、DTED0, 1, 2、GeoPackage、GeoTIFF、HFA、HRE、IMG、JPEG、JPEG2000、NITF、PNG、RPF、SRTM1, FileRasterSource是加载本地影像数据文件类，地图视图中以RasterLayer作为图层对象展示出来。代码如下：</p>
+<pre><code>String rasterPath = Environment.getExternalStorageDirectory<span class="params">()</span>.getPath<span class="params">()</span> + <span class="string">"/raster/test.tif"</span>;
+FileRasterSource rasterSource;
+try {  
+ rasterSource = new FileRasterSource<span class="params">(rasterPath)</span>;  
+} catch <span class="params">(IllegalArgumentException ie)</span> {
+  Log.d<span class="params">(TAG, <span class="string">"null or empty path"</span>)</span>;
+} catch <span class="params">(FileNotFoundException fe)</span> {
+  Log.d<span class="params">(TAG, <span class="string">"raster file doesn't exist"</span>)</span>;
+} catch <span class="params">(RuntimeException re)</span> {
+  Log.d<span class="params">(TAG, <span class="string">"raster file can't be opened"</span>)</span>;
+}
+RasterLayer rasterLayer = new RasterLayer<span class="params">(rasterSource)</span>;
+mMapView.addLayer<span class="params">(rasterLayer)</span>;
+</code></pre><h1 id="GroupLayer">GroupLayer</h1>
+
+<div id="AllanboltSignature">
+      <p id="PSignature" style="
+            border-top: #e0e0e0 2px dashed; border-right: #e0e0e0 2px dashed; border-bottom: #e0e0e0 2px dashed; border-left: #e0e0e0 2px dashed;
+            padding-right: 10px;padding-bottom: 20px;padding-left: 60px;
+            background: url(http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png) #F5F5F5 no-repeat 1% 50%;
+            font-size:12px;">
+        <br> 作者：
+        <a href="http://resume.wshunli.com/" target="_blank">王顺利</a>
+    	<br> 发表于：
+    	<time itemprop="dateCreated" datetime="2016-04-15T20:01:03+08:00" content="2016-04-15 20:01:03">
+              2016-04-15 20:01:03
+        </time>
+		<br> 更新于：
+        <time itemprop="dateModified" datetime="2016-06-10T20:06:28+08:00" content="2016-06-10 20:06:28">
+              2016-06-10 20:06:28
+        </time>
+        <br> 原文链接：
+        <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/" target="_blank"> http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/ </a>
+        <br> 本文版权归作者，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接，否则保留追究法律责任的权利。
+
+      </p>
+
+
+</div>
+
+      
+    </div>
+    
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://7xqqh4.com1.z0.glb.clouddn.com/wechatpay.png" alt="CirGIS WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://7xqqh4.com1.z0.glb.clouddn.com/alipay.png" alt="CirGIS Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/ArcGIS/" rel="tag">#ArcGIS</a>
+          
+            <a href="/tags/ArcGIS-Runtime-SDK-for-Android/" rel="tag">#ArcGIS Runtime SDK for Android</a>
+          
+            <a href="/tags/ArcGIS-for-Android/" rel="tag">#ArcGIS for Android</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/" rel="next" title="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GraphicsLayer">
+                <i class="fa fa-chevron-left"></i> 《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之GraphicsLayer
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/24/全站启用HTTPS/" rel="prev" title="全站启用HTTPS">
+                全站启用HTTPS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/12/14/Hexo搭建静态博客/" itemprop="url">
-              
-                <span itemprop="name">Hexo搭建静态博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-12-14T14:23:45+08:00"
-              content="2015-12-14" >
-          12-14
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
-  </nav>
-
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/"
+           data-title="《ArcGIS Runtime SDK for Android学习笔记》-7、地图图层Layer之其他图层" data-url="http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -337,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png"
@@ -349,7 +528,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -433,6 +612,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FeatureLayer"><span class="nav-number">1.</span> <span class="nav-text">FeatureLayer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KmlLayer"><span class="nav-number">2.</span> <span class="nav-text">KmlLayer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RasterLayer"><span class="nav-number">3.</span> <span class="nav-text">RasterLayer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GroupLayer"><span class="nav-number">4.</span> <span class="nav-text">GroupLayer</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -614,11 +804,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
