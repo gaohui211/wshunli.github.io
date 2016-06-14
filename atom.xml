@@ -1013,9 +1013,9 @@
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8B%E5%85%B6%E4%BB%96%E5%9B%BE%E5%B1%82/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之其他图层/</id>
     <published>2016-04-15T12:01:03.000Z</published>
-    <updated>2016-06-10T12:06:28.952Z</updated>
+    <updated>2016-06-14T05:43:10.980Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;FeatureLayer&quot;&gt;FeatureLayer&lt;/h1&gt;&lt;p&gt;FeatureLayer是一种类型的层的特征组成; 在功能FeatureLayer包括几何图形和一组一致的属性。在一个特征FeatureLayer可以在地图，查询，编辑上显示，和选定（视觉突出显示）。每个要素都有一个唯一的ID。&lt;/p&gt;
 &lt;p&gt;一个FeatureLayer对应一个FeatureTable，这是在向传递FeatureLayer构造。在正确显示顺序，getSpatialReference（）值必须以该地图的空间参考匹配FeatureLayer 添加。如果功能层的 FeatureTable是GeodatabaseFeatureServiceTable，通过调用设置空间参考  setSpatialReference(SpatialReference) 方法。当FeatureTable是GeodatabaseFeatureTable从获得的地理数据库，生成使用地理数据库时所设置的空间参考GeodatabaseSyncTask通过调用 setOutSpatialRef（的SpatialReference）方法。&lt;/p&gt;
@@ -1038,7 +1038,7 @@ mMapView.addLayer&lt;span class=&quot;params&quot;&gt;(rasterLayer)&lt;/span&gt;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1060,9 +1060,9 @@ mMapView.addLayer&lt;span class=&quot;params&quot;&gt;(rasterLayer)&lt;/span&gt;
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BGraphicsLayer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/</id>
     <published>2016-04-15T11:45:13.000Z</published>
-    <updated>2016-06-10T11:53:21.737Z</updated>
+    <updated>2016-06-14T05:43:20.392Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;GraphicsLayer&quot;&gt;GraphicsLayer&lt;/h1&gt;&lt;p&gt;GraphicsLayer是ArcGIS Runtime for Android中比较重要的图层类型，也是使用最为频繁的一个。GraphicsLayer可以包含一个或多个Graphic对象，查询的返回结果和动态标绘的Graphic数据都要通过它呈现。建议在MapView中添加图层时不要第一个添加该类型的图层，因为MapView加载图层时先要初始化一些地图参数，而该图层不具备这些参数，其具体用法如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;//GraphicsLayer class is used to define the Layer that is added to the&lt;/span&gt;
@@ -1075,7 +1075,7 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之GraphicsLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1097,9 +1097,9 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BTiledLayer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/</id>
     <published>2016-04-15T11:45:06.000Z</published>
-    <updated>2016-06-10T11:54:31.533Z</updated>
+    <updated>2016-06-14T05:42:58.512Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;TiledLayer&quot;&gt;TiledLayer&lt;/h1&gt;&lt;p&gt;TiledLayer为加载切片的图层。包含两个直接子类。&lt;br&gt;ArcGISLocalTiledLayer, TiledServiceLayer&lt;/p&gt;
 &lt;h2 id=&quot;ArcGISLocalTiledLayer&quot;&gt;ArcGISLocalTiledLayer&lt;/h2&gt;&lt;p&gt;ArcGISLocalTiledLayer是用来添加离线数据包的图层，该图层目前支持两种格式的离线数据：一个是紧凑型的缓存切片，另一个是打包的tpk格式的数据，对于这两种数据的制作方法可以参照我的文章，图层用法如下：&lt;/p&gt;
@@ -1127,7 +1127,7 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之TiledLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1149,9 +1149,9 @@ setContentView&lt;span class=&quot;params&quot;&gt;(mv)&lt;/span&gt;;
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer%E4%B9%8BDynamicLayer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/</id>
     <published>2016-04-15T11:44:58.000Z</published>
-    <updated>2016-06-10T11:52:45.435Z</updated>
+    <updated>2016-06-14T05:43:26.217Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;DynamicLayer&quot;&gt;DynamicLayer&lt;/h1&gt;&lt;p&gt;DynamicLayer 是动态图层的基类.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer2.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1189,7 +1189,7 @@ setContentView(mv);
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer之DynamicLayer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1211,9 +1211,9 @@ setContentView(mv);
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
     <published>2016-04-15T03:08:13.000Z</published>
-    <updated>2016-06-10T11:54:43.429Z</updated>
+    <updated>2016-06-14T05:43:33.744Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/7/地图图层Layer1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1225,7 +1225,7 @@ setContentView(mv);
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1247,9 +1247,9 @@ setContentView(mv);
     <link href="http://www.wshunli.com/2016/04/12/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-6%E3%80%81%E5%9C%B0%E5%9B%BE%E5%AE%B9%E5%99%A8MapView/"/>
     <id>http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/</id>
     <published>2016-04-12T08:44:50.000Z</published>
-    <updated>2016-05-07T05:11:14.692Z</updated>
+    <updated>2016-06-14T05:43:39.255Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;MapView概述&quot;&gt;MapView概述&lt;/h1&gt;&lt;p&gt;MapView是ArcGIS Runtime SDK for Android的核心组件，通过MapView可以呈现地图服务的数据，并且在MapView中定义了丰富的属性、方法和事件，用户通过MapView可以操作设备的触摸屏，默认MapView可以响应用户的各类手势的操作，GIS的开发中，什么时候都少不了地图操作。MapView是Android中ViewGroup的子类，也是ArcGIS Runtime SDK for Android中的地图容器，与很多ArcGIS API中的Map、MapControl类作用是一样的。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/6/地图的容器MapView1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -2073,7 +2073,7 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2095,9 +2095,9 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     <link href="http://www.wshunli.com/2016/04/10/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
     <id>http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
     <published>2016-04-10T02:10:28.000Z</published>
-    <updated>2016-05-03T17:10:41.089Z</updated>
+    <updated>2016-06-14T05:43:45.468Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;开发环境搭建完成后，按照国际惯例先写一个Hello World。&lt;/p&gt;
 &lt;h1 id=&quot;ArcGIS_for_Android项目代码编写&quot;&gt;ArcGIS for Android项目代码编写&lt;/h1&gt;&lt;h2 id=&quot;在布局中添加MapView&quot;&gt;在布局中添加MapView&lt;/h2&gt;&lt;p&gt;打开&lt;code&gt;res&amp;gt;&amp;gt;layout&amp;gt;&amp;gt;activity_main.xml&lt;/code&gt;文件，添加Mapview&lt;/p&gt;
@@ -2142,7 +2142,7 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2164,9 +2164,9 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
     <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
     <published>2016-04-08T07:58:32.000Z</published>
-    <updated>2016-04-30T03:28:17.642Z</updated>
+    <updated>2016-06-14T05:43:51.983Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;ArcGIS_for_Android_SDK的下载&quot;&gt;ArcGIS for Android SDK的下载&lt;/h1&gt;&lt;p&gt;1、打开&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS for Developers&lt;/a&gt;网站、点击右上角登录&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -2221,7 +2221,7 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;
     
     </summary>
@@ -2244,9 +2244,9 @@ MapView mapView = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MapView
     <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-3%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/</id>
     <published>2016-04-08T07:58:09.000Z</published>
-    <updated>2016-04-30T02:32:40.147Z</updated>
+    <updated>2016-06-14T05:43:57.315Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;新建Android项目&quot;&gt;新建Android项目&lt;/h1&gt;&lt;p&gt;1、打开Android Studio 选择 &lt;code&gt;Start a new Android Studio project&lt;/code&gt; 新建一个Android项目&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -2307,7 +2307,7 @@ maven {
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-3、ArcGIS-for-Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建ArcGIS for Android开发环境&lt;/strong&gt;&lt;br&gt;
     
     </summary>
@@ -2330,9 +2330,9 @@ maven {
     <link href="http://www.wshunli.com/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
     <published>2016-04-06T07:57:13.000Z</published>
-    <updated>2016-05-07T05:01:52.938Z</updated>
+    <updated>2016-06-14T05:42:37.192Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。&lt;br&gt;Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。&lt;/p&gt;
 &lt;h1 id=&quot;产品简介&quot;&gt;产品简介&lt;/h1&gt;&lt;p&gt;ArcGIS Runtime SDK for Android包括一个用于Android Studio的lib-project，用于eclipse等环境的jar函数库，提供了丰富的工具、文档和示例，使用户能够使用Java构建移动应用程序（这些应用程序将运用ArcGIS for Server提供的强大的制图、地理编码、地理处理和自定义功能）并将它们部署到Android系统的智能手机和平板上。&lt;/p&gt;
@@ -2378,7 +2378,7 @@ maven {
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2400,9 +2400,9 @@ maven {
     <link href="http://www.wshunli.com/2016/04/05/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/</id>
     <published>2016-04-05T07:55:27.000Z</published>
-    <updated>2016-05-17T01:16:31.536Z</updated>
+    <updated>2016-06-14T05:42:18.170Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建Android开发环境&lt;/strong&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;&lt;p&gt;Android Studio 是一个Android开发环境，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。&lt;/p&gt;
 &lt;p&gt;在IDEA的基础上，Android Studio 提供：  &lt;/p&gt;
@@ -2504,7 +2504,7 @@ Oracle® Java 开发工具包 &lt;span class=&quot;params&quot;&gt;(JDK)&lt;/spa
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/ArcGISforAndroid/ArcGISforAndroid.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/&quot;&gt;&lt;img src=&quot;http://7xqqh4.com1.z0.glb.clouddn.com/ArcGISforAndroid.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本文主要针对在Windwos环境下用Android Studio搭建Android开发环境&lt;/strong&gt;&lt;br&gt;
     
     </summary>
