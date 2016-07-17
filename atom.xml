@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wshunli.com/"/>
-  <updated>2016-05-07T05:01:37.190Z</updated>
+  <updated>2016-07-17T09:07:10.457Z</updated>
   <id>http://www.wshunli.com/</id>
   
   <author>
@@ -20,22 +20,25 @@
     <link href="http://www.wshunli.com/2016/05/06/Awesome-GIS/"/>
     <id>http://www.wshunli.com/2016/05/06/Awesome-GIS/</id>
     <published>2016-05-06T05:45:16.000Z</published>
-    <updated>2016-05-07T05:01:37.190Z</updated>
+    <updated>2016-07-17T09:07:10.457Z</updated>
     
-    <content type="html">&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/05/06/Awesome-GIS/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/gis.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;Welcome to contribute. Let’s make it better.&lt;/strong&gt; Please follow the &lt;a href=&quot;https://github.com/sshuair/awesome-gis/blob/master/ContributingGuidelines.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Contributing Guidelines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Inspired by &lt;a href=&quot;https://github.com/vinta/awesome-python&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Awesome Python&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Table Of Contents:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#desktop-application&quot;&gt;Desktop Application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#web-map-servers&quot;&gt;Web Map Servers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#front-end-frameworks&quot;&gt;Front-end Frameworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3d-application&quot;&gt;3D Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#web-map-server&quot;&gt;Web Map Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#front-end-framework&quot;&gt;Front-end Framework&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#ios--android&quot;&gt;iOS &amp;amp; Android&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#geospatial-libraries-non-web&quot;&gt;Geospatial Libraries (non-web)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#geospatial-library-non-web&quot;&gt;Geospatial Library (non-web)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#spatial-database&quot;&gt;Spatial Database&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#map-render-engine&quot;&gt;Map Render Engine&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#saas&quot;&gt;Saas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#data-format&quot;&gt;Data Format&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#data&quot;&gt;Data&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#conference--communities&quot;&gt;Conference &amp;amp; Communities&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#news-site&quot;&gt;News Site&lt;/a&gt;&lt;/li&gt;
@@ -53,11 +56,18 @@
 &lt;li&gt;&lt;a href=&quot;https://marble.kde.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marble&lt;/a&gt; - A virtual globe and world atlas&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://sharpmap.codeplex.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SharpMap&lt;/a&gt; - An mapping library in web and desktop applications built in .NET&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://jump-pilot.sourceforge.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JUMP GIS&lt;/a&gt; - An open source GIS written in Java &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.uoguelph.ca/~hydrogeo/Whitebox/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Whitebox GAT&lt;/a&gt; - Software package for geospatial analysis and data visualization&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tilemill.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TileMill&lt;/a&gt; - Creating beautiful interactive maps with CartoCSS. &lt;a href=&quot;https://github.com/mapbox/tilemill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.bluemarblegeo.com/products/global-mapper.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Global Mapper&lt;/a&gt; - A geographic information system (GIS) software package currently developed by Blue Marble Geographics that runs on Microsoft Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;3D_Application&quot;&gt;3D Application&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.skylineglobe.com/SkylineGlobe/corporate/Default.aspx?&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Skyline&lt;/a&gt; - A glimpse into Skyline’s cutting-edge 3D geospatial visualization products, and their potential to transform the way your organization makes decisions, shares information and manages its assets&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.esri.com/software/cityengine/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CityEngine&lt;/a&gt; - Transform 2D GIS Data into Smart 3D City Models&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.esri.com/software/arcgis-earth&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS Earth&lt;/a&gt; - Display data, sketch placemarks, measure distances and areas, and add annotations at any part of the world&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://worldwind.arc.nasa.gov/java/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;World Wind&lt;/a&gt; -  Providing features for displaying with geographic data&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://earth.google.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Earth&lt;/a&gt; - Bringing a earth view for global mapping&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.uoguelph.ca/~hydrogeo/Whitebox/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Whitebox GAT&lt;/a&gt; - Software package for geospatial analysis and data visualization&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Web_Map_Servers&quot;&gt;Web Map Servers&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Web_Map_Server&quot;&gt;Web Map Server&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://server.arcgis.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS Server&lt;/a&gt; - A GIS server for enterprise application&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.mapserver.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MapServer&lt;/a&gt; - Publishing spatial data and interactive mapping applications to the web&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://geoserver.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoServer&lt;/a&gt; - An open source server for sharing geospatial data&lt;/li&gt;
@@ -72,11 +82,13 @@
 &lt;li&gt;&lt;a href=&quot;http://www.osgeo.org/mapbuilder&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;del&gt;MapBuilder&lt;/del&gt;&lt;/a&gt; - This project has been retired in 2008&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.nanocubes.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nanocubes&lt;/a&gt; - An in-memory data structure for spatiotemporal data cubes. &lt;a href=&quot;https://github.com/laurolins/nanocube&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Front-end_Frameworks&quot;&gt;Front-end Frameworks&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Front-end_Framework&quot;&gt;Front-end Framework&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://leafletjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Leaflet&lt;/a&gt; - Open-source javaScript library for mobile-friendly interactive maps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mapbox.com/mapbox-gl-js/api/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mapbox GL JS&lt;/a&gt; - A JavaScript &amp;amp; WebGL library that renders interactive maps from vector tiles and the Mapbox GL Style Specification&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://openlayers.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenLayer3&lt;/a&gt; - Open-source javascript map viewing library&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://threejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;three.js&lt;/a&gt; - A javascript 3D library which makes WebGL simpler&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://cesiumjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cesiumjs&lt;/a&gt; - An open-source JavaScript library for world-class 3D globes and maps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webglearth/webglearth2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webglearth2&lt;/a&gt; - Open-source virtual planet web application running in any web browser with support for WebGL HTML5 standard&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://developers.arcgis.com/javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS API for JavaScript&lt;/a&gt; - Creating high-performing apps and smarter visualizations supportted by ERSI&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://d3js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;D3.js&lt;/a&gt; - A javascript library for manipulating documents based on data&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://echarts.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Echarts&lt;/a&gt; - A user-friendly data visualisation library supported by Baidu&lt;/li&gt;
@@ -84,13 +96,35 @@
 &lt;li&gt;&lt;a href=&quot;https://developers.google.com/maps/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Maps Javascript API&lt;/a&gt; - A javascript api for google map&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/emeeks/d3-carto-map&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;d3-carto-map&lt;/a&gt; - A library for creating layer-based maps using D3&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://turfjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;turf.js&lt;/a&gt; - Advanced geospatial analysis for browsers and node supported by Mapbox&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://polymaps.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Polymaps&lt;/a&gt; - A JavaScript library for image- and vector-tiled maps using SVG&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jvectormap.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jVectorMap&lt;/a&gt; - A vector-based, cross-browser and cross-platform component for interactive geography-related data visualization on the web. &lt;a href=&quot;https://github.com/bjornd/jvectormap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tangrams/tangram&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tangram&lt;/a&gt; - A javaScript library for rendering 2D &amp;amp; 3D maps live in a web browser with WebGL&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;iOS_&amp;amp;_Android&quot;&gt;iOS &amp;amp; Android&lt;/h2&gt;&lt;h2 id=&quot;Geospatial_Libraries_(non-web)&quot;&gt;Geospatial Libraries (non-web)&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;iOS_&amp;amp;_Android&quot;&gt;iOS &amp;amp; Android&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;iOS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.arcgis.com/ios/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS Runtime SDK for iOS&lt;/a&gt; - Build mapping apps for iOS devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Android&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.arcgis.com/android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS Runtime SDK for Android&lt;/a&gt; - Build native mapping apps for Android devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cross-Platform&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.arcgis.com/xamarin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ArcGIS Runtime SDK for Xamarin&lt;/a&gt; - Build native mapping apps for Android and iOS in C# (Technical Preview)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Geospatial_Library_(non-web)&quot;&gt;Geospatial Library (non-web)&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.gdal.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GDAL&lt;/a&gt; - A translator library for raster and vector geospatial data formats&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/OSGeo/proj.4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Proj.4&lt;/a&gt; - A library for cartographic projection&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Toblerity/Shapely&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Shapely&lt;/a&gt; - A library for manipulation and analysis of geometric objects in the Cartesian plane.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.geotools.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoTools&lt;/a&gt; - An open source Java library that provides tools for geospatial data.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.orfeo-toolbox.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Orfeo toolbox&lt;/a&gt; - An open-source C++ library for remote sensing images processing.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Toblerity/Shapely&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Shapely&lt;/a&gt; - A library for manipulation and analysis of geometric objects in the Cartesian plane&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://github.com/toblerity/fiona/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Fiona&lt;/a&gt; - IO for GIS Data writted by Python&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Toblerity/Rtree&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rtree&lt;/a&gt; - A wrapper of libspatialindex providing spatial indexing features&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.geotools.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoTools&lt;/a&gt; - An open source Java library that provides tools for geospatial data&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.orfeo-toolbox.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Orfeo toolbox&lt;/a&gt; - An open-source C++ library for remote sensing images processing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;Spatial_Database&quot;&gt;Spatial Database&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://postgis.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostGIS&lt;/a&gt; based on &lt;a href=&quot;http://www.postgresql.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PostgreSQL&lt;/a&gt; - Most advanced open source database&lt;/li&gt;
@@ -102,10 +136,9 @@
 &lt;li&gt;&lt;a href=&quot;https://www.mongodb.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mongoDB&lt;/a&gt; - An open-source, document database designed for ease of development and scaling&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;Map_Render_Engine&quot;&gt;Map Render Engine&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Global Mapper&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://mapnik.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mapnik&lt;/a&gt; - Mapnik combines pixel-perfect image output with lightning-fast cartographic algorithms, and exposes interfaces in C++, Python, and Node&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://tilemill.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TileMill&lt;/a&gt; the github code &lt;a href=&quot;https://github.com/mapbox/tilemill&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;link&lt;/a&gt; - Creating beautiful interactive maps with CartoCSS&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mapbox.com/blog/mapbox-gl/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mapbox GL vector&lt;/a&gt; the github code &lt;a href=&quot;https://github.com/mapbox/mapbox-gl-native&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;link&lt;/a&gt; - A new framework for live, responsive maps&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mapbox/mapbox-gl-native&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mapbox-gl-native&lt;/a&gt; - A library for embedding interactive, customizable vector maps into native applications on multiple platforms&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tangrams/tangram-es&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tangram-es&lt;/a&gt; - A C++ library for rendering 2D and 3D maps from vector data using OpenGL ES, and mainly focused on mobile and embedded devices.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;Saas&quot;&gt;Saas&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.mapbox.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mapbox&lt;/a&gt; - Helping you design your own map and presenting your data&lt;/li&gt;
@@ -114,10 +147,18 @@
 &lt;li&gt;&lt;a href=&quot;http://stamen.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stamen&lt;/a&gt; - Data visualization to tell compelling stories for some of the world’s most visible companies&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://citytracking.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;citytracking&lt;/a&gt; - A two-year project, to change the way people view, talk about, utilize digital city services&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://worldmap.harvard.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;worldmap&lt;/a&gt; - Building your own mapping portal and publish it to the world&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://geohey.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geohey&lt;/a&gt; - A geographic online one-stop solution (Chinese)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://geohey.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoHey&lt;/a&gt; - A geographic online one-stop solution (Chinese)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.geoq.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoQ&lt;/a&gt; - A location intelligence platform (Chinese)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.dituhui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;地图慧&lt;/a&gt; - A self-designed map server for customs (Chinese)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.dituwuyou.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;地图无忧&lt;/a&gt; - A enterprise-level map service (Chinese)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##Data Format&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.geojson.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoJson&lt;/a&gt; - Represent geospatial information by json&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mbostock/topojson/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TopoJson&lt;/a&gt; - Represent geospatial information by json in a smaller side&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mapbox/tilejson-spec&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TileJSON&lt;/a&gt; - Represent vector tile provider by json&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Well-known_text&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WKT&lt;/a&gt; - A text markup language for representing vector geometry objects on a map&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;Data&quot;&gt;Data&lt;/h2&gt;&lt;ul&gt;
@@ -125,6 +166,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.opendatasoft.com/a-comprehensive-list-of-all-open-data-portals-around-the-world/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;a-comprehensive-list-of-all-open-data-portals-around-the-world&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://freegisdata.rtwilson.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Free GIS Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://geocommons.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoCommons &lt;/a&gt; - A community contributed collection of open data from around the world&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Data Site&lt;/strong&gt;&lt;/p&gt;
@@ -144,16 +186,8 @@
 &lt;li&gt;&lt;a href=&quot;http://research.microsoft.com/apps/pubs/default.aspx?id=152883&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;T-Drive trajectory data sample&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.pm25.in/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pm2.5-China&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://earthexplorer.usgs.gov/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Remote sensing imge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://mapzen.com/data/metro-extracts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;metro extracts&lt;/a&gt; - City-sized portions of OpenStreetMap.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mapzen.com/data/metro-extracts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;metro extracts&lt;/a&gt; - City-sized portions of OpenStreetMap&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://download.geofabrik.de/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geofabrik&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Data Format&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.geojson.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoJson&lt;/a&gt; - Represent geospatial information by json&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mbostock/topojson/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TopoJson&lt;/a&gt; - Represent geospatial information by json in a smaller side&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mapbox/tilejson-spec&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TileJSON&lt;/a&gt; - Represent vector tile provider by json&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Well-known_text&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WKT&lt;/a&gt; - A text markup language for representing vector geometry objects on a map&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -168,10 +202,11 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Communities&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;GISTribe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.opengeospatial.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OGC&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://maptime.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Maptime&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://spatialnews.geocomm.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;geo community&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://gis.stackexchange.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GIS stackexchange&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gis-lab.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GIS-Lab&lt;/a&gt; - informal community of russian-speaking GIS/RS specialists, we get better ourselves and help get better others&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://geonet.esri.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GeoNet&lt;/a&gt; - The Esri Community&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -190,6 +225,7 @@
 &lt;li&gt;&lt;a href=&quot;http://gisgeography.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gisgeography&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://canadiangis.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canadiangis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.mapcite.com/default.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MAPCITE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.geospatialworld.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geospatial World&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;Blogs&quot;&gt;Blogs&lt;/h2&gt;&lt;ul&gt;
@@ -206,7 +242,7 @@
 &lt;h2 id=&quot;Amazing_Map_Site&quot;&gt;Amazing Map Site&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://homepage.ntlworld.com/keir.clarke/mapsoftheyear.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Maps of the Year&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://cartography.oregonstate.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cartography and Geovisualization Group at Oregon State University&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://snazzymaps.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;snazzymaps&lt;/a&gt; - a google map style gallery&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://snazzymaps.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;snazzymaps&lt;/a&gt; - A google map style gallery&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://cartodb.github.io/odyssey.js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Odyssey.js&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://amazing-maps.tumblr.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Amazing Maps&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.beijingcitylab.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Beijing City Lab&lt;/a&gt;&lt;/li&gt;
@@ -221,6 +257,7 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;MOOC&quot;&gt;MOOC&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://discoverspatial.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;discoverspatial&lt;/a&gt; - Easy to follow spatial courses &amp;amp; tutorials from the world’s leading instructors&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/specializations/gis&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Coursera’s GIS Specialization&lt;/a&gt; - Including &lt;code&gt;Fundamentals of GIS&lt;/code&gt;, &lt;code&gt;GIS Data Formats, Design and Quality&lt;/code&gt;, &lt;code&gt;Geospatial and Environmental Analysis&lt;/code&gt;, &lt;code&gt;Imagery, Automation, and Applications&lt;/code&gt; and &lt;code&gt;Capstone: Geospatial Analysis&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/course/geoint&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geospatial Intelligence &amp;amp; the Geospatial Revolution&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/course/maps&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Maps and the Geospatial Revolution&lt;/a&gt;&lt;/li&gt;
@@ -964,13 +1001,24 @@
 &lt;li&gt;&lt;a href=&quot;http://geoawesomeness.com/list-top-100-geospatial-start-ups-companies-world/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;list top 100 geospatial start ups companies world&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Reference:-1&quot;&gt;Reference:&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_geographic_information_systems_software&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;List of geographic information systems software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.osgeo.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;osgeo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://amreldib.com/awesome-gis/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AmrEldib’s Awesome GIS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/3b3efa92dd6d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;brandonxiang’s Awesome GIS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://geoawesomeness.com/list-top-100-geospatial-start-ups-companies-world/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;list top 100 geospatial start ups companies world&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;征得原作者同意，全文引用。原文地址:&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/sshuair/awesome-gis&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/sshuair/awesome-gis&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;转载文章以下声明无效&lt;/strong&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/05/06/Awesome-GIS/&quot;&gt;&lt;img src=&quot;http://7xpchj.com1.z0.glb.clouddn.com/gis.jpg-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Awesome GIS is for collecting the &lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_information_system&quot;&gt;geographic information system (GIS) &lt;/a&gt; related sources, including cartographer tools, geoanalysis tools, developing tools, data, conference &amp;amp; communities, news, MOOC’s course, some amazing map site, etc.&lt;/p&gt;
     
     </summary>
     
