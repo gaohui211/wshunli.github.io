@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a3ffbf;
+  background: #2ffbb9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1682,6 +1682,21 @@ pre .javascript .function {
 }
 .cc-license img {
   display: inline-block;
+}
+.logo-l {
+  float: left;
+  width: 33%;
+  height: 50px;
+}
+.logo-c {
+  float: center;
+  width: 33%;
+  height: 50px;
+}
+.logo-r {
+  float: right;
+  width: 33%;
+  height: 50px;
 }
 .theme-next #ds-thread #ds-reset {
   color: #555;
