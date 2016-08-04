@@ -845,6 +845,7 @@ pre .javascript .function {
   right: 50px;
   z-index: 1050;
   padding: 0 6px;
+  margin-bottom: 75px;
   width: 25px;
   background: #222;
   font-size: 12px;
@@ -1422,6 +1423,7 @@ pre .javascript .function {
   width: 15px;
   height: 15px;
   padding: 5px;
+  margin-bottom: 75px;
   background: #222;
   line-height: 0;
   z-index: 1050;
@@ -1534,7 +1536,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2ffbb9;
+  background: #ff73ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1685,17 +1687,17 @@ pre .javascript .function {
 }
 .logo-l {
   float: left;
-  width: 33%;
+  width: 25%;
   height: 50px;
 }
 .logo-c {
   float: center;
-  width: 33%;
+  width: 25%;
   height: 50px;
 }
 .logo-r {
   float: right;
-  width: 33%;
+  width: 25%;
   height: 50px;
 }
 .theme-next #ds-thread #ds-reset {
