@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #67c79d;
+  background: #ff17ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1682,6 +1682,11 @@ pre .javascript .function {
 }
 .cc-license img {
   display: inline-block;
+}
+.logo {
+  float: center;
+  width: 25%;
+  height: 50px;
 }
 .logo-l {
   float: left;
@@ -2377,7 +2382,7 @@ hr {
 }
 .container .main-inner {
   padding-bottom: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 200px;
 }
 @media (max-width: 767px) {
   .container .main-inner {
