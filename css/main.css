@@ -1534,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #04ffcc;
+  background: #e07016;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2424,4 +2424,28 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.mycopyright {
+  border-top: #e0e0e0 2px dashed;
+  border-right: #e0e0e0 2px dashed;
+  border-bottom: #e0e0e0 2px dashed;
+  border-left: #e0e0e0 2px dashed;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  background: url("http://7xqqh4.com1.z0.glb.clouddn.com/ico40.png") #f5f5f5 no-repeat 1% 50%;
+  font-size: 12px;
+}
+.mycopyright:hover p .copy-path::after {
+  content: "复制";
+}
+.mycopyright .post-url:hover {
+  font-weight: normal;
+}
+.mycopyright .copy-path {
+  margin-left: 1em;
+}
+.mycopyright .copy-path:hover {
+  color: #808080;
+  cursor: pointer;
 }
