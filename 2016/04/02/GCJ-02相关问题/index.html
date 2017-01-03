@@ -1,0 +1,1216 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GCJ-02," />
+
+
+
+
+
+  <link rel="alternate" href="//www.wshunli.com/atom.xml" title="CirGIS" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="//wshunli.b0.upaiyun.com/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。它是一种对经纬度数据的加密算法，即加入随机的偏差。国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  
+世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GCJ-02相关问题">
+<meta property="og:url" content="https://www.wshunli.com/2016/04/02/GCJ-02相关问题/index.html">
+<meta property="og:site_name" content="CirGIS">
+<meta property="og:description" content="GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。它是一种对经纬度数据的加密算法，即加入随机的偏差。国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  
+世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转">
+<meta property="og:updated_time" content="2017-01-03T03:44:24.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GCJ-02相关问题">
+<meta name="twitter:description" content="GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。它是一种对经纬度数据的加密算法，即加入随机的偏差。国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  
+世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 10145649,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> GCJ-02相关问题 | CirGIS </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72210097-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CirGIS</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gis">
+          <a href="/gis" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-map"></i> <br />
+            
+            GIS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                GCJ-02相关问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T16:11:38+08:00" content="2016-04-02">
+              2016-04-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/GCJ-02/" itemprop="url" rel="index">
+                    <span itemprop="name">GCJ-02</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/GCJ-02相关问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/GCJ-02相关问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/02/GCJ-02相关问题/" class="leancloud_visitors" data-flag-title="GCJ-02相关问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。<br>它是一种对经纬度数据的加密算法，即加入随机的偏差。<br>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。  </p>
+<p>世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 、百度地理坐标（BD-09)之间互转  </p>
+<a id="more"></a>
+<p><a href="https://github.com/taoweiji/JZLocationConverter-for-Android" target="_blank" rel="external">https://github.com/taoweiji/JZLocationConverter-for-Android</a></p>
+<p>世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 只在中国大陆的范围的坐标有效，以外直接返回世界标准坐标</p>
+<pre><code>public static LatLng wgs84ToGcj02(LatLng location);
+</code></pre><p>中国国测局地理坐标（GCJ-02） 转换成 世界标准地理坐标（WGS-84）</p>
+<p><strong>此接口有1－2米左右的误差，需要精确定位情景慎用</strong></p>
+<pre><code>public static LatLng gcj02ToWgs84(LatLng location);
+</code></pre><p>世界标准地理坐标(WGS-84) 转换成 百度地理坐标（BD-09)</p>
+<pre><code>public static LatLng wgs84ToBd09(LatLng location);
+</code></pre><p>中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 转换成 百度地理坐标（BD-09)</p>
+<pre><code>public static LatLng gcj02ToBd09(LatLng location);
+</code></pre><p>百度地理坐标（BD-09) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;</p>
+<pre><code>public static LatLng bd09ToGcj02(LatLng location);
+</code></pre><p>百度地理坐标（BD-09) 转换成 世界标准地理坐标（WGS-84）</p>
+<p><strong>此接口有1－2米左右的误差，需要精确定位情景慎用</strong></p>
+<pre><code>public static LatLng bd09ToWgs84(LatLng location);  
+</code></pre><p>JZLocationConverter类源代码如下：</p>
+<pre><code>/**
+ * Created by taoweiji on 15/3/26.
+ */
+public class JZLocationConverter {
+
+    private static final double LAT_OFFSET_0(double x, double y) {
+        return -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+    }
+
+    private static final double LAT_OFFSET_1(double x, double y) {
+        return (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    }
+
+    private static final double LAT_OFFSET_2(double x, double y) {
+        return (20.0 * Math.sin(y * Math.PI) + 40.0 * Math.sin(y / 3.0 * Math.PI)) * 2.0 / 3.0;
+    }
+
+    private static final double LAT_OFFSET_3(double x, double y) {
+        return (160.0 * Math.sin(y / 12.0 * Math.PI) + 320 * Math.sin(y * Math.PI / 30.0)) * 2.0 / 3.0;
+    }
+
+    private static final double LON_OFFSET_0(double x, double y) {
+        return 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+    }
+
+    private static final double LON_OFFSET_1(double x, double y) {
+        return (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    }
+
+    private static final double LON_OFFSET_2(double x, double y) {
+        return (20.0 * Math.sin(x * Math.PI) + 40.0 * Math.sin(x / 3.0 * Math.PI)) * 2.0 / 3.0;
+    }
+
+    private static final double LON_OFFSET_3(double x, double y) {
+        return (150.0 * Math.sin(x / 12.0 * Math.PI) + 300.0 * Math.sin(x / 30.0 * Math.PI)) * 2.0 / 3.0;
+    }
+
+    private static double RANGE_LON_MAX = 137.8347;
+    private static double RANGE_LON_MIN = 72.004;
+    private static double RANGE_LAT_MAX = 55.8271;
+    private static double RANGE_LAT_MIN = 0.8293;
+
+    private static double jzA  = 6378245.0;
+    private static double jzEE = 0.00669342162296594323;
+
+    public static double transformLat(double x, double y) {
+        double ret = LAT_OFFSET_0(x, y);
+        ret += LAT_OFFSET_1(x, y);
+        ret += LAT_OFFSET_2(x, y);
+        ret += LAT_OFFSET_3(x, y);
+        return ret;
+    }
+
+    public static double transformLon(double x, double y) {
+        double ret = LON_OFFSET_0(x, y);
+        ret += LON_OFFSET_1(x, y);
+        ret += LON_OFFSET_2(x, y);
+        ret += LON_OFFSET_3(x, y);
+        return ret;
+    }
+
+    public static boolean outOfChina(double lat, double lon) {
+        if (lon &lt; RANGE_LON_MIN || lon &gt; RANGE_LON_MAX)
+            return true;
+        if (lat &lt; RANGE_LAT_MIN || lat &gt; RANGE_LAT_MAX)
+            return true;
+        return false;
+    }
+
+    public static LatLng gcj02Encrypt(double ggLat, double ggLon) {
+        LatLng resPoint = new LatLng();
+        double mgLat;
+        double mgLon;
+        if (outOfChina(ggLat, ggLon)) {
+            resPoint.latitude = ggLat;
+            resPoint.longitude = ggLon;
+            return resPoint;
+        }
+        double dLat = transformLat(ggLon - 105.0, ggLat - 35.0);
+        double dLon = transformLon(ggLon - 105.0, ggLat - 35.0);
+        double radLat = ggLat / 180.0 * Math.PI;
+        double magic = Math.sin(radLat);
+        magic = 1 - jzEE * magic * magic;
+        double sqrtMagic = Math.sqrt(magic);
+        dLat = (dLat * 180.0) / ((jzA * (1 - jzEE)) / (magic * sqrtMagic) * Math.PI);
+        dLon = (dLon * 180.0) / (jzA / sqrtMagic * Math.cos(radLat) * Math.PI);
+        mgLat = ggLat + dLat;
+        mgLon = ggLon + dLon;
+
+        resPoint.latitude = mgLat;
+        resPoint.longitude = mgLon;
+        return resPoint;
+    }
+
+    public static LatLng gcj02Decrypt(double gjLat, double gjLon) {
+        LatLng gPt = gcj02Encrypt(gjLat, gjLon);
+        double dLon = gPt.longitude - gjLon;
+        double dLat = gPt.latitude - gjLat;
+        LatLng pt = new LatLng();
+        pt.latitude = gjLat - dLat;
+        pt.longitude = gjLon - dLon;
+        return pt;
+    }
+
+    public static LatLng bd09Decrypt(double bdLat, double bdLon) {
+        LatLng gcjPt = new LatLng();
+        double x = bdLon - 0.0065, y = bdLat - 0.006;
+        double z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * Math.PI);
+        double theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * Math.PI);
+        gcjPt.longitude = z * Math.cos(theta);
+        gcjPt.latitude = z * Math.sin(theta);
+        return gcjPt;
+    }
+
+    public static LatLng bd09Encrypt(double ggLat, double ggLon) {
+        LatLng bdPt = new LatLng();
+        double x = ggLon, y = ggLat;
+        double z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * Math.PI);
+        double theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * Math.PI);
+        bdPt.longitude = z * Math.cos(theta) + 0.0065;
+        bdPt.latitude = z * Math.sin(theta) + 0.006;
+        return bdPt;
+    }
+
+    /**
+     * @param location 世界标准地理坐标(WGS-84)
+     * @return 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;
+     * @brief 世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;
+     *
+     * ####只在中国大陆的范围的坐标有效，以外直接返回世界标准坐标
+     */
+    public static LatLng wgs84ToGcj02(LatLng location) {
+        return gcj02Encrypt(location.latitude, location.longitude);
+    }
+
+    /**
+     * @param location 中国国测局地理坐标（GCJ-02）
+     * @return 世界标准地理坐标（WGS-84）
+     * @brief 中国国测局地理坐标（GCJ-02） 转换成 世界标准地理坐标（WGS-84）
+     *
+     * ####此接口有1－2米左右的误差，需要精确定位情景慎用
+     */
+    public static LatLng gcj02ToWgs84(LatLng location) {
+        return gcj02Decrypt(location.latitude, location.longitude);
+    }
+
+    /**
+     * @param location 世界标准地理坐标(WGS-84)
+     * @return 百度地理坐标（BD-09)
+     * @brief 世界标准地理坐标(WGS-84) 转换成 百度地理坐标（BD-09)
+     */
+    public static LatLng wgs84ToBd09(LatLng location) {
+        LatLng gcj02Pt = gcj02Encrypt(location.latitude, location.longitude);
+        return bd09Encrypt(gcj02Pt.latitude, gcj02Pt.longitude);
+    }
+
+    /**
+     * @param location 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;
+     * @return 百度地理坐标（BD-09)
+     * @brief 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 转换成 百度地理坐标（BD-09)
+     */
+    public static LatLng gcj02ToBd09(LatLng location) {
+        return bd09Encrypt(location.latitude, location.longitude);
+    }
+
+    /**
+     * @param location 百度地理坐标（BD-09)
+     * @return 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;
+     * @brief 百度地理坐标（BD-09) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;
+     */
+    public static LatLng bd09ToGcj02(LatLng location) {
+        return bd09Decrypt(location.latitude, location.longitude);
+    }
+
+    /**
+     * @param location 百度地理坐标（BD-09)
+     * @return 世界标准地理坐标（WGS-84）
+     * @brief 百度地理坐标（BD-09) 转换成 世界标准地理坐标（WGS-84）
+     *
+     * ####此接口有1－2米左右的误差，需要精确定位情景慎用
+     */
+    public static LatLng bd09ToWgs84(LatLng location) {
+        LatLng gcj02 = bd09ToGcj02(location);
+        return gcj02Decrypt(gcj02.latitude, gcj02.longitude);
+    }
+
+    public static class LatLng {
+        public double latitude;
+        public double longitude;
+
+        public LatLng(double latitude, double longitude) {
+            this.latitude = latitude;
+            this.longitude = longitude;
+        }
+
+        public LatLng() {
+        }
+
+        public double getLatitude() {
+            return latitude;
+        }
+
+        public void setLatitude(double latitude) {
+            this.latitude = latitude;
+        }
+
+        public double getLongitude() {
+            return longitude;
+        }
+
+        public void setLongitude(double longitude) {
+            this.longitude = longitude;
+        }
+    }
+}
+</code></pre><hr>
+<blockquote>
+<p>参考资料  </p>
+</blockquote>
+<p>中国地图坐标(GCJ-02)偏移算法破解小史<br><a href="http://blog.genglinxiao.com/中国地图坐标偏移算法破解小史/" target="_blank" rel="external">http://blog.genglinxiao.com/中国地图坐标偏移算法破解小史/ </a></p>
+<p>中国地图坐标偏移算法整理<br><a href="http://dijkst.github.io/blog/2013/08/09/zhong-guo-di-tu-zuo-biao-pian-yi-suan-fa-zheng-li/" target="_blank" rel="external">http://dijkst.github.io/blog/2013/08/09/zhong-guo-di-tu-zuo-biao-pian-yi-suan-fa-zheng-li/ </a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GCJ-02/" rel="tag">#GCJ-02</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/19/Tomcat安装配置/" rel="next" title="Tomcat安装配置">
+                <i class="fa fa-chevron-left"></i> Tomcat安装配置
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/03/GCJ-02相关问题-在线服务/" rel="prev" title="GCJ-02相关问题（在线服务）">
+                GCJ-02相关问题（在线服务） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/02/GCJ-02相关问题/"
+           data-title="GCJ-02相关问题" data-url="https://www.wshunli.com/2016/04/02/GCJ-02相关问题/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/favicon.ico"
+               alt="CirGIS" />
+          <p class="site-author-name" itemprop="name">CirGIS</p>
+          <p class="site-description motion-element" itemprop="description">Circle GIS</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="//www.wshunli.com/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wshunli" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/wshunli" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Others
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/wangshunli" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wangshunli.lofter.com" title="Lofter" target="_blank">Lofter</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="website-details" >
+  托管于<a class="github-link" href="https://github.com/wshunli" target="_blank">GitHub</a> & <a class="coding-link" href="https://coding.net/u/wshunli" target="_blank">Coding</a>.
+  <a class="qiniu-link" href="https://portal.qiniu.com/signup?code=3lmfxlfwo25w2" target="_blank">七牛云</a> & <a class="upyun-link" href="https://www.upyun.com" target="_blank">又拍云</a>提供云存储服务.
+  <a class="google-link" href="https://analytics.google.com" target="_blank">Google Analytics</a>提供统计服务.
+</div>
+
+<div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart-o"></i>
+  </span>
+  <a class="author" href="https://resume.wshunli.com" itemprop="copyrightHolder">CirGIS</a>.
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动.
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>.
+  <a class="sitemap-link" href="https://www.wshunli.com/sitemap.xml" target="_blank">站点地图</a>.
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wangshunli"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/js/src/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="//cdn.bootcss.com/UAParser.js/0.7.9/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz", "cuNKDo2T90xY7IjfGh21RMoQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
