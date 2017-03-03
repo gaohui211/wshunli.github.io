@@ -560,20 +560,6 @@ mapView<span class="token punctuation">.</span><span class="token function">addL
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://www.wshunli.com/2017/01/03/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
-    <id>http://www.wshunli.com/2017/01/03/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
-    <published>2017-01-03T01:43:57.206Z</published>
-    <updated>2017-03-02T06:28:05.541Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Awesome GIS</title>
     <link href="http://www.wshunli.com/2016/05/06/Awesome-GIS/"/>
     <id>http://www.wshunli.com/2016/05/06/Awesome-GIS/</id>
@@ -733,6 +719,44 @@ mMapView<span class="token punctuation">.</span><span class="token function">add
     <summary type="html">
     
       &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;h1 id=&quot;MapView概述&quot;&gt;&lt;a href=&quot;#MapView概述&quot; class=&quot;headerlink&quot; title=&quot;MapView概述&quot;&gt;&lt;/a&gt;MapView概述&lt;/h1&gt;&lt;p&gt;MapView是ArcGIS Runtime SD
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World</title>
+    <link href="http://www.wshunli.com/2016/04/10/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
+    <id>http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
+    <published>2016-04-10T02:10:28.000Z</published>
+    <updated>2017-03-03T04:16:55.635Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>开发环境搭建完成后，按照国际惯例先写一个Hello World。</strong><br><a id="more"></a></p><h1 id="ArcGIS-for-Android项目代码编写"><a href="#ArcGIS-for-Android项目代码编写" class="headerlink" title="ArcGIS for Android项目代码编写"></a>ArcGIS for Android项目代码编写</h1><h2 id="在布局中添加MapView"><a href="#在布局中添加MapView" class="headerlink" title="在布局中添加MapView"></a>在布局中添加MapView</h2><p>打开<code>res&gt;&gt;layout&gt;&gt;activity_main.xml</code>文件，添加Mapview</p><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.esri.android.map.MapView</span>
+    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/map<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fill_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fill_parent<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</code></pre><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png" alt=""></p><h2 id="新建MapView并设置UI和代码的绑定"><a href="#新建MapView并设置UI和代码的绑定" class="headerlink" title="新建MapView并设置UI和代码的绑定"></a>新建MapView并设置UI和代码的绑定</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> MapView mapView <span class="token operator">=</span> null<span class="token punctuation">;</span>
+<span class="token keyword">private</span> ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer <span class="token operator">=</span> null<span class="token punctuation">;</span>
+</code></pre><p>//设置UI和代码绑定</p><pre class=" language-java"><code class="language-java"><span class="token keyword">this</span><span class="token punctuation">.</span>mapView <span class="token operator">=</span> <span class="token punctuation">(</span>MapView<span class="token punctuation">)</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="新建地图图层并添加到MapView中"><a href="#新建地图图层并添加到MapView中" class="headerlink" title="新建地图图层并添加到MapView中"></a>新建地图图层并添加到MapView中</h2><pre class=" language-java"><code class="language-java">String strMapUrl<span class="token operator">=</span><span class="token string">"http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>arcGISTiledMapServiceLayer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArcGISTiledMapServiceLayer</span><span class="token punctuation">(</span>strMapUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>mapView<span class="token punctuation">.</span><span class="token function">addLayer</span><span class="token punctuation">(</span>arcGISTiledMapServiceLayer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png" alt=""></p><h1 id="ArcGIS-for-Android项目运行"><a href="#ArcGIS-for-Android项目运行" class="headerlink" title="ArcGIS for Android项目运行"></a>ArcGIS for Android项目运行</h1><p>和普通Android项目类似，ArcGIS for Android项目可以在模拟器中运行，也可以在真机中运行</p><h2 id="在真机运行项目"><a href="#在真机运行项目" class="headerlink" title="在真机运行项目"></a>在真机运行项目</h2><p>1、手机需要开启<code>开发者调试模式</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld2.png-hexo.png" alt=""></p><p>注：在 Android 4.2 以后版本的系统中, 开发者模式是默认隐藏的。到 <code>设置 &gt; 关于手机</code> 连续点击版本号7次即可显示。</p><p>2、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p><p>3、选择连接手机设备、点击<code>OK</code>即可<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.1.png-hexo.png" alt=""></p><p>4、运行效果<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld2.1.png-hexo.png" alt=""></p><h2 id="在模拟器中运行项目"><a href="#在模拟器中运行项目" class="headerlink" title="在模拟器中运行项目"></a>在模拟器中运行项目</h2><p>1、点击<code>AVD Manager</code>按钮打开 AVD Manager界面<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld3.png-hexo.png" alt=""></p><p>2、点击左下角的<code>Create Virtual Device</code>，创建模拟器<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld4.png-hexo.png" alt=""></p><p>3、可以根据自己的需要配置，这里我默认<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld5.png-hexo.png" alt=""></p><p>4、根据自己的需要选择系统镜像、我选择默认<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld6.png-hexo.png" alt=""></p><p>5、模拟器配置，注意<code>Graphices</code>选项，选择<code>Hardware</code><br>具体可参考：<a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" rel="external nofollow noopener noreferrer" target="_blank">教你5步学会ArcGIS Android模拟器调试</a><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld7.png-hexo.png" alt=""></p><p>6、稍等片刻创建完成。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld8.png-hexo.png" alt=""></p><p>7、选择刚刚创建的模拟器，点击<code>Launch emulator</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld9.png-hexo.png" alt=""></p><p>第一次启动可能有点慢，运行效果如下<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld10.png-hexo.png" alt=""></p><p>模拟也要开启开发者模式、方法和真机完全相同<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld10.1.png-hexo.png" alt=""></p><p><strong>和在真机运行类似</strong><br>8、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p><p>9、选择连接模拟设备、点击<code>OK</code>即可<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld11.png-hexo.png" alt=""></p><p>可能会报错 <code>INSTALL_FAILED_NO_MATCHING_ABIS</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld12.png-hexo.png" alt=""></p><p>是由于使用了native libraries 。该native libraries 不支持当前的cpu的体系结构。<br>就是在<code>libs</code>文件夹下删除过多出问题了。我们的模拟器是X86的，可以保留X86其他的删除。</p><p>10、再次运行，效果如下<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld13.png-hexo.png" alt=""></p><blockquote><p>参考资料<br>1、Running Your App<br><a href="https://developer.android.com/training/basics/firstapp/running-app.html" rel="external nofollow noopener noreferrer" target="_blank">https://developer.android.com/training/basics/firstapp/running-app.html</a><br>2、教你5步学会ArcGIS Android模拟器调试<br><a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" rel="external nofollow noopener noreferrer" target="_blank">http://blog.csdn.net/arcgis_mobile/article/details/7758650</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;开发环境搭建完成后，按照国际惯例先写一个Hello World。&lt;/strong&gt;&lt;br&gt;
     
     </summary>
     
