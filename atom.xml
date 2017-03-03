@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wshunli.com/"/>
-  <updated>2017-03-02T04:43:58.316Z</updated>
+  <updated>2017-03-03T04:04:21.328Z</updated>
   <id>http://www.wshunli.com/</id>
   
   <author>
@@ -16,11 +16,150 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《ArcGIS Runtime SDK for Android学习笔记》-11、自定义扩展图层加载Google地图/高德地图并缓存</title>
+    <link href="http://www.wshunli.com/2017/03/03/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-11%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95%E5%9B%BE%E5%B1%82%E5%8A%A0%E8%BD%BDGoogle%E5%9C%B0%E5%9B%BE-%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E5%B9%B6%E7%BC%93%E5%AD%98/"/>
+    <id>http://www.wshunli.com/2017/03/03/《ArcGIS-Runtime-SDK-for-Android学习笔记》-11、自定义扩展图层加载Google地图-高德地图并缓存/</id>
+    <published>2017-03-03T03:16:06.000Z</published>
+    <updated>2017-03-03T04:04:21.328Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>本文主要介绍自定义扩展图层加载Google地图/高德地图并缓存</strong><br><a id="more"></a></p><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>上篇文章介绍了自定义扩展图层加载天地图并缓存，由于众所周知的原因，天地图并不一定能满足所有项目需要，并不一定符合实际国情，所以这篇文章介绍自定义扩展图层加载Google地图/高德地图，因为Google地图（<a href="http://ditu.google.cn" rel="external nofollow noopener noreferrer" target="_blank">http://ditu.google.cn</a> ）/ 高德地图（<a href="http://ditu.amap.com" rel="external nofollow noopener noreferrer" target="_blank">http://ditu.amap.com</a> ）的坐标系比较符合“中国特色坐标系“。<br>事实上加载Google地图/高德地图和加载天地图类似，甚至前者还要更简单。</p><h2 id="Google-Map"><a href="#Google-Map" class="headerlink" title="Google Map"></a>Google Map</h2><p>瓦片地址：<br><code>http://mt2.google.cn/vt/lyrs=m&amp;hl=zh-CN&amp;gl=cn&amp;x=420&amp;y=193&amp;z=9</code></p><p>核心代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getTile</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">,</span> <span class="token keyword">int</span> col<span class="token punctuation">,</span> <span class="token keyword">int</span> row<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>level <span class="token operator">></span> layerInfo<span class="token punctuation">.</span><span class="token function">getMaxZoomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> level <span class="token operator">&lt;</span> layerInfo<span class="token punctuation">.</span><span class="token function">getMinZoomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cachePath <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+        bytes <span class="token operator">=</span> <span class="token function">getOfflineCacheFile</span><span class="token punctuation">(</span>cachePath<span class="token punctuation">,</span> level<span class="token punctuation">,</span> col<span class="token punctuation">,</span> row<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>bytes <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String url <span class="token operator">=</span> <span class="token string">"http://mt"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>col <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".google.cn/vt/lyrs="</span>
+                <span class="token operator">+</span> layerInfo<span class="token punctuation">.</span><span class="token function">getLayerName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&amp;hl=zh-CN&amp;gl=cn&amp;"</span>
+                <span class="token operator">+</span> <span class="token string">"x="</span> <span class="token operator">+</span> col <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"y="</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"z="</span> <span class="token operator">+</span> level<span class="token punctuation">;</span>
+
+        Log<span class="token punctuation">.</span><span class="token function">d</span><span class="token punctuation">(</span><span class="token string">"GoogleMapLayer"</span><span class="token punctuation">,</span> <span class="token string">"getTile: "</span> <span class="token operator">+</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        bytes <span class="token operator">=</span> com<span class="token punctuation">.</span>esri<span class="token punctuation">.</span>core<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>io<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>a<span class="token punctuation">.</span><span class="token function">a</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cachePath <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+            <span class="token function">AddOfflineCacheFile</span><span class="token punctuation">(</span>cachePath<span class="token punctuation">,</span> level<span class="token punctuation">,</span> col<span class="token punctuation">,</span> row<span class="token punctuation">,</span> bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">return</span> bytes<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre><p>其中</p><pre class=" language-java"><code class="language-java">String url <span class="token operator">=</span> <span class="token string">"http://mt"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>col <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".google.cn/vt/lyrs="</span>
+                    <span class="token operator">+</span> layerInfo<span class="token punctuation">.</span><span class="token function">getLayerName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&amp;hl=zh-CN&amp;gl=cn&amp;"</span>
+                    <span class="token operator">+</span> <span class="token string">"x="</span> <span class="token operator">+</span> col <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"y="</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"z="</span> <span class="token operator">+</span> level<span class="token punctuation">;</span>
+</code></pre><p>可以更改为</p><pre class=" language-java"><code class="language-java">String url <span class="token operator">=</span> <span class="token string">"https://mt"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>col <span class="token operator">%</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".google.com/vt/lyrs="</span>
+                    <span class="token operator">+</span> layerInfo<span class="token punctuation">.</span><span class="token function">getLayerName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&amp;hl=zh-CN&amp;gl=cn&amp;"</span>
+                    <span class="token operator">+</span> <span class="token string">"x="</span> <span class="token operator">+</span> col <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"y="</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">"&amp;"</span> <span class="token operator">+</span> <span class="token string">"z="</span> <span class="token operator">+</span> level<span class="token punctuation">;</span>
+</code></pre><p>但是这个URL不太符合目前的中国的国情。</p><p><strong>按照惯例下面是我封装好的Jar包。</strong><br>Jar包下载地址：</p><p><a href="http://wshunli.b0.upaiyun.com/ArcGISforAndroid/11/ArcGMap.jar" rel="external nofollow noopener noreferrer" target="_blank">ArcGMap.jar</a></p><p>使用方法：</p><pre class=" language-java"><code class="language-java">GoogleMapLayer（TYPE，PATH）；
+</code></pre><p>TYPE：有一下三种类型可选<br>PATH：缓存路径{选填}，为空则不缓存。</p><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>wshunli<span class="token punctuation">.</span>map<span class="token punctuation">.</span>arcgmap<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 项目：ArcGMap
+ * 作者：WangShunli
+ * 时间：2017/3/2 14:34
+ * 邮箱：admin@wshunli.com
+ * 说明：
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span>  <span class="token class-name">GoogleMapLayerTypes</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 谷歌矢量地图服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> VECTOR_GOOGLE_MAP <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 谷歌影像地图服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> IMAGE_GOOGLE_MAP <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 谷歌地形地图服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> TERRAIN_GOOGLE_MAP <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre><p>示例代码：</p><pre class=" language-java"><code class="language-java">GoogleMapLayer GOOGLE_VECTOR_Layer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GoogleMapLayer</span><span class="token punctuation">(</span>GoogleMapLayerTypes<span class="token punctuation">.</span>VECTOR_GOOGLE_MAP<span class="token punctuation">,</span>
+ZZMANHOLE_PATH <span class="token operator">+</span> <span class="token string">"/GMapCacheDemo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="高德地图"><a href="#高德地图" class="headerlink" title="高德地图"></a>高德地图</h2><p>瓦片地址：<br><code>http://webst01.is.autonavi.com/appmaptile?style=6&amp;x=13417&amp;y=6499&amp;z=14</code></p><p>核心代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">protected</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getTile</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">,</span> <span class="token keyword">int</span> col<span class="token punctuation">,</span> <span class="token keyword">int</span> row<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>level <span class="token operator">></span> layerInfo<span class="token punctuation">.</span><span class="token function">getMaxZoomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> level <span class="token operator">&lt;</span> layerInfo<span class="token punctuation">.</span><span class="token function">getMinZoomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cachePath <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+        bytes <span class="token operator">=</span> <span class="token function">getOfflineCacheFile</span><span class="token punctuation">(</span>cachePath<span class="token punctuation">,</span> level<span class="token punctuation">,</span> col<span class="token punctuation">,</span> row<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>bytes <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        String url <span class="token operator">=</span> <span class="token string">"http://webst0"</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>col <span class="token operator">+</span> row<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".is.autonavi.com/appmaptile?style="</span>
+                <span class="token operator">+</span> layerInfo<span class="token punctuation">.</span><span class="token function">getLayerName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token operator">+</span> <span class="token string">"&amp;x="</span> <span class="token operator">+</span> col <span class="token operator">+</span> <span class="token string">"&amp;y="</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">"&amp;z="</span> <span class="token operator">+</span> level<span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> map <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        bytes <span class="token operator">=</span> com<span class="token punctuation">.</span>esri<span class="token punctuation">.</span>core<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>io<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>a<span class="token punctuation">.</span><span class="token function">a</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cachePath <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+            <span class="token function">AddOfflineCacheFile</span><span class="token punctuation">(</span>cachePath<span class="token punctuation">,</span> level<span class="token punctuation">,</span> col<span class="token punctuation">,</span> row<span class="token punctuation">,</span> bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">return</span> bytes<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>高德地图还可以获取路况信息：</p><pre class=" language-java"><code class="language-java">http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>history<span class="token punctuation">.</span>traffic<span class="token punctuation">.</span>amap<span class="token punctuation">.</span>com<span class="token operator">/</span>traffic<span class="token operator">?</span>type<span class="token operator">=</span><span class="token number">2</span><span class="token operator">&amp;</span>day<span class="token operator">=</span><span class="token number">7</span><span class="token operator">&amp;</span>hh<span class="token operator">=</span><span class="token number">11</span><span class="token operator">&amp;</span>mm<span class="token operator">=</span><span class="token number">0</span><span class="token operator">&amp;</span>x<span class="token operator">=</span><span class="token number">13417</span><span class="token operator">&amp;</span>y<span class="token operator">=</span><span class="token number">6499</span><span class="token operator">&amp;</span>z<span class="token operator">=</span><span class="token number">14</span>
+</code></pre><p>道理是一样的。</p><p><strong>按照惯例下面是我封装好的Jar包。</strong><br>Jar包下载地址：</p><p><a href="http://wshunli.b0.upaiyun.com/ArcGISforAndroid/11/ArcAMap.jar" rel="external nofollow noopener noreferrer" target="_blank">ArcAMap.jar</a></p><p>使用方法：</p><pre class=" language-java"><code class="language-java">AMapLayer（TYPE，PATH）；
+</code></pre><p>TYPE：有一下三种类型可选<br>PATH：缓存路径{选填}，为空则不缓存。</p><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>wshunli<span class="token punctuation">.</span>map<span class="token punctuation">.</span>arcamap<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 项目：ArcAMap
+ * 作者：WangShunli
+ * 时间：2017/3/3 10:19
+ * 邮箱：admin@wshunli.com
+ * 说明：
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">AMapLayerTypes</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 高德矢量地图服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> VECTOR_AMAP <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 高德影像地图服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> IMAGE_AMAP <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 高德地形路网服务
+     */</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> ROAD_AMAP <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>示例代码：</p><pre class=" language-java"><code class="language-java">AMapLayer AMAP_VECTOR_Layer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AMapLayer</span><span class="token punctuation">(</span>AMapLayerTypes<span class="token punctuation">.</span>VECTOR_AMAP<span class="token punctuation">,</span> 
+ZZMANHOLE_PATH <span class="token operator">+</span> <span class="token string">"/AMapCacheDemo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><blockquote><p>参考资料<br>1、ArcGIS For Android 使用谷歌地图服务 - 牧羊的专栏 - 博客频道 - CSDN.NET<br><a href="http://blog.csdn.net/u014014578/article/details/21476395" rel="external nofollow noopener noreferrer" target="_blank">http://blog.csdn.net/u014014578/article/details/21476395</a><br>2、客户端地图拼图算法解析 - 九毫 - 博客园<br><a href="http://www.cnblogs.com/ninemilli/archive/2011/12/26/2289285.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.cnblogs.com/ninemilli/archive/2011/12/26/2289285.html</a><br>3、OpenStreetMap/Google/百度/Bing瓦片地图服务(TMS) - 可可西 - 博客园<br><a href="http://www.cnblogs.com/kekec/p/3159970.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.cnblogs.com/kekec/p/3159970.html</a><br>4、国内主要地图瓦片坐标系定义及计算原理 | CntChen Blog<br><a href="http://cntchen.github.io/2016/05/09/国内主要地图瓦片坐标系定义及计算原理/" rel="external nofollow noopener noreferrer" target="_blank">http://cntchen.github.io/2016/05/09/国内主要地图瓦片坐标系定义及计算原理/</a><br>5、Arcgis for js加载百度地图 - LZUGIS - 博客频道 - CSDN.NET<br><a href="http://blog.csdn.net/gisshixisheng/article/details/44853709" rel="external nofollow noopener noreferrer" target="_blank">http://blog.csdn.net/gisshixisheng/article/details/44853709</a><br>6、jxsapp/ArcGis_moka: arcgis Android 加载 Google 地图 相关工具包<br><a href="https://github.com/jxsapp/ArcGis_moka" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/jxsapp/ArcGis_moka</a><br>7、ArcGIS Javascript API 加载高德在线地图扩展 - ThinkGIS<br><a href="http://www.thinkgis.cn/topic/55bed4f76edd0d1a1d9f44cf" rel="external nofollow noopener noreferrer" target="_blank">http://www.thinkgis.cn/topic/55bed4f76edd0d1a1d9f44cf</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;本文主要介绍自定义扩展图层加载Google地图/高德地图并缓存&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+    
+      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
+    
+      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
+    
+      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
+    
+      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-10、自定义扩展图层加载天地图并缓存</title>
     <link href="http://www.wshunli.com/2017/03/02/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-10%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95%E5%9B%BE%E5%B1%82%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE%E5%B9%B6%E7%BC%93%E5%AD%98/"/>
     <id>http://www.wshunli.com/2017/03/02/《ArcGIS-Runtime-SDK-for-Android学习笔记》-10、自定义扩展图层加载天地图并缓存/</id>
     <published>2017-03-02T04:11:25.000Z</published>
-    <updated>2017-03-02T04:43:58.316Z</updated>
+    <updated>2017-03-02T06:27:35.741Z</updated>
     
     <content type="html"><![CDATA[<p><strong>本文主要介绍自定义扩展图层加载天地图并缓存</strong><br><a id="more"></a></p><p>国家地理信息公共服务平台“<a href="http://www.tianditu.com" rel="external nofollow noopener noreferrer" target="_blank">天地图</a>”（以下简称“天地图“）是国家测绘地理信息局主导建设的网络化地理信息共享与服务门户，集成了来自国家、省、市（县）各级测绘地理信息部门，以及相关政府部门、企事业单位 、社会团体、公众的地理信息公共服务资源，向各类用户提供权威、标准、统一的在线地理信息综合服务。<br>“天地图”属于基础性、公益性服务平台，针对不同用途设计了多种数据版本和服务模式，用户可根据自身需求进行使用。<br>基本情况如下：<br>1、基于OGC的 WMTS 1.0.0版本；<br>2、提供矢量地图、影像地图和地形图；<br>3、提供两种坐标系：国家2000大地坐标系和 Web Mercator 投影坐标系；<br>4、地图和标注数据分开，矢量地图和影像地图提供中英文标注，地形图仅提供中文标注。</p><p>核心代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getTile</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">,</span> <span class="token keyword">int</span> col<span class="token punctuation">,</span> <span class="token keyword">int</span> row<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>level <span class="token operator">></span> layerInfo<span class="token punctuation">.</span><span class="token function">getMaxZoomLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -191,7 +330,7 @@
     <link href="http://www.wshunli.com/2017/03/02/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-9%E3%80%81ArcGIS-for-Android-%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%E6%96%B9%E6%B3%95/"/>
     <id>http://www.wshunli.com/2017/03/02/《ArcGIS-Runtime-SDK-for-Android学习笔记》-9、ArcGIS-for-Android-常用数据加载方法/</id>
     <published>2017-03-02T03:55:42.000Z</published>
-    <updated>2017-03-02T03:55:59.662Z</updated>
+    <updated>2017-03-02T06:28:25.201Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ArcGIS-for-Android-支持的空间数据类型"><a href="#ArcGIS-for-Android-支持的空间数据类型" class="headerlink" title="ArcGIS for Android 支持的空间数据类型"></a>ArcGIS for Android 支持的空间数据类型</h1><p>ArcGIS Runtime SDK for Android支持的空间数据源有多种，主要分为3大类：ArcGIS在线数据源、ArcGIS离线数据源（自10.2版本起），以及第三方数据源，详细的类别支持请见下表：</p><table><thead><tr><th>数据源类型</th><th>数据源名称</th></tr></thead><tbody><tr><td>ArcGIS在线数据源</td><td>切片地图服务（ArcGISTiledMapServiceLayer）、动态地图服务（ArcGISDynamicMapServiceLayer）、影像服务（ArcGISImageServiceLayer）、要素服务（ArcGISFeatureLayer）</td></tr><tr><td>ArcGIS离线数据源</td><td>紧凑型切片（ArcGISLocalTiledLayer）、tpk切片包（ArcGISLocalTiledLayer）、.geodatabase数据文件（GeodatabaseFeature）、.shp文件（ShapefileFeatureTable）、地名地址库（Locator）、网络数据集（Network Dataset）</td></tr><tr><td>第三方数据源</td><td>Bing地图（BingMapsLayer）、Open Street map（OpenStreetMapLayer）、OGC图层（KMLLayer、WMSLayer）、第三方自定义扩展图层</td></tr></tbody></table><h1 id="ArcGIS-for-Android-常用数据加载方法"><a href="#ArcGIS-for-Android-常用数据加载方法" class="headerlink" title="ArcGIS for Android 常用数据加载方法"></a>ArcGIS for Android 常用数据加载方法</h1><h2 id="ArcGISTiledMapServiceLayer"><a href="#ArcGISTiledMapServiceLayer" class="headerlink" title="ArcGISTiledMapServiceLayer"></a>ArcGISTiledMapServiceLayer</h2><p>ArcGISTiledMapServiceLayer图层对应ArcGIS for Server服务中的切片服务，由于切片都是事先做好的，ArcGISTiledMapServiceLayer不能对图层中的数据进行更改，除非更新服务缓存，在ArcGIS Runtime SDK for Android中，也不允许对此类型的数据进行查询，通常用做底图使用。同时，因为加载的是缓存切片，这个类型的图层是ArcGIS Runtime SDK for Android中相应请求最快的图层之一，它采用多个线程，通常是使用单独线程来处理请求和绘制图片，并且异步处理。用法如下：</p><pre class=" language-java"><code class="language-java">map <span class="token operator">=</span> <span class="token punctuation">(</span>MapView<span class="token punctuation">)</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Add tiled layer to MapView</span>
@@ -267,7 +406,7 @@ mapView<span class="token punctuation">.</span><span class="token function">addL
     <link href="http://www.wshunli.com/2017/03/02/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-8%E3%80%81ArcGIS-for-Android-%E7%A6%BB%E7%BA%BF%E6%95%B0%E6%8D%AE%E9%83%A8%E7%BD%B2/"/>
     <id>http://www.wshunli.com/2017/03/02/《ArcGIS-Runtime-SDK-for-Android学习笔记》-8、ArcGIS-for-Android-离线数据部署/</id>
     <published>2017-03-02T03:13:23.000Z</published>
-    <updated>2017-03-02T04:16:20.257Z</updated>
+    <updated>2017-03-03T04:01:50.022Z</updated>
     
     <content type="html"><![CDATA[<p><strong>本文主要介绍在代码工程中添加数据并部署到移动终端的操作步骤</strong><br><a id="more"></a></p><p>数据是GIS应用的基础，与所有GIS应用一样，用 ArcGIS for Android 开发的应用也离不开数据。而Android应用是在移动终端上运行的，数据和应用安装包都需要通过数据线连接进行拷贝，当终端较多时，尤其显得数据拷贝工作既繁琐又枯燥。为了更方便地部署应用数据，可以将数据文件放在工程资源中，在程序启动的同时，将数据一起部署到目标设备的指定目录。<br>本文介绍在代码工程中添加数据并部署到移动终端的操作步骤：<br>首先，数据文件拷贝到工程的assets目录；<br>然后，程序启动时，获取assets的内容并将其存储至移动端的指定目录。通过assets的方式，可以将数据一起打包到apk安装包中，安装完成后，程序启动时即可将数据部署至移动端，不需要再单独拷贝。</p><p>代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 将assets写入移动设备
@@ -324,7 +463,23 @@ mapView<span class="token punctuation">.</span><span class="token function">addL
         e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
-        CloseUtils<span class="token punctuation">.</span><span class="token function">closeIO</span><span class="token punctuation">(</span>is<span class="token punctuation">,</span> os<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">closeIO</span><span class="token punctuation">(</span>is<span class="token punctuation">,</span> os<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>5、<code>closeIO</code>代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 关闭IO
+ * @param closeables closeable
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">closeIO</span><span class="token punctuation">(</span>Closeable<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> closeables<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>closeables <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>Closeable closeable <span class="token operator">:</span> closeables<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>closeable <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                closeable<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><blockquote><p>参考资料<br>1、java - android 怎么复制assets文件夹到本地SD卡？ - SegmentFault <a href="https://segmentfault.com/q/1010000004478829" rel="external nofollow noopener noreferrer" target="_blank">https://segmentfault.com/q/1010000004478829</a><br>2、Android学习之遍历拷贝assets下的目录 - linzhiyong的专栏 - 博客频道 - CSDN.NET <a href="http://blog.csdn.net/u012527802/article/details/52025849" rel="external nofollow noopener noreferrer" target="_blank">http://blog.csdn.net/u012527802/article/details/52025849</a></p></blockquote>]]></content>
@@ -405,6 +560,20 @@ mapView<span class="token punctuation">.</span><span class="token function">addL
   </entry>
   
   <entry>
+    <title></title>
+    <link href="http://www.wshunli.com/2017/01/03/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
+    <id>http://www.wshunli.com/2017/01/03/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
+    <published>2017-01-03T01:43:57.206Z</published>
+    <updated>2017-03-02T06:28:05.541Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Awesome GIS</title>
     <link href="http://www.wshunli.com/2016/05/06/Awesome-GIS/"/>
     <id>http://www.wshunli.com/2016/05/06/Awesome-GIS/</id>
@@ -453,7 +622,7 @@ mapView<span class="token punctuation">.</span><span class="token function">addL
     <link href="http://www.wshunli.com/2016/04/15/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-7%E3%80%81%E5%9C%B0%E5%9B%BE%E5%9B%BE%E5%B1%82Layer/"/>
     <id>http://www.wshunli.com/2016/04/15/《ArcGIS-Runtime-SDK-for-Android学习笔记》-7、地图图层Layer/</id>
     <published>2016-04-15T03:08:13.000Z</published>
-    <updated>2017-03-02T03:00:44.519Z</updated>
+    <updated>2017-03-02T06:28:14.686Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><p>在GIS中图层是很重要的概念，图层是空间数据的载体，通过它可将各种类型的地图数据进行加载显示，但图层只有添加到MapView对象中才能使用。在ArcGIS Runtime for Android中有许多种图层，不同图层有不同的作用，下图是图层的继承关系图：</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/7/地图图层Layer0.png-hexo.png" alt=""></p><h1 id="DynamicLayer"><a href="#DynamicLayer" class="headerlink" title="DynamicLayer"></a>DynamicLayer</h1><p>DynamicLayer 是动态图层的基类.<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/7/地图图层Layer2.png-hexo.png" alt=""></p><h2 id="ArcGISDynamicMapServiceLayer"><a href="#ArcGISDynamicMapServiceLayer" class="headerlink" title="ArcGISDynamicMapServiceLayer"></a>ArcGISDynamicMapServiceLayer</h2><p>ArcGISDynamicMapServiceLayer图层对应ArcGIS for Server服务中的动态服务，动态地图服务的地图数据是按照移动设备范围读取的，用法与ArcGISTiledMapServiceLayer图层相同。<br>ArcGISDynamicMapServiceLayer图层通常包含多个图层，这些图层由server根据请求来渲染并以raster image形式返回，并且返回的raster并不包含feature的额外信息。它的功能特点是更新非常方便，并能及时呈现给用户，同时，图层的可视性和空间参考可以改变，可以给图层添加单独的layer definition，ArcGIS Server为每个image动态投影。而地图的空间参考是由第一个加载的图层决定。<br>它的性能特点：它的渲染时间取决于请求数据的数量和复杂度，因此一般都比tiled map server要慢，因此，它适合数据经常发生改变、或者需要针对不同的用户呈现不同的数据，且要素信息（如attributes，geometry，symbol等）不需要的情况。</p><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//ArcGISDynamicMapServiceLayer class is used to define the Layer that is added to the</span>
  <span class="token comment" spellcheck="true">//MapView object.</span>
@@ -532,7 +701,7 @@ mMapView<span class="token punctuation">.</span><span class="token function">add
     <link href="http://www.wshunli.com/2016/04/12/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-6%E3%80%81%E5%9C%B0%E5%9B%BE%E5%AE%B9%E5%99%A8MapView/"/>
     <id>http://www.wshunli.com/2016/04/12/《ArcGIS-Runtime-SDK-for-Android学习笔记》-6、地图容器MapView/</id>
     <published>2016-04-12T08:44:50.000Z</published>
-    <updated>2017-02-28T05:22:04.170Z</updated>
+    <updated>2017-03-02T06:28:10.121Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h1 id="MapView概述"><a href="#MapView概述" class="headerlink" title="MapView概述"></a>MapView概述</h1><p>MapView是ArcGIS Runtime SDK for Android的核心组件，通过MapView可以呈现地图服务的数据，并且在MapView中定义了丰富的属性、方法和事件，用户通过MapView可以操作设备的触摸屏，默认MapView可以响应用户的各类手势的操作，GIS的开发中，什么时候都少不了地图操作。MapView是Android中ViewGroup的子类，也是ArcGIS Runtime SDK for Android中的地图容器，与很多ArcGIS API中的Map、MapControl类作用是一样的。</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/6/地图的容器MapView1.png-hexo.png" alt=""></p><h1 id="MapView功能介绍"><a href="#MapView功能介绍" class="headerlink" title="MapView功能介绍"></a>MapView功能介绍</h1><p>MapView的强大不仅仅是因为它是呈现地图数据的容器，MapView为提供丰富的功能，下面来分析MapView为提供哪些功能。<br>首先，MapView具有呈现地图能力，MapView可以添加一个或多个图层，图层又分很多种，如：切片图层、动态图层、本地图层等等；图层只有添加到MapView容器中才能进行显示。<br>其次，通过MapView可以设置地图的显示范围、是否允许被旋转、地图背景、地图的最大/最小分辨率及其指定当前显示的分辨率/比例尺。<br>最后，MapView提供了丰富的手势监听接口，通过这些监听器，可以监听各种手势动作，如点击、双击、移动或长按等操作。</p><h1 id="MapView的使用"><a href="#MapView的使用" class="headerlink" title="MapView的使用"></a>MapView的使用</h1><h2 id="MapView的添加方式"><a href="#MapView的添加方式" class="headerlink" title="MapView的添加方式"></a>MapView的添加方式</h2><p>有两种方式可以将MapView添加到应用当中：一个是XML方式，另一个是硬编码方式；一般多采用XML方式，方便调整布局及其属性相关设置。</p><p>1、XML方式</p><pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.esri.android.map.MapView</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
  <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span> 
@@ -581,49 +750,11 @@ mMapView<span class="token punctuation">.</span><span class="token function">add
   </entry>
   
   <entry>
-    <title>《ArcGIS Runtime SDK for Android学习笔记》-5、Hello World</title>
-    <link href="http://www.wshunli.com/2016/04/10/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-5%E3%80%81Hello-World/"/>
-    <id>http://www.wshunli.com/2016/04/10/《ArcGIS-Runtime-SDK-for-Android学习笔记》-5、Hello-World/</id>
-    <published>2016-04-10T02:10:28.000Z</published>
-    <updated>2017-01-08T07:09:51.802Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p>开发环境搭建完成后，按照国际惯例先写一个Hello World。</p><h1 id="ArcGIS-for-Android项目代码编写"><a href="#ArcGIS-for-Android项目代码编写" class="headerlink" title="ArcGIS for Android项目代码编写"></a>ArcGIS for Android项目代码编写</h1><h2 id="在布局中添加MapView"><a href="#在布局中添加MapView" class="headerlink" title="在布局中添加MapView"></a>在布局中添加MapView</h2><p>打开<code>res&gt;&gt;layout&gt;&gt;activity_main.xml</code>文件，添加Mapview</p><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.esri.android.map.MapView</span>
-    <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/arcmap<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
-    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-</code></pre><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建9.png-hexo.png" alt=""></p><h2 id="新建MapView并设置UI和代码的绑定"><a href="#新建MapView并设置UI和代码的绑定" class="headerlink" title="新建MapView并设置UI和代码的绑定"></a>新建MapView并设置UI和代码的绑定</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> MapView mapView <span class="token operator">=</span> null<span class="token punctuation">;</span>
-<span class="token keyword">private</span> ArcGISTiledMapServiceLayer arcGISTiledMapServiceLayer <span class="token operator">=</span> null<span class="token punctuation">;</span>
-</code></pre><p>//设置UI和代码绑定</p><pre class=" language-java"><code class="language-java">mapView <span class="token operator">=</span> <span class="token punctuation">(</span>MapView<span class="token punctuation">)</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findViewById</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>id<span class="token punctuation">.</span>arcmap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><h2 id="新建地图图层并添加到MapView中"><a href="#新建地图图层并添加到MapView中" class="headerlink" title="新建地图图层并添加到MapView中"></a>新建地图图层并添加到MapView中</h2><pre class=" language-java"><code class="language-java">String strMapUrl<span class="token operator">=</span><span class="token string">"http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"</span><span class="token punctuation">;</span>
-arcGISTiledMapServiceLayer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArcGISTiledMapServiceLayer</span><span class="token punctuation">(</span>strMapUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-mapView<span class="token punctuation">.</span><span class="token function">addLayer</span><span class="token punctuation">(</span>arcGISTiledMapServiceLayer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/3/ArcGISforAndroid开发环境搭建10.png-hexo.png" alt=""></p><h1 id="ArcGIS-for-Android项目运行"><a href="#ArcGIS-for-Android项目运行" class="headerlink" title="ArcGIS for Android项目运行"></a>ArcGIS for Android项目运行</h1><p>和普通Android项目类似，ArcGIS for Android项目可以在模拟器中运行，也可以在真机中运行</p><h2 id="在真机运行项目"><a href="#在真机运行项目" class="headerlink" title="在真机运行项目"></a>在真机运行项目</h2><p>1、手机需要开启<code>开发者调试模式</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld2.png-hexo.png" alt=""></p><p>注：在 Android 4.2 以后版本的系统中, 开发者模式是默认隐藏的。到 <code>设置 &gt; 关于手机</code> 连续点击版本号7次即可显示。</p><p>2、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p><p>3、选择连接手机设备、点击<code>OK</code>即可<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.1.png-hexo.png" alt=""></p><p>4、运行效果<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld2.1.png-hexo.png" alt=""></p><h2 id="在模拟器中运行项目"><a href="#在模拟器中运行项目" class="headerlink" title="在模拟器中运行项目"></a>在模拟器中运行项目</h2><p>1、点击<code>AVD Manager</code>按钮打开 AVD Manager界面<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld3.png-hexo.png" alt=""></p><p>2、点击左下角的<code>Create Virtual Device</code>，创建模拟器<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld4.png-hexo.png" alt=""></p><p>3、可以根据自己的需要配置，这里我默认<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld5.png-hexo.png" alt=""></p><p>4、根据自己的需要选择系统镜像、我选择默认<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld6.png-hexo.png" alt=""></p><p>5、模拟器配置，注意<code>Graphices</code>选项，选择<code>Hardware</code><br>具体可参考：<a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" rel="external nofollow noopener noreferrer" target="_blank">教你5步学会ArcGIS Android模拟器调试</a><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld7.png-hexo.png" alt=""></p><p>6、稍等片刻创建完成。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld8.png-hexo.png" alt=""></p><p>7、选择刚刚创建的模拟器，点击<code>Launch emulator</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld9.png-hexo.png" alt=""></p><p>第一次启动可能有点慢，运行效果如下<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld10.png-hexo.png" alt=""></p><p>模拟也要开启开发者模式、方法和真机完全相同<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld10.1.png-hexo.png" alt=""></p><p><strong>和在真机运行类似</strong><br>8、点击Android Studio工具栏上的<code>Run</code>按钮，运行Android项目。<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld1.png-hexo.png" alt=""></p><p>9、选择连接模拟设备、点击<code>OK</code>即可<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld11.png-hexo.png" alt=""></p><p>可能会报错 <code>INSTALL_FAILED_NO_MATCHING_ABIS</code><br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld12.png-hexo.png" alt=""></p><p>是由于使用了native libraries 。该native libraries 不支持当前的cpu的体系结构。<br>就是在<code>libs</code>文件夹下删除过多出问题了。我们的模拟器是X86的，可以保留X86其他的删除。</p><p>10、再次运行，效果如下<br><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/5/HelloWorld13.png-hexo.png" alt=""></p><blockquote><p>参考资料<br>1、Running Your App<br><a href="https://developer.android.com/training/basics/firstapp/running-app.html" rel="external nofollow noopener noreferrer" target="_blank">https://developer.android.com/training/basics/firstapp/running-app.html</a><br>2、教你5步学会ArcGIS Android模拟器调试<br><a href="http://blog.csdn.net/arcgis_mobile/article/details/7758650" rel="external nofollow noopener noreferrer" target="_blank">http://blog.csdn.net/arcgis_mobile/article/details/7758650</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;p&gt;开发环境搭建完成后，按照国际惯例先写一个Hello World。&lt;/p&gt;&lt;h1 id=&quot;ArcGIS-for-Android项目代码编写&quot;&gt;&lt;a href=&quot;#ArcGIS-for-Android项目代码编写&quot; class=&quot;headerl
-    
-    </summary>
-    
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/categories/ArcGIS-Runtime-SDK-for-Android/"/>
-    
-    
-      <category term="ArcGIS" scheme="http://www.wshunli.com/tags/ArcGIS/"/>
-    
-      <category term="ArcGIS Runtime SDK for Android" scheme="http://www.wshunli.com/tags/ArcGIS-Runtime-SDK-for-Android/"/>
-    
-      <category term="ArcGIS for Android" scheme="http://www.wshunli.com/tags/ArcGIS-for-Android/"/>
-    
-      <category term="Android" scheme="http://www.wshunli.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《ArcGIS Runtime SDK for Android学习笔记》-4、ArcGIS for Android开发环境搭建（离线部署）</title>
     <link href="http://www.wshunli.com/2016/04/08/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-4%E3%80%81ArcGIS-for-Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%EF%BC%89/"/>
     <id>http://www.wshunli.com/2016/04/08/《ArcGIS-Runtime-SDK-for-Android学习笔记》-4、ArcGIS-for-Android开发环境搭建（离线部署）/</id>
     <published>2016-04-08T07:58:32.000Z</published>
-    <updated>2017-01-08T07:03:12.799Z</updated>
+    <updated>2017-03-02T06:28:00.241Z</updated>
     
     <content type="html"><![CDATA[<p><strong>本文主要介绍以复制SDK的形式搭建ArcGIS for Android开发环境</strong><br><a id="more"></a></p><h1 id="ArcGIS-for-Android-SDK的下载"><a href="#ArcGIS-for-Android-SDK的下载" class="headerlink" title="ArcGIS for Android SDK的下载"></a>ArcGIS for Android SDK的下载</h1><p>1、打开<a href="https://developers.arcgis.com/android/" rel="external nofollow noopener noreferrer" target="_blank">ArcGIS for Developers</a>网站、点击右上角登录</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署1.png-hexo.png" alt=""></p><p>2、登陆成功后进入到<a href="https://developers.arcgis.com/applications/" rel="external nofollow noopener noreferrer" target="_blank">Applications</a>页面，点击右上角的下载按钮打开<a href="https://developers.arcgis.com/downloads/" rel="external nofollow noopener noreferrer" target="_blank">下载页面</a>。</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署2.png-hexo.png" alt=""></p><p>3、可以看到ArcGIS Runtime SDK for Android最新版10.2.7的下载地址，点击download按钮下载。</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署3.png-hexo.png" alt=""></p><h1 id="ArcGIS-for-Android-SDK的解压与复制"><a href="#ArcGIS-for-Android-SDK的解压与复制" class="headerlink" title="ArcGIS for Android SDK的解压与复制"></a>ArcGIS for Android SDK的解压与复制</h1><p>1、解压ArcGIS for Android SDK包，目录结构如下。</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/4/ArcGISforAndroid离线部署4.png-hexo.png" alt=""></p><p>其中里面比较重要的有以下几项：</p><pre class=" language-java"><code class="language-java"><span class="token number">1</span>、doc —— 该版本SDK对应的API文档，官网一直都是最新的，需要查看旧版API或者指定版本API说明的的一般需要到这里查找
 <span class="token number">2</span>、lib<span class="token operator">-</span>project —— aar格式的函数库，例如：arcgis<span class="token operator">-</span>android<span class="token operator">-</span>v10<span class="token number">.2</span><span class="token punctuation">.</span><span class="token number">6</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">.</span>aar
@@ -725,7 +856,7 @@ project location：存放路径
     <link href="http://www.wshunli.com/2016/04/06/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-2%E3%80%81ArcGIS-for-Android%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.wshunli.com/2016/04/06/《ArcGIS-Runtime-SDK-for-Android学习笔记》-2、ArcGIS-for-Android介绍/</id>
     <published>2016-04-06T07:57:13.000Z</published>
-    <updated>2017-02-28T06:28:00.817Z</updated>
+    <updated>2017-03-02T06:27:52.658Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><p>Android是Google公司推出的开源移动操作系统，自2007年推出后，飞速发展，目前已经成为市场占有率最高的移动操作系统。<br>Android SDK支持使用Java语言开发应用程序，Esri为Android平台提供了专门的开发包ArcGIS Runtime SDK for Android，便于开发者打造炫酷的地图应用，开发好的应用能够部署在Android智能手机、平板电脑和其他智能终端上，支持华为、小米、联想、HTC、Google、三星等国内外众多品牌。</p><h1 id="产品简介"><a href="#产品简介" class="headerlink" title="产品简介"></a>产品简介</h1><p>ArcGIS Runtime SDK for Android包括一个用于Android Studio的lib-project，用于eclipse等环境的jar函数库，提供了丰富的工具、文档和示例，使用户能够使用Java构建移动应用程序（这些应用程序将运用ArcGIS for Server提供的强大的制图、地理编码、地理处理和自定义功能）并将它们部署到Android系统的智能手机和平板上。</p><p>ArcGIS Runtime SDK for Android可以通过ArcGIS for Server REST服务获取数据和服务资源。Esri发布了<a href="http://www.esri.com/industries/landing-pages/geoservices/geoservices.html" rel="external nofollow noopener noreferrer" target="_blank">GeoServices REST Specification</a>,这一标准规定了ArcGIS REST Service各种接口的访问参数及返回数据的结构，ArcGIS Runtime SDK for Android正是基于这一标准封装的。其实，ArcGIS基于REST接口的API，包括ArcGIS Runtime SDK for Android/iOS/Windows Phone，ArcGIS API for Flex/ Silverlight/ JavaScript，以及ArcGIS Runtime SDK for Java/.NET，都是基于这一标准进行封装的。尽管不同平台、不同语言的开发包有其自己的特性，但其对应服务端的编程模型是一致的。下图能很好的说明这一点。</p><p><img src="https://wshunli.b0.upaiyun.com/ArcGISforAndroid/2/ArcGISforAndroid%E4%BB%8B%E7%BB%8D1.png" alt=""></p><p>除了ArcGIS for Server，ArcGIS Runtime SDK for Android还可以通过Portal API轻松访问ArcGIS Online和Portal for ArcGIS上的资源，即与云建立密切的联系。另外，在10.2的版本中，ArcGIS Android SDK也能使用本地离线的数据，作为应用的重要数据源，这也是10.2的重大更新，被多数用户和开发者所关注，后面教程中也会详细介绍。截止目前写稿为止，ArcGIS Runtime SDK for Android最新版本是10.2.6-u2。有关ArcGIS Runtime SDK for Android 10.2.6-u2的所有资料，包括安装包下载、系统支持、安装环境说明、API接口说明、Sample、在线帮助等，都能从最新的ArcGIS for Developer站点<a href="https://developers.arcgis.com/android/" rel="external nofollow noopener noreferrer" target="_blank">https://developers.arcgis.com/android/</a>查找到。</p><h1 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h1><p>ArcGIS for Android从产品上来讲分为两个部分，一是给开发者准备的ArcGIS Runtime SDK for Android开发包，专用来开发Android设备上的移动GIS应用；另一个是名为“ArcGIS”的app，它使用ArcGIS Runtime SDK for Android开发包开发，具备常用的和典型的GIS功能，拿来即用，并可在Google Play等商店免费下载。</p><p>ArcGIS Runtime SDK for Android开发包的发展历程如下：</p><ul><li>约在2011年6月份，发布ArcGIS Runtime SDK for Android beta版，就是开发者常说的0.9版本。它是一个测试版本，支持2.1，2.2的android系统。因为是第一个支持android智能操作系统的版本，虽然是测试版，也备受开发者关注。这个版本中，可以使用ArcGIS for Server中的地图服务、要素服务来进行移动端的地图浏览和简单查询操作，使用设备的GPS坐标，等等；</li><li>2011年12月14日，发布了ArcGIS Runtime SDK for Android v1.0.1，这是第一个正式版的Android SDK。该正式版包含了beta全部功能，对其中一些bug进行了修复，并新增了许多功能，重要的功能如支持本地缓存的松散型切片，迈出了离线应用的第一步；总体上的功能已经比较完善，包括与Online和Portal的集成，使用设备的GPS，进行简单的外业数据采集和编辑，使用Server和Online上的分析功能，能进行identify操作，可以显示popup up，进行高级的几何计算等。为以后的版本功能提升提供了较好的原型；与0.9版本比较，1.0及以后的版本，SDK架构发生了很大的变化，主要变化在于核心功能改由C/C++编写，SDK层（Java）通过JNI的方式调用，以此提高效率。因此，需要支持OpenGL ES2.0的GPU。</li><li>2012年4月7日，发布ArcGIS Runtime SDK for Android v1.1。这个版本的改进主要是增加了高级符号，支持一个应用中多个MapView，以及Group Layer中支持对所有子图层的操作，另外，与Online和Portal的结合更加深入，可以搜索组织的内容、用户、组等信息；</li><li>2012年5月10日，发布ArcGIS Runtime SDK for Android v1.1.1版本。这个版本仅对v1.1版本进行了一个修复——让Eclipse能够更好的、更正确的识别Android依赖库；</li><li>2012年6月22日，发布ArcGIS Runtime SDK for Android v2.0版本。这个版本最大的变化是对云的支持全面加强，支持ArcGIS 10.1的桌面、服务器和云产品，并正式推出Portal API来操作云中的资源。可以说这是在云计算的兴起之下，Esri的“云端”应用模式的全面体现。同时，发布了同步的ArcGIS app for Android v2.0版本，也是全面的加强与云的集成；</li><li>2013年1月16日，发布ArcGIS Runtime SDK for Android v10.1.1版本。这个版本中新增了对网络分析、PKI认证的加密服务的支持，新增对KML、WMS、OpenStreetMap等第三方地图服务的支持；更为重要的是，Runtime SDK的版本号从这个版本开始发生了巨大的变化，从2.0直接升级到了10.1.1，同时，其它Runtime SDK（包括Java SE, WPF, Windows Phone等）版本号全部都更新至10.1.1；</li><li>2013年7月1日，发布ArcGIS Runtime SDK for Android v10.1.1 update 1。这个版本的升级变化也很小，主要是支持了Android Support Library 13，并支持ArcGIS Online上的OAuth2类型的资源的访问；同时，这个版本提供了Javadoc；</li><li>2013年10月29日，发布ArcGIS Runtime SDK for Android v10.2版本。10.2版本与之前的版本相比变化较大，一是新增了很多类和框架来辅助开发人员开发，如MapOptions和Application Framework for ArcGIS Android框架；同时，GraphicsLayer新增动态模式，性能极大提升；GeometryEngine中也新增了很多诸如测地线、偏移量、椭圆等方法来完成几何计算；另一方面，更大的变化是推出了Beta版的离线功能，提供相应的类和接口，来实现业务数据的离线存储、编辑，以及离线的地理编码和路径分析功能，这是国内用户需求最大、备受关注的功能之一，因此一经推出便引起广泛关注。只可惜这些离线的功能只是Beta版，并且需要10.2.1的Desktop和Server产品配合使用，因此离线功能并不能真正用于实践；</li><li>2014年3月8日，发布ArcGIS Runtime SDK for Android v10.2.2版本。这个版本有两个最大的变化，一是正式推出了离线功能，10.2版本中Beta版的离线功能全部正式对用户提供，包括离线的要素编辑和同步，离线的地理编码，离线的路径分析功能，以及按需动态缓存地图切片到移动端等；另一大变化是授权的变化。ArcGIS Runtime SDK统一变更了授权方式，未经过授权的用户只可使用其中基础的功能，并且应用程序在分发时还会打上水印。</li><li>2014年4月21日，发布ArcGIS Runtime SDK for Android v10.2.3版本。这个版本的主要变化在于它提供了一个全新的GeodatabaseFeatureServiceTable类来使用ArcGIS Feature Services，达到同时使用离线和在线数据的目的。</li><li>2014年10月6日，发布ArcGIS Runtime SDK for Android v10.2.4版本。在这个版本中,更新了最低支持Android平台版本的android 4.0.1(API级别14)。直接支持本地矢量格式和栅格格式，包括shapefiles、KML、geopackages，可以直接影像数据，包括：ASRP/USRP、CIB1,5,10、DTED0, 1, 2、GeoPackage、GeoTIFF、HFA、HRE、IMG、JPEG、JPEG2000、NITF、PNG、RPF、SRTM1, 2。支持离线的空间分析功能，视线和视域分析（beta）（暂不支持x86设备），优化GeodatabaseFeatureServiceTable，使得在线离线都可以使用功能单一的API。网络地图服务得到了增强，支持了WMTS服务、Imager服务。离线API的质量得到了改进，包括地图的行为和性能改、callout显示增强。</li><li>2015年1月15日，发布ArcGIS Runtime SDK for Android v10.2.5版本。支持android studio开发环境，示例代码默认开发环境基于Android Studio。Eclipse插件被弃用。从版本10.2.5,Esri公司不再提供的Eclipse IDE工具插件的形式,但是,它是可以继续使用jar包引用方式通过Eclipse完成开发工作。</li><li>2015年6月19日，发布ArcGIS Runtime SDK for Android v10.2.6版本。该版本中大量的小bug得到了改进和更新。截稿至今2015年9月10日目前最新的版本为v10.2.6-u2。</li><li>未来版本：“Quartz”，它是ArcGIS Runtime SDK下一个大版本的代号。这一版本包括了一系列显著的功能增强，正式版本预期于2016年第一季度发行，之前会有几个beta版本发行，第一个测试版定于2015年8月发行。(2015 UC)- - ArcGIS Runtime Quartz版本的新功能，包括：1) 地图性能改进2) 支持更多数据格式，矢量数据包括移动地理数据库（Runtime geodatabase），shapefile文件，KML；栅格图像主要包括JPEG， JPEG2000， NITF， GeoTIFF， MrSID， CADRG， ECRG， DTED， SRTM， HRE以及激光雷达。此外，还支持OGC的GeoPackage，以及自定义的矢量和栅格数据源3) 本地分析在内的更多GIS分析功能4) 支持智能制图，矢量切片和读写在线地图的功能5) 支持3D场景，浏览、分析3D数据6) 支持Xamarin，允许.NET开发人员构建跨平台运行的应用程序。</li></ul><h1 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h1><p>使用ArcGIS Runtime SDK for Android，用户能够开发出功能强大的移动端GIS应用程序并将它们部署到Android系统的智能手机和平板上，主要功能可覆盖：</p><ul><li>地图浏览：实现常见的地图缩放、平移、旋转操作，并且支持手势响应；能加载和显示图例、指南针、罗盘等多种地图辅助元素；</li><li>地图测量：能实现长度、面积、周长及测地线等的测量；</li><li>数据查询：提供多种类和接口，用来进行基于图层的搜索、关键词搜索、模糊查询、周边搜索等，还能实现空间查询和非空间查询的结合；</li><li>几何计算：包括简单的叠加分析、缓冲区分析，以及并、交、差等空间关系的运算；<br>分析：包括最小/最短路径分析、地理编码、通视分析等；</li><li>数据编辑：可编辑要素的空间信息或属性信息，空间信息包括更改要素的符号，改变要素的形状，移动要素的位置等，属性信息可更改其名称、照片等；还可新增、删除要素，并对编辑的数据进行保存；</li><li>离线功能：可将数据下载到本地，或者直接使用本地数据源，在移动端实现数据的编辑、保存等功能，从而实现离线的外业作业流程；</li><li>数据可视化：可使用多种要素符号、弹出框、图标、表格、柱状图等多种方式对数据进行展示和直观表达；</li><li>访问云中的资源：可轻松访问ArcGIS Online和Portal for ArcGIS中的资源和服务，实时同步，随时随地的使用云中资源；</li><li>GPS定位：使用设备的GPS模块，进行准确的定位和导航，精度能满足大众和专业用户的需求。</li></ul><p><strong>本文出处：</strong> <a href="http://www.cnblogs.com/gis-luq/p/4765993.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.cnblogs.com/gis-luq/p/4765993.html</a></p><p><strong>转载文章以下声明无效</strong></p>]]></content>
     
@@ -753,7 +884,7 @@ project location：存放路径
     <link href="http://www.wshunli.com/2016/04/05/%E3%80%8AArcGIS-Runtime-SDK-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81Android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.wshunli.com/2016/04/05/《ArcGIS-Runtime-SDK-for-Android学习笔记》-1、Android开发环境搭建/</id>
     <published>2016-04-05T07:55:27.000Z</published>
-    <updated>2017-01-08T06:46:16.850Z</updated>
+    <updated>2017-03-02T06:27:47.009Z</updated>
     
     <content type="html"><![CDATA[<p><strong>本文主要针对在Windwos环境下用Android Studio搭建Android开发环境</strong><br><a id="more"></a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Android Studio 是一个Android开发环境，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。</p><p>在IDEA的基础上，Android Studio 提供：</p><ul><li>基于Gradle的构建支持</li><li>Android 专属的重构和快速修复</li><li>提示工具以捕获性能、可用性、版本兼容性等问题</li><li>支持ProGuard 和应用签名</li><li>基于模板的向导来生成常用的 Android 应用设计和组件</li><li>功能强大的布局编辑器，可以让你拖拉 UI 控件并进行效果预览</li></ul><h1 id="系统要求与软件准备"><a href="#系统要求与软件准备" class="headerlink" title="系统要求与软件准备"></a>系统要求与软件准备</h1><h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p><strong>Windows</strong></p><pre class=" language-java"><code class="language-java">Microsoft® Windows® <span class="token number">8</span><span class="token operator">/</span><span class="token number">7</span><span class="token operator">/</span>Vista<span class="token operator">/</span><span class="token number">2003</span>（<span class="token number">32</span> 位或 <span class="token number">64</span> 位）  
 最低：2GB RAM，推荐：4GB RAM  
@@ -1312,39 +1443,6 @@ vcpu<span class="token operator">-</span><span class="token number">0</span><spa
     
     
       <category term="VMware" scheme="http://www.wshunli.com/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JRebel for Android入手使用</title>
-    <link href="http://www.wshunli.com/2016/03/11/JRebel-for-Android%E5%85%A5%E6%89%8B%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/</id>
-    <published>2016-03-11T02:15:47.000Z</published>
-    <updated>2017-02-28T05:38:38.937Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/"><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/1.png-hexo.png" alt=""></a></p><a id="more"></a><h1 id="JRebel-for-Android"><a href="#JRebel-for-Android" class="headerlink" title="JRebel for Android"></a>JRebel for Android</h1><p>一款Android studio插件——允许你修改正在运行中的应用程序，而且不必重新部署或重启。支持所有运行Android 4.0及以上版本的手机和平板。由ZeroTurnaround开发。这是一款收费插件，每年49美元，免费试用21天。</p><p>通常在开发过程中，我们每次修改代码后想要在模拟器或者真机上看到修改后的效果，都需要将Android应用重新编译、打包和安装到Android设备上并重启，这个过程是非常耽误时间的。JRebel for Android完美解决了这个问题。</p><p>具体JRebel for Android为什么能够实现，这些技术细节这里不多说，详细请见官网：<a href="http://zeroturnaround.com/software/jrebel-for-android/" rel="external nofollow noopener noreferrer" target="_blank">http://zeroturnaround.com/software/jrebel-for-android/</a></p><h1 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h1><p>在Android Studio插件里面搜索JRebel for Android即可。</p><p>JRebel for Android是收费的可尝试如下文件</p><p>rebel android studio 1.1.0 破解版 注册 - 下载频道 - CSDN.NET<br><a href="http://download.csdn.net/detail/bjgfs/9456906" rel="external nofollow noopener noreferrer" target="_blank">http://download.csdn.net/detail/bjgfs/9456906</a></p><pre class=" language-txt"><code class="language-txt">1. 解压jrebel-for-android_1.1.0_act.zip中`jrebel-android.lic`和`jrebel-for-android_1.1.0_mark.zip`
-
-2. Android Studio -> Plugins -> Install plugin from disk安装`jrebel-for-android_1.1.0_mark.zip`
-
-3. Android Studio -> Tools > JRebel for Android > Activate -> I have a license -> Browse，选择解压的`jrebel-android.lic`，然后点击`Activate JRebel for Android`
-
-4. 激活成功，查看有效期至2116年2月11日
-
-5. 软件的快捷是`CTRL+F10`
-
-6. 已经在Android Studio2.0 Beta6/intellij idea 15测试成功
-</code></pre><p>应该是我的Android Studio版本太新了(AndroidStudioPreview2.1)，提示错误<br>JRebel for Android terminated: License file error: License verification failed.<br>Process finished with exit code 1<br>使用这个版本的还是先试用吧，也可以安装Android Studio1.5的稳定版本</p><p><strong>我为此重新安装了Android Studio</strong><br>jrebel-for-android_ 1.0.8_crack在<code>AndroidStudio1.5</code>下不更新可用<br>下载地址： <a href="http://download.csdn.net/download/hjaitzw/9385764" rel="external nofollow noopener noreferrer" target="_blank">http://download.csdn.net/download/hjaitzw/9385764</a></p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>导入成功后studio会提示需要重启，此时重启studio，重启之后studio顶部工具栏会出现三个新按钮<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/2.png-hexo.png" alt=""></p><p>第一个按钮是运行项目、第二个是debug、第三个是更新</p><p>运行你的项目。<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/4.png-hexo.png" alt=""></p><p>可能会提示：<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/3.png-hexo.png" alt=""></p><p>按照提示做就行了。</p><p>当你修改了代码并重新查看运行效果时，点击<img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/5.png-hexo.png" alt="">即可，你会发现真机或者模拟器上的当前应用并没有重启并且很快展示了修改代码后的效果。</p><p>目前使用过程中发现的问题，如果只是单纯的修改代码包括xml等布局文件没有问题，但如果是新增了Activity（其他组件还测试）应用还是会重新启动一次。</p><blockquote><p>其他详细使用可参考：<br><a href="http://zeroturnaround.com/software/jrebel-for-android/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">http://zeroturnaround.com/software/jrebel-for-android/quick-start/</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot;&gt;&lt;img src=&quot;https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JRebel for Android" scheme="http://www.wshunli.com/categories/JRebel-for-Android/"/>
-    
-    
-      <category term="JRebel for Android" scheme="http://www.wshunli.com/tags/JRebel-for-Android/"/>
     
   </entry>
   
