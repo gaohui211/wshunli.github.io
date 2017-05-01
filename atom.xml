@@ -965,284 +965,6 @@ Oracle® Java 开发工具包 <span class="token punctuation">(</span>JDK<span c
   </entry>
   
   <entry>
-    <title>GCJ-02相关问题（在线服务）</title>
-    <link href="http://www.wshunli.com/2016/04/03/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98-%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://www.wshunli.com/2016/04/03/GCJ-02相关问题-在线服务/</id>
-    <published>2016-04-03T06:55:21.000Z</published>
-    <updated>2017-02-28T05:34:48.280Z</updated>
-    
-    <content type="html"><![CDATA[<p>GCJ-02相关坐标转换的接口（在线服务）：</p><p><a href="http://www.zdoz.net/apiList.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.zdoz.net/apiList.html</a></p><p>支持世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 、百度地理坐标（BD-09)之间互转</p><a id="more"></a><p>支持WGS转GCJ纠偏接口、GCJ反向转WGS接口<br>WGS转BD2纠偏接口、BD2反向转WGS接口<br>GCJ转BD2接口、BD2转GCJ接口<br>百度地图导航等</p><p>GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。<br>它是一种对经纬度数据的加密算法，即加入随机的偏差。<br>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</p><h1 id="批量纠偏接口-POST"><a href="#批量纠偏接口-POST" class="headerlink" title="批量纠偏接口(POST)"></a>批量纠偏接口(POST)</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/transmore.ashx
-</code></pre><p>接口说明</p><p>批量纠偏，一次最大可纠偏1000个坐标点<br>参数<br>lats:维度，多个维度用“;”隔开<br>lngs:经度，多个经度用“;”隔开（要注意经纬度个数相等）<br>type:转换类型 【1.WGS -&gt; GCJ】 【2.GCJ -&gt; WGS】 【3.GCJ -&gt; BD】 【4.BD -&gt; GCJ】 【5.WGS -&gt; BD】 【6.BD -&gt; WGS】<br>返回值JSON<br>根据次序返回一个json格式的数组<br>演示<br>参数：</p><pre class=" language-json"><code class="language-json">lats=<span class="token number">34.123</span><span class="token punctuation">;</span><span class="token number">34.332</span><span class="token punctuation">;</span><span class="token number">55.231</span>&amp;lngs=<span class="token number">113.123</span><span class="token punctuation">;</span><span class="token number">112.213</span><span class="token punctuation">;</span><span class="token number">115.321</span>&amp;type=<span class="token number">1</span>
-</code></pre><p>返回：</p><pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token property">"Lng"</span><span class="token operator">:</span><span class="token number">113.12942937312582</span><span class="token punctuation">,</span><span class="token property">"Lat"</span><span class="token operator">:</span><span class="token number">34.121761850760855</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token property">"Lng"</span><span class="token operator">:</span><span class="token number">112.21911710957568</span><span class="token punctuation">,</span><span class="token property">"Lat"</span><span class="token operator">:</span><span class="token number">34.3306763095054</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token property">"Lng"</span><span class="token operator">:</span><span class="token number">115.33036232125529</span><span class="token punctuation">,</span><span class="token property">"Lat"</span><span class="token operator">:</span><span class="token number">55.232930158541052</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-</code></pre><h1 id="WGS转GCJ纠偏接口"><a href="#WGS转GCJ纠偏接口" class="headerlink" title="WGS转GCJ纠偏接口"></a>WGS转GCJ纠偏接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/transgps.aspx
-</code></pre><p>接口说明</p><p>根据GPS经纬度换算出偏移后的火星坐标</p><p>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/transgps.aspx?lat=34.121&amp;lng=115.21212" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/transgps.aspx?lat=34.121&amp;lng=115.21212</a></p><h1 id="GCJ反向转WGS接口"><a href="#GCJ反向转WGS接口" class="headerlink" title="GCJ反向转WGS接口"></a>GCJ反向转WGS接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/gcj2wgs.aspx
-</code></pre><p>接口说明</p><p>根据火星坐标得出纠偏前的WGS坐标<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/gcj2wgs.aspx?lat=34.121&amp;lng=115.21212" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/gcj2wgs.aspx?lat=34.121&amp;lng=115.21212</a></p><h1 id="WGS转BD2纠偏接口"><a href="#WGS转BD2纠偏接口" class="headerlink" title="WGS转BD2纠偏接口"></a>WGS转BD2纠偏接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/transgpsbd.aspx
-</code></pre><p>接口说明</p><p>根据GPS经纬度换算出偏移后的百度火星坐标<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/transgpsbd.aspx?lat=34.121&amp;lng=115.21212" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/transgpsbd.aspx?lat=34.121&amp;lng=115.21212</a></p><h1 id="BD2反向转WGS接口"><a href="#BD2反向转WGS接口" class="headerlink" title="BD2反向转WGS接口"></a>BD2反向转WGS接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/bd2wgs.aspx
-</code></pre><p>接口说明</p><p>根据百度坐标获取WGS坐标<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/bd2wgs.aspx?lat=34.121&amp;lng=115.21212" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/bd2wgs.aspx?lat=34.121&amp;lng=115.21212</a></p><h1 id="GCJ转BD2接口"><a href="#GCJ转BD2接口" class="headerlink" title="GCJ转BD2接口"></a>GCJ转BD2接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/gcj2bd.aspx
-</code></pre><p>接口说明</p><p>根据Google地图坐标（GCJ-02）转为百度地图坐标（BD-09）<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/gcj2bd.aspx?lat=34.78301&amp;lng=113.77581" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/gcj2bd.aspx?lat=34.78301&amp;lng=113.77581</a></p><h1 id="BD2转GCJ接口"><a href="#BD2转GCJ接口" class="headerlink" title="BD2转GCJ接口"></a>BD2转GCJ接口</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/bd2gcj.aspx
-</code></pre><p>接口说明</p><p>根据百度地图坐标（BD-09）转为 Google地图坐标（GCJ-02）<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br><a href="http://api.zdoz.net/bd2gcj.aspx?lat=34.789281&amp;lng=113.782224" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/bd2gcj.aspx?lat=34.789281&amp;lng=113.782224</a></p><h1 id="根据地理位置获取"><a href="#根据地理位置获取" class="headerlink" title="根据地理位置获取"></a>根据地理位置获取</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/geo2loc.aspx
-
-http://api.zdoz.net/geo2loc_2.aspx
-</code></pre><p>接口说明</p><p>根据GPS经纬度得到地理位置<br>参数<br>lat:纬度<br>lng:经度<br>演示地址<br>type:GPS类型 【1.BD-09】 【2.GCJ-02】 【3.WGS-84】<br>演示地址<br><a href="http://api.zdoz.net/geo2loc.aspx?lat=34.121&amp;lng=115.21212&amp;type=1" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/geo2loc.aspx?lat=34.121&amp;lng=115.21212&amp;type=1</a></p><p><a href="http://api.zdoz.net/geo2loc_2.aspx?lat=34.121&amp;lng=115.21212&amp;type=1" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/geo2loc_2.aspx?lat=34.121&amp;lng=115.21212&amp;type=1</a></p><h1 id="Google地图导航"><a href="#Google地图导航" class="headerlink" title="Google地图导航"></a>Google地图导航</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/daohang.aspx
-</code></pre><p>接口说明</p><p>起点位置gps和终点位置gps，画出导航轨迹【在程序内嵌入浏览器控件,加载接口地址即可】<br>参数<br>TravelType:导航方式 driving、bicycling、walking、transit（详情）<br>startLat:起点纬度<br>startLng:起点经度<br>endLat:终点纬度<br>endLng:终点经度<br>演示地址<br><a href="http://api.zdoz.net/daohang.aspx?TravelType=driving&amp;startLat=23.1212&amp;startLng=113.1212&amp;endLat=23.1111&amp;endLng=113.2323" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/daohang.aspx?TravelType=driving&amp;startLat=23.1212&amp;startLng=113.1212&amp;endLat=23.1111&amp;endLng=113.2323</a></p><h1 id="两GPS点之间距离"><a href="#两GPS点之间距离" class="headerlink" title="两GPS点之间距离"></a>两GPS点之间距离</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/getdistance.aspx
-</code></pre><p>接口说明</p><p>传入两个gps点的经纬度，返回两个gps的距离，单位米<br>参数<br>lat1:第一个gps点的纬度<br>lng1:第一个gps点的经度<br>lat2:第二个gps点的纬度<br>lng2:第二个gps点的经度<br>演示地址<br><a href="http://api.zdoz.net/getdistance.aspx?lat1=34.123&amp;lng1=113.234&amp;lat2=34.126&amp;lng2=113.244" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/getdistance.aspx?lat1=34.123&amp;lng1=113.234&amp;lat2=34.126&amp;lng2=113.244</a></p><h1 id="GPS显示方法转换"><a href="#GPS显示方法转换" class="headerlink" title="GPS显示方法转换"></a>GPS显示方法转换</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/DDD2DMS.aspx
-</code></pre><p>接口说明</p><p>传入GPS的度（DDD）表示数据,返回DMS的表示的JSON数据<br>参数<br>gps：GPS的DDD表示方法数据<br>演示地址<br><a href="http://api.zdoz.net/DDD2DMS.aspx?gps=108.2345" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/DDD2DMS.aspx?gps=108.2345</a></p><h1 id="GPS显示方法转换-1"><a href="#GPS显示方法转换-1" class="headerlink" title="GPS显示方法转换"></a>GPS显示方法转换</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/DMS2DDD.aspx
-</code></pre><p>接口说明</p><p>传入GPS的度（DMS）表示数据,返回DDD表示的数据<br>参数<br>D:度<br>M:分<br>S:秒<br>演示地址<br><a href="http://api.zdoz.net/DMS2DDD.aspx?D=108&amp;M=54&amp;S=22.2" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/DMS2DDD.aspx?D=108&amp;M=54&amp;S=22.2</a></p><h1 id="天气预报"><a href="#天气预报" class="headerlink" title="天气预报"></a>天气预报</h1><p>接口地址</p><pre class=" language-html"><code class="language-html">http://api.zdoz.net/getweather.aspx
-
-http://api.zdoz.net/getweather2.aspx
-</code></pre><p>接口说明</p><p>上传城市名根据国家气象局的天其信息查出当天的天气情况<br>参数<br>cityName:城市名<br>参数<br>lat:GPS纬度<br>lng:GPS经度<br>演示地址<br><a href="http://api.zdoz.net/getweather.aspx?cityName=天津" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/getweather.aspx?cityName=天津</a></p><p><a href="http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;lng=113.678" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/getweather2.aspx?lat=34.345&amp;lng=113.678</a></p><p>更多详细使用方法可移步网站：<br><a href="http://api.zdoz.net/interfaces.aspx" rel="external nofollow noopener noreferrer" target="_blank">http://api.zdoz.net/interfaces.aspx</a></p><p>离线版本可参考：<br><a href="http://www.wshunli.com/2016/04/02/GCJ-02相关问题/">http://www.wshunli.com/2016/04/02/GCJ-02相关问题/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GCJ-02相关坐标转换的接口（在线服务）：&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://www.zdoz.net/apiList.html&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;http://www.zdoz.net/apiList.html&lt;/a&gt;&lt;/p&gt;&lt;p&gt;支持世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="GCJ-02" scheme="http://www.wshunli.com/categories/GCJ-02/"/>
-    
-    
-      <category term="GCJ-02" scheme="http://www.wshunli.com/tags/GCJ-02/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GCJ-02相关问题</title>
-    <link href="http://www.wshunli.com/2016/04/02/GCJ-02%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
-    <id>http://www.wshunli.com/2016/04/02/GCJ-02相关问题/</id>
-    <published>2016-04-02T08:11:38.000Z</published>
-    <updated>2017-01-09T07:47:56.044Z</updated>
-    
-    <content type="html"><![CDATA[<p>GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。<br>它是一种对经纬度数据的加密算法，即加入随机的偏差。<br>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</p><p>世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 、百度地理坐标（BD-09)之间互转</p><a id="more"></a><p><a href="https://github.com/taoweiji/JZLocationConverter-for-Android" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/taoweiji/JZLocationConverter-for-Android</a></p><p>世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 只在中国大陆的范围的坐标有效，以外直接返回世界标准坐标</p><p><code>public static LatLng wgs84ToGcj02(LatLng location);</code></p><p>中国国测局地理坐标（GCJ-02） 转换成 世界标准地理坐标（WGS-84）</p><p><strong>此接口有1－2米左右的误差，需要精确定位情景慎用</strong> **</p><p><code>public static LatLng gcj02ToWgs84(LatLng location);</code></p><p>世界标准地理坐标(WGS-84) 转换成 百度地理坐标（BD-09)</p><p><code>public static LatLng wgs84ToBd09(LatLng location);</code><br>中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt; 转换成 百度地理坐标（BD-09)</p><p><code>public static LatLng gcj02ToBd09(LatLng location);</code></p><p>百度地理坐标（BD-09) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标&gt;</p><p><code>public static LatLng bd09ToGcj02(LatLng location);</code></p><p>百度地理坐标（BD-09) 转换成 世界标准地理坐标（WGS-84）</p><p><strong>此接口有1－2米左右的误差，需要精确定位情景慎用</strong></p><p><code>public static LatLng bd09ToWgs84(LatLng location);</code></p><p>JZLocationConverter类源代码如下：</p><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
- * Created by taoweiji on 15/3/26.
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JZLocationConverter</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LAT_OFFSET_0</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">100.0</span> <span class="token operator">+</span> <span class="token number">2.0</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">3.0</span> <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">*</span> y <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">0.1</span> <span class="token operator">*</span> x <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LAT_OFFSET_1</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">6.0</span> <span class="token operator">*</span> x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LAT_OFFSET_2</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">40.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">/</span> <span class="token number">3.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LAT_OFFSET_3</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">160.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">/</span> <span class="token number">12.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">320</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">30.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LON_OFFSET_0</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">300.0</span> <span class="token operator">+</span> x <span class="token operator">+</span> <span class="token number">2.0</span> <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">0.1</span> <span class="token operator">*</span> x <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">0.1</span> <span class="token operator">*</span> x <span class="token operator">*</span> y <span class="token operator">+</span> <span class="token number">0.1</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LON_OFFSET_1</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">6.0</span> <span class="token operator">*</span> x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LON_OFFSET_2</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">20.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">40.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>x <span class="token operator">/</span> <span class="token number">3.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> <span class="token function">LON_OFFSET_3</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">150.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>x <span class="token operator">/</span> <span class="token number">12.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">300.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>x <span class="token operator">/</span> <span class="token number">30.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2.0</span> <span class="token operator">/</span> <span class="token number">3.0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> RANGE_LON_MAX <span class="token operator">=</span> <span class="token number">137.8347</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> RANGE_LON_MIN <span class="token operator">=</span> <span class="token number">72.004</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> RANGE_LAT_MAX <span class="token operator">=</span> <span class="token number">55.8271</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> RANGE_LAT_MIN <span class="token operator">=</span> <span class="token number">0.8293</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> jzA  <span class="token operator">=</span> <span class="token number">6378245.0</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> jzEE <span class="token operator">=</span> <span class="token number">0.00669342162296594323</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token function">transformLat</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">double</span> ret <span class="token operator">=</span> <span class="token function">LAT_OFFSET_0</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LAT_OFFSET_1</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LAT_OFFSET_2</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LAT_OFFSET_3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token function">transformLon</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span> <span class="token keyword">double</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">double</span> ret <span class="token operator">=</span> <span class="token function">LON_OFFSET_0</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LON_OFFSET_1</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LON_OFFSET_2</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">+=</span> <span class="token function">LON_OFFSET_3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">outOfChina</span><span class="token punctuation">(</span><span class="token keyword">double</span> lat<span class="token punctuation">,</span> <span class="token keyword">double</span> lon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>lon <span class="token operator">&lt;</span> RANGE_LON_MIN <span class="token operator">||</span> lon <span class="token operator">></span> RANGE_LON_MAX<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>lat <span class="token operator">&lt;</span> RANGE_LAT_MIN <span class="token operator">||</span> lat <span class="token operator">></span> RANGE_LAT_MAX<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">gcj02Encrypt</span><span class="token punctuation">(</span><span class="token keyword">double</span> ggLat<span class="token punctuation">,</span> <span class="token keyword">double</span> ggLon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng resPoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LatLng</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> mgLat<span class="token punctuation">;</span>
-        <span class="token keyword">double</span> mgLon<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">outOfChina</span><span class="token punctuation">(</span>ggLat<span class="token punctuation">,</span> ggLon<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            resPoint<span class="token punctuation">.</span>latitude <span class="token operator">=</span> ggLat<span class="token punctuation">;</span>
-            resPoint<span class="token punctuation">.</span>longitude <span class="token operator">=</span> ggLon<span class="token punctuation">;</span>
-            <span class="token keyword">return</span> resPoint<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">double</span> dLat <span class="token operator">=</span> <span class="token function">transformLat</span><span class="token punctuation">(</span>ggLon <span class="token operator">-</span> <span class="token number">105.0</span><span class="token punctuation">,</span> ggLat <span class="token operator">-</span> <span class="token number">35.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> dLon <span class="token operator">=</span> <span class="token function">transformLon</span><span class="token punctuation">(</span>ggLon <span class="token operator">-</span> <span class="token number">105.0</span><span class="token punctuation">,</span> ggLat <span class="token operator">-</span> <span class="token number">35.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> radLat <span class="token operator">=</span> ggLat <span class="token operator">/</span> <span class="token number">180.0</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">;</span>
-        <span class="token keyword">double</span> magic <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>radLat<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        magic <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> jzEE <span class="token operator">*</span> magic <span class="token operator">*</span> magic<span class="token punctuation">;</span>
-        <span class="token keyword">double</span> sqrtMagic <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>magic<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dLat <span class="token operator">=</span> <span class="token punctuation">(</span>dLat <span class="token operator">*</span> <span class="token number">180.0</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>jzA <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> jzEE<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>magic <span class="token operator">*</span> sqrtMagic<span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dLon <span class="token operator">=</span> <span class="token punctuation">(</span>dLon <span class="token operator">*</span> <span class="token number">180.0</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>jzA <span class="token operator">/</span> sqrtMagic <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>radLat<span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mgLat <span class="token operator">=</span> ggLat <span class="token operator">+</span> dLat<span class="token punctuation">;</span>
-        mgLon <span class="token operator">=</span> ggLon <span class="token operator">+</span> dLon<span class="token punctuation">;</span>
-
-        resPoint<span class="token punctuation">.</span>latitude <span class="token operator">=</span> mgLat<span class="token punctuation">;</span>
-        resPoint<span class="token punctuation">.</span>longitude <span class="token operator">=</span> mgLon<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> resPoint<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">gcj02Decrypt</span><span class="token punctuation">(</span><span class="token keyword">double</span> gjLat<span class="token punctuation">,</span> <span class="token keyword">double</span> gjLon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng gPt <span class="token operator">=</span> <span class="token function">gcj02Encrypt</span><span class="token punctuation">(</span>gjLat<span class="token punctuation">,</span> gjLon<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> dLon <span class="token operator">=</span> gPt<span class="token punctuation">.</span>longitude <span class="token operator">-</span> gjLon<span class="token punctuation">;</span>
-        <span class="token keyword">double</span> dLat <span class="token operator">=</span> gPt<span class="token punctuation">.</span>latitude <span class="token operator">-</span> gjLat<span class="token punctuation">;</span>
-        LatLng pt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LatLng</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pt<span class="token punctuation">.</span>latitude <span class="token operator">=</span> gjLat <span class="token operator">-</span> dLat<span class="token punctuation">;</span>
-        pt<span class="token punctuation">.</span>longitude <span class="token operator">=</span> gjLon <span class="token operator">-</span> dLon<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> pt<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">bd09Decrypt</span><span class="token punctuation">(</span><span class="token keyword">double</span> bdLat<span class="token punctuation">,</span> <span class="token keyword">double</span> bdLon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng gcjPt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LatLng</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> x <span class="token operator">=</span> bdLon <span class="token operator">-</span> <span class="token number">0.0065</span><span class="token punctuation">,</span> y <span class="token operator">=</span> bdLat <span class="token operator">-</span> <span class="token number">0.006</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> z <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>x <span class="token operator">*</span> x <span class="token operator">+</span> y <span class="token operator">*</span> y<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.00002</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> theta <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">atan2</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.000003</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        gcjPt<span class="token punctuation">.</span>longitude <span class="token operator">=</span> z <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        gcjPt<span class="token punctuation">.</span>latitude <span class="token operator">=</span> z <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> gcjPt<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">bd09Encrypt</span><span class="token punctuation">(</span><span class="token keyword">double</span> ggLat<span class="token punctuation">,</span> <span class="token keyword">double</span> ggLon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng bdPt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LatLng</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> x <span class="token operator">=</span> ggLon<span class="token punctuation">,</span> y <span class="token operator">=</span> ggLat<span class="token punctuation">;</span>
-        <span class="token keyword">double</span> z <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>x <span class="token operator">*</span> x <span class="token operator">+</span> y <span class="token operator">*</span> y<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.00002</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>y <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">double</span> theta <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">atan2</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.000003</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>x <span class="token operator">*</span> Math<span class="token punctuation">.</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        bdPt<span class="token punctuation">.</span>longitude <span class="token operator">=</span> z <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.0065</span><span class="token punctuation">;</span>
-        bdPt<span class="token punctuation">.</span>latitude <span class="token operator">=</span> z <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>theta<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.006</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> bdPt<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 世界标准地理坐标(WGS-84)
-     * @return 中国国测局地理坐标（GCJ-02）&lt;火星坐标>
-     * @brief 世界标准地理坐标(WGS-84) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标>
-     *
-     * ####只在中国大陆的范围的坐标有效，以外直接返回世界标准坐标
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">wgs84ToGcj02</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">gcj02Encrypt</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 中国国测局地理坐标（GCJ-02）
-     * @return 世界标准地理坐标（WGS-84）
-     * @brief 中国国测局地理坐标（GCJ-02） 转换成 世界标准地理坐标（WGS-84）
-     *
-     * ####此接口有1－2米左右的误差，需要精确定位情景慎用
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">gcj02ToWgs84</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">gcj02Decrypt</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 世界标准地理坐标(WGS-84)
-     * @return 百度地理坐标（BD-09)
-     * @brief 世界标准地理坐标(WGS-84) 转换成 百度地理坐标（BD-09)
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">wgs84ToBd09</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng gcj02Pt <span class="token operator">=</span> <span class="token function">gcj02Encrypt</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">bd09Encrypt</span><span class="token punctuation">(</span>gcj02Pt<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> gcj02Pt<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 中国国测局地理坐标（GCJ-02）&lt;火星坐标>
-     * @return 百度地理坐标（BD-09)
-     * @brief 中国国测局地理坐标（GCJ-02）&lt;火星坐标> 转换成 百度地理坐标（BD-09)
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">gcj02ToBd09</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">bd09Encrypt</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 百度地理坐标（BD-09)
-     * @return 中国国测局地理坐标（GCJ-02）&lt;火星坐标>
-     * @brief 百度地理坐标（BD-09) 转换成 中国国测局地理坐标（GCJ-02）&lt;火星坐标>
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">bd09ToGcj02</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">bd09Decrypt</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> location<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * @param location 百度地理坐标（BD-09)
-     * @return 世界标准地理坐标（WGS-84）
-     * @brief 百度地理坐标（BD-09) 转换成 世界标准地理坐标（WGS-84）
-     *
-     * ####此接口有1－2米左右的误差，需要精确定位情景慎用
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> LatLng <span class="token function">bd09ToWgs84</span><span class="token punctuation">(</span>LatLng location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LatLng gcj02 <span class="token operator">=</span> <span class="token function">bd09ToGcj02</span><span class="token punctuation">(</span>location<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token function">gcj02Decrypt</span><span class="token punctuation">(</span>gcj02<span class="token punctuation">.</span>latitude<span class="token punctuation">,</span> gcj02<span class="token punctuation">.</span>longitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">LatLng</span> <span class="token punctuation">{</span>
-        <span class="token keyword">public</span> <span class="token keyword">double</span> latitude<span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">double</span> longitude<span class="token punctuation">;</span>
-
-        <span class="token keyword">public</span> <span class="token function">LatLng</span><span class="token punctuation">(</span><span class="token keyword">double</span> latitude<span class="token punctuation">,</span> <span class="token keyword">double</span> longitude<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>latitude <span class="token operator">=</span> latitude<span class="token punctuation">;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>longitude <span class="token operator">=</span> longitude<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">public</span> <span class="token function">LatLng</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getLatitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> latitude<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLatitude</span><span class="token punctuation">(</span><span class="token keyword">double</span> latitude<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>latitude <span class="token operator">=</span> latitude<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getLongitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> longitude<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLongitude</span><span class="token punctuation">(</span><span class="token keyword">double</span> longitude<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>longitude <span class="token operator">=</span> longitude<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre><blockquote><p>参考资料<br>1、中国地图坐标(GCJ-02)偏移算法破解小史<br><a href="http://blog.genglinxiao.com/中国地图坐标偏移算法破解小史/" rel="external nofollow noopener noreferrer" target="_blank">http://blog.genglinxiao.com/中国地图坐标偏移算法破解小史/</a><br>2、中国地图坐标偏移算法整理<br><a href="http://dijkst.github.io/blog/2013/08/09/zhong-guo-di-tu-zuo-biao-pian-yi-suan-fa-zheng-li/" rel="external nofollow noopener noreferrer" target="_blank">http://dijkst.github.io/blog/2013/08/09/zhong-guo-di-tu-zuo-biao-pian-yi-suan-fa-zheng-li/</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GCJ-02是由中国国家测绘局制订的地理信息系统的坐标系统。&lt;br&gt;它是一种对经纬度数据的加密算法，即加入随机的偏差。&lt;br&gt;国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。&lt;/p&gt;&lt;p&gt;世界标准地理坐标(WGS-84) 、中国国测局地理坐标（GCJ-02）&amp;lt;火星坐标&amp;gt; 、百度地理坐标（BD-09)之间互转&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="GCJ-02" scheme="http://www.wshunli.com/categories/GCJ-02/"/>
-    
-    
-      <category term="GCJ-02" scheme="http://www.wshunli.com/tags/GCJ-02/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Tomcat安装配置</title>
     <link href="http://www.wshunli.com/2016/03/19/Tomcat%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
     <id>http://www.wshunli.com/2016/03/19/Tomcat安装配置/</id>
@@ -1467,6 +1189,61 @@ vcpu<span class="token operator">-</span><span class="token number">0</span><spa
     
     
       <category term="VMware" scheme="http://www.wshunli.com/tags/VMware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JRebel for Android入手使用</title>
+    <link href="http://www.wshunli.com/2016/03/11/JRebel-for-Android%E5%85%A5%E6%89%8B%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/</id>
+    <published>2016-03-11T02:15:47.000Z</published>
+    <updated>2017-02-28T05:38:38.937Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/"><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/1.png-hexo.png" alt=""></a></p><a id="more"></a><h1 id="JRebel-for-Android"><a href="#JRebel-for-Android" class="headerlink" title="JRebel for Android"></a>JRebel for Android</h1><p>一款Android studio插件——允许你修改正在运行中的应用程序，而且不必重新部署或重启。支持所有运行Android 4.0及以上版本的手机和平板。由ZeroTurnaround开发。这是一款收费插件，每年49美元，免费试用21天。</p><p>通常在开发过程中，我们每次修改代码后想要在模拟器或者真机上看到修改后的效果，都需要将Android应用重新编译、打包和安装到Android设备上并重启，这个过程是非常耽误时间的。JRebel for Android完美解决了这个问题。</p><p>具体JRebel for Android为什么能够实现，这些技术细节这里不多说，详细请见官网：<a href="http://zeroturnaround.com/software/jrebel-for-android/" rel="external nofollow noopener noreferrer" target="_blank">http://zeroturnaround.com/software/jrebel-for-android/</a></p><h1 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h1><p>在Android Studio插件里面搜索JRebel for Android即可。</p><p>JRebel for Android是收费的可尝试如下文件</p><p>rebel android studio 1.1.0 破解版 注册 - 下载频道 - CSDN.NET<br><a href="http://download.csdn.net/detail/bjgfs/9456906" rel="external nofollow noopener noreferrer" target="_blank">http://download.csdn.net/detail/bjgfs/9456906</a></p><pre class=" language-txt"><code class="language-txt">1. 解压jrebel-for-android_1.1.0_act.zip中`jrebel-android.lic`和`jrebel-for-android_1.1.0_mark.zip`
+
+2. Android Studio -> Plugins -> Install plugin from disk安装`jrebel-for-android_1.1.0_mark.zip`
+
+3. Android Studio -> Tools > JRebel for Android > Activate -> I have a license -> Browse，选择解压的`jrebel-android.lic`，然后点击`Activate JRebel for Android`
+
+4. 激活成功，查看有效期至2116年2月11日
+
+5. 软件的快捷是`CTRL+F10`
+
+6. 已经在Android Studio2.0 Beta6/intellij idea 15测试成功
+</code></pre><p>应该是我的Android Studio版本太新了(AndroidStudioPreview2.1)，提示错误<br>JRebel for Android terminated: License file error: License verification failed.<br>Process finished with exit code 1<br>使用这个版本的还是先试用吧，也可以安装Android Studio1.5的稳定版本</p><p><strong>我为此重新安装了Android Studio</strong><br>jrebel-for-android_ 1.0.8_crack在<code>AndroidStudio1.5</code>下不更新可用<br>下载地址： <a href="http://download.csdn.net/download/hjaitzw/9385764" rel="external nofollow noopener noreferrer" target="_blank">http://download.csdn.net/download/hjaitzw/9385764</a></p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>导入成功后studio会提示需要重启，此时重启studio，重启之后studio顶部工具栏会出现三个新按钮<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/2.png-hexo.png" alt=""></p><p>第一个按钮是运行项目、第二个是debug、第三个是更新</p><p>运行你的项目。<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/4.png-hexo.png" alt=""></p><p>可能会提示：<br><img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/3.png-hexo.png" alt=""></p><p>按照提示做就行了。</p><p>当你修改了代码并重新查看运行效果时，点击<img src="https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/5.png-hexo.png" alt="">即可，你会发现真机或者模拟器上的当前应用并没有重启并且很快展示了修改代码后的效果。</p><p>目前使用过程中发现的问题，如果只是单纯的修改代码包括xml等布局文件没有问题，但如果是新增了Activity（其他组件还测试）应用还是会重新启动一次。</p><blockquote><p>其他详细使用可参考：<br><a href="http://zeroturnaround.com/software/jrebel-for-android/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">http://zeroturnaround.com/software/jrebel-for-android/quick-start/</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/11/JRebel-for-Android入手使用/&quot;&gt;&lt;img src=&quot;https://wshunli.b0.upaiyun.com/JRebelforAndroid入手使用/1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JRebel for Android" scheme="http://www.wshunli.com/categories/JRebel-for-Android/"/>
+    
+    
+      <category term="JRebel for Android" scheme="http://www.wshunli.com/tags/JRebel-for-Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>停车助手</title>
+    <link href="http://www.wshunli.com/2016/03/08/%E5%81%9C%E8%BD%A6%E5%8A%A9%E6%89%8B/"/>
+    <id>http://www.wshunli.com/2016/03/08/停车助手/</id>
+    <published>2016-03-08T11:35:19.000Z</published>
+    <updated>2017-03-02T02:07:04.528Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.wshunli.com/2016/03/08/停车助手/"><img src="https://wshunli.b0.upaiyun.com/停车助手/停车助手1.png-hexo.png" alt=""></a></p><a id="more"></a><p>停车助手-停车只爱停车助手<br><img src="http://7xsho2.com1.z0.glb.clouddn.com/logo.png" alt=""><br>停车助手<br><a href="https://beta.bugly.qq.com/parkhelp" rel="external nofollow noopener noreferrer" target="_blank">https://beta.bugly.qq.com/parkhelp</a><br><a href="http://park.wshunli.com" rel="external nofollow noopener noreferrer" target="_blank">http://park.wshunli.com</a></p><h1 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h1><p>1、基于百度地图开放平台的SDK地图，定位SDK开发。<br>实现了对地图的基本操作（缩放旋转、切换图层、打开关闭实时交通状况等），对附近2000米范围内停车场的查询。<br>2、UI设计遵循Google的Material Design规范。<br>对百度地图默认的指南针、缩放、定位等图标进行定制。<br>3、集成Bugly平台，内测分发、异常上报等<br>Bugly 内测分发平台为移动开发者提供安装包托管、内测应用分发、反馈收集等服务，解决产品内测阶段的各类问题。<br><a href="https://bugly.qq.com" rel="external nofollow noopener noreferrer" target="_blank">https://bugly.qq.com</a><br>4、集成阿里百川、用户反馈<br>向移动开发者提供App内的用户反馈组件和强大的管理后台，方便用户报告Bug和反馈建议，同时减少用户在 AppStore上的差评。<br><a href="http://baichuan.taobao.com/" rel="external nofollow noopener noreferrer" target="_blank">http://baichuan.taobao.com/</a><br>5、集成信鸽推送<br>推送文本内容直接展示在用户的通知栏中<br><a href="http://xg.qq.com/xg" rel="external nofollow noopener noreferrer" target="_blank">http://xg.qq.com/xg</a><br>6、集成umeng统计<br>国内专业的移动应用统计分析平台。我们帮助移动应用开发商统计和分析流量来源、内容使用、用户属性和行为数据，以便开发商利用数据进行产品、运营、推广策略的决策。<br><a href="http://mobile.umeng.com/analytics?spm=0.0.0.0.2CPESM" rel="external nofollow noopener noreferrer" target="_blank">http://mobile.umeng.com/analytics?spm=0.0.0.0.2CPESM</a><br>7、腾讯优测、应用测试<br><a href="http://utest.qq.com/" rel="external nofollow noopener noreferrer" target="_blank">http://utest.qq.com/</a><br>对应用进行加固、测试，随机50款通过率100%<br><a href="http://auto.utest.qq.com/share?key=3IJbAj" rel="external nofollow noopener noreferrer" target="_blank">http://auto.utest.qq.com/share?key=3IJbAj</a><br>8、360加固<br>加固保为移动应用提供专业安全的保护，可防止应用被逆向分析、反编译、二次打包，防止嵌入各类病毒、广告等恶意代码，从源头保护数据安全和开发者利益。<br><a href="http://jiagu.360.cn/" rel="external nofollow noopener noreferrer" target="_blank">http://jiagu.360.cn/</a></p><h1 id="创作初衷"><a href="#创作初衷" class="headerlink" title="创作初衷"></a>创作初衷</h1><p>做这款App的目的主要是学习百度LBS的开发和体会Google的Material Design。<br>可能现在还不够实用，我会在以后不断地完善。</p><h2 id="LBS"><a href="#LBS" class="headerlink" title="LBS"></a>LBS</h2><p>在应用中使用了百度地图、百度定位等SDK。实现了百度LBS的基本地图、图层展示、附近的POI搜索等</p><h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p>高度个人定制了UI。地图操作部分包括地图缩放、指南针旋转、实时路况、图层切换等实现UI和功能自定义。</p><h2 id="MD"><a href="#MD" class="headerlink" title="MD"></a>MD</h2><p>学习使用了Google的Material Design。体会Material Design的设计并加以使用，APP整体外观优雅大方</p><h1 id="停车助手精彩截图"><a href="#停车助手精彩截图" class="headerlink" title="停车助手精彩截图"></a>停车助手精彩截图</h1><h2 id="地图操作功能"><a href="#地图操作功能" class="headerlink" title="地图操作功能"></a>地图操作功能</h2><p><img src="https://wshunli.b0.upaiyun.com/停车助手/mobile2.png-hexo.png" alt=""></p><p>实现对地图的旋转、缩放、图层切换等功能</p><h2 id="定位功能"><a href="#定位功能" class="headerlink" title="定位功能"></a>定位功能</h2><p><img src="https://wshunli.b0.upaiyun.com/停车助手/mobile4.png-hexo.png" alt=""></p><p>实现利用百度定位SDK对用户当前位置定位</p><h2 id="停车场查询"><a href="#停车场查询" class="headerlink" title="停车场查询"></a>停车场查询</h2><p><img src="https://wshunli.b0.upaiyun.com/停车助手/mobile1.png-hexo.png" alt=""></p><p>实现对附近2000m附近停车场进行查询显示</p><h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><p><img src="https://wshunli.b0.upaiyun.com/停车助手/mobile3.png-hexo.png" alt=""></p><p>实现应用自动更新、统计、意见反馈等</p><h1 id="意见反馈"><a href="#意见反馈" class="headerlink" title="意见反馈"></a>意见反馈</h1><p>欢迎发邮件至 ： <a href="mailto:park@wshunli.com" rel="external nofollow noopener noreferrer" target="_blank">park@wshunli.com</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.wshunli.com/2016/03/08/停车助手/&quot;&gt;&lt;img src=&quot;https://wshunli.b0.upaiyun.com/停车助手/停车助手1.png-hexo.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="停车助手" scheme="http://www.wshunli.com/categories/%E5%81%9C%E8%BD%A6%E5%8A%A9%E6%89%8B/"/>
+    
+    
+      <category term="停车助手" scheme="http://www.wshunli.com/tags/%E5%81%9C%E8%BD%A6%E5%8A%A9%E6%89%8B/"/>
     
   </entry>
   
