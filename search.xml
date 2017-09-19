@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[沉迷学术，不可自拔（二)]]></title>
+      <url>%2F2017%2F09%2F19%2F%E6%B2%89%E8%BF%B7%E5%AD%A6%E6%9C%AF%EF%BC%8C%E4%B8%8D%E5%8F%AF%E8%87%AA%E6%8B%94%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
+      <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;这阵子应该是比较消极的一阵了，八月底放假了但是没回家，基本还是学习为主。基本刷了一遍 jQuery 的教程。&nbsp;&nbsp;&nbsp;&nbsp;Android 方面尝试了 Google VR SDK for Android 做全景应用，也开发了 Demo 。本来是希望能用在壁纸上，但是遇到问题了。后面打算用 GLWallpaperService 用 OpenGL ES 渲染，不过感觉可能性不大。&nbsp;&nbsp;&nbsp;&nbsp;开学事情挺多的，报道、开学典礼、选课挺折腾人的。论文没过又投了下，希望能过。&nbsp;&nbsp;&nbsp;&nbsp;现在干活基本没什么动力了，每天上课心力憔悴，基本都是摄影测量遥感相关的课程。宿舍距离学校又有段距离，每次上课都不想来，来了不想回宿舍。&nbsp;&nbsp;&nbsp;&nbsp;感觉还是本科好点，干的都是自己喜欢想做的事。现在这都跟打杂差不多，啥都干。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[NullPointerException]]></title>
       <url>%2F2017%2F09%2F01%2FNullPointerException%2F</url>
       <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;NullPointerException是 java.lang.NullPointerException 的简称，是 Java 语言中的一个异常类，位于 java.lang 包中，父类是 java.lang.RuntimeException ，该异常在源程序中可以不进行捕获和处理。&nbsp;&nbsp;&nbsp;&nbsp;当应用程序试图在需要对象的地方使用 null 时，抛出该异常。这种情况包括：调用 null 对象的实例方法。访问或修改 null 对象的字段。如果一个数组为 null，试图用属性 length 获得其长度时。如果一个数组为 null，试图访问或修改其中某个元素时。在需要抛出一个异常对象，而该对象为 null 时。应用程序将会抛出 NullPointerException 类的实例，表明其他对 null 对象的非法使用。]]></content>
@@ -10,8 +17,8 @@
 
     
     <entry>
-      <title><![CDATA[沉迷学术，不可自拔]]></title>
-      <url>%2F2017%2F08%2F20%2F%E6%B2%89%E8%BF%B7%E5%AD%A6%E6%9C%AF%EF%BC%8C%E4%B8%8D%E5%8F%AF%E8%87%AA%E6%8B%94%2F</url>
+      <title><![CDATA[沉迷学术，不可自拔（一）]]></title>
+      <url>%2F2017%2F08%2F20%2F%E6%B2%89%E8%BF%B7%E5%AD%A6%E6%9C%AF%EF%BC%8C%E4%B8%8D%E5%8F%AF%E8%87%AA%E6%8B%94%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
       <content type="text"><![CDATA[“城外的人想冲进去，城里的人想逃出来。”来武汉一个月了，相比较而言可能我还算比较幸运，至少没有到“帮老师办签证订机票”的地步。刚来到做的是前端的项目，其实真是没有一点经验，前面只是能看懂一点代码，并没怎么系统地学习。做Javastript也是可以的，后面做Rect Native等跨平台开发也是有帮助的。前端的东西太多了，现在还没学好，实际帮助也不多。后来又写了一点Node.js的东西，主要是利用Egg.js对Mongodb进行增删查改 CURD 操作，现在反正已经趟了一趟浑水了。最大的收获就是对网络的一些基础知识的理解，虽然考了计算机三级，然而并没有什么卵用。中间写了一篇论文投到测绘科技了，感觉中的可能性不大，太简单了。使用DataV做了一点可视化，但是感觉限制太多，字段太少了。现在还有一点时间，在学 Android ,希望能进阶下。武汉的空气不错，蓝蓝的天下白云飘。有时候在想，是读研好还是工作好呢。这个问题似乎也没有什么意义了。]]></content>
     </entry>
 
