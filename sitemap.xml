@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wshunli.com//404.html</loc>
+    
+    <lastmod>2017-10-24T02:33:27.595Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wshunli.com/gallery/index.html</loc>
+    
+    <lastmod>2017-10-24T02:26:38.830Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wshunli.com/2017/10/22/%E3%80%8AJavaScript-DOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2017-10-23T03:16:05.571Z</lastmod>
@@ -362,20 +376,6 @@
     <loc>http://www.wshunli.com/2017/02/28/%E3%80%8ASuperMap-iMobile-for-Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%8B-1%E3%80%81SuperMap-for-Android%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2017-06-08T01:29:20.515Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wshunli.com//404.html</loc>
-    
-    <lastmod>2017-03-03T07:46:17.440Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wshunli.com/gallery/index.html</loc>
-    
-    <lastmod>2017-01-05T14:08:43.036Z</lastmod>
     
   </url>
   
