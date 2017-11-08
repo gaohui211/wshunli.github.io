@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wshunli.com/"/>
-  <updated>2017-11-08T09:46:52.436Z</updated>
+  <updated>2017-11-08T14:59:22.632Z</updated>
   <id>http://www.wshunli.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《JavaScript高级程序设计》读书笔记（五）</title>
+    <link href="http://www.wshunli.com/posts/4d143b68.html"/>
+    <id>http://www.wshunli.com/posts/4d143b68.html</id>
+    <published>2017-11-08T13:12:48.000Z</published>
+    <updated>2017-11-08T14:59:22.632Z</updated>
+    
+    <content type="html"><![CDATA[<p>《JavaScript高级程序设计》读书笔记</p><a id="more"></a><p><strong>(五) 学习 JavaScript 对各数据载体的操作方法（如JSON、XML），学会 Ajax 的使用方法。</strong>(18-21章)</p><h1 id="第十八章-JavaScript-与-XML"><a href="#第十八章-JavaScript-与-XML" class="headerlink" title="第十八章 JavaScript 与 XML"></a>第十八章 JavaScript 与 XML</h1><h2 id="浏览器对-XML-DOM-的支持"><a href="#浏览器对-XML-DOM-的支持" class="headerlink" title="浏览器对 XML DOM 的支持"></a>浏览器对 XML DOM 的支持</h2><p>如何检测浏览器是否支持DOM2级XML：</p><pre><code class="JavaScript">var hasXmlDom = document.implementation.hasFeature(&quot;XML&quot;,&quot;2.0&quot;);</code></pre><p>在支持DOM2级的浏览器中创建一个空白XML:</p><pre><code class="JavaScript">var xmldom = document.implemention.createDocument(namespaceUri,root,docype);</code></pre><p>通过 JavaScript 处理XML时，通常只使用参数root，这个参数指定的是XML DOM文档元素的标签名。</p><pre><code class="JavaScript">var xmldom = document.implementation.createDocument(&quot;&quot;,&quot;root&quot;,null);console.log(xmldom.documentElement.tagName);  //&quot;root&quot;var child = xmldom.createElement(&quot;child&quot;);xmldom.documentElement.appendChild(child);</code></pre><p><strong>DOMParser 类型</strong>：将 XML 解析为 DOM 文档。</p><p><strong>XMLSerializer 类型</strong>：将 DOM 文档序列化为 XML 字符串。</p><pre><code class="JavaScript">var parser = new DOMParser();var xmldom = parser.parseFromString(&quot;&lt;root&gt;&lt;child/&gt;&lt;/root&gt;&quot;, &quot;text/xml&quot;);//convert back into XMLvar serializer = new XMLSerializer();var xml = serializer.serializeToString(xmldom);console.log(xml);</code></pre><h2 id="浏览器对XPath的支持"><a href="#浏览器对XPath的支持" class="headerlink" title="浏览器对XPath的支持"></a>浏览器对XPath的支持</h2><p>XPath 是设计用来在 DOM 文档中查找节点的一种手段。</p><h2 id="浏览器对XSLT的支持"><a href="#浏览器对XSLT的支持" class="headerlink" title="浏览器对XSLT的支持"></a>浏览器对XSLT的支持</h2><p>XSLT 是与 XML 相关的一种技术，它利用 XPath 将文档从一种表现形式转换成另一种表现形式。</p><h1 id="第十九章-E4X"><a href="#第十九章-E4X" class="headerlink" title="第十九章 E4X"></a>第十九章 E4X</h1><p>E4X 本身不是一门语言，它只是 ECMAScript 语言的可选扩展。<br>就其本身而言，E4X 为处理 XML 定义了新的语法，也定义了特定于 XML 的对象。</p><h1 id="第二十章-JSON"><a href="#第二十章-JSON" class="headerlink" title="第二十章 JSON"></a>第二十章 JSON</h1><p>JSON（Javascript Object Notaion，Javascript对象表示法）是一种数据格式。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>JSON有3种类型的值：简单值、对象 和 数组。</p><ul><li>简单值：字符串、数值、布尔值、null（JSON不支持JavaScript的特殊值undefined）。</li><li>对象：一组无序键值对。值可为简单值，或对象和数组。</li><li>数组：一组有序值的列表。值可为简单值，或对象和数组。</li></ul><p>JSON不支持变量、函数 和 对象实例。</p><p><strong>简单值</strong>：最简单的 JSON 数据形式就是简单值。</p><pre><code class="JSON">6&quot;Hello World!&quot; //必须为双引号</code></pre><p>布尔值和 null 也是有效的 JSON 数据形式，但简单值往往是复杂数据结构的一部分。</p><p><strong>对象</strong>：</p><pre><code class="JSON">// JavaScript对象字面量：var object = {  &quot;name&quot;: &quot;Nicholas&quot;,  &quot;age&quot;: 29};// JSON 表示方式如下：{  &quot;name&quot;: &quot;Nicholas&quot;,  &quot;age&quot;: 29}</code></pre><p>JSON 对象 与 JavaScript 的对象字面量相比：首先，没有声明变量（JSON 中没有变量的概念）；其次，没有末尾的分号；JSON 对象的属性必须加双引号。</p><p><strong>数组</strong>：JSON 数组采用的就是 JavaScript 中的数组字面量形式。</p><pre><code class="JSON">// JavaScript 中的数组字面量：var values = [25, &quot;hi&quot;, true];// JSON 表示数组：[25, &quot;hi&quot;, true]</code></pre><h2 id="解析与序列化"><a href="#解析与序列化" class="headerlink" title="解析与序列化"></a>解析与序列化</h2><p>ECMAScript5 对解析 JSON 进行了规范，定义了全局对象 JSON。</p><p>JSON 对象有两个方法：stringify() 和 parse()，分别用于把 JavaScript 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 JavaScript 值。</p><pre><code class="JavaScript">var book = {        title: &quot;Professional JavaScript&quot;,        authors: [            &quot;Nicholas C. Zakas&quot;        ],        edition: 3,        year: 2011    };var jsonText = JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);console.log(jsonText);// {&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:[&quot;Nicholas C. Zakas&quot;],&quot;edition&quot;:3,&quot;year&quot;:2011}var bookCopy =JSON.parse(jsonText);</code></pre><p><strong>序列化选项</strong>: JSON.stringify() 除了要序列化的 JavaScript 对象外，还可以接收另外两个参数指定以不同的方式序列化。<br>第一个参数是数据，第二个参数是个过滤器，可以是一个数组或函数；第三个参数是一个选项，表示是否在 JSON 字符串中保留缩进。</p><p>1.过滤结果：</p><p>如果过滤器参数是<strong>数组</strong>，那么 JSON.stringify()的结果中将只包含数组中列出的属性。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);//{&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;edition&quot;:3}</code></pre><p>如果过滤器参数是<strong>函数</strong>，传入的函数接收两个参数，属性（键）名和属性值。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, function(key, value){   switch(key){       case &quot;authors&quot;:           return value.join(&quot;,&quot;)       case &quot;year&quot;:           return 5000;       case &quot;edition&quot;:           return undefined;       default:           return value;   }});//{&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:&quot;Nicholas C. Zakas&quot;,&quot;year&quot;:5000}</code></pre><p>2.字符串缩进</p><p>JSON.stringify()方法的第三个参数用于控制结果中的缩进和空白符。<br>如果这个参数是一个<strong>数值</strong>，那它表示的是每个级别缩进的空格数。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, 4);</code></pre><p>结果：</p><pre><code class="JSON">{    &#39;title&#39;: &#39;Professional JavaScript&#39;,    &#39;authors&#39;: [        &#39;Nicholas C. Zakas&#39;    ],    &#39;edition&#39;: 3,    &#39;year&#39;: 2011}</code></pre><p>如果缩进参数是一个字符串而非数值，则这个字符串将在 JSON 字符串中被用作缩进字符（不再使用空格）。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, &quot; - -&quot;);</code></pre><p>结果：</p><pre><code class="JSON">{ - -&#39;title&#39;: &#39;Professional JavaScript&#39;, - -&#39;authors&#39;: [ - - - -&#39;Nicholas C. Zakas&#39; - -], - -&#39;edition&#39;: 3, - -&#39;year&#39;: 2011}</code></pre><p>缩进字符串最长不能超过 10 个字符长。如果字符串长度超过了 10 个，结果中将只出现前 10 个字符。</p><p>3.toJSON()方法</p><p>给对象自定义 toJSON() 方法，返回其自身的 JSON 数据格式。</p><pre><code class="JavaScript">var book = {        &quot;title&quot;: &quot;Professional JavaScript&quot;,        &quot;authors&quot;: [            &quot;Nicholas C. Zakas&quot;        ],        edition: 3,        year: 2011,        toJSON: function(){            return this.title;        }    };var jsonText = JSON.stringify(book);console.log(jsonText);</code></pre><p>假设把一个对象传入 JSON.stringify()，序列化该对象的顺序如下：<br>(1) 如果存在 toJSON() 方法而且能通过它取得有效的值，则调用该方法。否则，返回对象本身。<br>(2) 如果提供了第二个参数，应用这个函数过滤器。传入函数过滤器的值是第(1)步返回的值。<br>(3) 对第(2)步返回的每个值进行相应的序列化。<br>(4) 如果提供了第三个参数，执行相应的格式化。</p><p><strong>解析选项</strong>：JSON.parse() 方法也可以接收另一个参数，该参数是一个函数（还原函数），将在每个键值对儿上调用。<br>如果还原函数返回 undefined，则表示要从结果中删除相应的键；如果返回其他值，则将该值插入到结果中。</p><pre><code class="JavaScript"> var book = {        &quot;title&quot;: &quot;Professional JavaScript&quot;,        &quot;authors&quot;: [            &quot;Nicholas C. Zakas&quot;        ],        edition: 3,        year: 2011,        releaseDate: new Date(2011, 11, 1)    };var jsonText = JSON.stringify(book);console.log(jsonText);var bookCopy = JSON.parse(jsonText, function(key, value){    if (key == &quot;releaseDate&quot;){        return undefined;    } else {        return value;    }});console.log(&quot;releaseDate&quot; in bookCopy);</code></pre><h1 id="第二十一章-Ajax-与-Comet"><a href="#第二十一章-Ajax-与-Comet" class="headerlink" title="第二十一章 Ajax 与 Comet"></a>第二十一章 Ajax 与 Comet</h1><pre><code class="JavaScript"></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《JavaScript高级程序设计》读书笔记&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.wshunli.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.wshunli.com/tags/JavaScript/"/>
+    
+      <category term="读书笔记" scheme="http://www.wshunli.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="JavaScript高级程序设计" scheme="http://www.wshunli.com/tags/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>《JavaScript高级程序设计》读书笔记（四）</title>
@@ -73,9 +99,9 @@
     <link href="http://www.wshunli.com/posts/261b7c4.html"/>
     <id>http://www.wshunli.com/posts/261b7c4.html</id>
     <published>2017-11-06T08:58:12.000Z</published>
-    <updated>2017-11-06T09:11:33.052Z</updated>
+    <updated>2017-11-08T13:11:37.134Z</updated>
     
-    <content type="html"><![CDATA[<p>Hexo 文章链接问题<br><a id="more"></a></p><p>今天 <a href="https://www.google.com/search?safe=active&amp;q=site:wshunli.com" rel="external nofollow noopener noreferrer" target="_blank">搜索</a> 一下网站，发现有个很大的问题。</p><p>有很多链接 404，比如这个链接：</p><p><a href="http://www.wshunli.com/2017/10/29/《JavaScript高级程序设计》读书笔记（一）/">http://www.wshunli.com/2017/10/29/《JavaScript高级程序设计》读书笔记（一）/</a></p><p>搜索引擎跳转之后是：</p><p><a href="http://www.wshunli.com/2017/10/29/《javascript高级程序设计》读书笔记（一）/">http://www.wshunli.com/2017/10/29/《javascript高级程序设计》读书笔记（一）/</a></p><p>单单因为 <code>JavaScript</code> 大小写的问题，就找不到页面。</p><p>所以在 Hexo 官网找了一下固定链接的插件。</p><p>最终选择是： hexo-abbrlink ; Github ：<a href="https://github.com/rozbo/hexo-abbrlink" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/rozbo/hexo-abbrlink</a></p><p>安装插件：</p><pre><code class="TXT">npm install hexo-abbrlink --save</code></pre><p>在站点配置文件中修改 <code>permalink</code> ：</p><pre><code class="TXT">permalink: posts/:abbrlink.html</code></pre><p>站点配置文件中配置插件：</p><pre><code class="TXT"># abbrlink configabbrlink:  alg: crc32  #support crc16(default) and crc32  rep: hex    #support dec(default) and hex</code></pre><p>链接效果：</p><pre><code class="TXT">crc16 &amp; hexhttps://post.zz173.com/posts/66c8.htmlcrc16 &amp; dechttps://post.zz173.com/posts/65535.htmlcrc32 &amp; hexhttps://post.zz173.com/posts/8ddf18fb.htmlcrc32 &amp; dechttps://post.zz173.com/posts/1690090958.html</code></pre><p>更多内容参考：<a href="https://post.zz173.com/detail/hexo-abbrlink.html" rel="external nofollow noopener noreferrer" target="_blank">https://post.zz173.com/detail/hexo-abbrlink.html</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Hexo 文章链接问题<br><a id="more"></a></p><p>今天 <a href="https://www.google.com/search?safe=active&amp;q=site:wshunli.com" rel="external nofollow noopener noreferrer" target="_blank">搜索</a> 一下网站，发现有个很大的问题。</p><p>有很多链接 404，比如这个链接：</p><p><a href="http://www.wshunli.com/2017/10/29/《JavaScript高级程序设计》读书笔记（一）/">http://www.wshunli.com/2017/10/29/《JavaScript高级程序设计》读书笔记（一）/</a></p><p>搜索引擎跳转之后是：</p><p><a href="http://www.wshunli.com/2017/10/29/《javascript高级程序设计》读书笔记（一）/">http://www.wshunli.com/2017/10/29/《javascript高级程序设计》读书笔记（一）/</a></p><p>单单因为 <code>JavaScript</code> 大小写的问题，就找不到页面。</p><p>所以在 Hexo 官网找了一下固定链接的插件。</p><p>最终选择是： hexo-abbrlink ; Github ：<a href="https://github.com/rozbo/hexo-abbrlink" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/rozbo/hexo-abbrlink</a></p><p>安装插件：</p><pre><code class="TXT">npm install hexo-abbrlink --save</code></pre><p>在站点配置文件中修改 <code>permalink</code> ：</p><pre><code class="TXT">permalink: posts/:abbrlink.html</code></pre><p>站点配置文件中配置插件：</p><pre><code class="TXT"># abbrlink configabbrlink:  alg: crc32  #support crc16(default) and crc32  rep: hex    #support dec(default) and hex</code></pre><p>链接效果：</p><pre><code class="TXT">crc16 &amp; hexhttps://www.wshunli.com/posts/66c8.htmlcrc16 &amp; dechttps://www.wshunli.com/posts/65535.htmlcrc32 &amp; hexhttps://www.wshunli.com/posts/8ddf18fb.htmlcrc32 &amp; dechttps://www.wshunli.com/posts/1690090958.html</code></pre><p>更多内容参考：<a href="https://post.zz173.com/detail/hexo-abbrlink.html" rel="external nofollow noopener noreferrer" target="_blank">https://post.zz173.com/detail/hexo-abbrlink.html</a></p>]]></content>
     
     <summary type="html">
     
@@ -476,31 +502,6 @@
     
     
       <category term="胡思乱想" scheme="http://www.wshunli.com/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论文查重删除部分文章</title>
-    <link href="http://www.wshunli.com/posts/971444b9.html"/>
-    <id>http://www.wshunli.com/posts/971444b9.html</id>
-    <published>2017-05-22T12:50:25.000Z</published>
-    <updated>2017-06-30T04:19:44.015Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p>毕业论文查重会涉及到网络查重，先删除部分文章。。</p><p>涉及到内容也不是很多，后面分享要注意啊，发过论文再写。</p><embed height="500" width="100%" quality="high" allowfullscreen type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=8720031&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;p&gt;毕业论文查重会涉及到网络查重，先删除部分文章。。&lt;/p&gt;&lt;p&gt;涉及到内容也不是很多，后面分享要注意啊，发过论文再写。&lt;/p&gt;&lt;embed height=&quot;500&quot; width=&quot;100%&quot; quality=&quot;high&quot; allowfulls
-      
-    
-    </summary>
-    
-      <category term="论文" scheme="http://www.wshunli.com/categories/%E8%AE%BA%E6%96%87/"/>
-    
-    
-      <category term="论文" scheme="http://www.wshunli.com/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
