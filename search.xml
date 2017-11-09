@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[《ECMAScript6入门》读书笔记（三）]]></title>
     <url>%2Fposts%2F2a9bf8cf.html</url>
-    <content type="text"><![CDATA[《ECMAScript6入门》读书笔记这部分学习 ES6 中新增的数据类型。第10章 SymbolES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。 第11章 Set 和 Map 数据结构第12章 Proxy第13章 Reflect第14章 Promise 对象第15章 Iterator 和 for…of 循环]]></content>
+    <content type="text"><![CDATA[《ECMAScript6入门》读书笔记这部分学习 ES6 中新增的数据类型。第10章 SymbolES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。let s = Symbol(); typeof s // &quot;symbol&quot; // 字符串参数 let s1 = Symbol(&#39;foo&#39;); s1.toString() // &quot;Symbol(foo)&quot; // 对象参数-调用 toString 方法 const obj = { toString() { return &#39;abc&#39;; } }; const sym = Symbol(obj); sym // Symbol(abc) Symbol 值不能与其他类型的值进行运算；可显式转为字符串或布尔值，但不能转为数值。let sym = Symbol(&#39;My symbol&#39;); &quot;your symbol is &quot; + sym // TypeError: can&#39;t convert symbol to string // 字符串 String(sym) // &#39;Symbol(My symbol)&#39; sym.toString() // &#39;Symbol(My symbol)&#39; // 布尔值 let sym = Symbol(); Boolean(sym) // true !sym // false 作为属性名的 SymbolSymbol 值唯一，能保证对象不会出现同名的属性。let mySymbol = Symbol(); // 第一种写法 let a = {}; a[mySymbol] = &#39;Hello!&#39;; // 第二种写法 let a = { [mySymbol]: &#39;Hello!&#39; }; // 第三种写法 let a = {}; Object.defineProperty(a, mySymbol, { value: &#39;Hello!&#39; }); // 以上写法都得到同样结果 console.log(a[mySymbol]); // &quot;Hello!&quot; 第11章 Set 和 Map 数据结构第12章 Proxy第13章 Reflect第14章 Promise 对象第15章 Iterator 和 for…of 循环]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>

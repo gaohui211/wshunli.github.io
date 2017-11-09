@@ -1,5 +1,7 @@
 
-http://www.wshunli.com 
+http://www.wshunli.com
+
+[![Build Status](https://travis-ci.com/wshunli/hexo-blog-source.svg?token=mG9bfQdqR2aSAgbMZZEn&branch=master)](https://travis-ci.com/wshunli/hexo-blog-source)
 
 # 关于
 
