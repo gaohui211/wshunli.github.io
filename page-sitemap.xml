@@ -7,36 +7,36 @@
     </url>
     
     <url>
+        <loc>http://www.wshunli.com/tags/</loc>
+        <lastmod>2017-11-11T06:05:47.936Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://www.wshunli.com/about/</loc>
-        <lastmod>2017-11-09T14:03:20.709Z</lastmod>
+        <lastmod>2017-11-11T06:05:47.932Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.wshunli.com/categories/</loc>
-        <lastmod>2017-11-09T14:03:20.709Z</lastmod>
+        <lastmod>2017-11-11T06:05:47.932Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.wshunli.com/links/</loc>
-        <lastmod>2017-11-09T14:03:20.709Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://www.wshunli.com/tags/</loc>
-        <lastmod>2017-11-09T14:03:20.709Z</lastmod>
+        <lastmod>2017-11-11T06:05:47.932Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.wshunli.com//404.html</loc>
-        <lastmod>2017-11-09T14:03:20.705Z</lastmod>
+        <lastmod>2017-11-11T06:05:47.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

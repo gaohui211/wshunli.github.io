@@ -1,15 +1,15 @@
 User-agent: *
-Allow: /
-Allow: /posts/
-Allow: /categories/
-Allow: /archives/
-Allow: /page/ 
-Disallow: /tags/ 
 Disallow: /js/
 Disallow: /css/
 Disallow: /img/
 Disallow: /fonts/
+Disallow: /page/ 
 Disallow: /about/
 Disallow: /links/
+Disallow: /archives/
+Disallow: /tags/ 
+Allow: /
+Allow: /posts/
+Allow: /categories/
 
 Sitemap: http://www.wshunli.com/sitemap.xml
