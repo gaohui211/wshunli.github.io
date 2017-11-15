@@ -6,10 +6,12 @@ Disallow: /fonts/
 Disallow: /page/ 
 Disallow: /about/
 Disallow: /links/
+Disallow: /gallery/
 Disallow: /archives/
 Disallow: /tags/ 
 Allow: /
 Allow: /posts/
 Allow: /categories/
+Allow: /timeline/
 
 Sitemap: http://www.wshunli.com/sitemap.xml

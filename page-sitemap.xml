@@ -7,36 +7,50 @@
     </url>
     
     <url>
-        <loc>http://www.wshunli.com/links/</loc>
-        <lastmod>2017-11-14T14:39:22.190Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://www.wshunli.com/tags/</loc>
-        <lastmod>2017-11-14T14:39:22.190Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>http://www.wshunli.com/about/</loc>
-        <lastmod>2017-11-14T14:39:22.186Z</lastmod>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.wshunli.com/categories/</loc>
-        <lastmod>2017-11-14T14:39:22.186Z</lastmod>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.wshunli.com/gallery/</loc>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.wshunli.com/links/</loc>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.wshunli.com/tags/</loc>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.wshunli.com/timeline/</loc>
+        <lastmod>2017-11-15T14:40:31.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.wshunli.com//404.html</loc>
-        <lastmod>2017-11-14T14:39:22.178Z</lastmod>
+        <lastmod>2017-11-15T14:40:31.012Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
