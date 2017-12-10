@@ -8,7 +8,8 @@ Disallow: /about/
 Disallow: /links/
 Disallow: /gallery/
 Disallow: /archives/
-Disallow: /tags/ 
+Disallow: /tags/
+Disallow: /categories/沉迷学术/
 Allow: /
 Allow: /posts/
 Allow: /categories/
