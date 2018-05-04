@@ -1,16 +1,364 @@
-<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.2",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>《JavaScript高级程序设计》读书笔记（一） | CirGIS</title><link rel="icon shortcut" type="image/ico" href="https://cdn.wshunli.com/source/img/favicon.ico"><link rel="icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="《JavaScript高级程序设计》读书笔记"><meta name="keywords" content="wshunli CirGIS,JavaScript,读书笔记,《JavaScript高级程序设计》"><meta name="theme-color" content="#0097A7"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.wshunli.com/source">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            《JavaScript高级程序设计》读书笔记（一） | 
+        
+        CirGIS
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://cdn.wshunli.com/source/img/favicon.ico">
+    <link rel="icon" href="https://cdn.wshunli.com/source/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="《JavaScript高级程序设计》读书笔记">
+    <meta name="keywords" content="wshunli CirGIS,JavaScript,读书笔记,《JavaScript高级程序设计》">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#0097a7!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#0097a7!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#0097a7!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="http://www.wshunli.com/posts/e8afa8c0.html"><meta name="msapplication-navbutton-color" content="#0097A7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml"><meta property="og:url" content="http://www.wshunli.com/posts/e8afa8c0.html"><meta property="og:type" content="blog"><meta property="og:title" content="《JavaScript高级程序设计》读书笔记（一） | CirGIS"><meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico"><meta property="og:description" content="《JavaScript高级程序设计》读书笔记"><meta property="og:article:tag" content="JavaScript"><meta property="og:article:tag" content="读书笔记"><meta property="og:article:tag" content="《JavaScript高级程序设计》"><meta property="article:published_time" content="Sun Oct 29 2017 17:51:02 GMT+0800"><meta property="article:modified_time" content="Fri May 04 2018 00:52:37 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="http://www.wshunli.com/posts/e8afa8c0.html"><script type="application/ld+json">{
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+  /* 自定义CSS 开始*/
+
+  #post-content h1 {
+      font-size: 1.75em;
+      border-bottom: 1px solid #ddd;
+  }
+  #post-content h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #eee;
+  }
+  #post-content h3 {
+      font-size: 1.25em;
+  }
+  #post-content h4 {
+      font-size: 1em;
+  }
+  #post-content h5 {
+      font-size: 1em;
+  }
+  #post-content h6 {
+      color: #777;
+      font-size: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  #post-content a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  #post-content a:hover {
+    // text-shadow: 1px 1px 1px;
+    text-decoration: underline;
+  }
+  .mdl-card__media {
+    background-color:#fff !important;
+  }
+  .disqus_click_btn{
+     margin: 0 auto !important;
+  }
+  #comment .veditor{
+    font-size: 1em;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+  #post-content table {
+    width: 100%;
+    overflow: auto;
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+  /* 自定义CSS 结束*/
+
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CirGIS">
+    <meta name="msapplication-starturl" content="http://www.wshunli.com/posts/e8afa8c0.html">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="CirGIS">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM">
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://www.wshunli.com/posts/e8afa8c0.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="《JavaScript高级程序设计》读书笔记（一） | CirGIS">
+    <meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico">
+    <meta property="og:description" content="《JavaScript高级程序设计》读书笔记">
+    <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="读书笔记"> <meta property="og:article:tag" content="《JavaScript高级程序设计》"> 
+
+    
+        <meta property="article:published_time" content="Sun Oct 29 2017 17:51:02 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 04 2018 12:59:18 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://www.wshunli.com/posts/e8afa8c0.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://www.wshunli.com/posts/e8afa8c0.html",
     "headline": "《JavaScript高级程序设计》读书笔记（一）",
     "datePublished": "Sun Oct 29 2017 17:51:02 GMT+0800",
-    "dateModified": "Fri May 04 2018 00:52:37 GMT+0800",
+    "dateModified": "Fri May 04 2018 12:59:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -30,28 +378,324 @@
     },
     "keywords": ",JavaScript,读书笔记,《JavaScript高级程序设计》wshunli CirGIS",
     "description": "《JavaScript高级程序设计》读书笔记",
-}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><div style="display:none"><script src="//s95.cnzz.com/z_stat.php?id=1257138955&web_id=1257138955" language="JavaScript"></script></div></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-JavaScript-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 JavaScript 简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-在-HTML-中使用-JavaScript"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 在 HTML 中使用 JavaScript</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-基本概念"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操作符"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">操作符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语句"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-变量、作用域和内存问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 变量、作用域和内存问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本类型和引用类型的值"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">基本类型和引用类型的值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行环境和作用域"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">执行环境和作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垃圾收集"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">垃圾收集</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-引用类型"><span class="post-toc-number">5.</span> <span class="post-toc-text">第五章 引用类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-类型"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Object 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-类型"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Array 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Date-类型"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Date 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RegExp-类型"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">RegExp 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Function-类型"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Function 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本包装类型"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">基本包装类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单体内置对象"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">单体内置对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章-面向对象的程序设计"><span class="post-toc-number">6.</span> <span class="post-toc-text">第六章 面向对象的程序设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#理解对象"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">理解对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建对象"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">创建对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章-函数表达式"><span class="post-toc-number">7.</span> <span class="post-toc-text">第七章 函数表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#递归"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">递归</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">闭包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模仿块级作用域"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">模仿块级作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#私有变量"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">私有变量</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript.png)"><p class="article-headline-p">《JavaScript高级程序设计》读书笔记（一）</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>10月 29, 2017</span></div><div class="section-spacer"></div><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《JavaScript高级程序设计》/">《JavaScript高级程序设计》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/e8afa8c0.html" class="leancloud-views_num" data-flag-title="《JavaScript高级程序设计》读书笔记（一）">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《JavaScript高级程序设计》读书笔记（一）&url=http://www.wshunli.com/posts/e8afa8c0.html&pic=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《JavaScript高级程序设计》读书笔记（一）&summary=欢迎来到 wshunli`s Blog!&pics=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=http://www.wshunli.com/posts/e8afa8c0.html" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>《JavaScript高级程序设计》读书笔记</p><a id="more"></a><p>从今天开始阅读 《JavaScript高级程序设计》（第三版）。</p><p>按照图灵社区推荐的阅读规划：</p><pre><code class="HTML">(一) 熟悉JavaScript的语法，理解那些JavaScript中让人疑惑的概念。(1-7章)
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72210097-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-JavaScript-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 JavaScript 简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-在-HTML-中使用-JavaScript"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 在 HTML 中使用 JavaScript</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-基本概念"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操作符"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">操作符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语句"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-变量、作用域和内存问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 变量、作用域和内存问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本类型和引用类型的值"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">基本类型和引用类型的值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行环境和作用域"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">执行环境和作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垃圾收集"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">垃圾收集</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-引用类型"><span class="post-toc-number">5.</span> <span class="post-toc-text">第五章 引用类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-类型"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Object 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-类型"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Array 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Date-类型"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Date 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RegExp-类型"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">RegExp 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Function-类型"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Function 类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本包装类型"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">基本包装类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单体内置对象"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">单体内置对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章-面向对象的程序设计"><span class="post-toc-number">6.</span> <span class="post-toc-text">第六章 面向对象的程序设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#理解对象"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">理解对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建对象"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">创建对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章-函数表达式"><span class="post-toc-number">7.</span> <span class="post-toc-text">第七章 函数表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#递归"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">递归</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">闭包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模仿块级作用域"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">模仿块级作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#私有变量"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">私有变量</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript.png)">
+    
+            <p class="article-headline-p">
+                《JavaScript高级程序设计》读书笔记（一）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>wshunli</strong>
+        <span>10月 29, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB10lEQVR42u3aS26EMBAFQO5/6WQbKYLp1zYh2OUVGgHjYtFyf46vJdaBgYGBgYGBgfFvGEd5nd3/8/ff19dP9faAgYGxJ+NDaLvcbp109l/pHjAwMHZmVLbVQ6bsyh4wMDAw0gA6EnYxMDAw/ibgpgsDAwOjx6gnkOkB8Yz9WC6OgYHxQkbaGLjj+oH+BgYGxksY8YhDK4Cm4fX2mREMDIxXMXql/LP7K++pf5oP/4KBgbEZYySM1scp0lGzZhKLgYGxHKOyxfSol46FpaEWAwNjT0Z9YKJegJsLDsptGBgYSzPqAbfeWrgj1GJgYOzGqA+k3sGrIJtVQwwMjEUZldJYPUynJbkYj4GBsTEjLcD12pNpUyE4GmJgYCzKSA9nKSZtZGJgYGCMlMxGUtNZ6SsGBsZujJES20hJrje0ioGBsSej3lYcPxT2jqQYGBgYlfL9UV6VZ3vvxMDAwJgVgoNi2eXvcQsTAwNjaUYvmPZGMdLg3uxvYGBgLMqoB9nKJq6f7QViDAwMjErCmbYYZyWx8QArBgbG9oy0hZkOUtQ/JQYGBkbaJOg1PtPxCwwMDIze0EP9ODgrMcbAwNiT0WsM9D5HGnwxMDAw3rswMDAwMDAwMB5d33HY5CnT5qrHAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《JavaScript高级程序设计》/">《JavaScript高级程序设计》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/posts/e8afa8c0.html" class="leancloud-views_num" data-flag-title="《JavaScript高级程序设计》读书笔记（一）">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《JavaScript高级程序设计》读书笔记（一）&url=http://www.wshunli.com/posts/e8afa8c0.html&pic=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《JavaScript高级程序设计》读书笔记（一）&summary=欢迎来到 wshunli`s Blog!&pics=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=http://www.wshunli.com/posts/e8afa8c0.html" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>《JavaScript高级程序设计》读书笔记</p>
+<a id="more"></a>
+<p>从今天开始阅读 《JavaScript高级程序设计》（第三版）。</p>
+<p>按照图灵社区推荐的阅读规划：</p>
+<pre><code class="HTML">(一) 熟悉JavaScript的语法，理解那些JavaScript中让人疑惑的概念。(1-7章)
 (二) 熟悉JavaScript运行的环境，深刻理解DOM，熟悉DOM提供给JavaScript的原生API。(8-14章)
 (三) 学习HTML新增的一些对象提供的API，包括canvas ，媒体事件等。(15-16章)
 (四) 学习在浏览器中进行实际开发时的错误调试技巧。(17章)
 (五) 学习JavaScript对各数据载体的操作方法（如JSON、XML），学会Ajax的使用方法。(18-21章)
 (六) 学习JavaScript的一些高级技巧及实践方案。(22-25章)
-</code></pre><p><strong>(一) 熟悉JavaScript的语法，理解那些JavaScript中让人疑惑的概念。</strong>(1-7章)</p><h1 id="第一章-JavaScript-简介"><a href="#第一章-JavaScript-简介" class="headerlink" title="第一章 JavaScript 简介"></a>第一章 JavaScript 简介</h1><p>一个完整的 JavaScript 实现应该由三个不同的部分组成：核心（ECMAScript）、文档对象模型（DOM）、浏览器对象模型（BOM）。</p><p>ECMAScript：提供核心语言功能；<br>DOM：提供访问和操作网页内容的方法和接口；<br>BOM：提供与浏览器交互的方法和接口。</p><h1 id="第二章-在-HTML-中使用-JavaScript"><a href="#第二章-在-HTML-中使用-JavaScript" class="headerlink" title="第二章 在 HTML 中使用 JavaScript"></a>第二章 在 HTML 中使用 JavaScript</h1><p>HTML 4.01 为 <code>&lt;script&gt;</code> 元素定义了6个属性：async、charset、defer、language（废弃）、src、type 。</p><p>在不存在 defer 和 async 属性时，浏览器都会按照不同<code>&lt;script&gt;</code>元素在页面中出现的先后顺序对它们依次进行解析。</p><p>标签的位置：为了避免浏览器在呈现页面时出现明显的延迟，现代Web应用程序一般都把全部 JavaScript 引用放在<code>&lt;body&gt;</code>元素中页面内容的后面。</p><p>延迟脚本：defer 属性表明脚本在执行时不会影响页面的构造，告诉浏览器立即下载文件，但脚本会被延迟到整个页面都解析完毕后再运行；只适用于外部脚本文件。</p><pre><code class="JavaScript">&lt;script defer=&quot;defer&quot; src=&quot;example.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>异步脚本：async 属性表示当前脚本不必等待其他脚本，也不必阻塞文档呈现，告诉浏览器立即下载文件，且并不保证标记为 async 的脚本按照他们的先后顺序执行；只适用于外部脚本文件。</p><pre><code class="JavaScript">&lt;script async src=&quot;example1.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p><strong>(一) 熟悉JavaScript的语法，理解那些JavaScript中让人疑惑的概念。</strong>(1-7章)</p>
+<h1 id="第一章-JavaScript-简介"><a href="#第一章-JavaScript-简介" class="headerlink" title="第一章 JavaScript 简介"></a>第一章 JavaScript 简介</h1><p>一个完整的 JavaScript 实现应该由三个不同的部分组成：核心（ECMAScript）、文档对象模型（DOM）、浏览器对象模型（BOM）。</p>
+<p>ECMAScript：提供核心语言功能；<br>DOM：提供访问和操作网页内容的方法和接口；<br>BOM：提供与浏览器交互的方法和接口。</p>
+<h1 id="第二章-在-HTML-中使用-JavaScript"><a href="#第二章-在-HTML-中使用-JavaScript" class="headerlink" title="第二章 在 HTML 中使用 JavaScript"></a>第二章 在 HTML 中使用 JavaScript</h1><p>HTML 4.01 为 <code>&lt;script&gt;</code> 元素定义了6个属性：async、charset、defer、language（废弃）、src、type 。</p>
+<p>在不存在 defer 和 async 属性时，浏览器都会按照不同<code>&lt;script&gt;</code>元素在页面中出现的先后顺序对它们依次进行解析。</p>
+<p>标签的位置：为了避免浏览器在呈现页面时出现明显的延迟，现代Web应用程序一般都把全部 JavaScript 引用放在<code>&lt;body&gt;</code>元素中页面内容的后面。</p>
+<p>延迟脚本：defer 属性表明脚本在执行时不会影响页面的构造，告诉浏览器立即下载文件，但脚本会被延迟到整个页面都解析完毕后再运行；只适用于外部脚本文件。</p>
+<pre><code class="JavaScript">&lt;script defer=&quot;defer&quot; src=&quot;example.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>异步脚本：async 属性表示当前脚本不必等待其他脚本，也不必阻塞文档呈现，告诉浏览器立即下载文件，且并不保证标记为 async 的脚本按照他们的先后顺序执行；只适用于外部脚本文件。</p>
+<pre><code class="JavaScript">&lt;script async src=&quot;example1.js&quot;&gt;&lt;/script&gt;
 &lt;script async src=&quot;example2.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>异步脚本一定会在页面的 load 事件前执行，但可能会在 DOMContentLoaded 事件触发之前或之后执行。</p><blockquote><p>页面文档完全加载并解析完毕之后,会触发 DOMContentLoaded 事件，HTML 文档不会等待样式文件,图片文件,子框架页面的加载；而 load 事件可以用来检测 HTML 页面是否完全加载完毕(fully-loaded)。</p></blockquote><h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><p>本章内容：语法、数据类型、操作符、控制流语句、函数。<br>其中内容和 Java 类似的部分，不再记笔记。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>区分大小写：ECMAScript 中的一切都区分大小写。</p><p>ECMAScript 5 引入严格模式。在整个脚本中启用严格模式，在顶部添加 <code>&quot;use strict&quot;;</code></p><p>给未经声明的变量赋值在严格模式下会导致抛出 ReferenceError 错误。</p><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>ECMAScript 中有5种基本数据类型：Undefined、Null、Boolean、Number、String。<br>还有1种复杂数据类型：Object，Object 本质是一组无序的键值对组成。</p><p><code>typeof 操作符</code>：用来检测变量的数据类型。<br>“undefined”：未定义、”boolean”：布尔值、”string”：字符串、”number”：数值、”object”：对象或 null、 “function”：函数</p><blockquote><p>检测 null 值返回 “Object”、检测函数返回 “function” 。</p></blockquote><p><strong>Undefined 类型</strong>：使用 var 声明变量但未对其初始化时，这个变量的值就是 undefined。</p><blockquote><p>对未声明的变量只能只能执行一项操作，即使用 tyoeof 检测其数据类型，返回 undefined 值。</p></blockquote><p><strong>Null 类型</strong>：null 值表示一个空对象指针；只要意在保存对象的变量还没有真正保存对象，就应该明确地让该变量保存 null 值。</p><blockquote><p>undefined 表示未初始化的变量；null 表示空对象指针；<code>null == undefined</code> 。</p></blockquote><p><strong>Boolean 类型</strong>：其他类型转换为 Boolean 类型，使用函数 Boolean()。</p><p><strong>Number 类型</strong>：表示整数和浮点数值。</p><p>NaN 即非数值（Not a Number）是一个特殊的数值，表示一个原本要返回数值的操作未返回数值的情况。</p><blockquote><p>任何涉及 NaN 的操作都会返回 NaN；NaN与任何值都不等，包括 NaN 本身。<br>NaN 类型可以使用 isNaN() 函数检测。</p></blockquote><p>数值转换：有3个函数可以把非数值转换为数值：Number()、parseInt()、parseFloat()。<br>Number()可以用于任何数据类型，而另两个函数则专门用于把字符串转换成数值。</p><p><code>Number()</code> 函数转换：null和空字符串返回 0；undefined和无法转换的字符串返回 NaN ；对象依次尝试调用 valueOf()、toString()方法，根据函数返回值进行转换。<br><code>parseInt()</code> 函数转换：忽略字符前的空格，找到第一个非空格字符；如果第一个字符不是数字字符或者负号，返回 NaN ；继续解析遇到非数字字符为止。可选第二个参数指定进制。<br><code>parseFloat()</code> 函数转换：和 parseInt() 函数类似，但是字符串中的第一个小数点是有效的。</p><p><strong>String 类型</strong>：符串是不可变的，要改变要先删除。<br>其他类型转换为 String 类型，使用函数 toString() 或 String() 或加一个空字符串（<code>&quot;&quot;</code>）。</p><blockquote><p>数值、布尔值、对象、字符串值 都有 toString() 方法。null、undefined 值没有。<br>String() ：null 返回 <code>&quot;null&quot;</code> ， undefined 返回 <code>&quot;undefined&quot;</code>。其他调用 toString() 方法。</p></blockquote><p><strong>Object 类型</strong>：一组数据（属性）和功能（方法）的组合。</p><p>创建对象的方法：</p><pre><code class="JavaScript">var o = new Object();
-</code></pre><p>在 ECMAScript 中，Object 类型是其他所有实例的基础，Object 类型具有的属性和方法也同样存在于更具体的对象中。<br>Object 的每个实例（对象）都具有下列属性和方法：</p><ul><li>constructor：保留着用于创建当前对象的函数即构造函数；</li><li>hasOwnProperty(propertyName)：用于检查给定的属性在当前对象实例中是否存在；</li><li>isPrototypeOf(object)：用于检查传入的对象是否是传入对象的原型；</li><li>propertyIsEnumerable()；toLocaleString()；</li><li>toString()：返回对象的字符串表示；</li><li>valueOf()：返回对象的字符串、数值或布尔值表示。</li></ul><h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>操作符包括：算数操作符、位操作符、关系操作符、相等操作符。</p><p>用法和概念基本和 Java 一致，相同部分不再记笔记。</p><p>在比较字符串时，实际比较的是两个字符串中对应位置的每个字符的字符编码值。</p><pre><code class="JavaScript">&quot;23&quot;&lt;&quot;3&quot; //true
-</code></pre><p>相等操作符基本规则：<br>null == undefined，且不转换；<br>对象除非指向同一个否则互相不等；<br>操作值是数值，则另一个值转换为数值进行比较；<br>操作值是布尔值，则将布尔值转换为数值再进行比较，false转换为0,true转换为1。</p><pre><code class="JavaScript">true == 1 ; //true
+</code></pre>
+<p>异步脚本一定会在页面的 load 事件前执行，但可能会在 DOMContentLoaded 事件触发之前或之后执行。</p>
+<blockquote>
+<p>页面文档完全加载并解析完毕之后,会触发 DOMContentLoaded 事件，HTML 文档不会等待样式文件,图片文件,子框架页面的加载；而 load 事件可以用来检测 HTML 页面是否完全加载完毕(fully-loaded)。</p>
+</blockquote>
+<h1 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h1><p>本章内容：语法、数据类型、操作符、控制流语句、函数。<br>其中内容和 Java 类似的部分，不再记笔记。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>区分大小写：ECMAScript 中的一切都区分大小写。</p>
+<p>ECMAScript 5 引入严格模式。在整个脚本中启用严格模式，在顶部添加 <code>&quot;use strict&quot;;</code></p>
+<p>给未经声明的变量赋值在严格模式下会导致抛出 ReferenceError 错误。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>ECMAScript 中有5种基本数据类型：Undefined、Null、Boolean、Number、String。<br>还有1种复杂数据类型：Object，Object 本质是一组无序的键值对组成。</p>
+<p><code>typeof 操作符</code>：用来检测变量的数据类型。<br>“undefined”：未定义、”boolean”：布尔值、”string”：字符串、”number”：数值、”object”：对象或 null、 “function”：函数</p>
+<blockquote>
+<p>检测 null 值返回 “Object”、检测函数返回 “function” 。</p>
+</blockquote>
+<p><strong>Undefined 类型</strong>：使用 var 声明变量但未对其初始化时，这个变量的值就是 undefined。</p>
+<blockquote>
+<p>对未声明的变量只能只能执行一项操作，即使用 tyoeof 检测其数据类型，返回 undefined 值。</p>
+</blockquote>
+<p><strong>Null 类型</strong>：null 值表示一个空对象指针；只要意在保存对象的变量还没有真正保存对象，就应该明确地让该变量保存 null 值。</p>
+<blockquote>
+<p>undefined 表示未初始化的变量；null 表示空对象指针；<code>null == undefined</code> 。</p>
+</blockquote>
+<p><strong>Boolean 类型</strong>：其他类型转换为 Boolean 类型，使用函数 Boolean()。</p>
+<p><strong>Number 类型</strong>：表示整数和浮点数值。</p>
+<p>NaN 即非数值（Not a Number）是一个特殊的数值，表示一个原本要返回数值的操作未返回数值的情况。</p>
+<blockquote>
+<p>任何涉及 NaN 的操作都会返回 NaN；NaN与任何值都不等，包括 NaN 本身。<br>NaN 类型可以使用 isNaN() 函数检测。</p>
+</blockquote>
+<p>数值转换：有3个函数可以把非数值转换为数值：Number()、parseInt()、parseFloat()。<br>Number()可以用于任何数据类型，而另两个函数则专门用于把字符串转换成数值。</p>
+<p><code>Number()</code> 函数转换：null和空字符串返回 0；undefined和无法转换的字符串返回 NaN ；对象依次尝试调用 valueOf()、toString()方法，根据函数返回值进行转换。<br><code>parseInt()</code> 函数转换：忽略字符前的空格，找到第一个非空格字符；如果第一个字符不是数字字符或者负号，返回 NaN ；继续解析遇到非数字字符为止。可选第二个参数指定进制。<br><code>parseFloat()</code> 函数转换：和 parseInt() 函数类似，但是字符串中的第一个小数点是有效的。</p>
+<p><strong>String 类型</strong>：符串是不可变的，要改变要先删除。<br>其他类型转换为 String 类型，使用函数 toString() 或 String() 或加一个空字符串（<code>&quot;&quot;</code>）。</p>
+<blockquote>
+<p>数值、布尔值、对象、字符串值 都有 toString() 方法。null、undefined 值没有。<br>String() ：null 返回 <code>&quot;null&quot;</code> ， undefined 返回 <code>&quot;undefined&quot;</code>。其他调用 toString() 方法。</p>
+</blockquote>
+<p><strong>Object 类型</strong>：一组数据（属性）和功能（方法）的组合。</p>
+<p>创建对象的方法：</p>
+<pre><code class="JavaScript">var o = new Object();
+</code></pre>
+<p>在 ECMAScript 中，Object 类型是其他所有实例的基础，Object 类型具有的属性和方法也同样存在于更具体的对象中。<br>Object 的每个实例（对象）都具有下列属性和方法：</p>
+<ul>
+<li>constructor：保留着用于创建当前对象的函数即构造函数；</li>
+<li>hasOwnProperty(propertyName)：用于检查给定的属性在当前对象实例中是否存在；</li>
+<li>isPrototypeOf(object)：用于检查传入的对象是否是传入对象的原型；</li>
+<li>propertyIsEnumerable()；toLocaleString()；</li>
+<li>toString()：返回对象的字符串表示；</li>
+<li>valueOf()：返回对象的字符串、数值或布尔值表示。</li>
+</ul>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>操作符包括：算数操作符、位操作符、关系操作符、相等操作符。</p>
+<p>用法和概念基本和 Java 一致，相同部分不再记笔记。</p>
+<p>在比较字符串时，实际比较的是两个字符串中对应位置的每个字符的字符编码值。</p>
+<pre><code class="JavaScript">&quot;23&quot;&lt;&quot;3&quot; //true
+</code></pre>
+<p>相等操作符基本规则：<br>null == undefined，且不转换；<br>对象除非指向同一个否则互相不等；<br>操作值是数值，则另一个值转换为数值进行比较；<br>操作值是布尔值，则将布尔值转换为数值再进行比较，false转换为0,true转换为1。</p>
+<pre><code class="JavaScript">true == 1 ; //true
 true == 2 ; //false
 NaN == NaN ; //false
 NaN != NaN ; //true
-</code></pre><p>全等和不全等：两个操作数未经转换就相等为<strong>全等</strong>；转换之后相等为<strong>非全等</strong>。</p><pre><code class="JavaScript">&quot;23&quot; == 23 ; //true
+</code></pre>
+<p>全等和不全等：两个操作数未经转换就相等为<strong>全等</strong>；转换之后相等为<strong>非全等</strong>。</p>
+<pre><code class="JavaScript">&quot;23&quot; == 23 ; //true
 &quot;23&quot; === 23 ; //false
-</code></pre><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p>for-in 语句可以用来枚举对象的属性。</p><pre><code class="JavaScript">for (property in expression) {
+</code></pre>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p> for-in 语句可以用来枚举对象的属性。</p>
+<pre><code class="JavaScript">for (property in expression) {
   ...
 }
 
-</code></pre><p>break 和 continue 语句与 label 语句联合使用：多发生在循环嵌套的情况下。</p><pre><code class="JavaScript">var num = 0;
+</code></pre>
+<p>break 和 continue 语句与 label 语句联合使用：多发生在循环嵌套的情况下。</p>
+<pre><code class="JavaScript">var num = 0;
 outermost:
 for (var i = 0; i &lt; 10; i++) {
   for (var j = 0; j &lt; 10; j++) {
@@ -63,7 +707,15 @@ for (var i = 0; i &lt; 10; i++) {
 }
 console.log(num);  // 55
 
-</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数参数：参数在内部是用一个数组来表示的，函数接收到的始终都是这个数组，而不关心数组中包含哪些参数。<br>在函数体内可以通过 arguments 对象来访问这个参数数组，从而获取传递给函数的每一个参数。</p><p>没有重载：ECMAScript 函数不能像传统意义上那样实现重载。如果在ECMAScript 中定义了两个名字相同的函数，则该名字只属于后定义的函数。</p><h1 id="第四章-变量、作用域和内存问题"><a href="#第四章-变量、作用域和内存问题" class="headerlink" title="第四章 变量、作用域和内存问题"></a>第四章 变量、作用域和内存问题</h1><p>JavaScript 变量的特征：本质是松散类型，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的生命周期内改变。</p><h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>基本类型指的是简单的数据段，而引用数据类型指那些可能由多个值构成的对象。<br>Undefined、Null、Boolean、Number 和 String 这 5 种基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值。<br>引用类型的值是保存在内存中的对象。在操作对象时，实际上是在操作对象的引用而不是实际的对象。</p><p><strong>动态的属性</strong>：对引用类型可添加属性和方法，也可改变和删除其属性和方法；对基本类型也能添加属性，但基本类型并不会保存，操作是无效的。</p><p><strong>复制变量值</strong>：从一个变量向另一个变量复制值，基本类型会创建新值并复制到新变量；而引用类型只会复制指向对象的指针，新旧变量会相互影响。</p><p><strong>传递参数</strong>：函数的参数是按值传递时的，即把函数外部的值复制给函数内部的参数（参数实际上是函数的局部变量），就和把值从一个变量复制到另一个变量一样。<br>基本类型值的传递如同基本类型变量的复制一样，而引用类型值的传递，则如同引用类型变量的复制一样，复制的是一个指向对象的指针。</p><pre><code class="JavaScript">function setName(obj){
+</code></pre>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数参数：参数在内部是用一个数组来表示的，函数接收到的始终都是这个数组，而不关心数组中包含哪些参数。<br>在函数体内可以通过 arguments 对象来访问这个参数数组，从而获取传递给函数的每一个参数。</p>
+<p>没有重载：ECMAScript 函数不能像传统意义上那样实现重载。如果在ECMAScript 中定义了两个名字相同的函数，则该名字只属于后定义的函数。</p>
+<h1 id="第四章-变量、作用域和内存问题"><a href="#第四章-变量、作用域和内存问题" class="headerlink" title="第四章 变量、作用域和内存问题"></a>第四章 变量、作用域和内存问题</h1><p>JavaScript 变量的特征：本质是松散类型，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的生命周期内改变。</p>
+<h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>基本类型指的是简单的数据段，而引用数据类型指那些可能由多个值构成的对象。<br>Undefined、Null、Boolean、Number 和 String 这 5 种基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值。<br>引用类型的值是保存在内存中的对象。在操作对象时，实际上是在操作对象的引用而不是实际的对象。</p>
+<p><strong>动态的属性</strong>：对引用类型可添加属性和方法，也可改变和删除其属性和方法；对基本类型也能添加属性，但基本类型并不会保存，操作是无效的。</p>
+<p><strong>复制变量值</strong>：从一个变量向另一个变量复制值，基本类型会创建新值并复制到新变量；而引用类型只会复制指向对象的指针，新旧变量会相互影响。</p>
+<p><strong>传递参数</strong>：函数的参数是按值传递时的，即把函数外部的值复制给函数内部的参数（参数实际上是函数的局部变量），就和把值从一个变量复制到另一个变量一样。<br>基本类型值的传递如同基本类型变量的复制一样，而引用类型值的传递，则如同引用类型变量的复制一样，复制的是一个指向对象的指针。</p>
+<pre><code class="JavaScript">function setName(obj){
   obj.name = &#39;Nicholas&#39;;
   obj = new Object();
   obj.name = &#39;Greg&#39;;
@@ -72,7 +724,21 @@ var person = new Object();
 setName(person);
 console.log(person.name);  // =&gt; Nicholas
 
-</code></pre><p>对于引用类型，当把参数名指向新的内存空间，再对其做添加属性等操作，不会影响到原来传递的那个对象，所以不是按引用传递参数。</p><p><strong>检测类型</strong>：instanceof 根据原型链，检测变量是什么引用类型的实例。</p><p>检测基本数据类型 typeof 非常有用，但如果变量是对象或 null ，typeof 只能返回 “Object” 。</p><h2 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h2><p><strong>执行环境</strong>：定义了变量或函数有权访问的其他数据，决定了它们各自的行为。有全局执行环境和局部（函数）执行环境之分。</p><p><strong>作用域链</strong>：搜索变量和函数的作用域链，保证对执行环境有权访问的所有变量和函数的有序访问。<br>作用域链的前端是当前执行的代码所在的变量环境，最后一个对象是全局执行环境的变量对象。</p><p><strong>延长作用域链</strong>：try-catch 语句的 catch 块和 with 语句。</p><p><strong>没有块级作用域</strong>：由花括号封闭的代码没有自己的作用域。如 if 、for 语句中只是在语句的执行环境中（全局或函数）。</p><p>查询标识符：从作用域链的前端开始，向上逐级查询，找到后搜索结果停止，没有找到则一直追溯到全局环境的变量对象。</p><h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><p>JavaScript 具有自动垃圾回收机制，即执行环境会负责管理代码执行过程中使用的内存。</p><p>最常用的方法有标记清除和引用计数。</p><p><strong>管理内存</strong>：最好通过将其值设置为 null 来释放其引用——这个做法叫做解除引用（dereferencing）。这一做法适用于大多数全局变量和全局对象的属性。解除一个值的引用并不意味着自动回收该值所占用的内存——解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收。</p><h1 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h1><p>引用类型的值（对象）是引用类型（类、对象定义）的一个实例。</p><h2 id="Object-类型"><a href="#Object-类型" class="headerlink" title="Object 类型"></a>Object 类型</h2><p>创建对象：</p><pre><code class="JavaScript">// 1、使用 Object 构造函数
+</code></pre>
+<p>对于引用类型，当把参数名指向新的内存空间，再对其做添加属性等操作，不会影响到原来传递的那个对象，所以不是按引用传递参数。</p>
+<p><strong>检测类型</strong>：instanceof 根据原型链，检测变量是什么引用类型的实例。</p>
+<p>检测基本数据类型 typeof 非常有用，但如果变量是对象或 null ，typeof 只能返回 “Object” 。</p>
+<h2 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h2><p><strong>执行环境</strong>：定义了变量或函数有权访问的其他数据，决定了它们各自的行为。有全局执行环境和局部（函数）执行环境之分。</p>
+<p><strong>作用域链</strong>：搜索变量和函数的作用域链，保证对执行环境有权访问的所有变量和函数的有序访问。<br>作用域链的前端是当前执行的代码所在的变量环境，最后一个对象是全局执行环境的变量对象。</p>
+<p><strong>延长作用域链</strong>：try-catch 语句的 catch 块和 with 语句。</p>
+<p><strong>没有块级作用域</strong>：由花括号封闭的代码没有自己的作用域。如 if 、for 语句中只是在语句的执行环境中（全局或函数）。</p>
+<p>查询标识符：从作用域链的前端开始，向上逐级查询，找到后搜索结果停止，没有找到则一直追溯到全局环境的变量对象。</p>
+<h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><p>JavaScript 具有自动垃圾回收机制，即执行环境会负责管理代码执行过程中使用的内存。</p>
+<p>最常用的方法有标记清除和引用计数。</p>
+<p><strong>管理内存</strong>：最好通过将其值设置为 null 来释放其引用——这个做法叫做解除引用（dereferencing）。这一做法适用于大多数全局变量和全局对象的属性。解除一个值的引用并不意味着自动回收该值所占用的内存——解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收。</p>
+<h1 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h1><p>引用类型的值（对象）是引用类型（类、对象定义）的一个实例。</p>
+<h2 id="Object-类型"><a href="#Object-类型" class="headerlink" title="Object 类型"></a>Object 类型</h2><p>创建对象：</p>
+<pre><code class="JavaScript">// 1、使用 Object 构造函数
 var person = new Object();
 person.name = &quot;Nicholas&quot;;
 person.age = 29;
@@ -92,7 +758,9 @@ var person = {};
 person.name = &quot;Nicholas&quot;;
 person.age = 29;
 
-</code></pre><p>访问对象属性：</p><pre><code class="JavaScript">// 1、点表示法
+</code></pre>
+<p>访问对象属性：</p>
+<pre><code class="JavaScript">// 1、点表示法
 person.name
 // 2、方括号表示法
 person[&quot;name&quot;]
@@ -103,14 +771,21 @@ console.log(person[n]);
 // 包含语法错误的字符
 onsole.log(person[&#39;first name&#39;];
 
-</code></pre><h2 id="Array-类型"><a href="#Array-类型" class="headerlink" title="Array 类型"></a>Array 类型</h2><p>ECMAScript 数组的每项可保存任何类型的数据，没项类型可不同；大小可自动调整。</p><p>创建数组：</p><pre><code class="JavaScript">var a1 = new Array();
+</code></pre>
+<h2 id="Array-类型"><a href="#Array-类型" class="headerlink" title="Array 类型"></a>Array 类型</h2><p>ECMAScript 数组的每项可保存任何类型的数据，没项类型可不同；大小可自动调整。</p>
+<p>创建数组：</p>
+<pre><code class="JavaScript">var a1 = new Array();
 var a2 = new Array(20);
 var a3 = new Array(&#39;red&#39;, &#39;blue&#39;, &#39;green&#39;);
 
 var a4 = [];
 var a5 = [&#39;red&#39;, &#39;blue&#39;, &#39;green&#39;];
 
-</code></pre><p><strong>检测数组</strong>：Array.isArray() 方法可检测对象是不是数组。</p><p><strong>转换方法</strong>：toLocaleString()、toString()和 valueOf()方法。</p><p>toLocaleString()、toString() 方法，在默认情况下都会以逗号分隔的字符串的形式返回数组项。<br>toLocaleString() 方法为了取得每一项的值，调用的是每一项的 toLocaleString() 方法。<br><code>valueOf()</code> 方法返回的还是数组。</p><pre><code class="JavaScript">var person1 = {
+</code></pre>
+<p><strong>检测数组</strong>：Array.isArray() 方法可检测对象是不是数组。</p>
+<p><strong>转换方法</strong>：toLocaleString()、toString()和 valueOf()方法。</p>
+<p>toLocaleString()、toString() 方法，在默认情况下都会以逗号分隔的字符串的形式返回数组项。<br>toLocaleString() 方法为了取得每一项的值，调用的是每一项的 toLocaleString() 方法。<br><code>valueOf()</code> 方法返回的还是数组。</p>
+<pre><code class="JavaScript">var person1 = {
   toLocaleString : function () {
       return &quot;Nikolaos&quot;;
   },
@@ -133,11 +808,21 @@ console.log(people);                      //Nicholas,Greg
 console.log(people.toString());           //Nicholas,Greg
 console.log(people.toLocaleString());     //Nikolaos,Grigorios
 
-</code></pre><p><code>join()</code> 方法只接收一个参数，即用作分隔符的字符串，然后返回包含所有数组项的字符串。</p><pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+</code></pre>
+<p><code>join()</code> 方法只接收一个参数，即用作分隔符的字符串，然后返回包含所有数组项的字符串。</p>
+<pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
 console.log(colors.join(&quot;,&quot;));      //red,green,blue
 console.log(colors.join(&quot;||&quot;));     //red||green||blue
 
-</code></pre><p><strong>栈方法</strong>：push() 和 pop() 方法。</p><p><code>push()</code> 方法接收任意数量的参数，把他们逐个加到数组末尾，并返回修改后的数组长度。<br><code>pop()</code> 方法从数组末尾移除最后一项，减少数组长度，然后返回移除项。</p><p><strong>队列方法</strong>：shift() 和 unshift() 方法。</p><p><code>shift()</code> 从数据前端取项方法。类比 pop() 。<br><code>unshift()</code> 从数组前端添加项。类比 push() 。</p><p><strong>重排序方法</strong>：reverse() 和 sort() 方法。</p><p><code>reverse()</code> 反转数组项的顺序。<br><code>sort()</code> 默认升序排列数组项，调用每项的 toString() 转型方法，然后比较字符串。</p><p>sort() 方法可以接受一个比较函数作为参数。比较函数接受两个参数，第一个参数在第二个之前返回负数。</p><pre><code class="JavaScript">// 从小到大：
+</code></pre>
+<p><strong>栈方法</strong>：push() 和 pop() 方法。</p>
+<p><code>push()</code> 方法接收任意数量的参数，把他们逐个加到数组末尾，并返回修改后的数组长度。<br><code>pop()</code> 方法从数组末尾移除最后一项，减少数组长度，然后返回移除项。</p>
+<p><strong>队列方法</strong>：shift()  和 unshift() 方法。</p>
+<p><code>shift()</code> 从数据前端取项方法。类比 pop() 。<br><code>unshift()</code> 从数组前端添加项。类比 push() 。</p>
+<p><strong>重排序方法</strong>：reverse() 和 sort() 方法。</p>
+<p><code>reverse()</code> 反转数组项的顺序。<br><code>sort()</code> 默认升序排列数组项，调用每项的 toString() 转型方法，然后比较字符串。</p>
+<p>sort() 方法可以接受一个比较函数作为参数。比较函数接受两个参数，第一个参数在第二个之前返回负数。</p>
+<pre><code class="JavaScript">// 从小到大：
 function compare(value1, value2) {
     if (value1 &lt; value2) {
         return -1;
@@ -160,20 +845,29 @@ var values = [0, 1, 5, 10, 15];
 values.sort(compare);
 console.log(values);    //0,1,5,10,15
 
-</code></pre><p><strong>操作方法</strong> ：concat() slice() splice() 。</p><p><code>concat()</code> 添加项。创建新数组。</p><pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+</code></pre>
+<p><strong>操作方法</strong> ：concat() slice() splice() 。</p>
+<p><code>concat()</code> 添加项。创建新数组。</p>
+<pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
 var colors2 = colors.concat(&quot;yellow&quot;, [&quot;black&quot;, &quot;brown&quot;]);
 
 console.log(colors);     //red,green,blue
 console.log(colors2);    //red,green,blue,yellow,black,brown
 
-</code></pre><p><code>slice()</code> 截取。创建新数组。</p><p>在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。<br>如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。</p><pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;purple&quot;];
+</code></pre>
+<p><code>slice()</code> 截取。创建新数组。</p>
+<p>在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。<br>如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。</p>
+<pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;purple&quot;];
 var colors2 = colors.slice(1);
 var colors3 = colors.slice(1,4);
 
 console.log(colors2);   //green,blue,yellow,purple
 console.log(colors3);   //green,blue,yellow
 
-</code></pre><p><code>splice()</code> 删除插入替换。改变原数组。</p><p>三个参数：起始位置、要删除的项数、要插入的项。<br>第三个不传是删除功能，第二个为 0 是插入功能，都有则替换。<br>返回：删除的项。</p><pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+</code></pre>
+<p><code>splice()</code> 删除插入替换。改变原数组。</p>
+<p>三个参数：起始位置、要删除的项数、要插入的项。<br>第三个不传是删除功能，第二个为 0 是插入功能，都有则替换。<br>返回：删除的项。</p>
+<pre><code class="JavaScript">var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
 var removed = colors.splice(0,1);              //remove the first item
 console.log(colors);     //green,blue
 console.log(removed);    //red - one item array
@@ -186,7 +880,13 @@ removed = colors.splice(1, 1, &quot;red&quot;, &quot;purple&quot;);    //insert 
 console.log(colors);     //green,red,purple,orange,blue
 console.log(removed);    //yellow - one item array
 
-</code></pre><p><strong>位置方法</strong>：indexOf() lastIndexOf() 接收两个参数：要查找的项和（可选）查找起点位置的索引；indexOf()从前往后查找，lastIndexOf()从后往前查找；返回要查找的项的位置，没找到则返回 -1。</p><p><strong>迭代方法</strong>：两个参数：在每项运行的函数和（可选的）作用域对象；其中函数接收三个参数：数组项的值、该项在数组中的位置、数组对象本身。</p><p>every()：对数组中的每一项运行给定函数，如果该函数对<strong>每一项</strong>都返回true，则返回true。有返回false的项时就不会再对后面的项检测了，直接返回false。<br>some()：对数组中的每一项运行给定函数，如果该函数对<strong>任一项</strong>返回true，则返回true。有返回true的项时就不再对后面的项检测了，直接返回ture。</p><p>filter()：对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。</p><p>map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。<br>forEach()：对数组中的每一项运行给定函数。这个方法没有返回值。本质上与使用 for 循环迭代数组一样。</p><pre><code class="JavaScript">var a = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+</code></pre>
+<p><strong>位置方法</strong>：indexOf() lastIndexOf() 接收两个参数：要查找的项和（可选）查找起点位置的索引；indexOf()从前往后查找，lastIndexOf()从后往前查找；返回要查找的项的位置，没找到则返回 -1。</p>
+<p><strong>迭代方法</strong>：两个参数：在每项运行的函数和（可选的）作用域对象；其中函数接收三个参数：数组项的值、该项在数组中的位置、数组对象本身。</p>
+<p>every()：对数组中的每一项运行给定函数，如果该函数对<strong>每一项</strong>都返回true，则返回true。有返回false的项时就不会再对后面的项检测了，直接返回false。<br>some()：对数组中的每一项运行给定函数，如果该函数对<strong>任一项</strong>返回true，则返回true。有返回true的项时就不再对后面的项检测了，直接返回ture。</p>
+<p>filter()：对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。</p>
+<p>map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。<br>forEach()：对数组中的每一项运行给定函数。这个方法没有返回值。本质上与使用 for 循环迭代数组一样。</p>
+<pre><code class="JavaScript">var a = [1, 2, 3, 4, 5, 4, 3, 2, 1];
 
 var everyResult = a.every(function (item, index, array) {
   return (item &gt; 2);
@@ -213,21 +913,29 @@ var forEachResult = a.forEach(function (item, index, array) {
 });
 console.log(forEachResult);  // undefined
 
-</code></pre><p><strong>缩小方法</strong>（递归方法）：reduce() 和 reduceRight() 迭代数组的所有项，然后构建一个最终返回的值；reduce()方法从前往后，reduceRight()从后往前。<br>reduce() 和 reduceRight() 接收两个参数：一个在每项上调用的函数和（可选的）作为缩小基础的初始值。其中函数接收4个参数：前一个值、当前值、项的索引和数组对象。函数的返回值又会作为第一个参数自动传给下一项。</p><pre><code class="JavaScript">var values = [1,2,3,4,5];
+</code></pre>
+<p><strong>缩小方法</strong>（递归方法）：reduce() 和 reduceRight() 迭代数组的所有项，然后构建一个最终返回的值；reduce()方法从前往后，reduceRight()从后往前。<br>reduce() 和 reduceRight() 接收两个参数：一个在每项上调用的函数和（可选的）作为缩小基础的初始值。其中函数接收4个参数：前一个值、当前值、项的索引和数组对象。函数的返回值又会作为第一个参数自动传给下一项。</p>
+<pre><code class="JavaScript">var values = [1,2,3,4,5];
 var sum = values.reduce(function(prev, cur, index, array){
   return prev + cur;
 },1);
 console.log(sum); //16
 
-</code></pre><h2 id="Date-类型"><a href="#Date-类型" class="headerlink" title="Date 类型"></a>Date 类型</h2><p>创建日期对象：</p><pre><code class="JavaScript">var now = new Date();
+</code></pre>
+<h2 id="Date-类型"><a href="#Date-类型" class="headerlink" title="Date 类型"></a>Date 类型</h2><p>创建日期对象：</p>
+<pre><code class="JavaScript">var now = new Date();
 var date = new Date(2005, 4, 5, 17, 55, 55);  // 2005年5月5日下午5点55分55秒
 
-</code></pre><p>获取调用时的日期和时间和毫秒数：</p><pre><code class="JavaScript">var start = Date.now();
+</code></pre>
+<p>获取调用时的日期和时间和毫秒数：</p>
+<pre><code class="JavaScript">var start = Date.now();
 doSomething();
 var stop = Date.now();
 var result = stop - start;
 
-</code></pre><p>日期的格式化方法：</p><pre><code class="JavaScript">var date = new Date(2015, 2, 5, 17, 55, 55);
+</code></pre>
+<p>日期的格式化方法：</p>
+<pre><code class="JavaScript">var date = new Date(2015, 2, 5, 17, 55, 55);
 date.toString();  // &quot;Thu Mar 05 2015 17:55:55 GMT+0800 (CST)&quot;
 date.toDateString();  // &quot;Thu Mar 05 2015&quot;
 date.toTimeString();  // &quot;17:55:55 GMT+0800 (CST)&quot;
@@ -235,10 +943,23 @@ date.toLocaleString();  // &quot;2015/3/5 下午5:55:55&quot;
 date.toLocaleDateString();  // &quot;2015/3/5&quot;
 date.toLocaleTimeString();  // &quot;下午5:55:55&quot;
 
-</code></pre><h2 id="RegExp-类型"><a href="#RegExp-类型" class="headerlink" title="RegExp 类型"></a>RegExp 类型</h2><p>创建正则表达式：</p><pre><code class="JavaScript">var exp1 = / pattern / flags ;
+</code></pre>
+<h2 id="RegExp-类型"><a href="#RegExp-类型" class="headerlink" title="RegExp 类型"></a>RegExp 类型</h2><p>创建正则表达式：</p>
+<pre><code class="JavaScript">var exp1 = / pattern / flags ;
 var exp2 = new RegExp(&#39;pattern&#39;, &#39;flags&#39;);
 
-</code></pre><p>模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。<br>标志（flags）用以标明正则表达式的行为。正则表达式的匹配模式支持下列3 个标志：</p><ul><li>g：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li><li>i：表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；</li><li>m：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li></ul><p>RegExp 实例方法：</p><p><code>exec()</code>：返回第一个匹配项信息的数组，数组第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串；还包含两个额外的属性，index 和 input。<br><code>test()</code>：在模式与该参数匹配的情况下返回true，否则返回false。</p><p>正则表达式：<a href="http://www.runoob.com/regexp/regexp-tutorial.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.runoob.com/regexp/regexp-tutorial.html</a></p><h2 id="Function-类型"><a href="#Function-类型" class="headerlink" title="Function 类型"></a>Function 类型</h2><p>函数实际上是对象。函数名实际上是指向函数对象的指针。<br>每个函数都是 Function 类型的实例，而且与其他引用类型一样具有属性和方法。</p><pre><code class="JavaScript">// 函数声明
+</code></pre>
+<p>模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。<br>标志（flags）用以标明正则表达式的行为。正则表达式的匹配模式支持下列3 个标志：</p>
+<ul>
+<li>g：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
+<li>i：表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；</li>
+<li>m：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
+</ul>
+<p>RegExp 实例方法：</p>
+<p><code>exec()</code>：返回第一个匹配项信息的数组，数组第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串；还包含两个额外的属性，index 和 input。<br><code>test()</code>：在模式与该参数匹配的情况下返回true，否则返回false。</p>
+<p>正则表达式：<a href="http://www.runoob.com/regexp/regexp-tutorial.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.runoob.com/regexp/regexp-tutorial.html</a></p>
+<h2 id="Function-类型"><a href="#Function-类型" class="headerlink" title="Function 类型"></a>Function 类型</h2><p>函数实际上是对象。函数名实际上是指向函数对象的指针。<br>每个函数都是 Function 类型的实例，而且与其他引用类型一样具有属性和方法。</p>
+<pre><code class="JavaScript">// 函数声明
 function sum (num1, num2){
   return num1 + num2;
 }
@@ -249,7 +970,9 @@ var sum = function(num1, num2){
 // 使用构造函数，不推荐
 var sum = new Function(&#39;num1&#39;, &#39;num2&#39;, &#39;return num1 + num2&#39;);
 
-</code></pre><p><strong>函数声明与函数表达式</strong>：解释器会率先读取函数声明，并使其在执行任何代码之前可用（函数声明提升）；函数表达式必须等到解释器执行到它所在行才会真正被解释执行。</p><pre><code class="JavaScript">// 函数声明
+</code></pre>
+<p><strong>函数声明与函数表达式</strong>：解释器会率先读取函数声明，并使其在执行任何代码之前可用（函数声明提升）；函数表达式必须等到解释器执行到它所在行才会真正被解释执行。</p>
+<pre><code class="JavaScript">// 函数声明
 console.log(sum(10,10));
 function sum (num1, num2){
   return num1 + num2;
@@ -260,7 +983,11 @@ var sum = function(num1, num2){
   return num1 + num2;
 };
 
-</code></pre><p><strong>作为值的函数</strong>：因为 ECMAScript 中的函数名本身就是变量，所以函数也可以作为值来使用。</p><p><strong>函数的内部属性</strong>：arguments 、this 。</p><p><code>arguments</code>: 是一个类数组对象，包含着传入函数中的所有参数。</p><pre><code class="JavaScript">function factorial(num){
+</code></pre>
+<p><strong>作为值的函数</strong>：因为 ECMAScript 中的函数名本身就是变量，所以函数也可以作为值来使用。</p>
+<p><strong>函数的内部属性</strong>：arguments 、this 。</p>
+<p><code>arguments</code>: 是一个类数组对象，包含着传入函数中的所有参数。</p>
+<pre><code class="JavaScript">function factorial(num){
     if (num &lt;= 1) {
         return 1;
     } else {
@@ -276,7 +1003,9 @@ function factorial(num){
     }
 }
 
-</code></pre><p>arguments 的属性 callee 指向拥有此 arguments 的函数。</p><pre><code class="JavaScript">// 无论引用函数时使用的什么名字，都可以保证正常完成递归。
+</code></pre>
+<p>arguments 的属性 callee 指向拥有此 arguments 的函数。</p>
+<pre><code class="JavaScript">// 无论引用函数时使用的什么名字，都可以保证正常完成递归。
 var trueFactorial = factorial;
 
 factorial = function(){
@@ -285,7 +1014,17 @@ factorial = function(){
 console.log(trueFactorial(5));   //120
 console.log(factorial(5));       //0
 
-</code></pre><p><code>this</code> 引用的是函数据以执行的环境对象。</p><p>在全局作用域中调用函数，this 引用的是全局对象 window；<br>把函数赋给对象 o 并调用时，this 引用的就是对象 o 。</p><p>caller : 调用当前函数的函数的引用，返回后者的源代码。</p><p><strong>函数的属性和方法</strong>：</p><p>函数的两个属性：length 和 prototype 。</p><p><code>length</code>：表示函数希望接收的命名参数的个数。</p><p><code>prototype</code>: 对于ECMAScript 中的引用类型而言，prototype 是保存它们所有实例方法的真正所在。不可枚举。</p><p>函数的两个非继承而来的方法：apply() 和 call() 。在特定的作用域中调用函数。</p><p><code>apply()</code>：接受两个参数，运行函数的作用于和参数数组。</p><pre><code class="JavaScript">function sum(num1, num2){
+</code></pre>
+<p><code>this</code> 引用的是函数据以执行的环境对象。</p>
+<p>在全局作用域中调用函数，this 引用的是全局对象 window；<br>把函数赋给对象 o 并调用时，this 引用的就是对象 o 。</p>
+<p>caller : 调用当前函数的函数的引用，返回后者的源代码。</p>
+<p><strong>函数的属性和方法</strong>：</p>
+<p>函数的两个属性：length 和 prototype 。</p>
+<p><code>length</code>：表示函数希望接收的命名参数的个数。</p>
+<p><code>prototype</code>: 对于ECMAScript 中的引用类型而言，prototype 是保存它们所有实例方法的真正所在。不可枚举。</p>
+<p>函数的两个非继承而来的方法：apply() 和 call() 。在特定的作用域中调用函数。</p>
+<p><code>apply()</code>：接受两个参数，运行函数的作用于和参数数组。</p>
+<pre><code class="JavaScript">function sum(num1, num2){
     return num1 + num2;
 }
 // 参数数组可以是 Array 的实例，也可以是 arguments 对象。
@@ -298,7 +1037,9 @@ function callSum2(num1, num2){
 console.log(callSum1(10,10));   //20
 console.log(callSum2(10,10));   //20
 
-</code></pre><p><code>call()</code>：必须明确地传入每个参数。</p><pre><code class="JavaScript">function sum(num1, num2){
+</code></pre>
+<p><code>call()</code>：必须明确地传入每个参数。</p>
+<pre><code class="JavaScript">function sum(num1, num2){
     return num1 + num2;
 }
 function callSum(num1, num2){
@@ -306,7 +1047,9 @@ function callSum(num1, num2){
 }
 console.log(callSum(10,10));   //20
 
-</code></pre><p>apply() 和 call() 真正强大的地方是能够扩充函数赖以运行的作用域。而使用它们来扩充作用域的最大好处，就是对象不需要与方法有任何耦合关系。</p><pre><code class="JavaScript">window.color = &quot;red&quot;;
+</code></pre>
+<p>apply() 和 call() 真正强大的地方是能够扩充函数赖以运行的作用域。而使用它们来扩充作用域的最大好处，就是对象不需要与方法有任何耦合关系。</p>
+<pre><code class="JavaScript">window.color = &quot;red&quot;;
 var o = { color: &quot;blue&quot; };
 function sayColor(){
     console.log(this.color);
@@ -316,10 +1059,35 @@ sayColor.call(this);   //red
 sayColor.call(window); //red
 sayColor.call(o);      //blue
 
-</code></pre><p><code>bind()</code> 方法会创建一个函数的实例，其 this 值会绑定到传给 bind() 函数的值。</p><pre><code class="JavaScript">var objectSayColor = sayColor.bind(o);
+</code></pre>
+<p><code>bind()</code> 方法会创建一个函数的实例，其 this 值会绑定到传给 bind() 函数的值。</p>
+<pre><code class="JavaScript">var objectSayColor = sayColor.bind(o);
 objectSayColor();   //blue
 
-</code></pre><h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><p>Boolean 类型、Number 类型、String 类型。</p><h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>Global 对象、Math 对象。</p><h1 id="第六章-面向对象的程序设计"><a href="#第六章-面向对象的程序设计" class="headerlink" title="第六章 面向对象的程序设计"></a>第六章 面向对象的程序设计</h1><p>对象：无序属性的集合，其属性可以包含基本值、对象或者函数。</p><h2 id="理解对象"><a href="#理解对象" class="headerlink" title="理解对象"></a>理解对象</h2><p>属性在创建时都带了一些特征值（characteristic），JavaScript 通过这些特征值来定义他们的行为。</p><p>ECMAScript 中有两种属性：数据属性和访问器属性。<br>描述属性的各种特征，是为了实现JavaScript引擎用的，不能直接访问。</p><p><strong>数据属性</strong>：</p><ul><li>[[Configurable]]：表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为访问器属性。</li><li>[[Enumerable]]：表示能否通过 for-in 循环返回属性。</li><li>[[Writeable]]：表示能否修改属性的值。</li><li>[[Value]]：包含这个属性的数据值。</li></ul><p><strong>访问器属性</strong>：</p><ul><li>[[Configurable]]：表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为数据属性。</li><li>[[Enumerable]]：表示能否通过 for-in 循环返回属性。</li><li>[[Get]]：在读取属性时调用的函数。</li><li>[[Set]]：在写入属性时调用的函数。</li></ul><p><strong>定义及读取特性</strong>：Object.defineProperty() Object.defineProperties()；Object.getOwnPropertyDescriptor() 。</p><h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>虽然使用 Object 构造函数或者对象字面量可以创建单个对象，但使用同一接口创建很多对象，会产生大量的重复代码。</p><p><strong>工厂模式</strong>：使用函数来封装以特定接口来创建对象。</p><pre><code class="JavaScript">function createPerson(name,age,job){
+</code></pre>
+<h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><p>Boolean 类型、Number 类型、String 类型。</p>
+<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>Global 对象、Math 对象。</p>
+<h1 id="第六章-面向对象的程序设计"><a href="#第六章-面向对象的程序设计" class="headerlink" title="第六章 面向对象的程序设计"></a>第六章 面向对象的程序设计</h1><p>对象：无序属性的集合，其属性可以包含基本值、对象或者函数。</p>
+<h2 id="理解对象"><a href="#理解对象" class="headerlink" title="理解对象"></a>理解对象</h2><p>属性在创建时都带了一些特征值（characteristic），JavaScript 通过这些特征值来定义他们的行为。</p>
+<p>ECMAScript 中有两种属性：数据属性和访问器属性。<br>描述属性的各种特征，是为了实现JavaScript引擎用的，不能直接访问。</p>
+<p><strong>数据属性</strong>：</p>
+<ul>
+<li>[[Configurable]]：表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为访问器属性。</li>
+<li>[[Enumerable]]：表示能否通过 for-in 循环返回属性。</li>
+<li>[[Writeable]]：表示能否修改属性的值。</li>
+<li>[[Value]]：包含这个属性的数据值。</li>
+</ul>
+<p><strong>访问器属性</strong>：</p>
+<ul>
+<li>[[Configurable]]：表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为数据属性。</li>
+<li>[[Enumerable]]：表示能否通过 for-in 循环返回属性。</li>
+<li>[[Get]]：在读取属性时调用的函数。</li>
+<li>[[Set]]：在写入属性时调用的函数。</li>
+</ul>
+<p><strong>定义及读取特性</strong>：Object.defineProperty() Object.defineProperties()；Object.getOwnPropertyDescriptor() 。</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>虽然使用 Object 构造函数或者对象字面量可以创建单个对象，但使用同一接口创建很多对象，会产生大量的重复代码。</p>
+<p><strong>工厂模式</strong>：使用函数来封装以特定接口来创建对象。</p>
+<pre><code class="JavaScript">function createPerson(name,age,job){
   var o=new Object();
   o.name=name;
   o.age=age;
@@ -331,7 +1099,9 @@ objectSayColor();   //blue
 }
 var person1=createPerson(&quot;Greg&quot;,27,&quot;Doctor&quot;);
 
-</code></pre><p><strong>构造函数模式</strong>：</p><pre><code class="JavaScript">function Person(name,age,job){
+</code></pre>
+<p><strong>构造函数模式</strong>：</p>
+<pre><code class="JavaScript">function Person(name,age,job){
   this.name=name;
   this.age=age;
   this.job=job;
@@ -341,7 +1111,18 @@ var person1=createPerson(&quot;Greg&quot;,27,&quot;Doctor&quot;);
 }
 var person1=new Person(&quot;Greg&quot;,27,&quot;Doctor&quot;);
 
-</code></pre><p>要创建Person的实例，必须使用new操作符。用这种方式调用构造函数需要4个步骤：</p><ol><li>创建一个新对象；</li><li>将构造函数的作用域赋给新对象（因此this就指向了这个新对象）；</li><li>执行构造函数中的代码（为这个新对象添加属性）；</li><li>返回新对象。</li></ol><p>构造函数和其他函数唯一的区别，就是在于调用他们的方式不同。<br>任何函数，只要通过 new 操作符来调用，那么它就可以作为构造函数。</p><p><strong>原型模式</strong>：</p><p>创建的每一个函数都有一个 prototype（原型）属性，指向一个对象；这个对象（原型对象 ）的用途是包含可以由特定类型的所有实例共享的属性和方法。<br>prototype 就是通过调用构造函数而创建的实例的原型对象。好处是可以让所有的实例共享原型对象包含的属性和方法，不用在构造函数里面定义实例的信息，而是直接添加到原型对象中。</p><pre><code class="JavaScript">function Person(){
+</code></pre>
+<p>要创建Person的实例，必须使用new操作符。用这种方式调用构造函数需要4个步骤：</p>
+<ol>
+<li>创建一个新对象；</li>
+<li>将构造函数的作用域赋给新对象（因此this就指向了这个新对象）；</li>
+<li>执行构造函数中的代码（为这个新对象添加属性）；</li>
+<li>返回新对象。</li>
+</ol>
+<p>构造函数和其他函数唯一的区别，就是在于调用他们的方式不同。<br>任何函数，只要通过 new 操作符来调用，那么它就可以作为构造函数。</p>
+<p><strong>原型模式</strong>：</p>
+<p>创建的每一个函数都有一个 prototype（原型）属性，指向一个对象；这个对象（原型对象 ）的用途是包含可以由特定类型的所有实例共享的属性和方法。<br>prototype 就是通过调用构造函数而创建的实例的原型对象。好处是可以让所有的实例共享原型对象包含的属性和方法，不用在构造函数里面定义实例的信息，而是直接添加到原型对象中。</p>
+<pre><code class="JavaScript">function Person(){
 }
 
 Person.prototype.name = &quot;Nicholas&quot;;
@@ -359,7 +1140,11 @@ person2.sayName();   //&quot;Nicholas&quot;
 
 console.log(person1.sayName == person2.sayName);  //true
 
-</code></pre><p>1.理解原型对象：</p><p>只要创建一个新函数，就会根据一组特定的规则为该函数创建一个 <code>prototype</code> 属性，指向原型对象；<br>默认所有原型对象都会获得一个 <code>constructor</code> 属性，指向 <code>prototype</code> 属性所在函数（构造函数）；<br>调用构造函数创建实例后，实例内部将包含一个指针 <code>[[Prototype]]</code> 或者 <code>__proto__</code> 指向构造函数的原型对象。</p><p><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-理解原型对象.png" alt="向对象的程序设计-理解原型对象"></p><pre><code class="JavaScript">···
+</code></pre>
+<p>1.理解原型对象：</p>
+<p>只要创建一个新函数，就会根据一组特定的规则为该函数创建一个 <code>prototype</code> 属性，指向原型对象；<br>默认所有原型对象都会获得一个 <code>constructor</code> 属性，指向 <code>prototype</code> 属性所在函数（构造函数）；<br>调用构造函数创建实例后，实例内部将包含一个指针 <code>[[Prototype]]</code> 或者 <code>__proto__</code> 指向构造函数的原型对象。</p>
+<p><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-理解原型对象.png" alt="向对象的程序设计-理解原型对象"></p>
+<pre><code class="JavaScript">···
 // 使用 isPrototype() 来检测构造函数的原型对象和实例对象之间是否有关系
 console.log(Person.prototype.isPrototypeOf(person1));  //true
 console.log(Person.prototype.isPrototypeOf(person2));  //true
@@ -369,7 +1154,10 @@ if (Object.getPrototypeOf){
     console.log(Object.getPrototypeOf(person1).name);  //&quot;Nicholas&quot;
 }
 
-</code></pre><p>当代码读取某个对象的属性时，先从对象实例本身开始，若没有找到才会在原型对象中查找。</p><p>当为对象实例添加属性时，这个属性会屏蔽掉原型对象中的同名属性，即使将这个属性设置为 null ，也只会在实例中设置这个属性。不过使用 delete 操作符可以完全删除实例属性，使得可以重新访问原型中的属性。</p><pre><code class="JavaScript">···
+</code></pre>
+<p>当代码读取某个对象的属性时，先从对象实例本身开始，若没有找到才会在原型对象中查找。</p>
+<p>当为对象实例添加属性时，这个属性会屏蔽掉原型对象中的同名属性，即使将这个属性设置为 null ，也只会在实例中设置这个属性。不过使用 delete 操作符可以完全删除实例属性，使得可以重新访问原型中的属性。</p>
+<pre><code class="JavaScript">···
 person1.name = &quot;Greg&quot;;
 console.log(person1.name);   //&quot;Greg&quot; - 来自实例
 console.log(person2.name);   //&quot;Nicholas&quot; - 来自原型
@@ -384,7 +1172,10 @@ console.log(person1.hasOwnProperty(&quot;name&quot;)); // true - 来自实例
 delete person1.name;
 console.log(person1.hasOwnProperty(&quot;name&quot;)); // false - 来自原型
 
-</code></pre><p>实例与原型的关系：<br><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-理解原型对象2.png" alt="向对象的程序设计-理解原型对象2"></p><p>2.原型与 in 操作符：单独使用和在 for-in 循环中使用。</p><pre><code class="JavaScript">···
+</code></pre>
+<p>实例与原型的关系：<br><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-理解原型对象2.png" alt="向对象的程序设计-理解原型对象2"></p>
+<p>2.原型与 in 操作符：单独使用和在 for-in 循环中使用。</p>
+<pre><code class="JavaScript">···
 // 单独使用时无论属性在原型还是在实例中都返回 true
 console.log(&quot;name&quot; in person1); // true
 person1.name = &quot;Greg&quot;;
@@ -395,15 +1186,21 @@ for (var prop in person1) {
   console.log(prop);  // name age job sayName
 }
 
-</code></pre><p>Object.keys() 方法可以取得对象上所有可枚举的实例属性。</p><pre><code class="JavaScript">···
+</code></pre>
+<p>Object.keys() 方法可以取得对象上所有可枚举的实例属性。</p>
+<pre><code class="JavaScript">···
 var keys = Object.keys(Person.prototype);
 console.log(keys);   //&quot;name,age,job,sayName&quot;
 
-</code></pre><p>Object.getOwnPropertyNames() 方法可以得到所有实例属性，无论其是否可枚举。</p><pre><code class="JavaScript">···
+</code></pre>
+<p>Object.getOwnPropertyNames() 方法可以得到所有实例属性，无论其是否可枚举。</p>
+<pre><code class="JavaScript">···
 var keys = Object.getOwnPropertyNames(Person.prototype);
 console.log(keys);   //&quot;constructor,name,age,job,sayName&quot;
 
-</code></pre><p>3.更简单的原型语法：</p><pre><code class="JavaScript">function Person(){
+</code></pre>
+<p>3.更简单的原型语法：</p>
+<pre><code class="JavaScript">function Person(){
 }
 // 本质是重写了默认的 prototype 对象
 // constructor 属性指向 Object
@@ -420,7 +1217,9 @@ console.log(friend instanceof Person);  //true
 console.log(friend.constructor == Person);  //false
 console.log(friend.constructor == Object);  //true
 
-</code></pre><p>为解决 constructor 无法确定对象类型的问题：</p><pre><code class="JavaScript">function Person(){
+</code></pre>
+<p>为解决 constructor 无法确定对象类型的问题：</p>
+<pre><code class="JavaScript">function Person(){
 }
 // 方法1：
 Person.prototype = {
@@ -456,7 +1255,13 @@ console.log(friend instanceof Person);  //true
 console.log(friend.constructor == Person);  //true
 console.log(friend.constructor == Object);  //false
 
-</code></pre><p>4.原型的动态性：</p><p>我们对原型的修改都能立刻反映到实例上。<br>但是重写原型，实例对象还是指向原来的原型，不会指向新重写的原型对象。<br>重写原型切断了新的原型和之前已经存在的对象实例间的联系。</p><p>5.原型对象的问题：原型对象中讯在引用类型的属性，会使所有实例共享该引用。</p><p><strong>组合使用构造函数和原型模式</strong>：</p><p>构造函数用于定义实例属性，原型模式用于定义方法和共享的属性。</p><pre><code class="JavaScript">function Person(name, age, job){
+</code></pre>
+<p>4.原型的动态性：</p>
+<p>我们对原型的修改都能立刻反映到实例上。<br>但是重写原型，实例对象还是指向原来的原型，不会指向新重写的原型对象。<br>重写原型切断了新的原型和之前已经存在的对象实例间的联系。</p>
+<p>5.原型对象的问题：原型对象中讯在引用类型的属性，会使所有实例共享该引用。</p>
+<p><strong>组合使用构造函数和原型模式</strong>：</p>
+<p>构造函数用于定义实例属性，原型模式用于定义方法和共享的属性。</p>
+<pre><code class="JavaScript">function Person(name, age, job){
     this.name = name;
     this.age = age;
     this.job = job;
@@ -480,7 +1285,10 @@ console.log(person2.friends);    //&quot;Shelby,Court&quot;
 console.log(person1.friends === person2.friends);  //false
 console.log(person1.sayName === person2.sayName);  //true
 
-</code></pre><p>实例属性都是在构造函数中定义的，每个实例都会有自己的一份实例属性的副本。</p><p><strong>动态原型模式</strong>：将原型信息封装在构造函数中。</p><pre><code class="JavaScript">function Person(name, age, job){
+</code></pre>
+<p>实例属性都是在构造函数中定义的，每个实例都会有自己的一份实例属性的副本。</p>
+<p><strong>动态原型模式</strong>：将原型信息封装在构造函数中。</p>
+<pre><code class="JavaScript">function Person(name, age, job){
     //properties
     this.name = name;
     this.age = age;
@@ -496,7 +1304,11 @@ console.log(person1.sayName === person2.sayName);  //true
 var friend = new Person(&quot;Nicholas&quot;, 29, &quot;Software Engineer&quot;);
 friend.sayName();
 
-</code></pre><p><code>寄生构造函数模式</code>、<code>稳妥构造函数模式</code>。</p><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>ECMAScript 只支持<strong>实现继承</strong>，主要依靠原型链来实现。</p><p><strong>原型链</strong>：利用原型将一个引用类型继承另一个引用类型的属性和方法。</p><pre><code class="JavaScript">function SuperType(){
+</code></pre>
+<p><code>寄生构造函数模式</code>、<code>稳妥构造函数模式</code>。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>ECMAScript 只支持<strong>实现继承</strong>，主要依靠原型链来实现。</p>
+<p><strong>原型链</strong>：利用原型将一个引用类型继承另一个引用类型的属性和方法。</p>
+<pre><code class="JavaScript">function SuperType(){
     this.property = true;
 }
 SuperType.prototype.getSuperValue = function(){
@@ -515,14 +1327,24 @@ SubType.prototype.getSubValue = function (){
 var instance = new SubType();
 console.log(instance.getSuperValue());   //true
 
-</code></pre><p>实例以及构造函数和原型之间的关系：</p><p><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-原型链.png" alt="向对象的程序设计-原型链"></p><p>getSuperValue() 方法仍然在 SuperType.prototype 中，但 property 位于 SubType.prototype 中。<br>因为我们重写了 SubType 的原型，新原型即 SuperType 的实例；property 是实例的属性，getSuperValue() 则是 SuperType 原型的方法。</p><p>1.注意默认原型：函数的默认原型是 Object 实例，因此默认原型会包含指针指向 Object.prototype 。</p><p>2.确定实例与原型的关系：</p><pre><code class="JavaScript">console.log(instance instanceof Object);      //true
+</code></pre>
+<p>实例以及构造函数和原型之间的关系：</p>
+<p><img src="https://img.wshunli.com/JavaScript/JavaScript高级程序设计/1/向对象的程序设计-原型链.png" alt="向对象的程序设计-原型链"></p>
+<p>getSuperValue() 方法仍然在 SuperType.prototype 中，但 property 位于 SubType.prototype 中。<br>因为我们重写了 SubType 的原型，新原型即 SuperType 的实例；property 是实例的属性，getSuperValue() 则是 SuperType 原型的方法。</p>
+<p>1.注意默认原型：函数的默认原型是 Object 实例，因此默认原型会包含指针指向 Object.prototype 。</p>
+<p>2.确定实例与原型的关系：</p>
+<pre><code class="JavaScript">console.log(instance instanceof Object);      //true
 console.log(instance instanceof SuperType);   //true
 console.log(instance instanceof SubType);     //true
 console.log(Object.prototype.isPrototypeOf(instance));    //true
 console.log(SuperType.prototype.isPrototypeOf(instance)); //true
 console.log(SubType.prototype.isPrototypeOf(instance));   //true
 
-</code></pre><p>3.谨慎地定义方法：给原型添加方法一定要在替换原型之后；也不能使用字面量创建原型方法。</p><p>4.原型链问题：引用类型的原型属性会被所有实例共享；不能向超类传递参数。</p><p><strong>借用构造函数</strong>：通过 apply() 或 call() 方法在新创建的对象上执行超类的构造函数。</p><pre><code class="JavaScript">function SuperType(){
+</code></pre>
+<p>3.谨慎地定义方法：给原型添加方法一定要在替换原型之后；也不能使用字面量创建原型方法。</p>
+<p>4.原型链问题：引用类型的原型属性会被所有实例共享；不能向超类传递参数。</p>
+<p><strong>借用构造函数</strong>：通过 apply() 或 call() 方法在新创建的对象上执行超类的构造函数。</p>
+<pre><code class="JavaScript">function SuperType(){
     this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];
 }
 
@@ -538,7 +1360,10 @@ console.log(instance1.colors);    //&quot;red,blue,green,black&quot;
 var instance2 = new SubType();
 console.log(instance2.colors);    //&quot;red,blue,green&quot;
 
-</code></pre><p>通过 apply() 或 call() 方法在 SubType 实例的环境下调用了 SuperType 构造函数。</p><p>1.传递参数：</p><pre><code class="JavaScript">function SuperType(name){
+</code></pre>
+<p>通过 apply() 或 call() 方法在 SubType 实例的环境下调用了 SuperType 构造函数。</p>
+<p>1.传递参数：</p>
+<pre><code class="JavaScript">function SuperType(name){
     this.name = name;
 }
 function SubType(){
@@ -551,7 +1376,10 @@ var instance = new SubType();
 console.log(instance.name);    //&quot;Nicholas&quot;;
 console.log(instance.age);     //29
 
-</code></pre><p>2.问题： 和构造函数模式类似，方法都在构造函数中定义，无法复用。</p><p><strong>组合继承</strong>：JavaScript中最常用的继承。融合了原型链和构造函数的优点。</p><pre><code class="JavaScript">function SuperType(name){
+</code></pre>
+<p>2.问题： 和构造函数模式类似，方法都在构造函数中定义，无法复用。</p>
+<p><strong>组合继承</strong>：JavaScript中最常用的继承。融合了原型链和构造函数的优点。</p>
+<pre><code class="JavaScript">function SuperType(name){
     this.name = name;
     this.colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];
 }
@@ -580,7 +1408,11 @@ console.log(instance2.colors);  //&quot;red,blue,green&quot;
 instance2.sayName();      //&quot;Greg&quot;;
 instance2.sayAge();       //27
 
-</code></pre><p><code>原型式继承</code>、<code>寄生式继承</code>、<code>寄生组合式继承</code>。</p><h1 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h1><p>定义函数的方法有两种：<a href="#Function-类型">函数声明与函数表达式</a>。</p><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归函数是在一个函数通过名字调用自身函数构成。</p><pre><code class="JavaScript">function factorial(num){
+</code></pre>
+<p><code>原型式继承</code>、<code>寄生式继承</code>、<code>寄生组合式继承</code>。</p>
+<h1 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h1><p>定义函数的方法有两种：<a href="#Function-类型">函数声明与函数表达式</a>。</p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归函数是在一个函数通过名字调用自身函数构成。</p>
+<pre><code class="JavaScript">function factorial(num){
     if (num &lt;= 1){
         return 1;
     } else {
@@ -592,7 +1424,9 @@ var anotherFactorial = factorial;
 factorial = null;
 console.log(anotherFactorial(4));  //error! - factorial 已经不是函数
 
-</code></pre><p>解决办法是使用命名函数表达式：</p><pre><code class="JavaScript">function factorial = (function f(num){
+</code></pre>
+<p>解决办法是使用命名函数表达式：</p>
+<pre><code class="JavaScript">function factorial = (function f(num){
     if (num &lt;= 1){
         return 1;
     } else {
@@ -600,7 +1434,10 @@ console.log(anotherFactorial(4));  //error! - factorial 已经不是函数
     }
 });
 
-</code></pre><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><strong>闭包</strong> 是有权访问另一个函数作用域中的变量的函数。</p><p>1.闭包和变量:闭包只能取得函数中任何变量的最后一个值。</p><pre><code class="JavaScript">function createFunctions(){
+</code></pre>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><strong>闭包</strong> 是有权访问另一个函数作用域中的变量的函数。</p>
+<p>1.闭包和变量:闭包只能取得函数中任何变量的最后一个值。</p>
+<pre><code class="JavaScript">function createFunctions(){
     var result = new Array();
     for (var i=0; i &lt; 10; i++){
         result[i] = function(){
@@ -610,7 +1447,9 @@ console.log(anotherFactorial(4));  //error! - factorial 已经不是函数
     return result;
 }
 
-</code></pre><p>其中每个函数都引用着保存变量 i 的同一个变量对象,所以函数内部返回的值都是 10 。</p><pre><code class="JavaScript">function createFunctions(){
+</code></pre>
+<p>其中每个函数都引用着保存变量 i 的同一个变量对象,所以函数内部返回的值都是 10 。</p>
+<pre><code class="JavaScript">function createFunctions(){
     var result = new Array();
     for (var i=0; i &lt; 10; i++){
         result[i] = function(num){
@@ -622,7 +1461,9 @@ console.log(anotherFactorial(4));  //error! - factorial 已经不是函数
     return result;
 }
 
-</code></pre><p>2.关于 this 对象:匿名函数通常具有全局性,因此其 this 对象通常指向 windows 。</p><pre><code class="JavaScript">var name = &quot;The Window&quot;;
+</code></pre>
+<p>2.关于 this 对象:匿名函数通常具有全局性,因此其 this 对象通常指向 windows 。</p>
+<pre><code class="JavaScript">var name = &quot;The Window&quot;;
 var object = {
     name : &quot;My Object&quot;,
     getNameFunc : function(){
@@ -633,7 +1474,9 @@ var object = {
 };
 console.log(object.getNameFunc()());  //&quot;The Window&quot; 在非严格模式下
 
-</code></pre><p>this 的值有时候会意外发生改变。</p><pre><code class="JavaScript">var name = &quot;The Window&quot;;
+</code></pre>
+<p>this 的值有时候会意外发生改变。</p>
+<pre><code class="JavaScript">var name = &quot;The Window&quot;;
 var object = {
     name : &quot;My Object&quot;,
     getName: function(){
@@ -645,11 +1488,16 @@ console.log((object.getName)());   //&quot;My Object&quot;
 console.log((object.getName = object.getName)());   //&quot;The Window&quot; 在严格模式下
 }
 
-</code></pre><p>第三个其实是重写了 getName 方法,this 值就指向全局了。</p><h2 id="模仿块级作用域"><a href="#模仿块级作用域" class="headerlink" title="模仿块级作用域"></a>模仿块级作用域</h2><p>JavaScript 没有块级作用域(私有作用域)的概念,可使用匿名函数方法模仿。</p><pre><code class="JavaScript">(function () {
+</code></pre>
+<p>第三个其实是重写了 getName 方法,this 值就指向全局了。</p>
+<h2 id="模仿块级作用域"><a href="#模仿块级作用域" class="headerlink" title="模仿块级作用域"></a>模仿块级作用域</h2><p>JavaScript 没有块级作用域(私有作用域)的概念,可使用匿名函数方法模仿。</p>
+<pre><code class="JavaScript">(function () {
     ...
 })();
 
-</code></pre><h2 id="私有变量"><a href="#私有变量" class="headerlink" title="私有变量"></a>私有变量</h2><p>JavaScript 没有私有成员的概念,所有对象属性都是公有的,但是有个私有变量的概念,也就是函数中定义的变量。</p><pre><code class="JavaScript">function Person(name){
+</code></pre>
+<h2 id="私有变量"><a href="#私有变量" class="headerlink" title="私有变量"></a>私有变量</h2><p>JavaScript 没有私有成员的概念,所有对象属性都是公有的,但是有个私有变量的概念,也就是函数中定义的变量。</p>
+<pre><code class="JavaScript">function Person(name){
     this.getName = function(){
         return name;
     };
@@ -662,7 +1510,10 @@ console.log(person.getName());   //&quot;Nicholas&quot;
 person.setName(&quot;Greg&quot;);
 console.log(person.getName());   //&quot;Greg&quot;
 
-</code></pre><p>创建 Person 实例只能 通过 getName() 和 setName() 方法访问内部变量,但是针对每个实例都会创建一组新方法。</p><p>1.静态私有变量</p><pre><code class="JavaScript">(function(){
+</code></pre>
+<p>创建 Person 实例只能 通过 getName() 和 setName() 方法访问内部变量,但是针对每个实例都会创建一组新方法。</p>
+<p>1.静态私有变量</p>
+<pre><code class="JavaScript">(function(){
     var name = &quot;&quot;;
     Person = function(value){
         name = value;
@@ -683,7 +1534,12 @@ console.log(person1.getName());   //&quot;Greg&quot;
 var person2 = new Person(&quot;Michael&quot;);
 console.log(person1.getName());   //&quot;Michael&quot;
 console.log(person2.getName());   //&quot;Michael&quot;
-</code></pre><p>初始化未声明的变量,总会创建一个全局变量。严格模式下报错。</p><p>示例代码中 name 变成了一个静态的,所有实例共享的属性。</p><p>2.模块模式</p><p>模块模式是为单例创建私有变量和特权方法。单例即只有一个实例的对象。</p><pre><code class="JavaScript">function BaseComponent(){
+</code></pre>
+<p>初始化未声明的变量,总会创建一个全局变量。严格模式下报错。</p>
+<p>示例代码中 name 变成了一个静态的,所有实例共享的属性。</p>
+<p>2.模块模式</p>
+<p>模块模式是为单例创建私有变量和特权方法。单例即只有一个实例的对象。</p>
+<pre><code class="JavaScript">function BaseComponent(){
 }
 function OtherComponent(){
 }
@@ -708,7 +1564,10 @@ var application = function(){
 application.registerComponent(new OtherComponent());
 console.log(application.getComponentCount());  //2
 
-</code></pre><p>3.增强的模块模式</p><p>针对单例必须是某种类型的实例,同时还对其添加属性或方法的情况。</p><pre><code class="JavaScript">function BaseComponent(){
+</code></pre>
+<p>3.增强的模块模式</p>
+<p>针对单例必须是某种类型的实例,同时还对其添加属性或方法的情况。</p>
+<pre><code class="JavaScript">function BaseComponent(){
 }
 function OtherComponent(){
 }
@@ -736,7 +1595,416 @@ console.log(application instanceof BaseComponent);
 application.registerComponent(new OtherComponent());
 console.log(application.getComponentCount());  //2
 
-</code></pre><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="http://www.wshunli.com/posts/e8afa8c0.html">http://www.wshunli.com/posts/e8afa8c0.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="//cdn.wshunli.com/source/av-min.js"></script><script src="//cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mm",lang:"zh-cn"})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/d8b94418.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/25be2399.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/GIS资料分享/">GIS资料分享<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/GIS软件操作/">GIS软件操作<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术分享/">技术分享<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">106</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a><a href="https://www.zhihu.com/people/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu"><span class="visuallyhidden">Zhihu</span></button></a><a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"><span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>.</div><div>CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>.</div><div>Analysis by <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">Baidu</a> & <a class="footer-develop-a" href="http://new.cnzz.com/v1/login.php?siteid=1257138955" title="CNZZ 统计服务" rel="external nofollow noopener noreferrer" target="_blank">CNZZ</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">Status</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">Sitemap</a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>.</div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
+</code></pre>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli">  您的鼓励与支持，我会铭记于心，倾于博客。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://www.wshunli.com/posts/e8afa8c0.html">http://www.wshunli.com/posts/e8afa8c0.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn.wshunli.com/source/av-min.js"></script>
+<script src="//cdn.wshunli.com/source/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",
+        appKey: "cuNKDo2T90xY7IjfGh21RMoQ",
+        placeholder: "念念不忘，必有回响",
+        pageSize:'10',
+        avatar:'mm',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/d8b94418.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/25be2399.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://cdn.wshunli.com/source/img/snow_square_tiny.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        admin@wshunli.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/GIS资料分享/">GIS资料分享<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/GIS软件操作/">GIS软件操作<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术分享/">技术分享<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/zzupic" title="郑州大学">
+                
+                郑州大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/whupic" title="武汉大学">
+                
+                武汉大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于本站">
+                
+                关于本站
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">108</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+     <!-- Github -->
+    
+        <a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+   <!-- Weibo -->
+    
+        <a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>CirGIS
+            
+                <br>
+                
+                    <div> Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>. </div> <div> CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>. </div> <div> <a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">服务状态</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">站点地图</a>. <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">百度统计</a>. </div>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
@@ -753,7 +2021,24 @@ console.log(application.getComponentCount());  //2
     setTimeout(function() {
         NProgress.done();
         $('.fade').removeClass('out');
-    }, 800);</script><script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script><script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz","cuNKDo2T90xY7IjfGh21RMoQ")</script><script type="text/ls-javascript" id="leancloud-views-script">function showTime(Counter) {
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js", true)</script>
+    
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz', 'cuNKDo2T90xY7IjfGh21RMoQ');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
         var query = new AV.Query(Counter);
         $('.leancloud-views_num').each(function() {
             var url = $(this).attr('id').trim();
@@ -828,7 +2113,43 @@ console.log(application.getComponentCount());  //2
         } else if ($('.post-title-link').length > 1) {
             showTime(Counter);
         }
-    });</script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
@@ -840,7 +2161,20 @@ console.log(application.getComponentCount());  //2
                 // 影响 hexo-tag-demo 代码高亮
                 $('.demobox-code-wrap pre').removeClass('linenums');
                                 prettyPrint();
-                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
@@ -852,4 +2186,27 @@ console.log(application.getComponentCount());  //2
         setInterval(function(){
             queue.execNext();
         },200);
-    });</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
