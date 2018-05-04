@@ -1,364 +1,16 @@
-<!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    <link rel="dns-prefetch" href="https://cdn.wshunli.com/source">
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-            《JavaScript高级程序设计》读书笔记（五） | 
-        
-        CirGIS
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="https://cdn.wshunli.com/source/img/favicon.ico">
-    <link rel="icon" href="https://cdn.wshunli.com/source/img/favicon.ico">
-
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="《JavaScript高级程序设计》读书笔记">
-    <meta name="keywords" content="wshunli CirGIS,JavaScript,读书笔记,《JavaScript高级程序设计》">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-
-    <!--[if lte IE 9]>
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.2",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>《JavaScript高级程序设计》读书笔记（五） | CirGIS</title><link rel="icon shortcut" type="image/ico" href="https://cdn.wshunli.com/source/img/favicon.ico"><link rel="icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="《JavaScript高级程序设计》读书笔记"><meta name="keywords" content="wshunli CirGIS,JavaScript,读书笔记,《JavaScript高级程序设计》"><meta name="theme-color" content="#0097A7"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-  /* 自定义CSS 开始*/
-
-  #post-content h1 {
-      font-size: 1.75em;
-      border-bottom: 1px solid #ddd;
-  }
-  #post-content h2 {
-      font-size: 1.5em;
-      border-bottom: 1px solid #eee;
-  }
-  #post-content h3 {
-      font-size: 1.25em;
-  }
-  #post-content h4 {
-      font-size: 1em;
-  }
-  #post-content h5 {
-      font-size: 1em;
-  }
-  #post-content h6 {
-      color: #777;
-      font-size: 1em;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  #post-content a {
-    text-decoration: none;
-    font-weight: 400;
-  }
-
-  #post-content a:hover {
-    // text-shadow: 1px 1px 1px;
-    text-decoration: underline;
-  }
-  .mdl-card__media {
-    background-color:#fff !important;
-  }
-  .disqus_click_btn{
-     margin: 0 auto !important;
-  }
-  #comment .veditor{
-    font-size: 1em;
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
-  #post-content table {
-    width: 100%;
-    overflow: auto;
-    display: table;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-
-  /* 自定义CSS 结束*/
-
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js", true)</script>
-    
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="CirGIS">
-    <meta name="msapplication-starturl" content="http://www.wshunli.com/posts/4d143b68.html">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="CirGIS">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico">
-
-    <!-- Site Verification -->
-    <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM">
-    
-
-    <!-- RSS -->
-    
-        
-            <link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml">
-        
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://www.wshunli.com/posts/4d143b68.html">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="《JavaScript高级程序设计》读书笔记（五） | CirGIS">
-    <meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico">
-    <meta property="og:description" content="《JavaScript高级程序设计》读书笔记">
-    <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="读书笔记"> <meta property="og:article:tag" content="《JavaScript高级程序设计》"> 
-
-    
-        <meta property="article:published_time" content="Wed Nov 08 2017 21:12:48 GMT+0800">
-        <meta property="article:modified_time" content="Fri May 04 2018 12:59:18 GMT+0800">
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://www.wshunli.com/posts/4d143b68.html">
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-<script type="application/ld+json">
-{
+    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#0097a7!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#0097a7!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#0097a7!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="http://www.wshunli.com/posts/4d143b68.html"><meta name="msapplication-navbutton-color" content="#0097A7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml"><meta property="og:url" content="http://www.wshunli.com/posts/4d143b68.html"><meta property="og:type" content="blog"><meta property="og:title" content="《JavaScript高级程序设计》读书笔记（五） | CirGIS"><meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico"><meta property="og:description" content="《JavaScript高级程序设计》读书笔记"><meta property="og:article:tag" content="JavaScript"><meta property="og:article:tag" content="读书笔记"><meta property="og:article:tag" content="《JavaScript高级程序设计》"><meta property="article:published_time" content="Wed Nov 08 2017 21:12:48 GMT+0800"><meta property="article:modified_time" content="Fri May 04 2018 23:03:48 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="http://www.wshunli.com/posts/4d143b68.html"><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://www.wshunli.com/posts/4d143b68.html",
     "headline": "《JavaScript高级程序设计》读书笔记（五）",
     "datePublished": "Wed Nov 08 2017 21:12:48 GMT+0800",
-    "dateModified": "Fri May 04 2018 12:59:18 GMT+0800",
+    "dateModified": "Fri May 04 2018 23:03:48 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -378,273 +30,21 @@
     },
     "keywords": ",JavaScript,读书笔记,《JavaScript高级程序设计》wshunli CirGIS",
     "description": "《JavaScript高级程序设计》读书笔记",
-}
-</script>
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-72210097-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-
-    <!-- Custom Head -->
-    
-
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第十八章-JavaScript-与-XML"><span class="post-toc-number">1.</span> <span class="post-toc-text">第十八章 JavaScript 与 XML</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对-XML-DOM-的支持"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">浏览器对 XML DOM 的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对XPath的支持"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">浏览器对XPath的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对XSLT的支持"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">浏览器对XSLT的支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第十九章-E4X"><span class="post-toc-number">2.</span> <span class="post-toc-text">第十九章 E4X</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二十章-JSON"><span class="post-toc-number">3.</span> <span class="post-toc-text">第二十章 JSON</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析与序列化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">解析与序列化</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二十一章-Ajax-与-Comet"><span class="post-toc-number">4.</span> <span class="post-toc-text">第二十一章 Ajax 与 Comet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest-对象"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">XMLHttpRequest 对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest-2-级"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">XMLHttpRequest 2 级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进度事件"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">进度事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨域资源共享"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">跨域资源共享</span></a></li></ol></li></ol>
-    </ul>
-    
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript.png)">
-    
-            <p class="article-headline-p">
-                《JavaScript高级程序设计》读书笔记（五）
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar">
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>wshunli</strong>
-        <span>11月 08, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB5klEQVR42u3aO3LDMAwFQN//0kmbIpbeI+UvVpVnZFFcFRiAwO3nK64bBgYGBgYGBsbbMG7x9ff/957952WHz67tAQMDYybjJLTdeWVy9xiwtgcMDIzJjDbI3gvcyYbaII6BgYFRL1Fi1kI2BgYGxk7APQ6jO6khBgYGxn4Re1JY3nn92qd5YC2OgYHxgYydxsBVv1/c38DAwHhjxuKgQ7yJNrg/dWYEAwPjQxjH6V0bgo9XyJPLqDDGwMAYw2gPudqwu9McPfkEGBgYYxhXtSrbwdb2M2FgYGC0W2/Hv/KWQJFEYmBgDGOsvWztcK1NQDEwMDDaMNceluVthqQAxsDAwMiTxXyMtW0q5G/EwMCYw2jD4n6q15bNGBgYGG2ilqeSeVOh/aAYGBjTGPnYVnsotjasX4yUYWBgDGZsDZXG221DbdHfwMDAGMBoS83kbtsAiFbDwMAYyciHKvKnko/Sro+BgTGN0V5rzcudNsPiqSEGBsYXMa4dj8iTy+TQDQMDA+Oq4/6dFS4OuBgYGAMYbUBsG5A7JTEGBgbG2nhEW8q2SefJXQwMDIy4cM0P/ZPmQTHYgYGBMZKRNwP2x7yO14nCMQYGxjDGIxK4/UL3qf0NDAyMN2Z87oWBgYGBgYGB8dLrF4CWnHFxfmJiAAAAAElFTkSuQmCC">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《JavaScript高级程序设计》/">《JavaScript高级程序设计》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a>
-    </li></ul>
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/posts/4d143b68.html" class="leancloud-views_num" data-flag-title="《JavaScript高级程序设计》读书笔记（五）">
-     &nbsp;浏览量
-</span>
-
-            </li>
-        </a>
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《JavaScript高级程序设计》读书笔记（五）&url=http://www.wshunli.com/posts/4d143b68.html&pic=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《JavaScript高级程序设计》读书笔记（五）&summary=欢迎来到 wshunli`s Blog!&pics=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=http://www.wshunli.com/posts/4d143b68.html" target="_blank" rel="external nofollow noopener noreferrer">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>《JavaScript高级程序设计》读书笔记</p>
-<a id="more"></a>
-<p><strong>(五) 学习 JavaScript 对各数据载体的操作方法（如JSON、XML），学会 Ajax 的使用方法。</strong>(18-21章)</p>
-<h1 id="第十八章-JavaScript-与-XML"><a href="#第十八章-JavaScript-与-XML" class="headerlink" title="第十八章 JavaScript 与 XML"></a>第十八章 JavaScript 与 XML</h1><h2 id="浏览器对-XML-DOM-的支持"><a href="#浏览器对-XML-DOM-的支持" class="headerlink" title="浏览器对 XML DOM 的支持"></a>浏览器对 XML DOM 的支持</h2><p>如何检测浏览器是否支持DOM2级XML：</p>
-<pre><code class="JavaScript">var hasXmlDom = document.implementation.hasFeature(&quot;XML&quot;,&quot;2.0&quot;);
-</code></pre>
-<p>在支持DOM2级的浏览器中创建一个空白XML:</p>
-<pre><code class="JavaScript">var xmldom = document.implemention.createDocument(namespaceUri,root,docype);
-</code></pre>
-<p>通过 JavaScript 处理XML时，通常只使用参数root，这个参数指定的是XML DOM文档元素的标签名。</p>
-<pre><code class="JavaScript">var xmldom = document.implementation.createDocument(&quot;&quot;,&quot;root&quot;,null);
+}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第十八章-JavaScript-与-XML"><span class="post-toc-number">1.</span> <span class="post-toc-text">第十八章 JavaScript 与 XML</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对-XML-DOM-的支持"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">浏览器对 XML DOM 的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对XPath的支持"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">浏览器对XPath的支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器对XSLT的支持"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">浏览器对XSLT的支持</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第十九章-E4X"><span class="post-toc-number">2.</span> <span class="post-toc-text">第十九章 E4X</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二十章-JSON"><span class="post-toc-number">3.</span> <span class="post-toc-text">第二十章 JSON</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析与序列化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">解析与序列化</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二十一章-Ajax-与-Comet"><span class="post-toc-number">4.</span> <span class="post-toc-text">第二十一章 Ajax 与 Comet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest-对象"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">XMLHttpRequest 对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest-2-级"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">XMLHttpRequest 2 级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进度事件"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">进度事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨域资源共享"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">跨域资源共享</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript.png)"><p class="article-headline-p">《JavaScript高级程序设计》读书笔记（五）</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>11月 08, 2017</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB5klEQVR42u3aO3LDMAwFQN//0kmbIpbeI+UvVpVnZFFcFRiAwO3nK64bBgYGBgYGBsbbMG7x9ff/957952WHz67tAQMDYybjJLTdeWVy9xiwtgcMDIzJjDbI3gvcyYbaII6BgYFRL1Fi1kI2BgYGxk7APQ6jO6khBgYGxn4Re1JY3nn92qd5YC2OgYHxgYydxsBVv1/c38DAwHhjxuKgQ7yJNrg/dWYEAwPjQxjH6V0bgo9XyJPLqDDGwMAYw2gPudqwu9McPfkEGBgYYxhXtSrbwdb2M2FgYGC0W2/Hv/KWQJFEYmBgDGOsvWztcK1NQDEwMDDaMNceluVthqQAxsDAwMiTxXyMtW0q5G/EwMCYw2jD4n6q15bNGBgYGG2ilqeSeVOh/aAYGBjTGPnYVnsotjasX4yUYWBgDGZsDZXG221DbdHfwMDAGMBoS83kbtsAiFbDwMAYyciHKvKnko/Sro+BgTGN0V5rzcudNsPiqSEGBsYXMa4dj8iTy+TQDQMDA+Oq4/6dFS4OuBgYGAMYbUBsG5A7JTEGBgbG2nhEW8q2SefJXQwMDIy4cM0P/ZPmQTHYgYGBMZKRNwP2x7yO14nCMQYGxjDGIxK4/UL3qf0NDAyMN2Z87oWBgYGBgYGB8dLrF4CWnHFxfmJiAAAAAElFTkSuQmCC"></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《JavaScript高级程序设计》/">《JavaScript高级程序设计》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/4d143b68.html" class="leancloud-views_num" data-flag-title="《JavaScript高级程序设计》读书笔记（五）">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《JavaScript高级程序设计》读书笔记（五）&url=http://www.wshunli.com/posts/4d143b68.html&pic=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《JavaScript高级程序设计》读书笔记（五）&summary=欢迎来到 wshunli`s Blog!&pics=http://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=http://www.wshunli.com/posts/4d143b68.html" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>《JavaScript高级程序设计》读书笔记</p><a id="more"></a><p><strong>(五) 学习 JavaScript 对各数据载体的操作方法（如JSON、XML），学会 Ajax 的使用方法。</strong>(18-21章)</p><h1 id="第十八章-JavaScript-与-XML"><a href="#第十八章-JavaScript-与-XML" class="headerlink" title="第十八章 JavaScript 与 XML"></a>第十八章 JavaScript 与 XML</h1><h2 id="浏览器对-XML-DOM-的支持"><a href="#浏览器对-XML-DOM-的支持" class="headerlink" title="浏览器对 XML DOM 的支持"></a>浏览器对 XML DOM 的支持</h2><p>如何检测浏览器是否支持DOM2级XML：</p><pre><code class="JavaScript">var hasXmlDom = document.implementation.hasFeature(&quot;XML&quot;,&quot;2.0&quot;);
+</code></pre><p>在支持DOM2级的浏览器中创建一个空白XML:</p><pre><code class="JavaScript">var xmldom = document.implemention.createDocument(namespaceUri,root,docype);
+</code></pre><p>通过 JavaScript 处理XML时，通常只使用参数root，这个参数指定的是XML DOM文档元素的标签名。</p><pre><code class="JavaScript">var xmldom = document.implementation.createDocument(&quot;&quot;,&quot;root&quot;,null);
 console.log(xmldom.documentElement.tagName);  //&quot;root&quot;
 var child = xmldom.createElement(&quot;child&quot;);
 xmldom.documentElement.appendChild(child);
-</code></pre>
-<p><strong>DOMParser 类型</strong>：将 XML 解析为 DOM 文档。</p>
-<p><strong>XMLSerializer 类型</strong>：将 DOM 文档序列化为 XML 字符串。</p>
-<pre><code class="JavaScript">var parser = new DOMParser();
+</code></pre><p><strong>DOMParser 类型</strong>：将 XML 解析为 DOM 文档。</p><p><strong>XMLSerializer 类型</strong>：将 DOM 文档序列化为 XML 字符串。</p><pre><code class="JavaScript">var parser = new DOMParser();
 var xmldom = parser.parseFromString(&quot;&lt;root&gt;&lt;child/&gt;&lt;/root&gt;&quot;, &quot;text/xml&quot;);
 //convert back into XML
 var serializer = new XMLSerializer();
 var xml = serializer.serializeToString(xmldom);
 console.log(xml);
-</code></pre>
-<h2 id="浏览器对XPath的支持"><a href="#浏览器对XPath的支持" class="headerlink" title="浏览器对XPath的支持"></a>浏览器对XPath的支持</h2><p>XPath 是设计用来在 DOM 文档中查找节点的一种手段。</p>
-<h2 id="浏览器对XSLT的支持"><a href="#浏览器对XSLT的支持" class="headerlink" title="浏览器对XSLT的支持"></a>浏览器对XSLT的支持</h2><p>XSLT 是与 XML 相关的一种技术，它利用 XPath 将文档从一种表现形式转换成另一种表现形式。</p>
-<h1 id="第十九章-E4X"><a href="#第十九章-E4X" class="headerlink" title="第十九章 E4X"></a>第十九章 E4X</h1><p>E4X 本身不是一门语言，它只是 ECMAScript 语言的可选扩展。<br>就其本身而言，E4X 为处理 XML 定义了新的语法，也定义了特定于 XML 的对象。</p>
-<h1 id="第二十章-JSON"><a href="#第二十章-JSON" class="headerlink" title="第二十章 JSON"></a>第二十章 JSON</h1><p>JSON（Javascript Object Notaion，Javascript对象表示法）是一种数据格式。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>JSON有3种类型的值：简单值、对象 和 数组。</p>
-<ul>
-<li>简单值：字符串、数值、布尔值、null（JSON不支持JavaScript的特殊值undefined）。</li>
-<li>对象：一组无序键值对。值可为简单值，或对象和数组。</li>
-<li>数组：一组有序值的列表。值可为简单值，或对象和数组。</li>
-</ul>
-<p>JSON不支持变量、函数 和 对象实例。</p>
-<p><strong>简单值</strong>：最简单的 JSON 数据形式就是简单值。</p>
-<pre><code class="JSON">6
+</code></pre><h2 id="浏览器对XPath的支持"><a href="#浏览器对XPath的支持" class="headerlink" title="浏览器对XPath的支持"></a>浏览器对XPath的支持</h2><p>XPath 是设计用来在 DOM 文档中查找节点的一种手段。</p><h2 id="浏览器对XSLT的支持"><a href="#浏览器对XSLT的支持" class="headerlink" title="浏览器对XSLT的支持"></a>浏览器对XSLT的支持</h2><p>XSLT 是与 XML 相关的一种技术，它利用 XPath 将文档从一种表现形式转换成另一种表现形式。</p><h1 id="第十九章-E4X"><a href="#第十九章-E4X" class="headerlink" title="第十九章 E4X"></a>第十九章 E4X</h1><p>E4X 本身不是一门语言，它只是 ECMAScript 语言的可选扩展。<br>就其本身而言，E4X 为处理 XML 定义了新的语法，也定义了特定于 XML 的对象。</p><h1 id="第二十章-JSON"><a href="#第二十章-JSON" class="headerlink" title="第二十章 JSON"></a>第二十章 JSON</h1><p>JSON（Javascript Object Notaion，Javascript对象表示法）是一种数据格式。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>JSON有3种类型的值：简单值、对象 和 数组。</p><ul><li>简单值：字符串、数值、布尔值、null（JSON不支持JavaScript的特殊值undefined）。</li><li>对象：一组无序键值对。值可为简单值，或对象和数组。</li><li>数组：一组有序值的列表。值可为简单值，或对象和数组。</li></ul><p>JSON不支持变量、函数 和 对象实例。</p><p><strong>简单值</strong>：最简单的 JSON 数据形式就是简单值。</p><pre><code class="JSON">6
 &quot;Hello World!&quot; //必须为双引号
-</code></pre>
-<p>布尔值和 null 也是有效的 JSON 数据形式，但简单值往往是复杂数据结构的一部分。</p>
-<p><strong>对象</strong>：</p>
-<pre><code class="JSON">// JavaScript对象字面量：
+</code></pre><p>布尔值和 null 也是有效的 JSON 数据形式，但简单值往往是复杂数据结构的一部分。</p><p><strong>对象</strong>：</p><pre><code class="JSON">// JavaScript对象字面量：
 var object = {
   &quot;name&quot;: &quot;Nicholas&quot;,
   &quot;age&quot;: 29
@@ -654,17 +54,11 @@ var object = {
   &quot;name&quot;: &quot;Nicholas&quot;,
   &quot;age&quot;: 29
 }
-</code></pre>
-<p>JSON 对象 与 JavaScript 的对象字面量相比：首先，没有声明变量（JSON 中没有变量的概念）；其次，没有末尾的分号；JSON 对象的属性必须加双引号。</p>
-<p><strong>数组</strong>：JSON 数组采用的就是 JavaScript 中的数组字面量形式。</p>
-<pre><code class="JSON">// JavaScript 中的数组字面量：
+</code></pre><p>JSON 对象 与 JavaScript 的对象字面量相比：首先，没有声明变量（JSON 中没有变量的概念）；其次，没有末尾的分号；JSON 对象的属性必须加双引号。</p><p><strong>数组</strong>：JSON 数组采用的就是 JavaScript 中的数组字面量形式。</p><pre><code class="JSON">// JavaScript 中的数组字面量：
 var values = [25, &quot;hi&quot;, true];
 // JSON 表示数组：
 [25, &quot;hi&quot;, true]
-</code></pre>
-<h2 id="解析与序列化"><a href="#解析与序列化" class="headerlink" title="解析与序列化"></a>解析与序列化</h2><p>ECMAScript5 对解析 JSON 进行了规范，定义了全局对象 JSON。</p>
-<p>JSON 对象有两个方法：stringify() 和 parse()，分别用于把 JavaScript 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 JavaScript 值。</p>
-<pre><code class="JavaScript">var book = {
+</code></pre><h2 id="解析与序列化"><a href="#解析与序列化" class="headerlink" title="解析与序列化"></a>解析与序列化</h2><p>ECMAScript5 对解析 JSON 进行了规范，定义了全局对象 JSON。</p><p>JSON 对象有两个方法：stringify() 和 parse()，分别用于把 JavaScript 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 JavaScript 值。</p><pre><code class="JavaScript">var book = {
         title: &quot;Professional JavaScript&quot;,
         authors: [
             &quot;Nicholas C. Zakas&quot;
@@ -676,15 +70,9 @@ var jsonText = JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);
 console.log(jsonText);
 // {&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:[&quot;Nicholas C. Zakas&quot;],&quot;edition&quot;:3,&quot;year&quot;:2011}
 var bookCopy =JSON.parse(jsonText);
-</code></pre>
-<p><strong>序列化选项</strong>: JSON.stringify() 除了要序列化的 JavaScript 对象外，还可以接收另外两个参数指定以不同的方式序列化。<br>第一个参数是数据，第二个参数是个过滤器，可以是一个数组或函数；第三个参数是一个选项，表示是否在 JSON 字符串中保留缩进。</p>
-<p>1.过滤结果：</p>
-<p>如果过滤器参数是<strong>数组</strong>，那么 JSON.stringify()的结果中将只包含数组中列出的属性。</p>
-<pre><code class="JavaScript">var jsonText = JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);
+</code></pre><p><strong>序列化选项</strong>: JSON.stringify() 除了要序列化的 JavaScript 对象外，还可以接收另外两个参数指定以不同的方式序列化。<br>第一个参数是数据，第二个参数是个过滤器，可以是一个数组或函数；第三个参数是一个选项，表示是否在 JSON 字符串中保留缩进。</p><p>1.过滤结果：</p><p>如果过滤器参数是<strong>数组</strong>，那么 JSON.stringify()的结果中将只包含数组中列出的属性。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, [&quot;title&quot;, &quot;edition&quot;]);
 //{&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;edition&quot;:3}
-</code></pre>
-<p>如果过滤器参数是<strong>函数</strong>，传入的函数接收两个参数，属性（键）名和属性值。</p>
-<pre><code class="JavaScript">var jsonText = JSON.stringify(book, function(key, value){
+</code></pre><p>如果过滤器参数是<strong>函数</strong>，传入的函数接收两个参数，属性（键）名和属性值。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, function(key, value){
    switch(key){
        case &quot;authors&quot;:
            return value.join(&quot;,&quot;)
@@ -697,13 +85,8 @@ var bookCopy =JSON.parse(jsonText);
    }
 });
 //{&quot;title&quot;:&quot;Professional JavaScript&quot;,&quot;authors&quot;:&quot;Nicholas C. Zakas&quot;,&quot;year&quot;:5000}
-</code></pre>
-<p>2.字符串缩进</p>
-<p>JSON.stringify()方法的第三个参数用于控制结果中的缩进和空白符。<br>如果这个参数是一个<strong>数值</strong>，那它表示的是每个级别缩进的空格数。</p>
-<pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, 4);
-</code></pre>
-<p>结果：</p>
-<pre><code class="JSON">{
+</code></pre><p>2.字符串缩进</p><p>JSON.stringify()方法的第三个参数用于控制结果中的缩进和空白符。<br>如果这个参数是一个<strong>数值</strong>，那它表示的是每个级别缩进的空格数。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, 4);
+</code></pre><p>结果：</p><pre><code class="JSON">{
     &#39;title&#39;: &#39;Professional JavaScript&#39;,
     &#39;authors&#39;: [
         &#39;Nicholas C. Zakas&#39;
@@ -711,12 +94,8 @@ var bookCopy =JSON.parse(jsonText);
     &#39;edition&#39;: 3,
     &#39;year&#39;: 2011
 }
-</code></pre>
-<p>如果缩进参数是一个字符串而非数值，则这个字符串将在 JSON 字符串中被用作缩进字符（不再使用空格）。</p>
-<pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, &quot; - -&quot;);
-</code></pre>
-<p>结果：</p>
-<pre><code class="JSON">{
+</code></pre><p>如果缩进参数是一个字符串而非数值，则这个字符串将在 JSON 字符串中被用作缩进字符（不再使用空格）。</p><pre><code class="JavaScript">var jsonText = JSON.stringify(book, null, &quot; - -&quot;);
+</code></pre><p>结果：</p><pre><code class="JSON">{
  - -&#39;title&#39;: &#39;Professional JavaScript&#39;,
  - -&#39;authors&#39;: [
  - - - -&#39;Nicholas C. Zakas&#39;
@@ -724,11 +103,7 @@ var bookCopy =JSON.parse(jsonText);
  - -&#39;edition&#39;: 3,
  - -&#39;year&#39;: 2011
 }
-</code></pre>
-<p>缩进字符串最长不能超过 10 个字符长。如果字符串长度超过了 10 个，结果中将只出现前 10 个字符。</p>
-<p>3.toJSON()方法</p>
-<p>给对象自定义 toJSON() 方法，返回其自身的 JSON 数据格式。</p>
-<pre><code class="JavaScript">var book = {
+</code></pre><p>缩进字符串最长不能超过 10 个字符长。如果字符串长度超过了 10 个，结果中将只出现前 10 个字符。</p><p>3.toJSON()方法</p><p>给对象自定义 toJSON() 方法，返回其自身的 JSON 数据格式。</p><pre><code class="JavaScript">var book = {
         &quot;title&quot;: &quot;Professional JavaScript&quot;,
         &quot;authors&quot;: [
             &quot;Nicholas C. Zakas&quot;
@@ -741,10 +116,7 @@ var bookCopy =JSON.parse(jsonText);
     };
 var jsonText = JSON.stringify(book);
 console.log(jsonText);
-</code></pre>
-<p>假设把一个对象传入 JSON.stringify()，序列化该对象的顺序如下：<br>(1) 如果存在 toJSON() 方法而且能通过它取得有效的值，则调用该方法。否则，返回对象本身。<br>(2) 如果提供了第二个参数，应用这个函数过滤器。传入函数过滤器的值是第(1)步返回的值。<br>(3) 对第(2)步返回的每个值进行相应的序列化。<br>(4) 如果提供了第三个参数，执行相应的格式化。</p>
-<p><strong>解析选项</strong>：JSON.parse() 方法也可以接收另一个参数，该参数是一个函数（还原函数），将在每个键值对儿上调用。<br>如果还原函数返回 undefined，则表示要从结果中删除相应的键；如果返回其他值，则将该值插入到结果中。</p>
-<pre><code class="JavaScript"> var book = {
+</code></pre><p>假设把一个对象传入 JSON.stringify()，序列化该对象的顺序如下：<br>(1) 如果存在 toJSON() 方法而且能通过它取得有效的值，则调用该方法。否则，返回对象本身。<br>(2) 如果提供了第二个参数，应用这个函数过滤器。传入函数过滤器的值是第(1)步返回的值。<br>(3) 对第(2)步返回的每个值进行相应的序列化。<br>(4) 如果提供了第三个参数，执行相应的格式化。</p><p><strong>解析选项</strong>：JSON.parse() 方法也可以接收另一个参数，该参数是一个函数（还原函数），将在每个键值对儿上调用。<br>如果还原函数返回 undefined，则表示要从结果中删除相应的键；如果返回其他值，则将该值插入到结果中。</p><pre><code class="JavaScript"> var book = {
         &quot;title&quot;: &quot;Professional JavaScript&quot;,
         &quot;authors&quot;: [
             &quot;Nicholas C. Zakas&quot;
@@ -763,39 +135,10 @@ var bookCopy = JSON.parse(jsonText, function(key, value){
     }
 });
 console.log(&quot;releaseDate&quot; in bookCopy);
-</code></pre>
-<h1 id="第二十一章-Ajax-与-Comet"><a href="#第二十一章-Ajax-与-Comet" class="headerlink" title="第二十一章 Ajax 与 Comet"></a>第二十一章 Ajax 与 Comet</h1><p>Ajax(Asynchronous Javascript + XML)技术的核心是 XMLHttpRequest 对象，即: XHR。<br>它所指的仅仅是<strong>无须刷新页面即可从服务器端获取数据</strong>的技术，其通信与数据格式无关，并不一定是 XML 数据。</p>
-<h2 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h2><p><strong>XHR的用法</strong>：</p>
-<p>使用 XMLHttpRequest 构造函数来创建 XHR 对象。</p>
-<pre><code class="JavaScript">var xhr = new XMLHttpRequest();
-</code></pre>
-<p>使用 XHR对象的时候，要调用的第一个方法是open()，它接受3个参数:</p>
-<ol>
-<li>要发送请求的类型，如: get/post</li>
-<li>请求的 url</li>
-<li>是否异步发送请求，这个参数是一个布尔值</li>
-</ol>
-<p>再调用 send() 方法，才会真正发起 ajax 请求。</p>
-<pre><code class="JavaScript">xhr.open(&#39;get&#39;, &#39;example.php&#39;, false)
+</code></pre><h1 id="第二十一章-Ajax-与-Comet"><a href="#第二十一章-Ajax-与-Comet" class="headerlink" title="第二十一章 Ajax 与 Comet"></a>第二十一章 Ajax 与 Comet</h1><p>Ajax(Asynchronous Javascript + XML)技术的核心是 XMLHttpRequest 对象，即: XHR。<br>它所指的仅仅是<strong>无须刷新页面即可从服务器端获取数据</strong>的技术，其通信与数据格式无关，并不一定是 XML 数据。</p><h2 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h2><p><strong>XHR的用法</strong>：</p><p>使用 XMLHttpRequest 构造函数来创建 XHR 对象。</p><pre><code class="JavaScript">var xhr = new XMLHttpRequest();
+</code></pre><p>使用 XHR对象的时候，要调用的第一个方法是open()，它接受3个参数:</p><ol><li>要发送请求的类型，如: get/post</li><li>请求的 url</li><li>是否异步发送请求，这个参数是一个布尔值</li></ol><p>再调用 send() 方法，才会真正发起 ajax 请求。</p><pre><code class="JavaScript">xhr.open(&#39;get&#39;, &#39;example.php&#39;, false)
 xhr.send(null);
-</code></pre>
-<p>本例中的请求是同步的，Javascript 代码会等到服务器响应之后再执行。<br>收到响应后，响应的数据会自动填充 XHR 对象的属性，相关的属性有:</p>
-<ul>
-<li>responseText: 作为响应主体被返回的文本。</li>
-<li>responseXML: 如果响应的内容类型是 “text/xml” 或者 “application/xml”，那么这个属性中将保存着包含响应数据的 XML DOM 文档。</li>
-<li>status: 响应的 HTTP 状态。</li>
-<li>statusText: HTTP 状态的说明。</li>
-</ul>
-<p>发送异步请求：JavaScript 继续执行而不必等待。<br>此时，我们可以检测readyState属性，该属性表示请求/响应过程的当前活动阶段。它的可取值有如下几种：</p>
-<ul>
-<li>0: 未初始化。 尚未调用 open() 方法。</li>
-<li>1: 启动。 已经调用open()方法，但，尚未调用send()方法。</li>
-<li>2: 发送。 已经调用send()方法，但，尚未接收到响应。</li>
-<li>3: 接收。 已经接收到部分响应数据。</li>
-<li>4: 完成。 已经接收到全部响应数据，而且已经可以在客户端使用了。</li>
-</ul>
-<p>readyState 属性的每一次变化，都会触发一次 readyStateChange 事件，我们可以利用这个事件来检测 readyState 值。</p>
-<pre><code class="JavaScript">var xhr = new XMLHttpRequest();
+</code></pre><p>本例中的请求是同步的，Javascript 代码会等到服务器响应之后再执行。<br>收到响应后，响应的数据会自动填充 XHR 对象的属性，相关的属性有:</p><ul><li>responseText: 作为响应主体被返回的文本。</li><li>responseXML: 如果响应的内容类型是 “text/xml” 或者 “application/xml”，那么这个属性中将保存着包含响应数据的 XML DOM 文档。</li><li>status: 响应的 HTTP 状态。</li><li>statusText: HTTP 状态的说明。</li></ul><p>发送异步请求：JavaScript 继续执行而不必等待。<br>此时，我们可以检测readyState属性，该属性表示请求/响应过程的当前活动阶段。它的可取值有如下几种：</p><ul><li>0: 未初始化。 尚未调用 open() 方法。</li><li>1: 启动。 已经调用open()方法，但，尚未调用send()方法。</li><li>2: 发送。 已经调用send()方法，但，尚未接收到响应。</li><li>3: 接收。 已经接收到部分响应数据。</li><li>4: 完成。 已经接收到全部响应数据，而且已经可以在客户端使用了。</li></ul><p>readyState 属性的每一次变化，都会触发一次 readyStateChange 事件，我们可以利用这个事件来检测 readyState 值。</p><pre><code class="JavaScript">var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function(){
     if(xhr.readyState == 4){
         if( (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304){
@@ -808,33 +151,12 @@ xhr.onreadystatechange = function(){
 }
 xhr.open(&#39;get&#39;, &#39;example.txt&#39;, true);
 xhr.send(null);
-</code></pre>
-<p>在接收到响应之前，可以调用 abort() 方法来取消异步请求。</p>
-<pre><code class="JavaScript">xhr.abort();
-</code></pre>
-<p><strong>HTTP 头部信息</strong>：XHR 对象提供了操作头部信息的方法，包括对请求头部和响应头部的操作。</p>
-<p>默认情况下，发送XHR请求的同时，还会发送以下头部信息:</p>
-<ul>
-<li>Accept: 浏览器能够处理的内容类型</li>
-<li>Accept-Charset: 浏览器能够显示的字符集</li>
-<li>Accept-Encoding: 浏览器能够处理的压缩编码</li>
-<li>Accept-Language: 浏览器当前设置的语言</li>
-<li>Connection: 浏览器与服务器之间的连接类型</li>
-<li>Cookie: 当前页面的任何Cookie</li>
-<li>Host: 发出请求的页面，所在的域</li>
-<li>Referer: 发出请求的页面的URI</li>
-<li>User-Agent: 浏览器的用户代理字符串</li>
-</ul>
-<p>setRequestHeader()：自定义的头部信息。</p>
-<pre><code class="JavaScript">xhr.open(&#39;get&#39;, &#39;example.txt&#39;, true);
+</code></pre><p>在接收到响应之前，可以调用 abort() 方法来取消异步请求。</p><pre><code class="JavaScript">xhr.abort();
+</code></pre><p><strong>HTTP 头部信息</strong>：XHR 对象提供了操作头部信息的方法，包括对请求头部和响应头部的操作。</p><p>默认情况下，发送XHR请求的同时，还会发送以下头部信息:</p><ul><li>Accept: 浏览器能够处理的内容类型</li><li>Accept-Charset: 浏览器能够显示的字符集</li><li>Accept-Encoding: 浏览器能够处理的压缩编码</li><li>Accept-Language: 浏览器当前设置的语言</li><li>Connection: 浏览器与服务器之间的连接类型</li><li>Cookie: 当前页面的任何Cookie</li><li>Host: 发出请求的页面，所在的域</li><li>Referer: 发出请求的页面的URI</li><li>User-Agent: 浏览器的用户代理字符串</li></ul><p>setRequestHeader()：自定义的头部信息。</p><pre><code class="JavaScript">xhr.open(&#39;get&#39;, &#39;example.txt&#39;, true);
 xhr.setRequestHeader(&quot;MySite&quot;, &quot;wshunli.com&quot;);
 xhr.send(null);
-</code></pre>
-<p>getResponseHeader()：获取响应头部信息。</p>
-<pre><code class="JavaScript">var mySite = xhr.getResponseHeader(&#39;MySite&#39;); // wshunli.com
-</code></pre>
-<p>getAllResponseHeaders()：在服务器端，也可以利用头部信息向浏览器发送额外的结构化数据。</p>
-<pre><code class="JavaScript">var allHeaders = xhr.getAllResponseHeaders();
+</code></pre><p>getResponseHeader()：获取响应头部信息。</p><pre><code class="JavaScript">var mySite = xhr.getResponseHeader(&#39;MySite&#39;); // wshunli.com
+</code></pre><p>getAllResponseHeaders()：在服务器端，也可以利用头部信息向浏览器发送额外的结构化数据。</p><pre><code class="JavaScript">var allHeaders = xhr.getAllResponseHeaders();
 // 返回内容
 Date: Sun, 14 Nov 2004 18:04:22 GMT
 Server: Apache/1.3.29 (Unix)
@@ -842,34 +164,21 @@ Vary: Accept
 X-Powerd-By: PHP/4.3.8
 Connection: close
 Content-Type: text/html; charset=iso-8859-1
-</code></pre>
-<p><strong>GET 请求</strong>：向服务器查询某些信息。</p>
-<pre><code class="JavaScript">xhr.open(&quot;get&quot;, &quot;example.php?name1=value1&amp;name2=value2&quot;, true);
-</code></pre>
-<p><strong>POST 请求</strong>：向服务器发送应该被保存的数据。</p>
-<pre><code class="JavaScript">xhr.open(&quot;post&quot;, &quot;post.php&quot;, true);
+</code></pre><p><strong>GET 请求</strong>：向服务器查询某些信息。</p><pre><code class="JavaScript">xhr.open(&quot;get&quot;, &quot;example.php?name1=value1&amp;name2=value2&quot;, true);
+</code></pre><p><strong>POST 请求</strong>：向服务器发送应该被保存的数据。</p><pre><code class="JavaScript">xhr.open(&quot;post&quot;, &quot;post.php&quot;, true);
 xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
 var form = document.getElementById(&quot;my-form&quot;);
 xhr.send(serialize(form));
-</code></pre>
-<h2 id="XMLHttpRequest-2-级"><a href="#XMLHttpRequest-2-级" class="headerlink" title="XMLHttpRequest 2 级"></a>XMLHttpRequest 2 级</h2><p><strong>FormData</strong>：</p>
-<p>XMLHttpRequest 2 级定义了 FormData 类型，来处理表单数据的序列化，以及创建与表单格式相同的数据。</p>
-<pre><code class="JavaScript">var data = new FormData();
+</code></pre><h2 id="XMLHttpRequest-2-级"><a href="#XMLHttpRequest-2-级" class="headerlink" title="XMLHttpRequest 2 级"></a>XMLHttpRequest 2 级</h2><p><strong>FormData</strong>：</p><p>XMLHttpRequest 2 级定义了 FormData 类型，来处理表单数据的序列化，以及创建与表单格式相同的数据。</p><pre><code class="JavaScript">var data = new FormData();
 // 添加键值对
 data.append(&#39;site&#39;, &#39;wshunli.com&#39;);
 // 直接传入表单元素
 var data = new FormData(document.forms[0]);
-</code></pre>
-<p>创建 FromData 的实例后，就可以传给 XHR 的 send() 方法。</p>
-<pre><code class="JavaScript">var xhr = new XMLHttpRequest();
+</code></pre><p>创建 FromData 的实例后，就可以传给 XHR 的 send() 方法。</p><pre><code class="JavaScript">var xhr = new XMLHttpRequest();
  ···
 var form = document.getElementById(&#39;site-info&#39;);
 xhr.send(new FormData(form));
-</code></pre>
-<p>XHR 对象能够识别传入的数据类型是 FormData 的实例，并配置适当的头部信息。</p>
-<p><strong>超时设定</strong>：</p>
-<p>XHR 对象添加了一个 timeout 属性，表示请求在等待多少毫秒之后就终止。</p>
-<pre><code class="JavaScript">var xhr = new XMLHttpRequest();
+</code></pre><p>XHR 对象能够识别传入的数据类型是 FormData 的实例，并配置适当的头部信息。</p><p><strong>超时设定</strong>：</p><p>XHR 对象添加了一个 timeout 属性，表示请求在等待多少毫秒之后就终止。</p><pre><code class="JavaScript">var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function(){
     try{
         if(xhr.readyState == 4){
@@ -890,27 +199,11 @@ xhr.ontimeout = function(){
     console.log(&#39;fail, timeout&#39;);
 }
 xhr.send(null);
-</code></pre>
-<p>在给 timeout 设置一个数值后，如果在规定时间内浏览器没有接收到响应信息，就会触发 timeout 事件，进而会调用 ontimeout 事件处理程序。<br>如果在超时终止请求之后再访问 status 属性，就会导致错误。因此，将相关的代码封装到 try-catch 语句中。</p>
-<p><strong>overrideMimeType() 方法</strong>：重写 XHR 响应的 MIME 类型。</p>
-<pre><code class="JavaScript">var xhr = createXHR();
+</code></pre><p>在给 timeout 设置一个数值后，如果在规定时间内浏览器没有接收到响应信息，就会触发 timeout 事件，进而会调用 ontimeout 事件处理程序。<br>如果在超时终止请求之后再访问 status 属性，就会导致错误。因此，将相关的代码封装到 try-catch 语句中。</p><p><strong>overrideMimeType() 方法</strong>：重写 XHR 响应的 MIME 类型。</p><pre><code class="JavaScript">var xhr = createXHR();
 xhr.open(&#39;get&#39;, &#39;text.php&#39;, true);
 xhr.overrideMimeType(&#39;text/xml&#39;);
 xhr.send(null);
-</code></pre>
-<h2 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h2><p>进度事件包括以下6个：</p>
-<ul>
-<li>loadstart: 在接收到响应数据的第一个字节时触发</li>
-<li>progress: 在接收响应期间持续不断地触发</li>
-<li>error: 在请求发生错误时触发</li>
-<li>abort: 在因为调用 abort() 方法而终止连接时触发</li>
-<li>load: 在接收到完整的响应数据时触发</li>
-<li>loadend: 在通信完成或者触发 error、abort 或 load 事件之后触发</li>
-</ul>
-<p>每个请求都从触发 loadstart 事件开始，接下来是一个或多个 progress 事件，然后触发 error、abort 或者 load 事件中的一个，最后以触发 loadend 事件结束。</p>
-<p><strong>load 事件</strong>：响应接收完毕后将触发 load 事件，因此就没有必要再去检查 readyState 属性了。</p>
-<p><strong>progress 事件</strong>：progress 事件会在浏览器接收新数据的过程中周期性地被触发。</p>
-<pre><code class="JavaScript">var xhr = createXHR();
+</code></pre><h2 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h2><p>进度事件包括以下6个：</p><ul><li>loadstart: 在接收到响应数据的第一个字节时触发</li><li>progress: 在接收响应期间持续不断地触发</li><li>error: 在请求发生错误时触发</li><li>abort: 在因为调用 abort() 方法而终止连接时触发</li><li>load: 在接收到完整的响应数据时触发</li><li>loadend: 在通信完成或者触发 error、abort 或 load 事件之后触发</li></ul><p>每个请求都从触发 loadstart 事件开始，接下来是一个或多个 progress 事件，然后触发 error、abort 或者 load 事件中的一个，最后以触发 loadend 事件结束。</p><p><strong>load 事件</strong>：响应接收完毕后将触发 load 事件，因此就没有必要再去检查 readyState 属性了。</p><p><strong>progress 事件</strong>：progress 事件会在浏览器接收新数据的过程中周期性地被触发。</p><pre><code class="JavaScript">var xhr = createXHR();
 xhr.onload = function(){
     if( (xhr.status &gt;=200 &amp;&amp; xhr.status &lt; 300) || xhr.status ==304 ){
         console.log(xhr.responseText);
@@ -927,69 +220,29 @@ xhr.onprogress = function(event){
 }
 xhr.open(&#39;get&#39;, &#39;progress.php&#39;, true);
 xhr.send(null);
-</code></pre>
-<p>onprogress 事件处理程序，会接收到一个event对象，其 target 属性是 XHR 对象。<br>event 对象还包含了另外3个额外属性：lengthComputable、position、totalSize。</p>
-<ul>
-<li>lengthComputable 是一个布尔值，它表示进度信息是否可用；</li>
-<li>position 表示已经接收的字节数；</li>
-<li>totalSize 表示根据 Content-Length 响应头确定的预期字节数。</li>
-</ul>
-<h2 id="跨域资源共享"><a href="#跨域资源共享" class="headerlink" title="跨域资源共享"></a>跨域资源共享</h2><p>CORS（Cross-Origin Resource Sharing，跨域资源共享）：使用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是应该失败。IE中要使用XDR对象实现，其他浏览器XHR对象原生支持。</p>
-<pre><code class="JavaScript">// 发送请求附加 Origin 头部
+</code></pre><p>onprogress 事件处理程序，会接收到一个event对象，其 target 属性是 XHR 对象。<br>event 对象还包含了另外3个额外属性：lengthComputable、position、totalSize。</p><ul><li>lengthComputable 是一个布尔值，它表示进度信息是否可用；</li><li>position 表示已经接收的字节数；</li><li>totalSize 表示根据 Content-Length 响应头确定的预期字节数。</li></ul><h2 id="跨域资源共享"><a href="#跨域资源共享" class="headerlink" title="跨域资源共享"></a>跨域资源共享</h2><p>CORS（Cross-Origin Resource Sharing，跨域资源共享）：使用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是应该失败。IE中要使用XDR对象实现，其他浏览器XHR对象原生支持。</p><pre><code class="JavaScript">// 发送请求附加 Origin 头部
 Origin: http://www.wshunli.com
 // 响应请求
 Access-Control-Allow-Origin: http://www.wshunli.com
-</code></pre>
-<p><strong>图像 Ping</strong>：动态创建图像经常用于图像 Ping 。</p>
-<pre><code class="JavaScript">var img = new Image();
+</code></pre><p><strong>图像 Ping</strong>：动态创建图像经常用于图像 Ping 。</p><pre><code class="JavaScript">var img = new Image();
 img.onload = img.onerror = function(){
     console.log(&#39;Done&#39;);
 }
 img.src = &#39;http://www.wshunli.com/test?action=click&#39;;
-</code></pre>
-<p>我们可以动态地创建图像，使用它们的 onload 和 onerror 事件处理程序来确定是否接收到了响应。</p>
-<p><strong>JSOUP</strong>：(JSON with padding，填充式 JSON 或参数式 JSON) 它看起来与 JSON 非常相似，只不过是被包含在函数调用中的 JSON。</p>
-<pre><code class="JavaScript">function handleResponse(response){
+</code></pre><p>我们可以动态地创建图像，使用它们的 onload 和 onerror 事件处理程序来确定是否接收到了响应。</p><p><strong>JSOUP</strong>：(JSON with padding，填充式 JSON 或参数式 JSON) 它看起来与 JSON 非常相似，只不过是被包含在函数调用中的 JSON。</p><pre><code class="JavaScript">function handleResponse(response){
     console.log(&quot;You&#39;re at IP address &quot; + response.ip + &quot;, which is in &quot; + response.city + &quot;, &quot; + response.region_name);
 }
 var script = document.createElement(&quot;script&quot;);
 script.src = &quot;http://freegeoip.net/json/?callback=handleResponse&quot;;
 document.body.insertBefore(script, document.body.firstChild);
-</code></pre>
-<p><strong>Comet</strong>: 一种服务器向页面推送数据的技术。</p>
-<p>实现Comet有 2 种方式: 长轮询和流。<br>1.长轮询是相对于传统轮询(短轮询)而言的，传统轮询即浏览器定时向服务器发送请求，查看是否有数据更新。<br>而长轮询则是，页面向服务器发起一个请求后，服务器一直保持连接打开，直到有数据可以发送。<br>发送完数据后，浏览器关闭连接，随即又向服务器发起一个新的请求。<br>这一过程在页面打开期间一直持续不断。<br>2.另外一种实现 Comet 的方式就是HTTP流。流的特点是，在页面的整个生命周期内只有使用一个HTTP连接。<br>也就是说，浏览器向服务器发送一个请求后，服务器保持连接打开，然后周期性地向浏览器发送数据</p>
-<p><strong>服务器发送事件</strong>：SSE(Server-Sent Events)服务器发送事件，是围绕只读 Comet 交互推出的 API 或者模式。</p>
-<p><strong>Web Sockets</strong>：Web Sockets 的目标是在一个单独的持久连接上提供全双工、双向通信。</p>
-<p>创建 Web Sockets，可以先实例一个 WebSocket 对象并传入要连接 URL:</p>
-<pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/socket.php&#39;);
-</code></pre>
-<p>实例化 WebSocket 对象之后，浏览器就会马上尝试创建连接。与 XHR 类似，WebSocket也有一个表示当前状态的 readyState 属性。</p>
-<ul>
-<li>WebSocket.OPENING (0) : 正在建立连接</li>
-<li>WebSocket.OPEN (1): 已经建立连接</li>
-<li>WebSocket.CLOSING (2): 正在关闭连接</li>
-<li>WebSocket.CLOSE (3): 已经关闭连接</li>
-</ul>
-<p>WebSocket 没有 readystatechange 事件，readyState 的值永远从0开始。<br>要关闭 Web Socket 连接，可以在任何时候调用close()方法。<br>调用该方法后，readyState 的值立即变为2(正在关闭)，当成功关闭连接后变为3。</p>
-<pre><code class="JavaScript">socket.close();
-</code></pre>
-<p>发送和接收数据：Web Socket 打开之后就可以通过连接发送和接收数据。</p>
-<pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/socket.php&#39;);
+</code></pre><p><strong>Comet</strong>: 一种服务器向页面推送数据的技术。</p><p>实现Comet有 2 种方式: 长轮询和流。<br>1.长轮询是相对于传统轮询(短轮询)而言的，传统轮询即浏览器定时向服务器发送请求，查看是否有数据更新。<br>而长轮询则是，页面向服务器发起一个请求后，服务器一直保持连接打开，直到有数据可以发送。<br>发送完数据后，浏览器关闭连接，随即又向服务器发起一个新的请求。<br>这一过程在页面打开期间一直持续不断。<br>2.另外一种实现 Comet 的方式就是HTTP流。流的特点是，在页面的整个生命周期内只有使用一个HTTP连接。<br>也就是说，浏览器向服务器发送一个请求后，服务器保持连接打开，然后周期性地向浏览器发送数据</p><p><strong>服务器发送事件</strong>：SSE(Server-Sent Events)服务器发送事件，是围绕只读 Comet 交互推出的 API 或者模式。</p><p><strong>Web Sockets</strong>：Web Sockets 的目标是在一个单独的持久连接上提供全双工、双向通信。</p><p>创建 Web Sockets，可以先实例一个 WebSocket 对象并传入要连接 URL:</p><pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/socket.php&#39;);
+</code></pre><p>实例化 WebSocket 对象之后，浏览器就会马上尝试创建连接。与 XHR 类似，WebSocket也有一个表示当前状态的 readyState 属性。</p><ul><li>WebSocket.OPENING (0) : 正在建立连接</li><li>WebSocket.OPEN (1): 已经建立连接</li><li>WebSocket.CLOSING (2): 正在关闭连接</li><li>WebSocket.CLOSE (3): 已经关闭连接</li></ul><p>WebSocket 没有 readystatechange 事件，readyState 的值永远从0开始。<br>要关闭 Web Socket 连接，可以在任何时候调用close()方法。<br>调用该方法后，readyState 的值立即变为2(正在关闭)，当成功关闭连接后变为3。</p><pre><code class="JavaScript">socket.close();
+</code></pre><p>发送和接收数据：Web Socket 打开之后就可以通过连接发送和接收数据。</p><pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/socket.php&#39;);
 socket.send(&quot;Hello World!&quot;);
-</code></pre>
-<p>Web Socket 只能通过连接发送纯文本数据，对于复杂数据必须进行序列化。</p>
-<pre><code class="JavaScript">socket.onmessage = function(event){
+</code></pre><p>Web Socket 只能通过连接发送纯文本数据，对于复杂数据必须进行序列化。</p><pre><code class="JavaScript">socket.onmessage = function(event){
     var data = event.data;
 }
-</code></pre>
-<p>当服务器向客户端发来消息时，WebSocket 对象就会触发 message 事件。</p>
-<p>WebSocket 对象的其他事件：<br>WebSocket对象还有其他3个事件，在连接生命周期的不同阶段触发。</p>
-<ul>
-<li>open: 在成功建立连接时触发</li>
-<li>error: 在发生错误时触发，连接不能持续</li>
-<li>close: 在连接关闭时触发</li>
-</ul>
-<pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/server.php&#39;);
+</code></pre><p>当服务器向客户端发来消息时，WebSocket 对象就会触发 message 事件。</p><p>WebSocket 对象的其他事件：<br>WebSocket对象还有其他3个事件，在连接生命周期的不同阶段触发。</p><ul><li>open: 在成功建立连接时触发</li><li>error: 在发生错误时触发，连接不能持续</li><li>close: 在连接关闭时触发</li></ul><pre><code class="JavaScript">var socket = new WebSocket(&#39;ws://www.wshunli.com/server.php&#39;);
 socket.onopen = function(){
     console.log(&#39;WebSocket Opened.&#39;)
 }
@@ -999,421 +252,10 @@ socket.onerror = function(){
 socket.onclose = function(){
     console.log(&#39;WebSocket Closed.&#39;)
 }
-</code></pre>
-<p>其中只有 close 事件的event的对象有额外的信息。这个事件的事件对象有3个额外属性: wasClean、code 和 reason。<br>其中，wasClean 是一个布尔值，表示连接是否已经明确关闭；code 是服务器返回的数值状态码；而 reason 是一个字符串，包含服务器发回的信息。</p>
-<pre><code class="JavaScript">socket.onclose = function(event){
+</code></pre><p>其中只有 close 事件的event的对象有额外的信息。这个事件的事件对象有3个额外属性: wasClean、code 和 reason。<br>其中，wasClean 是一个布尔值，表示连接是否已经明确关闭；code 是服务器返回的数值状态码；而 reason 是一个字符串，包含服务器发回的信息。</p><pre><code class="JavaScript">socket.onclose = function(event){
     console.log(event.wasClean + &#39;,&#39; + event.code + &#39;,&#39; + event.reason);
 }
-</code></pre>
-
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli">  您的鼓励与支持，我会铭记于心，倾于博客。
-                        </strong>
-                        <br>
-                        <strong>本文链接：</strong><a href="http://www.wshunli.com/posts/4d143b68.html">http://www.wshunli.com/posts/4d143b68.html</a>
-                    </p>
-                </blockquote>
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
-<script src="//cdn.wshunli.com/source/av-min.js"></script>
-<script src="//cdn.wshunli.com/source/Valine.min.js"></script>
-<script>
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-        return GUEST_INFO.indexOf(item) > -1
-    });
-    var notify = 'false' == true;
-    var verify = 'false' == true;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",
-        appKey: "cuNKDo2T90xY7IjfGh21RMoQ",
-        placeholder: "念念不忘，必有回响",
-        pageSize:'10',
-        avatar:'mm',
-        lang:'zh-cn'
-    });
-</script>
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/posts/281a70b1.html" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/posts/228afe2f.html" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(https://cdn.wshunli.com/source/img/snow_square_tiny.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        admin@wshunli.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/GIS资料分享/">GIS资料分享<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/GIS软件操作/">GIS软件操作<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术分享/">技术分享<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/tags" title="标签云">
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/timeline" title="时间轴">
-                
-                时间轴
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/zzupic" title="郑州大学">
-                
-                郑州大学
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/whupic" title="武汉大学">
-                
-                武汉大学
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="友情链接">
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于本站">
-                
-                关于本站
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">108</span>
-            </a>
-        </li>
-        
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-     <!-- Github -->
-    
-        <a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-   <!-- Weibo -->
-    
-        <a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>CirGIS
-            
-                <br>
-                
-                    <div> Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>. </div> <div> CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>. </div> <div> <a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">服务状态</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">站点地图</a>. <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">百度统计</a>. </div>
-                
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js", true)</script>
-
-
-
-    <script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js", true)</script>
-
-
-
-    <script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
+</code></pre><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="http://www.wshunli.com/posts/4d143b68.html">http://www.wshunli.com/posts/4d143b68.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="//cdn.wshunli.com/source/av-min.js"></script><script src="//cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mm",lang:"zh-cn"})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/281a70b1.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/228afe2f.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/GIS资料分享/">GIS资料分享<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/GIS软件操作/">GIS软件操作<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术分享/">技术分享<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">108</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>.</div><div>CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">服务状态</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">站点地图</a>. <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">百度统计</a>.</div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
@@ -1430,24 +272,7 @@ It will not impact the appearance and can give developers a lot of support :)
     setTimeout(function() {
         NProgress.done();
         $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-    
-        <script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js", true)</script>
-    
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz', 'cuNKDo2T90xY7IjfGh21RMoQ');
-    </script>
-    <script type="text/ls-javascript" id="leancloud-views-script">
-    function showTime(Counter) {
+    }, 800);</script><script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js",!0)</script><script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script><script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz","cuNKDo2T90xY7IjfGh21RMoQ")</script><script type="text/ls-javascript" id="leancloud-views-script">function showTime(Counter) {
         var query = new AV.Query(Counter);
         $('.leancloud-views_num').each(function() {
             var url = $(this).attr('id').trim();
@@ -1522,43 +347,7 @@ It will not impact the appearance and can give developers a lot of support :)
         } else if ($('.post-title-link').length > 1) {
             showTime(Counter);
         }
-    });
-</script>
-
-
-
-
-
-
-   
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-        
-            <script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js", true)</script>
-        
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
+    });</script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
@@ -1570,20 +359,7 @@ It will not impact the appearance and can give developers a lot of support :)
                 // 影响 hexo-tag-demo 代码高亮
                 $('.demobox-code-wrap pre').removeClass('linenums');
                                 prettyPrint();
-                })
-        
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
+                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
@@ -1595,27 +371,4 @@ It will not impact the appearance and can give developers a lot of support :)
         setInterval(function(){
             queue.execNext();
         },200);
-    });
-</script>
-
-<!-- Custom Footer -->
-
-
-
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
-
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+    });</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>
