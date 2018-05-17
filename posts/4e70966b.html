@@ -4,13 +4,13 @@
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#0097a7!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#0097a7!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#0097a7!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/4e70966b.html"><meta name="msapplication-navbutton-color" content="#0097A7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/4e70966b.html"><meta property="og:type" content="blog"><meta property="og:title" content="《Java多线程编程核心技术》读书笔记 | CirGIS"><meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico"><meta property="og:description" content="前面面试什么的多线程部分问的比较多，需要加强下"><meta property="og:article:tag" content="Java"><meta property="og:article:tag" content="读书笔记"><meta property="og:article:tag" content="《Java多线程编程核心技术》"><meta property="article:published_time" content="Sat May 05 2018 22:47:09 GMT+0800"><meta property="article:modified_time" content="Wed May 16 2018 23:07:49 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/4e70966b.html"><script type="application/ld+json">{
+    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#0097a7!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#0097a7!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#0097a7!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/4e70966b.html"><meta name="msapplication-navbutton-color" content="#0097A7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://cdn.wshunli.com/source/img/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="https://www.wshunli.com/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/4e70966b.html"><meta property="og:type" content="blog"><meta property="og:title" content="《Java多线程编程核心技术》读书笔记 | CirGIS"><meta property="og:image" content="https://cdn.wshunli.com/source/img/favicon.ico"><meta property="og:description" content="前面面试什么的多线程部分问的比较多，需要加强下"><meta property="og:article:tag" content="Java"><meta property="og:article:tag" content="读书笔记"><meta property="og:article:tag" content="《Java多线程编程核心技术》"><meta property="article:published_time" content="Sat May 05 2018 22:47:09 GMT+0800"><meta property="article:modified_time" content="Thu May 17 2018 23:08:36 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/4e70966b.html"><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://www.wshunli.com/posts/4e70966b.html",
     "headline": "《Java多线程编程核心技术》读书笔记",
     "datePublished": "Sat May 05 2018 22:47:09 GMT+0800",
-    "dateModified": "Wed May 16 2018 23:07:49 GMT+0800",
+    "dateModified": "Thu May 17 2018 23:08:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -30,7 +30,7 @@
     },
     "keywords": ",Java,读书笔记,《Java多线程编程核心技术》wshunli CirGIS",
     "description": "前面面试什么的多线程部分问的比较多，需要加强下",
-}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-Java-多线程技能"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 Java 多线程技能</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-对象及变量的并发访问"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 对象及变量的并发访问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#synchronized-同步方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">synchronized 同步方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#synchronized-同步语句块"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">synchronized 同步语句块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#volatile-关键字"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">volatile 关键字</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-线程间通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 线程间通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#等待-通知机制"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">等待/通知机制</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/Java/java10.min.png)"><p class="article-headline-p">《Java多线程编程核心技术》读书笔记</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>5月 05, 2018</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aQW7DMAwEwPz/0+0DgrpLUpYMY3wKgjjW+CASS31+Xn198PDw8PDw8PDwHsb7xNf3Xd//8M+DW08p34WHh4e3hZcsq8r7/r76Upprw8PDw9vI+2vDvf7N9e+vF9QrP9fPwsPDw3syb1JO8pKDh4eH9w5etWAkQUOvhODh4eGd5fWa4F7sex3yHsta8PDw8GJevtz9n7fO9/Dw8PACXvlI06AFz4PgZYeu8PDw8G7gVYdbyUKrjXLv0BUeHh7eKV4eTCStdvJ9Elhcv5pmS42Hh4e3lFfd3PN2OX9xkzYdDw8P7xQvGi8VW+d5YSgXGDw8PLybeflQPxn2V8tMPnLLiw0eHh7eHl4Cq46pevcmdzVPRuDh4eEt4lXb2V77Oykq16WiGUbg4eHhLeLNt/5JGag25ctSajw8PLwWLx//5+xVh7fK4S8eHh7ezbxe61wIVYP/n0S6eHh4eE/gTVrbZHF5sWke4cLDw8O7mTd5WN5kVwGjBh0PDw/vZt5kuFXFV1v2ZhOPh4eHt4XXKxLViKEX3VZHaHh4eHhP4OURbV5akjKzrKXGw8PDu41XjQZWjdCqxWnBfA8PDw9vEa8X11ab4/yJ+YvAw8PD28mbjKx6se+kGETtOx4eHt7NvN52XC0J88NVeciLh4eHt4eXD5nywVh18D8JIPDw8PBO8aobdB7sTsrJskNXeHh4eEd5vS2+epCrWWDw8PDwHs+rbvrVY1VJ04+Hh4d3ileNGPIXlPxP74l4eHh4p3jVCCAfa+XNdPJSmmEEHh4e3lLe+y48PDw8PDw8PLwHXL8iT/cTTDfojwAAAABJRU5ErkJggg=="></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Java/">Java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《Java多线程编程核心技术》/">《Java多线程编程核心技术》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/4e70966b.html" class="leancloud-views_num" data-flag-title="《Java多线程编程核心技术》读书笔记">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《Java多线程编程核心技术》读书笔记&url=https://www.wshunli.com/posts/4e70966b.html&pic=https://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《Java多线程编程核心技术》读书笔记&summary=欢迎来到 wshunli`s Blog!&pics=https://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=https://www.wshunli.com/posts/4e70966b.html" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>前面面试什么的多线程部分问的比较多，需要加强下<a id="more"></a> ，这里记录总结 《Java多线程编程核心技术》 读书情况。</p><h1 id="第一章-Java-多线程技能"><a href="#第一章-Java-多线程技能" class="headerlink" title="第一章 Java 多线程技能"></a>第一章 Java 多线程技能</h1><p>本章主要介绍了线程概念、核心方法以及优先级。</p><p>1、进程和线程的区别</p><p><strong>进程</strong>是受操作系统管理的基本运行单元，是系统进行资源分配和调度的独立单位。<br><strong>线程</strong>是在进程中独立运行的子任务，CPU 在这些任务之间不停地切换，各子任务共享程序的内存空间。</p><p>线程和进程的区别是什么？ - 知乎：<br><a href="https://www.zhihu.com/question/25532384" rel="external nofollow noopener noreferrer" target="_blank">https://www.zhihu.com/question/25532384</a></p><p>2、线程的创建</p><p>（1）继承 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Thread.html" rel="external nofollow noopener noreferrer" target="_blank">Thread</a> 类</p><p>（2）实现 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Runnable.html" rel="external nofollow noopener noreferrer" target="_blank">Runnable</a> 接口</p><p>其中 Thread 类实现了 Runable 接口，都需要重写里面 run 方法。</p><p>两种方式的区别：</p><p>实现 Runnable 的类更具有健壮性，避免了单继承的局限。<br>Runnable 更容易实现资源共享，能多个线程同时处理一个资源。</p><p>Java中 Thread和Runnable实现多线程的区别和联系 - CSDN博客:<br><a href="https://blog.csdn.net/oxuanboy1/article/details/51733279" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/oxuanboy1/article/details/51733279</a></p><p><strong>非线程安全</strong> 主要是指多个线程对同一对象中的同一变量实例进行操作时会出现值被修改、值不同步的现象。</p><p>3、线程的启动和停止</p><p>线程的启动可以使用 start() 或者 run() 方法，</p><p>调用 start() 方法，虚拟机会创建新的线程运行 run 方法；<br>调用 run() 方法后，会在调用的线程执行，不会创建新的线程。</p><p>线程的终止方法有三种：</p><p>（1）使用退出标志，使线程正常退出，也就是当run方法完成后线程终止。<br>（2）使用 stop() 方法强行终止线程（这个方法不推荐使用，因为 stop() 和 suspend()、resume() 一样，也可能发生不可预料的结果）。<br>（3）使用 interrupt() 方法中断线程。</p><p>下面介绍了 interrupt() 方法停止线程，调用该方法知识在当前线程中打了一个停止的标记，并不是真的停止线程。</p><p>如何判断线程的状态是不是停止的：</p><p>（1）this.interrupted() 测试 <strong>当前线程</strong> 是否已经中断，会将状态标志置清为 false 。</p><pre><code class="Java">public static boolean interrupted() {
+}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-Java-多线程技能"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 Java 多线程技能</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-对象及变量的并发访问"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 对象及变量的并发访问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#synchronized-同步方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">synchronized 同步方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#synchronized-同步语句块"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">synchronized 同步语句块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#volatile-关键字"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">volatile 关键字</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-线程间通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 线程间通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#等待-通知机制"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">等待/通知机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法-join-的使用"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">方法 join 的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类-ThreadLocal-的使用"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">类 ThreadLocal 的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类-InheritableThreadLocal-的使用"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">类 InheritableThreadLocal 的使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-Lock-的使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 Lock 的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ReentrantLock-类"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">ReentrantLock 类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ReentrantReadWriteLock-类"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">ReentrantReadWriteLock 类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-定时器-Timer"><span class="post-toc-number">5.</span> <span class="post-toc-text">第五章 定时器 Timer</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章-单例模式与多线程"><span class="post-toc-number">6.</span> <span class="post-toc-text">第六章 单例模式与多线程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章-拾遗增补"><span class="post-toc-number">7.</span> <span class="post-toc-text">第七章 拾遗增补</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程的状态"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">线程的状态</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程组"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">线程组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SimpleDateFormat-非线程安全"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">SimpleDateFormat 非线程安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多线程出现异常的处理"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">多线程出现异常的处理</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/Java/java10.min.png)"><p class="article-headline-p">《Java多线程编程核心技术》读书笔记</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>5月 05, 2018</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aQW7DMAwEwPz/0+0DgrpLUpYMY3wKgjjW+CASS31+Xn198PDw8PDw8PDwHsb7xNf3Xd//8M+DW08p34WHh4e3hZcsq8r7/r76Upprw8PDw9vI+2vDvf7N9e+vF9QrP9fPwsPDw3syb1JO8pKDh4eH9w5etWAkQUOvhODh4eGd5fWa4F7sex3yHsta8PDw8GJevtz9n7fO9/Dw8PACXvlI06AFz4PgZYeu8PDw8G7gVYdbyUKrjXLv0BUeHh7eKV4eTCStdvJ9Elhcv5pmS42Hh4e3lFfd3PN2OX9xkzYdDw8P7xQvGi8VW+d5YSgXGDw8PLybeflQPxn2V8tMPnLLiw0eHh7eHl4Cq46pevcmdzVPRuDh4eEt4lXb2V77Oykq16WiGUbg4eHhLeLNt/5JGag25ctSajw8PLwWLx//5+xVh7fK4S8eHh7ezbxe61wIVYP/n0S6eHh4eE/gTVrbZHF5sWke4cLDw8O7mTd5WN5kVwGjBh0PDw/vZt5kuFXFV1v2ZhOPh4eHt4XXKxLViKEX3VZHaHh4eHhP4OURbV5akjKzrKXGw8PDu41XjQZWjdCqxWnBfA8PDw9vEa8X11ab4/yJ+YvAw8PD28mbjKx6se+kGETtOx4eHt7NvN52XC0J88NVeciLh4eHt4eXD5nywVh18D8JIPDw8PBO8aobdB7sTsrJskNXeHh4eEd5vS2+epCrWWDw8PDwHs+rbvrVY1VJ04+Hh4d3ileNGPIXlPxP74l4eHh4p3jVCCAfa+XNdPJSmmEEHh4e3lLe+y48PDw8PDw8PLwHXL8iT/cTTDfojwAAAABJRU5ErkJggg=="></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Java/">Java</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《Java多线程编程核心技术》/">《Java多线程编程核心技术》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/4e70966b.html" class="leancloud-views_num" data-flag-title="《Java多线程编程核心技术》读书笔记">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《Java多线程编程核心技术》读书笔记&url=https://www.wshunli.com/posts/4e70966b.html&pic=https://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=《Java多线程编程核心技术》读书笔记&summary=欢迎来到 wshunli`s Blog!&pics=https://www.wshunli.comhttps://cdn.wshunli.com/source/img/favicon.ico&url=https://www.wshunli.com/posts/4e70966b.html" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>前面面试什么的多线程部分问的比较多，需要加强下<a id="more"></a> ，这里记录总结 《Java多线程编程核心技术》 读书情况。</p><h1 id="第一章-Java-多线程技能"><a href="#第一章-Java-多线程技能" class="headerlink" title="第一章 Java 多线程技能"></a>第一章 Java 多线程技能</h1><p>本章主要介绍了线程概念、核心方法以及优先级。</p><p>1、进程和线程的区别</p><p><strong>进程</strong>是受操作系统管理的基本运行单元，是系统进行资源分配和调度的独立单位。<br><strong>线程</strong>是在进程中独立运行的子任务，CPU 在这些任务之间不停地切换，各子任务共享程序的内存空间。</p><p>线程和进程的区别是什么？ - 知乎：<br><a href="https://www.zhihu.com/question/25532384" rel="external nofollow noopener noreferrer" target="_blank">https://www.zhihu.com/question/25532384</a></p><p>2、线程的创建</p><p>（1）继承 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Thread.html" rel="external nofollow noopener noreferrer" target="_blank">Thread</a> 类</p><p>（2）实现 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Runnable.html" rel="external nofollow noopener noreferrer" target="_blank">Runnable</a> 接口</p><p>其中 Thread 类实现了 Runable 接口，都需要重写里面 run 方法。</p><p>两种方式的区别：</p><p>实现 Runnable 的类更具有健壮性，避免了单继承的局限。<br>Runnable 更容易实现资源共享，能多个线程同时处理一个资源。</p><p>Java中 Thread和Runnable实现多线程的区别和联系 - CSDN博客:<br><a href="https://blog.csdn.net/oxuanboy1/article/details/51733279" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/oxuanboy1/article/details/51733279</a></p><p><strong>非线程安全</strong> 主要是指多个线程对同一对象中的同一变量实例进行操作时会出现值被修改、值不同步的现象。</p><p>3、线程的启动和停止</p><p>线程的启动可以使用 start() 或者 run() 方法，</p><p>调用 start() 方法，虚拟机会创建新的线程运行 run 方法；<br>调用 run() 方法后，会在调用的线程执行，不会创建新的线程。</p><p>线程的终止方法有三种：</p><p>（1）使用退出标志，使线程正常退出，也就是当run方法完成后线程终止。<br>（2）使用 stop() 方法强行终止线程（这个方法不推荐使用，因为 stop() 和 suspend()、resume() 一样，也可能发生不可预料的结果）。<br>（3）使用 interrupt() 方法中断线程。</p><p>下面介绍了 interrupt() 方法停止线程，调用该方法知识在当前线程中打了一个停止的标记，并不是真的停止线程。</p><p>如何判断线程的状态是不是停止的：</p><p>（1）this.interrupted() 测试 <strong>当前线程</strong> 是否已经中断，会将状态标志置清为 false 。</p><pre><code class="Java">public static boolean interrupted() {
 }
 </code></pre><p>（2）this.isInterrupted() 测试线程是否已经中断，不清除状态标志。</p><pre><code class="Java">public boolean isInterrupted() {
 }
@@ -929,7 +929,7 @@ public class Main {
  * 添加了10个元素!
  * wait end  1526377685276
  */
-</code></pre><p>方法 wait() 被执行后，锁会自动释放；执行完 notify() 方法后，锁不会自动释放，只有同步方法或者代码块执行完后才会释放。</p><p>（2）Thread 中关于线程状态的 API</p><p><img src="https://img.wshunli.com/Java/Java多线程编程核心技术/线程状态切换.png" alt="线程状态切换"></p><p>Java 线程一共有七个状态，分别是新建（New），就绪（Ready to run），运行中（Running），睡眠（Sleeping），阻塞（Blocked），等待（Waiting），死亡（Dead/Terminate）。</p><p>java线程状态切换 - 简书：<br><a href="https://www.jianshu.com/p/531310753a64" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/531310753a64</a></p><p>每个锁对象都有两个队列：就绪队列、阻塞队列。就绪队列存储了将要获得锁的线程，阻塞队列存储了被阻塞的线程。</p><p>当一个线程被唤醒 (notify) 后，才会进入到就绪队列，等待 CPU 的调度，反之，当一个线程被等待 (wait) 后，就会进入阻塞队列，等待下一次被唤醒。</p><p>（3）wait() 方法的使用</p><p>wait() 方法会使线程进入等待状态。</p><p>wait(long) 方法是线程等待一段时间内是否被唤醒，超时则自动唤醒。</p><p>当线程在 wait() 状态时，调用线程的 interrupt() 方法会出现 InterruptedException 异常。</p><p>在以下情况下，持有锁的线程会释放锁：<br>1、执行完同步代码块。<br>2、在执行同步代码块的过程中，遇到异常而导致线程终止。<br>3、在执行同步代码块的过程中，执行了锁所属对象的 wait() 方法，这个线程会释放锁，进行对象的等待池。</p><p>（4）通知一个线程和唤醒所有线程</p><p>notify() 仅 <strong>随机</strong> 唤醒一个线程，多次调用也会随机将等待 wait 状态的线程进行唤醒。</p><p>notifyAll() 方法可以唤醒所有线程。</p><p>但是通知 notify() 方法在 wait() 方法之前调用，后面 wait 线程收不到通知就会一直处于等待状态。</p><p>注意线程在等待结束后其外部条件数据值可能发生改变。</p><p>（5）生产者/消费者模式</p><p>1、一生产者一消费者:</p><pre><code class="Java">class MyStack {
+</code></pre><p>方法 wait() 被执行后，锁会自动释放；执行完 notify() 方法后，锁不会自动释放，只有同步方法或者代码块执行完后才会释放。</p><p>（2）Thread 中关于线程状态的 API</p><p><img src="https://img.wshunli.com/Java/Java多线程编程核心技术/线程状态切换.png" alt="线程状态切换"></p><p>Java 线程一共有 6 个状态，分别是新建（New），RUNNABLE [ 就绪（Ready to run）、运行中（Running）]，睡眠（Sleeping），阻塞（Blocked），等待（Waiting），死亡（Dead/Terminate）。</p><p>java线程状态切换 - 简书：<br><a href="https://www.jianshu.com/p/531310753a64" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/531310753a64</a></p><p>每个锁对象都有两个队列：就绪队列、阻塞队列。就绪队列存储了将要获得锁的线程，阻塞队列存储了被阻塞的线程。</p><p>当一个线程被唤醒 (notify) 后，才会进入到就绪队列，等待 CPU 的调度，反之，当一个线程被等待 (wait) 后，就会进入阻塞队列，等待下一次被唤醒。</p><p>（3）wait() 方法的使用</p><p>wait() 方法会使线程进入等待状态。</p><p>wait(long) 方法是线程等待一段时间内是否被唤醒，超时则自动唤醒。</p><p>当线程在 wait() 状态时，调用线程的 interrupt() 方法会出现 InterruptedException 异常。</p><p>在以下情况下，持有锁的线程会释放锁：<br>1、执行完同步代码块。<br>2、在执行同步代码块的过程中，遇到异常而导致线程终止。<br>3、在执行同步代码块的过程中，执行了锁所属对象的 wait() 方法，这个线程会释放锁，进行对象的等待池。</p><p>（4）通知一个线程和唤醒所有线程</p><p>notify() 仅 <strong>随机</strong> 唤醒一个线程，多次调用也会随机将等待 wait 状态的线程进行唤醒。</p><p>notifyAll() 方法可以唤醒所有线程。</p><p>但是通知 notify() 方法在 wait() 方法之前调用，后面 wait 线程收不到通知就会一直处于等待状态。</p><p>注意线程在等待结束后其外部条件数据值可能发生改变。</p><p>（5）生产者/消费者模式</p><p>1、一生产者一消费者:</p><pre><code class="Java">class MyStack {
     private List list = new ArrayList();
 
     synchronized public void push() {
@@ -1172,7 +1172,648 @@ public class Main {
     }
 
 }
-</code></pre><p>未完待续。。</p><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/4e70966b.html">https://www.wshunli.com/posts/4e70966b.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="//cdn.wshunli.com/source/av-min.js"></script><script src="//cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mm",lang:"zh-cn"})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/2739df62.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/a4e3e5ad.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">111</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>.</div><div>CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">服务状态</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">站点地图</a>. <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">百度统计</a>.</div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
+</code></pre><p>通过管道进行进程间通信可以传递，字节流和字符流。</p><h2 id="方法-join-的使用"><a href="#方法-join-的使用" class="headerlink" title="方法 join 的使用"></a>方法 join 的使用</h2><p>join() 方法具有使线程排队运行的作用，使所属线程 x 正常执行 run() 方法，而使当前线程 z 进行无限期阻塞，等待线程 x 销毁后继续执行线程 z 后面的代码。</p><pre><code class="Java">class MyThread extends Thread {
+
+    @Override
+    public void run() {
+        try {
+            int secondValue = (int) (Math.random() * 10000);
+            System.out.println(secondValue);
+            Thread.sleep(secondValue);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}
+public class Test {
+
+    public static void main(String[] args) {
+        try {
+            MyThread threadTest = new MyThread();
+            threadTest.start();
+            threadTest.join();
+
+            System.out.println(&quot;我想当threadTest对象执行完毕后我再执行，我做到了&quot;);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+</code></pre><p>join 方法有点类似与同步的效果。</p><p>但是 join() 方法内部是由 wait() 方法进行等待，而 sychronized 关键字是使用 <strong>对象监视器</strong> 原理作为同步。</p><p>在 join 过程中，如果当前线程对象被终端，则当前线程出现异常，而 join 的线程正常执行。</p><p>方法 join(long) 中参数是设定等待时间。</p><p>long 是最长的等待时间，如果子线程提前结束，主线程也会结束等待。</p><pre><code class="Java">public final synchronized void join(long millis)
+throws InterruptedException {
+    long base = System.currentTimeMillis();
+    long now = 0;
+
+    if (millis &lt; 0) {
+        throw new IllegalArgumentException(&quot;timeout value is negative&quot;);
+    }
+
+    if (millis == 0) {
+        while (isAlive()) {
+            wait(0);
+        }
+    } else {
+        while (isAlive()) {
+            long delay = millis - now;
+            if (delay &lt;= 0) {
+                break;
+            }
+            wait(delay);
+            now = System.currentTimeMillis() - base;
+        }
+    }
+}
+</code></pre><p>方法 join() 内部由 wait() 方法实现会立即释放对象锁，而 Thread.sleep() 方法不会释放对象锁。</p><h2 id="类-ThreadLocal-的使用"><a href="#类-ThreadLocal-的使用" class="headerlink" title="类 ThreadLocal 的使用"></a>类 ThreadLocal 的使用</h2><p>类 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/ThreadLocal.html" rel="external nofollow noopener noreferrer" target="_blank">ThreadLocal</a> 是保证线程之间变量的隔离性。</p><pre><code class="Java">class Tools {
+    public static ThreadLocal tl = new ThreadLocal();
+}
+class ThreadA extends Thread {
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i &lt; 100; i++) {
+                if (Tools.tl.get() == null) {
+                    Tools.tl.set(&quot;ThreadA&quot; + (i + 1));
+                } else {
+                    System.out.println(&quot;ThreadA get Value=&quot; + Tools.tl.get());
+                }
+                Thread.sleep(200);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+class ThreadB extends Thread {
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i &lt; 100; i++) {
+                if (Tools.tl.get() == null) {
+                    Tools.tl.set(&quot;ThreadB&quot; + (i + 1));
+                } else {
+                    System.out.println(&quot;ThreadB get Value=&quot; + Tools.tl.get());
+                }
+                Thread.sleep(200);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+public class Run {
+
+    public static void main(String[] args) {
+
+        try {
+            ThreadA a = new ThreadA();
+            ThreadB b = new ThreadB();
+            a.start();
+            b.start();
+
+            for (int i = 0; i &lt; 100; i++) {
+                if (Tools.tl.get() == null) {
+                    Tools.tl.set(&quot;Main&quot; + (i + 1));
+                } else {
+                    System.out.println(&quot;Main get Value=&quot; + Tools.tl.get());
+                }
+                Thread.sleep(200);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+}
+</code></pre><h2 id="类-InheritableThreadLocal-的使用"><a href="#类-InheritableThreadLocal-的使用" class="headerlink" title="类 InheritableThreadLocal 的使用"></a>类 InheritableThreadLocal 的使用</h2><p>类 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/InheritableThreadLocal.html" rel="external nofollow noopener noreferrer" target="_blank">InheritableThreadLocal</a> 可以再子线程中取得父线程继承下来的值。</p><pre><code class="Java">class InheritableThreadLocalExt extends InheritableThreadLocal {
+    @Override
+    protected Object initialValue() {
+        return new Date().getTime();
+    }
+
+    @Override
+    protected Object childValue(Object parentValue) {
+        return parentValue + &quot; 我在子线程加的~!&quot;;
+    }
+}
+class Tools {
+    public static InheritableThreadLocalExt tl = new InheritableThreadLocalExt();
+}
+class ThreadA extends Thread {
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i &lt; 10; i++) {
+                System.out.println(&quot;在ThreadA线程中取值=&quot; + Tools.tl.get());
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}
+public class Run {
+
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; i &lt; 10; i++) {
+                System.out.println(&quot;       在Main线程中取值=&quot; + Tools.tl.get());
+                Thread.sleep(100);
+            }
+            Thread.sleep(5000);
+            ThreadA a = new ThreadA();
+            a.start();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+</code></pre><p>在继承的同时可以对值进行进一步的处理。</p><p>但在子线程取得值的同时，主线程将 InheritableThreadLocal 中的值进行更改，子线程取得的值还是旧值。</p><h1 id="第四章-Lock-的使用"><a href="#第四章-Lock-的使用" class="headerlink" title="第四章 Lock 的使用"></a>第四章 Lock 的使用</h1><h2 id="ReentrantLock-类"><a href="#ReentrantLock-类" class="headerlink" title="ReentrantLock 类"></a>ReentrantLock 类</h2><p>（1）ReentrantLock 实现同步</p><pre><code class="Java">ReentrantLock reentrantLock = new ReentrantLock();
+reentrantLock.lock();
+// Do something
+reentrantLock.unlock();
+</code></pre><p>（2）使用 Condition 实现等待/通知</p><pre><code class="Java">class MyService {
+
+    private Lock lock = new ReentrantLock();
+    public Condition condition = lock.newCondition();
+
+    public void await() {
+        try {
+            lock.lock();
+            System.out.println(&quot; await时间为&quot; + System.currentTimeMillis());
+            condition.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void signal() {
+        try {
+            lock.lock();
+            System.out.println(&quot;signal时间为&quot; + System.currentTimeMillis());
+            condition.signal();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+class ThreadA extends Thread {
+
+    private MyService service;
+
+    public ThreadA(MyService service) {
+        super();
+        this.service = service;
+    }
+
+    @Override
+    public void run() {
+        service.await();
+    }
+}
+public class Run {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        MyService service = new MyService();
+
+        ThreadA a = new ThreadA(service);
+        a.start();
+
+        Thread.sleep(3000);
+
+        service.signal();
+
+    }
+
+}
+</code></pre><p>这样就实现了 Condition 的通知/等待功能。</p><p>对于多个 Condition 实现通知部分线程，可多次调用 lock.newCondition() 方法。</p><p>（3）公平锁和非公平锁</p><p>锁 Lock 分为公平锁和非公平锁：</p><p>公平锁表示线程获取锁的顺序是按照线程 <strong>加锁的顺序</strong> 来分配的。而非公平锁是抢占机制，是随机获取获取锁的。</p><p>ReentrantLock 可使用构造函数实例化公平锁和非公平锁。</p><p>（4）ReentrantLock 中的常用方法</p><p>getHoldCount() 当前线程保持锁定的个数，也就是调用 lock() 方法的次数。</p><p>getQueueLength() 返回等待获得锁定的线程的估计数。</p><p>getWaitQueueLength​(Condition condition) 返回等待与此锁定相关的给定条件 condition 的线程估计数。</p><p>hasQueuedThread​(Thread thread) 查询指定线程 thread 是否在等待获得此锁定；hasQueuedThreads() 查询是否有线程在等待次锁。</p><p>hasWaiters​(Condition condition) 查询是否有线程正在等待与此线程有关的 condition 条件。</p><p>isFair() 是不是公平锁。</p><p>isHeldByCurrentThread() 当前线程是否保持此锁。</p><p>isLocked() 查询此锁定是否由任意线程锁定。</p><p>lockInterruptibly() 如果当前线程未中断，则获得此锁；否则出现异常。</p><p>tryLock() 调用时未被另外一个线程保持的情况下，才获得此锁定；tryLock​(long timeout, TimeUnit unit) 在给定时间内。</p><h2 id="ReentrantReadWriteLock-类"><a href="#ReentrantReadWriteLock-类" class="headerlink" title="ReentrantReadWriteLock 类"></a>ReentrantReadWriteLock 类</h2><p>读写锁 <a href="https://docs.oracle.com/javase/10/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html" rel="external nofollow noopener noreferrer" target="_blank">ReentrantReadWriteLock</a> 表示也有两个锁，一个是与读有关的锁，也成为共享锁；另一个是与写有关的锁，也叫排他锁。</p><p>多个读锁之间不互斥，读锁和写锁互斥，写锁和写锁互斥。</p><p>（1）读读共享</p><pre><code class="java">import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+class Service {
+
+    private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
+    public void read() {
+        try {
+            try {
+                lock.readLock().lock();
+                System.out.println(&quot;获得读锁&quot; + Thread.currentThread().getName()
+                        + &quot; &quot; + System.currentTimeMillis());
+                Thread.sleep(10000);
+            } finally {
+                lock.readLock().unlock();
+            }
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}
+class ThreadA extends Thread {
+
+    private Service service;
+
+    public ThreadA(Service service) {
+        super();
+        this.service = service;
+    }
+
+    @Override
+    public void run() {
+        service.read();
+    }
+}
+class ThreadB extends Thread {
+
+    private Service service;
+
+    public ThreadB(Service service) {
+        super();
+        this.service = service;
+    }
+
+    @Override
+    public void run() {
+        service.read();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Service service = new Service();
+
+        ThreadA a = new ThreadA(service);
+        a.setName(&quot;A&quot;);
+
+        ThreadB b = new ThreadB(service);
+        b.setName(&quot;B&quot;);
+
+        a.start();
+        b.start();
+    }
+
+}
+/*
+ * 获得读锁B 1526483245955
+ * 获得读锁A 1526483245955
+ */
+</code></pre><p>（2）写写互斥</p><pre><code class="Java">class Service {
+
+    private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
+    public void write() {
+        try {
+            try {
+                lock.writeLock().lock();
+                System.out.println(&quot;获得写锁&quot; + Thread.currentThread().getName()
+                        + &quot; &quot; + System.currentTimeMillis());
+                Thread.sleep(10000);
+            } finally {
+                lock.writeLock().unlock();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+/*
+ * 获得写锁B 1526483357433
+ * 获得写锁A 1526483367434
+ */
+</code></pre><p>（3）读写互斥、写读互斥</p><pre><code class="Java">class Service {
+
+    private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
+    public void read() {
+        try {
+            try {
+                lock.readLock().lock();
+                System.out.println(&quot;获得读锁&quot; + Thread.currentThread().getName()
+                        + &quot; &quot; + System.currentTimeMillis());
+                Thread.sleep(10000);
+            } finally {
+                lock.readLock().unlock();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void write() {
+        try {
+            try {
+                lock.writeLock().lock();
+                System.out.println(&quot;获得写锁&quot; + Thread.currentThread().getName()
+                        + &quot; &quot; + System.currentTimeMillis());
+                Thread.sleep(10000);
+            } finally {
+                lock.writeLock().unlock();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+/*
+ * 获得读锁A 1526483561390
+ * 获得写锁B 1526483571390
+ */
+/*
+ * 获得写锁B 1526483608487
+ * 获得读锁A 1526483618487
+ */
+</code></pre><h1 id="第五章-定时器-Timer"><a href="#第五章-定时器-Timer" class="headerlink" title="第五章 定时器 Timer"></a>第五章 定时器 Timer</h1><p>（1）Timer 的概念</p><p>类 <a href="https://docs.oracle.com/javase/10/docs/api/java/util/Timer.html" rel="external nofollow noopener noreferrer" target="_blank">Timer</a> 主要负责计划任务的功能，也就是在指定时间开始执行某一个任务。Timer 的封装类是 <a href="https://docs.oracle.com/javase/10/docs/api/java/util/TimerTask.html" rel="external nofollow noopener noreferrer" target="_blank">TimerTask</a> 。</p><p>（2）Timer 的常用方法</p><p>1、schedule​(TimerTask task, Date time) 在指定日期执行一次某一任务。</p><pre><code class="Java">public class Run {
+
+    private static Timer timer = new Timer();
+    // 守护线程方式，任务执行后自行销毁
+    // private static Timer timer = new Timer(true);
+
+    static public class MyTask extends TimerTask {
+        @Override
+        public void run() {
+            System.out.println(&quot;运行了！时间为：&quot; + new Date());
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            MyTask task = new MyTask();
+            SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+            String dateString = &quot;2014-10-12 11:55:00&quot;;
+
+            Date dateRef = sdf.parse(dateString);
+            System.out.println(&quot;字符串时间：&quot; + dateRef.toLocaleString() + &quot; 当前时间：&quot;
+                    + new Date().toLocaleString());
+            timer.schedule(task, dateRef);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre><p>如果 time 晚于当前时间，则按照计划执行；若早于当前时间，则立即执行。</p><p>TimerTask 是以任务队列的方式按照顺序知心话，如果前面的任务执行时间较长，后面的任务也会延迟。</p><p>2、schedule​(TimerTask task, Date firstTime, long period) 在指定日期后，按照指定时间间隔周期性无限循环地执行某一任务。</p><p>3、schedule​(TimerTask task, long delay) 以当前时间为参考，延迟指定地毫秒数之后执行一次 TimerTask 任务。</p><p>4、schedule​(TimerTask task, long delay, long period) 以当前时间为参考，延迟指定地毫秒数之后，再以指定时间间隔周期性无限循环地执行某一任务。</p><p>5、scheduleAtFixedRate​() 方法</p><p>主要有两个方法：</p><p>scheduleAtFixedRate​(TimerTask task, Date firstTime, long period)</p><p>scheduleAtFixedRate​(TimerTask task, long delay, long period)</p><p>方法 schedule 和 scheduleAtFixedRate​ 区别和联系：</p><p>1) 方法 schedule 和 scheduleAtFixedRate 都会顺序序执行，所以不要考虑非线程安全的情况。<br>2) 方法 schedule 和 scheduleAtFixedRate 主要的区别只在于不延时的情况。</p><ul><li>使用 schedule 方法:如果执行任务的时间没有被延时，那么下一次任务的执行时间参考的是上一次任务的“开始”时的时间来计算。</li><li>使用 scheduleAtFixedRate 方法:如果执行任务的时间没有被延时，那么下一次任务的执行时间参考的是上一次任务的“结束”时的时间来计算。</li></ul><p>3) 延时的情况则没有区别，也就是使用 schedule 或 scheduleAtFixedRate 方法都是如果执行任务的时间被延时，那么下一次任务的执行时间参考的是上一次任务“结束”时的时间来计算。<br>4) schedule 方法没有具有任务追赶执行性，而 scheduleAtFixedRate 是有的。</p><p><strong>不延时</strong> 是指 TimerTask 任务执行的时间比 period 周期要短，不会对下次任务执行造成延迟。<br><strong>追赶执行性</strong> 是指 任务执行时间 比当前时间早的情况下，过去时间段内的任务从现在开始执行。</p><h1 id="第六章-单例模式与多线程"><a href="#第六章-单例模式与多线程" class="headerlink" title="第六章 单例模式与多线程"></a>第六章 单例模式与多线程</h1><p>（1）单例模式概述</p><p>单例模式可分为两种：</p><p>1、立即执行/“饿汉模式”：使用类的时候已经将对象创建完毕。</p><pre><code class="Java">public class MyObject {
+
+    // 立即加载方式==饿汉模式
+    private static MyObject myObject = new MyObject();
+
+    private MyObject() {
+    }
+
+    public static MyObject getInstance() {
+        // 此代码版本为立即加载
+        // 此版本代码的缺点是不能有其它实例变量
+        // 因为getInstance()方法没有同步
+        // 所以有可能出现非线程安全问题
+        return myObject;
+    }
+
+}
+</code></pre><p>2、延迟加载/“懒汉模式”：在使用类的时候实例才被创建。</p><p>DCL 双检查锁机制。</p><pre><code class="Java">public class MyObject {
+
+    private volatile static MyObject myObject;
+
+    private MyObject() {
+    }
+
+    // 使用双检测机制来解决问题
+    // 即保证了不需要同步代码的异步
+    // 又保证了单例的效果
+    public static MyObject getInstance() {
+        try {
+            if (myObject != null) {
+            } else {
+                // 模拟在创建对象之前做一些准备性的工作
+                Thread.sleep(3000);
+                synchronized (MyObject.class) {
+                    if (myObject == null) {
+                        myObject = new MyObject();
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return myObject;
+    }
+    // 此版本的代码称为：
+    // 双重检查Double-Check Locking
+
+}
+</code></pre><p>（2）单例模式的实现方式</p><p>单例模式还可以由静态内置类、static 代码块、enum 枚举数据类实现。</p><h1 id="第七章-拾遗增补"><a href="#第七章-拾遗增补" class="headerlink" title="第七章 拾遗增补"></a>第七章 拾遗增补</h1><h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><p>线程在不同运行时期有不同的状态，状态信息存储在 <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/Thread.State.html" rel="external nofollow noopener noreferrer" target="_blank">State</a> 枚举类中。</p><p><img src="https://img.wshunli.com/Java/Java多线程编程核心技术/java_thread_state.png" alt="java_thread_state"></p><p>A thread can be in one of the following states:</p><ul><li>NEW ：A thread that has not yet started.</li><li>RUNNABLE ：A thread executing in the Java virtual machine.</li><li>BLOCKED ：A thread that is blocked waiting for a monitor lock.</li><li>WAITING ：A thread that is waiting indefinitely for another thread to perform a particular action.</li><li>TIMED_WAITING ：A thread that is waiting for another thread to perform an action for up to a specified waiting time.</li><li>TERMINATED ：A thread that has exited.</li></ul><p>A thread can be in only one state at a given point in time. These states are virtual machine states which do not reflect any operating system thread states.</p><h2 id="线程组"><a href="#线程组" class="headerlink" title="线程组"></a>线程组</h2><p>线程组中可以包含线程对象和线程组，对其进行批量管理和有效组织。</p><p>（1）线程组的关联</p><p>1 级关联，即没有子孙对象。</p><pre><code class="Java">ThreadA aRunnable = new ThreadA();
+ThreadB bRunnable = new ThreadB();
+
+ThreadGroup group = new ThreadGroup(&quot;线程组&quot;);
+
+Thread aThread = new Thread(group, aRunnable);
+Thread bThread = new Thread(group, bRunnable);
+aThread.start();
+bThread.start();
+</code></pre><p>多级关联，存在子孙对象。</p><pre><code class="Java">// 在main组中添加一个线程组A，然后在这个A组中添加线程对象Z
+ThreadGroup mainGroup = Thread.currentThread().getThreadGroup();
+ThreadGroup group = new ThreadGroup(mainGroup, &quot;A&quot;);
+Runnable runnable = new Runnable() {
+    @Override
+    public void run() {
+        try {
+            System.out.println(&quot;runMethod!&quot;);
+            Thread.sleep(10000);// 线程必须在运行状态才可以受组管理
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+};
+
+Thread newThread = new Thread(group, runnable);
+newThread.setName(&quot;Z&quot;);
+newThread.start();// 线程必须启动然后才归到组A中
+</code></pre><p>（2）线程组自动归属特性</p><p>自动归属就是在实例化一个 ThreadGroup 线程组 x 时，如果不指定所属的线程组，则 x 线程组会自动归到当前线程对象所属的线程组中。</p><p>（3）线程组的操作</p><p>获取父线程组，ThreadGroup 的 getParent() 方法获取父线程组。</p><pre><code class="Java">Thread.currentThread().getThreadGroup().getParent()
+</code></pre><p>线程组内的线程批量停止，ThreadGroup 的 interrupt() 方法。</p><h2 id="SimpleDateFormat-非线程安全"><a href="#SimpleDateFormat-非线程安全" class="headerlink" title="SimpleDateFormat 非线程安全"></a>SimpleDateFormat 非线程安全</h2><p>类 SimpleDateFormat 主要负责日期的转化和格式化，但在多线程环境下，非常容易造成数据转换和处理的不准确，SimpleDateFormat 不是线程安全的。</p><h2 id="多线程出现异常的处理"><a href="#多线程出现异常的处理" class="headerlink" title="多线程出现异常的处理"></a>多线程出现异常的处理</h2><p>（1）线程中出现异常的处理</p><pre><code class="Java">// 指定线程对象设置异常处理类
+MyThread t1 = new MyThread();
+t1.setName(&quot;线程t1&quot;);
+t1.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println(&quot;线程:&quot; + t.getName() + &quot; 出现了异常：&quot;);
+        e.printStackTrace();
+    }
+});
+t1.start();
+// 指定线程类的所有对象设置默认异常处理类
+MyThread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println(&quot;线程:&quot; + t.getName() + &quot; 出现了异常：&quot;);
+        e.printStackTrace();
+
+    }
+});
+
+</code></pre><p>（2）线程组中出现异常的处理</p><pre><code class="Java">public class MyThreadGroup extends ThreadGroup {
+
+    public MyThreadGroup(String name) {
+        super(name);
+    }
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        super.uncaughtException(t, e);
+        this.interrupt();
+    }
+
+}
+</code></pre><p>注意线程组中的线程对象 run() 方法内部不要有 catch 语句，否则 uncaughtException 不执行。</p><p>（3）线程组异常处理的传递</p><pre><code class="Java">package com.wshunli.thread.sync71;
+
+class MyThread extends Thread {
+
+    private String num = &quot;a&quot;;
+
+    public MyThread() {
+        super();
+    }
+
+    public MyThread(ThreadGroup group, String name) {
+        super(group, name);
+    }
+
+    @Override
+    public void run() {
+        int numInt = Integer.parseInt(num);
+        System.out.println(&quot;在线程中打印：&quot; + (numInt + 1));
+    }
+
+}
+class MyThreadGroup extends ThreadGroup {
+
+    public MyThreadGroup(String name) {
+        super(name);
+    }
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        super.uncaughtException(t, e);
+        System.out.println(&quot;线程组的异常处理&quot;);
+        e.printStackTrace();
+    }
+
+}
+class ObjectUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println(&quot;对象的异常处理&quot;);
+        e.printStackTrace();
+    }
+
+}
+class StateUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println(&quot;静态的异常处理&quot;);
+        e.printStackTrace();
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread myThread = new MyThread();
+        // 对象
+        myThread.setUncaughtExceptionHandler(new ObjectUncaughtExceptionHandler());
+        // 类
+        // MyThread.setDefaultUncaughtExceptionHandler(new StateUncaughtExceptionHandler());
+        myThread.start();
+    }
+
+}
+/*
+ * 对象的异常处理
+ * java.lang.NumberFormatException: For input string: &quot;a&quot;
+ *     at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+ *     at java.lang.Integer.parseInt(Integer.java:580)
+ *     at java.lang.Integer.parseInt(Integer.java:615)
+ *     at com.wshunli.thread.sync71.MyThread.run(Main.java:17)
+ */
+public class Main {
+    public static void main(String[] args) {
+        MyThread myThread = new MyThread();
+        // 对象
+        // myThread.setUncaughtExceptionHandler(new ObjectUncaughtExceptionHandler());
+        // 类
+        MyThread.setDefaultUncaughtExceptionHandler(new StateUncaughtExceptionHandler());
+        myThread.start();
+    }
+
+}
+/*
+ * 静态的异常处理
+ * java.lang.NumberFormatException: For input string: &quot;a&quot;
+ *     at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+ *     at java.lang.Integer.parseInt(Integer.java:580)
+ *     at java.lang.Integer.parseInt(Integer.java:615)
+ *     at com.wshunli.thread.sync71.MyThread.run(Main.java:17)
+ */
+</code></pre><p>对于线程组而言：</p><pre><code class="Java">public class Main {
+    public static void main(String[] args) {
+        MyThreadGroup group = new MyThreadGroup(&quot;我的线程组&quot;);
+        MyThread myThread = new MyThread(group, &quot;我的线程&quot;);
+        // 对象
+        myThread.setUncaughtExceptionHandler(new ObjectUncaughtExceptionHandler());
+        // 类
+        // MyThread.setDefaultUncaughtExceptionHandler(new StateUncaughtExceptionHandler());
+        myThread.start();
+    }
+}
+/*
+ * 对象的异常处理
+ * java.lang.NumberFormatException: For input string: &quot;a&quot;
+ *     at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+ *     at java.lang.Integer.parseInt(Integer.java:580)
+ *     at java.lang.Integer.parseInt(Integer.java:615)
+ *     at com.wshunli.thread.sync71.MyThread.run(Main.java:17)
+ */
+public class Main {
+    public static void main(String[] args) {
+        MyThreadGroup group = new MyThreadGroup(&quot;我的线程组&quot;);
+        MyThread myThread = new MyThread(group, &quot;我的线程&quot;);
+        // 对象
+        // myThread.setUncaughtExceptionHandler(new ObjectUncaughtExceptionHandler());
+        // 类
+        MyThread.setDefaultUncaughtExceptionHandler(new StateUncaughtExceptionHandler());
+        myThread.start();
+    }
+}
+/*
+ * 静态的异常处理
+ * java.lang.NumberFormatException: For input string: &quot;a&quot;
+ * 线程组的异常处理
+ *     at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+ *     at java.lang.Integer.parseInt(Integer.java:580)
+ *     at java.lang.Integer.parseInt(Integer.java:615)
+ *     at com.wshunli.thread.sync71.MyThread.run(Main.java:17)
+ * java.lang.NumberFormatException: For input string: &quot;a&quot;
+ *     at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+ *     at java.lang.Integer.parseInt(Integer.java:580)
+ *     at java.lang.Integer.parseInt(Integer.java:615)
+ *     at com.wshunli.thread.sync71.MyThread.run(Main.java:17)
+ */
+</code></pre><blockquote><p>本书是阅读完了，也只是一些多线程的基础，距离实战还是有差距，后面再深入学习 《Java并发编程的艺术》、《Java并发编程实战》等书籍逐步提高。</p></blockquote><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/4e70966b.html">https://www.wshunli.com/posts/4e70966b.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="//cdn.wshunli.com/source/av-min.js"></script><script src="//cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mm",lang:"zh-cn"})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/2739df62.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/a4e3e5ad.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="https://cdn.wshunli.com/source/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=kvP2--v80uXh_uf8-vu88f3-" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">112</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a> & <a class="footer-develop-a" href="https://github.com/wshunli/wshunli.github.io" title="托管于 Github Pages" rel="external nofollow noopener noreferrer" target="_blank">Github Pages</a>. Builded by <a class="footer-develop-a" href="https://travis-ci.com/wshunli/hexo-blog-source" title="由 Travis CI 自动构建" rel="external nofollow noopener noreferrer" target="_blank">Travis CI</a>.</div><div>CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a> & <a class="footer-develop-a" href="https://app.netlify.com/" title="Netlify 提供国外 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Netlify</a>. <a class="footer-develop-a" href="https://myssl.com/www.wshunli.com" title="SSL 安全认证" rel="external nofollow noopener noreferrer" target="_blank">SSL</a> Certificate by <a class="footer-develop-a" href="https://www.trustasia.com/" title="由 TrustAsia 提供 SSL证书 " rel="external nofollow noopener noreferrer" target="_blank">TrustAsia</a>. <a class="footer-develop-a" href="/atom.xml" title="CirGIS RSS" target="_blank">RSS</a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" title="豫ICP备17022065号-1" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a>. <a class="footer-develop-a" href="https://status.wshunli.com/" title="CirGIS 服务状态监控" rel="external nofollow noopener noreferrer" target="_blank">服务状态</a>. <a class="footer-develop-a" href="/sitemap.xml" title="CirGIS 站点地图" target="_blank">站点地图</a>. <a class="footer-develop-a" href="https://tongji.baidu.com/web/welcome/ico?s=a5dd3121a832e079930d6bf385c5e806" title="百度统计服务" rel="external nofollow noopener noreferrer" target="_blank">百度统计</a>.</div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
