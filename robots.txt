@@ -1,20 +1,12 @@
+﻿# robots.txt
 User-agent: *
-Disallow: /js/
-Disallow: /css/
+Disallow: 
 Disallow: /img/
-Disallow: /fonts/
-Disallow: /page/ 
-Disallow: /about/
-Disallow: /links/
-Disallow: /gallery/
 Disallow: /zzupic/
 Disallow: /whupic/
-Disallow: /archives/
-Disallow: /tags/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
 Disallow: /categories/沉迷学术/
-Allow: /
-Allow: /posts/
-Allow: /categories/
-Allow: /timeline/
-
-Sitemap: http://www.wshunli.com/sitemap.xml
+Disallow: /categories/卖身记/
+Sitemap: https://www.wshunli.com/sitemap.xml
