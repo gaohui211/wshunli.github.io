@@ -1,6 +1,5 @@
 ﻿# robots.txt
 User-agent: *
-Disallow: 
 Disallow: /img/
 Disallow: /zzupic/
 Disallow: /whupic/
