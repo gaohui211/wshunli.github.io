@@ -1,0 +1,11 @@
+﻿# robots.txt
+User-agent: *
+Disallow: /img/
+Disallow: /zzupic/
+Disallow: /whupic/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /categories/沉迷学术/
+Disallow: /categories/卖身记/
+Sitemap: https://www.wshunli.com/sitemap.xml
