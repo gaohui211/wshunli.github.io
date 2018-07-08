@@ -1,0 +1,480 @@
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.2",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><link rel="dns-prefetch" href="https://busuanzi.ibruce.info"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Logger使用及源码解析 | CirGIS</title><link rel="icon shortcut" type="image/ico" href="/favicon.ico"><link rel="icon" href="/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="wshunli`s Blog!"><meta name="keywords" content="wshunli CirGIS,Android,Logger,源码解析"><meta name="theme-color" content="#606266"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#409eff}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#757575!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#757575!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#757575!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#409eff;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/ca2fa1f1.html"><meta name="msapplication-navbutton-color" content="#606266"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/ca2fa1f1.html"><meta property="og:type" content="blog"><meta property="og:title" content="Logger使用及源码解析 | CirGIS"><meta property="og:image" content="/favicon.ico"><meta property="og:description" content="wshunli`s Blog!"><meta property="og:article:tag" content="Android"><meta property="og:article:tag" content="Logger"><meta property="og:article:tag" content="源码解析"><meta property="article:published_time" content="Tue May 22 2018 22:46:58 GMT+0800"><meta property="article:modified_time" content="Fri Jul 06 2018 23:10:19 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/ca2fa1f1.html"><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.wshunli.com/posts/ca2fa1f1.html",
+    "headline": "Logger使用及源码解析",
+    "datePublished": "Tue May 22 2018 22:46:58 GMT+0800",
+    "dateModified": "Fri Jul 06 2018 23:10:19 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "wshunli",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/wshunli.min.png"
+        },
+        "description": "深自缄默，如云漂泊"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CirGIS",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/favicon.ico"
+        }
+    },
+    "keywords": ",Android,Logger,源码解析wshunli CirGIS",
+    "description": "wshunli`s Blog!",
+}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(t,e,a,c,n,i){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},n=t.createElement("script"),i=t.getElementsByTagName("script")[0],n.async=1,n.src="//analytics.wshunli.com/tracker.js",n.id="fathom-script",i.parentNode.insertBefore(n,i)}(document,window,0,"fathom"),fathom("trackPageview")</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#快速入门"><span class="post-toc-number">1.</span> <span class="post-toc-text">快速入门</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进阶使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">进阶使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">3.</span> <span class="post-toc-text">源码解析</span></a></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/Android/Logger/logger.png)"><p class="article-headline-p">Logger使用及源码解析</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>5月 22, 2018</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS27DMAwFwNz/0u0BirTvUZ+kwWhlFLXN4cJSSD6+Pno98PDw8PDw8PDw3oz3iNfPu35e//Hi0Vvqu/Dw8PCu8JKwZnc9S8Sz4DbEhoeHh3eR9+yDm1znYSVvnMWGh4eH9194SXCzv+Dh4eF9Em+2fi80zLYQPDw8vNfy8kNwQm3Lvknox2steHh4eDEv/6zfv77a38PDw8MLePVI0+gonCd089AVHh4e3gHe7Ijcjgvk4PVE4OHh4d3kRT/1fz1qr4SYsDeXcfHw8PAWeAlyZZhgfQwrSSUeHh7eHV7bamoLvusbw9LoAB4eHt4BXh5WXtJtx63aNNVlXDw8PLytvPxg3TbD8kNwftdwdAAPDw9vK68Na1aYyBNaNLryWgseHh7eVl7+s/+Ph8b/mT8tb7Ph4eHh3eettP/bu/ICcb7B4OHh4d3ktWNVbSFjVlxom2p4eHh4N3krB9m2ZVUfjmcjXHh4eHiHeeda/usttOS9eHh4ePd5yRE5aZK1CUoO9LPhBjw8PLzTvHwsYL34Oyvd5snFw8PDu8+bfaxXApo9efiLAQ8PD+8AL293tRtAO1LQlifw8PDwXsVrXz8bmVopEEfpw8PDwzvMa9cM0w4iJMNbeHh4eK/i7RoIWHlCPqQVJQIPDw/vCi8JPS/7tqHPChDDYgQeHh7eVt7sAz1LRz40UG9ReHh4eG/Jywu77RaSbD8bZsrw8PDwrvPyINriQlsmvrrv4eHh4Y2KEW2jK3nO+mgXHh4e3n3e7NPcDma1pd42BXh4eHh3eJ+38PDw8PDw8PDw3mB9A2OmZ6M1X1laAAAAAElFTkSuQmCC"></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Android/">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Logger/">Logger</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/源码解析/">源码解析</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Logger使用及源码解析&url=https://www.wshunli.com/posts/ca2fa1f1.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=CirGIS&title=Logger使用及源码解析&summary=wshunli`s Blog!&pics=https://www.wshunli.com/favicon.ico&url=https://www.wshunli.com/posts/ca2fa1f1.html" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 QQ</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>在 Android 开发过程中打印日志必不可少，Logger 就是一款优秀的 Android 开源日志库。</p><p>Logger 使用简单，输出日志美观高效，支持 JSON 、XML 格式输出，支持打印 Arrays 、Collections 等对象。</p><p>Logger 地址 ：<a href="https://github.com/orhanobut/logger" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/orhanobut/logger</a></p><h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><p>在项目中添加依赖：</p><pre><code class="Gradle">implementation &#39;com.orhanobut:logger:2.2.0&#39;
+</code></pre><p>快速开始：</p><pre><code class="Java">Logger.addLogAdapter(new AndroidLogAdapter());
+Logger.d(&quot;hello&quot;);
+</code></pre><p>这样就可以打印日志了。</p><p><img src="https://img.wshunli.com/Android/Logger/hello2.png" alt="hello"></p><p>当然不止打印这一种日志，和自带的函数类似：</p><pre><code class="Java">Logger.d(&quot;debug&quot;);
+Logger.e(&quot;error&quot;);
+Logger.w(&quot;warning&quot;);
+Logger.v(&quot;verbose&quot;);
+Logger.i(&quot;information&quot;);
+Logger.wtf(&quot;What a Terrible Failure&quot;);
+</code></pre><p>也支持格式化输出：</p><pre><code class="Java">Logger.d(&quot;hello %s&quot;, &quot;world&quot;);
+</code></pre><p>支持数字、集合对象的输出，注意只支持 Logger.d() 方法：</p><pre><code class="Java">Logger.d(MAP);
+Logger.d(SET);
+Logger.d(LIST);
+Logger.d(ARRAY);
+</code></pre><p>支持 JSON 和 XML 的输出：</p><pre><code class="Java">Logger.json(JSON_CONTENT);
+Logger.xml(XML_CONTENT);
+</code></pre><p>自定义 TAG ，仅本次日志打印有效：</p><pre><code class="Java">Logger.t(&quot;MainActivity&quot;).d(&quot;hello&quot;);
+</code></pre><p>支持把日志保存为文件：</p><pre><code class="Java">Logger.addLogAdapter(new DiskLogAdapter());
+Logger.d(&quot;hello&quot;);
+</code></pre><p>只需更改 LogAdapter 即可，其他使用相同。</p><pre><code class="Java">Logger.clearLogAdapters();
+</code></pre><p>清除 LogAdapter 方法。</p><h1 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h1><p>利用 PrettyFormatStrategy.newBuilder 还有更高级的设置，如：</p><pre><code class="Java">FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+  .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+  .methodCount(0)         // (Optional) How many method line to show. Default 2
+  .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
+  .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
+  .tag(&quot;My custom tag&quot;)   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+  .build();
+
+Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+</code></pre><p>再者实现对打印日志的控制：</p><pre><code class="Java">Logger.addLogAdapter(new AndroidLogAdapter() {
+  @Override public boolean isLoggable(int priority, String tag) {
+    return BuildConfig.DEBUG;
+  }
+});
+</code></pre><h1 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h1><p>先看官方对工作原理的介绍：</p><p><img src="https://img.wshunli.com/Android/Logger/how_it_works.png" alt="how_it_works"></p><p>Logger 打印日志整个流程非常明确：</p><p>Logger 负责整个对外的接口，LoggerPrinter 负责对不同日志的整合，LogAdapter 分别对 Logcat 和 Disk 的打印进行适配，FormatStrategy 负责打印输出的配置及美化，LogStrategy 负责最终的打印输出任务。</p><p>1、Logger.java 部分代码：</p><pre><code class="Java">private static Printer printer = new LoggerPrinter();
+public static Printer t(@Nullable String tag) {
+    return printer.t(tag);
+}
+</code></pre><p>这里只是提供了一系列的静态函数，包括前面对不同等级的日志的输出及 JSON、XML 的输出。</p><p>实际工作还是由 LoggerPrinter 来做。</p><p>还有就是对 LogAdapter 适配器的添加清除：</p><pre><code class="Java">public static void addLogAdapter(@NonNull LogAdapter adapter) {
+    printer.addAdapter(checkNotNull(adapter));
+}
+
+public static void clearLogAdapters() {
+    printer.clearLogAdapters();
+}
+</code></pre><p>2、LoggerPrinter 部分代码：</p><p>LoggerPrinter 实现 Printer 接口，负责不同日志的整合。</p><pre><code class="Java">@Override public void d(@NonNull String message, @Nullable Object... args) {
+    log(DEBUG, null, message, args);
+}
+
+@Override public void d(@Nullable Object object) {
+    log(DEBUG, null, Utils.toString(object));
+}
+@Override public void e(@Nullable Throwable throwable, @NonNull String message, @Nullable Object... args) {
+    log(ERROR, throwable, message, args);
+}
+@Override public void w(@NonNull String message, @Nullable Object... args) {
+    log(WARN, null, message, args);
+}  
+</code></pre><p>我们可以看到这些方法都是对 log() 方法的调用。</p><p>注意这里 d() 方法可以输出任意对象，还是对象转化为字符串输出。</p><p>我们接着看 log() 方法：</p><pre><code class="Java">private final ThreadLocal&lt;String&gt; localTag = new ThreadLocal&lt;&gt;();
+
+@Override public Printer t(String tag) {
+    if (tag != null) {
+        localTag.set(tag);
+    }
+    return this;
+}
+@Override public synchronized void log(int priority,
+                                         @Nullable String tag,
+                                         @Nullable String message,
+                                         @Nullable Throwable throwable) {
+    if (throwable != null &amp;&amp; message != null) {
+        message += &quot; : &quot; + Utils.getStackTraceString(throwable);
+    }
+    if (throwable != null &amp;&amp; message == null) {
+        message = Utils.getStackTraceString(throwable);
+    }
+    if (Utils.isEmpty(message)) {
+        message = &quot;Empty/NULL log message&quot;;
+    }
+
+    for (LogAdapter adapter : logAdapters) {
+        if (adapter.isLoggable(priority, tag)) {
+        adapter.log(priority, tag, message);
+        }
+    }
+}
+/**
+* This method is synchronized in order to avoid messy of logs&#39; order.
+*/
+private synchronized void log(int priority,
+                            @Nullable Throwable throwable,
+                            @NonNull String msg,
+                            @Nullable Object... args) {
+    checkNotNull(msg);
+
+    String tag = getTag();
+    String message = createMessage(msg, args);
+    log(priority, tag, message, throwable);
+}
+
+/**
+* @return the appropriate tag based on local or global
+*/
+@Nullable private String getTag() {
+String tag = localTag.get();
+    if (tag != null) {
+        localTag.remove();
+        return tag;
+    }
+    return null;
+}
+
+@NonNull private String createMessage(@NonNull String message, @Nullable Object... args) {
+    return args == null || args.length == 0 ? message : String.format(message, args);
+}
+</code></pre><p>我们可以看到这里是交由 LogAdapter 来实现打印：</p><pre><code class="Java">adapter.log(priority, tag, message);
+</code></pre><p>在调用之前添加了 tag ，对于一次性的 tag 是由 ThreadLocal 来存储的，避免线程的并发问题，并且在取出后将其置空。</p><p>3、LogAdapter 有两个实现</p><p>AndroidLogAdapter 与 DiskLogAdapter 分别对应 Logcat 输出与 Disk 保存。</p><p>4.1、AndroidLogAdapter 部分代码：</p><pre><code class="Java">public class AndroidLogAdapter implements LogAdapter {
+
+  @NonNull private final FormatStrategy formatStrategy;
+
+  public AndroidLogAdapter() {
+    this.formatStrategy = PrettyFormatStrategy.newBuilder().build();
+  }
+
+  public AndroidLogAdapter(@NonNull FormatStrategy formatStrategy) {
+    this.formatStrategy = checkNotNull(formatStrategy);
+  }
+
+  @Override public boolean isLoggable(int priority, @Nullable String tag) {
+    return true;
+  }
+
+  @Override public void log(int priority, @Nullable String tag, @NonNull String message) {
+    formatStrategy.log(priority, tag, message);
+  }
+
+}
+</code></pre><p>很明显只是对是否打印日志进行了控制，其他任务由 PrettyFormatStrategy 来做。</p><p>4.2、PrettyFormatStrategy 部分代码：</p><p>首先 PrettyFormatStrategy 使用 Builder 设计模式，从前面 AndroidLogAdapter 的构造函数中也可看出来。</p><pre><code class="Java">  public static class Builder {
+    int methodCount = 2;
+    int methodOffset = 0;
+    boolean showThreadInfo = true;
+    @Nullable LogStrategy logStrategy;
+    @Nullable String tag = &quot;PRETTY_LOGGER&quot;;
+
+    private Builder() {
+    }
+
+    @NonNull public Builder methodCount(int val) {
+      methodCount = val;
+      return this;
+    }
+
+    @NonNull public Builder methodOffset(int val) {
+      methodOffset = val;
+      return this;
+    }
+
+    @NonNull public Builder showThreadInfo(boolean val) {
+      showThreadInfo = val;
+      return this;
+    }
+
+    @NonNull public Builder logStrategy(@Nullable LogStrategy val) {
+      logStrategy = val;
+      return this;
+    }
+
+    @NonNull public Builder tag(@Nullable String tag) {
+      this.tag = tag;
+      return this;
+    }
+
+    @NonNull public PrettyFormatStrategy build() {
+      if (logStrategy == null) {
+        logStrategy = new LogcatLogStrategy();
+      }
+      return new PrettyFormatStrategy(this);
+    }
+  }
+</code></pre><p>这样就可以对打印的日志进行配置了，也就是前面进阶使用里面的内容。</p><p>下面来看具体打印的实现：</p><pre><code class="Java">  @Override public void log(int priority, @Nullable String onceOnlyTag, @NonNull String message) {
+    checkNotNull(message);
+
+    String tag = formatTag(onceOnlyTag);
+
+    logTopBorder(priority, tag);
+    logHeaderContent(priority, tag, methodCount);
+
+    //get bytes of message with system&#39;s default charset (which is UTF-8 for Android)
+    byte[] bytes = message.getBytes();
+    int length = bytes.length;
+    if (length &lt;= CHUNK_SIZE) {
+      if (methodCount &gt; 0) {
+        logDivider(priority, tag);
+      }
+      logContent(priority, tag, message);
+      logBottomBorder(priority, tag);
+      return;
+    }
+    if (methodCount &gt; 0) {
+      logDivider(priority, tag);
+    }
+    for (int i = 0; i &lt; length; i += CHUNK_SIZE) {
+      int count = Math.min(length - i, CHUNK_SIZE);
+      //create a new String with system&#39;s default charset (which is UTF-8 for Android)
+      logContent(priority, tag, new String(bytes, i, count));
+    }
+    logBottomBorder(priority, tag);
+  }
+
+  private void logTopBorder(int logType, @Nullable String tag) {
+    logChunk(logType, tag, TOP_BORDER);
+  }
+
+  @SuppressWarnings(&quot;StringBufferReplaceableByString&quot;)
+  private void logHeaderContent(int logType, @Nullable String tag, int methodCount) {
+    StackTraceElement[] trace = Thread.currentThread().getStackTrace();
+    if (showThreadInfo) {
+      logChunk(logType, tag, HORIZONTAL_LINE + &quot; Thread: &quot; + Thread.currentThread().getName());
+      logDivider(logType, tag);
+    }
+    String level = &quot;&quot;;
+
+    int stackOffset = getStackOffset(trace) + methodOffset;
+
+    //corresponding method count with the current stack may exceeds the stack trace. Trims the count
+    if (methodCount + stackOffset &gt; trace.length) {
+      methodCount = trace.length - stackOffset - 1;
+    }
+
+    for (int i = methodCount; i &gt; 0; i--) {
+      int stackIndex = i + stackOffset;
+      if (stackIndex &gt;= trace.length) {
+        continue;
+      }
+      StringBuilder builder = new StringBuilder();
+      builder.append(HORIZONTAL_LINE)
+          .append(&#39; &#39;)
+          .append(level)
+          .append(getSimpleClassName(trace[stackIndex].getClassName()))
+          .append(&quot;.&quot;)
+          .append(trace[stackIndex].getMethodName())
+          .append(&quot; &quot;)
+          .append(&quot; (&quot;)
+          .append(trace[stackIndex].getFileName())
+          .append(&quot;:&quot;)
+          .append(trace[stackIndex].getLineNumber())
+          .append(&quot;)&quot;);
+      level += &quot;   &quot;;
+      logChunk(logType, tag, builder.toString());
+    }
+  }
+
+  private void logBottomBorder(int logType, @Nullable String tag) {
+    logChunk(logType, tag, BOTTOM_BORDER);
+  }
+
+  private void logDivider(int logType, @Nullable String tag) {
+    logChunk(logType, tag, MIDDLE_BORDER);
+  }
+
+  private void logContent(int logType, @Nullable String tag, @NonNull String chunk) {
+    checkNotNull(chunk);
+
+    String[] lines = chunk.split(System.getProperty(&quot;line.separator&quot;));
+    for (String line : lines) {
+      logChunk(logType, tag, HORIZONTAL_LINE + &quot; &quot; + line);
+    }
+  }
+
+  private void logChunk(int priority, @Nullable String tag, @NonNull String chunk) {
+    checkNotNull(chunk);
+
+    logStrategy.log(priority, tag, chunk);
+  }
+</code></pre><p>这里就是对日志美化的核心了，但是最终每一行的输出还是不是在此，是由 LogcatLogStrategy 负责的。</p><p>4.3、LogcatLogStrategy 部分代码：</p><p>LogcatLogStrategy 负责打印每一行日志，当然已经美化过了。</p><pre><code class="Java">public class LogcatLogStrategy implements LogStrategy {
+
+  static final String DEFAULT_TAG = &quot;NO_TAG&quot;;
+
+  @Override public void log(int priority, @Nullable String tag, @NonNull String message) {
+    checkNotNull(message);
+
+    if (tag == null) {
+      tag = DEFAULT_TAG;
+    }
+
+    Log.println(priority, tag, message);
+  }
+}
+</code></pre><p>这里调用的是系统的 Log 方法逐行打印日志。</p><p>5.1、DiskLogAdapter 部分代码：</p><p>和 AndroidLogAdapter 类似，DiskLogAdapter 也只是负责控制是否打印日志，具体工作由 CsvFormatStrategy 实现。</p><pre><code class="Java">public class DiskLogAdapter implements LogAdapter {
+
+  @NonNull private final FormatStrategy formatStrategy;
+
+  public DiskLogAdapter() {
+    formatStrategy = CsvFormatStrategy.newBuilder().build();
+  }
+
+  public DiskLogAdapter(@NonNull FormatStrategy formatStrategy) {
+    this.formatStrategy = checkNotNull(formatStrategy);
+  }
+
+  @Override public boolean isLoggable(int priority, @Nullable String tag) {
+    return true;
+  }
+
+  @Override public void log(int priority, @Nullable String tag, @NonNull String message) {
+    formatStrategy.log(priority, tag, message);
+  }
+}
+</code></pre><p>5.2、CsvFormatStrategy 部分代码：</p><p>CsvFormatStrategy 处理后的日志要保存到文件，同样使用 Builder 设计模式：</p><p>我们来看下 build() 方法：</p><pre><code class="Java">
+@NonNull public CsvFormatStrategy build() {
+    if (date == null) {
+        date = new Date();
+    }
+    if (dateFormat == null) {
+        dateFormat = new SimpleDateFormat(&quot;yyyy.MM.dd HH:mm:ss.SSS&quot;, Locale.UK);
+    }
+    if (logStrategy == null) {
+        String diskPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String folder = diskPath + File.separatorChar + &quot;logger&quot;;
+
+        HandlerThread ht = new HandlerThread(&quot;AndroidFileLogger.&quot; + folder);
+        ht.start();
+        Handler handler = new DiskLogStrategy.WriteHandler(ht.getLooper(), folder, MAX_BYTES);
+        logStrategy = new DiskLogStrategy(handler);
+    }
+    return new CsvFormatStrategy(this);
+}
+</code></pre><p>可以看到文件保存位置为 外置空间根目录 logger 文件夹下。</p><p>由 HandlerThread 启动了一个子线程，HandlerThread 实际上还是一个普通的 Thread，不过内部实现了 Looper 循环。</p><p>具体实现主要涉及字符串的拼接、格式的调整：</p><pre><code class="Java">  @Override public void log(int priority, @Nullable String onceOnlyTag, @NonNull String message) {
+    checkNotNull(message);
+
+    String tag = formatTag(onceOnlyTag);
+
+    date.setTime(System.currentTimeMillis());
+
+    StringBuilder builder = new StringBuilder();
+
+    // machine-readable date/time
+    builder.append(Long.toString(date.getTime()));
+
+    // human-readable date/time
+    builder.append(SEPARATOR);
+    builder.append(dateFormat.format(date));
+
+    // level
+    builder.append(SEPARATOR);
+    builder.append(Utils.logLevel(priority));
+
+    // tag
+    builder.append(SEPARATOR);
+    builder.append(tag);
+
+    // message
+    if (message.contains(NEW_LINE)) {
+      // a new line would break the CSV format, so we replace it here
+      message = message.replaceAll(NEW_LINE, NEW_LINE_REPLACEMENT);
+    }
+    builder.append(SEPARATOR);
+    builder.append(message);
+
+    // new line
+    builder.append(NEW_LINE);
+
+    logStrategy.log(priority, tag, builder.toString());
+  }
+
+  @Nullable private String formatTag(@Nullable String tag) {
+    if (!Utils.isEmpty(tag) &amp;&amp; !Utils.equals(this.tag, tag)) {
+      return this.tag + &quot;-&quot; + tag;
+    }
+    return this.tag;
+  }
+</code></pre><p>最终还是由 DiskLogStrategy 来负责打印输出日志。</p><p>5.3、DiskLogStrategy 部分代码：</p><p>这里使用了 Handler 实现线程间的通信：</p><pre><code class="Java">  @NonNull private final Handler handler;
+
+  public DiskLogStrategy(@NonNull Handler handler) {
+    this.handler = checkNotNull(handler);
+  }
+
+  @Override public void log(int level, @Nullable String tag, @NonNull String message) {
+    checkNotNull(message);
+
+    // do nothing on the calling thread, simply pass the tag/msg to the background thread
+    handler.sendMessage(handler.obtainMessage(level, message));
+  }
+</code></pre><p>每次有新的日志，调用 handler.sendMessage() 方法。</p><pre><code class="Java">@SuppressWarnings(&quot;checkstyle:emptyblock&quot;)
+@Override public void handleMessage(@NonNull Message msg) {
+    String content = (String) msg.obj;
+
+    FileWriter fileWriter = null;
+    File logFile = getLogFile(folder, &quot;logs&quot;);
+
+    try {
+    fileWriter = new FileWriter(logFile, true);
+
+    writeLog(fileWriter, content);
+
+    fileWriter.flush();
+    fileWriter.close();
+    } catch (IOException e) {
+    if (fileWriter != null) {
+        try {
+        fileWriter.flush();
+        fileWriter.close();
+        } catch (IOException e1) { /* fail silently */ }
+    }
+    }
+}
+</code></pre><p>最后 Handler 接收到消息，就把日志保存到文件中。</p><blockquote><p>Logger 源码分析就到这里了，作者代码写得很优雅，也非常感谢作者向开源社区贡献如此优秀的库。</p></blockquote><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/ca2fa1f1.html">https://www.wshunli.com/posts/ca2fa1f1.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="//cdn.wshunli.com/source/av-min.js"></script><script src="//cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mm",lang:"zh-cn"})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/cfc1cac2.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/a72058f7.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@mail.wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">143</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a><a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook"><span class="visuallyhidden">Facebook</span></button></a><a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"><span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;2015&nbsp;-<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank">Upyun</a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#909399'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #909399, 0 0 15px #909399'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#909399',
+        'border-left-color': '#909399'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);</script><script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js",!0)</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                // 影响 hexo-tag-demo 代码高亮
+                $('.demobox-code-wrap pre').removeClass('linenums');
+                                prettyPrint();
+                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":false}});</script></body></html>
