@@ -3,12 +3,22 @@
 
     <sitemap>
         <loc>https://www.wshunli.com/post-sitemap.xml</loc>
-        <lastmod>2018-09-17T04:15:17.326Z</lastmod>
+        <lastmod>2018-09-17T06:40:30.958Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.wshunli.com/page-sitemap.xml</loc>
-        <lastmod>2018-09-17T04:15:17.326Z</lastmod>
+        <lastmod>2018-09-17T06:40:30.958Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://www.wshunli.com/category-sitemap.xml</loc>
+        <lastmod>2018-09-17T06:40:30.950Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://www.wshunli.com/tag-sitemap.xml</loc>
+        <lastmod>2018-09-17T06:40:30.946Z</lastmod>
     </sitemap>
 
 </sitemapindex>
