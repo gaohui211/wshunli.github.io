@@ -1,369 +1,16 @@
-<!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.5 -->
-    <script>
-        window.materialVersion = "1.5.5"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    <link rel="dns-prefetch" href="https://cdn.wshunli.com/source">
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-
-
-
-
-
-
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
-
-
-    <link rel="dns-prefetch" href="https://lib.baomitu.com">
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-            《ECMAScript6入门》读书笔记（二） - 
-        
-        CirGIS 博客
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/favicon.ico">
-    <link rel="icon" href="/favicon.ico">
-
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="wshunli`s Blog!">
-    <meta name="keywords" content="wshunli CirGIS,读书笔记,JavaScript,《ECMAScript6入门》">
-    <meta name="theme-color" content="#606266">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-
-    <!--[if lte IE 9]>
+<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.5",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><link rel="dns-prefetch" href="https://hm.baidu.com"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="dns-prefetch" href="https://lib.baomitu.com"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>《ECMAScript6入门》读书笔记（二） - CirGIS 博客</title><link rel="icon shortcut" type="image/ico" href="/favicon.ico"><link rel="icon" href="/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="wshunli`s Blog!"><meta name="keywords" content="wshunli CirGIS,读书笔记,JavaScript,《ECMAScript6入门》"><meta name="theme-color" content="#606266"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #409EFF;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #757575 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #757575 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #757575 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #409EFF;
-    text-decoration: underline;
-  }
-  
- /* 自定义CSS 开始*/
-
-  #post-content h1 {
-      font-size: 1.75em;
-      border-bottom: 1px solid #ddd;
-  }
-  #post-content h2 {
-      font-size: 1.5em;
-      border-bottom: 1px solid #eee;
-  }
-  #post-content h3 {
-      font-size: 1.25em;
-  }
-  #post-content h4 {
-      font-size: 1em;
-  }
-  #post-content h5 {
-      font-size: 1em;
-  }
-  #post-content h6 {
-      color: #777;
-      font-size: 1em;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  #post-content a {
-    text-decoration: none;
-    font-weight: 400;
-  }
-
-  #post-content a:hover {
-    // text-shadow: 1px 1px 1px;
-    text-decoration: underline;
-  }
-  .mdl-card__media {
-    background-color:#fff !important;
-  }
-  .disqus_click_btn{
-     margin: 0 auto !important;
-  }
-  #comment .veditor{
-    font-size: 1em;
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
-  #post-content table {
-    width: 100%;
-    overflow: auto;
-    display: table;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-
-  /* 自定义CSS 结束*/
-
-
-  </style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: regular;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
-            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
-        }
-    </style>
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js", true)</script>
-    
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="CirGIS 博客">
-    <meta name="msapplication-starturl" content="https://www.wshunli.com/posts/67855b9d.html">
-    <meta name="msapplication-navbutton-color" content="#606266">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="CirGIS 博客">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/favicon.ico">
-
-    <!-- Site Verification -->
-    <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM">
-    
-
-    <!-- RSS -->
-    
-        
-            <link rel="alternate" type="application/atom+xml" href="/atom.xml">
-        
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.wshunli.com/posts/67855b9d.html">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="《ECMAScript6入门》读书笔记（二） | CirGIS 博客">
-    <meta property="og:image" content="/favicon.ico">
-    <meta property="og:description" content="wshunli`s Blog!">
-    <meta property="og:article:tag" content="读书笔记"> <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="《ECMAScript6入门》"> 
-
-    
-        <meta property="article:published_time" content="Sun Nov 05 2017 20:01:26 GMT+0800">
-        <meta property="article:modified_time" content="Sun Sep 23 2018 18:41:06 GMT+0800">
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://www.wshunli.com/posts/67855b9d.html">
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-<script type="application/ld+json">
-{
+    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#409eff}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#757575!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#757575!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#757575!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#409eff;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS 博客"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/67855b9d.html"><meta name="msapplication-navbutton-color" content="#606266"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS 博客"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/67855b9d.html"><meta property="og:type" content="blog"><meta property="og:title" content="《ECMAScript6入门》读书笔记（二） | CirGIS 博客"><meta property="og:image" content="/favicon.ico"><meta property="og:description" content="wshunli`s Blog!"><meta property="og:article:tag" content="读书笔记"><meta property="og:article:tag" content="JavaScript"><meta property="og:article:tag" content="《ECMAScript6入门》"><meta property="article:published_time" content="Sun Nov 05 2017 20:01:26 GMT+0800"><meta property="article:modified_time" content="Sun Sep 23 2018 18:53:43 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/67855b9d.html"><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://www.wshunli.com/posts/67855b9d.html",
     "headline": "《ECMAScript6入门》读书笔记（二）",
     "datePublished": "Sun Nov 05 2017 20:01:26 GMT+0800",
-    "dateModified": "Sun Sep 23 2018 18:41:06 GMT+0800",
+    "dateModified": "Sun Sep 23 2018 18:53:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -383,256 +30,7 @@
     },
     "keywords": ",读书笔记,JavaScript,《ECMAScript6入门》wshunli CirGIS",
     "description": "wshunli`s Blog!",
-}
-</script>
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-72210097-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-<script>
-    (function(f, a, t, h, o, m){
-        a[h]=a[h]||function(){
-            (a[h].q=a[h].q||[]).push(arguments)
-        };
-        o=f.createElement('script'),
-        m=f.getElementsByTagName('script')[0];
-        o.async=1; o.src=t; o.id='fathom-script';
-        m.parentNode.insertBefore(o,m)
-    })(document, window, '//analytics.wshunli.com/tracker.js', 'fathom');
-    fathom('trackPageview');
-    </script>
-    <!-- / Fathom -->
-
-    <!-- Custom Head -->
-    
-
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span id="MD-burger-id" class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符、数值、正则的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">字符、数值、正则的扩展</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第7章-数组的扩展"><span class="post-toc-number">2.</span> <span class="post-toc-text">第7章 数组的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展运算符"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">扩展运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-from"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Array.from()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-of"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Array.of()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#copyWithin"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">copyWithin()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#find-amp-findIndex"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">find() &amp; findIndex()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fill"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">fill()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#entries-，keys-和-values"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">entries()，keys() 和 values()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#includes"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">includes()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组的空位"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">数组的空位</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第8章-函数的扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">第8章 函数的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数参数的默认值"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">函数参数的默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rest-参数"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">rest 参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#name-属性"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">name 属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#箭头函数"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">箭头函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#双冒号运算符"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">双冒号运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#尾调用优化"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">尾调用优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数参数的尾逗号"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">函数参数的尾逗号</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第9章-对象的扩展"><span class="post-toc-number">4.</span> <span class="post-toc-text">第9章 对象的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性的简洁表示法"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">属性的简洁表示法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性名表达式"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">属性名表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法的-name-属性"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">方法的 name 属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-is"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Object.is()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-assign"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Object.assign()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-getOwnPropertyDescriptors"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">Object.getOwnPropertyDescriptors()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-setPrototypeOf-，Object-getPrototypeOf"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">Object.setPrototypeOf()，Object.getPrototypeOf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-keys-，Object-values-，Object-entries"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">Object.keys()，Object.values()，Object.entries()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性的可枚举性和遍历"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">属性的可枚举性和遍历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#super-关键字"><span class="post-toc-number">4.10.</span> <span class="post-toc-text">super 关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象的扩展运算符"><span class="post-toc-number">4.11.</span> <span class="post-toc-text">对象的扩展运算符</span></a></li></ol></li></ol>
-    </ul>
-    
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/ECMAScript6.min.png)">
-    
-            <p class="article-headline-p">
-                《ECMAScript6入门》读书笔记（二）
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar">
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>wshunli</strong>
-        <span>11月 05, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aS1LDMBAFwNz/0nCAEPnN6GOTaq8oEI5aC0l5M6+fr35eeHh4eHh4eHh4D+O94ud9fPKG98/6Y0LD8fnc8PDw8E7yLrba4ZhkOcaM3ud+GoOHh4d3kpdMMd/oq/hP/1udGx4eHt7TeL2Lcm8MHh4e3jfx8stx9TDAw8PD+1+85At/78AYR7T5QmzPWvDw8PBiXrUAdvLnG+p7eHh4eENeuaWpt1lPtxcUZoiHh4e3mTdTxEoas6oNVfPLgYeHh7ebN8b0QooqMnlbPjc8PDy8k7zq1/78f5PrcrLE0aLj4eHhbeYlV958Er3NvfoGPDw8vHt51ejh05ikgWB8JOTNXhfLh4eHh7eZ17v45pPoxbLLwgg8PDy8zbzxATC/iedFspkmAzw8PLzzvAVBausYqC5082DAw8PDm+YlIUJe1uoBjmYteHh4eJt5vQ+rLkTSoLCspwwPDw9vKa8azlajh+q1uxox4+Hh4Z3hVZsA8qAh2fR7v7mIS/Dw8PA283plsPGVN/nreNLVpgQ8PDy8k7xec0Cv3SoPPvJAudlThoeHhzfBy1+XHwZrw9/yVRsPDw/vIK/XQDDfXJWPaYYReHh4eEt5+YTKocAEOF+y8jcGPDw8vGle9ekVqKpBQy8CxsPDwzvDq27KeRErX4iZAhgeHh7eXbxeQ0BeKqsyqnPAw8PDu4uXHwZ5EatHnYkk8PDw8J7Gmw8Uqk1d1fZZPDw8vGfyemWz/CpfPR7w8PDw7uJVi14zhf/kPXkkgYeHh3eeN1MAq7ZkrW20KrSr4uHh4S3ifd+Dh4eHh4eHh4f3gOcXjqNittPWs1QAAAAASUVORK5CYII=">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《ECMAScript6入门》/">《ECMAScript6入门》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a>
-    </li></ul>
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/posts/67855b9d.html" class="leancloud-views_num" data-flag-title="《ECMAScript6入门》读书笔记（二）">
-     &nbsp;浏览量
-</span>
-
-            </li>
-        </a>
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《ECMAScript6入门》读书笔记（二）&url=https://www.wshunli.com/posts/67855b9d.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《ECMAScript6入门》读书笔记（二）&url=https://www.wshunli.com/posts/67855b9d.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/67855b9d.html&text=《ECMAScript6入门》读书笔记（二）" target="_blank" rel="external nofollow noopener noreferrer">
-            <li class="mdl-menu__item">
-                分享到 Telegram
-            </li>
-        </a>
-    
-</ul>
-
-    
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>《ECMAScript6入门》读书笔记</p>
-<p>ES6 引入了一种新的原始数据类型 <code>Symbol</code>，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：<code>undefined</code>、<code>null</code>、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
-<h1 id="字符、数值、正则的扩展"><a href="#字符、数值、正则的扩展" class="headerlink" title="字符、数值、正则的扩展"></a>字符、数值、正则的扩展</h1><p>第4章 字符串的扩展：<a href="http://es6.ruanyifeng.com/#docs/string" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/string</a><br>第5章 数值的扩展：<a href="http://es6.ruanyifeng.com/#docs/array" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/array</a><br>第6章 正则的扩展：<a href="http://es6.ruanyifeng.com/#docs/regex" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/regex</a></p>
-<h1 id="第7章-数组的扩展"><a href="#第7章-数组的扩展" class="headerlink" title="第7章 数组的扩展"></a>第7章 数组的扩展</h1><h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p>扩展运算符是三个点（<code>...</code>），将一个数组转为用逗号分隔的参数序列。</p>
-<pre><code class="lang-JavaScript">console.log(1, ...[2, 3, 4], 5); // 1 2 3 4 5
+}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(t,e,a,c,n,i){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},n=t.createElement("script"),i=t.getElementsByTagName("script")[0],n.async=1,n.src="//analytics.wshunli.com/tracker.js",n.id="fathom-script",i.parentNode.insertBefore(n,i)}(document,window,0,"fathom"),fathom("trackPageview")</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span id="MD-burger-id" class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符、数值、正则的扩展"><span class="post-toc-number">1.</span> <span class="post-toc-text">字符、数值、正则的扩展</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第7章-数组的扩展"><span class="post-toc-number">2.</span> <span class="post-toc-text">第7章 数组的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展运算符"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">扩展运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-from"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Array.from()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-of"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Array.of()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#copyWithin"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">copyWithin()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#find-amp-findIndex"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">find() &amp; findIndex()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fill"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">fill()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#entries-，keys-和-values"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">entries()，keys() 和 values()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#includes"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">includes()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组的空位"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">数组的空位</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第8章-函数的扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">第8章 函数的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数参数的默认值"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">函数参数的默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rest-参数"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">rest 参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#name-属性"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">name 属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#箭头函数"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">箭头函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#双冒号运算符"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">双冒号运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#尾调用优化"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">尾调用优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数参数的尾逗号"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">函数参数的尾逗号</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第9章-对象的扩展"><span class="post-toc-number">4.</span> <span class="post-toc-text">第9章 对象的扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性的简洁表示法"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">属性的简洁表示法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性名表达式"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">属性名表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法的-name-属性"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">方法的 name 属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-is"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Object.is()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-assign"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Object.assign()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-getOwnPropertyDescriptors"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">Object.getOwnPropertyDescriptors()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-setPrototypeOf-，Object-getPrototypeOf"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">Object.setPrototypeOf()，Object.getPrototypeOf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-keys-，Object-values-，Object-entries"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">Object.keys()，Object.values()，Object.entries()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性的可枚举性和遍历"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">属性的可枚举性和遍历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#super-关键字"><span class="post-toc-number">4.10.</span> <span class="post-toc-text">super 关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象的扩展运算符"><span class="post-toc-number">4.11.</span> <span class="post-toc-text">对象的扩展运算符</span></a></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/ECMAScript6.min.png)"><p class="article-headline-p">《ECMAScript6入门》读书笔记（二）</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>11月 05, 2017</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aS1LDMBAFwNz/0nCAEPnN6GOTaq8oEI5aC0l5M6+fr35eeHh4eHh4eHh4D+O94ud9fPKG98/6Y0LD8fnc8PDw8E7yLrba4ZhkOcaM3ud+GoOHh4d3kpdMMd/oq/hP/1udGx4eHt7TeL2Lcm8MHh4e3jfx8stx9TDAw8PD+1+85At/78AYR7T5QmzPWvDw8PBiXrUAdvLnG+p7eHh4eENeuaWpt1lPtxcUZoiHh4e3mTdTxEoas6oNVfPLgYeHh7ebN8b0QooqMnlbPjc8PDy8k7zq1/78f5PrcrLE0aLj4eHhbeYlV958Er3NvfoGPDw8vHt51ejh05ikgWB8JOTNXhfLh4eHh7eZ17v45pPoxbLLwgg8PDy8zbzxATC/iedFspkmAzw8PLzzvAVBausYqC5082DAw8PDm+YlIUJe1uoBjmYteHh4eJt5vQ+rLkTSoLCspwwPDw9vKa8azlajh+q1uxox4+Hh4Z3hVZsA8qAh2fR7v7mIS/Dw8PA283plsPGVN/nreNLVpgQ8PDy8k7xec0Cv3SoPPvJAudlThoeHhzfBy1+XHwZrw9/yVRsPDw/vIK/XQDDfXJWPaYYReHh4eEt5+YTKocAEOF+y8jcGPDw8vGle9ekVqKpBQy8CxsPDwzvDq27KeRErX4iZAhgeHh7eXbxeQ0BeKqsyqnPAw8PDu4uXHwZ5EatHnYkk8PDw8J7Gmw8Uqk1d1fZZPDw8vGfyemWz/CpfPR7w8PDw7uJVi14zhf/kPXkkgYeHh3eeN1MAq7ZkrW20KrSr4uHh4S3ifd+Dh4eHh4eHh4f3gOcXjqNittPWs1QAAAAASUVORK5CYII="></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/《ECMAScript6入门》/">《ECMAScript6入门》</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/读书笔记/">读书笔记</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/67855b9d.html" class="leancloud-views_num" data-flag-title="《ECMAScript6入门》读书笔记（二）">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《ECMAScript6入门》读书笔记（二）&url=https://www.wshunli.com/posts/67855b9d.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=《ECMAScript6入门》读书笔记（二）&url=https://www.wshunli.com/posts/67855b9d.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Twitter</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/67855b9d.html&text=《ECMAScript6入门》读书笔记（二）" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>《ECMAScript6入门》读书笔记</p><p>ES6 引入了一种新的原始数据类型 <code>Symbol</code>，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：<code>undefined</code>、<code>null</code>、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p><h1 id="字符、数值、正则的扩展"><a href="#字符、数值、正则的扩展" class="headerlink" title="字符、数值、正则的扩展"></a>字符、数值、正则的扩展</h1><p>第4章 字符串的扩展：<a href="http://es6.ruanyifeng.com/#docs/string" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/string</a><br>第5章 数值的扩展：<a href="http://es6.ruanyifeng.com/#docs/array" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/array</a><br>第6章 正则的扩展：<a href="http://es6.ruanyifeng.com/#docs/regex" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com/#docs/regex</a></p><h1 id="第7章-数组的扩展"><a href="#第7章-数组的扩展" class="headerlink" title="第7章 数组的扩展"></a>第7章 数组的扩展</h1><h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p>扩展运算符是三个点（<code>...</code>），将一个数组转为用逗号分隔的参数序列。</p><pre><code class="lang-JavaScript">console.log(1, ...[2, 3, 4], 5); // 1 2 3 4 5
 
 function push(array, ...items) {
   array.push(...items);
@@ -643,9 +41,7 @@ function add(x, y) {
 }
 const numbers = [4, 38];
 add(...numbers); // 42
-</code></pre>
-<h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h2><p>Array.from 方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。</p>
-<pre><code class="lang-JavaScript">let arrayLike = {
+</code></pre><h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h2><p>Array.from 方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。</p><pre><code class="lang-JavaScript">let arrayLike = {
     &#39;0&#39;: &#39;a&#39;,
     &#39;1&#39;: &#39;b&#39;,
     &#39;2&#39;: &#39;c&#39;,
@@ -655,36 +51,21 @@ add(...numbers); // 42
 var arr1 = [].slice.call(arrayLike); // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
 // ES6的写法
 let arr2 = Array.from(arrayLike);    // [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-</code></pre>
-<h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h2><p>Array.of 方法用于将一组值，转换为数组。</p>
-<pre><code class="lang-JavaScript">Array.of(3, 11, 8) // [3,11,8]
-</code></pre>
-<h2 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin()"></a>copyWithin()</h2><p>数组实例的 copyWithin() 将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。</p>
-<pre><code class="lang-JavaScript">Array.prototype.copyWithin(target, start = 0, end = this.length)
-</code></pre>
-<p>target（必需）：从该位置开始替换数据。<br>start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。<br>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</p>
-<pre><code class="lang-JavaScript">[1, 2, 3, 4, 5].copyWithin(0, 3);
+</code></pre><h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h2><p>Array.of 方法用于将一组值，转换为数组。</p><pre><code class="lang-JavaScript">Array.of(3, 11, 8) // [3,11,8]
+</code></pre><h2 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin()"></a>copyWithin()</h2><p>数组实例的 copyWithin() 将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。</p><pre><code class="lang-JavaScript">Array.prototype.copyWithin(target, start = 0, end = this.length)
+</code></pre><p>target（必需）：从该位置开始替换数据。<br>start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。<br>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</p><pre><code class="lang-JavaScript">[1, 2, 3, 4, 5].copyWithin(0, 3);
 // [4, 5, 3, 4, 5]
-</code></pre>
-<h2 id="find-amp-findIndex"><a href="#find-amp-findIndex" class="headerlink" title="find() &amp; findIndex()"></a>find() &amp; findIndex()</h2><p>数组实例的 find() 方法，用于找出第一个符合条件的数组成员。<br>它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。</p>
-<pre><code class="lang-JavaScript">[1, 5, 10, 15].find(function(value, index, arr) {
+</code></pre><h2 id="find-amp-findIndex"><a href="#find-amp-findIndex" class="headerlink" title="find() &amp; findIndex()"></a>find() &amp; findIndex()</h2><p>数组实例的 find() 方法，用于找出第一个符合条件的数组成员。<br>它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。</p><pre><code class="lang-JavaScript">[1, 5, 10, 15].find(function(value, index, arr) {
   return value &gt; 9;
 }) // 10
-</code></pre>
-<p>find() 方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。</p>
-<pre><code class="lang-JavaScript">[1, 5, 10, 15].findIndex(function(value, index, arr) {
+</code></pre><p>find() 方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。</p><pre><code class="lang-JavaScript">[1, 5, 10, 15].findIndex(function(value, index, arr) {
   return value &gt; 9;
 }) // 2
-</code></pre>
-<p>findIndex() 方法的用法与 find() 方法非常类似，返回第一个符合条件的数组成员的位置</p>
-<h2 id="fill"><a href="#fill" class="headerlink" title="fill()"></a>fill()</h2><p>数组实例的 fill() 方法使用给定值，填充一个数组。</p>
-<pre><code class="lang-JavaScript">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].fill(7); // [7, 7, 7]
+</code></pre><p>findIndex() 方法的用法与 find() 方法非常类似，返回第一个符合条件的数组成员的位置</p><h2 id="fill"><a href="#fill" class="headerlink" title="fill()"></a>fill()</h2><p>数组实例的 fill() 方法使用给定值，填充一个数组。</p><pre><code class="lang-JavaScript">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].fill(7); // [7, 7, 7]
 new Array(3).fill(7); // [7, 7, 7]
 // 第二个和第三个参数，用于指定填充的起始位置和结束位置。
 [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].fill(7, 1, 2); // [&#39;a&#39;, 7, &#39;c&#39;]
-</code></pre>
-<h2 id="entries-，keys-和-values"><a href="#entries-，keys-和-values" class="headerlink" title="entries()，keys() 和 values()"></a>entries()，keys() 和 values()</h2><p>ES6 提供三个新的方法 — entries()，keys() 和 values() — 用于遍历数组。<br>可以用 for…of 循环进行遍历，唯一的区别是 keys() 是对键名的遍历、values() 是对键值的遍历，entries() 是对键值对的遍历。</p>
-<pre><code class="lang-JavaScript">for (let index of [&#39;a&#39;, &#39;b&#39;].keys()) {
+</code></pre><h2 id="entries-，keys-和-values"><a href="#entries-，keys-和-values" class="headerlink" title="entries()，keys() 和 values()"></a>entries()，keys() 和 values()</h2><p>ES6 提供三个新的方法 — entries()，keys() 和 values() — 用于遍历数组。<br>可以用 for…of 循环进行遍历，唯一的区别是 keys() 是对键名的遍历、values() 是对键值的遍历，entries() 是对键值对的遍历。</p><pre><code class="lang-JavaScript">for (let index of [&#39;a&#39;, &#39;b&#39;].keys()) {
   console.log(index);
 }
 // 0
@@ -699,33 +80,20 @@ for (let [index, elem] of [&#39;a&#39;, &#39;b&#39;].entries()) {
 }
 // 0 &quot;a&quot;
 // 1 &quot;b&quot;
-</code></pre>
-<h2 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h2><p>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。</p>
-<pre><code class="lang-JavaScript">[1, 2, 3].includes(2)     // true
+</code></pre><h2 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h2><p>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。</p><pre><code class="lang-JavaScript">[1, 2, 3].includes(2)     // true
 [1, 2, 3].includes(4)     // false
 [1, 2, NaN].includes(NaN) // true
 // 第二个参数表示搜索的起始位置，默认为0
 [1, 2, 3].includes(3, 3);  // false
-</code></pre>
-<h2 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h2><p>数组的空位指，数组的某一个位置没有任何值。</p>
-<pre><code class="lang-JavaScript">Array(3) // [, , ,]
-</code></pre>
-<p>ES6 明确将空位转为 undefined。</p>
-<pre><code class="lang-JavaScript">Array.from([&#39;a&#39;,,&#39;b&#39;]); // [ &quot;a&quot;, undefined, &quot;b&quot; ]
-</code></pre>
-<p>由于空位的处理规则非常不统一，所以建议避免出现空位。</p>
-<h1 id="第8章-函数的扩展"><a href="#第8章-函数的扩展" class="headerlink" title="第8章 函数的扩展"></a>第8章 函数的扩展</h1><h2 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h2><p>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</p>
-<pre><code class="lang-JavaScript">function log(x, y = &#39;World&#39;) {
+</code></pre><h2 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h2><p>数组的空位指，数组的某一个位置没有任何值。</p><pre><code class="lang-JavaScript">Array(3) // [, , ,]
+</code></pre><p>ES6 明确将空位转为 undefined。</p><pre><code class="lang-JavaScript">Array.from([&#39;a&#39;,,&#39;b&#39;]); // [ &quot;a&quot;, undefined, &quot;b&quot; ]
+</code></pre><p>由于空位的处理规则非常不统一，所以建议避免出现空位。</p><h1 id="第8章-函数的扩展"><a href="#第8章-函数的扩展" class="headerlink" title="第8章 函数的扩展"></a>第8章 函数的扩展</h1><h2 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h2><p>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</p><pre><code class="lang-JavaScript">function log(x, y = &#39;World&#39;) {
   console.log(x, y);
 }
 log(&#39;Hello&#39;)          // Hello World
 log(&#39;Hello&#39;, &#39;China&#39;) // Hello China
 log(&#39;Hello&#39;, &#39;&#39;)      // Hello
-</code></pre>
-<p>参数默认值是惰性求值的。</p>
-<p><strong>与解构赋值默认值结合使用</strong>：</p>
-<p>函数默认值生效：当前参数没有传值或传值为 undefined ；<br>解构赋值默认值生效：当前参数传值或没有传值而默认值与 undefined 严格相等。</p>
-<pre><code class="lang-JavaScript">// 写法一
+</code></pre><p>参数默认值是惰性求值的。</p><p><strong>与解构赋值默认值结合使用</strong>：</p><p>函数默认值生效：当前参数没有传值或传值为 undefined ；<br>解构赋值默认值生效：当前参数传值或没有传值而默认值与 undefined 严格相等。</p><pre><code class="lang-JavaScript">// 写法一
 function m1({x = 0, y = 0} = {}) {
   return [x, y];
 }
@@ -748,11 +116,7 @@ m2( {} )           // [undefined, undefined]
 
 m1( {z: 3} )       // [0, 0]
 m2( {z: 3} )       // [undefined, undefined]
-</code></pre>
-<p>区别是写法一函数参数的默认值是空对象，但是设置了对象解构赋值的默认值；写法二函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。</p>
-<p><strong>参数默认值的位置</strong>：</p>
-<p>定义了默认值的参数应该是函数的尾参数，否则这个参数不能省略。</p>
-<pre><code class="lang-JavaScript">// 例一：默认值的参数在前
+</code></pre><p>区别是写法一函数参数的默认值是空对象，但是设置了对象解构赋值的默认值；写法二函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。</p><p><strong>参数默认值的位置</strong>：</p><p>定义了默认值的参数应该是函数的尾参数，否则这个参数不能省略。</p><pre><code class="lang-JavaScript">// 例一：默认值的参数在前
 function f(x = 1, y) {
   console.log([x, y]);
 }
@@ -768,16 +132,11 @@ f();             // [undefined, 1]
 f(2);            // [2, 1]
 f(2, );          // [2, 1]
 f(2, undefined); // [2, 1]
-</code></pre>
-<p>undefined 能触发默认值，null 不能。</p>
-<pre><code class="lang-JavaScript">function foo(x = 5, y = 6) {
+</code></pre><p>undefined 能触发默认值，null 不能。</p><pre><code class="lang-JavaScript">function foo(x = 5, y = 6) {
   console.log(x, y);
 }
 foo(undefined, null); // 5 null
-</code></pre>
-<p><strong>函数的 length 属性</strong>：没有指定默认值的参数个数。</p>
-<p><strong>作用域</strong>：一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域。等到初始化结束，这个作用域就会消失。</p>
-<pre><code class="lang-JavaScript">var x = 1;
+</code></pre><p><strong>函数的 length 属性</strong>：没有指定默认值的参数个数。</p><p><strong>作用域</strong>：一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域。等到初始化结束，这个作用域就会消失。</p><pre><code class="lang-JavaScript">var x = 1;
 function f(x, y = x) {
   console.log(y);
 }
@@ -791,9 +150,7 @@ function f(y = x) {
 }
 f();  // 1
 f(3); // 3
-</code></pre>
-<p>更复杂的例子：</p>
-<pre><code class="lang-JavaScript">var x = 1; // 全局变量
+</code></pre><p>更复杂的例子：</p><pre><code class="lang-JavaScript">var x = 1; // 全局变量
 function foo(x, y = function() { x = 2; }) { //函数参数作用域
   var x = 3; // 函数内部变量
   y();
@@ -801,9 +158,7 @@ function foo(x, y = function() { x = 2; }) { //函数参数作用域
 }
 foo();          // 3 - 第5行
 console.log(x); // 1
-</code></pre>
-<h2 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h2><p>ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数。</p>
-<pre><code class="lang-JavaScript">function add(...values) {
+</code></pre><h2 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h2><p>ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数。</p><pre><code class="lang-JavaScript">function add(...values) {
   let sum = 0;
   for (var val of values) {
     sum += val;
@@ -811,34 +166,24 @@ console.log(x); // 1
   return sum;
 }
 add(2, 5, 3); // 10
-</code></pre>
-<p>rest 参数搭配的变量为数组，arguments 为类似数组的对象。<br>rest 参数之后不能再有其他参数；函数的 length 属性，也不包括 rest 参数。</p>
-<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>从 ES5 开始，函数内部可以设定为严格模式。ES2016 规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</p>
-<h2 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h2><p>函数的 name 属性，返回该函数的函数名。</p>
-<pre><code class="lang-JavaScript">function foo() {}
+</code></pre><p>rest 参数搭配的变量为数组，arguments 为类似数组的对象。<br>rest 参数之后不能再有其他参数；函数的 length 属性，也不包括 rest 参数。</p><h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>从 ES5 开始，函数内部可以设定为严格模式。ES2016 规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</p><h2 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a>name 属性</h2><p>函数的 name 属性，返回该函数的函数名。</p><pre><code class="lang-JavaScript">function foo() {}
 foo.name // &quot;foo&quot;
 var f = function () {};
 f.name // &quot;&quot; - ES5
 f.name // &quot;f&quot; - ES6
-</code></pre>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>ES6 允许使用“箭头”（<code>=&gt;</code>）定义函数。</p>
-<pre><code class="lang-JavaScript">var sum = (num1, num2) =&gt; num1 + num2;
+</code></pre><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>ES6 允许使用“箭头”（<code>=&gt;</code>）定义函数。</p><pre><code class="lang-JavaScript">var sum = (num1, num2) =&gt; num1 + num2;
 // 等同于
 var sum = function(num1, num2) {
   return num1 + num2;
 };
-</code></pre>
-<p>箭头函数有几个使用注意点：<br>（1）函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。<br>（2）不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。<br>（3）不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<br>（4）不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。</p>
-<pre><code class="lang-JavaScript">function foo() {
+</code></pre><p>箭头函数有几个使用注意点：<br>（1）函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。<br>（2）不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。<br>（3）不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<br>（4）不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。</p><pre><code class="lang-JavaScript">function foo() {
   setTimeout(() =&gt; {
     console.log(&#39;id:&#39;, this.id);
   }, 100);
 }
 var id = 21;
 foo.call({ id: 42 }); // id: 42
-</code></pre>
-<p>箭头函数 this 指向定义时所在的对象。</p>
-<pre><code class="lang-JavaScript">function Timer() {
+</code></pre><p>箭头函数 this 指向定义时所在的对象。</p><pre><code class="lang-JavaScript">function Timer() {
   this.s1 = 0;
   this.s2 = 0;
   setInterval(() =&gt; this.s1++, 1000); // 箭头函数
@@ -849,10 +194,7 @@ foo.call({ id: 42 }); // id: 42
 var timer = new Timer();
 setTimeout(() =&gt; console.log(&#39;s1: &#39;, timer.s1), 3100); // s1: 3
 setTimeout(() =&gt; console.log(&#39;s2: &#39;, timer.s2), 3100); // s2: 0
-</code></pre>
-<p>前者的 this 绑定定义时所在的作用域（即Timer函数），后者的 this 指向运行时所在的作用域（即全局对象）。</p>
-<p>this 指向的固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，导致内部的 this 就是外层代码块的 this。</p>
-<pre><code class="lang-JavaScript">// ES6
+</code></pre><p>前者的 this 绑定定义时所在的作用域（即Timer函数），后者的 this 指向运行时所在的作用域（即全局对象）。</p><p>this 指向的固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，导致内部的 this 就是外层代码块的 this。</p><pre><code class="lang-JavaScript">// ES6
 function foo() {
   setTimeout(() =&gt; {
     console.log(&#39;id:&#39;, this.id);
@@ -865,10 +207,7 @@ function foo() {
     console.log(&#39;id:&#39;, _this.id);
   }, 100);
 }
-</code></pre>
-<p>由于没有 this，因而也不存在通过 bind()、call()、apply() 来改变 this 的指向。</p>
-<p><strong>嵌套的箭头函数</strong>：箭头函数内部，还可以再使用箭头函数。</p>
-<pre><code class="lang-JavaScript">let insert = (value) =&gt; ({into: (array) =&gt; ({after: (afterValue) =&gt; {
+</code></pre><p>由于没有 this，因而也不存在通过 bind()、call()、apply() 来改变 this 的指向。</p><p><strong>嵌套的箭头函数</strong>：箭头函数内部，还可以再使用箭头函数。</p><pre><code class="lang-JavaScript">let insert = (value) =&gt; ({into: (array) =&gt; ({after: (afterValue) =&gt; {
   array.splice(array.indexOf(afterValue) + 1, 0, value);
   return array;
 }})});
@@ -883,35 +222,23 @@ function insert(value) {
 }
 // 结果相同
 insert(2).into([1, 3]).after(1); //[1, 2, 3]
-</code></pre>
-<h2 id="双冒号运算符"><a href="#双冒号运算符" class="headerlink" title="双冒号运算符"></a>双冒号运算符</h2><p>函数绑定运算符是并排的两个冒号（<code>::</code>），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。</p>
-<pre><code class="lang-JavaScript">foo::bar;
+</code></pre><h2 id="双冒号运算符"><a href="#双冒号运算符" class="headerlink" title="双冒号运算符"></a>双冒号运算符</h2><p>函数绑定运算符是并排的两个冒号（<code>::</code>），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。</p><pre><code class="lang-JavaScript">foo::bar;
 // 等同于
 bar.bind(foo);
-</code></pre>
-<p>如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p>
-<pre><code class="lang-JavaScript">var method = obj::obj.foo;
+</code></pre><p>如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p><pre><code class="lang-JavaScript">var method = obj::obj.foo;
 // 等同于
 var method = ::obj.foo;
-</code></pre>
-<p>双冒号运算符的运算结果，还是一个对象，因此可以采用链式写法。</p>
-<pre><code class="lang-JavaScript">let { find, html } = jake;
+</code></pre><p>双冒号运算符的运算结果，还是一个对象，因此可以采用链式写法。</p><pre><code class="lang-JavaScript">let { find, html } = jake;
 document.querySelectorAll(&quot;div.myClass&quot;)
 ::find(&quot;p&quot;)
 ::html(&quot;hahaha&quot;);
-</code></pre>
-<h2 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h2><p>尾调用（Tail Call）是指某个函数的最后一步是调用另一个函数。</p>
-<pre><code class="lang-JavaScript">function f(x) {
+</code></pre><h2 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h2><p>尾调用（Tail Call）是指某个函数的最后一步是调用另一个函数。</p><pre><code class="lang-JavaScript">function f(x) {
   if (x &gt; 0) {
     return m(x)
   }
   return n(x);
 }
-</code></pre>
-<p><strong>尾调用优化</strong>：即只保留内层函数的调用帧。</p>
-<p>函数调用会在内存形成一个调用记录即“调用帧”，如果函数 A 调用函数 B ，还会形成一个 B 的调用帧，依次类推形成一个调用栈。</p>
-<p>如果函数存在尾调用，只保留最后的函数的调用帧即可，这将大大节省内存。</p>
-<pre><code class="lang-JavaScript">function f() {
+</code></pre><p><strong>尾调用优化</strong>：即只保留内层函数的调用帧。</p><p>函数调用会在内存形成一个调用记录即“调用帧”，如果函数 A 调用函数 B ，还会形成一个 B 的调用帧，依次类推形成一个调用栈。</p><p>如果函数存在尾调用，只保留最后的函数的调用帧即可，这将大大节省内存。</p><pre><code class="lang-JavaScript">function f() {
   let m = 1;
   let n = 2;
   return g(m + n);
@@ -924,19 +251,14 @@ function f() {
 f();
 // 等同于
 g(3);
-</code></pre>
-<p>执行到最后一步，完全可以删除f(x)的调用帧，只保留g(3)的调用帧。</p>
-<p>注意，只有不再用到外层函数的内部变量才能进行“尾调用优化”。<br>下面函数就不会进行“尾调用优化”。</p>
-<pre><code class="lang-JavaScript">function addOne(a){
+</code></pre><p>执行到最后一步，完全可以删除f(x)的调用帧，只保留g(3)的调用帧。</p><p>注意，只有不再用到外层函数的内部变量才能进行“尾调用优化”。<br>下面函数就不会进行“尾调用优化”。</p><pre><code class="lang-JavaScript">function addOne(a){
   var one = 1;
   function inner(b){
     return b + one;
   }
   return inner(a);
 }
-</code></pre>
-<p><strong>尾递归</strong>：函数调用自身，称为递归。如果尾调用自身，就称为尾递归。</p>
-<pre><code class="lang-JavaScript">function factorial(n) {
+</code></pre><p><strong>尾递归</strong>：函数调用自身，称为递归。如果尾调用自身，就称为尾递归。</p><pre><code class="lang-JavaScript">function factorial(n) {
   if (n === 1) return 1;
   return n * factorial(n - 1);
 }
@@ -947,9 +269,7 @@ function factorial(n, total) {
   return factorial(n - 1, n * total);
 }
 facorial(5, 1) // 120
-</code></pre>
-<h2 id="函数参数的尾逗号"><a href="#函数参数的尾逗号" class="headerlink" title="函数参数的尾逗号"></a>函数参数的尾逗号</h2><p>ES2017 允许函数的最后一个参数有尾逗号。</p>
-<pre><code class="lang-JavaScript">function clownsEverywhere(
+</code></pre><h2 id="函数参数的尾逗号"><a href="#函数参数的尾逗号" class="headerlink" title="函数参数的尾逗号"></a>函数参数的尾逗号</h2><p>ES2017 允许函数的最后一个参数有尾逗号。</p><pre><code class="lang-JavaScript">function clownsEverywhere(
   param1,
   param2,
 ) { /* ... */ }
@@ -957,15 +277,11 @@ clownsEverywhere(
   &#39;foo&#39;,
   &#39;bar&#39;,
 );
-</code></pre>
-<h1 id="第9章-对象的扩展"><a href="#第9章-对象的扩展" class="headerlink" title="第9章 对象的扩展"></a>第9章 对象的扩展</h1><h2 id="属性的简洁表示法"><a href="#属性的简洁表示法" class="headerlink" title="属性的简洁表示法"></a>属性的简洁表示法</h2><p>ES6 允许在对象之中，直接写变量。这时，属性名为变量名, 属性值为变量的值。</p>
-<pre><code class="lang-JavaScript">const foo = &#39;bar&#39;;
+</code></pre><h1 id="第9章-对象的扩展"><a href="#第9章-对象的扩展" class="headerlink" title="第9章 对象的扩展"></a>第9章 对象的扩展</h1><h2 id="属性的简洁表示法"><a href="#属性的简洁表示法" class="headerlink" title="属性的简洁表示法"></a>属性的简洁表示法</h2><p>ES6 允许在对象之中，直接写变量。这时，属性名为变量名, 属性值为变量的值。</p><pre><code class="lang-JavaScript">const foo = &#39;bar&#39;;
 const baz = {foo};
 // 等同于
 const baz = {foo: foo};
-</code></pre>
-<p>除了属性简写，方法也可以简写。</p>
-<pre><code class="lang-JavaScript">const o = {
+</code></pre><p>除了属性简写，方法也可以简写。</p><pre><code class="lang-JavaScript">const o = {
   method() {
     return &quot;Hello!&quot;;
   }
@@ -976,15 +292,11 @@ const o = {
     return &quot;Hello!&quot;;
   }
 };
-</code></pre>
-<h2 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h2><p>JavaScript 定义对象的属性，有两种方法。</p>
-<pre><code class="lang-JavaScript">// 方法一
+</code></pre><h2 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h2><p>JavaScript 定义对象的属性，有两种方法。</p><pre><code class="lang-JavaScript">// 方法一
 obj.foo = true;
 // 方法二
 obj[&#39;a&#39; + &#39;bc&#39;] = 123;
-</code></pre>
-<p>如果使用字面量方式定义对象（使用大括号），在 ES5 中只能使用方法一（标识符）定义属性。<br>ES6 允许字面量定义对象时，用方法二（表达式）作为对象的属性名。</p>
-<pre><code class="lang-JavaScript">let lastWord = &#39;last word&#39;;
+</code></pre><p>如果使用字面量方式定义对象（使用大括号），在 ES5 中只能使用方法一（标识符）定义属性。<br>ES6 允许字面量定义对象时，用方法二（表达式）作为对象的属性名。</p><pre><code class="lang-JavaScript">let lastWord = &#39;last word&#39;;
 const a = {
   &#39;first word&#39;: &#39;hello&#39;,
   [lastWord]: &#39;world&#39;
@@ -992,543 +304,56 @@ const a = {
 a[&#39;first word&#39;] // &quot;hello&quot;
 a[lastWord] // &quot;world&quot;
 a[&#39;last word&#39;] // &quot;world&quot;
-</code></pre>
-<p>表达式还可以用于定义方法名。</p>
-<pre><code class="lang-JavaScript">let obj = {
+</code></pre><p>表达式还可以用于定义方法名。</p><pre><code class="lang-JavaScript">let obj = {
   [&#39;h&#39; + &#39;ello&#39;]() {
     return &#39;hi&#39;;
   }
 };
 obj.hello(); // hi
-</code></pre>
-<p>注意：属性名表达式与简洁表示法不能同时使用；属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串 <code>[object Object]</code>。</p>
-<h2 id="方法的-name-属性"><a href="#方法的-name-属性" class="headerlink" title="方法的 name 属性"></a>方法的 name 属性</h2><p>函数的name属性，返回函数名。对象方法也是函数，因此也有name属性。</p>
-<pre><code class="lang-JavaScript">const person = {
+</code></pre><p>注意：属性名表达式与简洁表示法不能同时使用；属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串 <code>[object Object]</code>。</p><h2 id="方法的-name-属性"><a href="#方法的-name-属性" class="headerlink" title="方法的 name 属性"></a>方法的 name 属性</h2><p>函数的name属性，返回函数名。对象方法也是函数，因此也有name属性。</p><pre><code class="lang-JavaScript">const person = {
   sayName() {
     console.log(&#39;hello!&#39;);
   },
 };
 person.sayName.name   // &quot;sayName&quot;
-</code></pre>
-<h2 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a>Object.is()</h2><p>ES6 提出“Same-value equality”（同值相等）算法，用来比较两个值是否严格相等，与严格比较运算符（<code>===</code>）的行为基本一致。。</p>
-<pre><code class="lang-JavaScript">Object.is(&#39;foo&#39;, &#39;foo&#39;); // true
+</code></pre><h2 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a>Object.is()</h2><p>ES6 提出“Same-value equality”（同值相等）算法，用来比较两个值是否严格相等，与严格比较运算符（<code>===</code>）的行为基本一致。。</p><pre><code class="lang-JavaScript">Object.is(&#39;foo&#39;, &#39;foo&#39;); // true
 Object.is({}, {});       // false
-</code></pre>
-<p>不同之处只有两个：一是<code>+0</code>不等于<code>-0</code>，二是<code>NaN</code>等于自身。</p>
-<pre><code class="lang-JavaScript">+0 === -0           // true
+</code></pre><p>不同之处只有两个：一是<code>+0</code>不等于<code>-0</code>，二是<code>NaN</code>等于自身。</p><pre><code class="lang-JavaScript">+0 === -0           // true
 NaN === NaN         // false
 Object.is(+0, -0)   // false
 Object.is(NaN, NaN) // true
-</code></pre>
-<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h2><p>Object.assign() 方法用于对象的合并，将源对象（source）的所有<strong>可枚举属性</strong>，复制到目标对象（target）。</p>
-<pre><code class="lang-JavaScript">const target = { a: 1 };
+</code></pre><h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h2><p>Object.assign() 方法用于对象的合并，将源对象（source）的所有<strong>可枚举属性</strong>，复制到目标对象（target）。</p><pre><code class="lang-JavaScript">const target = { a: 1 };
 const source1 = { b: 2 };
 const source2 = { c: 3 };
 Object.assign(target, source1, source2);
 target // {a:1, b:2, c:3}
-</code></pre>
-<p>Object.assign() 方法的第一个参数是目标对象，后面的参数都是源对象。</p>
-<p>如果 undefined 或 null 作为第一个参数会报错，在之后则会跳过；<br>数值、布尔值可以被转换成包装对象，但依然会被忽略；<br>字符串转对象会被拆分成数组，除了原始值会被拷贝到<code>[[PrimitiveValue]]</code>属性中，每个字符都是可枚举的实义属性，因此是有效的。</p>
-<pre><code class="lang-JavaScript">const v1 = &#39;abc&#39;;
+</code></pre><p>Object.assign() 方法的第一个参数是目标对象，后面的参数都是源对象。</p><p>如果 undefined 或 null 作为第一个参数会报错，在之后则会跳过；<br>数值、布尔值可以被转换成包装对象，但依然会被忽略；<br>字符串转对象会被拆分成数组，除了原始值会被拷贝到<code>[[PrimitiveValue]]</code>属性中，每个字符都是可枚举的实义属性，因此是有效的。</p><pre><code class="lang-JavaScript">const v1 = &#39;abc&#39;;
 const v2 = true;
 const v3 = 10;
 const obj = Object.assign({}, v1, v2, v3);
 console.log(obj); // { &quot;0&quot;: &quot;a&quot;, &quot;1&quot;: &quot;b&quot;, &quot;2&quot;: &quot;c&quot; }
-</code></pre>
-<p>Object.assign() 只拷贝对象的自有属性，属性名为 Symbol 的属性也会被拷贝，继承属性和不可枚举的属性不会被拷贝。<br>Object.assign() 执行的是浅拷贝，对于同名属性会直接覆盖而非合并。<br>Object.assign() 可以用于处理数组，但会把数组转换成属性名为 0、1、2…… 的对象，并依次替换。</p>
-<h2 id="Object-getOwnPropertyDescriptors"><a href="#Object-getOwnPropertyDescriptors" class="headerlink" title="Object.getOwnPropertyDescriptors()"></a>Object.getOwnPropertyDescriptors()</h2><p>ES2017 引入了 <code>Object.getOwnPropertyDescriptors()</code> ，返回指定对象所有自身属性（非继承属性）的描述对象。</p>
-<h2 id="Object-setPrototypeOf-，Object-getPrototypeOf"><a href="#Object-setPrototypeOf-，Object-getPrototypeOf" class="headerlink" title="Object.setPrototypeOf()，Object.getPrototypeOf()"></a>Object.setPrototypeOf()，Object.getPrototypeOf()</h2><p><code>__proto__属性</code>:（前后各两个下划线），用来读取或设置当前对象的prototype对象。</p>
-<p><strong>Object.setPrototypeOf()</strong>: 作用与<strong>proto</strong>相同，用来设置一个对象的prototype对象，返回参数对象本身。<br><strong>Object.getPrototypeOf()</strong>: 读取一个对象的原型对象。</p>
-<h2 id="Object-keys-，Object-values-，Object-entries"><a href="#Object-keys-，Object-values-，Object-entries" class="headerlink" title="Object.keys()，Object.values()，Object.entries()"></a>Object.keys()，Object.values()，Object.entries()</h2><p>ES5 引入了 Object.keys() 来返回一个数组，其成员是参数对象的可枚举的自有属性的键名。<br>ES2017 跟着引入了 Object.values() 和 Object.entries() 用于返回属性对应的值，以及以键值对数组的形式返回。<br>可以配合 for…of 循环使用。</p>
-<h2 id="属性的可枚举性和遍历"><a href="#属性的可枚举性和遍历" class="headerlink" title="属性的可枚举性和遍历"></a>属性的可枚举性和遍历</h2><p>对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。</p>
-<p><strong>可枚举性</strong>：描述对象的 enumerable 属性，如果该属性为false，就表示某些操作会忽略当前属性。</p>
-<p>for…in 循环、Object.keys()、JSON.stringify()、Object.assign() 忽略 enumerable 为 false 的属性。</p>
-<p>ES6 一共有5种方法可以遍历对象的属性。</p>
-<ol>
-<li><code>for...in</code>：循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</li>
-<li><code>Object.keys(obj)</code>：返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</li>
-<li><code>Object.getOwnPropertyNames(obj)</code>：返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</li>
-<li><code>Object.getOwnPropertySymbols(obj)</code>：返回一个数组，包含对象自身的所有 Symbol 属性的键名。</li>
-<li><code>Reflect.ownKeys(obj)</code>：返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</li>
-</ol>
-<p>以上的5种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
-<ul>
-<li>首先遍历所有数值键，按照数值升序排列。</li>
-<li>其次遍历所有字符串键，按照加入时间升序排列。</li>
-<li>最后遍历所有 Symbol 键，按照加入时间升序排列。</li>
-</ul>
-<h2 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h2><p>ES6 又新增了另一个类似的关键字 super，指向当前对象的原型对象。</p>
-<h2 id="对象的扩展运算符"><a href="#对象的扩展运算符" class="headerlink" title="对象的扩展运算符"></a>对象的扩展运算符</h2><p>ES2017 将这个运算符引入了对象。</p>
-<p><strong>解构赋值</strong>:对象的解构赋值用于从一个对象取值，相当于将所有可遍历的、但尚未被读取的属性，分配到指定的对象上面。</p>
-<pre><code class="lang-JavaScript">let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+</code></pre><p>Object.assign() 只拷贝对象的自有属性，属性名为 Symbol 的属性也会被拷贝，继承属性和不可枚举的属性不会被拷贝。<br>Object.assign() 执行的是浅拷贝，对于同名属性会直接覆盖而非合并。<br>Object.assign() 可以用于处理数组，但会把数组转换成属性名为 0、1、2…… 的对象，并依次替换。</p><h2 id="Object-getOwnPropertyDescriptors"><a href="#Object-getOwnPropertyDescriptors" class="headerlink" title="Object.getOwnPropertyDescriptors()"></a>Object.getOwnPropertyDescriptors()</h2><p>ES2017 引入了 <code>Object.getOwnPropertyDescriptors()</code> ，返回指定对象所有自身属性（非继承属性）的描述对象。</p><h2 id="Object-setPrototypeOf-，Object-getPrototypeOf"><a href="#Object-setPrototypeOf-，Object-getPrototypeOf" class="headerlink" title="Object.setPrototypeOf()，Object.getPrototypeOf()"></a>Object.setPrototypeOf()，Object.getPrototypeOf()</h2><p><code>__proto__属性</code>:（前后各两个下划线），用来读取或设置当前对象的prototype对象。</p><p><strong>Object.setPrototypeOf()</strong>: 作用与<strong>proto</strong>相同，用来设置一个对象的prototype对象，返回参数对象本身。<br><strong>Object.getPrototypeOf()</strong>: 读取一个对象的原型对象。</p><h2 id="Object-keys-，Object-values-，Object-entries"><a href="#Object-keys-，Object-values-，Object-entries" class="headerlink" title="Object.keys()，Object.values()，Object.entries()"></a>Object.keys()，Object.values()，Object.entries()</h2><p>ES5 引入了 Object.keys() 来返回一个数组，其成员是参数对象的可枚举的自有属性的键名。<br>ES2017 跟着引入了 Object.values() 和 Object.entries() 用于返回属性对应的值，以及以键值对数组的形式返回。<br>可以配合 for…of 循环使用。</p><h2 id="属性的可枚举性和遍历"><a href="#属性的可枚举性和遍历" class="headerlink" title="属性的可枚举性和遍历"></a>属性的可枚举性和遍历</h2><p>对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。</p><p><strong>可枚举性</strong>：描述对象的 enumerable 属性，如果该属性为false，就表示某些操作会忽略当前属性。</p><p>for…in 循环、Object.keys()、JSON.stringify()、Object.assign() 忽略 enumerable 为 false 的属性。</p><p>ES6 一共有5种方法可以遍历对象的属性。</p><ol><li><code>for...in</code>：循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</li><li><code>Object.keys(obj)</code>：返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</li><li><code>Object.getOwnPropertyNames(obj)</code>：返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</li><li><code>Object.getOwnPropertySymbols(obj)</code>：返回一个数组，包含对象自身的所有 Symbol 属性的键名。</li><li><code>Reflect.ownKeys(obj)</code>：返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</li></ol><p>以上的5种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p><ul><li>首先遍历所有数值键，按照数值升序排列。</li><li>其次遍历所有字符串键，按照加入时间升序排列。</li><li>最后遍历所有 Symbol 键，按照加入时间升序排列。</li></ul><h2 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h2><p>ES6 又新增了另一个类似的关键字 super，指向当前对象的原型对象。</p><h2 id="对象的扩展运算符"><a href="#对象的扩展运算符" class="headerlink" title="对象的扩展运算符"></a>对象的扩展运算符</h2><p>ES2017 将这个运算符引入了对象。</p><p><strong>解构赋值</strong>:对象的解构赋值用于从一个对象取值，相当于将所有可遍历的、但尚未被读取的属性，分配到指定的对象上面。</p><pre><code class="lang-JavaScript">let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
 x // 1
 y // 2
 z // { a: 3, b: 4 }
-</code></pre>
-<p>解构赋值必须是最后一个参数，否则会报错。</p>
-<p>注意，解构赋值的拷贝是浅拷贝，即如果一个键的值是复合类型的值（数组、对象、函数）、那么解构赋值拷贝的是这个值的引用，而不是这个值的副本。<br>另外，扩展运算符的解构赋值，不能复制继承自原型对象的属性。</p>
-<p><strong>扩展运算符</strong>:</p>
-<p>扩展运算符（…）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。</p>
-<pre><code class="lang-JavaScript">let z = { a: 3, b: 4 };
+</code></pre><p>解构赋值必须是最后一个参数，否则会报错。</p><p>注意，解构赋值的拷贝是浅拷贝，即如果一个键的值是复合类型的值（数组、对象、函数）、那么解构赋值拷贝的是这个值的引用，而不是这个值的副本。<br>另外，扩展运算符的解构赋值，不能复制继承自原型对象的属性。</p><p><strong>扩展运算符</strong>:</p><p>扩展运算符（…）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。</p><pre><code class="lang-JavaScript">let z = { a: 3, b: 4 };
 let n = { ...z }; // { a: 3, b: 4 }
-</code></pre>
-<p>扩展运算符可以用于合并两个对象。</p>
-<pre><code class="lang-JavaScript">let ab = { ...a, ...b };
+</code></pre><p>扩展运算符可以用于合并两个对象。</p><pre><code class="lang-JavaScript">let ab = { ...a, ...b };
 // 等同于
 let ab = Object.assign({}, a, b);
-</code></pre>
-<p>如果用户自定义的属性，放在扩展运算符后面，则扩展运算符内部的同名属性会被覆盖掉。</p>
-<pre><code class="lang-JavaScript">let newVersion = {
+</code></pre><p>如果用户自定义的属性，放在扩展运算符后面，则扩展运算符内部的同名属性会被覆盖掉。</p><pre><code class="lang-JavaScript">let newVersion = {
   ...previousVersion,
   name: &#39;New Name&#39; // Override the name property
 };
-</code></pre>
-<p>如果把自定义属性放在扩展运算符前面，就变成了设置新对象的默认属性值。</p>
-<pre><code class="lang-JavaScript">let aWithDefaults = { x: 1, y: 2, ...a };
+</code></pre><p>如果把自定义属性放在扩展运算符前面，就变成了设置新对象的默认属性值。</p><pre><code class="lang-JavaScript">let aWithDefaults = { x: 1, y: 2, ...a };
 // 等同于
 let aWithDefaults = Object.assign({}, { x: 1, y: 2 }, a);
 let aWithDefaults = Object.assign({ x: 1, y: 2 }, a);
-</code></pre>
-<p>与数组的扩展运算符一样，对象的扩展运算符后面可以跟表达式。</p>
-<pre><code class="lang-JavaScript">// 空对象没有任何效果
+</code></pre><p>与数组的扩展运算符一样，对象的扩展运算符后面可以跟表达式。</p><pre><code class="lang-JavaScript">// 空对象没有任何效果
 {...{}, a: 1} // { a: 1 }
 // 忽略 null 和 undefined
 let emptyObject = { ...null, ...undefined }; // 不报错
-</code></pre>
-
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli">  您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。
-                        </strong>
-                        <br>
-                        <strong>本文链接：</strong><a href="https://www.wshunli.com/posts/67855b9d.html">https://www.wshunli.com/posts/67855b9d.html</a>
-                    </p>
-                </blockquote>
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
-<script src="https://cdn.wshunli.com/source/av-min.js"></script>
-<script src="https://cdn.wshunli.com/source/Valine.min.js"></script>
-<script>
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-        return GUEST_INFO.indexOf(item) > -1
-    });
-    var notify = 'false' === 'true';
-    var verify = 'false' === 'true';
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",
-        appKey: "cuNKDo2T90xY7IjfGh21RMoQ",
-        placeholder: "念念不忘，必有回响",
-        pageSize:'10',
-        avatar:'mp',
-        lang:'zh-cn',
-        guest_info: guest_info
-    });
-</script>
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/posts/261b7c4.html" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/posts/ebc6af5b.html" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(https://cdn.wshunli.com/source/img/snow_square_tiny.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/wshunli.min.png" alt="wshunli's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        admin@mail.wshunli.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
-            </li></ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a>
-            </li></ul>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/tags" title="标签云">
-                
-                标签云
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/timeline" title="时间轴">
-                
-                时间轴
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/books" title="我的阅读">
-                
-                我的阅读
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/zzupic" title="郑州大学">
-                
-                郑州大学
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/whupic" title="武汉大学">
-                
-                武汉大学
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="友情链接">
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于本站">
-                
-                关于本站
-            </a>
-        </li>
-        
-            <li class="divider"></li>
-        
-    
-
-    <!-- Article Number  -->
-    
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">159</span>
-            </a>
-        </li>
-        
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-        <a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-        <a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
-                <span class="visuallyhidden">Telegram</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- V2EX -->
-    
-
-    <!-- Segmentfault -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS 博客
-            
-                <br>
-                
-                    <div> Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"> <img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>. </div> <div> <a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a> </div>
-                
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js", true)</script>
-
-
-
-    <script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js", true)</script>
-
-
-
-    <script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
+</code></pre><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/67855b9d.html">https://www.wshunli.com/posts/67855b9d.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="https://cdn.wshunli.com/source/av-min.js"></script><script src="https://cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mp",lang:"zh-cn",guest_info:guest_info})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/261b7c4.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/ebc6af5b.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@mail.wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/books" title="我的阅读">我的阅读</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">159</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a><a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook"><span class="visuallyhidden">Facebook</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"><span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS 博客<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"><img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
@@ -1545,24 +370,7 @@ It will not impact the appearance and can give developers a lot of support :)
     setTimeout(function() {
         NProgress.done();
         $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-    
-        <script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js", true)</script>
-    
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz', 'cuNKDo2T90xY7IjfGh21RMoQ');
-    </script>
-    <script type="text/ls-javascript" id="leancloud-views-script">
-    function showTime(Counter) {
+    }, 800);</script><script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js",!0)</script><script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script><script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz","cuNKDo2T90xY7IjfGh21RMoQ")</script><script type="text/ls-javascript" id="leancloud-views-script">function showTime(Counter) {
         var query = new AV.Query(Counter);
         $('.leancloud-views_num').each(function() {
             var url = $(this).attr('id').trim();
@@ -1637,43 +445,7 @@ It will not impact the appearance and can give developers a lot of support :)
         } else if ($('.post-title-link').length > 1) {
             showTime(Counter);
         }
-    });
-</script>
-
-
-
-
-
-
-   
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-        
-            <script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js", true)</script>
-        
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
+    });</script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
@@ -1685,20 +457,7 @@ It will not impact the appearance and can give developers a lot of support :)
                 // 影响 hexo-tag-demo 代码高亮
                 $('.demobox-code-wrap pre').removeClass('linenums');
                 prettyPrint();
-                })
-        
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
+                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
@@ -1710,37 +469,4 @@ It will not impact the appearance and can give developers a lot of support :)
         setInterval(function(){
             queue.execNext();
         },200);
-    });
-</script>
-
-<!-- Custom Footer -->
-
-
-
-<script>
-    var copyrightNow = new Date().getFullYear();
-    var textContent = document.querySelector('span[year]')
-
-    copyrightSince = 2015;
-    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
-        textContent.textContent = copyrightNow
-    } else {
-        textContent.textContent = copyrightSince + ' - ' + copyrightNow
-    }
-
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
-
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        <script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body>
-    
-</html>
+    });</script><script>var copyrightNow=(new Date).getFullYear(),textContent=document.querySelector("span[year]");copyrightSince=2015,copyrightSince===copyrightNow||0===copyrightSince?textContent.textContent=copyrightNow:textContent.textContent=copyrightSince+" - "+copyrightNow,function(){for(var t=document.querySelectorAll('script[type="text/ls-javascript"]'),e=0;e<t.length;++e){var o=t[e];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div><script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body></html>
