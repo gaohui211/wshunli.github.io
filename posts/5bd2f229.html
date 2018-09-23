@@ -1,16 +1,369 @@
-<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.5",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><link rel="dns-prefetch" href="https://hm.baidu.com"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="dns-prefetch" href="https://lib.baomitu.com"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>OkHttp 网络框架源码解析 | CirGIS</title><link rel="icon shortcut" type="image/ico" href="/favicon.ico"><link rel="icon" href="/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="wshunli`s Blog!"><meta name="keywords" content="wshunli CirGIS,Android,源码解析,网络框架,OkHttp"><meta name="theme-color" content="#606266"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.5 -->
+    <script>
+        window.materialVersion = "1.5.5"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.wshunli.com/source">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://lib.baomitu.com">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            OkHttp 网络框架源码解析 - 
+        
+        CirGIS 博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="wshunli`s Blog!">
+    <meta name="keywords" content="wshunli CirGIS,Android,源码解析,网络框架,OkHttp">
+    <meta name="theme-color" content="#606266">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#409eff}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#757575!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#757575!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#757575!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#409eff;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/5bd2f229.html"><meta name="msapplication-navbutton-color" content="#606266"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/5bd2f229.html"><meta property="og:type" content="blog"><meta property="og:title" content="OkHttp 网络框架源码解析 | CirGIS"><meta property="og:image" content="/favicon.ico"><meta property="og:description" content="wshunli`s Blog!"><meta property="og:article:tag" content="Android"><meta property="og:article:tag" content="源码解析"><meta property="og:article:tag" content="网络框架"><meta property="og:article:tag" content="OkHttp"><meta property="article:published_time" content="Thu Sep 13 2018 16:28:11 GMT+0800"><meta property="article:modified_time" content="Sun Sep 23 2018 11:13:59 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/5bd2f229.html"><script type="application/ld+json">{
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #409EFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #757575 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #757575 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #757575 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #409EFF;
+    text-decoration: underline;
+  }
+  
+ /* 自定义CSS 开始*/
+
+  #post-content h1 {
+      font-size: 1.75em;
+      border-bottom: 1px solid #ddd;
+  }
+  #post-content h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #eee;
+  }
+  #post-content h3 {
+      font-size: 1.25em;
+  }
+  #post-content h4 {
+      font-size: 1em;
+  }
+  #post-content h5 {
+      font-size: 1em;
+  }
+  #post-content h6 {
+      color: #777;
+      font-size: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  #post-content a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  #post-content a:hover {
+    // text-shadow: 1px 1px 1px;
+    text-decoration: underline;
+  }
+  .mdl-card__media {
+    background-color:#fff !important;
+  }
+  .disqus_click_btn{
+     margin: 0 auto !important;
+  }
+  #comment .veditor{
+    font-size: 1em;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+  #post-content table {
+    width: 100%;
+    overflow: auto;
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+  /* 自定义CSS 结束*/
+
+
+  </style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CirGIS 博客">
+    <meta name="msapplication-starturl" content="https://www.wshunli.com/posts/5bd2f229.html">
+    <meta name="msapplication-navbutton-color" content="#606266">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="CirGIS 博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM">
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://www.wshunli.com/posts/5bd2f229.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="OkHttp 网络框架源码解析 | CirGIS 博客">
+    <meta property="og:image" content="/favicon.ico">
+    <meta property="og:description" content="wshunli`s Blog!">
+    <meta property="og:article:tag" content="Android"> <meta property="og:article:tag" content="源码解析"> <meta property="og:article:tag" content="网络框架"> <meta property="og:article:tag" content="OkHttp"> 
+
+    
+        <meta property="article:published_time" content="Thu Sep 13 2018 16:28:11 GMT+0800">
+        <meta property="article:modified_time" content="Sun Sep 23 2018 18:41:06 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://www.wshunli.com/posts/5bd2f229.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://www.wshunli.com/posts/5bd2f229.html",
     "headline": "OkHttp 网络框架源码解析",
     "datePublished": "Thu Sep 13 2018 16:28:11 GMT+0800",
-    "dateModified": "Sun Sep 23 2018 11:13:59 GMT+0800",
+    "dateModified": "Sun Sep 23 2018 18:41:06 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -22,7 +375,7 @@
     },
     "publisher": {
         "@type": "Organization",
-        "name": "CirGIS",
+        "name": "CirGIS 博客",
         "logo": {
             "@type":"ImageObject",
             "url": "/favicon.ico"
@@ -30,12 +383,268 @@
     },
     "keywords": ",Android,源码解析,网络框架,OkHttpwshunli CirGIS",
     "description": "wshunli`s Blog!",
-}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(t,e,a,c,n,i){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},n=t.createElement("script"),i=t.getElementsByTagName("script")[0],n.async=1,n.src="//analytics.wshunli.com/tracker.js",n.id="fathom-script",i.parentNode.insertBefore(n,i)}(document,window,0,"fathom"),fathom("trackPageview")</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span id="MD-burger-id" class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OkHttp-的简单使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">OkHttp 的简单使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OkHttp-的源码分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">OkHttp 的源码分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步请求"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">同步请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-OkHttpClient-对象"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">创建 OkHttpClient 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-Request-对象"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">创建 Request 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-Call-对象"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">创建 Call 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发送同步网络请求"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">发送同步网络请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异步请求"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">异步请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发送异步网络请求"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">发送异步网络请求</span></a></li></ol></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/Android/OkHttp/OkHttp.min.png)"><p class="article-headline-p">OkHttp 网络框架源码解析</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>9月 13, 2018</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aUW6EMAwFwL3/pdsDVKD3HAh0NXytWgqeVIq9jj8/X3198PDw8PDw8PDwXsb7xNfh44J78netx4aHh4e3h5eElYR7zv77OVm4NjY8PDy8nbyjcJMQj+45DyhZoPZdeHh4eO/nFVt2+RM8PDy8b+WdPyFvNMxSCB4eHt6zvFkRnLQYknTSluZ4eHh4z/LyQ6b9n7ee7+Hh4eEFvHqkKd7iz9sN7YDCcOgKDw8P7wberJWQlNd5oTwbusLDw8N7Dy8PIm+z5guRvHE4roqHh4d3EW/pa398rLU+hlU8DQ8PD+9mXl4Kz46v1hcrHzXAw8PD28lLQszbEO241exphwuNh4eHt5F37VBUskyzvxr2WvDw8PAu4uXpIU8e7eFZHnr0b8DDw8N7iLc+dNWmgbbsrrvUeHh4eJfyVkrnNrj8/mSxopIaDw8P71JeXkwPm6pl8d1S8fDw8N7AKxqm8UY/a+wOUwUeHh7ezbyVlJCDW0BbcOPh4eHt5OWlcNQIiBcov6duDePh4eFt4bXjoUlKmA2ttsV0lBjw8PDwbuDlD03AecJISvO6FYKHh4e3nTfb6O9oagx/i4eHh7eRNxuZuqAILq/h0BUeHh7eRbz2ysNNmh15o7ZIYHh4eHg381a245XCN08qeXsCDw8PbycvSQYr968MDeQLioeHh7efl2/QS82CcmggXyA8PDy89/PyhkWSVFaGD/Dw8PD+Fy/Z1vPmQnvwdntiwMPDw1tuRrSB5s+ZvREPDw/vKV7bAsgL67yYThZl2IzAw8PDu5T3fRceHh4eHh4eHt4Lrl8phPcTqi0GyQAAAABJRU5ErkJggg=="></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Android/">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/OkHttp/">OkHttp</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/源码解析/">源码解析</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/网络框架/">网络框架</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/5bd2f229.html" class="leancloud-views_num" data-flag-title="OkHttp 网络框架源码解析">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=OkHttp 网络框架源码解析&url=https://www.wshunli.com/posts/5bd2f229.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=OkHttp 网络框架源码解析&url=https://www.wshunli.com/posts/5bd2f229.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Twitter</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/5bd2f229.html&text=OkHttp 网络框架源码解析" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><p>本文介绍 OkHttp 网络框架，包含简单的使用和源码解析。<strong>本文内容基于 OkHttp 3.11.0 版本</strong>。</p><p>网上关于 OkHttp 源码解析的文章有很多，我在这里参考他们的资料，形成自己的知识体系。</p><p>只是停留在应用层面，会使用一些框架是不行的，还需要深入源码、剖析结构。</p><p>An HTTP+HTTP/2 client for Android and Java applications. <a href="http://square.github.io/okhttp/" rel="external nofollow noopener noreferrer" target="_blank">http://square.github.io/okhttp/</a></p><blockquote><p>支持 HTTP/2 协议，允许连接到同一个主机地址的所有请求共享 Socket 。<br>在 HTTP/2 协议不可用的情况下，通过连接池减少请求的延迟。<br>支持 GZip 透明压缩，减少传输的数据包大小。<br>支持响应缓存，避免同一个重复的网络请求。</p></blockquote><h1 id="OkHttp-的简单使用"><a href="#OkHttp-的简单使用" class="headerlink" title="OkHttp 的简单使用"></a>OkHttp 的简单使用</h1><p>一般情况下，对于网络框架有两种常见的使用场景，同步请求和异步请求。</p><p><strong>同步请求</strong>：</p><pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72210097-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+<script>
+    (function(f, a, t, h, o, m){
+        a[h]=a[h]||function(){
+            (a[h].q=a[h].q||[]).push(arguments)
+        };
+        o=f.createElement('script'),
+        m=f.getElementsByTagName('script')[0];
+        o.async=1; o.src=t; o.id='fathom-script';
+        m.parentNode.insertBefore(o,m)
+    })(document, window, '//analytics.wshunli.com/tracker.js', 'fathom');
+    fathom('trackPageview');
+    </script>
+    <!-- / Fathom -->
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OkHttp-的简单使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">OkHttp 的简单使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OkHttp-的源码分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">OkHttp 的源码分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步请求"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">同步请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-OkHttpClient-对象"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">创建 OkHttpClient 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-Request-对象"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">创建 Request 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-Call-对象"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">创建 Call 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发送同步网络请求"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">发送同步网络请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异步请求"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">异步请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发送异步网络请求"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">发送异步网络请求</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/Android/OkHttp/OkHttp.min.png)">
+    
+            <p class="article-headline-p">
+                OkHttp 网络框架源码解析
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>wshunli</strong>
+        <span>9月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aUW6EMAwFwL3/pdsDVKD3HAh0NXytWgqeVIq9jj8/X3198PDw8PDw8PDwXsb7xNfh44J78netx4aHh4e3h5eElYR7zv77OVm4NjY8PDy8nbyjcJMQj+45DyhZoPZdeHh4eO/nFVt2+RM8PDy8b+WdPyFvNMxSCB4eHt6zvFkRnLQYknTSluZ4eHh4z/LyQ6b9n7ee7+Hh4eEFvHqkKd7iz9sN7YDCcOgKDw8P7wberJWQlNd5oTwbusLDw8N7Dy8PIm+z5guRvHE4roqHh4d3EW/pa398rLU+hlU8DQ8PD+9mXl4Kz46v1hcrHzXAw8PD28lLQszbEO241exphwuNh4eHt5F37VBUskyzvxr2WvDw8PAu4uXpIU8e7eFZHnr0b8DDw8N7iLc+dNWmgbbsrrvUeHh4eJfyVkrnNrj8/mSxopIaDw8P71JeXkwPm6pl8d1S8fDw8N7AKxqm8UY/a+wOUwUeHh7ezbyVlJCDW0BbcOPh4eHt5OWlcNQIiBcov6duDePh4eFt4bXjoUlKmA2ttsV0lBjw8PDwbuDlD03AecJISvO6FYKHh4e3nTfb6O9oagx/i4eHh7eRNxuZuqAILq/h0BUeHh7eRbz2ysNNmh15o7ZIYHh4eHg381a245XCN08qeXsCDw8PbycvSQYr968MDeQLioeHh7efl2/QS82CcmggXyA8PDy89/PyhkWSVFaGD/Dw8PD+Fy/Z1vPmQnvwdntiwMPDw1tuRrSB5s+ZvREPDw/vKV7bAsgL67yYThZl2IzAw8PDu5T3fRceHh4eHh4eHt4Lrl8phPcTqi0GyQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Android/">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/OkHttp/">OkHttp</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/源码解析/">源码解析</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/网络框架/">网络框架</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/posts/5bd2f229.html" class="leancloud-views_num" data-flag-title="OkHttp 网络框架源码解析">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=OkHttp 网络框架源码解析&url=https://www.wshunli.com/posts/5bd2f229.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=OkHttp 网络框架源码解析&url=https://www.wshunli.com/posts/5bd2f229.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/5bd2f229.html&text=OkHttp 网络框架源码解析" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本文介绍 OkHttp 网络框架，包含简单的使用和源码解析。<strong>本文内容基于 OkHttp 3.11.0 版本</strong>。</p>
+<p>网上关于 OkHttp 源码解析的文章有很多，我在这里参考他们的资料，形成自己的知识体系。</p>
+<p>只是停留在应用层面，会使用一些框架是不行的，还需要深入源码、剖析结构。</p>
+<p>An HTTP+HTTP/2 client for Android and Java applications. <a href="http://square.github.io/okhttp/" rel="external nofollow noopener noreferrer" target="_blank">http://square.github.io/okhttp/</a></p>
+<blockquote>
+<p>支持 HTTP/2 协议，允许连接到同一个主机地址的所有请求共享 Socket 。<br>在 HTTP/2 协议不可用的情况下，通过连接池减少请求的延迟。<br>支持 GZip 透明压缩，减少传输的数据包大小。<br>支持响应缓存，避免同一个重复的网络请求。</p>
+</blockquote>
+<h1 id="OkHttp-的简单使用"><a href="#OkHttp-的简单使用" class="headerlink" title="OkHttp 的简单使用"></a>OkHttp 的简单使用</h1><p>一般情况下，对于网络框架有两种常见的使用场景，同步请求和异步请求。</p>
+<p><strong>同步请求</strong>：</p>
+<pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 Request request = new Request.Builder().url(&quot;https://wshunli.com&quot;).build();
 Call call = okHttpClient.newCall(request);
 Response response = call.execute();
 Log.d(TAG, &quot;onCreate: &quot; + response.body().string());
-</code></pre><p><strong>异步请求</strong>：</p><pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+</code></pre>
+<p><strong>异步请求</strong>：</p>
+<pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 Request request = new Request.Builder().url(&quot;https://wshunli.com&quot;).build();
 Call call = okHttpClient.newCall(request);
 call.enqueue(new Callback() {
@@ -48,14 +657,28 @@ call.enqueue(new Callback() {
         Log.d(TAG, &quot;onCreate: &quot; + response.body().string());
     }
 });
-</code></pre><p>同步请求和异步请求类似，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，只不过最后执行 enqueue() 方法，整体和网络请求的思路相似。</p><h1 id="OkHttp-的源码分析"><a href="#OkHttp-的源码分析" class="headerlink" title="OkHttp 的源码分析"></a>OkHttp 的源码分析</h1><p>OkHttp 网络请求完整的流程图如下：</p><div align="center"><img src="https://img.wshunli.com/Android/OkHttp/okhttp_full_process.min.png" title="OkHttp 流程图" alt="OkHttp 流程图"></div><p>下面详细介绍。</p><h2 id="同步请求"><a href="#同步请求" class="headerlink" title="同步请求"></a>同步请求</h2><p>同步请求，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，最后执行 execute() 方法，整体和网络请求的思路相似。</p><pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+</code></pre>
+<p>同步请求和异步请求类似，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，只不过最后执行 enqueue() 方法，整体和网络请求的思路相似。</p>
+<h1 id="OkHttp-的源码分析"><a href="#OkHttp-的源码分析" class="headerlink" title="OkHttp 的源码分析"></a>OkHttp 的源码分析</h1><p>OkHttp 网络请求完整的流程图如下：</p>
+<div align="center"> 
+    <img src="https://img.wshunli.com/Android/OkHttp/okhttp_full_process.min.png" title="OkHttp 流程图" alt="OkHttp 流程图">
+</div>
+
+<p>下面详细介绍。</p>
+<h2 id="同步请求"><a href="#同步请求" class="headerlink" title="同步请求"></a>同步请求</h2><p>同步请求，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，最后执行 execute() 方法，整体和网络请求的思路相似。</p>
+<pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 Request request = new Request.Builder().url(&quot;https://wshunli.com&quot;).build();
 Call call = okHttpClient.newCall(request);
 Response response = call.execute();
-</code></pre><h3 id="创建-OkHttpClient-对象"><a href="#创建-OkHttpClient-对象" class="headerlink" title="创建 OkHttpClient 对象"></a>创建 OkHttpClient 对象</h3><p>我们先看 OkHttp 的构造函数：</p><pre><code class="lang-Java">public OkHttpClient() {
+</code></pre>
+<h3 id="创建-OkHttpClient-对象"><a href="#创建-OkHttpClient-对象" class="headerlink" title="创建 OkHttpClient 对象"></a>创建 OkHttpClient 对象</h3><p>我们先看 OkHttp 的构造函数：</p>
+<pre><code class="lang-Java">public OkHttpClient() {
   this(new Builder());
 }
-</code></pre><p>这里是直接实例化，实质上是使用 <strong>建造者模式</strong> 构建 OkHttpClient 实例。</p><p>下面是 OkHttpClient 内部类 Builder 的构造方法：</p><pre><code class="lang-Java">public Builder() {
+</code></pre>
+<p>这里是直接实例化，实质上是使用 <strong>建造者模式</strong> 构建 OkHttpClient 实例。 </p>
+<p>下面是 OkHttpClient 内部类 Builder 的构造方法：</p>
+<pre><code class="lang-Java">public Builder() {
   dispatcher = new Dispatcher();
   protocols = DEFAULT_PROTOCOLS;
   connectionSpecs = DEFAULT_CONNECTION_SPECS;
@@ -80,7 +703,10 @@ Response response = call.execute();
 public OkHttpClient build() {
   return new OkHttpClient(this);
 }
-</code></pre><p>这里 <code>OkHttpClient.Builder</code> 有很多参数，后面再介绍。</p><h3 id="创建-Request-对象"><a href="#创建-Request-对象" class="headerlink" title="创建 Request 对象"></a>创建 Request 对象</h3><p>和 OkHttpClient 类似，Request 也是是使用 <strong>建造者模式</strong> 创建实例。</p><pre><code class="lang-Java">public Builder() {
+</code></pre>
+<p>这里 <code>OkHttpClient.Builder</code> 有很多参数，后面再介绍。</p>
+<h3 id="创建-Request-对象"><a href="#创建-Request-对象" class="headerlink" title="创建 Request 对象"></a>创建 Request 对象</h3><p>和 OkHttpClient 类似，Request 也是是使用 <strong>建造者模式</strong> 创建实例。</p>
+<pre><code class="lang-Java">public Builder() {
   this.method = &quot;GET&quot;;
   this.headers = new Headers.Builder();
 }
@@ -88,10 +714,15 @@ public Request build() {
   if (url == null) throw new IllegalStateException(&quot;url == null&quot;);
   return new Request(this);
 }
-</code></pre><p>其中配置默认请求方法为 <code>GET</code> ，还有一些头部的默认参数。</p><h3 id="创建-Call-对象"><a href="#创建-Call-对象" class="headerlink" title="创建 Call 对象"></a>创建 Call 对象</h3><p>OkHttpClient 实现了 <code>Call.Factory</code> ，负责根据请求创建新的 Call 对象。</p><pre><code class="lang-Java">@Override public Call newCall(Request request) {
+</code></pre>
+<p>其中配置默认请求方法为 <code>GET</code> ，还有一些头部的默认参数。</p>
+<h3 id="创建-Call-对象"><a href="#创建-Call-对象" class="headerlink" title="创建 Call 对象"></a>创建 Call 对象</h3><p>OkHttpClient 实现了 <code>Call.Factory</code> ，负责根据请求创建新的 Call 对象。</p>
+<pre><code class="lang-Java">@Override public Call newCall(Request request) {
   return RealCall.newRealCall(this, request, false /* for web socket */);
 }
-</code></pre><p>Call 只是个接口，实际是实例化的 RealCall 对象。</p><pre><code class="lang-Java">private RealCall(OkHttpClient client, Request originalRequest, boolean forWebSocket) {
+</code></pre>
+<p>Call 只是个接口，实际是实例化的 RealCall 对象。</p>
+<pre><code class="lang-Java">private RealCall(OkHttpClient client, Request originalRequest, boolean forWebSocket) {
   this.client = client;
   this.originalRequest = originalRequest;
   this.forWebSocket = forWebSocket;
@@ -104,7 +735,9 @@ static RealCall newRealCall(OkHttpClient client, Request originalRequest, boolea
   call.eventListener = client.eventListenerFactory().create(call);
   return call;
 }
-</code></pre><h3 id="发送同步网络请求"><a href="#发送同步网络请求" class="headerlink" title="发送同步网络请求"></a>发送同步网络请求</h3><p>发送请求也是在 <code>RealCall</code> 的 <code>execute()</code> 方法中执行的。</p><pre><code class="lang-Java">// RealCall#execute()
+</code></pre>
+<h3 id="发送同步网络请求"><a href="#发送同步网络请求" class="headerlink" title="发送同步网络请求"></a>发送同步网络请求</h3><p>发送请求也是在 <code>RealCall</code> 的 <code>execute()</code> 方法中执行的。</p>
+<pre><code class="lang-Java">// RealCall#execute()
 @Override public Response execute() throws IOException {
   synchronized (this) {
     if (executed) throw new IllegalStateException(&quot;Already Executed&quot;);
@@ -124,12 +757,18 @@ static RealCall newRealCall(OkHttpClient client, Request originalRequest, boolea
     client.dispatcher().finished(this);
   }
 }
-</code></pre><p>在这里主要做了四件事：</p><p>1、检查 Call 是否执行过，没有执行将 <code>executed</code> 赋值为 true ，保证每个请求只执行一次；<br>2、使用 <code>client.dispatcher().executed(this)</code> 来进行实际的请求；<br>3、调用 <code>getResponseWithInterceptorChain()</code> 方法，获取请求响应的结果；<br>4、最后 <code>dispatcher</code> 结束自己。</p><pre><code class="lang-Java">// Dispatcher#executed()
+</code></pre>
+<p>在这里主要做了四件事：</p>
+<p>1、检查 Call 是否执行过，没有执行将 <code>executed</code> 赋值为 true ，保证每个请求只执行一次；<br>2、使用 <code>client.dispatcher().executed(this)</code> 来进行实际的请求；<br>3、调用 <code>getResponseWithInterceptorChain()</code> 方法，获取请求响应的结果；<br>4、最后 <code>dispatcher</code> 结束自己。</p>
+<pre><code class="lang-Java">// Dispatcher#executed()
 /** Used by {@code Call#execute} to signal it is in-flight. */
 synchronized void executed(RealCall call) {
   runningSyncCalls.add(call);
 }
-</code></pre><p>在同步请求中 <code>dispatcher</code> 只是负责判断请求执行的状态，在异步请求中参与内容过多。</p><p>下面我们来看 <code>getResponseWithInterceptorChain()</code> 方法：</p><pre><code class="lang-Java">Response getResponseWithInterceptorChain() throws IOException {
+</code></pre>
+<p>在同步请求中 <code>dispatcher</code> 只是负责判断请求执行的状态，在异步请求中参与内容过多。</p>
+<p>下面我们来看 <code>getResponseWithInterceptorChain()</code> 方法：</p>
+<pre><code class="lang-Java">Response getResponseWithInterceptorChain() throws IOException {
   // Build a full stack of interceptors.
   List&lt;Interceptor&gt; interceptors = new ArrayList&lt;&gt;();
   interceptors.addAll(client.interceptors()); // 加入用户自定义的拦截器
@@ -147,7 +786,20 @@ synchronized void executed(RealCall call) {
   // 利用 chain 来链式调用拦截器，最后的返回结果就是 Response 对象
   return chain.proceed(originalRequest);
 }
-</code></pre><p>我们都知道，拦截器是 OkHttp 的精髓。</p><p>1、<code>client.interceptors()</code> ，首先加入 <code>interceptors</code> 的是用户自定义的拦截器，比如修改请求头的拦截器等；<br>2、<code>RetryAndFollowUpInterceptor</code> 是用来重试和重定向的拦截器，在下面我们会讲到；<br>3、<code>BridgeInterceptor</code> 是用来将用户友好的请求转化为向服务器的请求，之后又把服务器的响应转化为对用户友好的响应；<br>4、<code>CacheInterceptor</code> 是缓存拦截器，若存在缓存并且可用就直接返回该缓存，否则会向服务器请求；<br>5、<code>ConnectInterceptor</code> 用来建立连接的拦截器；<br>6、<code>client.networkInterceptors()</code> 加入用户自定义的 <code>networkInterceptors</code> ；<br>7、<code>CallServerInterceptor</code>是真正向服务器发出请求且得到响应的拦截器；</p><p>最后在聚合了这些拦截器后，利用 <code>RealInterceptorChain</code> 来链式调用这些拦截器，利用的就是 <strong>责任链模式</strong> 。</p><font font="" size="3" color="#FF0000">下面介绍 OkHttp 中的 拦截器</font><p>拦截器 <code>Interceptor</code> 是 OkHttp 的核心，<strong>实际上它把实际的网络请求、缓存、透明压缩等功能都统一了起来</strong>，每一个功能都只是一个 <code>Interceptor</code>，它们再连接成一个 <code>Interceptor.Chain</code>，环环相扣，最终圆满完成一次网络请求。</p><div align="center"><img src="https://img.wshunli.com/Android/OkHttp/okhttp_interceptors.jpg" title="OkHttp 拦截器" alt="OkHttp 拦截器"></div><p>1、<code>RealInterceptorChain</code> 拦截器链</p><p>拦截器链 <code>RealInterceptorChain</code> 是真正把这些拦截器串起来的一个角色，调用 <code>proceed()</code> 方法</p><pre><code class="lang-Java">public Response proceed(Request request, StreamAllocation streamAllocation, HttpCodec httpCodec,
+</code></pre>
+<p>我们都知道，拦截器是 OkHttp 的精髓。</p>
+<p>1、<code>client.interceptors()</code> ，首先加入 <code>interceptors</code> 的是用户自定义的拦截器，比如修改请求头的拦截器等；<br>2、<code>RetryAndFollowUpInterceptor</code> 是用来重试和重定向的拦截器，在下面我们会讲到；<br>3、<code>BridgeInterceptor</code> 是用来将用户友好的请求转化为向服务器的请求，之后又把服务器的响应转化为对用户友好的响应；<br>4、<code>CacheInterceptor</code> 是缓存拦截器，若存在缓存并且可用就直接返回该缓存，否则会向服务器请求；<br>5、<code>ConnectInterceptor</code> 用来建立连接的拦截器；<br>6、<code>client.networkInterceptors()</code> 加入用户自定义的 <code>networkInterceptors</code> ；<br>7、<code>CallServerInterceptor</code>是真正向服务器发出请求且得到响应的拦截器；</p>
+<p>最后在聚合了这些拦截器后，利用 <code>RealInterceptorChain</code> 来链式调用这些拦截器，利用的就是 <strong>责任链模式</strong> 。</p>
+<font font="" size="3" color="#FF0000"> 下面介绍 OkHttp 中的 拦截器 </font>
+
+<p>拦截器 <code>Interceptor</code> 是 OkHttp 的核心，<strong>实际上它把实际的网络请求、缓存、透明压缩等功能都统一了起来</strong>，每一个功能都只是一个 <code>Interceptor</code>，它们再连接成一个 <code>Interceptor.Chain</code>，环环相扣，最终圆满完成一次网络请求。</p>
+<div align="center"> 
+    <img src="https://img.wshunli.com/Android/OkHttp/okhttp_interceptors.jpg" title="OkHttp 拦截器" alt="OkHttp 拦截器">
+</div>
+
+<p>1、<code>RealInterceptorChain</code> 拦截器链</p>
+<p>拦截器链 <code>RealInterceptorChain</code> 是真正把这些拦截器串起来的一个角色，调用 <code>proceed()</code> 方法</p>
+<pre><code class="lang-Java">public Response proceed(Request request, StreamAllocation streamAllocation, HttpCodec httpCodec,
     RealConnection connection) throws IOException {
   if (index &gt;= interceptors.size()) throw new AssertionError();
 
@@ -194,7 +846,10 @@ synchronized void executed(RealCall call) {
 
   return response;
 }
-</code></pre><p>在代码中是一次次链式调用拦截器。</p><p>2、<code>RetryAndFollowUpInterceptor</code> 重试和重定向的拦截器</p><pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
+</code></pre>
+<p>在代码中是一次次链式调用拦截器。</p>
+<p>2、<code>RetryAndFollowUpInterceptor</code> 重试和重定向的拦截器</p>
+<pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
   Request request = chain.request();
   RealInterceptorChain realChain = (RealInterceptorChain) chain;
   Call call = realChain.call();
@@ -294,7 +949,10 @@ synchronized void executed(RealCall call) {
     priorResponse = response;
   }
 }
-</code></pre><p>总体来说，<code>RetryAndFollowUpInterceptor</code> 是用来失败重试以及重定向的拦截器。</p><p>3、<code>BridgeInterceptor</code> 桥街和适配拦截器</p><pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
+</code></pre>
+<p>总体来说，<code>RetryAndFollowUpInterceptor</code> 是用来失败重试以及重定向的拦截器。</p>
+<p>3、<code>BridgeInterceptor</code> 桥街和适配拦截器</p>
+<pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
   Request userRequest = chain.request();
   Request.Builder requestBuilder = userRequest.newBuilder();
   // 将用户友好的 request 构造为发送给服务器的 request
@@ -364,7 +1022,13 @@ synchronized void executed(RealCall call) {
 
   return responseBuilder.build();
 }
-</code></pre><p>在 <code>BridgeInterceptor</code> 这一步，先把用户友好的请求进行重新构造，变成了向服务器发送的请求。</p><p>之后调用 <code>chain.proceed(requestBuilder.build())</code> 进行下一个拦截器的处理。</p><p>等到后面的拦截器都处理完毕，得到响应。再把 <code>networkResponse</code> 转化成对用户友好的 <code>response</code> 。</p><p>4、<code>CacheInterceptor</code> 缓存拦截器</p><p>分析 <code>CacheInterceptor</code> 拦截器 <code>intercept()</code> 方法的源代码</p><pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
+</code></pre>
+<p>在 <code>BridgeInterceptor</code> 这一步，先把用户友好的请求进行重新构造，变成了向服务器发送的请求。</p>
+<p>之后调用 <code>chain.proceed(requestBuilder.build())</code> 进行下一个拦截器的处理。</p>
+<p>等到后面的拦截器都处理完毕，得到响应。再把 <code>networkResponse</code> 转化成对用户友好的 <code>response</code> 。</p>
+<p>4、<code>CacheInterceptor</code> 缓存拦截器</p>
+<p>分析 <code>CacheInterceptor</code> 拦截器 <code>intercept()</code> 方法的源代码</p>
+<pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
     // 得到 request 对应缓存中的 response
     Response cacheCandidate = cache != null
             ? cache.get(chain.request())
@@ -462,7 +1126,10 @@ synchronized void executed(RealCall call) {
 
     return response;
 }
-</code></pre><p><code>CacheInterceptor</code> 做的事情就是根据请求拿到缓存，若没有缓存或者缓存失效，就进入网络请求阶段，否则会返回缓存。</p><p>5、<code>ConnectInterceptor</code> 拦截器</p><pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
+</code></pre>
+<p><code>CacheInterceptor</code> 做的事情就是根据请求拿到缓存，若没有缓存或者缓存失效，就进入网络请求阶段，否则会返回缓存。</p>
+<p>5、<code>ConnectInterceptor</code> 拦截器</p>
+<pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
   RealInterceptorChain realChain = (RealInterceptorChain) chain;
   Request request = realChain.request();
   StreamAllocation streamAllocation = realChain.streamAllocation();
@@ -474,7 +1141,10 @@ synchronized void executed(RealCall call) {
 
   return realChain.proceed(request, streamAllocation, httpCodec, connection);
 }
-</code></pre><p>实际上建立连接就是创建了一个 <code>HttpCodec</code> 对象，它是对 <code>HTTP</code> 协议操作的抽象，有两个实现：<code>Http1Codec</code> 和 <code>Http2Codec</code>，顾名思义，它们分别对应 HTTP/1.1 和 HTTP/2 版本的实现。</p><p>6、<code>CallServerInterceptor</code> 拦截器，发送和接收数据</p><pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
+</code></pre>
+<p>实际上建立连接就是创建了一个 <code>HttpCodec</code> 对象，它是对 <code>HTTP</code> 协议操作的抽象，有两个实现：<code>Http1Codec</code> 和 <code>Http2Codec</code>，顾名思义，它们分别对应 HTTP/1.1 和 HTTP/2 版本的实现。</p>
+<p>6、<code>CallServerInterceptor</code> 拦截器，发送和接收数据</p>
+<pre><code class="lang-Java">@Override public Response intercept(Chain chain) throws IOException {
   RealInterceptorChain realChain = (RealInterceptorChain) chain;
   HttpCodec httpCodec = realChain.httpStream();
   StreamAllocation streamAllocation = realChain.streamAllocation();
@@ -551,7 +1221,10 @@ synchronized void executed(RealCall call) {
 
   return response;
 }
-</code></pre><p>在 <code>CallServerInterceptor</code> 中可见，关于请求和响应部分都是通过 <code>HttpCodec</code> 来实现的。而在 <code>HttpCodec</code> 内部又是通过 <code>sink</code> 和 <code>source</code> 来实现的。所以说到底还是 IO 流在起作用。</p><h2 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h2><p>和同步请求类似，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，只不过最后执行 enqueue() 方法，整体和网络请求的思路相似。</p><pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+</code></pre>
+<p>在 <code>CallServerInterceptor</code> 中可见，关于请求和响应部分都是通过 <code>HttpCodec</code> 来实现的。而在 <code>HttpCodec</code> 内部又是通过 <code>sink</code> 和 <code>source</code> 来实现的。所以说到底还是 IO 流在起作用。</p>
+<h2 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h2><p>和同步请求类似，先实例化 OkHttpClient 和 Request 对象，然后使用 OkHttpClient 对象的 newCall() 方法创建 Call 对象，只不过最后执行 enqueue() 方法，整体和网络请求的思路相似。</p>
+<pre><code class="lang-Java">OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 Request request = new Request.Builder().url(&quot;https://wshunli.com&quot;).build();
 Call call = okHttpClient.newCall(request);
 call.enqueue(new Callback() {
@@ -564,7 +1237,10 @@ call.enqueue(new Callback() {
 
     }
 });
-</code></pre><p>异步请求在 <code>Callback</code> 回调中获取响应，有 <code>onResponse()</code> 、 <code>onFailure()</code> 两个方法。</p><h3 id="发送异步网络请求"><a href="#发送异步网络请求" class="headerlink" title="发送异步网络请求"></a>发送异步网络请求</h3><p>前面三个步骤完全一致，我们从发送异步网络请求开始，异步请求是调用 <code>RealCall</code> 实例的 <code>enqueue()</code> 方法。。</p><pre><code class="lang-Java">// RealCall#enqueue()
+</code></pre>
+<p>异步请求在 <code>Callback</code> 回调中获取响应，有 <code>onResponse()</code> 、 <code>onFailure()</code> 两个方法。</p>
+<h3 id="发送异步网络请求"><a href="#发送异步网络请求" class="headerlink" title="发送异步网络请求"></a>发送异步网络请求</h3><p>前面三个步骤完全一致，我们从发送异步网络请求开始，异步请求是调用 <code>RealCall</code> 实例的 <code>enqueue()</code> 方法。。</p>
+<pre><code class="lang-Java">// RealCall#enqueue()
 @Override public void enqueue(Callback responseCallback) {
   synchronized (this) {
     if (executed) throw new IllegalStateException(&quot;Already Executed&quot;);
@@ -574,7 +1250,9 @@ call.enqueue(new Callback() {
   eventListener.callStart(this);
   client.dispatcher().enqueue(new AsyncCall(responseCallback));
 }
-</code></pre><p>这里使用 <code>Dispatcher</code> 分发器我来处理请求。</p><pre><code class="lang-Java">// Dispatcher#enqueue()
+</code></pre>
+<p>这里使用 <code>Dispatcher</code> 分发器我来处理请求。</p>
+<pre><code class="lang-Java">// Dispatcher#enqueue()
 synchronized void enqueue(AsyncCall call) {
   if (runningAsyncCalls.size() &lt; maxRequests &amp;&amp; runningCallsForHost(call) &lt; maxRequestsPerHost) {
     runningAsyncCalls.add(call);
@@ -583,7 +1261,12 @@ synchronized void enqueue(AsyncCall call) {
     readyAsyncCalls.add(call);
   }
 }
-</code></pre><p>实质上异步网络请求是在 <code>Dispatcher</code> 中做到任务调度。</p><font font="" size="3" color="#FF0000">下面介绍 OkHttp 中的 任务调度</font><p>我们来看 <code>Dispatcher</code> 类的源代码。</p><pre><code class="lang-Java">public final class Dispatcher {
+</code></pre>
+<p>实质上异步网络请求是在 <code>Dispatcher</code> 中做到任务调度。</p>
+<font font="" size="3" color="#FF0000">下面介绍 OkHttp 中的 任务调度</font>
+
+<p>我们来看 <code>Dispatcher</code> 类的源代码。 </p>
+<pre><code class="lang-Java">public final class Dispatcher {
   private int maxRequests = 64;
   private int maxRequestsPerHost = 5;
   private @Nullable Runnable idleCallback;
@@ -624,7 +1307,10 @@ synchronized void enqueue(AsyncCall call) {
   }
   /* 省略部分无关代码*/
 }
-</code></pre><p>异步请求是放在线程池中执行的，如果最大异步请求数小于 64 并且 单个 HOST 的异步请求数小于 5 ，将请求添加到 <code>runningAsyncCalls</code> 中，否则添加到 <code>readyAsyncCalls</code> 中。</p><p>我们来看添加进线程池的 <code>AsyncCall</code> 类，实际上 <code>AsyncCall</code> 是继承自 <code>NamedRunnable</code> 的 <code>RealCall</code> 内部类。<code>NamedRunnable</code> 是实现了 <code>Runnable</code> 接口的抽象类。</p><pre><code class="lang-Java">final class AsyncCall extends NamedRunnable {
+</code></pre>
+<p>异步请求是放在线程池中执行的，如果最大异步请求数小于 64 并且 单个 HOST 的异步请求数小于 5 ，将请求添加到 <code>runningAsyncCalls</code> 中，否则添加到 <code>readyAsyncCalls</code> 中。</p>
+<p>我们来看添加进线程池的 <code>AsyncCall</code> 类，实际上 <code>AsyncCall</code> 是继承自 <code>NamedRunnable</code> 的 <code>RealCall</code> 内部类。<code>NamedRunnable</code> 是实现了 <code>Runnable</code> 接口的抽象类。</p>
+<pre><code class="lang-Java">final class AsyncCall extends NamedRunnable {
   private final Callback responseCallback;
 
   AsyncCall(Callback responseCallback) {
@@ -670,7 +1356,11 @@ synchronized void enqueue(AsyncCall call) {
     }
   }
 }
-</code></pre><p>在 <code>AsyncCall</code> 的 <code>execute()</code> 方法中，也是调用了 <code>getResponseWithInterceptorChain()</code> 方法来得到 <code>Response</code> 对象。从这里开始，就和同步请求的流程是一样的，就没必要讲了。</p><p>不同的是在得到 <code>Response</code> 后，进行结果的回调。</p><p>在 <code>AsyncCall</code> 的最后调用了 <code>Dispatcher</code> 的 <code>finished()</code> 方法。</p><pre><code class="lang-Java">// Dispatcher#finished()
+</code></pre>
+<p>在 <code>AsyncCall</code> 的 <code>execute()</code> 方法中，也是调用了 <code>getResponseWithInterceptorChain()</code> 方法来得到 <code>Response</code> 对象。从这里开始，就和同步请求的流程是一样的，就没必要讲了。</p>
+<p>不同的是在得到 <code>Response</code> 后，进行结果的回调。</p>
+<p>在 <code>AsyncCall</code> 的最后调用了 <code>Dispatcher</code> 的 <code>finished()</code> 方法。</p>
+<pre><code class="lang-Java">// Dispatcher#finished()
 /** Used by {@code AsyncCall#run} to signal completion. */
 void finished(AsyncCall call) {
   finished(runningAsyncCalls, call, true);
@@ -696,7 +1386,449 @@ private &lt;T&gt; void finished(Deque&lt;T&gt; calls, T call, boolean promoteCal
     idleCallback.run();
   }
 }
-</code></pre><p>这里所做的工作就是把执行过的 Call 移除，然后将 <code>readyAsyncCalls</code> 中的 Call 移动到 <code>runningAsyncCalls</code> 中并加入线程池中。</p><blockquote><p>基本上 OkHttp 的请求响应的流程就介绍完了，主要是关于 OkHttp 的 <strong>拦截器链</strong> 和 <strong>任务调度</strong> 原理。</p></blockquote><p>还有很多细节没有涉及，需要花费很大的精力，才能理解分析透彻，后面有机会再介绍。</p><blockquote><p>参考资料：<br>1、拆轮子系列：拆 OkHttp - Piasy的博客 | Piasy Blog<br><a href="https://blog.piasy.com/2016/07/11/Understand-OkHttp/" rel="external nofollow noopener noreferrer" target="_blank">https://blog.piasy.com/2016/07/11/Understand-OkHttp/</a><br>2、OkHttp源码解析 | 俞其荣的博客 | Qirong Yu’s Blog<br><a href="http://yuqirong.me/2017/07/25/OkHttp源码解析/" rel="external nofollow noopener noreferrer" target="_blank">http://yuqirong.me/2017/07/25/OkHttp源码解析/</a><br>3、OkHttp源码分析 - 掘金<br><a href="https://juejin.im/post/5af4482951882567286064e6" rel="external nofollow noopener noreferrer" target="_blank">https://juejin.im/post/5af4482951882567286064e6</a><br>4、okhttp源码分析（一）——基本流程（超详细） - 简书<br><a href="https://www.jianshu.com/p/37e26f4ea57b" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/37e26f4ea57b</a><br>5、OKHttp源码解析 | Frodo’s Blog<br><a href="http://frodoking.github.io/2015/03/12/android-okhttp/" rel="external nofollow noopener noreferrer" target="_blank">http://frodoking.github.io/2015/03/12/android-okhttp/</a><br>6、OkHttp 源码解析（一）：基本流程 - Coding - SegmentFault 思否<br><a href="https://segmentfault.com/a/1190000012656606" rel="external nofollow noopener noreferrer" target="_blank">https://segmentfault.com/a/1190000012656606</a><br>7、【Android】OkHttp源码分析 - CSDN博客<br><a href="https://blog.csdn.net/u010983881/article/details/79175824" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u010983881/article/details/79175824</a><br>8、深入浅出 OkHttp 源码 - DiyCode<br><a href="https://www.diycode.cc/topics/640" rel="external nofollow noopener noreferrer" target="_blank">https://www.diycode.cc/topics/640</a><br>9、Okhttp框架源码分析 - 简书<br><a href="https://www.jianshu.com/p/18a4861600d1" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/18a4861600d1</a><br>10、OkHttp 3.7源码分析（一）——整体架构 - CSDN博客<br><a href="https://blog.csdn.net/asiaLIYAZHOU/article/details/72598320" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/asiaLIYAZHOU/article/details/72598320</a><br>11、okhttp网络框架源码解析 - CSDN博客<br><a href="https://blog.csdn.net/fanguangjun123/article/details/78621585" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/fanguangjun123/article/details/78621585</a><br>12、OKHttp网络框架源码解析（一）okHttp框架同步异步请求流程和源码分析 - CSDN博客<br><a href="https://blog.csdn.net/qq_24675479/article/details/79483193" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/qq_24675479/article/details/79483193</a></p></blockquote><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/5bd2f229.html">https://www.wshunli.com/posts/5bd2f229.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="https://cdn.wshunli.com/source/av-min.js"></script><script src="https://cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mp",lang:"zh-cn",guest_info:guest_info})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/2bda06ba.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/9a69cc4.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@mail.wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/books" title="我的阅读">我的阅读</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">184</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a><a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook"><span class="visuallyhidden">Facebook</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"><span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"><img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
+</code></pre>
+<p>这里所做的工作就是把执行过的 Call 移除，然后将 <code>readyAsyncCalls</code> 中的 Call 移动到 <code>runningAsyncCalls</code> 中并加入线程池中。</p>
+<blockquote>
+<p>基本上 OkHttp 的请求响应的流程就介绍完了，主要是关于 OkHttp 的 <strong>拦截器链</strong> 和 <strong>任务调度</strong> 原理。</p>
+</blockquote>
+<p>还有很多细节没有涉及，需要花费很大的精力，才能理解分析透彻，后面有机会再介绍。</p>
+<blockquote>
+<p>参考资料：<br>1、拆轮子系列：拆 OkHttp - Piasy的博客 | Piasy Blog<br><a href="https://blog.piasy.com/2016/07/11/Understand-OkHttp/" rel="external nofollow noopener noreferrer" target="_blank">https://blog.piasy.com/2016/07/11/Understand-OkHttp/</a><br>2、OkHttp源码解析 | 俞其荣的博客 | Qirong Yu’s Blog<br><a href="http://yuqirong.me/2017/07/25/OkHttp源码解析/" rel="external nofollow noopener noreferrer" target="_blank">http://yuqirong.me/2017/07/25/OkHttp源码解析/</a><br>3、OkHttp源码分析 - 掘金<br><a href="https://juejin.im/post/5af4482951882567286064e6" rel="external nofollow noopener noreferrer" target="_blank">https://juejin.im/post/5af4482951882567286064e6</a><br>4、okhttp源码分析（一）——基本流程（超详细） - 简书<br><a href="https://www.jianshu.com/p/37e26f4ea57b" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/37e26f4ea57b</a><br>5、OKHttp源码解析 | Frodo’s Blog<br><a href="http://frodoking.github.io/2015/03/12/android-okhttp/" rel="external nofollow noopener noreferrer" target="_blank">http://frodoking.github.io/2015/03/12/android-okhttp/</a><br>6、OkHttp 源码解析（一）：基本流程 - Coding - SegmentFault 思否<br><a href="https://segmentfault.com/a/1190000012656606" rel="external nofollow noopener noreferrer" target="_blank">https://segmentfault.com/a/1190000012656606</a><br>7、【Android】OkHttp源码分析 - CSDN博客<br><a href="https://blog.csdn.net/u010983881/article/details/79175824" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u010983881/article/details/79175824</a><br>8、深入浅出 OkHttp 源码 - DiyCode<br><a href="https://www.diycode.cc/topics/640" rel="external nofollow noopener noreferrer" target="_blank">https://www.diycode.cc/topics/640</a><br>9、Okhttp框架源码分析 - 简书<br><a href="https://www.jianshu.com/p/18a4861600d1" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/18a4861600d1</a><br>10、OkHttp 3.7源码分析（一）——整体架构 - CSDN博客<br><a href="https://blog.csdn.net/asiaLIYAZHOU/article/details/72598320" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/asiaLIYAZHOU/article/details/72598320</a><br>11、okhttp网络框架源码解析 - CSDN博客<br><a href="https://blog.csdn.net/fanguangjun123/article/details/78621585" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/fanguangjun123/article/details/78621585</a><br>12、OKHttp网络框架源码解析（一）okHttp框架同步异步请求流程和源码分析 - CSDN博客<br><a href="https://blog.csdn.net/qq_24675479/article/details/79483193" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/qq_24675479/article/details/79483193</a></p>
+</blockquote>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli">  您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://www.wshunli.com/posts/5bd2f229.html">https://www.wshunli.com/posts/5bd2f229.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="https://cdn.wshunli.com/source/av-min.js"></script>
+<script src="https://cdn.wshunli.com/source/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",
+        appKey: "cuNKDo2T90xY7IjfGh21RMoQ",
+        placeholder: "念念不忘，必有回响",
+        pageSize:'10',
+        avatar:'mp',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/2bda06ba.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/25842bb5.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://cdn.wshunli.com/source/img/snow_square_tiny.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/wshunli.min.png" alt="wshunli's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        admin@mail.wshunli.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a>
+            </li></ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/books" title="我的阅读">
+                
+                我的阅读
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/zzupic" title="郑州大学">
+                
+                郑州大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/whupic" title="武汉大学">
+                
+                武汉大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于本站">
+                
+                关于本站
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">159</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS 博客
+            
+                <br>
+                
+                    <div> Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"> <img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>. </div> <div> <a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a> </div>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
@@ -713,7 +1845,24 @@ private &lt;T&gt; void finished(Deque&lt;T&gt; calls, T call, boolean promoteCal
     setTimeout(function() {
         NProgress.done();
         $('.fade').removeClass('out');
-    }, 800);</script><script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js",!0)</script><script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script><script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz","cuNKDo2T90xY7IjfGh21RMoQ")</script><script type="text/ls-javascript" id="leancloud-views-script">function showTime(Counter) {
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js", true)</script>
+    
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz', 'cuNKDo2T90xY7IjfGh21RMoQ');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
         var query = new AV.Query(Counter);
         $('.leancloud-views_num').each(function() {
             var url = $(this).attr('id').trim();
@@ -788,7 +1937,43 @@ private &lt;T&gt; void finished(Deque&lt;T&gt; calls, T call, boolean promoteCal
         } else if ($('.post-title-link').length > 1) {
             showTime(Counter);
         }
-    });</script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
@@ -800,7 +1985,20 @@ private &lt;T&gt; void finished(Deque&lt;T&gt; calls, T call, boolean promoteCal
                 // 影响 hexo-tag-demo 代码高亮
                 $('.demobox-code-wrap pre').removeClass('linenums');
                 prettyPrint();
-                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
@@ -812,4 +2010,37 @@ private &lt;T&gt; void finished(Deque&lt;T&gt; calls, T call, boolean promoteCal
         setInterval(function(){
             queue.execNext();
         },200);
-    });</script><script>var copyrightNow=(new Date).getFullYear(),textContent=document.querySelector("span[year]");copyrightSince=2015,copyrightSince===copyrightNow||0===copyrightSince?textContent.textContent=copyrightNow:textContent.textContent=copyrightSince+" - "+copyrightNow,function(){for(var t=document.querySelectorAll('script[type="text/ls-javascript"]'),e=0;e<t.length;++e){var o=t[e];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div><script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body></html>
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2015;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body>
+    
+</html>

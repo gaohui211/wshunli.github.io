@@ -1,16 +1,369 @@
-<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.5.5",window.oldVersion=["codestartv1","1.3.4","1.4.0","1.4.0b1","1.5.0"]</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.wshunli.com/source"><link rel="dns-prefetch" href="https://cdn1.lncld.net"><link rel="dns-prefetch" href="https://hm.baidu.com"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="dns-prefetch" href="https://lib.baomitu.com"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>在线直播技术及其实时视频流可视化方法（前端） | CirGIS</title><link rel="icon shortcut" type="image/ico" href="/favicon.ico"><link rel="icon" href="/favicon.ico"><meta name="format-detection" content="telephone=no"><meta name="description" itemprop="description" content="【暂不公开】记录在线直播技术及其实时视频流可视化方法（前端）。"><meta name="keywords" content="wshunli CirGIS,视频,直播,前端"><meta name="theme-color" content="#606266"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.5 -->
+    <script>
+        window.materialVersion = "1.5.5"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.wshunli.com/source">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://lib.baomitu.com">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            在线直播技术及其实时视频流可视化方法（前端） - 
+        
+        CirGIS 博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="wshunli`s Blog!">
+    <meta name="keywords" content="wshunli CirGIS,视频,直播,前端">
+    <meta name="theme-color" content="#606266">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
             <script src="/js/ie-blocker.zhCN.js"></script>
         
-    <![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+(window.materialVersion||"unknownVersion")+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var n=lsloader.getLS(e);window.oldVersion&&window.oldVersion.reduce(function(e,t){return e||-1!==n.indexOf("/*"+t+"*/")},!1)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,n,s){var a;if("boolean"==typeof n&&(s=n,n=void 0),s=s||!1,n=n||function(){},(a=this.getLS(e))&&-1===a.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,n,s);if(a){if(a.split(versionString)[0]!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,n,s);a=a.split(versionString)[1],s?(this.jsRunSequence.push({name:e,code:a}),this.runjs(t,e,a)):(document.getElementById(e).appendChild(document.createTextNode(a)),n())}else this.requestResource(e,t,n,s)},lsloader.requestResource=function(t,n,e,s){var a=this;s?this.iojs(n,t,function(e,t,n){a.setLS(t,e+versionString+n),a.runjs(e,t,n)}):this.iocss(n,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),a.setLS(t,n+versionString+e)},e)},lsloader.iojs=function(e,t,n){var s=this;s.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void n(e,t,a.response);s.jsfallback(e,t)}},a.send(null)}catch(n){s.jsfallback(e,t)}},lsloader.iocss=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.iofonts=function(e,t,n,s){var a=this;try{var o=new XMLHttpRequest;o.open("get",e,!0),o.onreadystatechange=function(){if(4==o.readyState){if((200<=o.status&&o.status<300||304==o.status)&&""!=o.response)return n(o.response),void s();a.cssfallback(e,t,s)}},o.send(null)}catch(n){a.cssfallback(e,t,s)}},lsloader.runjs=function(e,t,n){if(t&&n)for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code=n);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,o=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){o.jsRunSequence.shift(),0<o.jsRunSequence.length&&o.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var n in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code="",this.jsRunSequence[n].status="failed",this.jsRunSequence[n].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,n){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var s=document.createElement("link");s.type="text/css",s.href=e,s.rel="stylesheet",s.onload=s.onerror=n;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)}},lsloader.runInlineScript=function(e,t){var n=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:n}),this.runjs()}</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function."),"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){return this.debug&&console.log("Polled a Queued Function."),this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><style id="material_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="style_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style id="prettify_theme"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;overflow-x:hidden!important}code{font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace}a{color:#409eff}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#757575!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#757575!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#757575!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#409eff;text-decoration:underline}#post-content h1{font-size:1.75em;border-bottom:1px solid #ddd}#post-content h2{font-size:1.5em;border-bottom:1px solid #eee}#post-content h3{font-size:1.25em}#post-content h4{font-size:1em}#post-content h5{font-size:1em}#post-content h6{color:#777;font-size:1em}a{text-decoration:none;font-weight:500}#post-content a{text-decoration:none;font-weight:400}#post-content a:hover{text-decoration:underline}.mdl-card__media{background-color:#fff!important}.disqus_click_btn{margin:0 auto!important}#comment .veditor{font-size:1em;font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}#post-content table{width:100%;overflow:auto;display:table;border-spacing:0;border-collapse:collapse}</style><style>body{background-color:#f5f5f5}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><style>@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:regular;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);src:local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')}</style><style id="material_icons"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")},!1)</script><script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js",!0)</script><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="CirGIS"><meta name="msapplication-starturl" content="https://www.wshunli.com/posts/b4d6e25d.html"><meta name="msapplication-navbutton-color" content="#606266"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CirGIS"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/favicon.ico"><meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta property="og:url" content="https://www.wshunli.com/posts/b4d6e25d.html"><meta property="og:type" content="blog"><meta property="og:title" content="在线直播技术及其实时视频流可视化方法（前端） | CirGIS"><meta property="og:image" content="/favicon.ico"><meta property="og:description" content="【暂不公开】记录在线直播技术及其实时视频流可视化方法（前端）。"><meta property="og:article:tag" content="视频"><meta property="og:article:tag" content="直播"><meta property="og:article:tag" content="前端"><meta property="article:published_time" content="Sat Jun 23 2018 12:23:34 GMT+0800"><meta property="article:modified_time" content="Sun Sep 23 2018 11:13:59 GMT+0800"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://www.wshunli.com/posts/b4d6e25d.html"><script type="application/ld+json">{
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.wshunli.com/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.wshunli.com/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.wshunli.com/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.wshunli.com/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #409EFF;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #757575 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #757575 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #757575 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #409EFF;
+    text-decoration: underline;
+  }
+  
+ /* 自定义CSS 开始*/
+
+  #post-content h1 {
+      font-size: 1.75em;
+      border-bottom: 1px solid #ddd;
+  }
+  #post-content h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #eee;
+  }
+  #post-content h3 {
+      font-size: 1.25em;
+  }
+  #post-content h4 {
+      font-size: 1em;
+  }
+  #post-content h5 {
+      font-size: 1em;
+  }
+  #post-content h6 {
+      color: #777;
+      font-size: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  #post-content a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  #post-content a:hover {
+    // text-shadow: 1px 1px 1px;
+    text-decoration: underline;
+  }
+  .mdl-card__media {
+    background-color:#fff !important;
+  }
+  .disqus_click_btn{
+     margin: 0 auto !important;
+  }
+  #comment .veditor{
+    font-size: 1em;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+  #post-content table {
+    width: 100%;
+    overflow: auto;
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+  /* 自定义CSS 结束*/
+
+
+  </style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+    </style>
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.wshunli.com/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.wshunli.com/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CirGIS 博客">
+    <meta name="msapplication-starturl" content="https://www.wshunli.com/posts/b4d6e25d.html">
+    <meta name="msapplication-navbutton-color" content="#606266">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="CirGIS 博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="JXtW4RzgvIKoQlyN4B8PC-gd2hm7yaZo7NnrGDZHFsM">
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://www.wshunli.com/posts/b4d6e25d.html">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="在线直播技术及其实时视频流可视化方法（前端） | CirGIS 博客">
+    <meta property="og:image" content="/favicon.ico">
+    <meta property="og:description" content="wshunli`s Blog!">
+    <meta property="og:article:tag" content="视频"> <meta property="og:article:tag" content="直播"> <meta property="og:article:tag" content="前端"> 
+
+    
+        <meta property="article:published_time" content="Sat Jun 23 2018 12:23:34 GMT+0800">
+        <meta property="article:modified_time" content="Sun Sep 23 2018 18:41:06 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://www.wshunli.com/posts/b4d6e25d.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://www.wshunli.com/posts/b4d6e25d.html",
     "headline": "在线直播技术及其实时视频流可视化方法（前端）",
     "datePublished": "Sat Jun 23 2018 12:23:34 GMT+0800",
-    "dateModified": "Sun Sep 23 2018 11:13:59 GMT+0800",
+    "dateModified": "Sun Sep 23 2018 18:41:06 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "wshunli",
@@ -22,15 +375,788 @@
     },
     "publisher": {
         "@type": "Organization",
-        "name": "CirGIS",
+        "name": "CirGIS 博客",
         "logo": {
             "@type":"ImageObject",
             "url": "/favicon.ico"
         }
     },
     "keywords": ",视频,直播,前端wshunli CirGIS",
-    "description": "【暂不公开】记录在线直播技术及其实时视频流可视化方法（前端）。",
-}</script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-72210097-1","auto"),ga("send","pageview")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(t,e,a,c,n,i){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},n=t.createElement("script"),i=t.getElementsByTagName("script")[0],n.async=1,n.src="//analytics.wshunli.com/tracker.js",n.id="fathom-script",i.parentNode.insertBefore(n,i)}(document,window,0,"fathom"),fathom("trackPageview")</script></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div><button class="MD-burger-icon sidebar-toggle"><span id="MD-burger-id" class="MD-burger-layer"></span></button><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript-animation.gif)"><p class="article-headline-p">在线直播技术及其实时视频流可视化方法（前端）</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"><img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar"></div><div><strong>wshunli</strong> <span>6月 23, 2018</span></div><div class="section-spacer"></div><button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aQY7DIBAEwPz/09kHrBJ1DwZbUXFaJVpM+cCQZl7vnx4vPDw8PDw8PDy8h/Fe8fg43ddv22etrw0PDw/vDC9Z1qcHJ5j/81z14vDw8PDu5X3acK9dVvLE2drw8PDwnsxrFzf7BA8PD++XeN//axY0zEoIHh4e3r28/BC8fjhuw4tDWQseHh5ezMu39fN/H73fw8PDwwt4dUvT6Cicv9D38sDDw8Pbzcs34vZCKz8oz5qu8PDw8J7Ai37qly0FbbCbxBOXtavi4eHhjXg58tprqqvaF6JfDHh4eHgbeLMYIgl81wtDHoLg4eHhneHN4oNkE58dsvPZPq4KDw8PbzMvKQbJxt3Gu+uh8AWtA3h4eHjLMW6yiSelIo8w8rKRByh4eHh4u3ntwTpvjWrLQIuvU2o8PDy8S3nrcer6Fp+EEdFq8fDw8DbzZsfoNrRtw4WcioeHh3cvr5105coqOhzPSgUeHh7eTbyVh7WBxcqBGw8PD+8u3mzTbwPfNsIYXsLh4eHhHefljQX5JVYb8i69IDw8PLwjvPaTfFvPI+D1V4aHh4d3npccdtviMWspmMUieHh4eOd5yXV+cm1WX/aX4+KmKzw8PLyS1471SHelGNSFAQ8PD28Db7Yd5xf8681VeaCMh4eHd5LXFoP221nTwHAePDw8vIO8doNur77a8GJYovDw8PAeycsPynkRmpWfLYUBDw8Pb9uZM38R+TyzYoCHh4d3F6/d4mfBRPL0dmY8PDy887x8a561Q80uwGbXYHh4eHi7eb838PDw8PDw8PDwHjD+AActXcllor9YAAAAAElFTkSuQmCC"></ul><button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/前端/">前端</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/直播/">直播</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/视频/">视频</a></li></ul><button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="/posts/b4d6e25d.html" class="leancloud-views_num" data-flag-title="在线直播技术及其实时视频流可视化方法（前端）">&nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=在线直播技术及其实时视频流可视化方法（前端）&url=https://www.wshunli.com/posts/b4d6e25d.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=在线直播技术及其实时视频流可视化方法（前端）&url=https://www.wshunli.com/posts/b4d6e25d.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Twitter</li></a><a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/b4d6e25d.html&text=在线直播技术及其实时视频流可视化方法（前端）" target="_blank" rel="external nofollow noopener noreferrer"><li class="mdl-menu__item">分享到 Telegram</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><div id="security"><div class="input-container"><input type="password" class="form-control" id="pass" placeholder=" 欢迎您访问我的博客，本文为较新研究成果，暂不公开，非常抱歉。 "> <label for="pass">欢迎您访问我的博客，本文为较新研究成果，暂不公开，非常抱歉。</label><div class="bottom-line"></div></div></div><div id="encrypt-blog" style="display:none">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</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css"><blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none"><p><strong>如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli"> 您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。</strong><br><strong>本文链接：</strong><a href="https://www.wshunli.com/posts/b4d6e25d.html">https://www.wshunli.com/posts/b4d6e25d.html</a></p></blockquote></div><div id="comment" style="padding:10px" class="vcomment"></div><script src="https://cdn.wshunli.com/source/av-min.js"></script><script src="https://cdn.wshunli.com/source/Valine.min.js"></script><script>var GUEST_INFO=["nick","mail","link"],guest_info="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),notify=!1,verify=!1;new Valine({el:".vcomment",notify:notify,verify:verify,appId:"UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",appKey:"cuNKDo2T90xY7IjfGh21RMoQ",placeholder:"念念不忘，必有回响",pageSize:"10",avatar:"mp",lang:"zh-cn",guest_info:guest_info})</script></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"><a href="/posts/2f3bf23c.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div><a href="/posts/f6f583a.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(https://cdn.wshunli.com/source/img/snow_square_tiny.png)"><div class="top-bar"></div><button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">clear_all</i> <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"><img src="/img/wshunli.min.png" alt="wshunli's avatar"></div><a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">admin@mail.wshunli.com <b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li><a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"><a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a></li></ul></li><li class="dropdown"><a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类 <b class="caret"></b></a><ul class="dropdown-menu"><li><a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a></li></ul></li><li class="divider"></li><li><a href="/tags" title="标签云">标签云</a></li><li><a href="/timeline" title="时间轴">时间轴</a></li><li><a href="/books" title="我的阅读">我的阅读</a></li><li><a href="/zzupic" title="郑州大学">郑州大学</a></li><li><a href="/whupic" title="武汉大学">武汉大学</a></li><li><a href="/links" title="友情链接">友情链接</a></li><li><a href="/about" title="关于本站">关于本站</a></li><li class="divider"></li><li><a href="/archives">文章总数 <span class="sidebar-badge">184</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"><a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"><a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter"><span class="visuallyhidden">Twitter</span></button></a><a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook"><span class="visuallyhidden">Facebook</span></button></a><a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo"><span class="visuallyhidden">Weibo</span></button></a><a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-github"><span class="visuallyhidden">Github</span></button></a><a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer"><button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram"><span class="visuallyhidden">Telegram</span></button></a></div><div id="copyright">Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS<br><div>Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"><img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>.</div><div><a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a></div></div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div></div></div></footer><script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js",!0)</script><script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js",!0)</script><script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js",!0)</script><script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
+    "description": "wshunli`s Blog!",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72210097-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?a5dd3121a832e079930d6bf385c5e806';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+<script>
+    (function(f, a, t, h, o, m){
+        a[h]=a[h]||function(){
+            (a[h].q=a[h].q||[]).push(arguments)
+        };
+        o=f.createElement('script'),
+        m=f.getElementsByTagName('script')[0];
+        o.async=1; o.src=t; o.id='fathom-script';
+        m.parentNode.insertBefore(o,m)
+    })(document, window, '//analytics.wshunli.com/tracker.js', 'fathom');
+    fathom('trackPageview');
+    </script>
+    <!-- / Fathom -->
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在线直播技术"><span class="post-toc-number">1.</span> <span class="post-toc-text">在线直播技术</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#可视化技术"><span class="post-toc-number">2.</span> <span class="post-toc-text">可视化技术</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一些问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">一些问题</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://img.wshunli.com/JavaScript/JavaScript-animation.gif)">
+    
+            <p class="article-headline-p">
+                在线直播技术及其实时视频流可视化方法（前端）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/wshunli.min.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>wshunli</strong>
+        <span>6月 23, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aQY7DIBAEwPz/09kHrBJ1DwZbUXFaJVpM+cCQZl7vnx4vPDw8PDw8PDy8h/Fe8fg43ddv22etrw0PDw/vDC9Z1qcHJ5j/81z14vDw8PDu5X3acK9dVvLE2drw8PDwnsxrFzf7BA8PD++XeN//axY0zEoIHh4e3r28/BC8fjhuw4tDWQseHh5ezMu39fN/H73fw8PDwwt4dUvT6Cicv9D38sDDw8Pbzcs34vZCKz8oz5qu8PDw8J7Ai37qly0FbbCbxBOXtavi4eHhjXg58tprqqvaF6JfDHh4eHgbeLMYIgl81wtDHoLg4eHhneHN4oNkE58dsvPZPq4KDw8PbzMvKQbJxt3Gu+uh8AWtA3h4eHjLMW6yiSelIo8w8rKRByh4eHh4u3ntwTpvjWrLQIuvU2o8PDy8S3nrcer6Fp+EEdFq8fDw8DbzZsfoNrRtw4WcioeHh3cvr5105coqOhzPSgUeHh7eTbyVh7WBxcqBGw8PD+8u3mzTbwPfNsIYXsLh4eHhHefljQX5JVYb8i69IDw8PLwjvPaTfFvPI+D1V4aHh4d3npccdtviMWspmMUieHh4eOd5yXV+cm1WX/aX4+KmKzw8PLyS1471SHelGNSFAQ8PD28Db7Yd5xf8681VeaCMh4eHd5LXFoP221nTwHAePDw8vIO8doNur77a8GJYovDw8PAeycsPynkRmpWfLYUBDw8Pb9uZM38R+TyzYoCHh4d3F6/d4mfBRPL0dmY8PDy887x8a561Q80uwGbXYHh4eHi7eb838PDw8PDw8PDwHjD+AActXcllor9YAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/前端/">前端</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/直播/">直播</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/视频/">视频</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/posts/b4d6e25d.html" class="leancloud-views_num" data-flag-title="在线直播技术及其实时视频流可视化方法（前端）">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=在线直播技术及其实时视频流可视化方法（前端）&url=https://www.wshunli.com/posts/b4d6e25d.html&pic=https://www.wshunli.com/favicon.ico&searchPic=false&style=simple" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=在线直播技术及其实时视频流可视化方法（前端）&url=https://www.wshunli.com/posts/b4d6e25d.html&via=wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://www.wshunli.com/posts/b4d6e25d.html&text=在线直播技术及其实时视频流可视化方法（前端）" target="_blank" rel="external nofollow noopener noreferrer">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>前面写的在三维模型上贴视频的算法要真正应用了，视频使用的是萤石直播的在线视频流，中间遇到了一些问题记录下。</p>
+<h1 id="在线直播技术"><a href="#在线直播技术" class="headerlink" title="在线直播技术"></a>在线直播技术</h1><p>直播中常用到的流媒体协议有 rtmp、http、hls、rtsp 。</p>
+<p>根据其数据分段可分为两类，以 rtmp 为代表的连续流协议，以 hls 为代表的切片文件协议。</p>
+<p>这里贴一些直播的真实地址：</p>
+<p>哔哩哔哩 <a href="https://720759109.cloudvdn.com/live-qn/553668/live_50329118_9516950.flv?wsSecret=62162527e1b70deb0d187caf9a371b0a&amp;wsTime=1529494474&amp;domain=qn.live-play.acgvideo.com" rel="external nofollow noopener noreferrer" target="_blank">https://720759109.cloudvdn.com/live-qn/553668/live_50329118_9516950.flv</a></p>
+<p>斗鱼直播 <a href="https://txy.live-play.acgvideo.com/live-txy/124776/live_352577_9496178.flv?wsSecret=43a9d50cc34c87b41bb2d295a5abef91&amp;wsTime=1529505242" rel="external nofollow noopener noreferrer" target="_blank">https://txy.live-play.acgvideo.com/live-txy/124776/live_352577_9496178.flv</a></p>
+<p>萤石直播（移动端）<a href="http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8</a></p>
+<p>为了防盗链，这些地址是会变化的，不过我们可以看到 flv 后缀，也就是连续流的协议比较多。</p>
+<p>具体详细区别可以查阅参考资料。</p>
+<h1 id="可视化技术"><a href="#可视化技术" class="headerlink" title="可视化技术"></a>可视化技术</h1><p>实时视频流因为协议的原因，和直接播放视频又有点不太一样。</p>
+<p>1、针对 HTML5 视频播放，可选 <code>&lt;video&gt;&lt;/video&gt;</code> 标签直接播放。</p>
+<p>这里推荐使用一款优秀的开源库</p>
+<p>Video.js - open source HTML5 &amp; Flash video player <a href="http://www.videojs.com" rel="external nofollow noopener noreferrer" target="_blank">http://www.videojs.com</a></p>
+<p>使用和原生基本没有区别，仓库地址：<a href="https://github.com/videojs/video.js" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/videojs/video.js</a></p>
+<p>对于直播播放的需求，可以使用插件 </p>
+<p>HLS library for video.js <a href="http://videojs.github.io/videojs-contrib-hls/" rel="external nofollow noopener noreferrer" target="_blank">http://videojs.github.io/videojs-contrib-hls/</a></p>
+<p>示例代码</p>
+<pre><code class="lang-HTML">&lt;video id=example-video width=600 height=300 class=&quot;video-js vjs-default-skin&quot; controls&gt;
+  &lt;source
+     src=&quot;https://example.com/index.m3u8&quot;
+     type=&quot;application/x-mpegURL&quot;&gt;
+&lt;/video&gt;
+&lt;script src=&quot;video.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;videojs-contrib-hls.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var player = videojs(&#39;example-video&#39;);
+player.play();
+&lt;/script&gt;
+</code></pre>
+<p>因为在项目里面需要使用 video 标签，这款开源库对代码侵入性有点高，所以没有使用。</p>
+<p>2、Bilibili 开源库 flvjs 播放器</p>
+<p>前面提到目前使用连续流协议的直播比较多，其实也是因为其有延时低的优势。</p>
+<p>这时我们可以采用另外一款优秀的开源库</p>
+<p>HTML5 FLV Player <a href="https://github.com/Bilibili/flv.js" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/Bilibili/flv.js</a></p>
+<p>示例代码：</p>
+<pre><code class="lang-HTML">&lt;script src=&quot;flv.min.js&quot;&gt;&lt;/script&gt;
+&lt;video id=&quot;videoElement&quot;&gt;&lt;/video&gt;
+&lt;script&gt;
+    if (flvjs.isSupported()) {
+        var videoElement = document.getElementById(&#39;videoElement&#39;);
+        var flvPlayer = flvjs.createPlayer({
+            type: &#39;flv&#39;,
+            url: &#39;http://example.com/flv/video.flv&#39;
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    }
+&lt;/script&gt;
+</code></pre>
+<p>这个代码侵入性就很低了，播放在线或者直播视频很方便。</p>
+<p>遗憾的是只支持 flv 或者 mp4 格式，不过很有前瞻性。</p>
+<p>3、直播流专用播放器 hlsjs 介绍</p>
+<p>前面链接可以看到，实际项目中使用的 hls 流媒体协议。</p>
+<p>我们可以使用另外一款播放器</p>
+<p>JavaScript HLS client using Media Source Extension <a href="http://video-dev.github.io/hls.js/demo" rel="external nofollow noopener noreferrer" target="_blank">http://video-dev.github.io/hls.js/demo</a></p>
+<p>仓库地址：<a href="https://github.com/video-dev/hls.js" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/video-dev/hls.js</a></p>
+<p>同样代码进入性很低，最终使用的是这个。</p>
+<p>示例代码：</p>
+<pre><code class="lang-HTML">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/hls.js@latest&quot;&gt;&lt;/script&gt;
+&lt;!-- Or if you want a more recent canary version --&gt;
+&lt;!-- &lt;script src=&quot;https://cdn.jsdelivr.net/npm/hls.js@canary&quot;&gt;&lt;/script&gt; --&gt;
+&lt;video id=&quot;video&quot;&gt;&lt;/video&gt;
+&lt;script&gt;
+  var video = document.getElementById(&#39;video&#39;);
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(&#39;https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8&#39;);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }else if (video.canPlayType(&#39;application/vnd.apple.mpegurl&#39;)) {
+    video.src = &#39;https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8&#39;;
+    video.addEventListener(&#39;loadedmetadata&#39;,function() {
+      video.play();
+    });
+  }
+&lt;/script&gt;
+</code></pre>
+<p>这里在七牛云搭建了自己的 hls 协议直播流做测试。</p>
+<p>七牛云：<a href="http://streams.wshunli.com/x36xhzz/x36xhzz.m3u8" rel="external nofollow noopener noreferrer" target="_blank">http://streams.wshunli.com/x36xhzz/x36xhzz.m3u8</a><br>源地址：<a href="https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8" rel="external nofollow noopener noreferrer" target="_blank">https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8</a><br>国内迁移：<a href="https://coding.net/u/wshunli/p/streams/git/raw/master/x36xhzz/x36xhzz.m3u8" rel="external nofollow noopener noreferrer" target="_blank">https://coding.net/u/wshunli/p/streams/git/raw/master/x36xhzz/x36xhzz.m3u8</a></p>
+<p>一些电视直播的视频流：</p>
+<p><a href="http://ivi.bupt.edu.cn/hls/cctv1.m3u8" rel="external nofollow noopener noreferrer" target="_blank">http://ivi.bupt.edu.cn/hls/cctv1.m3u8</a><br><a href="http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8" rel="external nofollow noopener noreferrer" target="_blank">http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8</a></p>
+<h1 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h1><p>在实际使用过程中，视频是可以播放了，但是服务器不支持跨域访问 CROS ，这里使用 CDN 解决。</p>
+<p>原直播地址：<a href="http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294</a></p>
+<p>在又拍云或者七牛云做 CDN 后</p>
+<p>又拍云：<a href="http://live.wshunli.com/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294" rel="external nofollow noopener noreferrer" target="_blank">http://live.wshunli.com/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294</a></p>
+<p>七牛云: <a href="http://hzhls07.live.wshunli.com/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls07.live.wshunli.com/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294</a></p>
+<p>将 <code>hzhls07.ys7.com:7891</code> 替换为 <code>live.wshunli.com / hzhls07.live.wshunli.com</code> 即可。</p>
+<p><a href="http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls07.ys7.com:7891/hcnp/598370938_1_1_1_0_cas.ys7.com_6500.m3u8?72c37bfb139c4478aae93be333696294</a><br><a href="http://hzhls01.ys7.com:7886/hcnp/472637161_1_1_1_0_cas.ys7.com_6500.m3u8?e75321b700354bba8eefb328e0f69e52" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls01.ys7.com:7886/hcnp/472637161_1_1_1_0_cas.ys7.com_6500.m3u8?e75321b700354bba8eefb328e0f69e52</a><br><a href="http://hzhls01.ys7.com:7890/hcnp/598370947_1_1_1_0_cas.ys7.com_6500.m3u8?f896989dd82a463a9c949aa2454ae2dd" rel="external nofollow noopener noreferrer" target="_blank">http://hzhls01.ys7.com:7890/hcnp/598370947_1_1_1_0_cas.ys7.com_6500.m3u8?f896989dd82a463a9c949aa2454ae2dd</a></p>
+<p>这里可能要根据源地址/端口调整，估计会有很多子域名需要做 CDN ，这有点类似于反向代理技术啊。</p>
+<blockquote>
+<p>参考资料<br>1、直播技术——流媒体协议 - CSDN博客<br><a href="https://blog.csdn.net/qq_34447388/article/details/78995511" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/qq_34447388/article/details/78995511</a><br>2、RTMP HLS HTTP 直播协议一次看个够 - 简书<br><a href="https://www.jianshu.com/p/4c89b2c83e59" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/4c89b2c83e59</a><br>3、[原创]直播服务器简单实现 http_flv和hls 内网直播桌面 - lucpp - 博客园<br><a href="https://www.cnblogs.com/luconsole/p/6079534.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/luconsole/p/6079534.html</a></p>
+</blockquote>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            如果本文对您有所帮助，且您手头还很宽裕，欢迎打赏赞助我，用以支付网站服务器、域名续费和维护费用。 <img src="https://cdn.wshunli.com/about/pay_alpha.min.png" title="您的鼓励与支持，我会铭记于心，倾于博客。" alt="https://paypal.me/wshunli">  您的鼓励与支持是我更新的最大动力，我会铭记于心，倾于博客。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://www.wshunli.com/posts/b4d6e25d.html">https://www.wshunli.com/posts/b4d6e25d.html</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="https://cdn.wshunli.com/source/av-min.js"></script>
+<script src="https://cdn.wshunli.com/source/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz",
+        appKey: "cuNKDo2T90xY7IjfGh21RMoQ",
+        placeholder: "念念不忘，必有回响",
+        pageSize:'10',
+        avatar:'mp',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/2f3bf23c.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/f6f583a.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://cdn.wshunli.com/source/img/snow_square_tiny.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/wshunli.min.png" alt="wshunli's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        admin@mail.wshunli.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:admin@mail.wshunli.com" target="_blank" title="Email Me" rel="external nofollow noopener noreferrer">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/02/">二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/三维技术/">三维技术<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端技术/">前端技术<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/categories/卖身记/">卖身记<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/博客维护/">博客维护<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端技术/">后端技术<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/持续集成/">持续集成<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构与算法/">数据结构与算法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/沉迷学术/">沉迷学术<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/源码解析/">源码解析<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎推荐/">瞎推荐<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动GIS技术/">移动GIS技术<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动端技术/">移动端技术<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/语言基础/">语言基础<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/跨平台技术/">跨平台技术<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/软件操作/">软件操作<span class="sidebar_archives-count">13</span></a>
+            </li></ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/books" title="我的阅读">
+                
+                我的阅读
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/zzupic" title="郑州大学">
+                
+                郑州大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/whupic" title="武汉大学">
+                
+                武汉大学
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于本站">
+                
+                关于本站
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">159</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://facebook.com/wshunlime" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/wshunli" target="_blank" rel="external nofollow noopener noreferrer">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;CirGIS 博客
+            
+                <br>
+                
+                    <div> Hosted by <a class="footer-develop-a" href="https://coding.net/register?key=IBFMJ9" title="托管于 Coding Pages" rel="external nofollow noopener noreferrer" target="_blank">Coding Pages</a>. CDN by <a class="footer-develop-a" href="https://console.upyun.com/register/?invite=H1_D-bC4W" title="又拍云提供 CDN 服务" rel="external nofollow noopener noreferrer" target="_blank"> <img src="https://cdn.wshunli.com/source/img/upyun_logo.min.svg" style="width:44px;height:16px"> </a>. </div> <div> <a class="footer-develop-a" href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">豫ICP备17022065号-1</a> </div>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.wshunli.com/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.wshunli.com/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.wshunli.com/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
         showSpinner: true
     });
     NProgress.start();
@@ -47,7 +1173,24 @@
     setTimeout(function() {
         NProgress.done();
         $('.fade').removeClass('out');
-    }, 800);</script><script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js",!0)</script><script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script><script>AV.initialize("UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz","cuNKDo2T90xY7IjfGh21RMoQ")</script><script type="text/ls-javascript" id="leancloud-views-script">function showTime(Counter) {
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","https://cdn.wshunli.com/source/js/smoothscroll.js", true)</script>
+    
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn.wshunli.com/source/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('UiDq9ewdNKCHGJQyYrTFiohg-gzGzoHsz', 'cuNKDo2T90xY7IjfGh21RMoQ');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
         var query = new AV.Query(Counter);
         $('.leancloud-views_num').each(function() {
             var url = $(this).attr('id').trim();
@@ -122,7 +1265,43 @@
         } else if ($('.post-title-link').length > 1) {
             showTime(Counter);
         }
-    });</script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js",!0)</script><script type="text/ls-javascript" id="window-load">$(window).on('load', function() {
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.wshunli.com/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
@@ -134,7 +1313,20 @@
                 // 影响 hexo-tag-demo 代码高亮
                 $('.demobox-code-wrap pre').removeClass('linenums');
                 prettyPrint();
-                })</script><script type="text/ls-javascript" id="lazy-load">// Offer LazyLoad
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
@@ -146,4 +1338,37 @@
         setInterval(function(){
             queue.execNext();
         },200);
-    });</script><script>var copyrightNow=(new Date).getFullYear(),textContent=document.querySelector("span[year]");copyrightSince=2015,copyrightSince===copyrightNow||0===copyrightSince?textContent.textContent=copyrightNow:textContent.textContent=copyrightSince+" - "+copyrightNow,function(){for(var t=document.querySelectorAll('script[type="text/ls-javascript"]'),e=0;e<t.length;++e){var o=t[e];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div><script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body></html>
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2015;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.5 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="https://cdn.wshunli.com/live2dw/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.wshunli.com/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":90,"height":180,"hOffset":25,"vOffset":50},"mobile":{"show":false}});</script></body>
+    
+</html>
