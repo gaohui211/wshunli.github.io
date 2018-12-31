@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+
     <sitemap>
         <loc>https://www.wshunli.com/post-sitemap.xml</loc>
-        <lastmod>2018-12-28T16:42:00.146Z</lastmod>
+        <lastmod>2018-12-31T10:12:23.292Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.wshunli.com/page-sitemap.xml</loc>
-        <lastmod>2018-12-28T16:42:00.146Z</lastmod>
+        <lastmod>2018-12-31T10:12:23.292Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.wshunli.com/category-sitemap.xml</loc>
-        <lastmod>2018-12-28T16:42:00.138Z</lastmod>
+        <lastmod>2018-12-31T10:12:23.280Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://www.wshunli.com/tag-sitemap.xml</loc>
-        <lastmod>2018-12-28T16:42:00.134Z</lastmod>
+        <lastmod>2018-12-31T10:12:23.276Z</lastmod>
     </sitemap>
 
 </sitemapindex>
